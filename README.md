@@ -1,4 +1,4 @@
-# FlowPilot: A Recommender System for Designing Scientific Workflows
+# FlowPilot: A Suggestion System for Designing Scientific Workflows
 
 ## Abstract:
 
