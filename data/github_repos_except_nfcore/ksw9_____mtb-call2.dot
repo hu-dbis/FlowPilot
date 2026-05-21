@@ -1,0 +1,258 @@
+digraph "ksw9_____mtbcall2" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="TrimFastQ"];
+v2 -> v3 [label="raw_reads"];
+
+v3 [label="TrimFastQ"];
+v4 [shape=point];
+v3 -> v4;
+
+v3 [label="TrimFastQ"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v3 -> v47;
+
+v3 [label="TrimFastQ"];
+v7 [label="Kraken"];
+v3 -> v7;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 [label="Kraken"];
+v6 -> v7 [label="kraken_database"];
+
+v7 [label="Kraken"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v49;
+
+v7 [label="Kraken"];
+v11 [label="MapReads_BWA"];
+v7 -> v11;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [label="MapReads_BWA"];
+v8 -> v11 [label="reference_fasta"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 [label="MapReads_BWA"];
+v10 -> v11 [label="bwa_index"];
+
+v11 [label="MapReads_BWA"];
+v12 [label="RunAMR"];
+v11 -> v12 [label="bam_files"];
+
+v11 [label="MapReads_BWA"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v50 [label="mapping_reports"];
+
+v11 [label="MapReads_BWA"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v51 [label="coverage_stats"];
+
+v11 [label="MapReads_BWA"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v52 [label="dup_metrics"];
+
+v12 [label="RunAMR"];
+v13 [shape=point];
+v12 -> v13;
+
+v11 [label="MapReads_BWA"];
+v14 [label="TbProfiler"];
+v11 -> v14 [label="bam_files"];
+
+v14 [label="TbProfiler"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 -> v53;
+
+v14 [label="TbProfiler"];
+v16 [shape=point];
+v14 -> v16;
+
+v14 [label="TbProfiler"];
+v15 [shape=point];
+v14 -> v15;
+
+v11 [label="MapReads_BWA"];
+v17 [label="MakeLowCoverageMask"];
+v11 -> v17 [label="bam_files"];
+
+v17 [label="MakeLowCoverageMask"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 -> v25 [label="low_coverage_mask"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v24 [label="GATK:VariantsGATK"];
+v18 -> v24 [label="reference_fasta"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v24 [label="GATK:VariantsGATK"];
+v19 -> v24 [label="reference_fasta_index"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v24 [label="GATK:VariantsGATK"];
+v20 -> v24 [label="gatk_dictionary"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v27 [label="GATK:ConvertVCF"];
+v21 -> v27 [label="bed_file"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v27 [label="GATK:ConvertVCF"];
+v22 -> v27 [label="bed_file_index"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v32 [label="GATK:AnnotateVCF"];
+v23 -> v32 [label="vcf_header"];
+
+v11 [label="MapReads_BWA"];
+v24 [label="GATK:VariantsGATK"];
+v11 -> v24 [label="bam_files"];
+
+v24 [label="GATK:VariantsGATK"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 [label="GATK:ConvertVCF"];
+v25 -> v27 [label="vcf_to_fasta_input"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="GATK:ConvertVCF"];
+v26 -> v27;
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v27 [label="GATK:ConvertVCF"];
+v18 -> v27 [label="reference_fasta"];
+
+v27 [label="GATK:ConvertVCF"];
+v29 [shape=point];
+v27 -> v29;
+
+v27 [label="GATK:ConvertVCF"];
+v28 [shape=point];
+v27 -> v28;
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v32 [label="GATK:AnnotateVCF"];
+v30 -> v32 [label="snpeff_dir"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="GATK:AnnotateVCF"];
+v31 -> v32;
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v32 [label="GATK:AnnotateVCF"];
+v21 -> v32 [label="bed_file"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v32 [label="GATK:AnnotateVCF"];
+v22 -> v32 [label="bed_file_index"];
+
+v24 [label="GATK:VariantsGATK"];
+v32 [label="GATK:AnnotateVCF"];
+v24 -> v32;
+
+v32 [label="GATK:AnnotateVCF"];
+v33 [shape=point];
+v32 -> v33;
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v39 [label="LOFREQ:VariantsLoFreq"];
+v34 -> v39 [label="reference_fasta"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v39 [label="LOFREQ:VariantsLoFreq"];
+v35 -> v39 [label="reference_fasta_index"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v43 [label="LOFREQ:AnnotateVCF"];
+v36 -> v43 [label="bed_file"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v43 [label="LOFREQ:AnnotateVCF"];
+v37 -> v43 [label="bed_file_index"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v43 [label="LOFREQ:AnnotateVCF"];
+v38 -> v43 [label="vcf_header"];
+
+v11 [label="MapReads_BWA"];
+v39 [label="LOFREQ:VariantsLoFreq"];
+v11 -> v39 [label="bam_files"];
+
+v39 [label="LOFREQ:VariantsLoFreq"];
+v40 [shape=point];
+v39 -> v40;
+
+v39 [label="LOFREQ:VariantsLoFreq"];
+v43 [label="LOFREQ:AnnotateVCF"];
+v39 -> v43;
+
+v41 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v43 [label="LOFREQ:AnnotateVCF"];
+v41 -> v43 [label="snpeff_dir"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="LOFREQ:AnnotateVCF"];
+v42 -> v43;
+
+v43 [label="LOFREQ:AnnotateVCF"];
+v44 [shape=point];
+v43 -> v44;
+
+v45 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v54 [label="SummarizeRun"];
+v45 -> v54 [label="summary_script"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v54 [label="SummarizeRun"];
+v46 -> v54 [label="reads_list_file"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 [label="SummarizeRun"];
+v48 -> v54;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 [label="SummarizeRun"];
+v49 -> v54;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 [label="SummarizeRun"];
+v50 -> v54;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 [label="SummarizeRun"];
+v51 -> v54;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 [label="SummarizeRun"];
+v52 -> v54;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 [label="SummarizeRun"];
+v53 -> v54;
+
+v54 [label="SummarizeRun"];
+v55 [shape=point];
+v54 -> v55;
+
+}

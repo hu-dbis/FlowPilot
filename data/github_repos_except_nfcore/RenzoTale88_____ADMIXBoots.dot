@@ -1,0 +1,158 @@
+digraph "RenzoTale88_____ADMIXBoots" {
+v0 [label="PREPROCESS:transpose"];
+v1 [label="PREPROCESS:makeBSlists"];
+v0 -> v1 [label="tped"];
+
+v0 [label="PREPROCESS:transpose"];
+v1 [label="PREPROCESS:makeBSlists"];
+v0 -> v1 [label="tfam"];
+
+v1 [label="PREPROCESS:makeBSlists"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v1 -> v3 [label="lists"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v4;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 [label="ADMIXBOOST:tpedBS"];
+v4 -> v5 [label="n_k"];
+
+v0 [label="PREPROCESS:transpose"];
+v5 [label="ADMIXBOOST:tpedBS"];
+v0 -> v5 [label="tped"];
+
+v0 [label="PREPROCESS:transpose"];
+v5 [label="ADMIXBOOST:tpedBS"];
+v0 -> v5 [label="tfam"];
+
+v5 [label="ADMIXBOOST:tpedBS"];
+v6 [label="ADMIXBOOST:admixboost"];
+v5 -> v6;
+
+v6 [label="ADMIXBOOST:admixboost"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v17 [label="admixboostlogs"];
+
+v6 [label="ADMIXBOOST:admixboost"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v6 -> v11 [label="admixboostres"];
+
+v0 [label="PREPROCESS:transpose"];
+v7 [label="ADMIXBOOST:tped2bed"];
+v0 -> v7 [label="tped"];
+
+v0 [label="PREPROCESS:transpose"];
+v7 [label="ADMIXBOOST:tped2bed"];
+v0 -> v7 [label="tfam"];
+
+v7 [label="ADMIXBOOST:tped2bed"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v9;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 [label="ADMIXBOOST:admix"];
+v9 -> v10 [label="infams"];
+
+v10 [label="ADMIXBOOST:admix"];
+v20 [label="POSTPROCESS:evalAdmix"];
+v10 -> v20 [label="admixfull"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v12 [label="POSTPROCESS:clumpp"];
+v11 -> v12 [label="grouped_res"];
+
+v0 [label="PREPROCESS:transpose"];
+v12 [label="POSTPROCESS:clumpp"];
+v0 -> v12 [label="tfam"];
+
+v12 [label="POSTPROCESS:clumpp"];
+v14 [shape=point];
+v12 -> v14;
+
+v12 [label="POSTPROCESS:clumpp"];
+v13 [shape=point];
+v12 -> v13;
+
+v12 [label="POSTPROCESS:clumpp"];
+v29 [label="POSTPROCESS:plotAdmixtures"];
+v12 -> v29;
+
+v12 [label="POSTPROCESS:clumpp"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 [label="POSTPROCESS:getHprimes"];
+v15 -> v16;
+
+v16 [label="POSTPROCESS:getHprimes"];
+v31 [label="POSTPROCESS:plotStats"];
+v16 -> v31;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 [label="POSTPROCESS:getCVerrors"];
+v17 -> v18;
+
+v18 [label="POSTPROCESS:getCVerrors"];
+v19 [shape=point];
+v18 -> v19;
+
+v18 [label="POSTPROCESS:getCVerrors"];
+v31 [label="POSTPROCESS:plotStats"];
+v18 -> v31;
+
+v18 [label="POSTPROCESS:getCVerrors"];
+v31 [label="POSTPROCESS:plotStats"];
+v18 -> v31;
+
+v20 [label="POSTPROCESS:evalAdmix"];
+v21 [label="POSTPROCESS:plot_full_admix"];
+v20 -> v21;
+
+v21 [label="POSTPROCESS:plot_full_admix"];
+v22 [shape=point];
+v21 -> v22;
+
+v20 [label="POSTPROCESS:evalAdmix"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v24 [label="logs"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 [label="POSTPROCESS:plot_full_stats"];
+v24 -> v25;
+
+v25 [label="POSTPROCESS:plot_full_stats"];
+v28 [shape=point];
+v25 -> v28;
+
+v25 [label="POSTPROCESS:plot_full_stats"];
+v27 [shape=point];
+v25 -> v27;
+
+v25 [label="POSTPROCESS:plot_full_stats"];
+v26 [shape=point];
+v25 -> v26;
+
+v29 [label="POSTPROCESS:plotAdmixtures"];
+v30 [shape=point];
+v29 -> v30;
+
+v31 [label="POSTPROCESS:plotStats"];
+v32 [shape=point];
+v31 -> v32;
+
+}

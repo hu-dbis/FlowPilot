@@ -1,0 +1,46 @@
+digraph "rendeirolab_____LazySlidenextflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3 [label="updated_csv"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [label="processWSI"];
+v3 -> v4 [label="slide_list"];
+
+v4 [label="processWSI"];
+v6 [label="featureExtraction"];
+v4 -> v6 [label="wsi_path"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="featureExtraction"];
+v5 -> v6;
+
+v6 [label="featureExtraction"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v7 [label="wsi"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 [label="aggregateResults"];
+v7 -> v10;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="aggregateResults"];
+v8 -> v10 [label="csv_file"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="aggregateResults"];
+v9 -> v10;
+
+v10 [label="aggregateResults"];
+v11 [shape=point];
+v10 -> v11;
+
+}

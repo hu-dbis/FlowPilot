@@ -1,0 +1,686 @@
+digraph "thavinb_____tbclusterdetection" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v133 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v134 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v135 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v8 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="CENMIG:SNPPLET:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v4 -> v5 [label="samplesheet"];
+
+v5 [label="CENMIG:SNPPLET:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 -> v6;
+
+v5 [label="CENMIG:SNPPLET:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v8 [label="versions"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [label="CENMIG:SNPPLET:FASTP"];
+v7 -> v12 [label="reads"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v18 [label="ch_versions"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [label="CENMIG:SNPPLET:FASTP"];
+v9 -> v12 [label="adapter_fasta"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [label="CENMIG:SNPPLET:FASTP"];
+v10 -> v12 [label="save_trimmed_fail"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [label="CENMIG:SNPPLET:FASTP"];
+v11 -> v12 [label="save_merged"];
+
+v12 [label="CENMIG:SNPPLET:FASTP"];
+v24 [label="CENMIG:SNPPLET:READ_MAPPING:BWA_MEM"];
+v12 -> v24 [label="reads"];
+
+v12 [label="CENMIG:SNPPLET:FASTP"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 -> v129;
+
+v12 [label="CENMIG:SNPPLET:FASTP"];
+v16 [shape=point];
+v12 -> v16;
+
+v12 [label="CENMIG:SNPPLET:FASTP"];
+v15 [shape=point];
+v12 -> v15;
+
+v12 [label="CENMIG:SNPPLET:FASTP"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v12 -> v17;
+
+v12 [label="CENMIG:SNPPLET:FASTP"];
+v14 [shape=point];
+v12 -> v14;
+
+v12 [label="CENMIG:SNPPLET:FASTP"];
+v13 [shape=point];
+v12 -> v13;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v46 [label="ch_versions"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v22 [label="ch_versions"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="CENMIG:SNPPLET:READ_MAPPING:BWA_INDEX"];
+v20 -> v21;
+
+v21 [label="CENMIG:SNPPLET:READ_MAPPING:BWA_INDEX"];
+v24 [label="CENMIG:SNPPLET:READ_MAPPING:BWA_MEM"];
+v21 -> v24;
+
+v21 [label="CENMIG:SNPPLET:READ_MAPPING:BWA_INDEX"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v25 [label="ch_versions"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="CENMIG:SNPPLET:READ_MAPPING:BWA_MEM"];
+v23 -> v24 [label="sort_bam"];
+
+v24 [label="CENMIG:SNPPLET:READ_MAPPING:BWA_MEM"];
+v28 [label="CENMIG:SNPPLET:READ_MAPPING:GATK4_MARKDUPLICATES"];
+v24 -> v28;
+
+v24 [label="CENMIG:SNPPLET:READ_MAPPING:BWA_MEM"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v32 [label="ch_versions"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="CENMIG:SNPPLET:READ_MAPPING:GATK4_MARKDUPLICATES"];
+v26 -> v28 [label="fasta"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="CENMIG:SNPPLET:READ_MAPPING:GATK4_MARKDUPLICATES"];
+v27 -> v28 [label="fasta_fai"];
+
+v28 [label="CENMIG:SNPPLET:READ_MAPPING:GATK4_MARKDUPLICATES"];
+v31 [shape=point];
+v28 -> v31;
+
+v28 [label="CENMIG:SNPPLET:READ_MAPPING:GATK4_MARKDUPLICATES"];
+v33 [label="CENMIG:SNPPLET:READ_MAPPING:SAMTOOLS_INDEX"];
+v28 -> v33;
+
+v28 [label="CENMIG:SNPPLET:READ_MAPPING:GATK4_MARKDUPLICATES"];
+v30 [shape=point];
+v28 -> v30;
+
+v28 [label="CENMIG:SNPPLET:READ_MAPPING:GATK4_MARKDUPLICATES"];
+v29 [shape=point];
+v28 -> v29;
+
+v28 [label="CENMIG:SNPPLET:READ_MAPPING:GATK4_MARKDUPLICATES"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 -> v123 [label="metrics"];
+
+v28 [label="CENMIG:SNPPLET:READ_MAPPING:GATK4_MARKDUPLICATES"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v36 [label="ch_versions"];
+
+v33 [label="CENMIG:SNPPLET:READ_MAPPING:SAMTOOLS_INDEX"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v33 -> v37;
+
+v33 [label="CENMIG:SNPPLET:READ_MAPPING:SAMTOOLS_INDEX"];
+v35 [shape=point];
+v33 -> v35;
+
+v33 [label="CENMIG:SNPPLET:READ_MAPPING:SAMTOOLS_INDEX"];
+v34 [shape=point];
+v33 -> v34;
+
+v33 [label="CENMIG:SNPPLET:READ_MAPPING:SAMTOOLS_INDEX"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v46 [label="versions"];
+
+v28 [label="CENMIG:SNPPLET:READ_MAPPING:GATK4_MARKDUPLICATES"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v41 [label="CENMIG:SNPPLET:READ_MAPPING:SAMTOOLS_FLAGSTAT"];
+v37 -> v41 [label="bam"];
+
+v28 [label="CENMIG:SNPPLET:READ_MAPPING:GATK4_MARKDUPLICATES"];
+v38 [label="CENMIG:SNPPLET:READ_MAPPING:SAMTOOLS_DEPTH"];
+v28 -> v38;
+
+v38 [label="CENMIG:SNPPLET:READ_MAPPING:SAMTOOLS_DEPTH"];
+v40 [shape=point];
+v38 -> v40 [label="depth"];
+
+v38 [label="CENMIG:SNPPLET:READ_MAPPING:SAMTOOLS_DEPTH"];
+v39 [shape=point];
+v38 -> v39;
+
+v41 [label="CENMIG:SNPPLET:READ_MAPPING:SAMTOOLS_FLAGSTAT"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 -> v126 [label="flagstat"];
+
+v41 [label="CENMIG:SNPPLET:READ_MAPPING:SAMTOOLS_FLAGSTAT"];
+v42 [shape=point];
+v41 -> v42;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v43 [label="CENMIG:SNPPLET:READ_MAPPING:SAMTOOLS_COVERAGE"];
+v37 -> v43 [label="bam"];
+
+v43 [label="CENMIG:SNPPLET:READ_MAPPING:SAMTOOLS_COVERAGE"];
+v45 [shape=point];
+v43 -> v45 [label="coverage"];
+
+v43 [label="CENMIG:SNPPLET:READ_MAPPING:SAMTOOLS_COVERAGE"];
+v44 [shape=point];
+v43 -> v44;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v49 [label="ch_versions"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [label="CENMIG:SNPPLET:GATK4_CREATESEQUENCEDICTIONARY"];
+v47 -> v48;
+
+v48 [label="CENMIG:SNPPLET:GATK4_CREATESEQUENCEDICTIONARY"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v57 [label="dict"];
+
+v48 [label="CENMIG:SNPPLET:GATK4_CREATESEQUENCEDICTIONARY"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v55 [label="ch_versions"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 -> v50 [label="bam"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [label="CENMIG:SNPPLET:GATK4_HAPLOTYPECALLER"];
+v50 -> v61 [label="ch_variantcalling_input"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="CENMIG:SNPPLET:SAMTOOLS_FAIDX"];
+v51 -> v52;
+
+v52 [label="CENMIG:SNPPLET:SAMTOOLS_FAIDX"];
+v54 [shape=point];
+v52 -> v54;
+
+v52 [label="CENMIG:SNPPLET:SAMTOOLS_FAIDX"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v56 [label="fai"];
+
+v52 [label="CENMIG:SNPPLET:SAMTOOLS_FAIDX"];
+v53 [shape=point];
+v52 -> v53;
+
+v52 [label="CENMIG:SNPPLET:SAMTOOLS_FAIDX"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v63 [label="ch_versions"];
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [label="CENMIG:SNPPLET:GATK4_HAPLOTYPECALLER"];
+v56 -> v61;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [label="CENMIG:SNPPLET:GATK4_HAPLOTYPECALLER"];
+v57 -> v61;
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v61 [label="CENMIG:SNPPLET:GATK4_HAPLOTYPECALLER"];
+v58 -> v61 [label="fasta"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1];
+v61 [label="CENMIG:SNPPLET:GATK4_HAPLOTYPECALLER"];
+v59 -> v61 [label="dbsnp"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1];
+v61 [label="CENMIG:SNPPLET:GATK4_HAPLOTYPECALLER"];
+v60 -> v61 [label="dbsnp_tbi"];
+
+v61 [label="CENMIG:SNPPLET:GATK4_HAPLOTYPECALLER"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v61 -> v64;
+
+v61 [label="CENMIG:SNPPLET:GATK4_HAPLOTYPECALLER"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v61 -> v65;
+
+v61 [label="CENMIG:SNPPLET:GATK4_HAPLOTYPECALLER"];
+v62 [shape=point];
+v61 -> v62;
+
+v61 [label="CENMIG:SNPPLET:GATK4_HAPLOTYPECALLER"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v100 [label="ch_versions"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v64 -> v67 [label="ch_vcf"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v65 -> v67 [label="tbi"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v76 [label="ch_versions"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOMICSDBIMPORT"];
+v69 -> v73 [label="ch_dbimport"];
+
+v70 [shape=point,label="",fixedsize=true,width=0.1];
+v73 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOMICSDBIMPORT"];
+v70 -> v73 [label="run_intlist"];
+
+v71 [shape=point,label="",fixedsize=true,width=0.1];
+v73 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOMICSDBIMPORT"];
+v71 -> v73 [label="run_updatewspace"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1];
+v73 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOMICSDBIMPORT"];
+v72 -> v73 [label="input_map"];
+
+v73 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOMICSDBIMPORT"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 -> v77;
+
+v73 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOMICSDBIMPORT"];
+v75 [shape=point];
+v73 -> v75;
+
+v73 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOMICSDBIMPORT"];
+v74 [shape=point];
+v73 -> v74;
+
+v73 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOMICSDBIMPORT"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v84 [label="ch_versions"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOTYPEGVCFS"];
+v77 -> v83 [label="ch_gatk4_genotypegvcfs"];
+
+v52 [label="CENMIG:SNPPLET:SAMTOOLS_FAIDX"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v78 [label="fai"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOTYPEGVCFS"];
+v78 -> v83;
+
+v48 [label="CENMIG:SNPPLET:GATK4_CREATESEQUENCEDICTIONARY"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v79 [label="dict"];
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOTYPEGVCFS"];
+v79 -> v83;
+
+v80 [shape=point,label="",fixedsize=true,width=0.1];
+v83 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOTYPEGVCFS"];
+v80 -> v83 [label="fasta"];
+
+v81 [shape=point,label="",fixedsize=true,width=0.1];
+v83 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOTYPEGVCFS"];
+v81 -> v83 [label="dbsnp"];
+
+v82 [shape=point,label="",fixedsize=true,width=0.1];
+v83 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOTYPEGVCFS"];
+v82 -> v83 [label="dbsnp_tbi"];
+
+v83 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOTYPEGVCFS"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v83 -> v85;
+
+v83 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOTYPEGVCFS"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v83 -> v85;
+
+v83 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_GENOTYPEGVCFS"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v88 [label="ch_versions"];
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v87 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_VARIANTFILTRATION"];
+v85 -> v87 [label="gvcf"];
+
+v86 [shape=point,label="",fixedsize=true,width=0.1];
+v87 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_VARIANTFILTRATION"];
+v86 -> v87;
+
+v52 [label="CENMIG:SNPPLET:SAMTOOLS_FAIDX"];
+v87 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_VARIANTFILTRATION"];
+v52 -> v87 [label="fai"];
+
+v48 [label="CENMIG:SNPPLET:GATK4_CREATESEQUENCEDICTIONARY"];
+v87 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_VARIANTFILTRATION"];
+v48 -> v87 [label="dict"];
+
+v87 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_VARIANTFILTRATION"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v87 -> v89;
+
+v87 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_VARIANTFILTRATION"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v87 -> v89;
+
+v87 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_VARIANTFILTRATION"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v92 [label="ch_versions"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_SELECTVARIANTS"];
+v90 -> v91 [label="gvcf_filter"];
+
+v91 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_SELECTVARIANTS"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v91 -> v93 [label="vcf"];
+
+v91 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_SELECTVARIANTS"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v91 -> v93 [label="tbi"];
+
+v91 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_SELECTVARIANTS"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v99 [label="ch_versions"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v98 [label="CENMIG:SNPPLET:JOINT_CALLING:BCFTOOLS_STATS"];
+v93 -> v98 [label="selected_gvcf"];
+
+v94 [shape=point,label="",fixedsize=true,width=0.1];
+v98 [label="CENMIG:SNPPLET:JOINT_CALLING:BCFTOOLS_STATS"];
+v94 -> v98;
+
+v52 [label="CENMIG:SNPPLET:SAMTOOLS_FAIDX"];
+v98 [label="CENMIG:SNPPLET:JOINT_CALLING:BCFTOOLS_STATS"];
+v52 -> v98 [label="fai"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v98 [label="CENMIG:SNPPLET:JOINT_CALLING:BCFTOOLS_STATS"];
+v95 -> v98 [label="regions"];
+
+v96 [shape=point,label="",fixedsize=true,width=0.1];
+v98 [label="CENMIG:SNPPLET:JOINT_CALLING:BCFTOOLS_STATS"];
+v96 -> v98 [label="targets"];
+
+v97 [shape=point,label="",fixedsize=true,width=0.1];
+v98 [label="CENMIG:SNPPLET:JOINT_CALLING:BCFTOOLS_STATS"];
+v97 -> v98 [label="samples"];
+
+v98 [label="CENMIG:SNPPLET:JOINT_CALLING:BCFTOOLS_STATS"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v98 -> v120 [label="stats"];
+
+v98 [label="CENMIG:SNPPLET:JOINT_CALLING:BCFTOOLS_STATS"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v100 [label="versions"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v102 [label="ch_versions"];
+
+v91 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_SELECTVARIANTS"];
+v101 [label="CENMIG:SNPPLET:GATK4_VARIANTSTOTABLE"];
+v91 -> v101 [label="vcf"];
+
+v91 [label="CENMIG:SNPPLET:JOINT_CALLING:GATK4_SELECTVARIANTS"];
+v101 [label="CENMIG:SNPPLET:GATK4_VARIANTSTOTABLE"];
+v91 -> v101 [label="tbi"];
+
+v101 [label="CENMIG:SNPPLET:GATK4_VARIANTSTOTABLE"];
+v103 [label="CENMIG:SNPPLET:CREATE_MSA"];
+v101 -> v103;
+
+v101 [label="CENMIG:SNPPLET:GATK4_VARIANTSTOTABLE"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v105 [label="ch_versions"];
+
+v103 [label="CENMIG:SNPPLET:CREATE_MSA"];
+v104 [shape=point];
+v103 -> v104;
+
+v103 [label="CENMIG:SNPPLET:CREATE_MSA"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v105 -> v106 [label="ch_versions"];
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v108 [label="CENMIG:SNPPLET:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v107 -> v108;
+
+v108 [label="CENMIG:SNPPLET:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v110 [shape=point];
+v108 -> v110;
+
+v108 [label="CENMIG:SNPPLET:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v108 -> v118;
+
+v108 [label="CENMIG:SNPPLET:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v109 [shape=point];
+v108 -> v109;
+
+v111 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v114 [label="ch_multiqc_files"];
+
+v112 [shape=point,label="",fixedsize=true,width=0.1];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v112 -> v113 [label="ch_workflow_summary"];
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v117 [label="ch_multiqc_files"];
+
+v115 [shape=point,label="",fixedsize=true,width=0.1];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v115 -> v116 [label="ch_methods_description"];
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v117;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v119 [label="ch_multiqc_files"];
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v122 [label="ch_multiqc_files"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v122;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v125 [label="ch_multiqc_files"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v125;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v128 [label="ch_multiqc_files"];
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v126 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v131 [label="ch_multiqc_files"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v131 -> v132 [label="ch_multiqc_files"];
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v136 [label="CENMIG:SNPPLET:MULTIQC"];
+v132 -> v136;
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v136 [label="CENMIG:SNPPLET:MULTIQC"];
+v133 -> v136;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v136 [label="CENMIG:SNPPLET:MULTIQC"];
+v134 -> v136;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v136 [label="CENMIG:SNPPLET:MULTIQC"];
+v135 -> v136;
+
+v136 [label="CENMIG:SNPPLET:MULTIQC"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v136 -> v140;
+
+v136 [label="CENMIG:SNPPLET:MULTIQC"];
+v139 [shape=point];
+v136 -> v139;
+
+v136 [label="CENMIG:SNPPLET:MULTIQC"];
+v138 [shape=point];
+v136 -> v138;
+
+v136 [label="CENMIG:SNPPLET:MULTIQC"];
+v137 [shape=point];
+v136 -> v137;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v141 [shape=point];
+v140 -> v141;
+
+}

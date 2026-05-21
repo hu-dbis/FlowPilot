@@ -1,0 +1,870 @@
+digraph "metapep" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v2 -> v6 [label="samplesheet"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v46 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v140 [label="ch_multiqc_files"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v7 [label="ch_versions"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v6 -> v19 [label="ch_microbiomes"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v88 [label="NFCORE_METAPEP:METAPEP:SPLIT_PRED_TASKS"];
+v6 -> v88 [label="ch_conditions"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="countLines"];
+v6 -> v41 [label="ch_alleles"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v88 [label="NFCORE_METAPEP:METAPEP:SPLIT_PRED_TASKS"];
+v6 -> v88 [label="ch_conditions_alleles"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v8 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:UNIFY_MODEL_LENGTHS"];
+v6 -> v8;
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v18 [label="ch_versions"];
+
+v8 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:UNIFY_MODEL_LENGTHS"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v8 -> v11;
+
+v8 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:UNIFY_MODEL_LENGTHS"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v8 -> v9 [label="unified_peptide_lengths"];
+
+v8 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:UNIFY_MODEL_LENGTHS"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v18;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v10 [shape=point];
+v9 -> v10;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v12 [shape=point];
+v11 -> v12;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16 [label="log_prefix"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=point];
+v16 -> v17;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v31 [label="ch_versions"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v24;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v22 [shape=point];
+v21 -> v22;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v21 -> v25;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v47 [label="ch_taxa_input"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v24 -> v35 [label="ch_assembly_input"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v25 -> v27;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v28;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v26 [shape=point];
+v25 -> v26;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v27 -> v35 [label="ch_bins_folders_input"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v28 -> v29 [label="ch_microbiomes_bins_archives_packed"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v30 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:UNPACK_BIN_ARCHIVES"];
+v29 -> v30;
+
+v30 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:UNPACK_BIN_ARCHIVES"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v30 -> v34;
+
+v30 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:UNPACK_BIN_ARCHIVES"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v46 [label="versions"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v33 [shape=point];
+v32 -> v33 [label="ch_bins_archives_input"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v34 -> v35 [label="ch_bins_archives_input"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v56 [label="NFCORE_METAPEP:METAPEP:PRODIGAL"];
+v36 -> v56 [label="ch_nucl_input"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v38 [shape=point];
+v37 -> v38 [label="ch_weights"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v6 -> v39 [label="ch_microbiomes"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v63 [label="ch_weights"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="countLines"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 [shape=point];
+v42 -> v43;
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 -> v45 [label="peptide_lengths"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v86 [label="NFCORE_METAPEP:METAPEP:GENERATE_PEPTIDES"];
+v45 -> v86 [label="peptide_lengths"];
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v54 [label="ch_versions"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 [label="NFCORE_METAPEP:METAPEP:DOWNLOAD_PROTEINS"];
+v48 -> v51;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v49 [label="ch_taxa_input"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 [label="NFCORE_METAPEP:METAPEP:DOWNLOAD_PROTEINS"];
+v50 -> v51;
+
+v51 [label="NFCORE_METAPEP:METAPEP:DOWNLOAD_PROTEINS"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v51 -> v77;
+
+v51 [label="NFCORE_METAPEP:METAPEP:DOWNLOAD_PROTEINS"];
+v53 [shape=point];
+v51 -> v53;
+
+v51 [label="NFCORE_METAPEP:METAPEP:DOWNLOAD_PROTEINS"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v51 -> v78;
+
+v51 [label="NFCORE_METAPEP:METAPEP:DOWNLOAD_PROTEINS"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v51 -> v79;
+
+v51 [label="NFCORE_METAPEP:METAPEP:DOWNLOAD_PROTEINS"];
+v52 [shape=point];
+v51 -> v52;
+
+v51 [label="NFCORE_METAPEP:METAPEP:DOWNLOAD_PROTEINS"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v60 [label="ch_versions"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="NFCORE_METAPEP:METAPEP:PRODIGAL"];
+v55 -> v56 [label="output_format"];
+
+v56 [label="NFCORE_METAPEP:METAPEP:PRODIGAL"];
+v59 [shape=point];
+v56 -> v59;
+
+v56 [label="NFCORE_METAPEP:METAPEP:PRODIGAL"];
+v58 [shape=point];
+v56 -> v58;
+
+v56 [label="NFCORE_METAPEP:METAPEP:PRODIGAL"];
+v61 [label="NFCORE_METAPEP:METAPEP:CREATE_PROTEIN_TSV"];
+v56 -> v61;
+
+v56 [label="NFCORE_METAPEP:METAPEP:PRODIGAL"];
+v57 [shape=point];
+v56 -> v57;
+
+v56 [label="NFCORE_METAPEP:METAPEP:PRODIGAL"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v62 [label="ch_versions"];
+
+v61 [label="NFCORE_METAPEP:METAPEP:CREATE_PROTEIN_TSV"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v61 -> v71;
+
+v61 [label="NFCORE_METAPEP:METAPEP:CREATE_PROTEIN_TSV"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v70 [label="ch_versions"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v69 [label="NFCORE_METAPEP:METAPEP:ASSIGN_NUCL_ENTITY_WEIGHTS"];
+v65 -> v69;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v66 [label="ch_weights"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v69 [label="NFCORE_METAPEP:METAPEP:ASSIGN_NUCL_ENTITY_WEIGHTS"];
+v68 -> v69;
+
+v69 [label="NFCORE_METAPEP:METAPEP:ASSIGN_NUCL_ENTITY_WEIGHTS"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v69 -> v83;
+
+v69 [label="NFCORE_METAPEP:METAPEP:ASSIGN_NUCL_ENTITY_WEIGHTS"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v81 [label="ch_versions"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 -> v73 [label="ch_pred_proteins_sorted"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v80 [label="NFCORE_METAPEP:METAPEP:GENERATE_PROTEIN_AND_ENTITY_IDS"];
+v74 -> v80;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 -> v75 [label="ch_pred_proteins_sorted"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v80 [label="NFCORE_METAPEP:METAPEP:GENERATE_PROTEIN_AND_ENTITY_IDS"];
+v76 -> v80;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v80 [label="NFCORE_METAPEP:METAPEP:GENERATE_PROTEIN_AND_ENTITY_IDS"];
+v77 -> v80;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v80 [label="NFCORE_METAPEP:METAPEP:GENERATE_PROTEIN_AND_ENTITY_IDS"];
+v78 -> v80;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v80 [label="NFCORE_METAPEP:METAPEP:GENERATE_PROTEIN_AND_ENTITY_IDS"];
+v79 -> v80;
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v80 [label="NFCORE_METAPEP:METAPEP:GENERATE_PROTEIN_AND_ENTITY_IDS"];
+v6 -> v80 [label="ch_microbiomes"];
+
+v80 [label="NFCORE_METAPEP:METAPEP:GENERATE_PROTEIN_AND_ENTITY_IDS"];
+v86 [label="NFCORE_METAPEP:METAPEP:GENERATE_PEPTIDES"];
+v80 -> v86;
+
+v80 [label="NFCORE_METAPEP:METAPEP:GENERATE_PROTEIN_AND_ENTITY_IDS"];
+v88 [label="NFCORE_METAPEP:METAPEP:SPLIT_PRED_TASKS"];
+v80 -> v88;
+
+v80 [label="NFCORE_METAPEP:METAPEP:GENERATE_PROTEIN_AND_ENTITY_IDS"];
+v84 [label="NFCORE_METAPEP:METAPEP:FINALIZE_MICROBIOME_ENTITIES"];
+v80 -> v84;
+
+v80 [label="NFCORE_METAPEP:METAPEP:GENERATE_PROTEIN_AND_ENTITY_IDS"];
+v84 [label="NFCORE_METAPEP:METAPEP:FINALIZE_MICROBIOME_ENTITIES"];
+v80 -> v84;
+
+v80 [label="NFCORE_METAPEP:METAPEP:GENERATE_PROTEIN_AND_ENTITY_IDS"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v85 [label="ch_versions"];
+
+v51 [label="NFCORE_METAPEP:METAPEP:DOWNLOAD_PROTEINS"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v51 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v84 [label="NFCORE_METAPEP:METAPEP:FINALIZE_MICROBIOME_ENTITIES"];
+v82 -> v84;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v84 [label="NFCORE_METAPEP:METAPEP:FINALIZE_MICROBIOME_ENTITIES"];
+v83 -> v84;
+
+v84 [label="NFCORE_METAPEP:METAPEP:FINALIZE_MICROBIOME_ENTITIES"];
+v88 [label="NFCORE_METAPEP:METAPEP:SPLIT_PRED_TASKS"];
+v84 -> v88;
+
+v84 [label="NFCORE_METAPEP:METAPEP:FINALIZE_MICROBIOME_ENTITIES"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v87 [label="ch_versions"];
+
+v86 [label="NFCORE_METAPEP:METAPEP:GENERATE_PEPTIDES"];
+v88 [label="NFCORE_METAPEP:METAPEP:SPLIT_PRED_TASKS"];
+v86 -> v88;
+
+v86 [label="NFCORE_METAPEP:METAPEP:GENERATE_PEPTIDES"];
+v88 [label="NFCORE_METAPEP:METAPEP:SPLIT_PRED_TASKS"];
+v86 -> v88;
+
+v86 [label="NFCORE_METAPEP:METAPEP:GENERATE_PEPTIDES"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v89 [label="ch_versions"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v88 [label="NFCORE_METAPEP:METAPEP:SPLIT_PRED_TASKS"];
+v6 -> v88 [label="ch_alleles"];
+
+v88 [label="NFCORE_METAPEP:METAPEP:SPLIT_PRED_TASKS"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v88 -> v90;
+
+v88 [label="NFCORE_METAPEP:METAPEP:SPLIT_PRED_TASKS"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v92 [label="ch_versions"];
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v91 [label="NFCORE_METAPEP:METAPEP:PREDICT_EPITOPES"];
+v90 -> v91;
+
+v91 [label="NFCORE_METAPEP:METAPEP:PREDICT_EPITOPES"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v91 -> v95;
+
+v91 [label="NFCORE_METAPEP:METAPEP:PREDICT_EPITOPES"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v91 -> v98;
+
+v91 [label="NFCORE_METAPEP:METAPEP:PREDICT_EPITOPES"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v107 [label="ch_versions"];
+
+v88 [label="NFCORE_METAPEP:METAPEP:SPLIT_PRED_TASKS"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v88 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v93 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v94 -> v97;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v95 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="merge"];
+v97 -> v100;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="merge"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="merge"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v101 -> v102;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v101 -> v103;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="buffer"];
+v102 -> v104;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="buffer"];
+v102 -> v105;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v108;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v109;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="buffer"];
+v106 [label="NFCORE_METAPEP:METAPEP:MERGE_PREDICTIONS_BUFFER"];
+v104 -> v106;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="buffer"];
+v106 [label="NFCORE_METAPEP:METAPEP:MERGE_PREDICTIONS_BUFFER"];
+v105 -> v106;
+
+v106 [label="NFCORE_METAPEP:METAPEP:MERGE_PREDICTIONS_BUFFER"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v108;
+
+v106 [label="NFCORE_METAPEP:METAPEP:MERGE_PREDICTIONS_BUFFER"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v109;
+
+v106 [label="NFCORE_METAPEP:METAPEP:MERGE_PREDICTIONS_BUFFER"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v114 [label="ch_versions"];
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v108 -> v110 [label="ch_merge_predictions_input_pred"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v109 -> v111 [label="ch_merge_predictions_input_warn"];
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v112 [label="NFCORE_METAPEP:METAPEP:MERGE_PREDICTIONS"];
+v110 -> v112;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v112 [label="NFCORE_METAPEP:METAPEP:MERGE_PREDICTIONS"];
+v111 -> v112;
+
+v112 [label="NFCORE_METAPEP:METAPEP:MERGE_PREDICTIONS"];
+v115 [label="NFCORE_METAPEP:METAPEP:COLLECT_STATS"];
+v112 -> v115;
+
+v112 [label="NFCORE_METAPEP:METAPEP:MERGE_PREDICTIONS"];
+v113 [shape=point];
+v112 -> v113;
+
+v112 [label="NFCORE_METAPEP:METAPEP:MERGE_PREDICTIONS"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v116 [label="ch_versions"];
+
+v86 [label="NFCORE_METAPEP:METAPEP:GENERATE_PEPTIDES"];
+v115 [label="NFCORE_METAPEP:METAPEP:COLLECT_STATS"];
+v86 -> v115 [label="proteins_peptides"];
+
+v80 [label="NFCORE_METAPEP:METAPEP:GENERATE_PROTEIN_AND_ENTITY_IDS"];
+v115 [label="NFCORE_METAPEP:METAPEP:COLLECT_STATS"];
+v80 -> v115 [label="entities_proteins"];
+
+v84 [label="NFCORE_METAPEP:METAPEP:FINALIZE_MICROBIOME_ENTITIES"];
+v115 [label="NFCORE_METAPEP:METAPEP:COLLECT_STATS"];
+v84 -> v115 [label="microbiomes_entities"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v115 [label="NFCORE_METAPEP:METAPEP:COLLECT_STATS"];
+v6 -> v115 [label="ch_conditions"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v115 [label="NFCORE_METAPEP:METAPEP:COLLECT_STATS"];
+v6 -> v115 [label="ch_alleles"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v115 [label="NFCORE_METAPEP:METAPEP:COLLECT_STATS"];
+v6 -> v115 [label="ch_conditions_alleles"];
+
+v115 [label="NFCORE_METAPEP:METAPEP:COLLECT_STATS"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v145;
+
+v115 [label="NFCORE_METAPEP:METAPEP:COLLECT_STATS"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v116;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v118 [label="ch_versions"];
+
+v112 [label="NFCORE_METAPEP:METAPEP:MERGE_PREDICTIONS"];
+v117 [label="NFCORE_METAPEP:METAPEP:PREPARE_SCORE_DISTRIBUTION"];
+v112 -> v117 [label="predictions"];
+
+v86 [label="NFCORE_METAPEP:METAPEP:GENERATE_PEPTIDES"];
+v117 [label="NFCORE_METAPEP:METAPEP:PREPARE_SCORE_DISTRIBUTION"];
+v86 -> v117 [label="proteins_peptides"];
+
+v80 [label="NFCORE_METAPEP:METAPEP:GENERATE_PROTEIN_AND_ENTITY_IDS"];
+v117 [label="NFCORE_METAPEP:METAPEP:PREPARE_SCORE_DISTRIBUTION"];
+v80 -> v117 [label="entities_proteins"];
+
+v84 [label="NFCORE_METAPEP:METAPEP:FINALIZE_MICROBIOME_ENTITIES"];
+v117 [label="NFCORE_METAPEP:METAPEP:PREPARE_SCORE_DISTRIBUTION"];
+v84 -> v117 [label="microbiomes_entities"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v117 [label="NFCORE_METAPEP:METAPEP:PREPARE_SCORE_DISTRIBUTION"];
+v6 -> v117 [label="ch_conditions"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v117 [label="NFCORE_METAPEP:METAPEP:PREPARE_SCORE_DISTRIBUTION"];
+v6 -> v117 [label="ch_conditions_alleles"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v117 [label="NFCORE_METAPEP:METAPEP:PREPARE_SCORE_DISTRIBUTION"];
+v6 -> v117 [label="ch_alleles"];
+
+v117 [label="NFCORE_METAPEP:METAPEP:PREPARE_SCORE_DISTRIBUTION"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v117 -> v119;
+
+v117 [label="NFCORE_METAPEP:METAPEP:PREPARE_SCORE_DISTRIBUTION"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v122 [label="ch_versions"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v120 [label="NFCORE_METAPEP:METAPEP:PLOT_SCORE_DISTRIBUTION"];
+v119 -> v120;
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v120 [label="NFCORE_METAPEP:METAPEP:PLOT_SCORE_DISTRIBUTION"];
+v6 -> v120 [label="ch_alleles"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v120 [label="NFCORE_METAPEP:METAPEP:PLOT_SCORE_DISTRIBUTION"];
+v6 -> v120 [label="ch_conditions"];
+
+v120 [label="NFCORE_METAPEP:METAPEP:PLOT_SCORE_DISTRIBUTION"];
+v121 [shape=point];
+v120 -> v121;
+
+v120 [label="NFCORE_METAPEP:METAPEP:PLOT_SCORE_DISTRIBUTION"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v122;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v124 [label="ch_versions"];
+
+v112 [label="NFCORE_METAPEP:METAPEP:MERGE_PREDICTIONS"];
+v123 [label="NFCORE_METAPEP:METAPEP:PREPARE_ENTITY_BINDING_RATIOS"];
+v112 -> v123 [label="predictions"];
+
+v86 [label="NFCORE_METAPEP:METAPEP:GENERATE_PEPTIDES"];
+v123 [label="NFCORE_METAPEP:METAPEP:PREPARE_ENTITY_BINDING_RATIOS"];
+v86 -> v123 [label="proteins_peptides"];
+
+v80 [label="NFCORE_METAPEP:METAPEP:GENERATE_PROTEIN_AND_ENTITY_IDS"];
+v123 [label="NFCORE_METAPEP:METAPEP:PREPARE_ENTITY_BINDING_RATIOS"];
+v80 -> v123 [label="entities_proteins"];
+
+v84 [label="NFCORE_METAPEP:METAPEP:FINALIZE_MICROBIOME_ENTITIES"];
+v123 [label="NFCORE_METAPEP:METAPEP:PREPARE_ENTITY_BINDING_RATIOS"];
+v84 -> v123 [label="microbiomes_entities"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v123 [label="NFCORE_METAPEP:METAPEP:PREPARE_ENTITY_BINDING_RATIOS"];
+v6 -> v123 [label="ch_conditions"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v123 [label="NFCORE_METAPEP:METAPEP:PREPARE_ENTITY_BINDING_RATIOS"];
+v6 -> v123 [label="ch_conditions_alleles"];
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v123 [label="NFCORE_METAPEP:METAPEP:PREPARE_ENTITY_BINDING_RATIOS"];
+v6 -> v123 [label="ch_alleles"];
+
+v123 [label="NFCORE_METAPEP:METAPEP:PREPARE_ENTITY_BINDING_RATIOS"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v123 -> v125;
+
+v123 [label="NFCORE_METAPEP:METAPEP:PREPARE_ENTITY_BINDING_RATIOS"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v128 [label="ch_versions"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v126 [label="NFCORE_METAPEP:METAPEP:PLOT_ENTITY_BINDING_RATIOS"];
+v125 -> v126;
+
+v6 [label="NFCORE_METAPEP:METAPEP:PROCESS_INPUT:CHECK_SAMPLESHEET_CREATE_TABLES"];
+v126 [label="NFCORE_METAPEP:METAPEP:PLOT_ENTITY_BINDING_RATIOS"];
+v6 -> v126 [label="ch_alleles"];
+
+v126 [label="NFCORE_METAPEP:METAPEP:PLOT_ENTITY_BINDING_RATIOS"];
+v127 [shape=point];
+v126 -> v127;
+
+v126 [label="NFCORE_METAPEP:METAPEP:PLOT_ENTITY_BINDING_RATIOS"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v128 -> v129 [label="versions"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v133;
+
+v132 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v133;
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v133 -> v134;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v141 [label="ch_collated_versions"];
+
+v135 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v135 -> v147 [label="ch_multiqc_config"];
+
+v136 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v136 -> v148 [label="ch_multiqc_custom_config"];
+
+v137 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v137 -> v149 [label="ch_multiqc_logo"];
+
+v138 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v138 -> v139 [label="ch_workflow_summary"];
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v141 [label="ch_multiqc_files"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v144 [label="ch_multiqc_files"];
+
+v142 [shape=point,label="",fixedsize=true,width=0.1];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v142 -> v143 [label="ch_methods_description"];
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v145 [label="ch_multiqc_files"];
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v145 -> v146 [label="ch_multiqc_files"];
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v150 [label="NFCORE_METAPEP:METAPEP:MULTIQC"];
+v146 -> v150;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v150 [label="NFCORE_METAPEP:METAPEP:MULTIQC"];
+v147 -> v150;
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v150 [label="NFCORE_METAPEP:METAPEP:MULTIQC"];
+v148 -> v150;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v150 [label="NFCORE_METAPEP:METAPEP:MULTIQC"];
+v149 -> v150;
+
+v150 [label="NFCORE_METAPEP:METAPEP:MULTIQC"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v150 -> v154;
+
+v150 [label="NFCORE_METAPEP:METAPEP:MULTIQC"];
+v153 [shape=point];
+v150 -> v153;
+
+v150 [label="NFCORE_METAPEP:METAPEP:MULTIQC"];
+v152 [shape=point];
+v150 -> v152;
+
+v150 [label="NFCORE_METAPEP:METAPEP:MULTIQC"];
+v151 [shape=point];
+v150 -> v151;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v155 [shape=point];
+v154 -> v155 [label="multiqc_report"];
+
+v150 [label="NFCORE_METAPEP:METAPEP:MULTIQC"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v150 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v157 [shape=point];
+v156 -> v157 [label="multiqc_report"];
+
+}

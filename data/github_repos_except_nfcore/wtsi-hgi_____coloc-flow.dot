@@ -1,0 +1,86 @@
+digraph "wtsihgi_____colocflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v8 [label="NFCORE_COLOC:COLOC:COLOC_FREQ_AND_SNPS"];
+v1 -> v8 [label="gwas_list"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v8 [label="NFCORE_COLOC:COLOC:COLOC_FREQ_AND_SNPS"];
+v3 -> v8 [label="eqtl_fofn"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [label="NFCORE_COLOC:COLOC:COLOC_FREQ_AND_SNPS"];
+v4 -> v8 [label="eqtl_snps"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v14 [label="plink_files"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="NFCORE_COLOC:COLOC:COLOC_FREQ_AND_SNPS"];
+v6 -> v8 [label="rsid_mappings_file"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="NFCORE_COLOC:COLOC:COLOC_FREQ_AND_SNPS"];
+v7 -> v8 [label="rsid_mappings_file_csi"];
+
+v8 [label="NFCORE_COLOC:COLOC:COLOC_FREQ_AND_SNPS"];
+v10 [shape=point];
+v8 -> v10;
+
+v8 [label="NFCORE_COLOC:COLOC:COLOC_FREQ_AND_SNPS"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v8 -> v11;
+
+v8 [label="NFCORE_COLOC:COLOC:COLOC_FREQ_AND_SNPS"];
+v9 [shape=point];
+v8 -> v9 [label="GWAS"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 -> v14 [label="variant_id"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 [label="NFCORE_COLOC:COLOC:COLOC_ON_SIG_VARIANTS"];
+v14 -> v17;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v17 [label="NFCORE_COLOC:COLOC:COLOC_ON_SIG_VARIANTS"];
+v4 -> v17 [label="eqtl_snps"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="NFCORE_COLOC:COLOC:COLOC_ON_SIG_VARIANTS"];
+v15 -> v17;
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="NFCORE_COLOC:COLOC:COLOC_ON_SIG_VARIANTS"];
+v16 -> v17;
+
+v17 [label="NFCORE_COLOC:COLOC:COLOC_ON_SIG_VARIANTS"];
+v20 [shape=point];
+v17 -> v20;
+
+v17 [label="NFCORE_COLOC:COLOC:COLOC_ON_SIG_VARIANTS"];
+v19 [shape=point];
+v17 -> v19;
+
+v17 [label="NFCORE_COLOC:COLOC:COLOC_ON_SIG_VARIANTS"];
+v18 [shape=point];
+v17 -> v18;
+
+}

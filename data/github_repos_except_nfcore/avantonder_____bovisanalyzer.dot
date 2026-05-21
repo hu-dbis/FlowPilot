@@ -1,0 +1,1254 @@
+digraph "avantonder_____bovisanalyzer" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v5 [label="ch_versions"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="BOVISANALYZER:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v1 -> v2 [label="samplesheet"];
+
+v2 [label="BOVISANALYZER:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 -> v3;
+
+v2 [label="BOVISANALYZER:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v5 [label="versions"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [label="BOVISANALYZER:FASTQSCAN_RAW"];
+v4 -> v9 [label="trim_reads"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v11 [label="ch_versions"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="BOVISANALYZER:BWA_INDEX"];
+v6 -> v7 [label="fasta"];
+
+v7 [label="BOVISANALYZER:BWA_INDEX"];
+v98 [label="BOVISANALYZER:BWA_MEM"];
+v7 -> v98 [label="fai"];
+
+v7 [label="BOVISANALYZER:BWA_INDEX"];
+v8 [shape=point];
+v7 -> v8;
+
+v9 [label="BOVISANALYZER:FASTQSCAN_RAW"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v12 [label="ch_fastqscanraw_readstats"];
+
+v9 [label="BOVISANALYZER:FASTQSCAN_RAW"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v17 [label="ch_versions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v14 [label="BOVISANALYZER:FASTQSCANPARSE_RAW"];
+v13 -> v14;
+
+v14 [label="BOVISANALYZER:FASTQSCANPARSE_RAW"];
+v15 [shape=point];
+v14 -> v15;
+
+v14 [label="BOVISANALYZER:FASTQSCANPARSE_RAW"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v14 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v56 [label="ch_versions"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v26 [label="ch_versions"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v20 [shape=point];
+v19 -> v20 [label="fastqc_raw_html"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=point];
+v21 -> v22 [label="fastqc_raw_zip"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [label="BOVISANALYZER:FASTQC_FASTP:FASTQC_RAW"];
+v4 -> v23 [label="trim_reads"];
+
+v23 [label="BOVISANALYZER:FASTQC_FASTP:FASTQC_RAW"];
+v24 [shape=point];
+v23 -> v24 [label="fastqc_raw_html"];
+
+v23 [label="BOVISANALYZER:FASTQC_FASTP:FASTQC_RAW"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v244 [label="fastqc_raw_zip"];
+
+v23 [label="BOVISANALYZER:FASTQC_FASTP:FASTQC_RAW"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v23 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v49 [label="ch_versions"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v28 [shape=point];
+v27 -> v28 [label="trim_json"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v30 [shape=point];
+v29 -> v30 [label="trim_html"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v32 [shape=point];
+v31 -> v32 [label="trim_log"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v34 [shape=point];
+v33 -> v34 [label="trim_reads_fail"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v36 [shape=point];
+v35 -> v36 [label="trim_reads_merged"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v38 [shape=point];
+v37 -> v38 [label="fastqc_trim_html"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v40 [shape=point];
+v39 -> v40 [label="fastqc_trim_zip"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 [label="BOVISANALYZER:FASTQC_FASTP:FASTP"];
+v4 -> v43 [label="trim_reads"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="BOVISANALYZER:FASTQC_FASTP:FASTP"];
+v41 -> v43 [label="save_trimmed_fail"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="BOVISANALYZER:FASTQC_FASTP:FASTP"];
+v42 -> v43 [label="save_merged"];
+
+v43 [label="BOVISANALYZER:FASTQC_FASTP:FASTP"];
+v50 [label="BOVISANALYZER:FASTQC_FASTP:FASTQC_TRIM"];
+v43 -> v50 [label="ch_variants_fastq"];
+
+v43 [label="BOVISANALYZER:FASTQC_FASTP:FASTP"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v43 -> v59 [label="trim_json"];
+
+v43 [label="BOVISANALYZER:FASTQC_FASTP:FASTP"];
+v47 [shape=point];
+v43 -> v47 [label="trim_html"];
+
+v43 [label="BOVISANALYZER:FASTQC_FASTP:FASTP"];
+v46 [shape=point];
+v43 -> v46 [label="trim_log"];
+
+v43 [label="BOVISANALYZER:FASTQC_FASTP:FASTP"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v43 -> v48;
+
+v43 [label="BOVISANALYZER:FASTQC_FASTP:FASTP"];
+v45 [shape=point];
+v43 -> v45 [label="trim_reads_fail"];
+
+v43 [label="BOVISANALYZER:FASTQC_FASTP:FASTP"];
+v44 [shape=point];
+v43 -> v44 [label="trim_reads_merged"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v54 [label="ch_versions"];
+
+v50 [label="BOVISANALYZER:FASTQC_FASTP:FASTQC_TRIM"];
+v52 [shape=point];
+v50 -> v52 [label="fastqc_trim_html"];
+
+v50 [label="BOVISANALYZER:FASTQC_FASTP:FASTQC_TRIM"];
+v51 [shape=point];
+v50 -> v51 [label="fastqc_trim_zip"];
+
+v50 [label="BOVISANALYZER:FASTQC_FASTP:FASTQC_TRIM"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v50 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v54 -> v55 [label="ch_versions"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v56 [label="versions"];
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v69 [label="ch_versions"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v58 [shape=point];
+v57 -> v58 [label="ch_fail_reads_multiqc"];
+
+v43 [label="BOVISANALYZER:FASTQC_FASTP:FASTP"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v43 -> v59 [label="ch_variants_fastq"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 -> v61 [label="ch_pass_fail_reads"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 [label="BOVISANALYZER:FASTQSCAN_TRIM"];
+v61 -> v67 [label="ch_variants_fastq"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 -> v62 [label="ch_pass_fail_reads"];
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 -> v63 [label="ch_pass_fail_reads"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 [label="BOVISANALYZER:MULTIQC_TSV_FAIL_READS"];
+v63 -> v66;
+
+v64 [shape=point,label="",fixedsize=true,width=0.1];
+v66 [label="BOVISANALYZER:MULTIQC_TSV_FAIL_READS"];
+v64 -> v66 [label="header"];
+
+v65 [shape=point,label="",fixedsize=true,width=0.1];
+v66 [label="BOVISANALYZER:MULTIQC_TSV_FAIL_READS"];
+v65 -> v66 [label="out_prefix"];
+
+v66 [label="BOVISANALYZER:MULTIQC_TSV_FAIL_READS"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v66 -> v243;
+
+v67 [label="BOVISANALYZER:FASTQSCAN_TRIM"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v67 -> v70 [label="ch_fastqscantrim_fastqscanparse"];
+
+v67 [label="BOVISANALYZER:FASTQSCAN_TRIM"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v75 [label="ch_versions"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v72 [label="BOVISANALYZER:FASTQSCANPARSE_TRIM"];
+v71 -> v72;
+
+v72 [label="BOVISANALYZER:FASTQSCANPARSE_TRIM"];
+v73 [shape=point];
+v72 -> v73;
+
+v72 [label="BOVISANALYZER:FASTQSCANPARSE_TRIM"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v72 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v85 [label="ch_versions"];
+
+v76 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v76 -> v248 [label="ch_kraken2_multiqc"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v78 [shape=point];
+v77 -> v78 [label="ch_kraken2db"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v79 [label="BOVISANALYZER:TBPROFILER_PROFILE"];
+v61 -> v79 [label="ch_variants_fastq"];
+
+v79 [label="BOVISANALYZER:TBPROFILER_PROFILE"];
+v83 [shape=point];
+v79 -> v83;
+
+v79 [label="BOVISANALYZER:TBPROFILER_PROFILE"];
+v82 [shape=point];
+v79 -> v82;
+
+v79 [label="BOVISANALYZER:TBPROFILER_PROFILE"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 -> v86 [label="ch_tbprofiler_collate"];
+
+v79 [label="BOVISANALYZER:TBPROFILER_PROFILE"];
+v81 [shape=point];
+v79 -> v81;
+
+v79 [label="BOVISANALYZER:TBPROFILER_PROFILE"];
+v80 [shape=point];
+v79 -> v80;
+
+v79 [label="BOVISANALYZER:TBPROFILER_PROFILE"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v79 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v97 [label="ch_versions"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v88 [label="BOVISANALYZER:TBPROFILER_COLLATE"];
+v87 -> v88;
+
+v88 [label="BOVISANALYZER:TBPROFILER_COLLATE"];
+v93 [shape=point];
+v88 -> v93;
+
+v88 [label="BOVISANALYZER:TBPROFILER_COLLATE"];
+v95 [label="BOVISANALYZER:SPOLIGOPARSE"];
+v88 -> v95 [label="ch_tbprofiler_metadata"];
+
+v88 [label="BOVISANALYZER:TBPROFILER_COLLATE"];
+v92 [shape=point];
+v88 -> v92;
+
+v88 [label="BOVISANALYZER:TBPROFILER_COLLATE"];
+v91 [shape=point];
+v88 -> v91;
+
+v88 [label="BOVISANALYZER:TBPROFILER_COLLATE"];
+v90 [shape=point];
+v88 -> v90;
+
+v88 [label="BOVISANALYZER:TBPROFILER_COLLATE"];
+v89 [shape=point];
+v88 -> v89;
+
+v94 [shape=point,label="",fixedsize=true,width=0.1];
+v95 [label="BOVISANALYZER:SPOLIGOPARSE"];
+v94 -> v95 [label="db"];
+
+v95 [label="BOVISANALYZER:SPOLIGOPARSE"];
+v231 [label="BOVISANALYZER:METADATA_COLLATE"];
+v95 -> v231 [label="ch_spoligo_metadata"];
+
+v95 [label="BOVISANALYZER:SPOLIGOPARSE"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v95 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v100 [label="ch_versions"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 [label="BOVISANALYZER:BWA_MEM"];
+v61 -> v98 [label="ch_variants_fastq"];
+
+v98 [label="BOVISANALYZER:BWA_MEM"];
+v102 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v98 -> v102 [label="ch_bam"];
+
+v98 [label="BOVISANALYZER:BWA_MEM"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v135 [label="ch_versions"];
+
+v101 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v104 [label="ch_versions"];
+
+v102 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v105 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v102 -> v105 [label="bam"];
+
+v102 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v108 [label="ch_versions"];
+
+v105 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 -> v109 [label="bai"];
+
+v105 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 -> v110 [label="csi"];
+
+v105 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v106 [shape=point];
+v105 -> v106;
+
+v105 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v105 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v133 [label="ch_versions"];
+
+v102 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v102 -> v109 [label="bam"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v110 -> v111;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v114 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v111 -> v114 [label="ch_bam_bai"];
+
+v112 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v117 [label="ch_versions"];
+
+v113 [shape=point,label="",fixedsize=true,width=0.1];
+v114 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v113 -> v114 [label="fasta"];
+
+v114 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v115 [shape=point];
+v114 -> v115 [label="stats"];
+
+v114 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v114 -> v116;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v117;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v120 [label="ch_versions"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v111 -> v118 [label="ch_bam_bai"];
+
+v118 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v118 -> v250 [label="ch_flagstat_multiqc"];
+
+v118 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v120;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v124 [label="ch_versions"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v121 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v111 -> v121 [label="ch_bam_bai"];
+
+v121 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v122 [shape=point];
+v121 -> v122 [label="idxstats"];
+
+v121 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v121 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v128 [label="ch_versions"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v125 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_DEPTH"];
+v111 -> v125 [label="ch_bam_bai"];
+
+v125 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_DEPTH"];
+v126 [shape=point];
+v125 -> v126 [label="depth"];
+
+v125 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_DEPTH"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v125 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v132 [label="ch_versions"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_VIEW"];
+v111 -> v129 [label="ch_bam_bai"];
+
+v129 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_VIEW"];
+v130 [shape=point];
+v129 -> v130 [label="mapreads"];
+
+v129 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_VIEW"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v129 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v132;
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v133 [label="versions"];
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v133 -> v134 [label="versions"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v169 [label="ch_versions"];
+
+v136 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v141 [label="ch_versions"];
+
+v102 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v138 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v102 -> v138 [label="bam"];
+
+v137 [shape=point,label="",fixedsize=true,width=0.1];
+v138 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v137 -> v138 [label="fasta"];
+
+v7 [label="BOVISANALYZER:BWA_INDEX"];
+v138 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v7 -> v138 [label="fai"];
+
+v138 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v142 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v138 -> v142 [label="bam"];
+
+v138 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v139 [shape=point];
+v138 -> v139;
+
+v138 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v138 -> v252 [label="ch_markduplicates_metrics_multiqc"];
+
+v138 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v138 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v145 [label="ch_versions"];
+
+v142 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v142 -> v146 [label="bai"];
+
+v142 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v142 -> v147 [label="csi"];
+
+v142 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v143 [shape=point];
+v142 -> v143;
+
+v142 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v142 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v168 [label="ch_versions"];
+
+v138 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v138 -> v146 [label="bam"];
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v147 -> v148;
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v151 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v148 -> v151 [label="ch_bam_bai"];
+
+v149 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v154 [label="ch_versions"];
+
+v150 [shape=point,label="",fixedsize=true,width=0.1];
+v151 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v150 -> v151 [label="fasta"];
+
+v151 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v152 [shape=point];
+v151 -> v152 [label="stats"];
+
+v151 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v151 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v154;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 -> v157 [label="ch_versions"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v155 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v148 -> v155 [label="ch_bam_bai"];
+
+v155 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v155 -> v254 [label="ch_markduplicates_flagstat_multiqc"];
+
+v155 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v155 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 -> v157;
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 -> v161 [label="ch_versions"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v158 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v148 -> v158 [label="ch_bam_bai"];
+
+v158 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v159 [shape=point];
+v158 -> v159 [label="idxstats"];
+
+v158 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v158 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v161;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v164 [label="ch_versions"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v162 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_DEPTH"];
+v148 -> v162 [label="ch_bam_bai"];
+
+v162 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_DEPTH"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v162 -> v179 [label="depth"];
+
+v162 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_DEPTH"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v162 -> v163;
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v164;
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v167 [label="ch_versions"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v165 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_VIEW"];
+v148 -> v165 [label="ch_bam_bai"];
+
+v165 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_VIEW"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v165 -> v180 [label="mapreads"];
+
+v165 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_VIEW"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v165 -> v166;
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v168 [label="versions"];
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v169 [label="versions"];
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v177 [label="ch_versions"];
+
+v102 [label="BOVISANALYZER:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v172 [label="BOVISANALYZER:PICARD_COLLECTMULTIPLEMETRICS"];
+v102 -> v172 [label="bam"];
+
+v170 [shape=point,label="",fixedsize=true,width=0.1];
+v172 [label="BOVISANALYZER:PICARD_COLLECTMULTIPLEMETRICS"];
+v170 -> v172 [label="fasta"];
+
+v171 [shape=point,label="",fixedsize=true,width=0.1];
+v172 [label="BOVISANALYZER:PICARD_COLLECTMULTIPLEMETRICS"];
+v171 -> v172 [label="fai"];
+
+v172 [label="BOVISANALYZER:PICARD_COLLECTMULTIPLEMETRICS"];
+v174 [shape=point];
+v172 -> v174 [label="ch_collectmultiplemetrics_multiqc"];
+
+v172 [label="BOVISANALYZER:PICARD_COLLECTMULTIPLEMETRICS"];
+v173 [shape=point];
+v172 -> v173;
+
+v172 [label="BOVISANALYZER:PICARD_COLLECTMULTIPLEMETRICS"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v172 -> v175;
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v175 -> v176;
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 -> v177;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v183 [label="ch_versions"];
+
+v67 [label="BOVISANALYZER:FASTQSCAN_TRIM"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v67 -> v178 [label="ch_fastqscantrim_fastqscanparse"];
+
+v9 [label="BOVISANALYZER:FASTQSCAN_RAW"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 -> v178 [label="ch_fastqscanraw_readstats"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v178 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v179 -> v180;
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v181 [label="BOVISANALYZER:READ_STATS"];
+v180 -> v181 [label="ch_readstats"];
+
+v181 [label="BOVISANALYZER:READ_STATS"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v181 -> v184 [label="ch_readstats_cluster"];
+
+v181 [label="BOVISANALYZER:READ_STATS"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v181 -> v182;
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v183;
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 -> v189 [label="ch_versions"];
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v184 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v186 [label="BOVISANALYZER:READSTATS_PARSE"];
+v185 -> v186;
+
+v186 [label="BOVISANALYZER:READSTATS_PARSE"];
+v187 [shape=point];
+v186 -> v187;
+
+v186 [label="BOVISANALYZER:READSTATS_PARSE"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v186 -> v188;
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 -> v189;
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 -> v199 [label="ch_versions"];
+
+v138 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v191 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_MPILEUP"];
+v138 -> v191 [label="bam"];
+
+v190 [shape=point,label="",fixedsize=true,width=0.1];
+v191 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_MPILEUP"];
+v190 -> v191 [label="fasta"];
+
+v191 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_MPILEUP"];
+v192 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_FILTER"];
+v191 -> v192 [label="vcf"];
+
+v191 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_MPILEUP"];
+v195 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_VIEW"];
+v191 -> v195 [label="tbi"];
+
+v191 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_MPILEUP"];
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v191 -> v256 [label="ch_bcftools_stats_multiqc"];
+
+v191 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_MPILEUP"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v191 -> v198 [label="bcftools_version"];
+
+v192 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_FILTER"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v192 -> v217 [label="ch_pseudo_vcf"];
+
+v192 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_FILTER"];
+v193 [shape=point];
+v192 -> v193;
+
+v191 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_MPILEUP"];
+v195 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_VIEW"];
+v191 -> v195 [label="vcf"];
+
+v194 [shape=point,label="",fixedsize=true,width=0.1];
+v195 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_VIEW"];
+v194 -> v195 [label="tsv"];
+
+v195 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_VIEW"];
+v197 [shape=point];
+v195 -> v197 [label="discrim_vcf"];
+
+v195 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_VIEW"];
+v196 [shape=point];
+v195 -> v196;
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 -> v199;
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v199 -> v216 [label="ch_versions"];
+
+v138 [label="BOVISANALYZER:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v138 -> v200 [label="bam"];
+
+v191 [label="BOVISANALYZER:VARIANTS_BCFTOOLS:BCFTOOLS_MPILEUP"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v191 -> v200 [label="vcf"];
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v200 -> v202 [label="bam_vcf"];
+
+v201 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 -> v205 [label="ch_versions"];
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v203 [label="BOVISANALYZER:CREATE_MASK:BCFTOOLS_FILTER"];
+v202 -> v203 [label="ch_vcf"];
+
+v203 [label="BOVISANALYZER:CREATE_MASK:BCFTOOLS_FILTER"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v203 -> v209 [label="filtered_vcf"];
+
+v203 [label="BOVISANALYZER:CREATE_MASK:BCFTOOLS_FILTER"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v203 -> v204;
+
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v204 -> v205;
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v205 -> v208 [label="ch_versions"];
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v206 [label="BOVISANALYZER:CREATE_MASK:BEDTOOLS_GENOMECOV"];
+v200 -> v206 [label="bam_vcf"];
+
+v206 [label="BOVISANALYZER:CREATE_MASK:BEDTOOLS_GENOMECOV"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v206 -> v209 [label="zerocov_bed"];
+
+v206 [label="BOVISANALYZER:CREATE_MASK:BEDTOOLS_GENOMECOV"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v206 -> v207;
+
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 -> v208;
+
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 -> v214 [label="ch_versions"];
+
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v211 [label="BOVISANALYZER:CREATE_MASK:BEDTOOLS_MERGE"];
+v209 -> v211 [label="ch_vcf_bed"];
+
+v210 [shape=point,label="",fixedsize=true,width=0.1];
+v211 [label="BOVISANALYZER:CREATE_MASK:BEDTOOLS_MERGE"];
+v210 -> v211 [label="mask"];
+
+v211 [label="BOVISANALYZER:CREATE_MASK:BEDTOOLS_MERGE"];
+v212 [shape=point];
+v211 -> v212 [label="quality_bed"];
+
+v211 [label="BOVISANALYZER:CREATE_MASK:BEDTOOLS_MERGE"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v211 -> v217 [label="mask_bed"];
+
+v211 [label="BOVISANALYZER:CREATE_MASK:BEDTOOLS_MERGE"];
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v211 -> v213;
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v213 -> v214;
+
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v214 -> v215 [label="versions"];
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v215 -> v216;
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 -> v223 [label="ch_versions"];
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v219 [label="BOVISANALYZER:VCF2PSEUDOGENOME"];
+v217 -> v219 [label="ch_pseudogenome"];
+
+v218 [shape=point,label="",fixedsize=true,width=0.1];
+v219 [label="BOVISANALYZER:VCF2PSEUDOGENOME"];
+v218 -> v219 [label="reference"];
+
+v219 [label="BOVISANALYZER:VCF2PSEUDOGENOME"];
+v221 [label="BOVISANALYZER:SEQTK_COMP"];
+v219 -> v221;
+
+v219 [label="BOVISANALYZER:VCF2PSEUDOGENOME"];
+v220 [shape=point];
+v219 -> v220;
+
+v221 [label="BOVISANALYZER:SEQTK_COMP"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v221 -> v224 [label="ch_seqtk_seqtkparse"];
+
+v221 [label="BOVISANALYZER:SEQTK_COMP"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v221 -> v222;
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v222 -> v223;
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 -> v228 [label="ch_versions"];
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v224 -> v225;
+
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v226 [label="BOVISANALYZER:SEQTK_PARSE"];
+v225 -> v226;
+
+v226 [label="BOVISANALYZER:SEQTK_PARSE"];
+v231 [label="BOVISANALYZER:METADATA_COLLATE"];
+v226 -> v231 [label="ch_seqtk_metadata"];
+
+v226 [label="BOVISANALYZER:SEQTK_PARSE"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v226 -> v227;
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 -> v228;
+
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 -> v234 [label="ch_versions"];
+
+v229 [shape=point,label="",fixedsize=true,width=0.1];
+v231 [label="BOVISANALYZER:METADATA_COLLATE"];
+v229 -> v231 [label="bracken_tsv"];
+
+v88 [label="BOVISANALYZER:TBPROFILER_COLLATE"];
+v231 [label="BOVISANALYZER:METADATA_COLLATE"];
+v88 -> v231 [label="ch_tbprofiler_metadata"];
+
+v230 [shape=point,label="",fixedsize=true,width=0.1];
+v231 [label="BOVISANALYZER:METADATA_COLLATE"];
+v230 -> v231 [label="cluster_tsv"];
+
+v231 [label="BOVISANALYZER:METADATA_COLLATE"];
+v232 [shape=point];
+v231 -> v232;
+
+v231 [label="BOVISANALYZER:METADATA_COLLATE"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v231 -> v233;
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v234;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v234 -> v235 [label="ch_versions"];
+
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v235 -> v236;
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v237 [label="BOVISANALYZER:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v236 -> v237;
+
+v237 [label="BOVISANALYZER:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v239 [shape=point];
+v237 -> v239;
+
+v237 [label="BOVISANALYZER:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v237 -> v240;
+
+v237 [label="BOVISANALYZER:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v238 [shape=point];
+v237 -> v238;
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v260 [label="BOVISANALYZER:MULTIQC"];
+v240 -> v260;
+
+v241 [shape=point,label="",fixedsize=true,width=0.1];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v241 -> v242 [label="ch_workflow_summary"];
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v260 [label="BOVISANALYZER:MULTIQC"];
+v242 -> v260;
+
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v260 [label="BOVISANALYZER:MULTIQC"];
+v243 -> v260;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v244 -> v245;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v260 [label="BOVISANALYZER:MULTIQC"];
+v245 -> v260;
+
+v43 [label="BOVISANALYZER:FASTQC_FASTP:FASTP"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v43 -> v246 [label="trim_json"];
+
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v246 -> v247;
+
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v260 [label="BOVISANALYZER:MULTIQC"];
+v247 -> v260;
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v248 -> v249;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v260 [label="BOVISANALYZER:MULTIQC"];
+v249 -> v260;
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v250 -> v251;
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v260 [label="BOVISANALYZER:MULTIQC"];
+v251 -> v260;
+
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v252 -> v253;
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v260 [label="BOVISANALYZER:MULTIQC"];
+v253 -> v260;
+
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v254 -> v255;
+
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v260 [label="BOVISANALYZER:MULTIQC"];
+v255 -> v260;
+
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v256 -> v257;
+
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v260 [label="BOVISANALYZER:MULTIQC"];
+v257 -> v260;
+
+v258 [shape=point,label="",fixedsize=true,width=0.1];
+v260 [label="BOVISANALYZER:MULTIQC"];
+v258 -> v260 [label="multiqc_config.yaml"];
+
+v259 [shape=point,label="",fixedsize=true,width=0.1];
+v260 [label="BOVISANALYZER:MULTIQC"];
+v259 -> v260 [label="multiqc_custom_config"];
+
+v260 [label="BOVISANALYZER:MULTIQC"];
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v260 -> v264;
+
+v260 [label="BOVISANALYZER:MULTIQC"];
+v263 [shape=point];
+v260 -> v263;
+
+v260 [label="BOVISANALYZER:MULTIQC"];
+v262 [shape=point];
+v260 -> v262;
+
+v260 [label="BOVISANALYZER:MULTIQC"];
+v261 [shape=point];
+v260 -> v261;
+
+v260 [label="BOVISANALYZER:MULTIQC"];
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v260 -> v266;
+
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v265 [shape=point];
+v264 -> v265;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v234 -> v266 [label="ch_versions"];
+
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v267 [shape=point];
+v266 -> v267 [label="ch_versions"];
+
+}

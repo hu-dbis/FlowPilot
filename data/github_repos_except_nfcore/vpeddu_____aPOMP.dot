@@ -1,0 +1,274 @@
+digraph "vpeddu_____aPOMP" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=point];
+v0 -> v1 [label="Star_index_Ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=point];
+v2 -> v3 [label="Kraken2_db"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 -> v33 [label="NT_db"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 -> v60 [label="Taxdump"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v65 [label="Krakenuniq_db"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [shape=point];
+v7 -> v8 [label="Eggnog_db"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [shape=point];
+v9 -> v10 [label="Amrfinder_db"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [label="Chopper"];
+v12 -> v13 [label="input_read_Ch"];
+
+v13 [label="Chopper"];
+v15 [label="NanoPlot"];
+v13 -> v15;
+
+v13 [label="Chopper"];
+v14 [shape=point];
+v13 -> v14;
+
+v15 [label="NanoPlot"];
+v16 [shape=point];
+v15 -> v16;
+
+v13 [label="Chopper"];
+v20 [label="Host_depletion_nanopore"];
+v13 -> v20;
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [label="Host_depletion_nanopore"];
+v17 -> v20 [label="minimap2_host_index"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [label="Host_depletion_nanopore"];
+v18 -> v20 [label="ribosome_trna"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [label="Host_depletion_nanopore"];
+v19 -> v20 [label="minimap2_plasmid_db"];
+
+v20 [label="Host_depletion_nanopore"];
+v27 [label="Sourmash_prefilter_nanopore"];
+v20 -> v27;
+
+v20 [label="Host_depletion_nanopore"];
+v22 [shape=point];
+v20 -> v22;
+
+v20 [label="Host_depletion_nanopore"];
+v21 [shape=point];
+v20 -> v21;
+
+v20 [label="Host_depletion_nanopore"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v20 -> v51;
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="Sourmash_prefilter_nanopore"];
+v23 -> v27 [label="sourmash_db"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="Sourmash_prefilter_nanopore"];
+v24 -> v27 [label="taxdump"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="Sourmash_prefilter_nanopore"];
+v25 -> v27 [label="taxonomy_parse_script"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="Sourmash_prefilter_nanopore"];
+v26 -> v27 [label="prefilter_threshold"];
+
+v27 [label="Sourmash_prefilter_nanopore"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v37 [label="Extract_db"];
+v28 -> v37 [label="prefilterCh"];
+
+v27 [label="Sourmash_prefilter_nanopore"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v27 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v30 -> v31 [label="prefilterfailCh"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v32 [shape=point];
+v31 -> v32;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="Extract_db"];
+v33 -> v37;
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="Extract_db"];
+v34 -> v37 [label="extract_script"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="Extract_db"];
+v35 -> v37 [label="fungi_genera_list"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="Extract_db"];
+v36 -> v37 [label="prefilter_threshold"];
+
+v37 [label="Extract_db"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v40 -> v41;
+
+v20 [label="Host_depletion_nanopore"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v43 [shape=point];
+v42 -> v43;
+
+v37 [label="Extract_db"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v37 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v46 -> v47;
+
+v20 [label="Host_depletion_nanopore"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v48 [label="Minimap2_nanopore"];
+v47 -> v48;
+
+v48 [label="Minimap2_nanopore"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v49;
+
+v48 [label="Minimap2_nanopore"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v53;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 [label="Collect_alignment_results"];
+v51 -> v52;
+
+v52 [label="Collect_alignment_results"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 -> v58;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v54 -> v55;
+
+v20 [label="Host_depletion_nanopore"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v20 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v57 [label="Collect_unassigned_results"];
+v55 -> v57;
+
+v56 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="Collect_unassigned_results"];
+v56 -> v57 [label="filter_unassigned_reads"];
+
+v57 [label="Collect_unassigned_results"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v63 [label="Classify"];
+v59 -> v63;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 [label="Classify"];
+v60 -> v63;
+
+v61 [shape=point,label="",fixedsize=true,width=0.1];
+v63 [label="Classify"];
+v61 -> v63 [label="classify_script"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1];
+v63 [label="Classify"];
+v62 -> v63 [label="accessiontotaxid"];
+
+v63 [label="Classify"];
+v66 [label="Write_report"];
+v63 -> v66;
+
+v63 [label="Classify"];
+v64 [shape=point];
+v63 -> v64;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 [label="Write_report"];
+v65 -> v66;
+
+v66 [label="Write_report"];
+v67 [shape=point];
+v66 -> v67;
+
+}

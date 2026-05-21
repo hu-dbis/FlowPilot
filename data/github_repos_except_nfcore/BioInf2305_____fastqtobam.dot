@@ -1,0 +1,430 @@
+digraph "BioInf2305_____fastqtobam" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v75 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v76 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v77 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v8 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v4 -> v5 [label="samplesheet"];
+
+v5 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 -> v6;
+
+v5 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v8 [label="versions"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:TRIMGALORE"];
+v7 -> v14 [label="reads"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v13 [label="ch_versions"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v10 [label="fastaF"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:FASTA_INDICES:BWA_INDEX"];
+v10 -> v11 [label="fasta_meta_pre"];
+
+v11 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:FASTA_INDICES:BWA_INDEX"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v33 [label="bwa_idx_meta"];
+
+v11 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:FASTA_INDICES:BWA_INDEX"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v13 [label="bwaidx_ver"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v28 [label="ch_versions"];
+
+v14 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:TRIMGALORE"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v20;
+
+v14 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:TRIMGALORE"];
+v18 [shape=point];
+v14 -> v18;
+
+v14 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:TRIMGALORE"];
+v17 [shape=point];
+v14 -> v17;
+
+v14 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:TRIMGALORE"];
+v16 [shape=point];
+v14 -> v16;
+
+v14 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:TRIMGALORE"];
+v15 [shape=point];
+v14 -> v15;
+
+v14 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:TRIMGALORE"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v14 -> v29;
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v21 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:SICKLE"];
+v20 -> v21;
+
+v21 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:SICKLE"];
+v24 [shape=point];
+v21 -> v24;
+
+v21 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:SICKLE"];
+v25 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:FASTQC"];
+v21 -> v25;
+
+v21 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:SICKLE"];
+v23 [shape=point];
+v21 -> v23;
+
+v21 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:SICKLE"];
+v22 [shape=point];
+v21 -> v22;
+
+v21 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:SICKLE"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v21 -> v31;
+
+v25 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:FASTQC"];
+v26 [shape=point];
+v25 -> v26;
+
+v25 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:FASTQC"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 -> v61;
+
+v25 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:FASTQC"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v25 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v30 [label="ch_versions"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v32 [label="ch_versions"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v39 [label="ch_versions"];
+
+v21 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:SICKLE"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v21 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34 [label="mem_params"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:BWA_MEM"];
+v34 -> v37 [label="mem_in1"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v35 [label="mem_params"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:BWA_MEM"];
+v35 -> v37 [label="mem_in2"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:BWA_MEM"];
+v36 -> v37 [label="sort_bam"];
+
+v37 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:BWA_MEM"];
+v40 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:SAMBAMBA_SORT"];
+v37 -> v40;
+
+v37 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:BWA_MEM"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v44 [label="ch_versions"];
+
+v40 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:SAMBAMBA_SORT"];
+v42 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:SAMBAMBA_MARKDUP"];
+v40 -> v42;
+
+v40 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:SAMBAMBA_SORT"];
+v41 [shape=point];
+v40 -> v41;
+
+v42 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:SAMBAMBA_MARKDUP"];
+v45 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:QUALIMAP_BAMQC"];
+v42 -> v45;
+
+v42 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:SAMBAMBA_MARKDUP"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v44 -> v47 [label="ch_versions"];
+
+v45 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:QUALIMAP_BAMQC"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 -> v71;
+
+v45 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:QUALIMAP_BAMQC"];
+v46 [shape=point];
+v45 -> v46;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v49 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v48 -> v49;
+
+v49 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v51 [shape=point];
+v49 -> v51;
+
+v49 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 -> v59;
+
+v49 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v50 [shape=point];
+v49 -> v50;
+
+v52 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v55 [label="ch_multifastqc_files"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v53 -> v54 [label="ch_workflow_summary"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v58 [label="ch_multifastqc_files"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v56 -> v57 [label="ch_methods_description"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v60 [label="ch_multifastqc_files"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v63 [label="ch_multifastqc_files"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 -> v74 [label="ch_multifastqc_files"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v66 [label="ch_multibamqc_files"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v53 -> v65 [label="ch_workflow_summary"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v68 [label="ch_multibamqc_files"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v56 -> v67 [label="ch_methods_description"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v70 [label="ch_multibamqc_files"];
+
+v49 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v73 [label="ch_multibamqc_files"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v73 -> v82 [label="ch_multibamqc_files"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v78 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIFASTQC"];
+v74 -> v78;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v78 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIFASTQC"];
+v75 -> v78;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v78 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIFASTQC"];
+v76 -> v78;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v78 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIFASTQC"];
+v77 -> v78;
+
+v78 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIFASTQC"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v78 -> v90;
+
+v78 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIFASTQC"];
+v81 [shape=point];
+v78 -> v81;
+
+v78 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIFASTQC"];
+v80 [shape=point];
+v78 -> v80;
+
+v78 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIFASTQC"];
+v79 [shape=point];
+v78 -> v79;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v86 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIBAMQC"];
+v82 -> v86;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v83 [label="ch_multiqc_config"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v86 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIBAMQC"];
+v83 -> v86;
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v84 [label="ch_multiqc_custom_config"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v86 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIBAMQC"];
+v84 -> v86;
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v85 [label="ch_multiqc_logo"];
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v86 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIBAMQC"];
+v85 -> v86;
+
+v86 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIBAMQC"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v86 -> v92;
+
+v86 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIBAMQC"];
+v89 [shape=point];
+v86 -> v89;
+
+v86 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIBAMQC"];
+v88 [shape=point];
+v86 -> v88;
+
+v86 [label="NFCORE_FASTQTOBAM:FASTQTOBAM:MULTIBAMQC"];
+v87 [shape=point];
+v86 -> v87;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v91 [shape=point];
+v90 -> v91 [label="multifastqc_report"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v93 [shape=point];
+v92 -> v93 [label="multibamqc_report"];
+
+}

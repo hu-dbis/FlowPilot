@@ -1,0 +1,78 @@
+digraph "bschiffthaler_____nfpseudopipe" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v11 [label="blast_plus"];
+v1 -> v11 [label="splits"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="prep_gff"];
+v2 -> v4 [label="script"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="prep_gff"];
+v3 -> v4 [label="gff"];
+
+v4 [label="prep_gff"];
+v17 [label="pseudopipe"];
+v4 -> v17;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="prep_fasta"];
+v5 -> v7 [label="script"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="prep_fasta"];
+v6 -> v7 [label="fasta"];
+
+v7 [label="prep_fasta"];
+v17 [label="pseudopipe"];
+v7 -> v17;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [label="index_fasta_plus"];
+v8 -> v9 [label="fasta_mask"];
+
+v9 [label="index_fasta_plus"];
+v11 [label="blast_plus"];
+v9 -> v11;
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="blast_plus"];
+v10 -> v11 [label="fasta_mask"];
+
+v11 [label="blast_plus"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 [label="prep_ppipe_out"];
+v12 -> v14 [label="blasts"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="prep_ppipe_out"];
+v13 -> v14 [label="script"];
+
+v14 [label="prep_ppipe_out"];
+v17 [label="pseudopipe"];
+v14 -> v17;
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="pseudopipe"];
+v15 -> v17 [label="fasta_mask"];
+
+v9 [label="index_fasta_plus"];
+v17 [label="pseudopipe"];
+v9 -> v17 [label="indexfiles"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="pseudopipe"];
+v16 -> v17 [label="fasta_protein"];
+
+v17 [label="pseudopipe"];
+v18 [shape=point];
+v17 -> v18;
+
+}

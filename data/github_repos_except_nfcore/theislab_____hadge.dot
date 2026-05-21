@@ -1,0 +1,1862 @@
+digraph "theislab_____hadge" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v0 -> v16 [label="sample_name"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v1 -> v16 [label="hto_matrix_raw"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v2 -> v16 [label="hto_matrix_filtered"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v3 -> v16 [label="rna_matrix_raw"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v4 -> v16 [label="rna_matrix_filtered"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v5 -> v16 [label="bam"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v6 -> v16 [label="bai"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v7 -> v16 [label="barcodes"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v8 -> v16 [label="fasta"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v9 -> v16 [label="fasta_index"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v10 -> v16 [label="nsample"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v11 -> v16 [label="cell_data"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v12 -> v16 [label="vcf_mixed"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v13 -> v16 [label="vcf_donor"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v14 -> v16 [label="vireo_parent_dir"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="HADGE:create_single_chanel_input"];
+v15 -> v16 [label="demultiplexing_result"];
+
+v16 [label="HADGE:create_single_chanel_input"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v17 [label="input_channel"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [label="HADGE:run_multi:hash_demultiplexing:preprocessing_hashing_htodemux:preprocess"];
+v18 -> v29 [label="input_list"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="HADGE:run_multi:hash_demultiplexing:preprocessing_hashing_htodemux:preprocess"];
+v19 -> v29 [label="hto_raw_or_filtered"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="HADGE:run_multi:hash_demultiplexing:preprocessing_hashing_htodemux:preprocess"];
+v20 -> v29 [label="rna_raw_or_filtered"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="HADGE:run_multi:hash_demultiplexing:preprocessing_hashing_htodemux:preprocess"];
+v21 -> v29 [label="ndelim"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="HADGE:run_multi:hash_demultiplexing:preprocessing_hashing_htodemux:preprocess"];
+v22 -> v29 [label="selection_method"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="HADGE:run_multi:hash_demultiplexing:preprocessing_hashing_htodemux:preprocess"];
+v23 -> v29 [label="number_features"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="HADGE:run_multi:hash_demultiplexing:preprocessing_hashing_htodemux:preprocess"];
+v24 -> v29 [label="assay"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="HADGE:run_multi:hash_demultiplexing:preprocessing_hashing_htodemux:preprocess"];
+v25 -> v29 [label="margin"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="HADGE:run_multi:hash_demultiplexing:preprocessing_hashing_htodemux:preprocess"];
+v26 -> v29 [label="normalisation_method"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="HADGE:run_multi:hash_demultiplexing:preprocessing_hashing_htodemux:preprocess"];
+v27 -> v29 [label="preprocess_out"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="HADGE:run_multi:hash_demultiplexing:preprocessing_hashing_htodemux:preprocess"];
+v28 -> v29 [label="gene_col"];
+
+v29 [label="HADGE:run_multi:hash_demultiplexing:preprocessing_hashing_htodemux:preprocess"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v30 -> v57 [label="seurat_object"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v31 -> v57 [label="assay"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v32 -> v57 [label="quantile"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v33 -> v57 [label="kfunc"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v34 -> v57 [label="nstarts"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v35 -> v57 [label="nsamples"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v36 -> v57 [label="seed"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v37 -> v57 [label="init"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v38 -> v57 [label="objectOutHTO"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v39 -> v57 [label="assignmentOutHTO"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v40 -> v57 [label="ridgePlot"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v41 -> v57 [label="ridgeNCol"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v42 -> v57 [label="featureScatter"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v43 -> v57 [label="scatterFeat1"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v44 -> v57 [label="scatterFeat2"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v45 -> v57 [label="vlnplot"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v46 -> v57 [label="vlnFeatures"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v47 -> v57 [label="vlnLog"];
+
+v48 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v48 -> v57 [label="tsne"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v49 -> v57 [label="tsneIdents"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v50 -> v57 [label="tsneInvert"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v51 -> v57 [label="tsneVerbose"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v52 -> v57 [label="tsneApprox"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v53 -> v57 [label="tsneDimMax"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v54 -> v57 [label="tsnePerplexity"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v55 -> v57 [label="heatmap"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v56 -> v57 [label="heatmapNcells"];
+
+v57 [label="HADGE:run_multi:hash_demultiplexing:htodemux_hashing:htodemux"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v58 -> v153 [label="$out0"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 [label="HADGE:run_multi:hash_demultiplexing:multiseq_hashing:multi_seq"];
+v30 -> v69 [label="seurat_object"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="HADGE:run_multi:hash_demultiplexing:multiseq_hashing:multi_seq"];
+v59 -> v69 [label="quantile"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="HADGE:run_multi:hash_demultiplexing:multiseq_hashing:multi_seq"];
+v60 -> v69 [label="autoThresh"];
+
+v61 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="HADGE:run_multi:hash_demultiplexing:multiseq_hashing:multi_seq"];
+v61 -> v69 [label="maxiter"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="HADGE:run_multi:hash_demultiplexing:multiseq_hashing:multi_seq"];
+v62 -> v69 [label="qrangeFrom"];
+
+v63 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="HADGE:run_multi:hash_demultiplexing:multiseq_hashing:multi_seq"];
+v63 -> v69 [label="qrangeTo"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="HADGE:run_multi:hash_demultiplexing:multiseq_hashing:multi_seq"];
+v64 -> v69 [label="qrangeBy"];
+
+v65 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="HADGE:run_multi:hash_demultiplexing:multiseq_hashing:multi_seq"];
+v65 -> v69 [label="verbose"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="HADGE:run_multi:hash_demultiplexing:multiseq_hashing:multi_seq"];
+v66 -> v69 [label="assay"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="HADGE:run_multi:hash_demultiplexing:multiseq_hashing:multi_seq"];
+v67 -> v69 [label="objectOutMulti"];
+
+v68 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="HADGE:run_multi:hash_demultiplexing:multiseq_hashing:multi_seq"];
+v68 -> v69 [label="assignmentOutMulti"];
+
+v69 [label="HADGE:run_multi:hash_demultiplexing:multiseq_hashing:multi_seq"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v70 -> v155 [label="$out0"];
+
+v16 [label="HADGE:create_single_chanel_input"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v71 [label="input_channel"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v81 [label="HADGE:run_multi:hash_demultiplexing:hash_solo_hashing:hash_solo"];
+v72 -> v81 [label="input_list"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="HADGE:run_multi:hash_demultiplexing:hash_solo_hashing:hash_solo"];
+v73 -> v81 [label="priors_negative"];
+
+v74 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="HADGE:run_multi:hash_demultiplexing:hash_solo_hashing:hash_solo"];
+v74 -> v81 [label="priors_singlet"];
+
+v75 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="HADGE:run_multi:hash_demultiplexing:hash_solo_hashing:hash_solo"];
+v75 -> v81 [label="priors_doublet"];
+
+v76 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="HADGE:run_multi:hash_demultiplexing:hash_solo_hashing:hash_solo"];
+v76 -> v81 [label="pre_existing_clusters"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="HADGE:run_multi:hash_demultiplexing:hash_solo_hashing:hash_solo"];
+v77 -> v81 [label="use_rna_data"];
+
+v78 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="HADGE:run_multi:hash_demultiplexing:hash_solo_hashing:hash_solo"];
+v78 -> v81 [label="number_of_noise_barcodes"];
+
+v79 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="HADGE:run_multi:hash_demultiplexing:hash_solo_hashing:hash_solo"];
+v79 -> v81 [label="assignmentOutHashSolo"];
+
+v80 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="HADGE:run_multi:hash_demultiplexing:hash_solo_hashing:hash_solo"];
+v80 -> v81 [label="plotOutHashSolo"];
+
+v81 [label="HADGE:run_multi:hash_demultiplexing:hash_solo_hashing:hash_solo"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v82 -> v157 [label="$out0"];
+
+v16 [label="HADGE:create_single_chanel_input"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v83 [label="input_channel"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v96 [label="HADGE:run_multi:hash_demultiplexing:demuxem_hashing:demuxem"];
+v84 -> v96 [label="input_list"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="HADGE:run_multi:hash_demultiplexing:demuxem_hashing:demuxem"];
+v85 -> v96 [label="threads"];
+
+v86 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="HADGE:run_multi:hash_demultiplexing:demuxem_hashing:demuxem"];
+v86 -> v96 [label="alpha"];
+
+v87 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="HADGE:run_multi:hash_demultiplexing:demuxem_hashing:demuxem"];
+v87 -> v96 [label="alpha_noise"];
+
+v88 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="HADGE:run_multi:hash_demultiplexing:demuxem_hashing:demuxem"];
+v88 -> v96 [label="tol"];
+
+v89 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="HADGE:run_multi:hash_demultiplexing:demuxem_hashing:demuxem"];
+v89 -> v96 [label="min_num_genes"];
+
+v90 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="HADGE:run_multi:hash_demultiplexing:demuxem_hashing:demuxem"];
+v90 -> v96 [label="min_num_umis"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="HADGE:run_multi:hash_demultiplexing:demuxem_hashing:demuxem"];
+v91 -> v96 [label="min_signal"];
+
+v92 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="HADGE:run_multi:hash_demultiplexing:demuxem_hashing:demuxem"];
+v92 -> v96 [label="random_state"];
+
+v93 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="HADGE:run_multi:hash_demultiplexing:demuxem_hashing:demuxem"];
+v93 -> v96 [label="generate_gender_plot"];
+
+v94 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="HADGE:run_multi:hash_demultiplexing:demuxem_hashing:demuxem"];
+v94 -> v96 [label="objectOutDemuxem"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="HADGE:run_multi:hash_demultiplexing:demuxem_hashing:demuxem"];
+v95 -> v96 [label="filter_demuxem"];
+
+v96 [label="HADGE:run_multi:hash_demultiplexing:demuxem_hashing:demuxem"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v97 -> v159 [label="$out0"];
+
+v16 [label="HADGE:create_single_chanel_input"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v98 [label="input_channel"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v99 -> v122 [label="input_list"];
+
+v100 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v100 -> v122 [label="lower"];
+
+v101 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v101 -> v122 [label="niters"];
+
+v102 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v102 -> v122 [label="testAmbient"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v103 -> v122 [label="ignore"];
+
+v104 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v104 -> v122 [label="alpha"];
+
+v105 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v105 -> v122 [label="round"];
+
+v106 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v106 -> v122 [label="byRank"];
+
+v107 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v107 -> v122 [label="isCellFDR"];
+
+v108 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v108 -> v122 [label="objectOutEmptyDrops"];
+
+v109 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v109 -> v122 [label="assignmentOutEmptyDrops"];
+
+v110 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v110 -> v122 [label="ambient"];
+
+v111 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v111 -> v122 [label="minProp"];
+
+v112 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v112 -> v122 [label="pseudoCount"];
+
+v113 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v113 -> v122 [label="constantAmbient"];
+
+v114 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v114 -> v122 [label="doubletNmads"];
+
+v115 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v115 -> v122 [label="doubletMin"];
+
+v116 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v116 -> v122 [label="doubletMixture"];
+
+v117 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v117 -> v122 [label="confidentNmads"];
+
+v118 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v118 -> v122 [label="confidenMin"];
+
+v119 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v119 -> v122 [label="combinations"];
+
+v120 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v120 -> v122 [label="objectOutHashedDrops"];
+
+v121 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v121 -> v122 [label="assignmentOutHashedDrops"];
+
+v122 [label="HADGE:run_multi:hash_demultiplexing:hashedDrops_hashing:hashedDrops"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v123 -> v161 [label="$out0"];
+
+v16 [label="HADGE:create_single_chanel_input"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v124 [label="input_channel"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v124 -> v125;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v125 -> v139 [label="hto_matrix"];
+
+v126 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v126 -> v139 [label="methods"];
+
+v127 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v127 -> v139 [label="methodsForConsensus"];
+
+v128 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v128 -> v139 [label="cellbarcodeWhitelist"];
+
+v129 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v129 -> v139 [label="metricsFile"];
+
+v130 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v130 -> v139 [label="doTSNE"];
+
+v131 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v131 -> v139 [label="doHeatmap"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v132 -> v139 [label="perCellSaturation"];
+
+v133 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v133 -> v139 [label="majorityConsensusThreshold"];
+
+v134 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v134 -> v139 [label="chemistry"];
+
+v135 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v135 -> v139 [label="callerDisagreementThreshold"];
+
+v136 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v136 -> v139 [label="assignmentOutBff"];
+
+v137 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v137 -> v139 [label="preprocess_bff"];
+
+v138 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v138 -> v139 [label="barcodeWhitelist"];
+
+v139 [label="HADGE:run_multi:hash_demultiplexing:bff_hashing:bff"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v140 -> v163 [label="$out0"];
+
+v16 [label="HADGE:create_single_chanel_input"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v141 [label="input_channel"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v141 -> v142;
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v149 [label="HADGE:run_multi:hash_demultiplexing:gmm_demux_hashing:gmm_demux"];
+v142 -> v149 [label="input_list"];
+
+v143 [shape=point,label="",fixedsize=true,width=0.1];
+v149 [label="HADGE:run_multi:hash_demultiplexing:gmm_demux_hashing:gmm_demux"];
+v143 -> v149 [label="summary"];
+
+v144 [shape=point,label="",fixedsize=true,width=0.1];
+v149 [label="HADGE:run_multi:hash_demultiplexing:gmm_demux_hashing:gmm_demux"];
+v144 -> v149 [label="report_gmm"];
+
+v145 [shape=point,label="",fixedsize=true,width=0.1];
+v149 [label="HADGE:run_multi:hash_demultiplexing:gmm_demux_hashing:gmm_demux"];
+v145 -> v149 [label="mode_GMM"];
+
+v146 [shape=point,label="",fixedsize=true,width=0.1];
+v149 [label="HADGE:run_multi:hash_demultiplexing:gmm_demux_hashing:gmm_demux"];
+v146 -> v149 [label="extract"];
+
+v147 [shape=point,label="",fixedsize=true,width=0.1];
+v149 [label="HADGE:run_multi:hash_demultiplexing:gmm_demux_hashing:gmm_demux"];
+v147 -> v149 [label="threshold_gmm"];
+
+v148 [shape=point,label="",fixedsize=true,width=0.1];
+v149 [label="HADGE:run_multi:hash_demultiplexing:gmm_demux_hashing:gmm_demux"];
+v148 -> v149 [label="ambiguous"];
+
+v149 [label="HADGE:run_multi:hash_demultiplexing:gmm_demux_hashing:gmm_demux"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v149 -> v150;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v150 -> v165 [label="$out0"];
+
+v16 [label="HADGE:create_single_chanel_input"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v151 [label="input_channel"];
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v151 -> v152;
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v152 -> v167 [label="input_list_summary"];
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v153 -> v154;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v154 -> v171 [label="htodemux_out_ch"];
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v155 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v156 -> v170 [label="multiseq_out_ch"];
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v157 -> v158;
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v158 -> v169 [label="hashsolo_out_ch"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v159 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v160 -> v168 [label="demuxem_out_ch"];
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v161 -> v162;
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v162 -> v167 [label="hashedDrops_out_ch"];
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v163 -> v164;
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v164 -> v173 [label="bff_out_ch"];
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v165 -> v166;
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v166 -> v172 [label="gmmDemux_out_ch"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v167 -> v168;
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v168 -> v169;
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v169 -> v170;
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v170 -> v171;
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v171 -> v172;
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v172 -> v173;
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v173 -> v174 [label="summary_input"];
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v177 [label="HADGE:run_multi:hash_demultiplexing:summary"];
+v174 -> v177 [label="summary_input"];
+
+v175 [shape=point,label="",fixedsize=true,width=0.1];
+v177 [label="HADGE:run_multi:hash_demultiplexing:summary"];
+v175 -> v177 [label="generate_anndata"];
+
+v176 [shape=point,label="",fixedsize=true,width=0.1];
+v177 [label="HADGE:run_multi:hash_demultiplexing:summary"];
+v176 -> v177 [label="generate_mudata"];
+
+v177 [label="HADGE:run_multi:hash_demultiplexing:summary"];
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v177 -> v426;
+
+v16 [label="HADGE:create_single_chanel_input"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v178 [label="input_channel"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v178 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v179 -> v182 [label="qc_bam"];
+
+v16 [label="HADGE:create_single_chanel_input"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v180 [label="input_channel"];
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v180 -> v181;
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v181 -> v182 [label="input_param_cellsnp"];
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v184 [label="HADGE:run_multi:gene_demultiplexing:subset_bam_to_comon_variants"];
+v182 -> v184 [label="input_list"];
+
+v183 [shape=point,label="",fixedsize=true,width=0.1];
+v184 [label="HADGE:run_multi:gene_demultiplexing:subset_bam_to_comon_variants"];
+v183 -> v184 [label="vcf"];
+
+v184 [label="HADGE:run_multi:gene_demultiplexing:subset_bam_to_comon_variants"];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v184 -> v261 [label="input_list"];
+
+v185 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v185 -> v186;
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v187 [shape=point];
+v186 -> v187 [label="freebayes_region"];
+
+v188 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v188 -> v261 [label="region_freebayes"];
+
+v189 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v189 -> v261 [label="stdin_freebayes"];
+
+v190 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v190 -> v261 [label="fasta_reference"];
+
+v191 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v191 -> v261 [label="fasta_reference_index"];
+
+v192 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v192 -> v261 [label="targets_freebayes"];
+
+v193 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v193 -> v261 [label="samples_freebayes"];
+
+v194 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v194 -> v261 [label="populations_freebayes"];
+
+v195 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v195 -> v261 [label="cnv_map_freebayes"];
+
+v196 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v196 -> v261 [label="vcf_freebayes"];
+
+v197 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v197 -> v261 [label="gvcf_freebayes"];
+
+v198 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v198 -> v261 [label="gvcf_chunk_freebayes"];
+
+v199 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v199 -> v261 [label="gvcf_dont_use_chunk_freebayes"];
+
+v200 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v200 -> v261 [label="variant_input_freebayes"];
+
+v201 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v201 -> v261 [label="only_use_input_alleles_freebayes"];
+
+v202 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v202 -> v261 [label="haplotype_basis_alleles_freebayes"];
+
+v203 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v203 -> v261 [label="report_all_haplotype_alleles_freebayes"];
+
+v204 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v204 -> v261 [label="report_monomorphic_freebayes"];
+
+v205 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v205 -> v261 [label="pvar_freebayes"];
+
+v206 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v206 -> v261 [label="strict_vcf_freebayes"];
+
+v207 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v207 -> v261 [label="theta_freebayes"];
+
+v208 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v208 -> v261 [label="ploidy_freebayes"];
+
+v209 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v209 -> v261 [label="pooled_discrete_freebayes"];
+
+v210 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v210 -> v261 [label="pooled_continuous_freebayes"];
+
+v211 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v211 -> v261 [label="use_reference_allele_freebayes"];
+
+v212 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v212 -> v261 [label="reference_quality_freebayes"];
+
+v213 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v213 -> v261 [label="no_snps"];
+
+v214 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v214 -> v261 [label="no_indels"];
+
+v215 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v215 -> v261 [label="no_mnps"];
+
+v216 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v216 -> v261 [label="no_complex"];
+
+v217 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v217 -> v261 [label="use_best_n_alleles_freebayes"];
+
+v218 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v218 -> v261 [label="haplotype_length_freebayes"];
+
+v219 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v219 -> v261 [label="min_repeat_size_freebayes"];
+
+v220 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v220 -> v261 [label="min_repeat_entropy_freebayes"];
+
+v221 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v221 -> v261 [label="no_partial_observations_freebayes"];
+
+v222 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v222 -> v261 [label="dont_left_align_indels_freebayes"];
+
+v223 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v223 -> v261 [label="use_duplicate_reads_freebayes"];
+
+v224 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v224 -> v261 [label="min_mapping_quality_freebayes"];
+
+v225 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v225 -> v261 [label="min_base_quality_freebayes"];
+
+v226 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v226 -> v261 [label="min_supporting_allele_qsum_freebayes"];
+
+v227 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v227 -> v261 [label="min_supporting_mapping_qsum_freebayes"];
+
+v228 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v228 -> v261 [label="mismatch_base_quality_threshold_freebayes"];
+
+v229 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v229 -> v261 [label="read_mismatch_limit_freebayes"];
+
+v230 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v230 -> v261 [label="read_max_mismatch_fraction_freebayes"];
+
+v231 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v231 -> v261 [label="read_snp_limit_freebayes"];
+
+v232 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v232 -> v261 [label="read_indel_limit_freebayes"];
+
+v233 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v233 -> v261 [label="standard_filters_freebayes"];
+
+v234 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v234 -> v261 [label="min_alternate_fraction_freebayes"];
+
+v235 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v235 -> v261 [label="min_alternate_count_freebayes"];
+
+v236 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v236 -> v261 [label="min_alternate_qsum_freebayes"];
+
+v237 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v237 -> v261 [label="min_alternate_total_freebayes"];
+
+v238 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v238 -> v261 [label="min_coverage_freebayes"];
+
+v239 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v239 -> v261 [label="max_coverage_freebayes"];
+
+v240 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v240 -> v261 [label="no_population_priors_freebayes"];
+
+v241 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v241 -> v261 [label="hwe_priors_off_freebayes"];
+
+v242 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v242 -> v261 [label="binomial_obs_priors_off_freebayes"];
+
+v243 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v243 -> v261 [label="allele_balance_priors_off_freebayes"];
+
+v244 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v244 -> v261 [label="observation_bias_freebayes"];
+
+v245 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v245 -> v261 [label="base_quality_cap_freebayes"];
+
+v246 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v246 -> v261 [label="prob_contamination_freebayes"];
+
+v247 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v247 -> v261 [label="legacy_gls_freebayes"];
+
+v248 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v248 -> v261 [label="contamination_estimates_freebayes"];
+
+v249 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v249 -> v261 [label="report_genotype_likelihood_max_freebayes"];
+
+v250 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v250 -> v261 [label="genotyping_max_iterations_freebayes"];
+
+v251 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v251 -> v261 [label="genotyping_max_banddepth_freebayes"];
+
+v252 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v252 -> v261 [label="posterior_integration_limits_freebayes"];
+
+v253 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v253 -> v261 [label="exclude_unobserved_genotypes_freebayes"];
+
+v254 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v254 -> v261 [label="genotype_variant_threshold_freebayes"];
+
+v255 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v255 -> v261 [label="use_mapping_quality_freebayes"];
+
+v256 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v256 -> v261 [label="harmonic_indel_quality_freebayes"];
+
+v257 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v257 -> v261 [label="read_dependence_factor_freebayes"];
+
+v258 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v258 -> v261 [label="genotype_qualities_freebayes"];
+
+v259 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v259 -> v261 [label="debug_freebayes"];
+
+v260 [shape=point,label="",fixedsize=true,width=0.1];
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v260 -> v261 [label="dd_freebayes"];
+
+v261 [label="HADGE:run_multi:gene_demultiplexing:variant_freebayes:freebayes"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v261 -> v262;
+
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v263 [label="HADGE:run_multi:gene_demultiplexing:filter_variant:bcftools"];
+v262 -> v263 [label="input_list"];
+
+v263 [label="HADGE:run_multi:gene_demultiplexing:filter_variant:bcftools"];
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v263 -> v264;
+
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v264 -> v267 [label="input_vcf_scsplit"];
+
+v16 [label="HADGE:create_single_chanel_input"];
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v265 [label="input_channel"];
+
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v265 -> v266;
+
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v266 -> v268 [label="input_param_scsplit"];
+
+v184 [label="HADGE:run_multi:gene_demultiplexing:subset_bam_to_comon_variants"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v184 -> v267 [label="input_list"];
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v267 -> v268 [label="input_list_scsplit"];
+
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v278 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_scSplit:scSplit"];
+v268 -> v278 [label="input_list"];
+
+v269 [shape=point,label="",fixedsize=true,width=0.1];
+v278 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_scSplit:scSplit"];
+v269 -> v278 [label="tag"];
+
+v270 [shape=point,label="",fixedsize=true,width=0.1];
+v278 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_scSplit:scSplit"];
+v270 -> v278 [label="com"];
+
+v271 [shape=point,label="",fixedsize=true,width=0.1];
+v278 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_scSplit:scSplit"];
+v271 -> v278 [label="ref"];
+
+v272 [shape=point,label="",fixedsize=true,width=0.1];
+v278 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_scSplit:scSplit"];
+v272 -> v278 [label="alt"];
+
+v273 [shape=point,label="",fixedsize=true,width=0.1];
+v278 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_scSplit:scSplit"];
+v273 -> v278 [label="sub"];
+
+v274 [shape=point,label="",fixedsize=true,width=0.1];
+v278 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_scSplit:scSplit"];
+v274 -> v278 [label="ems"];
+
+v275 [shape=point,label="",fixedsize=true,width=0.1];
+v278 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_scSplit:scSplit"];
+v275 -> v278 [label="dbl"];
+
+v276 [shape=point,label="",fixedsize=true,width=0.1];
+v278 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_scSplit:scSplit"];
+v276 -> v278 [label="sample_geno"];
+
+v277 [shape=point,label="",fixedsize=true,width=0.1];
+v278 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_scSplit:scSplit"];
+v277 -> v278 [label="scsplit_out"];
+
+v278 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_scSplit:scSplit"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v278 -> v279;
+
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v413 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v279 -> v413 [label="$out0"];
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v182 -> v301 [label="input_list"];
+
+v280 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v280 -> v301 [label="regionsVCF"];
+
+v281 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v281 -> v301 [label="targetsVCF"];
+
+v282 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v282 -> v301 [label="sampleList"];
+
+v283 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v283 -> v301 [label="sampleIDs"];
+
+v284 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v284 -> v301 [label="genotype_cellSNP"];
+
+v285 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v285 -> v301 [label="gzip_cellSNP"];
+
+v286 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v286 -> v301 [label="printSkipSNPs"];
+
+v287 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v287 -> v301 [label="nproc_cellSNP"];
+
+v288 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v288 -> v301 [label="refseq_cellSNP"];
+
+v289 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v289 -> v301 [label="chrom"];
+
+v290 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v290 -> v301 [label="cellTAG"];
+
+v291 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v291 -> v301 [label="UMItag"];
+
+v292 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v292 -> v301 [label="minCOUNT"];
+
+v293 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v293 -> v301 [label="minMAF"];
+
+v294 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v294 -> v301 [label="doubletGL"];
+
+v295 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v295 -> v301 [label="inclFLAG"];
+
+v296 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v296 -> v301 [label="exclFLAG"];
+
+v297 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v297 -> v301 [label="minLEN"];
+
+v298 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v298 -> v301 [label="minMAPQ"];
+
+v299 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v299 -> v301 [label="countORPHAN"];
+
+v300 [shape=point,label="",fixedsize=true,width=0.1];
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v300 -> v301 [label="cellsnp_out"];
+
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v301 -> v302 [label="out1"];
+
+v301 [label="HADGE:run_multi:gene_demultiplexing:variant_cellSNP:cellSNP"];
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v301 -> v306 [label="input_vcf_vireo"];
+
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v303 [shape=point];
+v302 -> v303 [label="cellsnp_vcf"];
+
+v16 [label="HADGE:create_single_chanel_input"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v304 [label="input_channel"];
+
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v304 -> v305;
+
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v305 -> v306 [label="input_param_vireo"];
+
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v306 -> v321 [label="input_list"];
+
+v307 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v307 -> v321 [label="genoTag"];
+
+v308 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v308 -> v321 [label="noDoublet"];
+
+v309 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v309 -> v321 [label="nInit"];
+
+v310 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v310 -> v321 [label="extraDonor"];
+
+v311 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v311 -> v321 [label="extraDonorMode"];
+
+v312 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v312 -> v321 [label="forceLearnGT"];
+
+v313 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v313 -> v321 [label="ASEmode"];
+
+v314 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v314 -> v321 [label="noPlot"];
+
+v315 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v315 -> v321 [label="randSeed"];
+
+v316 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v316 -> v321 [label="cellRange"];
+
+v317 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v317 -> v321 [label="callAmbientRNAs"];
+
+v318 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v318 -> v321 [label="nproc"];
+
+v319 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v319 -> v321 [label="findVariant"];
+
+v320 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v320 -> v321 [label="vireo_out"];
+
+v321 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_vireo:vireo"];
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v321 -> v322;
+
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v322 -> v411 [label="$out0"];
+
+v16 [label="HADGE:create_single_chanel_input"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v323 [label="input_channel"];
+
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v323 -> v324;
+
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v324 -> v325 [label="input_param_demuxlet"];
+
+v184 [label="HADGE:run_multi:gene_demultiplexing:subset_bam_to_comon_variants"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v184 -> v325 [label="input_list"];
+
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v326 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:subset_bam_and_sort_vcf_based_on_reference"];
+v325 -> v326 [label="input_list"];
+
+v326 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:subset_bam_and_sort_vcf_based_on_reference"];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v326 -> v353 [label="input_list"];
+
+v327 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v327 -> v353 [label="tag_group"];
+
+v328 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v328 -> v353 [label="tag_UMI"];
+
+v329 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v329 -> v353 [label="sm"];
+
+v330 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v330 -> v353 [label="sm_list"];
+
+v331 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v331 -> v353 [label="sam_verbose"];
+
+v332 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v332 -> v353 [label="vcf_verbose"];
+
+v333 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v333 -> v353 [label="skip_umi"];
+
+v334 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v334 -> v353 [label="cap_BQ"];
+
+v335 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v335 -> v353 [label="min_BQ"];
+
+v336 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v336 -> v353 [label="min_MQ"];
+
+v337 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v337 -> v353 [label="min_TD"];
+
+v338 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v338 -> v353 [label="excl_flag"];
+
+v339 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v339 -> v353 [label="min_total"];
+
+v340 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v340 -> v353 [label="min_uniq"];
+
+v341 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v341 -> v353 [label="min_umi"];
+
+v342 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v342 -> v353 [label="min_snp"];
+
+v343 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v343 -> v353 [label="plp"];
+
+v344 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v344 -> v353 [label="field"];
+
+v345 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v345 -> v353 [label="geno_error_offset"];
+
+v346 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v346 -> v353 [label="geno_error_coeff"];
+
+v347 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v347 -> v353 [label="r2_info"];
+
+v348 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v348 -> v353 [label="min_mac"];
+
+v349 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v349 -> v353 [label="min_callrate"];
+
+v350 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v350 -> v353 [label="alpha"];
+
+v351 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v351 -> v353 [label="doublet_prior"];
+
+v352 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v352 -> v353 [label="demuxlet_out"];
+
+v353 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_demuxlet:demuxlet"];
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v353 -> v354;
+
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v407 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v354 -> v407 [label="$out0"];
+
+v16 [label="HADGE:create_single_chanel_input"];
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v355 [label="input_channel"];
+
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v355 -> v356;
+
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v356 -> v357 [label="input_param_freemuxlet"];
+
+v184 [label="HADGE:run_multi:gene_demultiplexing:subset_bam_to_comon_variants"];
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v184 -> v357 [label="input_list"];
+
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v359 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:subset_bam_and_sort_vcf_based_on_reference"];
+v357 -> v359 [label="input_list"];
+
+v358 [shape=point,label="",fixedsize=true,width=0.1];
+v359 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:subset_bam_and_sort_vcf_based_on_reference"];
+v358 -> v359 [label="vcf"];
+
+v359 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:subset_bam_and_sort_vcf_based_on_reference"];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v359 -> v385 [label="input_list"];
+
+v360 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v360 -> v385 [label="tag_group"];
+
+v361 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v361 -> v385 [label="tag_UMI"];
+
+v362 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v362 -> v385 [label="sm"];
+
+v363 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v363 -> v385 [label="sm_list"];
+
+v364 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v364 -> v385 [label="sam_verbose"];
+
+v365 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v365 -> v385 [label="vcf_verbose"];
+
+v366 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v366 -> v385 [label="skip_umi"];
+
+v367 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v367 -> v385 [label="cap_BQ"];
+
+v368 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v368 -> v385 [label="min_BQ"];
+
+v369 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v369 -> v385 [label="min_MQ"];
+
+v370 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v370 -> v385 [label="min_TD"];
+
+v371 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v371 -> v385 [label="excl_flag"];
+
+v372 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v372 -> v385 [label="min_total"];
+
+v373 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v373 -> v385 [label="min_uniq"];
+
+v374 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v374 -> v385 [label="min_umi"];
+
+v375 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v375 -> v385 [label="min_snp"];
+
+v376 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v376 -> v385 [label="init_cluster"];
+
+v377 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v377 -> v385 [label="aux_files"];
+
+v378 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v378 -> v385 [label="verbose"];
+
+v379 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v379 -> v385 [label="doublet_prior"];
+
+v380 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v380 -> v385 [label="bf_thres"];
+
+v381 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v381 -> v385 [label="frac_init_clust"];
+
+v382 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v382 -> v385 [label="iter_init"];
+
+v383 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v383 -> v385 [label="keep_init_missing"];
+
+v384 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v384 -> v385 [label="freemuxlet_out"];
+
+v385 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_freemuxlet:freemuxlet"];
+v386 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v385 -> v386;
+
+v386 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v409 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v386 -> v409 [label="$out0"];
+
+v16 [label="HADGE:create_single_chanel_input"];
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v387 [label="input_channel"];
+
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v387 -> v388;
+
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v388 -> v389 [label="input_param_souporcell"];
+
+v184 [label="HADGE:run_multi:gene_demultiplexing:subset_bam_to_comon_variants"];
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v184 -> v389 [label="input_list"];
+
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v389 -> v403 [label="input_list"];
+
+v390 [shape=point,label="",fixedsize=true,width=0.1];
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v390 -> v403 [label="fasta"];
+
+v391 [shape=point,label="",fixedsize=true,width=0.1];
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v391 -> v403 [label="threads"];
+
+v392 [shape=point,label="",fixedsize=true,width=0.1];
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v392 -> v403 [label="ploidy"];
+
+v393 [shape=point,label="",fixedsize=true,width=0.1];
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v393 -> v403 [label="min_alt"];
+
+v394 [shape=point,label="",fixedsize=true,width=0.1];
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v394 -> v403 [label="min_ref"];
+
+v395 [shape=point,label="",fixedsize=true,width=0.1];
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v395 -> v403 [label="max_loci"];
+
+v396 [shape=point,label="",fixedsize=true,width=0.1];
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v396 -> v403 [label="restarts"];
+
+v397 [shape=point,label="",fixedsize=true,width=0.1];
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v397 -> v403 [label="common_variants"];
+
+v398 [shape=point,label="",fixedsize=true,width=0.1];
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v398 -> v403 [label="use_known_genotype"];
+
+v399 [shape=point,label="",fixedsize=true,width=0.1];
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v399 -> v403 [label="known_genotypes_sample_names"];
+
+v400 [shape=point,label="",fixedsize=true,width=0.1];
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v400 -> v403 [label="skip_remap"];
+
+v401 [shape=point,label="",fixedsize=true,width=0.1];
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v401 -> v403 [label="ignore"];
+
+v402 [shape=point,label="",fixedsize=true,width=0.1];
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v402 -> v403 [label="souporcell_out"];
+
+v403 [label="HADGE:run_multi:gene_demultiplexing:demultiplex_souporcell:souporcell"];
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v403 -> v404;
+
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v404 -> v415 [label="$out0"];
+
+v16 [label="HADGE:create_single_chanel_input"];
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v405 [label="input_channel"];
+
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v406 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v405 -> v406;
+
+v406 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v406 -> v417 [label="input_list_summary"];
+
+v407 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v408 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v407 -> v408;
+
+v408 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v421 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v408 -> v421 [label="demuxlet_out_ch"];
+
+v409 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v409 -> v410;
+
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v410 -> v420 [label="freemuxlet_out_ch"];
+
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v411 -> v412;
+
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v412 -> v419 [label="vireo_out_ch"];
+
+v413 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v414 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v413 -> v414;
+
+v414 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v414 -> v418 [label="scSplit_out_ch"];
+
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v415 -> v416;
+
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v416 -> v417 [label="souporcell_out_ch"];
+
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v417 -> v418;
+
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v418 -> v419;
+
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v419 -> v420;
+
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v421 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v420 -> v421;
+
+v421 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v422 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v421 -> v422 [label="summary_input"];
+
+v422 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v425 [label="HADGE:run_multi:gene_demultiplexing:summary"];
+v422 -> v425 [label="summary_input"];
+
+v423 [shape=point,label="",fixedsize=true,width=0.1];
+v425 [label="HADGE:run_multi:gene_demultiplexing:summary"];
+v423 -> v425 [label="generate_anndata"];
+
+v424 [shape=point,label="",fixedsize=true,width=0.1];
+v425 [label="HADGE:run_multi:gene_demultiplexing:summary"];
+v424 -> v425 [label="generate_mudata"];
+
+v425 [label="HADGE:run_multi:gene_demultiplexing:summary"];
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v425 -> v426;
+
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v427 [label="HADGE:run_multi:summary_all"];
+v426 -> v427 [label="input_summary_all"];
+
+v427 [label="HADGE:run_multi:summary_all"];
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v427 -> v430;
+
+v16 [label="HADGE:create_single_chanel_input"];
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v428 [label="input_channel"];
+
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v428 -> v429;
+
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v429 -> v430;
+
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v436 [label="HADGE:run_multi:donor_match:matchDonor"];
+v430 -> v436 [label="demultiplexing_result"];
+
+v431 [shape=point,label="",fixedsize=true,width=0.1];
+v436 [label="HADGE:run_multi:donor_match:matchDonor"];
+v431 -> v436 [label="method1_name"];
+
+v432 [shape=point,label="",fixedsize=true,width=0.1];
+v436 [label="HADGE:run_multi:donor_match:matchDonor"];
+v432 -> v436 [label="method2_name"];
+
+v433 [shape=point,label="",fixedsize=true,width=0.1];
+v436 [label="HADGE:run_multi:donor_match:matchDonor"];
+v433 -> v436 [label="findVariants"];
+
+v434 [shape=point,label="",fixedsize=true,width=0.1];
+v436 [label="HADGE:run_multi:donor_match:matchDonor"];
+v434 -> v436 [label="variant_count"];
+
+v435 [shape=point,label="",fixedsize=true,width=0.1];
+v436 [label="HADGE:run_multi:donor_match:matchDonor"];
+v435 -> v436 [label="variant_pct"];
+
+v436 [label="HADGE:run_multi:donor_match:matchDonor"];
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v436 -> v439;
+
+v16 [label="HADGE:create_single_chanel_input"];
+v437 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 -> v437 [label="input_channel"];
+
+v437 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v437 -> v438;
+
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v438 -> v439;
+
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v442 [label="HADGE:run_multi:generate_data"];
+v439 -> v442 [label="input_generate_data"];
+
+v440 [shape=point,label="",fixedsize=true,width=0.1];
+v442 [label="HADGE:run_multi:generate_data"];
+v440 -> v442 [label="generate_anndata"];
+
+v441 [shape=point,label="",fixedsize=true,width=0.1];
+v442 [label="HADGE:run_multi:generate_data"];
+v441 -> v442 [label="generate_mudata"];
+
+v442 [label="HADGE:run_multi:generate_data"];
+v444 [shape=point];
+v442 -> v444;
+
+v442 [label="HADGE:run_multi:generate_data"];
+v443 [shape=point];
+v442 -> v443;
+
+}

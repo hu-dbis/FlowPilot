@@ -1,0 +1,66 @@
+digraph "AppliedGenomicsUTD_____chipseqanalysisjessibradenvarsha" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="COMPARE_PEAK_SETS"];
+v0 -> v3 [label="blacklist"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="COMPARE_PEAK_SETS"];
+v1 -> v3 [label="H3K27ac"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="COMPARE_PEAK_SETS"];
+v2 -> v3 [label="YAP1"];
+
+v3 [label="COMPARE_PEAK_SETS"];
+v4 [label="YAP1_OVERLAP_H3K27AC"];
+v3 -> v4;
+
+v3 [label="COMPARE_PEAK_SETS"];
+v4 [label="YAP1_OVERLAP_H3K27AC"];
+v3 -> v4;
+
+v4 [label="YAP1_OVERLAP_H3K27AC"];
+v5 [shape=point];
+v4 -> v5 [label="-"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="ANNOTATE_PEAKS"];
+v6 -> v8 [label="H3K27ac_bed"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="ANNOTATE_PEAKS"];
+v7 -> v8 [label="YAP1_bed"];
+
+v8 [label="ANNOTATE_PEAKS"];
+v10 [shape=point];
+v8 -> v10;
+
+v8 [label="ANNOTATE_PEAKS"];
+v9 [shape=point];
+v8 -> v9;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="MOTIF_ANALYSIS"];
+v11 -> v13 [label="YAP1_summits"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="MOTIF_ANALYSIS"];
+v12 -> v13 [label="fasta"];
+
+v13 [label="MOTIF_ANALYSIS"];
+v15 [label="MEME_CHIP"];
+v13 -> v15;
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="MEME_CHIP"];
+v14 -> v15 [label="meme_db"];
+
+v15 [label="MEME_CHIP"];
+v17 [shape=point];
+v15 -> v17;
+
+v15 [label="MEME_CHIP"];
+v16 [shape=point];
+v15 -> v16;
+
+}

@@ -1,4 +1,3 @@
-from torchgen.operator_versions.gen_mobile_upgraders import sort_upgrader
 from tqdm import tqdm
 import glob
 import itertools
@@ -7,8 +6,6 @@ from src.classes.helper import *
 import hnswlib
 import os
 import json
-from ollama import chat
-from ollama import ChatResponse
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 
@@ -94,6 +91,8 @@ def index_embeddings(embeddings, labels, empty_index=False):
 
 def embed_readme_files(source_path):
     swf_to_readme_embedding = {}
+    if not os.path.isdir(source_path):
+        return swf_to_readme_embedding
     for filename in os.listdir(source_path):
         if filename.endswith('.md'):
             with open(os.path.join(source_path, filename), 'r') as file:
@@ -103,6 +102,8 @@ def embed_readme_files(source_path):
 
 def get_swf_to_input_output(source_path):
     swf_to_inout = {}
+    if not os.path.isdir(source_path):
+        return swf_to_inout
     for filename in os.listdir(source_path):
         if filename.endswith('.json'):
             with open(os.path.join(source_path, filename), 'r') as file:
@@ -113,6 +114,8 @@ def get_swf_to_input_output(source_path):
 
 def get_swf_to_schema(source_path):
     swf_to_schema = {}
+    if not os.path.isdir(source_path):
+        return swf_to_schema
     for filename in os.listdir(source_path):
         if filename.endswith('.json'):
             with open(os.path.join(source_path, filename), 'r') as file:
@@ -120,6 +123,7 @@ def get_swf_to_schema(source_path):
     return swf_to_schema
 
 def generate_description(code):
+    from ollama import chat, ChatResponse
     ollama_model = 'stable-code'
     prompt = f'explain this piece of code: {code}'
     response: ChatResponse = chat(model=ollama_model, messages=[
@@ -131,6 +135,7 @@ def generate_description(code):
     return response.message.content
 
 def generate_description_based_on_ngram(ngram):
+    from ollama import chat, ChatResponse
     ollama_model = 'stable-code'
     prompt = f'I have a NextFlow workflow that contains these tasks and data: {" ".join(ngram)}. can you explain the functionality of the workflow?'
     response: ChatResponse = chat(model=ollama_model, messages=[

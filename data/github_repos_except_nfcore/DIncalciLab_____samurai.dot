@@ -1,0 +1,410 @@
+digraph "DIncalciLab_____samurai" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [label="DINCALCILAB_SAMURAI:SAMURAI:SAMTOOLS_INDEX"];
+v3 -> v6 [label="ch_input"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v34 [label="ch_versions"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v36 [label="ch_multiqc_files"];
+
+v6 [label="DINCALCILAB_SAMURAI:SAMURAI:SAMTOOLS_INDEX"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v6 -> v9;
+
+v6 [label="DINCALCILAB_SAMURAI:SAMURAI:SAMTOOLS_INDEX"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v6 -> v10;
+
+v6 [label="DINCALCILAB_SAMURAI:SAMURAI:SAMTOOLS_INDEX"];
+v8 [shape=point];
+v6 -> v8;
+
+v6 [label="DINCALCILAB_SAMURAI:SAMURAI:SAMTOOLS_INDEX"];
+v7 [shape=point];
+v6 -> v7;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v3 -> v9 [label="ch_input"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12 [label="ch_bam_bai"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v15 [label="ch_bam_bai_bait_target"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v21 [label="ch_versions"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v25 [label="ch_coverage_metrics"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTMULTIPLEMETRICS"];
+v15 -> v18 [label="ch_bam_bai"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v18 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTMULTIPLEMETRICS"];
+v16 -> v18 [label="ch_fasta"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v18 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTMULTIPLEMETRICS"];
+v17 -> v18 [label="ch_fasta_fai"];
+
+v18 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTMULTIPLEMETRICS"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 -> v37 [label="multiple_metrics"];
+
+v18 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTMULTIPLEMETRICS"];
+v19 [shape=point];
+v18 -> v19;
+
+v18 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTMULTIPLEMETRICS"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v18 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v27 [label="ch_versions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v12 -> v22 [label="ch_bam_bai_bait_target"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v29 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTWGSMETRICS"];
+v22 -> v29;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v24 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTHSMETRICS"];
+v22 -> v24;
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTHSMETRICS"];
+v16 -> v24 [label="ch_fasta"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTHSMETRICS"];
+v17 -> v24 [label="ch_fasta_fai"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTHSMETRICS"];
+v23 -> v24 [label="ch_fasta_dict"];
+
+v24 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTHSMETRICS"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v25;
+
+v24 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTHSMETRICS"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v24 -> v26;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v32 [label="ch_coverage_metrics"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v31 [label="ch_versions"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTWGSMETRICS"];
+v16 -> v29 [label="ch_fasta"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTWGSMETRICS"];
+v17 -> v29 [label="ch_fasta_fai"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTWGSMETRICS"];
+v28 -> v29 [label="intervallist"];
+
+v29 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTWGSMETRICS"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v32;
+
+v29 [label="DINCALCILAB_SAMURAI:SAMURAI:BAM_QC_PICARD:PICARD_COLLECTWGSMETRICS"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v31 -> v33 [label="versions"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v35 [label="coverage_metrics"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v61 [label="ch_versions"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v38 [label="ch_multiqc_files"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v63 [label="ch_multiqc_files"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v47 [label="ch_versions"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v57 [label="ch_reports"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:ASCAT_SC"];
+v11 -> v43 [label="ch_bam_bai"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:ASCAT_SC"];
+v41 -> v43 [label="binsize"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:ASCAT_SC"];
+v42 -> v43 [label="genome"];
+
+v43 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:ASCAT_SC"];
+v46 [shape=point];
+v43 -> v46;
+
+v43 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:ASCAT_SC"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v43 -> v48;
+
+v43 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:ASCAT_SC"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v43 -> v58;
+
+v43 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:ASCAT_SC"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v43 -> v54;
+
+v43 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:ASCAT_SC"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v43 -> v52;
+
+v43 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:ASCAT_SC"];
+v45 [shape=point];
+v43 -> v45;
+
+v43 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:ASCAT_SC"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v43 -> v55;
+
+v43 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:ASCAT_SC"];
+v44 [shape=point];
+v43 -> v44;
+
+v43 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:ASCAT_SC"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v51 [label="ch_versions"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:CONCATENATE_ASCATSC_REFITTED_PLOTS"];
+v48 -> v49;
+
+v49 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:CONCATENATE_ASCATSC_REFITTED_PLOTS"];
+v50 [shape=point];
+v49 -> v50 [label="all_seg_plot"];
+
+v49 [label="DINCALCILAB_SAMURAI:SAMURAI:SOLID_BIOPSY:CONCATENATE_ASCATSC_REFITTED_PLOTS"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v51 -> v60 [label="versions"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v53 [shape=point];
+v52 -> v53 [label="ch_segments"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v57 [label="ascatsc_summary"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v56 [shape=point];
+v55 -> v56 [label="signature_file"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 -> v62 [label="summary"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v59 [shape=point];
+v58 -> v59 [label="gistic_file"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v61 -> v64 [label="versions"];
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v75 [label="ch_multiqc_files"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v68;
+
+v67 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v76 [label="ch_collated_versions"];
+
+v70 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v70 -> v81 [label="ch_multiqc_config"];
+
+v71 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v71 -> v82 [label="ch_multiqc_custom_config"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v72 -> v83 [label="ch_multiqc_logo"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v73 -> v74 [label="ch_workflow_summary"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v76 [label="ch_multiqc_files"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v79 [label="ch_multiqc_files"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v77 -> v78 [label="ch_methods_description"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 -> v80 [label="ch_multiqc_files"];
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v84 [label="DINCALCILAB_SAMURAI:SAMURAI:MULTIQC"];
+v80 -> v84;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v84 [label="DINCALCILAB_SAMURAI:SAMURAI:MULTIQC"];
+v81 -> v84;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v84 [label="DINCALCILAB_SAMURAI:SAMURAI:MULTIQC"];
+v82 -> v84;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v84 [label="DINCALCILAB_SAMURAI:SAMURAI:MULTIQC"];
+v83 -> v84;
+
+v84 [label="DINCALCILAB_SAMURAI:SAMURAI:MULTIQC"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v84 -> v88;
+
+v84 [label="DINCALCILAB_SAMURAI:SAMURAI:MULTIQC"];
+v87 [shape=point];
+v84 -> v87;
+
+v84 [label="DINCALCILAB_SAMURAI:SAMURAI:MULTIQC"];
+v86 [shape=point];
+v84 -> v86;
+
+v84 [label="DINCALCILAB_SAMURAI:SAMURAI:MULTIQC"];
+v85 [shape=point];
+v84 -> v85;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v89 [shape=point];
+v88 -> v89 [label="multiqc_report"];
+
+}

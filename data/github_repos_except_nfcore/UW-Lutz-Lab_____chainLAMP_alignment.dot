@@ -1,0 +1,62 @@
+digraph "UWLutzLab_____chainLAMP_alignment" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v2 [label="SortBamUnaligned"];
+v0 -> v2 [label="reads_ch"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [label="AlignReads"];
+v1 -> v8 [label="ref_ch"];
+
+v2 [label="SortBamUnaligned"];
+v4 [label="NanoPlotQC_Unaligned"];
+v2 -> v4;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="NanoPlotQC_Unaligned"];
+v3 -> v4 [label="input_type"];
+
+v4 [label="NanoPlotQC_Unaligned"];
+v5 [shape=point];
+v4 -> v5;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [label="BamConvertQualFilter"];
+v0 -> v7 [label="reads_ch"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="BamConvertQualFilter"];
+v6 -> v7 [label="quality_level"];
+
+v7 [label="BamConvertQualFilter"];
+v8 [label="AlignReads"];
+v7 -> v8;
+
+v8 [label="AlignReads"];
+v9 [label="SortBamAligned"];
+v8 -> v9;
+
+v9 [label="SortBamAligned"];
+v11 [label="NanoPlotQC_Aligned"];
+v9 -> v11;
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="NanoPlotQC_Aligned"];
+v10 -> v11 [label="input_type"];
+
+v11 [label="NanoPlotQC_Aligned"];
+v12 [shape=point];
+v11 -> v12;
+
+v9 [label="SortBamAligned"];
+v13 [label="CoverageDepth"];
+v9 -> v13 [label="reads"];
+
+v13 [label="CoverageDepth"];
+v14 [label="PlotCoverage"];
+v13 -> v14;
+
+v14 [label="PlotCoverage"];
+v15 [shape=point];
+v14 -> v15;
+
+}

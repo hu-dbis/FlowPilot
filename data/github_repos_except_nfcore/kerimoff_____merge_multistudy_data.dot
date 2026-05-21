@@ -1,0 +1,122 @@
+digraph "kerimoff_____merge_multistudy_data" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [label="index_vcf"];
+v3 -> v17 [label="index_vcf_ch"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v22 [label="sample_metadata_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v16 [label="rename_file"];
+v15 -> v16 [label="feature_counts_ch"];
+
+v16 [label="rename_file"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v23;
+
+v17 [label="index_vcf"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 -> v18 [label="vcf"];
+
+v17 [label="index_vcf"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 -> v19;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 [label="merge_vcf"];
+v18 -> v20;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 [label="merge_vcf"];
+v19 -> v20;
+
+v20 [label="merge_vcf"];
+v21 [label="filter_vcf"];
+v20 -> v21;
+
+v21 [label="filter_vcf"];
+v28 [label="extract_samples_from_vcf"];
+v21 -> v28;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 [label="select_samples"];
+v22 -> v24;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 [label="select_samples"];
+v23 -> v24;
+
+v24 [label="select_samples"];
+v27 [shape=point];
+v24 -> v27;
+
+v24 [label="select_samples"];
+v26 [shape=point];
+v24 -> v26;
+
+v24 [label="select_samples"];
+v25 [shape=point];
+v24 -> v25;
+
+v24 [label="select_samples"];
+v28 [label="extract_samples_from_vcf"];
+v24 -> v28;
+
+v28 [label="extract_samples_from_vcf"];
+v29 [shape=point];
+v28 -> v29;
+
+}

@@ -1,0 +1,250 @@
+digraph "loipf_____SOMvcpipeline_hg19_to_hg38" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v10 [label="channel_sample_match"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="INDEX_REFERENCE"];
+v5 -> v7 [label="reference_genome"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="INDEX_REFERENCE"];
+v6 -> v7 [label="bed_file"];
+
+v7 [label="INDEX_REFERENCE"];
+v32 [label="SOMVC_LOFREQ"];
+v7 -> v32;
+
+v7 [label="INDEX_REFERENCE"];
+v32 [label="SOMVC_LOFREQ"];
+v7 -> v32;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [label="CREATE_BWA_INDEX"];
+v8 -> v9 [label="reference_genome"];
+
+v9 [label="CREATE_BWA_INDEX"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v14;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [label="BAM_TO_FASTQ_PREPROCESS_NORMAL"];
+v10 -> v12;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [label="BAM_TO_FASTQ_PREPROCESS_NORMAL"];
+v11 -> v12 [label="num_threads"];
+
+v12 [label="BAM_TO_FASTQ_PREPROCESS_NORMAL"];
+v18 [label="MAPPING_BWA_NORMAL"];
+v12 -> v18;
+
+v12 [label="BAM_TO_FASTQ_PREPROCESS_NORMAL"];
+v13 [shape=point];
+v12 -> v13;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 [label="MAPPING_BWA_NORMAL"];
+v14 -> v18;
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v18 [label="MAPPING_BWA_NORMAL"];
+v15 -> v18 [label="num_threads"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v18 [label="MAPPING_BWA_NORMAL"];
+v16 -> v18 [label="reference_genome"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v18 [label="MAPPING_BWA_NORMAL"];
+v17 -> v18 [label="file_name_extension"];
+
+v18 [label="MAPPING_BWA_NORMAL"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v30;
+
+v18 [label="MAPPING_BWA_NORMAL"];
+v19 [shape=point];
+v18 -> v19;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v20 [label="channel_sample_match"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [label="BAM_TO_FASTQ_PREPROCESS_TUMOR"];
+v20 -> v22;
+
+v21 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [label="BAM_TO_FASTQ_PREPROCESS_TUMOR"];
+v21 -> v22 [label="num_threads"];
+
+v22 [label="BAM_TO_FASTQ_PREPROCESS_TUMOR"];
+v28 [label="MAPPING_BWA_TUMOR"];
+v22 -> v28;
+
+v22 [label="BAM_TO_FASTQ_PREPROCESS_TUMOR"];
+v23 [shape=point];
+v22 -> v23;
+
+v9 [label="CREATE_BWA_INDEX"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 [label="MAPPING_BWA_TUMOR"];
+v24 -> v28;
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="MAPPING_BWA_TUMOR"];
+v25 -> v28 [label="num_threads"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="MAPPING_BWA_TUMOR"];
+v26 -> v28 [label="reference_genome"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="MAPPING_BWA_TUMOR"];
+v27 -> v28 [label="file_name_extension"];
+
+v28 [label="MAPPING_BWA_TUMOR"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 -> v30;
+
+v28 [label="MAPPING_BWA_TUMOR"];
+v29 [shape=point];
+v28 -> v29;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 [label="SOMVC_LOFREQ"];
+v30 -> v32 [label="channel_sample_match_mapped"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="SOMVC_LOFREQ"];
+v31 -> v32 [label="num_threads"];
+
+v32 [label="SOMVC_LOFREQ"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 -> v43;
+
+v32 [label="SOMVC_LOFREQ"];
+v34 [shape=point];
+v32 -> v34;
+
+v32 [label="SOMVC_LOFREQ"];
+v33 [shape=point];
+v32 -> v33;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 [label="SOMVC_MUTECT2"];
+v30 -> v36 [label="channel_sample_match_mapped"];
+
+v7 [label="INDEX_REFERENCE"];
+v36 [label="SOMVC_MUTECT2"];
+v7 -> v36 [label="reference_genome"];
+
+v7 [label="INDEX_REFERENCE"];
+v36 [label="SOMVC_MUTECT2"];
+v7 -> v36 [label="bed_file"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="SOMVC_MUTECT2"];
+v35 -> v36 [label="num_threads"];
+
+v36 [label="SOMVC_MUTECT2"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 -> v43;
+
+v36 [label="SOMVC_MUTECT2"];
+v37 [shape=point];
+v36 -> v37;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 [label="SOMVC_STRELKA"];
+v30 -> v39 [label="channel_sample_match_mapped"];
+
+v7 [label="INDEX_REFERENCE"];
+v39 [label="SOMVC_STRELKA"];
+v7 -> v39 [label="reference_genome"];
+
+v7 [label="INDEX_REFERENCE"];
+v39 [label="SOMVC_STRELKA"];
+v7 -> v39 [label="bed_file"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v39 [label="SOMVC_STRELKA"];
+v38 -> v39 [label="num_threads"];
+
+v39 [label="SOMVC_STRELKA"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 -> v44;
+
+v39 [label="SOMVC_STRELKA"];
+v40 [shape=point];
+v39 -> v40 [label="manta_sv"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 [label="SOMVC_VARDICT"];
+v30 -> v42 [label="channel_sample_match_mapped"];
+
+v7 [label="INDEX_REFERENCE"];
+v42 [label="SOMVC_VARDICT"];
+v7 -> v42 [label="reference_genome"];
+
+v7 [label="INDEX_REFERENCE"];
+v42 [label="SOMVC_VARDICT"];
+v7 -> v42 [label="bed_file"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v42 [label="SOMVC_VARDICT"];
+v41 -> v42 [label="num_threads"];
+
+v42 [label="SOMVC_VARDICT"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 -> v45;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v46 [label="SOMATIC_COMBINER"];
+v45 -> v46 [label="channel_all_vc"];
+
+v46 [label="SOMATIC_COMBINER"];
+v47 [shape=point];
+v46 -> v47;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v48 [label="CONPAIR_CONTAMINATION"];
+v30 -> v48 [label="channel_sample_match_mapped"];
+
+v7 [label="INDEX_REFERENCE"];
+v48 [label="CONPAIR_CONTAMINATION"];
+v7 -> v48 [label="reference_genome"];
+
+v48 [label="CONPAIR_CONTAMINATION"];
+v49 [shape=point];
+v48 -> v49;
+
+}

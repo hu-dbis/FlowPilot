@@ -1,0 +1,74 @@
+digraph "anadeem9_____polyanfpipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="INDEX"];
+v0 -> v1 [label="ref_genome"];
+
+v1 [label="INDEX"];
+v7 [label="SAM_FOR_STRAND"];
+v1 -> v7;
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="GTF2BED"];
+v2 -> v3 [label="gtf"];
+
+v3 [label="GTF2BED"];
+v8 [label="CHECK_STRANDEDNESS"];
+v3 -> v8;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v5 [label="TRIM"];
+v4 -> v5 [label="read_pairs_ch"];
+
+v5 [label="TRIM"];
+v7 [label="SAM_FOR_STRAND"];
+v5 -> v7;
+
+v5 [label="TRIM"];
+v6 [shape=point];
+v5 -> v6;
+
+v7 [label="SAM_FOR_STRAND"];
+v8 [label="CHECK_STRANDEDNESS"];
+v7 -> v8;
+
+v5 [label="TRIM"];
+v8 [label="CHECK_STRANDEDNESS"];
+v5 -> v8;
+
+v8 [label="CHECK_STRANDEDNESS"];
+v9 [label="FINDTAIL"];
+v8 -> v9;
+
+v5 [label="TRIM"];
+v9 [label="FINDTAIL"];
+v5 -> v9;
+
+v9 [label="FINDTAIL"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v11 [label="ALIGN"];
+v10 -> v11 [label="align_input_ch"];
+
+v1 [label="INDEX"];
+v11 [label="ALIGN"];
+v1 -> v11 [label="index_files"];
+
+v11 [label="ALIGN"];
+v12 [label="TRIM_TAILS"];
+v11 -> v12;
+
+v12 [label="TRIM_TAILS"];
+v13 [label="REALIGN"];
+v12 -> v13;
+
+v1 [label="INDEX"];
+v13 [label="REALIGN"];
+v1 -> v13 [label="index_files"];
+
+v13 [label="REALIGN"];
+v14 [shape=point];
+v13 -> v14;
+
+}

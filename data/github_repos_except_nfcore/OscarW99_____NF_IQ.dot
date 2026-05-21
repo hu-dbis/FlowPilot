@@ -1,0 +1,38 @@
+digraph "OscarW99_____NF_IQ" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v1 [label="split_csv"];
+v0 -> v1 [label="split_csv_input"];
+
+v1 [label="split_csv"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v1 -> v3;
+
+v1 [label="split_csv"];
+v2 [shape=point];
+v1 -> v2;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v4 [label="write_sentence_txt_files"];
+v3 -> v4;
+
+v4 [label="write_sentence_txt_files"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 [label="cat_txt_files"];
+v5 -> v6 [label="channel_out"];
+
+v6 [label="cat_txt_files"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v7 -> v8 [label="final_file"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v9 [shape=point];
+v8 -> v9;
+
+}

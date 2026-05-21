@@ -1,0 +1,166 @@
+digraph "uschwartz_____RNAseq_NAC" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [label="fastqc"];
+v0 -> v6 [label="fastq_files"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v13 [label="fastq2align"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v13 [label="idx_ch"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v16 [label="gsize_ch"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v22 [label="gtf_ch"];
+
+v6 [label="fastqc"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v9;
+
+v6 [label="fastqc"];
+v8 [shape=point];
+v6 -> v8;
+
+v6 [label="fastqc"];
+v7 [shape=point];
+v6 -> v7;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 [label="multiqc_raw"];
+v9 -> v10;
+
+v10 [label="multiqc_raw"];
+v12 [shape=point];
+v10 -> v12;
+
+v10 [label="multiqc_raw"];
+v11 [shape=point];
+v10 -> v11;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 [label="align:star"];
+v13 -> v14 [label="fastq_in"];
+
+v14 [label="align:star"];
+v19 [label="align:markDuplicates"];
+v14 -> v19 [label="$out0"];
+
+v14 [label="align:star"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v14 -> v15;
+
+v14 [label="align:star"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v31 [label="$out1"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 [label="align:makeBigWigs"];
+v16 -> v17;
+
+v17 [label="align:makeBigWigs"];
+v18 [shape=point];
+v17 -> v18;
+
+v19 [label="align:markDuplicates"];
+v21 [label="align:bam_idx"];
+v19 -> v21;
+
+v19 [label="align:markDuplicates"];
+v20 [shape=point];
+v19 -> v20;
+
+v21 [label="align:bam_idx"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v23 [label="align:qualimap"];
+v22 -> v23;
+
+v23 [label="align:qualimap"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v32 [label="$out2"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v24 [label="gtf_ch"];
+
+v21 [label="align:bam_idx"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v21 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v25 [label="align:dupRadar"];
+v24 -> v25;
+
+v25 [label="align:dupRadar"];
+v26 [shape=point];
+v25 -> v26;
+
+v19 [label="align:markDuplicates"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v19 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v30 [label="align:countReads"];
+v29 -> v30;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v30 [label="align:countReads"];
+v5 -> v30 [label="gtf_ch"];
+
+v30 [label="align:countReads"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v33;
+
+v6 [label="fastqc"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v35 [label="multiqc_final"];
+v34 -> v35;
+
+v35 [label="multiqc_final"];
+v37 [shape=point];
+v35 -> v37;
+
+v35 [label="multiqc_final"];
+v36 [shape=point];
+v35 -> v36;
+
+}

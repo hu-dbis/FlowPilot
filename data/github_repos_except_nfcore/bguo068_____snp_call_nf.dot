@@ -1,0 +1,194 @@
+digraph "bguo068_____snp_call_nf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [label="BOWTIE2_ALIGN_TO_HOST"];
+v3 -> v4 [label="input_ch"];
+
+v4 [label="BOWTIE2_ALIGN_TO_HOST"];
+v7 [label="SAMTOOLS_VIEW_RM_HOST_READS"];
+v4 -> v7;
+
+v4 [label="BOWTIE2_ALIGN_TO_HOST"];
+v6 [shape=point];
+v4 -> v6;
+
+v4 [label="BOWTIE2_ALIGN_TO_HOST"];
+v5 [shape=point];
+v4 -> v5;
+
+v7 [label="SAMTOOLS_VIEW_RM_HOST_READS"];
+v8 [label="SAMTOOLS_FASTQ"];
+v7 -> v8;
+
+v8 [label="SAMTOOLS_FASTQ"];
+v10 [label="BOWTIE2_ALIGN_TO_PARASITE"];
+v8 -> v10;
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="BOWTIE2_ALIGN_TO_PARASITE"];
+v9 -> v10 [label="parasite_ref_prefix"];
+
+v10 [label="BOWTIE2_ALIGN_TO_PARASITE"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v18;
+
+v10 [label="BOWTIE2_ALIGN_TO_PARASITE"];
+v11 [shape=point];
+v10 -> v11;
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 -> v19 [label="n_run"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v22 [label="PICARD_MERGE_SORT_BAMS"];
+v21 -> v22 [label="merge_input"];
+
+v22 [label="PICARD_MERGE_SORT_BAMS"];
+v23 [label="PICARD_MARK_DUPLICATES"];
+v22 -> v23;
+
+v23 [label="PICARD_MARK_DUPLICATES"];
+v26 [label="GATK_BASE_RECALIBRATOR"];
+v23 -> v26;
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [label="GATK_BASE_RECALIBRATOR"];
+v24 -> v26 [label="ref"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [label="GATK_BASE_RECALIBRATOR"];
+v25 -> v26 [label="known_sites"];
+
+v26 [label="GATK_BASE_RECALIBRATOR"];
+v28 [label="GATK_APPLY_BQSR"];
+v26 -> v28;
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="GATK_APPLY_BQSR"];
+v27 -> v28 [label="ref"];
+
+v28 [label="GATK_APPLY_BQSR"];
+v30 [label="BEDTOOLS_GENOMECOV"];
+v28 -> v30;
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="BEDTOOLS_GENOMECOV"];
+v29 -> v30 [label="ref"];
+
+v30 [label="BEDTOOLS_GENOMECOV"];
+v32 [shape=point];
+v30 -> v32;
+
+v30 [label="BEDTOOLS_GENOMECOV"];
+v31 [shape=point];
+v30 -> v31;
+
+v28 [label="GATK_APPLY_BQSR"];
+v33 [label="SAMTOOLS_FLAGSTAT"];
+v28 -> v33;
+
+v33 [label="SAMTOOLS_FLAGSTAT"];
+v34 [shape=point];
+v33 -> v34;
+
+v28 [label="GATK_APPLY_BQSR"];
+v36 [label="GATK_HAPLOTYPE_CALLER"];
+v28 -> v36;
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="GATK_HAPLOTYPE_CALLER"];
+v35 -> v36 [label="ref"];
+
+v36 [label="GATK_HAPLOTYPE_CALLER"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v41 [label="GATK_GENOMICS_DB_IMPORT"];
+v39 -> v41 [label="gvcf_map_ch"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v41 [label="GATK_GENOMICS_DB_IMPORT"];
+v40 -> v41 [label="interval_ch"];
+
+v41 [label="GATK_GENOMICS_DB_IMPORT"];
+v43 [label="GATK_GENOTYPE_GVCFS"];
+v41 -> v43;
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="GATK_GENOTYPE_GVCFS"];
+v42 -> v43 [label="ref"];
+
+v43 [label="GATK_GENOTYPE_GVCFS"];
+v45 [label="GATK_SELECT_VARIANTS"];
+v43 -> v45;
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="GATK_SELECT_VARIANTS"];
+v44 -> v45 [label="ref"];
+
+v45 [label="GATK_SELECT_VARIANTS"];
+v47 [label="GATK_VARIANT_FILTRATION"];
+v45 -> v47;
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="GATK_VARIANT_FILTRATION"];
+v46 -> v47 [label="ref"];
+
+v47 [label="GATK_VARIANT_FILTRATION"];
+v48 [shape=point];
+v47 -> v48;
+
+}

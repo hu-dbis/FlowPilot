@@ -1,0 +1,70 @@
+digraph "VEuPathDB_____proteintogenomealignmentnextflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v10 [label="proteinToGenomeAlignment:exonerate"];
+v1 -> v10 [label="seqs"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="proteinToGenomeAlignment:makeEsd"];
+v2 -> v3 [label="targetFasta"];
+
+v3 [label="proteinToGenomeAlignment:makeEsd"];
+v6 [label="proteinToGenomeAlignment:makeEsi"];
+v3 -> v6;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="proteinToGenomeAlignment:makeEsi"];
+v4 -> v6 [label="targetFasta"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="proteinToGenomeAlignment:makeEsi"];
+v5 -> v6 [label="esd2esiMemoryLimit"];
+
+v6 [label="proteinToGenomeAlignment:makeEsi"];
+v10 [label="proteinToGenomeAlignment:exonerate"];
+v6 -> v10;
+
+v3 [label="proteinToGenomeAlignment:makeEsd"];
+v10 [label="proteinToGenomeAlignment:exonerate"];
+v3 -> v10 [label="targetEsd"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="proteinToGenomeAlignment:exonerate"];
+v7 -> v10 [label="targetFasta"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="proteinToGenomeAlignment:exonerate"];
+v8 -> v10 [label="fsmMemory"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="proteinToGenomeAlignment:exonerate"];
+v9 -> v10 [label="maxIntron"];
+
+v10 [label="proteinToGenomeAlignment:exonerate"];
+v11 [label="proteinToGenomeAlignment:makeGff"];
+v10 -> v11;
+
+v11 [label="proteinToGenomeAlignment:makeGff"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v14 [label="proteinToGenomeAlignment:indexResults"];
+v12 -> v14 [label="result"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="proteinToGenomeAlignment:indexResults"];
+v13 -> v14 [label="outputFileName"];
+
+v14 [label="proteinToGenomeAlignment:indexResults"];
+v16 [shape=point];
+v14 -> v16;
+
+v14 [label="proteinToGenomeAlignment:indexResults"];
+v15 [shape=point];
+v14 -> v15;
+
+}

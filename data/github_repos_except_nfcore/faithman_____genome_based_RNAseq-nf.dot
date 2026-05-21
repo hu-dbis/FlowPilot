@@ -1,0 +1,122 @@
+digraph "faithman_____genome_based_RNAseqnf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [label="FASTP_TRIM"];
+v5 -> v10 [label="sample_sheet"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v7 [label="summary"];
+v6 -> v7;
+
+v7 [label="summary"];
+v9 [shape=point];
+v7 -> v9;
+
+v7 [label="summary"];
+v8 [shape=point];
+v7 -> v8;
+
+v10 [label="FASTP_TRIM"];
+v14 [label="STAR"];
+v10 -> v14;
+
+v10 [label="FASTP_TRIM"];
+v12 [shape=point];
+v10 -> v12;
+
+v10 [label="FASTP_TRIM"];
+v11 [shape=point];
+v10 -> v11;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="STAR"];
+v13 -> v14 [label="genome_dir"];
+
+v14 [label="STAR"];
+v16 [shape=point];
+v14 -> v16;
+
+v14 [label="STAR"];
+v17 [label="PICARD_MARKDUPLICATES"];
+v14 -> v17;
+
+v14 [label="STAR"];
+v15 [shape=point];
+v14 -> v15;
+
+v17 [label="PICARD_MARKDUPLICATES"];
+v19 [label="SAMBAMBA_INDEX"];
+v17 -> v19;
+
+v17 [label="PICARD_MARKDUPLICATES"];
+v18 [shape=point];
+v17 -> v18;
+
+v19 [label="SAMBAMBA_INDEX"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 -> v20;
+
+v17 [label="PICARD_MARKDUPLICATES"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 [label="SAMTOOL_STATS"];
+v20 -> v21;
+
+v21 [label="SAMTOOL_STATS"];
+v22 [shape=point];
+v21 -> v22;
+
+v19 [label="SAMBAMBA_INDEX"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 -> v23;
+
+v17 [label="PICARD_MARKDUPLICATES"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v25 [label="STRINGTIE_QUANT"];
+v23 -> v25;
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v25 [label="STRINGTIE_QUANT"];
+v24 -> v25 [label="gtf"];
+
+v25 [label="STRINGTIE_QUANT"];
+v29 [shape=point];
+v25 -> v29;
+
+v25 [label="STRINGTIE_QUANT"];
+v28 [shape=point];
+v25 -> v28;
+
+v25 [label="STRINGTIE_QUANT"];
+v27 [shape=point];
+v25 -> v27;
+
+v25 [label="STRINGTIE_QUANT"];
+v26 [shape=point];
+v25 -> v26;
+
+}

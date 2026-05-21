@@ -1,0 +1,98 @@
+digraph "nanjalaruth_____HLAtyping" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 [shape=point];
+v1 -> v2 [label="input_data"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v7 [label="reads"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v7 [label="ref"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v15 [label="ref"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v21 [label="hla_txt"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 [label="mapping"];
+v7 -> v8 [label="input_data"];
+
+v8 [label="mapping"];
+v9 [label="sam_bam"];
+v8 -> v9;
+
+v9 [label="sam_bam"];
+v10 [label="extract_hla_reads"];
+v9 -> v10;
+
+v10 [label="extract_hla_reads"];
+v12 [label="read_pairs_search"];
+v10 -> v12;
+
+v9 [label="sam_bam"];
+v11 [label="index_hla"];
+v9 -> v11;
+
+v12 [label="read_pairs_search"];
+v14 [label="combine_reads"];
+v12 -> v14;
+
+v9 [label="sam_bam"];
+v13 [label="unmapped_reads"];
+v9 -> v13;
+
+v13 [label="unmapped_reads"];
+v14 [label="combine_reads"];
+v13 -> v14;
+
+v14 [label="combine_reads"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 [label="map_to_hla_loci"];
+v15 -> v16 [label="inp"];
+
+v16 [label="map_to_hla_loci"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 -> v17;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v17 [label="ref"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 [label="estimate_hla_types"];
+v17 -> v18 [label="input"];
+
+v18 [label="estimate_hla_types"];
+v19 [label="hla_types_out"];
+v18 -> v19;
+
+v19 [label="hla_types_out"];
+v20 [shape=point];
+v19 -> v20;
+
+v18 [label="estimate_hla_types"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v22 [label="hla_4d"];
+v21 -> v22 [label="in"];
+
+v22 [label="hla_4d"];
+v23 [shape=point];
+v22 -> v23;
+
+}

@@ -1,0 +1,30 @@
+digraph "huangnengCSU_____variant_detection_nf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v2 [label="Alignment"];
+v0 -> v2 [label="ch_fastq"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v2 [label="Alignment"];
+v1 -> v2 [label="ch_reference"];
+
+v2 [label="Alignment"];
+v3 [label="NanoSNPCalling"];
+v2 -> v3 [label="ch_bam"];
+
+v2 [label="Alignment"];
+v3 [label="NanoSNPCalling"];
+v2 -> v3 [label="ch_bai"];
+
+v2 [label="Alignment"];
+v3 [label="NanoSNPCalling"];
+v2 -> v3 [label="ch_ref"];
+
+v2 [label="Alignment"];
+v3 [label="NanoSNPCalling"];
+v2 -> v3 [label="ch_ref_fai"];
+
+v3 [label="NanoSNPCalling"];
+v4 [shape=point];
+v3 -> v4;
+
+}

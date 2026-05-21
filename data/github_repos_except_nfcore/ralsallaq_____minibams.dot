@@ -1,0 +1,342 @@
+digraph "ralsallaq_____minibams" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2 [label="inputFile_ch"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="get_cytoband_loci1"];
+v2 -> v3 [label="abnormal_events_ch"];
+
+v3 [label="get_cytoband_loci1"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v5;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [label="get_cytoband_loci2"];
+v2 -> v4 [label="abnormal_events_ch"];
+
+v4 [label="get_cytoband_loci2"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v6;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v5 -> v7;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v9 [label="get_clean_manifest"];
+v8 -> v9 [label="events_capture_ch"];
+
+v9 [label="get_clean_manifest"];
+v12 [label="get_GT_manifest_RNA_tumor"];
+v9 -> v12;
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [label="get_GT_manifest_RNA_tumor"];
+v10 -> v12 [label="analysisType"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [label="get_GT_manifest_RNA_tumor"];
+v11 -> v12 [label="sampleType"];
+
+v12 [label="get_GT_manifest_RNA_tumor"];
+v27 [label="generateBEDFiles_RNA_tumor"];
+v12 -> v27;
+
+v9 [label="get_clean_manifest"];
+v15 [label="get_GT_manifest_WGS_tumor"];
+v9 -> v15 [label="manifestCleanFile"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="get_GT_manifest_WGS_tumor"];
+v13 -> v15 [label="analysisType"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="get_GT_manifest_WGS_tumor"];
+v14 -> v15 [label="sampleType"];
+
+v15 [label="get_GT_manifest_WGS_tumor"];
+v30 [label="generateBEDFiles_WGS_tumor"];
+v15 -> v30;
+
+v9 [label="get_clean_manifest"];
+v18 [label="get_GT_manifest_WGS_gl"];
+v9 -> v18 [label="manifestCleanFile"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v18 [label="get_GT_manifest_WGS_gl"];
+v16 -> v18 [label="analysisType"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v18 [label="get_GT_manifest_WGS_gl"];
+v17 -> v18 [label="sampleType"];
+
+v18 [label="get_GT_manifest_WGS_gl"];
+v33 [label="generateBEDFiles_WGS_gl"];
+v18 -> v33;
+
+v9 [label="get_clean_manifest"];
+v21 [label="get_GT_manifest_WES_tumor"];
+v9 -> v21 [label="manifestCleanFile"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="get_GT_manifest_WES_tumor"];
+v19 -> v21 [label="analysisType"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="get_GT_manifest_WES_tumor"];
+v20 -> v21 [label="sampleType"];
+
+v21 [label="get_GT_manifest_WES_tumor"];
+v36 [label="generateBEDFiles_WES_tumor"];
+v21 -> v36;
+
+v9 [label="get_clean_manifest"];
+v24 [label="get_GT_manifest_WES_gl"];
+v9 -> v24 [label="manifestCleanFile"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="get_GT_manifest_WES_gl"];
+v22 -> v24 [label="analysisType"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="get_GT_manifest_WES_gl"];
+v23 -> v24 [label="sampleType"];
+
+v24 [label="get_GT_manifest_WES_gl"];
+v39 [label="generateBEDFiles_WES_gl"];
+v24 -> v39;
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="generateBEDFiles_RNA_tumor"];
+v25 -> v27 [label="analysisType"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="generateBEDFiles_RNA_tumor"];
+v26 -> v27 [label="sampleType"];
+
+v27 [label="generateBEDFiles_RNA_tumor"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v27 -> v40;
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="generateBEDFiles_WGS_tumor"];
+v28 -> v30 [label="analysisType"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="generateBEDFiles_WGS_tumor"];
+v29 -> v30 [label="sampleType"];
+
+v30 [label="generateBEDFiles_WGS_tumor"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v30 -> v44;
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="generateBEDFiles_WGS_gl"];
+v31 -> v33 [label="analysisType"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="generateBEDFiles_WGS_gl"];
+v32 -> v33 [label="sampleType"];
+
+v33 [label="generateBEDFiles_WGS_gl"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v33 -> v48;
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="generateBEDFiles_WES_tumor"];
+v34 -> v36 [label="analysisType"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="generateBEDFiles_WES_tumor"];
+v35 -> v36 [label="sampleType"];
+
+v36 [label="generateBEDFiles_WES_tumor"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v36 -> v52;
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v39 [label="generateBEDFiles_WES_gl"];
+v37 -> v39 [label="analysisType"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v39 [label="generateBEDFiles_WES_gl"];
+v38 -> v39 [label="sampleType"];
+
+v39 [label="generateBEDFiles_WES_gl"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v39 -> v56;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v43 [label="generateSubBams_RNA_tumor"];
+v40 -> v43;
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="generateSubBams_RNA_tumor"];
+v41 -> v43 [label="analysisType"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="generateSubBams_RNA_tumor"];
+v42 -> v43 [label="sampleType"];
+
+v43 [label="generateSubBams_RNA_tumor"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v43 -> v60;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v47 [label="generateSubBams_WGS_tumor"];
+v44 -> v47;
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="generateSubBams_WGS_tumor"];
+v45 -> v47 [label="analysisType"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="generateSubBams_WGS_tumor"];
+v46 -> v47 [label="sampleType"];
+
+v47 [label="generateSubBams_WGS_tumor"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 -> v65;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v51 [label="generateSubBams_WGS_gl"];
+v48 -> v51;
+
+v49 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="generateSubBams_WGS_gl"];
+v49 -> v51 [label="analysisType"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="generateSubBams_WGS_gl"];
+v50 -> v51 [label="sampleType"];
+
+v51 [label="generateSubBams_WGS_gl"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 -> v70;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v55 [label="generateSubBams_WES_tumor"];
+v52 -> v55;
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v55 [label="generateSubBams_WES_tumor"];
+v53 -> v55 [label="analysisType"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v55 [label="generateSubBams_WES_tumor"];
+v54 -> v55 [label="sampleType"];
+
+v55 [label="generateSubBams_WES_tumor"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 -> v75;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v59 [label="generateSubBams_WES_gl"];
+v56 -> v59;
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="generateSubBams_WES_gl"];
+v57 -> v59 [label="analysisType"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="generateSubBams_WES_gl"];
+v58 -> v59 [label="sampleType"];
+
+v59 [label="generateSubBams_WES_gl"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 -> v80;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 [label="mergeToMinibams_RNA_tumor"];
+v60 -> v63;
+
+v61 [shape=point,label="",fixedsize=true,width=0.1];
+v63 [label="mergeToMinibams_RNA_tumor"];
+v61 -> v63 [label="analysisType"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1];
+v63 [label="mergeToMinibams_RNA_tumor"];
+v62 -> v63 [label="sampleType"];
+
+v63 [label="mergeToMinibams_RNA_tumor"];
+v64 [shape=point];
+v63 -> v64;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v68 [label="mergeToMinibams_WGS_tumor"];
+v65 -> v68;
+
+v66 [shape=point,label="",fixedsize=true,width=0.1];
+v68 [label="mergeToMinibams_WGS_tumor"];
+v66 -> v68 [label="analysisType"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1];
+v68 [label="mergeToMinibams_WGS_tumor"];
+v67 -> v68 [label="sampleType"];
+
+v68 [label="mergeToMinibams_WGS_tumor"];
+v69 [shape=point];
+v68 -> v69;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v73 [label="mergeToMinibams_WGS_gl"];
+v70 -> v73;
+
+v71 [shape=point,label="",fixedsize=true,width=0.1];
+v73 [label="mergeToMinibams_WGS_gl"];
+v71 -> v73 [label="analysisType"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1];
+v73 [label="mergeToMinibams_WGS_gl"];
+v72 -> v73 [label="sampleType"];
+
+v73 [label="mergeToMinibams_WGS_gl"];
+v74 [shape=point];
+v73 -> v74;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v78 [label="mergeToMinibams_WES_tumor"];
+v75 -> v78;
+
+v76 [shape=point,label="",fixedsize=true,width=0.1];
+v78 [label="mergeToMinibams_WES_tumor"];
+v76 -> v78 [label="analysisType"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1];
+v78 [label="mergeToMinibams_WES_tumor"];
+v77 -> v78 [label="sampleType"];
+
+v78 [label="mergeToMinibams_WES_tumor"];
+v79 [shape=point];
+v78 -> v79;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v83 [label="mergeToMinibams_WES_gl"];
+v80 -> v83;
+
+v81 [shape=point,label="",fixedsize=true,width=0.1];
+v83 [label="mergeToMinibams_WES_gl"];
+v81 -> v83 [label="analysisType"];
+
+v82 [shape=point,label="",fixedsize=true,width=0.1];
+v83 [label="mergeToMinibams_WES_gl"];
+v82 -> v83 [label="sampleType"];
+
+v83 [label="mergeToMinibams_WES_gl"];
+v84 [shape=point];
+v83 -> v84;
+
+}

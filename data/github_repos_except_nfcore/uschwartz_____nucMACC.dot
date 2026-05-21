@@ -1,0 +1,378 @@
+digraph "uschwartz_____nucMACC" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v6 [label="samples_fwd_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v6 [label="samples_rev_ch"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 [label="sub_FASTQ_entry:fastqc"];
+v6 -> v11 [label="sampleSingle_ch"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v2 -> v7 [label="samples_fwd_ch"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v5 -> v7 [label="samples_rev_ch"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v13 [label="sub_FASTQ_entry:alignment"];
+v7 -> v13 [label="samplePair_ch"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v36 [label="samples_conc"];
+
+v11 [label="sub_FASTQ_entry:fastqc"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v17;
+
+v11 [label="sub_FASTQ_entry:fastqc"];
+v12 [shape=point];
+v11 -> v12;
+
+v11 [label="sub_FASTQ_entry:fastqc"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v11 -> v27;
+
+v13 [label="sub_FASTQ_entry:alignment"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v17;
+
+v13 [label="sub_FASTQ_entry:alignment"];
+v14 [label="sub_FASTQ_entry:qualimap"];
+v13 -> v14;
+
+v13 [label="sub_FASTQ_entry:alignment"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v13 -> v28;
+
+v14 [label="sub_FASTQ_entry:qualimap"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v18;
+
+v14 [label="sub_FASTQ_entry:qualimap"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v14 -> v29;
+
+v13 [label="sub_FASTQ_entry:alignment"];
+v15 [label="sub_FASTQ_entry:sieve_mono"];
+v13 -> v15;
+
+v15 [label="sub_FASTQ_entry:sieve_mono"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 -> v26;
+
+v15 [label="sub_FASTQ_entry:sieve_mono"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v40 [label="sieve_mono"];
+
+v13 [label="sub_FASTQ_entry:alignment"];
+v16 [label="sub_FASTQ_entry:sieve_sub"];
+v13 -> v16;
+
+v16 [label="sub_FASTQ_entry:sieve_sub"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v16 -> v26;
+
+v16 [label="sub_FASTQ_entry:sieve_sub"];
+v52 [label="common_nucMACC:danpos_sub"];
+v16 -> v52 [label="sieve_sub"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 [label="sub_FASTQ_entry:multiqc"];
+v19 -> v20;
+
+v20 [label="sub_FASTQ_entry:multiqc"];
+v22 [shape=point];
+v20 -> v22;
+
+v20 [label="sub_FASTQ_entry:multiqc"];
+v21 [shape=point];
+v20 -> v21;
+
+v14 [label="sub_FASTQ_entry:qualimap"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 [label="sub_FASTQ_entry:InsertSize_Histogram"];
+v23 -> v24;
+
+v24 [label="sub_FASTQ_entry:InsertSize_Histogram"];
+v25 [shape=point];
+v24 -> v25;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 [label="sub_FASTQ_entry:statistics_read"];
+v29 -> v30;
+
+v30 [label="sub_FASTQ_entry:statistics_read"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 -> v32;
+
+v30 [label="sub_FASTQ_entry:statistics_read"];
+v31 [shape=point];
+v30 -> v31;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 [label="sub_FASTQ_entry:statistics_plot"];
+v32 -> v33;
+
+v33 [label="sub_FASTQ_entry:statistics_plot"];
+v35 [shape=point];
+v33 -> v35;
+
+v33 [label="sub_FASTQ_entry:statistics_plot"];
+v34 [shape=point];
+v33 -> v34;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="min"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="min"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v37 -> v38 [label="min_conc"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v10 -> v38 [label="samples_conc"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 -> v54 [label="min_conc_sample"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 [label="common_nucMACC:pool"];
+v41 -> v42;
+
+v42 [label="common_nucMACC:pool"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v43;
+
+v42 [label="common_nucMACC:pool"];
+v44 [label="common_nucMACC:danpos_mono"];
+v42 -> v44;
+
+v15 [label="sub_FASTQ_entry:sieve_mono"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v43 [label="sieve_mono"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [label="common_nucMACC:danpos_mono"];
+v43 -> v44;
+
+v44 [label="common_nucMACC:danpos_mono"];
+v45 [shape=point];
+v44 -> v45;
+
+v44 [label="common_nucMACC:danpos_mono"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v44 -> v46;
+
+v42 [label="common_nucMACC:pool"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 [label="common_nucMACC:convert2saf_mono"];
+v46 -> v47;
+
+v47 [label="common_nucMACC:convert2saf_mono"];
+v48 [shape=point];
+v47 -> v48;
+
+v47 [label="common_nucMACC:convert2saf_mono"];
+v51 [label="common_nucMACC:featureCounts_mono"];
+v47 -> v51;
+
+v15 [label="sub_FASTQ_entry:sieve_mono"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v49 [label="sieve_mono"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 [label="common_nucMACC:featureCounts_mono"];
+v50 -> v51;
+
+v51 [label="common_nucMACC:featureCounts_mono"];
+v62 [label="common_nucMACC:nucMACC_scores"];
+v51 -> v62;
+
+v51 [label="common_nucMACC:featureCounts_mono"];
+v62 [label="common_nucMACC:nucMACC_scores"];
+v51 -> v62;
+
+v42 [label="common_nucMACC:pool"];
+v52 [label="common_nucMACC:danpos_sub"];
+v42 -> v52 [label="chrSizes"];
+
+v52 [label="common_nucMACC:danpos_sub"];
+v53 [shape=point];
+v52 -> v53;
+
+v52 [label="common_nucMACC:danpos_sub"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v54 -> v55;
+
+v16 [label="sub_FASTQ_entry:sieve_sub"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v16 -> v55 [label="sieve_sub"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 [label="common_nucMACC:convert2saf_sub"];
+v55 -> v56;
+
+v56 [label="common_nucMACC:convert2saf_sub"];
+v57 [shape=point];
+v56 -> v57;
+
+v56 [label="common_nucMACC:convert2saf_sub"];
+v60 [label="common_nucMACC:featureCounts_sub"];
+v56 -> v60;
+
+v16 [label="sub_FASTQ_entry:sieve_sub"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v58 [label="sieve_sub"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 [label="common_nucMACC:featureCounts_sub"];
+v59 -> v60;
+
+v60 [label="common_nucMACC:featureCounts_sub"];
+v68 [label="common_nucMACC:sub_nucMACC_scores"];
+v60 -> v68;
+
+v60 [label="common_nucMACC:featureCounts_sub"];
+v68 [label="common_nucMACC:sub_nucMACC_scores"];
+v60 -> v68;
+
+v61 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v62 [label="common_nucMACC:nucMACC_scores"];
+v61 -> v62;
+
+v62 [label="common_nucMACC:nucMACC_scores"];
+v66 [shape=point];
+v62 -> v66;
+
+v62 [label="common_nucMACC:nucMACC_scores"];
+v65 [shape=point];
+v62 -> v65;
+
+v62 [label="common_nucMACC:nucMACC_scores"];
+v68 [label="common_nucMACC:sub_nucMACC_scores"];
+v62 -> v68;
+
+v62 [label="common_nucMACC:nucMACC_scores"];
+v64 [shape=point];
+v62 -> v64;
+
+v62 [label="common_nucMACC:nucMACC_scores"];
+v63 [shape=point];
+v62 -> v63;
+
+v67 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v68 [label="common_nucMACC:sub_nucMACC_scores"];
+v67 -> v68;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 [label="common_nucMACC:sub_nucMACC_scores"];
+v39 -> v68 [label="min_conc_sample"];
+
+v51 [label="common_nucMACC:featureCounts_mono"];
+v68 [label="common_nucMACC:sub_nucMACC_scores"];
+v51 -> v68 [label="readCounts_nucs"];
+
+v51 [label="common_nucMACC:featureCounts_mono"];
+v68 [label="common_nucMACC:sub_nucMACC_scores"];
+v51 -> v68 [label="counts_sum_mono"];
+
+v68 [label="common_nucMACC:sub_nucMACC_scores"];
+v73 [shape=point];
+v68 -> v73;
+
+v68 [label="common_nucMACC:sub_nucMACC_scores"];
+v72 [shape=point];
+v68 -> v72;
+
+v68 [label="common_nucMACC:sub_nucMACC_scores"];
+v71 [shape=point];
+v68 -> v71;
+
+v68 [label="common_nucMACC:sub_nucMACC_scores"];
+v70 [shape=point];
+v68 -> v70;
+
+v68 [label="common_nucMACC:sub_nucMACC_scores"];
+v69 [shape=point];
+v68 -> v69;
+
+}

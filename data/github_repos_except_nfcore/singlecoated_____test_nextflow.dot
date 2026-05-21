@@ -1,0 +1,58 @@
+digraph "singlecoated_____test_nextflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 [label="fastqc"];
+v1 -> v2 [label="input"];
+
+v2 [label="fastqc"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v10;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="BOWTIE:bowtieIdx"];
+v3 -> v4 [label="ref"];
+
+v4 [label="BOWTIE:bowtieIdx"];
+v5 [label="BOWTIE:bowtieAln"];
+v4 -> v5;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v5 [label="BOWTIE:bowtieAln"];
+v1 -> v5 [label="input"];
+
+v5 [label="BOWTIE:bowtieAln"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v5 -> v6 [label="sam"];
+
+v5 [label="BOWTIE:bowtieAln"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v5 -> v8 [label="logs"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v7 [shape=point];
+v6 -> v7;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v9 [shape=point];
+v8 -> v9;
+
+v5 [label="BOWTIE:bowtieAln"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v10 [label="logs"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 [label="multiqc"];
+v11 -> v12;
+
+v12 [label="multiqc"];
+v13 [shape=point];
+v12 -> v13;
+
+}

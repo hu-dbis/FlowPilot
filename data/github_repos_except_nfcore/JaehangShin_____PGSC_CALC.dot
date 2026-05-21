@@ -1,0 +1,414 @@
+digraph "JaehangShin_____PGSC_CALC" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v12 [label="PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON"];
+v0 -> v12 [label="input"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v2 [shape=point];
+v1 -> v2 [label="unique_scorefiles"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v3 -> v4 [label="scorefiles"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v4 -> v5;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v3 -> v5 [label="scorefiles"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 -> v10 [label="scorefiles"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v7 [shape=point];
+v6 -> v7 [label="ch_reference"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v20 [label="PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:COMBINE_SCOREFILES"];
+v8 -> v20 [label="reference"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v25 [label="ch_versions"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 [label="PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:COMBINE_SCOREFILES"];
+v10 -> v20 [label="scorefile"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v13 [label="ch_versions"];
+
+v12 [label="PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v14;
+
+v12 [label="PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v21 [label="ch_versions"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="buffer"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="buffer"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v17 -> v18;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v36 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_VCF"];
+v17 -> v36 [label="vcf"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v17 -> v19;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v22;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v24;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v23;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v24;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v22;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v23;
+
+v20 [label="PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:COMBINE_SCOREFILES"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 -> v42 [label="scorefile"];
+
+v20 [label="PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:COMBINE_SCOREFILES"];
+v70 [label="PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_REPORT"];
+v20 -> v70 [label="log_scorefiles"];
+
+v20 [label="PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:COMBINE_SCOREFILES"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v25 [label="versions"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v27 [label="geno"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v27 [label="variants"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v27 [label="pheno"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v51 [label="ch_versions"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v32 [label="ch_versions"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELBIM"];
+v29 -> v30 [label="fileset"];
+
+v30 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELBIM"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v39;
+
+v30 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELBIM"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v41;
+
+v30 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELBIM"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v40;
+
+v30 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELBIM"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v35 [label="ch_versions"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR"];
+v29 -> v33 [label="fileset"];
+
+v33 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v39;
+
+v33 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v41;
+
+v33 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v40;
+
+v33 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v38 [label="ch_versions"];
+
+v36 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_VCF"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v39;
+
+v36 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_VCF"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v40;
+
+v36 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_VCF"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v41;
+
+v36 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_VCF"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v50 [label="ch_versions"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v54 [label="geno"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v54 [label="pheno"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v41 -> v42 [label="variants"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v43 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:MATCH_VARIANTS"];
+v42 -> v43 [label="ch_variants"];
+
+v43 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:MATCH_VARIANTS"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 -> v44;
+
+v43 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:MATCH_VARIANTS"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v50;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v45 -> v46;
+
+v20 [label="PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:COMBINE_SCOREFILES"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 -> v46 [label="scorefile"];
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v47 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:MATCH_COMBINE"];
+v46 -> v47 [label="matches"];
+
+v47 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:MATCH_COMBINE"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v47 -> v53 [label="scorefiles"];
+
+v47 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:MATCH_COMBINE"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 -> v69 [label="db"];
+
+v47 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:MATCH_COMBINE"];
+v49 [shape=point];
+v47 -> v49;
+
+v47 [label="PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:MATCH_COMBINE"];
+v48 [shape=point];
+v47 -> v48;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v51 [label="versions"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v73 [label="ch_versions"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v63 [label="ch_versions"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v53 -> v57 [label="annotated_scorefiles"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v54 [label="variants"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v58 -> v59 [label="ch_apply"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [label="PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:PLINK2_SCORE"];
+v58 -> v60 [label="ch_apply"];
+
+v60 [label="PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:PLINK2_SCORE"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 -> v64;
+
+v60 [label="PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:PLINK2_SCORE"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v60 -> v62;
+
+v60 [label="PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:PLINK2_SCORE"];
+v61 [shape=point];
+v60 -> v61;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v66 [label="ch_versions"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v65 [label="PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_AGGREGATE"];
+v64 -> v65 [label="ch_scores"];
+
+v65 [label="PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_AGGREGATE"];
+v70 [label="PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_REPORT"];
+v65 -> v70;
+
+v65 [label="PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_AGGREGATE"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v72 [label="ch_versions"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v70 [label="PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_REPORT"];
+v67 -> v70;
+
+v68 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v70 [label="PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_REPORT"];
+v68 -> v70;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v70 [label="PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_REPORT"];
+v69 -> v70;
+
+v70 [label="PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_REPORT"];
+v71 [shape=point];
+v70 -> v71;
+
+v70 [label="PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_REPORT"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v73 [label="versions"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v73 -> v74 [label="ch_versions"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v74 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v76 [label="PGSCATALOG_PGSCALC:PGSCALC:DUMPSOFTWAREVERSIONS"];
+v75 -> v76;
+
+v76 [label="PGSCATALOG_PGSCALC:PGSCALC:DUMPSOFTWAREVERSIONS"];
+v79 [shape=point];
+v76 -> v79;
+
+v76 [label="PGSCATALOG_PGSCALC:PGSCALC:DUMPSOFTWAREVERSIONS"];
+v78 [shape=point];
+v76 -> v78;
+
+v76 [label="PGSCATALOG_PGSCALC:PGSCALC:DUMPSOFTWAREVERSIONS"];
+v77 [shape=point];
+v76 -> v77;
+
+}

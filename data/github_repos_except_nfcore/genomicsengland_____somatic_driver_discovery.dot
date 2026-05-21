@@ -1,0 +1,474 @@
+digraph "genomicsengland_____somatic_driver_discovery" {
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="SOMATIC_DISCOVERY:VALIDATE_ARGS"];
+v1 -> v5 [label="ch_variant_type"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="SOMATIC_DISCOVERY:VALIDATE_ARGS"];
+v2 -> v5 [label="sample_file"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="SOMATIC_DISCOVERY:VALIDATE_ARGS"];
+v3 -> v5 [label="region_file"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="SOMATIC_DISCOVERY:VALIDATE_ARGS"];
+v0 -> v5 [label="ch_bed_file"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="SOMATIC_DISCOVERY:VALIDATE_ARGS"];
+v4 -> v5 [label="ch_is_cloud"];
+
+v5 [label="SOMATIC_DISCOVERY:VALIDATE_ARGS"];
+v6 [shape=point];
+v5 -> v6;
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v9 -> v10 [label="ch_samples"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v11 [shape=point];
+v10 -> v11;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="buffer"];
+v9 -> v12 [label="ch_samples"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="buffer"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [label="SOMATIC_DISCOVERY:INDEX_VCFS"];
+v13 -> v15 [label="grouped_samples"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="SOMATIC_DISCOVERY:INDEX_VCFS"];
+v14 -> v15 [label="ch_tmpdir"];
+
+v15 [label="SOMATIC_DISCOVERY:INDEX_VCFS"];
+v17 [label="SOMATIC_DISCOVERY:VARIANT_FILTER"];
+v15 -> v17;
+
+v15 [label="SOMATIC_DISCOVERY:INDEX_VCFS"];
+v16 [shape=point];
+v15 -> v16;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="SOMATIC_DISCOVERY:VARIANT_FILTER"];
+v0 -> v17 [label="ch_bed_file"];
+
+v17 [label="SOMATIC_DISCOVERY:VARIANT_FILTER"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v19 [shape=point];
+v18 -> v19;
+
+v15 [label="SOMATIC_DISCOVERY:INDEX_VCFS"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v15 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v20 -> v40 [label="ch_symlinks"];
+
+v17 [label="SOMATIC_DISCOVERY:VARIANT_FILTER"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v17 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v94 [label="SOMATIC_DISCOVERY:RUN_ONCODRIVEFML"];
+v21 -> v94 [label="ch_aggregate"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v22 -> v40 [label="variant_type"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v23 -> v40 [label="anno_type"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v24 -> v40 [label="gtf_gene_model_info"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v25 -> v40 [label="gene_list"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v26 -> v40 [label="covariates_file"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v27 -> v40 [label="weights"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v28 -> v40 [label="stat_type"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v29 -> v40 [label="background_mut_calc"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v30 -> v40 [label="min_clust_size"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v31 -> v40 [label="ap_iters"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v32 -> v40 [label="ap_convits"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v33 -> v40 [label="ap_algorithm"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v34 -> v40 [label="hotspot_distance"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v35 -> v40 [label="min_hs_vars"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v36 -> v40 [label="min_hs_samps"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v37 -> v40 [label="snps_only"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v38 -> v40 [label="blacklist"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v39 -> v40 [label="prefix"];
+
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v42 [shape=point];
+v40 -> v42;
+
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v113 [label="SOMATIC_DISCOVERY:COMBINE_OUTPUT_CODING"];
+v40 -> v113 [label="ch_mutenricher_results"];
+
+v40 [label="SOMATIC_DISCOVERY:RUN_MUTENRICHER"];
+v41 [shape=point];
+v40 -> v41;
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v43 -> v92 [label="build"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v44 -> v92 [label="signature_method"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v45 -> v92 [label="signature_path"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v46 -> v92 [label="signature_column_ref"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v47 -> v92 [label="signature_column_alt"];
+
+v48 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v48 -> v92 [label="signature_column_prob"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v49 -> v92 [label="signature_column_classifier"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v50 -> v92 [label="signature_normalize_by_sites"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v51 -> v92 [label="mutability_adjusting"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v52 -> v92 [label="mutability_file"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v53 -> v92 [label="mutability_format"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v54 -> v92 [label="mutability_chr"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v55 -> v92 [label="mutability_chr_prefix"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v56 -> v92 [label="mutability_pos"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v57 -> v92 [label="mutability_ref"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v58 -> v92 [label="mutability_alt"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v59 -> v92 [label="mutability_mutab"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v60 -> v92 [label="depth_adjusting"];
+
+v61 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v61 -> v92 [label="depth_file"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v62 -> v92 [label="depth_format"];
+
+v63 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v63 -> v92 [label="depth_chr"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v64 -> v92 [label="depth_chr_prefix"];
+
+v65 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v65 -> v92 [label="depth_pos"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v66 -> v92 [label="depth_depth"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v67 -> v92 [label="score_file"];
+
+v68 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v68 -> v92 [label="score_format"];
+
+v69 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v69 -> v92 [label="score_chr"];
+
+v70 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v70 -> v92 [label="score_chr_prefix"];
+
+v71 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v71 -> v92 [label="score_pos"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v72 -> v92 [label="score_ref"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v73 -> v92 [label="score_alt"];
+
+v74 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v74 -> v92 [label="score_score"];
+
+v75 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v75 -> v92 [label="score_element"];
+
+v76 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v76 -> v92 [label="statistic_method"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v77 -> v92 [label="statistic_discard_mnp"];
+
+v78 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v78 -> v92 [label="statistic_per_sample_analysis"];
+
+v79 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v79 -> v92 [label="statistic_sampling"];
+
+v80 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v80 -> v92 [label="statistic_sampling_max"];
+
+v81 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v81 -> v92 [label="statistic_sampling_chunk"];
+
+v82 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v82 -> v92 [label="statistic_sampling_min_obs"];
+
+v83 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v83 -> v92 [label="indels_include"];
+
+v84 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v84 -> v92 [label="indels_max_size"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v85 -> v92 [label="indels_method"];
+
+v86 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v86 -> v92 [label="indels_max_consecutive"];
+
+v87 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v87 -> v92 [label="indels_gene_exomic_frameshift_ratio"];
+
+v88 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v88 -> v92 [label="indels_stops_function"];
+
+v89 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v89 -> v92 [label="indels_minimum_number_of_stops"];
+
+v90 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v90 -> v92 [label="settings_cores"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v91 -> v92 [label="settings_seed"];
+
+v92 [label="SOMATIC_DISCOVERY:INGEST_PARAM"];
+v94 [label="SOMATIC_DISCOVERY:RUN_ONCODRIVEFML"];
+v92 -> v94;
+
+v93 [shape=point,label="",fixedsize=true,width=0.1];
+v94 [label="SOMATIC_DISCOVERY:RUN_ONCODRIVEFML"];
+v93 -> v94 [label="region_file"];
+
+v94 [label="SOMATIC_DISCOVERY:RUN_ONCODRIVEFML"];
+v113 [label="SOMATIC_DISCOVERY:COMBINE_OUTPUT_CODING"];
+v94 -> v113 [label="ch_oncodrive_results"];
+
+v94 [label="SOMATIC_DISCOVERY:RUN_ONCODRIVEFML"];
+v96 [shape=point];
+v94 -> v96;
+
+v94 [label="SOMATIC_DISCOVERY:RUN_ONCODRIVEFML"];
+v95 [shape=point];
+v94 -> v95;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v21 -> v112 [label="ch_aggregate"];
+
+v97 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v97 -> v112 [label="refdb"];
+
+v98 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v98 -> v112 [label="dndscv_gene_list"];
+
+v99 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v99 -> v112 [label="sm"];
+
+v100 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v100 -> v112 [label="kc"];
+
+v101 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v101 -> v112 [label="cv"];
+
+v102 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v102 -> v112 [label="max_muts_per_gene_per_sample"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v103 -> v112 [label="max_coding_muts_per_sample"];
+
+v104 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v104 -> v112 [label="use_indel_sites"];
+
+v105 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v105 -> v112 [label="min_indels"];
+
+v106 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v106 -> v112 [label="maxcovs"];
+
+v107 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v107 -> v112 [label="constrain_wnon_wspl"];
+
+v108 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v108 -> v112 [label="name"];
+
+v109 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v109 -> v112 [label="outp"];
+
+v110 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v110 -> v112 [label="numcode"];
+
+v111 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v111 -> v112 [label="mingenecovs"];
+
+v112 [label="SOMATIC_DISCOVERY:RUN_DNDSCV"];
+v113 [label="SOMATIC_DISCOVERY:COMBINE_OUTPUT_CODING"];
+v112 -> v113 [label="ch_dndscv_results"];
+
+v113 [label="SOMATIC_DISCOVERY:COMBINE_OUTPUT_CODING"];
+v116 [shape=point];
+v113 -> v116;
+
+v113 [label="SOMATIC_DISCOVERY:COMBINE_OUTPUT_CODING"];
+v115 [shape=point];
+v113 -> v115;
+
+v113 [label="SOMATIC_DISCOVERY:COMBINE_OUTPUT_CODING"];
+v114 [shape=point];
+v113 -> v114;
+
+}

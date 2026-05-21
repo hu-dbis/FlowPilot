@@ -1,0 +1,2698 @@
+digraph "taxprofiler" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v6 [label="samplesheet"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v3 -> v9 [label="databases"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v15 [label="ch_versions"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v505 [label="ch_multiqc_files"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v8 [label="reads"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v8 [label="reads"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v207;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v207;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 [label="NFCORE_TAXPROFILER:TAXPROFILER:FASTQC"];
+v8 -> v20 [label="ch_input_for_fastqc"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v9 -> v10;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v18;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [label="NFCORE_TAXPROFILER:TAXPROFILER:UNTAR"];
+v12 -> v13 [label="ch_inputdb_untar"];
+
+v13 [label="NFCORE_TAXPROFILER:TAXPROFILER:UNTAR"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v16;
+
+v13 [label="NFCORE_TAXPROFILER:TAXPROFILER:UNTAR"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v23 [label="ch_versions"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v18 [label="ch_outputdb_from_untar"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v213 [label="databases"];
+
+v20 [label="NFCORE_TAXPROFILER:TAXPROFILER:FASTQC"];
+v21 [shape=point];
+v20 -> v21;
+
+v20 [label="NFCORE_TAXPROFILER:TAXPROFILER:FASTQC"];
+v510 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 -> v510;
+
+v20 [label="NFCORE_TAXPROFILER:TAXPROFILER:FASTQC"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v20 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v61 [label="ch_versions"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v55 [label="ch_versions"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v56 [label="ch_multiqc_files"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v50 [label="ch_versions"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v53 [label="ch_multiqc_files"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v7 -> v28 [label="reads"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v42 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_PAIRED"];
+v28 -> v42;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v33 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_SINGLE"];
+v28 -> v33;
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_SINGLE"];
+v29 -> v33 [label="adapter_fasta"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_SINGLE"];
+v30 -> v33 [label="discard_trimmed_pass"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_SINGLE"];
+v31 -> v33 [label="save_trimmed_fail"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_SINGLE"];
+v32 -> v33 [label="save_merged"];
+
+v33 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_SINGLE"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v48;
+
+v33 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_SINGLE"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v53;
+
+v33 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_SINGLE"];
+v37 [shape=point];
+v33 -> v37;
+
+v33 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_SINGLE"];
+v36 [shape=point];
+v33 -> v36;
+
+v33 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_SINGLE"];
+v35 [shape=point];
+v33 -> v35;
+
+v33 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_SINGLE"];
+v34 [shape=point];
+v33 -> v34;
+
+v33 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_SINGLE"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v33 -> v49;
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v42 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_PAIRED"];
+v38 -> v42 [label="adapter_fasta"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v42 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_PAIRED"];
+v39 -> v42 [label="discard_trimmed_pass"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1];
+v42 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_PAIRED"];
+v40 -> v42 [label="save_trimmed_fail"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v42 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_PAIRED"];
+v41 -> v42 [label="save_merged"];
+
+v42 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_PAIRED"];
+v46 [shape=point];
+v42 -> v46;
+
+v42 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_PAIRED"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v54;
+
+v42 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_PAIRED"];
+v45 [shape=point];
+v42 -> v45;
+
+v42 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_PAIRED"];
+v44 [shape=point];
+v42 -> v44;
+
+v42 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_PAIRED"];
+v43 [shape=point];
+v42 -> v43;
+
+v42 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_PAIRED"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 -> v47;
+
+v42 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:SHORTREAD_FASTP:FASTP_PAIRED"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v42 -> v51;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v48 [label="ch_fastp_reads_prepped_pe"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:FASTQC_PROCESSED"];
+v48 -> v57 [label="reads"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v52 [label="ch_versions"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v55 [label="versions"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v54 [label="ch_multiqc_files"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v56 [label="mqc"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v59 [label="ch_versions"];
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v60 [label="ch_multiqc_files"];
+
+v57 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:FASTQC_PROCESSED"];
+v58 [shape=point];
+v57 -> v58;
+
+v57 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:FASTQC_PROCESSED"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v60;
+
+v57 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_PREPROCESSING:FASTQC_PROCESSED"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v61 [label="versions"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v513 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 -> v513 [label="mqc"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v90 [label="ch_versions"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v80 [label="ch_versions"];
+
+v63 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v83 [label="ch_multiqc_files"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v69 [label="ch_versions"];
+
+v65 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v70 [label="ch_multiqc_files"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v66 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_PREPROCESSING:LONGREAD_ADAPTERREMOVAL:PORECHOP_ABI"];
+v7 -> v66 [label="reads"];
+
+v66 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_PREPROCESSING:LONGREAD_ADAPTERREMOVAL:PORECHOP_ABI"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 -> v67;
+
+v66 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_PREPROCESSING:LONGREAD_ADAPTERREMOVAL:PORECHOP_ABI"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v70;
+
+v66 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_PREPROCESSING:LONGREAD_ADAPTERREMOVAL:PORECHOP_ABI"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v66 -> v68;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 -> v71 [label="reads"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v69 -> v79 [label="versions"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v83 [label="mqc"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v75 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_PREPROCESSING:LONGREAD_FILTERING:NANOQ"];
+v71 -> v75 [label="reads"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v77 [label="ch_versions"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v78 [label="ch_multiqc_files"];
+
+v74 [shape=point,label="",fixedsize=true,width=0.1];
+v75 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_PREPROCESSING:LONGREAD_FILTERING:NANOQ"];
+v74 -> v75 [label="output_format"];
+
+v75 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_PREPROCESSING:LONGREAD_FILTERING:NANOQ"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v78;
+
+v75 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_PREPROCESSING:LONGREAD_FILTERING:NANOQ"];
+v85 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_PREPROCESSING:FASTQC_PROCESSED"];
+v75 -> v85 [label="reads"];
+
+v75 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_PREPROCESSING:LONGREAD_FILTERING:NANOQ"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v77 -> v81 [label="versions"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v84 [label="mqc"];
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v82 [label="ch_versions"];
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v87 [label="ch_versions"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v84 [label="ch_multiqc_files"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v88 [label="ch_multiqc_files"];
+
+v85 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_PREPROCESSING:FASTQC_PROCESSED"];
+v86 [shape=point];
+v85 -> v86;
+
+v85 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_PREPROCESSING:FASTQC_PROCESSED"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v88;
+
+v85 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_PREPROCESSING:FASTQC_PROCESSED"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v90 [label="versions"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v516 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v88 -> v516 [label="mqc"];
+
+v75 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_PREPROCESSING:LONGREAD_FILTERING:NANOQ"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v75 -> v89 [label="reads"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v162 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_ALIGN"];
+v89 -> v162 [label="reads"];
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v116 [label="ch_versions"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v114 [label="ch_versions"];
+
+v92 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v115 [label="ch_multiqc_files"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v93 [label="reads"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v93 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v96 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREIL"];
+v94 -> v96;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v96 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREIL"];
+v94 -> v96;
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREIL"];
+v95 -> v96 [label="mode"];
+
+v96 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREIL"];
+v99 [shape=point];
+v96 -> v99;
+
+v96 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREIL"];
+v98 [shape=point];
+v96 -> v98;
+
+v96 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREIL"];
+v97 [shape=point];
+v96 -> v97;
+
+v96 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREIL"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v96 -> v100 [label="npo"];
+
+v96 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREIL"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v96 -> v110;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v104 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_SET"];
+v101 -> v104 [label="ch_npos_for_nonparielset"];
+
+v96 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREIL"];
+v102 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_CURVE"];
+v96 -> v102 [label="npo"];
+
+v102 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_CURVE"];
+v103 [shape=point];
+v102 -> v103 [label="curve_pngs"];
+
+v102 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_CURVE"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v102 -> v111;
+
+v104 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_SET"];
+v105 [shape=point];
+v104 -> v105 [label="set_pngs"];
+
+v104 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_SET"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v104 -> v112;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v106 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREILCURVESR"];
+v101 -> v106 [label="ch_npos_for_nonparielset"];
+
+v106 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREILCURVESR"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v115;
+
+v106 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREILCURVESR"];
+v109 [shape=point];
+v106 -> v109 [label="nonpareilcurvesr"];
+
+v106 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREILCURVESR"];
+v108 [shape=point];
+v106 -> v108;
+
+v106 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREILCURVESR"];
+v107 [shape=point];
+v106 -> v107;
+
+v106 [label="NFCORE_TAXPROFILER:TAXPROFILER:NONPAREIL:NONPAREIL_NONPAREILCURVESR"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v106 -> v113;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v114;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v114;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v114;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v116 [label="versions"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v519 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v115 -> v519 [label="mqc"];
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v124 [label="ch_versions"];
+
+v117 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v122 [label="ch_versions"];
+
+v118 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v123 [label="ch_multiqc_files"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_COMPLEXITYFILTERING:BBMAP_BBDUK"];
+v48 -> v120 [label="reads"];
+
+v119 [shape=point,label="",fixedsize=true,width=0.1];
+v120 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_COMPLEXITYFILTERING:BBMAP_BBDUK"];
+v119 -> v120 [label="contaminants"];
+
+v120 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_COMPLEXITYFILTERING:BBMAP_BBDUK"];
+v133 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_ALIGN"];
+v120 -> v133 [label="reads"];
+
+v120 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_COMPLEXITYFILTERING:BBMAP_BBDUK"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v123;
+
+v120 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_COMPLEXITYFILTERING:BBMAP_BBDUK"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v122;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v124 [label="versions"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v522 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v123 -> v522 [label="mqc"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v152 [label="ch_versions"];
+
+v125 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v129 [label="ch_versions"];
+
+v126 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v140 [label="ch_multiqc_files"];
+
+v127 [shape=point,label="",fixedsize=true,width=0.1];
+v128 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_BUILD"];
+v127 -> v128;
+
+v128 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_BUILD"];
+v133 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_ALIGN"];
+v128 -> v133 [label="ch_bowtie2_index"];
+
+v128 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_BUILD"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 -> v139 [label="ch_versions"];
+
+v130 [shape=point,label="",fixedsize=true,width=0.1];
+v133 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_ALIGN"];
+v130 -> v133;
+
+v131 [shape=point,label="",fixedsize=true,width=0.1];
+v133 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_ALIGN"];
+v131 -> v133 [label="save_unaligned"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v133 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_ALIGN"];
+v132 -> v133 [label="sort_bam"];
+
+v133 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_ALIGN"];
+v137 [shape=point];
+v133 -> v137;
+
+v133 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_ALIGN"];
+v141 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:SAMTOOLS_INDEX"];
+v133 -> v141;
+
+v133 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_ALIGN"];
+v136 [shape=point];
+v133 -> v136;
+
+v133 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_ALIGN"];
+v135 [shape=point];
+v133 -> v135;
+
+v133 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_ALIGN"];
+v134 [shape=point];
+v133 -> v134;
+
+v133 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_ALIGN"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v140;
+
+v133 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_ALIGN"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v199 [label="ch_shortreads_hostremoved"];
+
+v133 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_ALIGN"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v133 -> v138;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v145 [label="ch_versions"];
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v151 [label="ch_multiqc_files"];
+
+v141 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:SAMTOOLS_INDEX"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v141 -> v146;
+
+v141 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:SAMTOOLS_INDEX"];
+v143 [shape=point];
+v141 -> v143;
+
+v141 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:SAMTOOLS_INDEX"];
+v142 [shape=point];
+v141 -> v142;
+
+v141 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:SAMTOOLS_INDEX"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v141 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v150 [label="ch_versions"];
+
+v133 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:BOWTIE2_ALIGN"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v133 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v148 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:SAMTOOLS_STATS"];
+v146 -> v148 [label="bam_bai"];
+
+v147 [shape=point,label="",fixedsize=true,width=0.1];
+v148 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:SAMTOOLS_STATS"];
+v147 -> v148;
+
+v148 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:SAMTOOLS_STATS"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 -> v151 [label="stats"];
+
+v148 [label="NFCORE_TAXPROFILER:TAXPROFILER:SHORTREAD_HOSTREMOVAL:SAMTOOLS_STATS"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v148 -> v149;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v150;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 -> v152 [label="versions"];
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v525 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v151 -> v525 [label="mqc"];
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v198 [label="ch_versions"];
+
+v153 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v157 [label="ch_versions"];
+
+v154 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 -> v197 [label="ch_multiqc_files"];
+
+v155 [shape=point,label="",fixedsize=true,width=0.1];
+v156 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_INDEX"];
+v155 -> v156;
+
+v156 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_INDEX"];
+v162 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_ALIGN"];
+v156 -> v162 [label="ch_minimap2_index"];
+
+v156 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_INDEX"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 -> v157;
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 -> v166 [label="ch_versions"];
+
+v158 [shape=point,label="",fixedsize=true,width=0.1];
+v162 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_ALIGN"];
+v158 -> v162 [label="bam_format"];
+
+v159 [shape=point,label="",fixedsize=true,width=0.1];
+v162 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_ALIGN"];
+v159 -> v162 [label="bam_index_extension"];
+
+v160 [shape=point,label="",fixedsize=true,width=0.1];
+v162 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_ALIGN"];
+v160 -> v162 [label="cigar_paf_format"];
+
+v161 [shape=point,label="",fixedsize=true,width=0.1];
+v162 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_ALIGN"];
+v161 -> v162 [label="cigar_bam"];
+
+v162 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_ALIGN"];
+v164 [shape=point];
+v162 -> v164;
+
+v162 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_ALIGN"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v162 -> v167;
+
+v162 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_ALIGN"];
+v163 [shape=point];
+v162 -> v163;
+
+v162 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_ALIGN"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v162 -> v165;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 -> v166;
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v179 [label="ch_versions"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v170 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_VIEW"];
+v167 -> v170 [label="ch_minimap2_mapped"];
+
+v168 [shape=point,label="",fixedsize=true,width=0.1];
+v170 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_VIEW"];
+v168 -> v170;
+
+v169 [shape=point,label="",fixedsize=true,width=0.1];
+v170 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_VIEW"];
+v169 -> v170 [label="qname"];
+
+v170 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_VIEW"];
+v181 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_FASTQ"];
+v170 -> v181;
+
+v170 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_VIEW"];
+v177 [shape=point];
+v170 -> v177;
+
+v170 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_VIEW"];
+v176 [shape=point];
+v170 -> v176;
+
+v170 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_VIEW"];
+v175 [shape=point];
+v170 -> v175;
+
+v170 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_VIEW"];
+v174 [shape=point];
+v170 -> v174;
+
+v170 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_VIEW"];
+v173 [shape=point];
+v170 -> v173;
+
+v170 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_VIEW"];
+v172 [shape=point];
+v170 -> v172;
+
+v170 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_VIEW"];
+v171 [shape=point];
+v170 -> v171;
+
+v170 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_VIEW"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v170 -> v178;
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v186 [label="ch_versions"];
+
+v180 [shape=point,label="",fixedsize=true,width=0.1];
+v181 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_FASTQ"];
+v180 -> v181 [label="interleave"];
+
+v181 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_FASTQ"];
+v184 [shape=point];
+v181 -> v184;
+
+v181 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_FASTQ"];
+v183 [shape=point];
+v181 -> v183;
+
+v181 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_FASTQ"];
+v182 [shape=point];
+v181 -> v182;
+
+v181 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_FASTQ"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 -> v199 [label="ch_longreads_hostremoved"];
+
+v181 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_FASTQ"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v181 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v186;
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 -> v191 [label="ch_versions"];
+
+v162 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_ALIGN"];
+v187 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_INDEX"];
+v162 -> v187;
+
+v187 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_INDEX"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v187 -> v192;
+
+v187 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_INDEX"];
+v189 [shape=point];
+v187 -> v189;
+
+v187 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_INDEX"];
+v188 [shape=point];
+v187 -> v188;
+
+v187 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_INDEX"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v187 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v191;
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 -> v196 [label="ch_versions"];
+
+v162 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:MINIMAP2_ALIGN"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v162 -> v192;
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v194 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_STATS"];
+v192 -> v194 [label="bam_bai"];
+
+v193 [shape=point,label="",fixedsize=true,width=0.1];
+v194 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_STATS"];
+v193 -> v194;
+
+v194 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_STATS"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v197 [label="stats"];
+
+v194 [label="NFCORE_TAXPROFILER:TAXPROFILER:LONGREAD_HOSTREMOVAL:SAMTOOLS_STATS"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v194 -> v195;
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 -> v196;
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v198 [label="versions"];
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v528 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v197 -> v528 [label="mqc"];
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 -> v208 [label="ch_versions"];
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v199 -> v200;
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v200 -> v201;
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v201 -> v202;
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v202 -> v203;
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v203 -> v205;
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v204 [label="NFCORE_TAXPROFILER:TAXPROFILER:MERGE_RUNS"];
+v203 -> v204;
+
+v204 [label="NFCORE_TAXPROFILER:TAXPROFILER:MERGE_RUNS"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v204 -> v205;
+
+v204 [label="NFCORE_TAXPROFILER:TAXPROFILER:MERGE_RUNS"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v204 -> v208;
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v205 -> v206;
+
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 -> v207;
+
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v207 -> v216 [label="reads"];
+
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 -> v364 [label="ch_versions"];
+
+v209 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 -> v232 [label="ch_versions"];
+
+v210 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 -> v230 [label="ch_multiqc_files"];
+
+v211 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v211 -> v233 [label="ch_raw_classifications"];
+
+v212 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v212 -> v235 [label="ch_raw_profiles"];
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v213 -> v214;
+
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v214 -> v215;
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v215 -> v217 [label="ch_dbs"];
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v216 -> v217;
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v217 -> v218;
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v218 -> v219;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v222 [shape=point];
+v219 -> v222;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v221 [shape=point];
+v219 -> v221;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v220 [shape=point];
+v219 -> v220;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v219 -> v277;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v219 -> v248;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v219 -> v344;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v219 -> v292;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v219 -> v223;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v307 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v219 -> v307;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v219 -> v325;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v219 -> v270;
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v223 -> v224;
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v227 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKEN2_KRAKEN2"];
+v224 -> v227;
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v227 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKEN2_KRAKEN2"];
+v224 -> v227;
+
+v225 [shape=point,label="",fixedsize=true,width=0.1];
+v227 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKEN2_KRAKEN2"];
+v225 -> v227 [label="save_output_fastqs"];
+
+v226 [shape=point,label="",fixedsize=true,width=0.1];
+v227 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKEN2_KRAKEN2"];
+v226 -> v227 [label="save_reads_assignment"];
+
+v227 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKEN2_KRAKEN2"];
+v229 [shape=point];
+v227 -> v229;
+
+v227 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKEN2_KRAKEN2"];
+v228 [shape=point];
+v227 -> v228;
+
+v227 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKEN2_KRAKEN2"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 -> v233;
+
+v227 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKEN2_KRAKEN2"];
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 -> v230;
+
+v227 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKEN2_KRAKEN2"];
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v227 -> v231;
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v230 -> v269 [label="ch_multiqc_files"];
+
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v231 -> v232;
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 -> v246 [label="ch_versions"];
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v259 [label="ch_raw_classifications"];
+
+v227 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKEN2_KRAKEN2"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v227 -> v234;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v234 -> v235;
+
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v235 -> v247 [label="ch_raw_profiles"];
+
+v227 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKEN2_KRAKEN2"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v227 -> v236;
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v236 -> v239;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 -> v237 [label="databases"];
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v237 -> v238;
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v238 -> v240 [label="ch_bracken_databases"];
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v239 -> v240;
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v240 -> v241;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v241 -> v242;
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v243 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:BRACKEN_BRACKEN"];
+v242 -> v243;
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v243 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:BRACKEN_BRACKEN"];
+v242 -> v243;
+
+v243 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:BRACKEN_BRACKEN"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v243 -> v247;
+
+v243 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:BRACKEN_BRACKEN"];
+v244 [shape=point];
+v243 -> v244;
+
+v243 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:BRACKEN_BRACKEN"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v243 -> v245;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 -> v246;
+
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v246 -> v258 [label="ch_versions"];
+
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 -> v268 [label="ch_raw_profiles"];
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v248 -> v249;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v252 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_CENTRIFUGE"];
+v249 -> v252;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v252 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_CENTRIFUGE"];
+v249 -> v252;
+
+v250 [shape=point,label="",fixedsize=true,width=0.1];
+v252 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_CENTRIFUGE"];
+v250 -> v252 [label="save_unaligned"];
+
+v251 [shape=point,label="",fixedsize=true,width=0.1];
+v252 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_CENTRIFUGE"];
+v251 -> v252 [label="save_aligned"];
+
+v252 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_CENTRIFUGE"];
+v256 [shape=point];
+v252 -> v256;
+
+v252 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_CENTRIFUGE"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v252 -> v259;
+
+v252 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_CENTRIFUGE"];
+v255 [shape=point];
+v252 -> v255;
+
+v252 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_CENTRIFUGE"];
+v254 [shape=point];
+v252 -> v254;
+
+v252 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_CENTRIFUGE"];
+v253 [shape=point];
+v252 -> v253;
+
+v252 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_CENTRIFUGE"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v252 -> v257;
+
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v257 -> v258;
+
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v258 -> v267 [label="ch_versions"];
+
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 -> v281 [label="ch_raw_classifications"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 -> v260 [label="databases"];
+
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v260 -> v261;
+
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v261 -> v263 [label="ch_database_for_centrifugekreport"];
+
+v252 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_CENTRIFUGE"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v252 -> v262;
+
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v262 -> v263;
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v263 -> v264;
+
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v265 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_KREPORT"];
+v264 -> v265;
+
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v265 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_KREPORT"];
+v264 -> v265;
+
+v265 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_KREPORT"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v265 -> v268;
+
+v265 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_KREPORT"];
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v265 -> v266;
+
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v266 -> v267;
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v267 -> v275 [label="ch_versions"];
+
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v268 -> v276 [label="ch_raw_profiles"];
+
+v265 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:CENTRIFUGE_KREPORT"];
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v265 -> v269;
+
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v269 -> v290 [label="ch_multiqc_files"];
+
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v271 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:METAPHLAN_METAPHLAN"];
+v270 -> v271;
+
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v271 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:METAPHLAN_METAPHLAN"];
+v270 -> v271;
+
+v271 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:METAPHLAN_METAPHLAN"];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v271 -> v276;
+
+v271 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:METAPHLAN_METAPHLAN"];
+v273 [shape=point];
+v271 -> v273;
+
+v271 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:METAPHLAN_METAPHLAN"];
+v272 [shape=point];
+v271 -> v272;
+
+v271 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:METAPHLAN_METAPHLAN"];
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v271 -> v274;
+
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v274 -> v275;
+
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 -> v280 [label="ch_versions"];
+
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v276 -> v291 [label="ch_raw_profiles"];
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v278 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KAIJU_KAIJU"];
+v277 -> v278;
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v278 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KAIJU_KAIJU"];
+v277 -> v278;
+
+v278 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KAIJU_KAIJU"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v278 -> v281;
+
+v278 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KAIJU_KAIJU"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v278 -> v279;
+
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v279 -> v280;
+
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 -> v289 [label="ch_versions"];
+
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v281 -> v322 [label="ch_raw_classifications"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 -> v282 [label="databases"];
+
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v282 -> v283;
+
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v283 -> v285 [label="ch_database_for_kaiju2table"];
+
+v278 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KAIJU_KAIJU"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v278 -> v284;
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v284 -> v285;
+
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v285 -> v286;
+
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v288 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KAIJU_KAIJU2TABLE_SINGLE"];
+v286 -> v288;
+
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v288 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KAIJU_KAIJU2TABLE_SINGLE"];
+v286 -> v288;
+
+v287 [shape=point,label="",fixedsize=true,width=0.1];
+v288 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KAIJU_KAIJU2TABLE_SINGLE"];
+v287 -> v288 [label="taxon_rank"];
+
+v288 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KAIJU_KAIJU2TABLE_SINGLE"];
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v288 -> v290;
+
+v288 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KAIJU_KAIJU2TABLE_SINGLE"];
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v288 -> v289;
+
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v289 -> v304 [label="ch_versions"];
+
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v290 -> v306 [label="ch_multiqc_files"];
+
+v288 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KAIJU_KAIJU2TABLE_SINGLE"];
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v288 -> v291;
+
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v291 -> v305 [label="ch_raw_profiles"];
+
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v292 -> v293;
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v296 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:DIAMOND_BLASTX"];
+v293 -> v296;
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v296 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:DIAMOND_BLASTX"];
+v293 -> v296;
+
+v294 [shape=point,label="",fixedsize=true,width=0.1];
+v296 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:DIAMOND_BLASTX"];
+v294 -> v296 [label="out_ext"];
+
+v295 [shape=point,label="",fixedsize=true,width=0.1];
+v296 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:DIAMOND_BLASTX"];
+v295 -> v296 [label="blast_columns"];
+
+v296 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:DIAMOND_BLASTX"];
+v302 [shape=point];
+v296 -> v302;
+
+v296 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:DIAMOND_BLASTX"];
+v301 [shape=point];
+v296 -> v301;
+
+v296 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:DIAMOND_BLASTX"];
+v300 [shape=point];
+v296 -> v300;
+
+v296 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:DIAMOND_BLASTX"];
+v299 [shape=point];
+v296 -> v299;
+
+v296 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:DIAMOND_BLASTX"];
+v298 [shape=point];
+v296 -> v298;
+
+v296 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:DIAMOND_BLASTX"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v296 -> v305;
+
+v296 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:DIAMOND_BLASTX"];
+v297 [shape=point];
+v296 -> v297;
+
+v296 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:DIAMOND_BLASTX"];
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v296 -> v306;
+
+v296 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:DIAMOND_BLASTX"];
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v296 -> v303;
+
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v303 -> v304;
+
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v304 -> v320 [label="ch_versions"];
+
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v305 -> v324 [label="ch_raw_profiles"];
+
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v306 -> v318 [label="ch_multiqc_files"];
+
+v307 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v308 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v307 -> v308;
+
+v308 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v309 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v308 -> v309;
+
+v309 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v309 -> v310;
+
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v315 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKENUNIQ_PRELOADEDKRAKENUNIQ"];
+v310 -> v315;
+
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v315 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKENUNIQ_PRELOADEDKRAKENUNIQ"];
+v310 -> v315;
+
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v315 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKENUNIQ_PRELOADEDKRAKENUNIQ"];
+v310 -> v315;
+
+v311 [shape=point,label="",fixedsize=true,width=0.1];
+v315 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKENUNIQ_PRELOADEDKRAKENUNIQ"];
+v311 -> v315 [label="ram_chunk_size"];
+
+v312 [shape=point,label="",fixedsize=true,width=0.1];
+v315 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKENUNIQ_PRELOADEDKRAKENUNIQ"];
+v312 -> v315 [label="save_output_reads"];
+
+v313 [shape=point,label="",fixedsize=true,width=0.1];
+v315 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKENUNIQ_PRELOADEDKRAKENUNIQ"];
+v313 -> v315 [label="report_file"];
+
+v314 [shape=point,label="",fixedsize=true,width=0.1];
+v315 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKENUNIQ_PRELOADEDKRAKENUNIQ"];
+v314 -> v315 [label="save_output"];
+
+v315 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKENUNIQ_PRELOADEDKRAKENUNIQ"];
+v317 [shape=point];
+v315 -> v317;
+
+v315 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKENUNIQ_PRELOADEDKRAKENUNIQ"];
+v316 [shape=point];
+v315 -> v316;
+
+v315 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKENUNIQ_PRELOADEDKRAKENUNIQ"];
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v315 -> v321;
+
+v315 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKENUNIQ_PRELOADEDKRAKENUNIQ"];
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v315 -> v318;
+
+v315 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKENUNIQ_PRELOADEDKRAKENUNIQ"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v315 -> v319;
+
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v318 -> v343 [label="ch_multiqc_files"];
+
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v319 -> v320;
+
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v320 -> v330 [label="ch_versions"];
+
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v321 -> v322;
+
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v322 -> v331 [label="ch_raw_classifications"];
+
+v315 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KRAKENUNIQ_PRELOADEDKRAKENUNIQ"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v315 -> v323;
+
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v323 -> v324;
+
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v324 -> v342 [label="ch_raw_profiles"];
+
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v325 -> v326;
+
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v326 -> v327;
+
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v328 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KMCP_SEARCH"];
+v327 -> v328;
+
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v328 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KMCP_SEARCH"];
+v327 -> v328;
+
+v328 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KMCP_SEARCH"];
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v328 -> v331;
+
+v328 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KMCP_SEARCH"];
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v328 -> v329;
+
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v329 -> v330;
+
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v330 -> v341 [label="ch_versions"];
+
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v331 -> v362 [label="ch_raw_classifications"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 -> v332 [label="databases"];
+
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v332 -> v333;
+
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v333 -> v335 [label="ch_database_for_kmcp_profile"];
+
+v328 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KMCP_SEARCH"];
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v328 -> v334;
+
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v334 -> v335;
+
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v335 -> v336;
+
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v336 -> v337;
+
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v338 [shape=point];
+v337 -> v338;
+
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v339 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KMCP_PROFILE"];
+v337 -> v339;
+
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v339 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KMCP_PROFILE"];
+v327 -> v339 [label="db"];
+
+v339 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KMCP_PROFILE"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v339 -> v342;
+
+v339 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KMCP_PROFILE"];
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v339 -> v340;
+
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v340 -> v341;
+
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v341 -> v352 [label="ch_versions"];
+
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v342 -> v361 [label="ch_raw_profiles"];
+
+v339 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:KMCP_PROFILE"];
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v339 -> v343;
+
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v531 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v343 -> v531 [label="mqc"];
+
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v344 -> v345;
+
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v346 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:GANON_CLASSIFY"];
+v345 -> v346;
+
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v346 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:GANON_CLASSIFY"];
+v345 -> v346;
+
+v346 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:GANON_CLASSIFY"];
+v350 [shape=point];
+v346 -> v350;
+
+v346 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:GANON_CLASSIFY"];
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v346 -> v355;
+
+v346 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:GANON_CLASSIFY"];
+v349 [shape=point];
+v346 -> v349;
+
+v346 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:GANON_CLASSIFY"];
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v346 -> v362;
+
+v346 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:GANON_CLASSIFY"];
+v348 [shape=point];
+v346 -> v348;
+
+v346 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:GANON_CLASSIFY"];
+v347 [shape=point];
+v346 -> v347;
+
+v346 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:GANON_CLASSIFY"];
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v346 -> v351;
+
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v351 -> v352;
+
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v352 -> v360 [label="ch_versions"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v353 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 -> v353 [label="databases"];
+
+v353 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v353 -> v354;
+
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v354 -> v356 [label="ch_database_for_ganonreport"];
+
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v355 -> v356;
+
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v356 -> v357;
+
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v358 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:GANON_REPORT"];
+v357 -> v358;
+
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v358 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:GANON_REPORT"];
+v357 -> v358;
+
+v358 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:GANON_REPORT"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v358 -> v361;
+
+v358 [label="NFCORE_TAXPROFILER:TAXPROFILER:PROFILING:GANON_REPORT"];
+v359 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v358 -> v359;
+
+v359 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v359 -> v360;
+
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v360 -> v364 [label="versions"];
+
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v361 -> v368 [label="profiles"];
+
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v362 -> v370 [label="classifications"];
+
+v363 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v483 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:MOTUS_MERGE"];
+v363 -> v483 [label="motu_version"];
+
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v364 -> v411 [label="ch_versions"];
+
+v365 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v365 -> v375 [label="ch_krona_text"];
+
+v366 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v366 -> v392 [label="ch_krona_html"];
+
+v367 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v367 -> v377 [label="ch_versions"];
+
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v368 -> v373;
+
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v368 -> v372;
+
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v369 [shape=point];
+v368 -> v369;
+
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v371 [shape=point];
+v370 -> v371;
+
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v370 -> v378;
+
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v396 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:MEGAN_RMA2INFO_KRONA"];
+v370 -> v396;
+
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v372 -> v373;
+
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v374 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KRAKENTOOLS_KREPORT2KRONA"];
+v373 -> v374 [label="ch_kraken_reports"];
+
+v374 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KRAKENTOOLS_KREPORT2KRONA"];
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v374 -> v375;
+
+v374 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KRAKENTOOLS_KREPORT2KRONA"];
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v374 -> v376;
+
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v375 -> v383 [label="ch_krona_text"];
+
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v376 -> v377;
+
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v377 -> v385 [label="ch_versions"];
+
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v378 -> v380;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v379 [label="databases"];
+
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v379 -> v380;
+
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v380 -> v381;
+
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v382 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KAIJU_KAIJU2KRONA"];
+v381 -> v382;
+
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v382 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KAIJU_KAIJU2KRONA"];
+v381 -> v382;
+
+v382 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KAIJU_KAIJU2KRONA"];
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v382 -> v383;
+
+v382 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KAIJU_KAIJU2KRONA"];
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v382 -> v384;
+
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v386 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KRONA_CLEANUP"];
+v383 -> v386 [label="ch_krona_text"];
+
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v384 -> v385;
+
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v385 -> v388 [label="ch_versions"];
+
+v386 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KRONA_CLEANUP"];
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v386 -> v389 [label="ch_cleaned_krona_text"];
+
+v386 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KRONA_CLEANUP"];
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v386 -> v387;
+
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v387 -> v388;
+
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v388 -> v394 [label="ch_versions"];
+
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v390 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v389 -> v390;
+
+v390 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v391 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KRONA_KTIMPORTTEXT"];
+v390 -> v391 [label="ch_krona_text_for_import"];
+
+v391 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KRONA_KTIMPORTTEXT"];
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v391 -> v392;
+
+v391 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KRONA_KTIMPORTTEXT"];
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v391 -> v393;
+
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v392 -> v403 [label="html"];
+
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v393 -> v394;
+
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v406 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v394 -> v406 [label="ch_versions"];
+
+v395 [shape=point,label="",fixedsize=true,width=0.1];
+v396 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:MEGAN_RMA2INFO_KRONA"];
+v395 -> v396 [label="megan_summary"];
+
+v396 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:MEGAN_RMA2INFO_KRONA"];
+v398 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:GUNZIP"];
+v396 -> v398;
+
+v396 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:MEGAN_RMA2INFO_KRONA"];
+v397 [shape=point];
+v396 -> v397;
+
+v396 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:MEGAN_RMA2INFO_KRONA"];
+v407 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v396 -> v407;
+
+v398 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:GUNZIP"];
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v398 -> v399;
+
+v398 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:GUNZIP"];
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v398 -> v405;
+
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v399 -> v400;
+
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v402 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KRONA_KTIMPORTTAXONOMY"];
+v400 -> v402 [label="ch_krona_taxonomy_for_input"];
+
+v401 [shape=point,label="",fixedsize=true,width=0.1];
+v402 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KRONA_KTIMPORTTAXONOMY"];
+v401 -> v402 [label="taxonomy"];
+
+v402 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KRONA_KTIMPORTTAXONOMY"];
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v402 -> v403;
+
+v402 [label="NFCORE_TAXPROFILER:TAXPROFILER:VISUALIZATION_KRONA:KRONA_KTIMPORTTAXONOMY"];
+v409 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v402 -> v409;
+
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v404 [shape=point];
+v403 -> v404;
+
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v406 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v405 -> v406;
+
+v406 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v408 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v406 -> v408 [label="ch_versions"];
+
+v407 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v408 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v407 -> v408;
+
+v408 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v408 -> v410 [label="ch_versions"];
+
+v409 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v409 -> v410;
+
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v410 -> v411 [label="versions"];
+
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v493 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v411 -> v493 [label="ch_versions"];
+
+v412 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v412 -> v430 [label="ch_versions"];
+
+v413 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v413 -> v450 [label="ch_multiqc_files"];
+
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v414 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v361 -> v414 [label="profiles"];
+
+v414 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v414 -> v415;
+
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v415 -> v416;
+
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v416 -> v417 [label="ch_prepare_for_taxpasta"];
+
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v417 -> v418;
+
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v417 -> v419;
+
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v423 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:TAXPASTA_MERGE"];
+v418 -> v423;
+
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v423 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:TAXPASTA_MERGE"];
+v418 -> v423;
+
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v427 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:TAXPASTA_STANDARDISE"];
+v419 -> v427;
+
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v427 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:TAXPASTA_STANDARDISE"];
+v419 -> v427;
+
+v420 [shape=point,label="",fixedsize=true,width=0.1];
+v423 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:TAXPASTA_MERGE"];
+v420 -> v423 [label="format"];
+
+v421 [shape=point,label="",fixedsize=true,width=0.1];
+v423 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:TAXPASTA_MERGE"];
+v421 -> v423 [label="taxonomy"];
+
+v422 [shape=point,label="",fixedsize=true,width=0.1];
+v423 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:TAXPASTA_MERGE"];
+v422 -> v423 [label="samplesheet"];
+
+v423 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:TAXPASTA_MERGE"];
+v424 [shape=point];
+v423 -> v424 [label="taxpasta"];
+
+v423 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:TAXPASTA_MERGE"];
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v423 -> v429;
+
+v425 [shape=point,label="",fixedsize=true,width=0.1];
+v427 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:TAXPASTA_STANDARDISE"];
+v425 -> v427 [label="format"];
+
+v426 [shape=point,label="",fixedsize=true,width=0.1];
+v427 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:TAXPASTA_STANDARDISE"];
+v426 -> v427 [label="taxonomy"];
+
+v427 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:TAXPASTA_STANDARDISE"];
+v428 [shape=point];
+v427 -> v428;
+
+v427 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:TAXPASTA_STANDARDISE"];
+v431 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v427 -> v431;
+
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v429 -> v430;
+
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v432 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v430 -> v432 [label="ch_versions"];
+
+v431 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v432 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v431 -> v432;
+
+v432 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v432 -> v451 [label="ch_versions"];
+
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v361 -> v433 [label="profiles"];
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v433 -> v440;
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v487 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v433 -> v487;
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v470 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v433 -> v470;
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v476 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v433 -> v476;
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v435 [shape=point];
+v433 -> v435;
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v446 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v433 -> v446;
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v434 [shape=point];
+v433 -> v434;
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v463 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v433 -> v463;
+
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v436 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v362 -> v436 [label="classifications"];
+
+v436 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v436 -> v452;
+
+v436 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v437 [shape=point];
+v436 -> v437;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v19 -> v438 [label="databases"];
+
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v480 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v438 -> v480;
+
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v439 [shape=point];
+v438 -> v439;
+
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v456 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v438 -> v456;
+
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v441 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v440 -> v441;
+
+v441 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v441 -> v442;
+
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v443 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:BRACKEN_COMBINEBRACKENOUTPUTS"];
+v442 -> v443 [label="ch_profiles_for_bracken"];
+
+v443 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:BRACKEN_COMBINEBRACKENOUTPUTS"];
+v445 [shape=point];
+v443 -> v445;
+
+v443 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:BRACKEN_COMBINEBRACKENOUTPUTS"];
+v444 [shape=point];
+v443 -> v444;
+
+v446 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v446 -> v447;
+
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v448 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v447 -> v448;
+
+v448 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v449 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:KRAKENTOOLS_COMBINEKREPORTS_CENTRIFUGE"];
+v448 -> v449 [label="ch_profiles_for_centrifuge"];
+
+v449 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:KRAKENTOOLS_COMBINEKREPORTS_CENTRIFUGE"];
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v449 -> v450;
+
+v449 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:KRAKENTOOLS_COMBINEKREPORTS_CENTRIFUGE"];
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v449 -> v451;
+
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v450 -> v461 [label="ch_multiqc_files"];
+
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v451 -> v462 [label="ch_versions"];
+
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v453 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v452 -> v453;
+
+v453 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v453 -> v454;
+
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v454 -> v455 [label="ch_profiles_for_kaiju"];
+
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v455 -> v457;
+
+v456 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v456 -> v457;
+
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v457 -> v458;
+
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v460 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:KAIJU_KAIJU2TABLE_COMBINED"];
+v458 -> v460;
+
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v460 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:KAIJU_KAIJU2TABLE_COMBINED"];
+v458 -> v460;
+
+v459 [shape=point,label="",fixedsize=true,width=0.1];
+v460 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:KAIJU_KAIJU2TABLE_COMBINED"];
+v459 -> v460 [label="taxon_rank"];
+
+v460 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:KAIJU_KAIJU2TABLE_COMBINED"];
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v460 -> v461;
+
+v460 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:KAIJU_KAIJU2TABLE_COMBINED"];
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v460 -> v462;
+
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v468 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v461 -> v468 [label="ch_multiqc_files"];
+
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v469 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v462 -> v469 [label="ch_versions"];
+
+v463 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v463 -> v464;
+
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v464 -> v465;
+
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v465 -> v466;
+
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v467 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:KRAKENTOOLS_COMBINEKREPORTS_KRAKEN"];
+v466 -> v467 [label="ch_profiles_for_kraken2"];
+
+v467 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:KRAKENTOOLS_COMBINEKREPORTS_KRAKEN"];
+v468 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v467 -> v468;
+
+v467 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:KRAKENTOOLS_COMBINEKREPORTS_KRAKEN"];
+v469 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v467 -> v469;
+
+v468 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v474 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v468 -> v474 [label="ch_multiqc_files"];
+
+v469 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v469 -> v475 [label="ch_versions"];
+
+v470 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v470 -> v471;
+
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v471 -> v472;
+
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v473 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:METAPHLAN_MERGEMETAPHLANTABLES"];
+v472 -> v473 [label="ch_profiles_for_metaphlan"];
+
+v473 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:METAPHLAN_MERGEMETAPHLANTABLES"];
+v474 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v473 -> v474;
+
+v473 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:METAPHLAN_MERGEMETAPHLANTABLES"];
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v473 -> v475;
+
+v474 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v491 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v474 -> v491 [label="ch_multiqc_files"];
+
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v486 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v475 -> v486 [label="ch_versions"];
+
+v476 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v477 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v476 -> v477;
+
+v477 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v478 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v477 -> v478;
+
+v478 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v478 -> v479 [label="ch_profiles_for_motus"];
+
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v479 -> v481;
+
+v480 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v480 -> v481;
+
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v481 -> v482;
+
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v483 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:MOTUS_MERGE"];
+v482 -> v483;
+
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v483 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:MOTUS_MERGE"];
+v482 -> v483;
+
+v483 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:MOTUS_MERGE"];
+v485 [shape=point];
+v483 -> v485;
+
+v483 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:MOTUS_MERGE"];
+v484 [shape=point];
+v483 -> v484;
+
+v483 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:MOTUS_MERGE"];
+v486 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v483 -> v486;
+
+v486 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v486 -> v492 [label="ch_versions"];
+
+v487 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v488 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v487 -> v488;
+
+v488 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v489 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v488 -> v489;
+
+v489 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v490 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:GANON_TABLE"];
+v489 -> v490 [label="ch_profiles_for_ganon"];
+
+v490 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:GANON_TABLE"];
+v491 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v490 -> v491;
+
+v490 [label="NFCORE_TAXPROFILER:TAXPROFILER:STANDARDISATION_PROFILES:GANON_TABLE"];
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v490 -> v492;
+
+v491 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v534 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v491 -> v534 [label="mqc"];
+
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v493 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v492 -> v493 [label="versions"];
+
+v493 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v494 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v493 -> v494 [label="versions"];
+
+v494 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v495 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v494 -> v495;
+
+v495 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v496 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v495 -> v496;
+
+v496 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v498 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v496 -> v498;
+
+v497 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v498 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v497 -> v498;
+
+v498 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v498 -> v499;
+
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v499 -> v506 [label="ch_collated_versions"];
+
+v500 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v538 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v500 -> v538 [label="ch_multiqc_config"];
+
+v501 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v539 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v501 -> v539 [label="ch_multiqc_custom_config"];
+
+v502 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v540 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v502 -> v540 [label="ch_multiqc_logo"];
+
+v503 [shape=point,label="",fixedsize=true,width=0.1];
+v504 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v503 -> v504 [label="ch_workflow_summary"];
+
+v504 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v504 -> v505;
+
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v505 -> v506 [label="ch_multiqc_files"];
+
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v509 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v506 -> v509 [label="ch_multiqc_files"];
+
+v507 [shape=point,label="",fixedsize=true,width=0.1];
+v508 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v507 -> v508 [label="ch_methods_description"];
+
+v508 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v509 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v508 -> v509;
+
+v509 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v512 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v509 -> v512 [label="ch_multiqc_files"];
+
+v510 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v511 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v510 -> v511;
+
+v511 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v512 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v511 -> v512;
+
+v512 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v515 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v512 -> v515 [label="ch_multiqc_files"];
+
+v513 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v514 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v513 -> v514;
+
+v514 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v515 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v514 -> v515;
+
+v515 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v518 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v515 -> v518 [label="ch_multiqc_files"];
+
+v516 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v517 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v516 -> v517;
+
+v517 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v518 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v517 -> v518;
+
+v518 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v521 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v518 -> v521 [label="ch_multiqc_files"];
+
+v519 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v520 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v519 -> v520;
+
+v520 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v521 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v520 -> v521;
+
+v521 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v524 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v521 -> v524 [label="ch_multiqc_files"];
+
+v522 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v523 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v522 -> v523;
+
+v523 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v524 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v523 -> v524;
+
+v524 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v527 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v524 -> v527 [label="ch_multiqc_files"];
+
+v525 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v526 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v525 -> v526;
+
+v526 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v527 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v526 -> v527;
+
+v527 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v530 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v527 -> v530 [label="ch_multiqc_files"];
+
+v528 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v529 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v528 -> v529;
+
+v529 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v530 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v529 -> v530;
+
+v530 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v533 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v530 -> v533 [label="ch_multiqc_files"];
+
+v531 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v532 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v531 -> v532;
+
+v532 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v533 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v532 -> v533;
+
+v533 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v536 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v533 -> v536 [label="ch_multiqc_files"];
+
+v534 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v535 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v534 -> v535;
+
+v535 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v536 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v535 -> v536;
+
+v536 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v537 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v536 -> v537 [label="ch_multiqc_files"];
+
+v537 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v543 [label="NFCORE_TAXPROFILER:TAXPROFILER:MULTIQC"];
+v537 -> v543;
+
+v538 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v543 [label="NFCORE_TAXPROFILER:TAXPROFILER:MULTIQC"];
+v538 -> v543;
+
+v539 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v543 [label="NFCORE_TAXPROFILER:TAXPROFILER:MULTIQC"];
+v539 -> v543;
+
+v540 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v543 [label="NFCORE_TAXPROFILER:TAXPROFILER:MULTIQC"];
+v540 -> v543;
+
+v541 [shape=point,label="",fixedsize=true,width=0.1];
+v543 [label="NFCORE_TAXPROFILER:TAXPROFILER:MULTIQC"];
+v541 -> v543 [label="replace_names"];
+
+v542 [shape=point,label="",fixedsize=true,width=0.1];
+v543 [label="NFCORE_TAXPROFILER:TAXPROFILER:MULTIQC"];
+v542 -> v543 [label="sample_names"];
+
+v543 [label="NFCORE_TAXPROFILER:TAXPROFILER:MULTIQC"];
+v547 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v543 -> v547;
+
+v543 [label="NFCORE_TAXPROFILER:TAXPROFILER:MULTIQC"];
+v546 [shape=point];
+v543 -> v546;
+
+v543 [label="NFCORE_TAXPROFILER:TAXPROFILER:MULTIQC"];
+v545 [shape=point];
+v543 -> v545;
+
+v543 [label="NFCORE_TAXPROFILER:TAXPROFILER:MULTIQC"];
+v544 [shape=point];
+v543 -> v544;
+
+v547 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v548 [shape=point];
+v547 -> v548 [label="multiqc_report"];
+
+}

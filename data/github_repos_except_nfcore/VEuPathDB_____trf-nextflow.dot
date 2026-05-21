@@ -1,0 +1,38 @@
+digraph "VEuPathDB_____trfnextflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v3 [label="trf"];
+v1 -> v3 [label="seqs"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="trf"];
+v2 -> v3 [label="args"];
+
+v3 [label="trf"];
+v4 [label="trf2bed"];
+v3 -> v4;
+
+v4 [label="trf2bed"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v7 [label="indexResults"];
+v5 -> v7;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="indexResults"];
+v6 -> v7 [label="outputFileName"];
+
+v7 [label="indexResults"];
+v9 [shape=point];
+v7 -> v9;
+
+v7 [label="indexResults"];
+v8 [shape=point];
+v7 -> v8;
+
+}

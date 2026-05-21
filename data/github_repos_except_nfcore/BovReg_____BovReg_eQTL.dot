@@ -1,0 +1,826 @@
+digraph "BovReg_____BovReg_eQTL" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype"];
+v3 -> v69 [label="genotype_input"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 [label="PAIREDEND_END_READS:fastqc_PE"];
+v7 -> v32 [label="paired_reads"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [shape=point];
+v11 -> v12 [label="stringtie_ip_di_ch"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=point];
+v16 -> v17 [label="leafcutter_ip_di_ch"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [shape=point];
+v21 -> v22 [label="leafcutter_ip_idx_ch"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [shape=point];
+v26 -> v27 [label="count_matrices_ch"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v31 [label="makeSTARindex"];
+v28 -> v31 [label="fasta"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v31 [label="makeSTARindex"];
+v29 -> v31 [label="gtf_file"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 -> v68 [label="sample_info"];
+
+v31 [label="makeSTARindex"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v38 [label="star_index"];
+
+v32 [label="PAIREDEND_END_READS:fastqc_PE"];
+v33 [shape=point];
+v32 -> v33;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [label="PAIREDEND_END_READS:trimmomatic"];
+v7 -> v34 [label="paired_reads"];
+
+v34 [label="PAIREDEND_END_READS:trimmomatic"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v36;
+
+v34 [label="PAIREDEND_END_READS:trimmomatic"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v36;
+
+v34 [label="PAIREDEND_END_READS:trimmomatic"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v52;
+
+v34 [label="PAIREDEND_END_READS:trimmomatic"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v52;
+
+v34 [label="PAIREDEND_END_READS:trimmomatic"];
+v35 [shape=point];
+v34 -> v35;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 [label="PAIREDEND_END_READS:starAlign_GeneTranscript"];
+v36 -> v39;
+
+v29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 -> v37 [label="gtf_file"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [label="PAIREDEND_END_READS:starAlign_GeneTranscript"];
+v37 -> v39;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [label="PAIREDEND_END_READS:starAlign_GeneTranscript"];
+v38 -> v39;
+
+v39 [label="PAIREDEND_END_READS:starAlign_GeneTranscript"];
+v43 [shape=point];
+v39 -> v43;
+
+v39 [label="PAIREDEND_END_READS:starAlign_GeneTranscript"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 -> v56;
+
+v39 [label="PAIREDEND_END_READS:starAlign_GeneTranscript"];
+v42 [shape=point];
+v39 -> v42;
+
+v39 [label="PAIREDEND_END_READS:starAlign_GeneTranscript"];
+v41 [shape=point];
+v39 -> v41;
+
+v39 [label="PAIREDEND_END_READS:starAlign_GeneTranscript"];
+v40 [shape=point];
+v39 -> v40;
+
+v34 [label="PAIREDEND_END_READS:trimmomatic"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v44;
+
+v34 [label="PAIREDEND_END_READS:trimmomatic"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 [label="PAIREDEND_END_READS:starAlign_Splicing"];
+v44 -> v47;
+
+v29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 -> v45 [label="gtf_file"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 [label="PAIREDEND_END_READS:starAlign_Splicing"];
+v45 -> v47;
+
+v31 [label="makeSTARindex"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v46 [label="star_index"];
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 [label="PAIREDEND_END_READS:starAlign_Splicing"];
+v46 -> v47;
+
+v47 [label="PAIREDEND_END_READS:starAlign_Splicing"];
+v51 [shape=point];
+v47 -> v51;
+
+v47 [label="PAIREDEND_END_READS:starAlign_Splicing"];
+v50 [shape=point];
+v47 -> v50;
+
+v47 [label="PAIREDEND_END_READS:starAlign_Splicing"];
+v49 [shape=point];
+v47 -> v49;
+
+v47 [label="PAIREDEND_END_READS:starAlign_Splicing"];
+v48 [shape=point];
+v47 -> v48;
+
+v47 [label="PAIREDEND_END_READS:starAlign_Splicing"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 -> v59;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v55 [label="PAIREDEND_END_READS:starAlign_unpaired"];
+v52 -> v55;
+
+v29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 -> v53 [label="gtf_file"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 [label="PAIREDEND_END_READS:starAlign_unpaired"];
+v53 -> v55;
+
+v31 [label="makeSTARindex"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v54 [label="star_index"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 [label="PAIREDEND_END_READS:starAlign_unpaired"];
+v54 -> v55;
+
+v55 [label="PAIREDEND_END_READS:starAlign_unpaired"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v55 -> v56;
+
+v55 [label="PAIREDEND_END_READS:starAlign_unpaired"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v55 -> v57;
+
+v55 [label="PAIREDEND_END_READS:starAlign_unpaired"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v55 -> v59;
+
+v55 [label="PAIREDEND_END_READS:starAlign_unpaired"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v55 -> v60;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 [label="PAIREDEND_END_READS:samtools_merge_forStringtie"];
+v57 -> v58;
+
+v58 [label="PAIREDEND_END_READS:samtools_merge_forStringtie"];
+v63 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded"];
+v58 -> v63 [label="stringtie_ip"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v61 [label="PAIREDEND_END_READS:samtools_merge_forleafcutter"];
+v60 -> v61;
+
+v61 [label="PAIREDEND_END_READS:samtools_merge_forleafcutter"];
+v67 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded"];
+v61 -> v67 [label="leafcutter_bamtojunc_ip"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 -> v62 [label="gtf_file"];
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded"];
+v62 -> v63;
+
+v63 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v63 -> v72 [label="gene_St_counts"];
+
+v63 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v63 -> v76 [label="transcript_counts"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded"];
+v64 -> v67 [label="anchor_len"];
+
+v65 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded"];
+v65 -> v67 [label="intron_min_len"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded"];
+v66 -> v67 [label="inton_max_len"];
+
+v67 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v67 -> v80 [label="splice_junc_sample_tuple"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype"];
+v68 -> v69;
+
+v69 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v90 [label="genotype_input_ch"];
+
+v69 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v71 -> v72 [label="geno_sample_list"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v73 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:geneTSVfiles"];
+v72 -> v73 [label="genefiles_ch"];
+
+v73 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:geneTSVfiles"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v75 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:mergeNormalizedGeneCountMatrices"];
+v74 -> v75;
+
+v75 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:mergeNormalizedGeneCountMatrices"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v75 -> v93 [label="phenotypeGene_ch"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v71 -> v76 [label="geno_sample_list"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v77 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:transcriptGTFfiles"];
+v76 -> v77 [label="transcriptfiles_ch"];
+
+v77 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:transcriptGTFfiles"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v77 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v79 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:mergeNormalizedTranscriptCountMatrices"];
+v78 -> v79;
+
+v79 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:mergeNormalizedTranscriptCountMatrices"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 -> v89 [label="phenotypeTranscript_ch"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v71 -> v80 [label="geno_sample_list"];
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v80 -> v81 [label="juncfiles_ch"];
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v86 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_cluster_junctions"];
+v82 -> v86;
+
+v83 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_cluster_junctions"];
+v83 -> v86 [label="intron_min_len"];
+
+v84 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_cluster_junctions"];
+v84 -> v86 [label="inton_max_len"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_cluster_junctions"];
+v85 -> v86 [label="pheno_pcs"];
+
+v86 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_cluster_junctions"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v86 -> v99 [label="splicepcs_ch"];
+
+v86 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_cluster_junctions"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v86 -> v97 [label="phenotypeSplice_ch"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 [label="genotypeStratificationPCA"];
+v3 -> v88 [label="genotype_input"];
+
+v87 [shape=point,label="",fixedsize=true,width=0.1];
+v88 [label="genotypeStratificationPCA"];
+v87 -> v88 [label="genotype_pcs"];
+
+v88 [label="genotypeStratificationPCA"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 -> v90 [label="genotypeStratificationPCA"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v92 [label="ciseQTL_workflow:transcriptCountsPCA"];
+v89 -> v92;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 [label="ciseQTL_workflow:transcriptCountsPCA"];
+v90 -> v92;
+
+v91 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="ciseQTL_workflow:transcriptCountsPCA"];
+v91 -> v92 [label="phenotype_PCs_cis"];
+
+v92 [label="ciseQTL_workflow:transcriptCountsPCA"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 -> v103;
+
+v92 [label="ciseQTL_workflow:transcriptCountsPCA"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 -> v103;
+
+v92 [label="ciseQTL_workflow:transcriptCountsPCA"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 -> v104;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v96 [label="ciseQTL_workflow:geneCountsPCA"];
+v93 -> v96;
+
+v69 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v94 [label="genotype_input_ch"];
+
+v88 [label="genotypeStratificationPCA"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 -> v94 [label="genotypeStratificationPCA"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 [label="ciseQTL_workflow:geneCountsPCA"];
+v94 -> v96;
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="ciseQTL_workflow:geneCountsPCA"];
+v95 -> v96 [label="phenotype_PCs_cis"];
+
+v96 [label="ciseQTL_workflow:geneCountsPCA"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 -> v101;
+
+v96 [label="ciseQTL_workflow:geneCountsPCA"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 -> v101;
+
+v96 [label="ciseQTL_workflow:geneCountsPCA"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 -> v102;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v100 [label="ciseQTL_workflow:rnaSplicePCS"];
+v97 -> v100;
+
+v88 [label="genotypeStratificationPCA"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 -> v98 [label="genotypeStratificationPCA"];
+
+v69 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v98 [label="genotype_input_ch"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v100 [label="ciseQTL_workflow:rnaSplicePCS"];
+v98 -> v100;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v100 [label="ciseQTL_workflow:rnaSplicePCS"];
+v99 -> v100;
+
+v100 [label="ciseQTL_workflow:rnaSplicePCS"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v100 -> v105;
+
+v100 [label="ciseQTL_workflow:rnaSplicePCS"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v100 -> v105;
+
+v100 [label="ciseQTL_workflow:rnaSplicePCS"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v100 -> v106;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v102 -> v107 [label="qtlmap_cis_geneCount"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v104 -> v107 [label="qtlmap_cis_transcriptCount"];
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v106 -> v108 [label="qtlmap_cis_spliceCount"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v110 [label="ciseQTL_workflow:cisQTL_nominal"];
+v108 -> v110;
+
+v109 [shape=point,label="",fixedsize=true,width=0.1];
+v110 [label="ciseQTL_workflow:cisQTL_nominal"];
+v109 -> v110 [label="nominal_cis"];
+
+v110 [label="ciseQTL_workflow:cisQTL_nominal"];
+v111 [shape=point];
+v110 -> v111;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v102 -> v112 [label="qtlmap_cis_geneCount"];
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v104 -> v112 [label="qtlmap_cis_transcriptCount"];
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v112 -> v113;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v106 -> v113 [label="qtlmap_cis_spliceCount"];
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v115 [label="ciseQTL_workflow:cisQTL_permutation"];
+v113 -> v115;
+
+v114 [shape=point,label="",fixedsize=true,width=0.1];
+v115 [label="ciseQTL_workflow:cisQTL_permutation"];
+v114 -> v115 [label="permutations_cis"];
+
+v115 [label="ciseQTL_workflow:cisQTL_permutation"];
+v118 [shape=point];
+v115 -> v118;
+
+v115 [label="ciseQTL_workflow:cisQTL_permutation"];
+v117 [shape=point];
+v115 -> v117;
+
+v115 [label="ciseQTL_workflow:cisQTL_permutation"];
+v116 [shape=point];
+v115 -> v116;
+
+v79 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:mergeNormalizedTranscriptCountMatrices"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 -> v119 [label="phenotypeTranscript_ch"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v122 [label="transeQTL_workflow:transcriptCountsPCA_trans"];
+v119 -> v122;
+
+v69 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v120 [label="genotype_input_ch"];
+
+v88 [label="genotypeStratificationPCA"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 -> v120 [label="genotypeStratificationPCA"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v122 [label="transeQTL_workflow:transcriptCountsPCA_trans"];
+v120 -> v122;
+
+v121 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="transeQTL_workflow:transcriptCountsPCA_trans"];
+v121 -> v122 [label="phenotype_PCs_trans"];
+
+v122 [label="transeQTL_workflow:transcriptCountsPCA_trans"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v122 -> v133;
+
+v122 [label="transeQTL_workflow:transcriptCountsPCA_trans"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v122 -> v133;
+
+v122 [label="transeQTL_workflow:transcriptCountsPCA_trans"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v122 -> v134;
+
+v75 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:mergeNormalizedGeneCountMatrices"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v75 -> v123 [label="phenotypeGene_ch"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 [label="transeQTL_workflow:geneCountsPCA_trans"];
+v123 -> v126;
+
+v88 [label="genotypeStratificationPCA"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 -> v124 [label="genotypeStratificationPCA"];
+
+v69 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v124 [label="genotype_input_ch"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v126 [label="transeQTL_workflow:geneCountsPCA_trans"];
+v124 -> v126;
+
+v125 [shape=point,label="",fixedsize=true,width=0.1];
+v126 [label="transeQTL_workflow:geneCountsPCA_trans"];
+v125 -> v126 [label="phenotype_PCs_trans"];
+
+v126 [label="transeQTL_workflow:geneCountsPCA_trans"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v126 -> v131;
+
+v126 [label="transeQTL_workflow:geneCountsPCA_trans"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v126 -> v131;
+
+v126 [label="transeQTL_workflow:geneCountsPCA_trans"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v126 -> v132;
+
+v86 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_cluster_junctions"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v86 -> v127 [label="splicepcs_ch"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v130 [label="transeQTL_workflow:rnaSplicePCS_trans"];
+v127 -> v130;
+
+v86 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_cluster_junctions"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v86 -> v128 [label="phenotypeSplice_ch"];
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v130 [label="transeQTL_workflow:rnaSplicePCS_trans"];
+v128 -> v130;
+
+v69 [label="QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v129 [label="genotype_input_ch"];
+
+v88 [label="genotypeStratificationPCA"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 -> v129 [label="genotypeStratificationPCA"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 [label="transeQTL_workflow:rnaSplicePCS_trans"];
+v129 -> v130;
+
+v130 [label="transeQTL_workflow:rnaSplicePCS_trans"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 -> v135;
+
+v130 [label="transeQTL_workflow:rnaSplicePCS_trans"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 -> v135;
+
+v130 [label="transeQTL_workflow:rnaSplicePCS_trans"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 -> v136;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v131 -> v132;
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v132 -> v137 [label="qtlmap_trans_geneCount"];
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v133 -> v134;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v134 -> v137 [label="qtlmap_trans_transcriptCount"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v135 -> v136;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v136 -> v138 [label="qtlmap_trans_spliceCount"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v137 -> v138;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v140 [label="transeQTL_workflow:trans_eQTL_nominal"];
+v138 -> v140;
+
+v139 [shape=point,label="",fixedsize=true,width=0.1];
+v140 [label="transeQTL_workflow:trans_eQTL_nominal"];
+v139 -> v140 [label="threshold_trans"];
+
+v140 [label="transeQTL_workflow:trans_eQTL_nominal"];
+v142 [shape=point];
+v140 -> v142;
+
+v140 [label="transeQTL_workflow:trans_eQTL_nominal"];
+v141 [shape=point];
+v140 -> v141;
+
+v140 [label="transeQTL_workflow:trans_eQTL_nominal"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v140 -> v150;
+
+v140 [label="transeQTL_workflow:trans_eQTL_nominal"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v140 -> v151;
+
+v140 [label="transeQTL_workflow:trans_eQTL_nominal"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v140 -> v153;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v134 -> v143 [label="qtlmap_trans_transcriptCount"];
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v132 -> v143 [label="qtlmap_trans_geneCount"];
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v143 -> v144;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v136 -> v144 [label="qtlmap_trans_spliceCount"];
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v147 [label="transeQTL_workflow:trans_eQTL_permu"];
+v144 -> v147;
+
+v145 [shape=point,label="",fixedsize=true,width=0.1];
+v147 [label="transeQTL_workflow:trans_eQTL_permu"];
+v145 -> v147 [label="permutations_trans"];
+
+v146 [shape=point,label="",fixedsize=true,width=0.1];
+v147 [label="transeQTL_workflow:trans_eQTL_permu"];
+v146 -> v147 [label="threshold_trans"];
+
+v147 [label="transeQTL_workflow:trans_eQTL_permu"];
+v149 [shape=point];
+v147 -> v149;
+
+v147 [label="transeQTL_workflow:trans_eQTL_permu"];
+v148 [shape=point];
+v147 -> v148;
+
+v147 [label="transeQTL_workflow:trans_eQTL_permu"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v147 -> v150;
+
+v147 [label="transeQTL_workflow:trans_eQTL_permu"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v147 -> v152;
+
+v147 [label="transeQTL_workflow:trans_eQTL_permu"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v147 -> v154;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v150 -> v151;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v151 -> v152;
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v152 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v153 -> v154;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v155 [label="transeQTL_workflow:trans_eQTL_FDR"];
+v154 -> v155;
+
+v155 [label="transeQTL_workflow:trans_eQTL_FDR"];
+v156 [shape=point];
+v155 -> v156;
+
+}

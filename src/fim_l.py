@@ -1,31 +1,35 @@
+import argparse
 import glob
 import os
-from tqdm import tqdm
-from src.classes.mygraph import my_graph
-from src.classes.helper import *
-import hnswlib
-from src.classes.t5p import T5P
-import itertools
+import warnings
+from itertools import chain, combinations
+
+import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+from tqdm import tqdm
 from mlxtend.frequent_patterns import apriori, association_rules
 from mlxtend.preprocessing import TransactionEncoder
-import warnings
-from src.classes.hmm import HiddenMarkovModel
-warnings.filterwarnings("ignore")
-import numpy as np
-from src.classes.code_aware_recommender import CodeAwareRecommender
-from scipy.spatial.distance import cdist
+
+from src.classes.mygraph import my_graph
+from src.classes.helper import *
 from src.Helper.recommender_helper_functions import *
-import matplotlib.pyplot as plt
-from itertools import chain, combinations
+
+warnings.filterwarnings("ignore")
+
+# Bundled DAG corpora, anchored to the repository root. See the README for how
+# to extract the .dot files from data/*.zip.
+_DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
+# Optional workflow metadata; when absent, runs in n-gram mode.
+_METADATA_DIR = os.path.join(_DATA_DIR, 'metadata')
 
 module_nf = {}
 label_to_path = {}
 label_to_swf = None
 label_to_embedding = None
-released_source_path = '../../datasets/dags/dot/released/'
-under_development_source_path = '../../datasets/dags/dot/under_development_dags/'
-git_source_path = '../../datasets/dags/dot/github_repos_except_nfcore/'
+released_source_path = f'{_DATA_DIR}/released/'
+under_development_source_path = f'{_DATA_DIR}/under_development_dags/'
+git_source_path = f'{_DATA_DIR}/github_repos_except_nfcore/'
 KB = None
 max_path_length = 13
 min_path_length = 4
@@ -34,11 +38,9 @@ swf_to_schema = None
 embedding_size = 384
 
 USE_NGRAM_EMBEDDING = True
-USE_INOUT_EMBEDDING = True
-USE_PARAMS_EMBEDDING = True
-USE_README_EMBEDDING = True
-
-# print(USE_NGRAM_EMBEDDING, USE_INOUT_EMBEDDING, USE_PARAMS_EMBEDDING, USE_README_EMBEDDING)
+USE_INOUT_EMBEDDING = os.path.isdir(_METADATA_DIR)
+USE_PARAMS_EMBEDDING = False
+USE_README_EMBEDDING = os.path.isdir(_METADATA_DIR)
 
 embedding_config = str(USE_NGRAM_EMBEDDING) + str(USE_INOUT_EMBEDDING) + str(USE_PARAMS_EMBEDDING) + str(USE_README_EMBEDDING)
 
@@ -97,11 +99,11 @@ def create_index(source, cache=False, empty_index = False, exclude_wf = ''):
         swf_to_readme_embedding = unpickle_object(f'swf_to_readme_embedding_{name}')
     else:
         if source == released_source_path:
-            metadata_dir = '../../datasets/metadata/readme/release/'
+            metadata_dir = f'{_METADATA_DIR}/readme/release/'
         elif source == under_development_source_path:
-            metadata_dir = '../../datasets/metadata/readme/under_development/'
+            metadata_dir = f'{_METADATA_DIR}/readme/under_development/'
         else:
-            metadata_dir = '../../datasets/metadata/readme/git/'
+            metadata_dir = f'{_METADATA_DIR}/readme/git/'
         swf_to_readme_embedding = embed_readme_files(metadata_dir)
         pickle_object(swf_to_readme_embedding, f'swf_to_readme_embedding_{name}')
 
@@ -111,11 +113,11 @@ def create_index(source, cache=False, empty_index = False, exclude_wf = ''):
         swf_to_inout = unpickle_object(f'swf_to_inout_{name}')
     else:
         if source == released_source_path:
-            metadata_dir = '../../datasets/metadata/schema/release/'
+            metadata_dir = f'{_METADATA_DIR}/schema/release/'
         elif source == under_development_source_path:
-            metadata_dir = '../../datasets/metadata/schema/under_development/'
+            metadata_dir = f'{_METADATA_DIR}/schema/under_development/'
         else:
-            metadata_dir = '../../datasets/metadata/schema/git/'
+            metadata_dir = f'{_METADATA_DIR}/schema/git/'
         swf_to_inout = get_swf_to_input_output(metadata_dir)
         pickle_object(swf_to_inout, f'swf_to_inout_{name}')
 
@@ -125,11 +127,11 @@ def create_index(source, cache=False, empty_index = False, exclude_wf = ''):
         swf_to_schema = unpickle_object(f'swf_to_schema_{name}')
     else:
         if source == released_source_path:
-            metadata_dir = '../../datasets/metadata/schema/release/'
+            metadata_dir = f'{_METADATA_DIR}/schema/release/'
         elif source == under_development_source_path:
-            metadata_dir = '../../datasets/metadata/schema/under_development/'
+            metadata_dir = f'{_METADATA_DIR}/schema/under_development/'
         else:
-            metadata_dir = '../../datasets/metadata/schema/git/'
+            metadata_dir = f'{_METADATA_DIR}/schema/git/'
         swf_to_schema = get_swf_to_schema(metadata_dir)
         pickle_object(swf_to_schema, f'swf_to_schema_{name}')
 
@@ -155,10 +157,11 @@ def create_index(source, cache=False, empty_index = False, exclude_wf = ''):
         if USE_README_EMBEDDING:
             tensor_list = tensor_list + [readme_embedding]
 
-        stacked_tensors = torch.stack(tensor_list)
-        average_tensor = torch.mean(stacked_tensors, dim=0)
-        tuple_to_be_indexed = tuple_to_be_indexed + (average_tensor,)
-        embeddings_to_index.append(torch.cat(tuple_to_be_indexed, dim=0).numpy()) # ngram embedding, inout, parameters
+        if tensor_list:
+            stacked_tensors = torch.stack(tensor_list)
+            average_tensor = torch.mean(stacked_tensors, dim=0)
+            tuple_to_be_indexed = tuple_to_be_indexed + (average_tensor,)
+        embeddings_to_index.append(torch.cat(tuple_to_be_indexed, dim=0).numpy())
     if not cache:
         index = index_embeddings(np.array(embeddings_to_index), range(len(embeddings_to_index)), empty_index)
         pickle_object(index, f'hnsw_index_domain_min_length_{min_path_length}_max_length_{max_path_length}_{name}_{str(empty_index)}_{embedding_config}')
@@ -185,35 +188,18 @@ def query_KB(ngram_embedding, swf_inout_embedding, swf_parameters_embedding, rea
     if USE_README_EMBEDDING:
         tensor_list = tensor_list + [readme_embedding]
     # tensor_list = [swf_inout_embedding, swf_parameters_embedding, readme_embedding]
-    stacked_tensors = torch.stack(tensor_list)
-    average_tensor = torch.mean(stacked_tensors, dim=0)
-    tuple_to_be_queried = tuple_to_be_queried + (average_tensor,)
+    if tensor_list:
+        stacked_tensors = torch.stack(tensor_list)
+        average_tensor = torch.mean(stacked_tensors, dim=0)
+        tuple_to_be_queried = tuple_to_be_queried + (average_tensor,)
 
     full_embedding = torch.cat(tuple_to_be_queried, dim=0).numpy()
-    # ngram_embedding = torch.cat((ngram_embedding, torch.zeros(len(swf_inout_embedding)), torch.zeros(len(swf_parameters_embedding))), dim=0).numpy()
 
     knn_labels, knn_distances = KB.knn_query(full_embedding, k=k, num_threads=12)
     knn_labels = knn_labels[0]
     knn_distances = knn_distances[0]
 
     return knn_labels, knn_distances
-
-    #re-rank the topk based on their explanation and input and output
-    knn_labels_to_domain_embedding = {}
-    for label in knn_labels:
-        knn_labels_to_domain_embedding[label] = np.array(label_to_embedding[label][:len(swf_inout_embedding)+len(swf_parameters_embedding)+len(readme_embedding)])
-    sorted_list_label_embedding = sorted(knn_labels_to_domain_embedding.items())
-    query_domain_embedding = np.hstack((swf_inout_embedding, swf_parameters_embedding))
-
-    # Compute L2 distance (or cosine similarity) between query and retrieved candidates
-    distances12 = cdist(np.array([query_domain_embedding]), np.array([x[1] for x in sorted_list_label_embedding]), metric='euclidean')[0]
-
-    # Re-rank indices based on feature1 & feature2 distances
-    sorted_indices = np.argsort(distances12)  # Sort by distance (lower is better)
-    final_labels = knn_labels[sorted_indices]  # Reorder based on new ranking
-    final_distances = knn_distances[sorted_indices]  # Reorder based on new ranking
-
-    return final_labels[:k], final_distances[:k]
 
 def get_inout_embedding(swf_name, size=embedding_size):
     if swf_name in swf_to_inout:
@@ -227,11 +213,11 @@ def get_parameters_embedding(swf_name, size=embedding_size):
 
 def fetch_inout_embedding(query_path, swf_name, size=embedding_size):
     if query_path == released_source_path:
-        file_path = f'../../datasets/metadata/schema/release/{swf_name}_nextflow_schema.json'
+        file_path = f'{_METADATA_DIR}/schema/release/{swf_name}_nextflow_schema.json'
     elif query_path == under_development_source_path:
-        file_path = f'../../datasets/metadata/schema/under_development/{swf_name}_nextflow_schema.json'
+        file_path = f'{_METADATA_DIR}/schema/under_development/{swf_name}_nextflow_schema.json'
     else:
-        file_path = f'../../datasets/metadata/schema/git/{swf_name}_nextflow_schema.json'
+        file_path = f'{_METADATA_DIR}/schema/git/{swf_name}_nextflow_schema.json'
     if os.path.isfile(file_path):
         with open(file_path, 'r') as file:
             json_content = json.load(file)
@@ -241,11 +227,11 @@ def fetch_inout_embedding(query_path, swf_name, size=embedding_size):
 
 def fetch_parameters_embedding(query_path, swf_name, size=embedding_size):
     if query_path == released_source_path:
-        file_path = f'../../datasets/metadata/schema/release/{swf_name}_nextflow_schema.json'
+        file_path = f'{_METADATA_DIR}/schema/release/{swf_name}_nextflow_schema.json'
     elif query_path == under_development_source_path:
-        file_path = f'../../datasets/metadata/schema/under_development/{swf_name}_nextflow_schema.json'
+        file_path = f'{_METADATA_DIR}/schema/under_development/{swf_name}_nextflow_schema.json'
     else:
-        file_path = f'../../datasets/metadata/schema/git/{swf_name}_nextflow_schema.json'
+        file_path = f'{_METADATA_DIR}/schema/git/{swf_name}_nextflow_schema.json'
     if os.path.isfile(file_path):
         with open(file_path, 'r') as file:
             json_content = json.load(file)
@@ -254,11 +240,11 @@ def fetch_parameters_embedding(query_path, swf_name, size=embedding_size):
 
 def fetch_readme_embedding(query_path, swf_name, size=embedding_size):
     if query_path == released_source_path:
-        file_path = f'../../datasets/metadata/readme/release/{swf_name}_README.md'
+        file_path = f'{_METADATA_DIR}/readme/release/{swf_name}_README.md'
     elif query_path == under_development_source_path:
-        file_path = f'../../datasets/metadata/readme/under_development/{swf_name}_README.md'
+        file_path = f'{_METADATA_DIR}/readme/under_development/{swf_name}_README.md'
     else:
-        file_path = f'../../datasets/metadata/readme/git/{swf_name}_README.md'
+        file_path = f'{_METADATA_DIR}/readme/git/{swf_name}_README.md'
     if os.path.isfile(file_path):
         with open(file_path, 'r') as file:
             content = file.read()
@@ -282,9 +268,10 @@ def add_new_datapoint_to_KB(new_path, source_path, swf, size=embedding_size):
         tensor_list = tensor_list + [readme_embedding]
 
     # tensor_list = [inout_embedding, schema_embedding, readme_embedding]
-    stacked_tensors = torch.stack(tensor_list)
-    average_tensor = torch.mean(stacked_tensors, dim=0)
-    tuple_to_be_added = tuple_to_be_added + (average_tensor,)
+    if tensor_list:
+        stacked_tensors = torch.stack(tensor_list)
+        average_tensor = torch.mean(stacked_tensors, dim=0)
+        tuple_to_be_added = tuple_to_be_added + (average_tensor,)
 
     final_embedding = torch.cat(tuple_to_be_added, dim=0).numpy()
     datapoint_id = len(label_to_path)
@@ -345,12 +332,10 @@ def recommender(QUERY_CORPUS, INDEX_CORPUS, INDEX_CACHE, INDEX_EMPTY, leave_one_
 
             try:
                 query_graph = my_graph(graphpath)
-            except:
-                print('Error in reading the graph')
-                os.remove(graphpath)
+            except Exception:
+                print(f'Skipping unreadable graph: {graphpath}')
                 continue
             if len(query_graph.nodes) < 3:
-                os.remove(graphpath)
                 continue
             swf_inout_embedding = fetch_inout_embedding(QUERY_CORPUS, swf_name)
             swf_params_embedding = fetch_parameters_embedding(QUERY_CORPUS, swf_name)
@@ -473,10 +458,34 @@ def recommender(QUERY_CORPUS, INDEX_CORPUS, INDEX_CACHE, INDEX_EMPTY, leave_one_
             plt.show()
 
 
-def run():
-    print('FlowPilot Association Rules KNN AL')
-    recommender(QUERY_CORPUS=released_source_path, INDEX_CORPUS=under_development_source_path, INDEX_CACHE=True, INDEX_EMPTY=True, leave_one_out=False)
+def main():
+    corpora = {
+        'released': released_source_path,
+        'under_development': under_development_source_path,
+        'github': git_source_path,
+    }
+    parser = argparse.ArgumentParser(
+        description='Run the FIM-L (association-rule over KNN) baseline (paper, Sec. 8.2).')
+    parser.add_argument('--query', choices=corpora, default='released',
+                        help='Corpus to draw query workflows from.')
+    parser.add_argument('--index', choices=corpora, default='under_development',
+                        help='Corpus used to build the similarity knowledge base (SKB).')
+    parser.add_argument('--empty-index', action='store_true',
+                        help='Start with an empty SKB and rely on online learning (cold start).')
+    parser.add_argument('--cache', action='store_true',
+                        help='Reuse cached paths/embeddings/index from a previous run.')
+    args = parser.parse_args()
 
-run()
+    recommender(
+        QUERY_CORPUS=corpora[args.query],
+        INDEX_CORPUS=corpora[args.index],
+        INDEX_CACHE=args.cache,
+        INDEX_EMPTY=args.empty_index,
+        leave_one_out=False,
+    )
+
+
+if __name__ == '__main__':
+    main()
 
 

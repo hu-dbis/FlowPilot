@@ -1,0 +1,638 @@
+digraph "skillcoyne_____methylseq220" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v114 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v116 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v118 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v11 [label="versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="NFCORE_METHYLSEQ:METHYLSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v4 -> v5 [label="samplesheet"];
+
+v5 [label="NFCORE_METHYLSEQ:METHYLSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 -> v6;
+
+v5 [label="NFCORE_METHYLSEQ:METHYLSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v11 [label="versions"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8 [label="reads"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v13;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v12 [label="NFCORE_METHYLSEQ:METHYLSEQ:CAT_FASTQ"];
+v10 -> v12;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v16 [label="versions"];
+
+v12 [label="NFCORE_METHYLSEQ:METHYLSEQ:CAT_FASTQ"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v13;
+
+v12 [label="NFCORE_METHYLSEQ:METHYLSEQ:CAT_FASTQ"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v12 -> v14;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 [label="NFCORE_METHYLSEQ:METHYLSEQ:FASTQC"];
+v13 -> v17 [label="ch_cat_fastq"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v20 [label="versions"];
+
+v17 [label="NFCORE_METHYLSEQ:METHYLSEQ:FASTQC"];
+v18 [shape=point];
+v17 -> v18;
+
+v17 [label="NFCORE_METHYLSEQ:METHYLSEQ:FASTQC"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 -> v110;
+
+v17 [label="NFCORE_METHYLSEQ:METHYLSEQ:FASTQC"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v17 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v26 [label="versions"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 [label="NFCORE_METHYLSEQ:METHYLSEQ:TRIMGALORE"];
+v13 -> v21 [label="ch_cat_fastq"];
+
+v21 [label="NFCORE_METHYLSEQ:METHYLSEQ:TRIMGALORE"];
+v31 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_ALIGN"];
+v21 -> v31 [label="reads"];
+
+v21 [label="NFCORE_METHYLSEQ:METHYLSEQ:TRIMGALORE"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 -> v108;
+
+v21 [label="NFCORE_METHYLSEQ:METHYLSEQ:TRIMGALORE"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v21 -> v25;
+
+v21 [label="NFCORE_METHYLSEQ:METHYLSEQ:TRIMGALORE"];
+v24 [shape=point];
+v21 -> v24;
+
+v21 [label="NFCORE_METHYLSEQ:METHYLSEQ:TRIMGALORE"];
+v23 [shape=point];
+v21 -> v23;
+
+v21 [label="NFCORE_METHYLSEQ:METHYLSEQ:TRIMGALORE"];
+v22 [shape=point];
+v21 -> v22;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v76 [label="versions"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v30 [label="versions"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_GENOMEPREPARATION"];
+v28 -> v29 [label="fasta"];
+
+v29 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_GENOMEPREPARATION"];
+v31 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_ALIGN"];
+v29 -> v31 [label="bismark_index"];
+
+v29 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_GENOMEPREPARATION"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v33 [label="versions"];
+
+v31 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_ALIGN"];
+v34 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:SAMTOOLS_SORT_ALIGNED"];
+v31 -> v34;
+
+v31 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_ALIGN"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 -> v38;
+
+v31 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_ALIGN"];
+v32 [shape=point];
+v31 -> v32;
+
+v31 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_ALIGN"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v36 [label="versions"];
+
+v34 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:SAMTOOLS_SORT_ALIGNED"];
+v81 [label="NFCORE_METHYLSEQ:METHYLSEQ:PRESEQ_LCEXTRAP"];
+v34 -> v81 [label="bam"];
+
+v34 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:SAMTOOLS_SORT_ALIGNED"];
+v35 [shape=point];
+v34 -> v35;
+
+v34 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:SAMTOOLS_SORT_ALIGNED"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v39 [label="versions"];
+
+v31 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_ALIGN"];
+v37 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_DEDUPLICATE"];
+v31 -> v37;
+
+v37 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_DEDUPLICATE"];
+v40 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_METHYLATIONEXTRACTOR"];
+v37 -> v40 [label="alignments"];
+
+v37 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_DEDUPLICATE"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v37 -> v38;
+
+v37 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_DEDUPLICATE"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v39;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v38 -> v45 [label="alignment_reports"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v44 [label="versions"];
+
+v29 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_GENOMEPREPARATION"];
+v40 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_METHYLATIONEXTRACTOR"];
+v29 -> v40 [label="bismark_index"];
+
+v40 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_METHYLATIONEXTRACTOR"];
+v43 [shape=point];
+v40 -> v43;
+
+v40 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_METHYLATIONEXTRACTOR"];
+v42 [shape=point];
+v40 -> v42;
+
+v40 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_METHYLATIONEXTRACTOR"];
+v41 [shape=point];
+v40 -> v41;
+
+v40 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_METHYLATIONEXTRACTOR"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 -> v45;
+
+v40 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_METHYLATIONEXTRACTOR"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 -> v46;
+
+v40 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_METHYLATIONEXTRACTOR"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v48 [label="versions"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_REPORT"];
+v46 -> v47;
+
+v47 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_REPORT"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 -> v73;
+
+v47 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_REPORT"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v60 [label="versions"];
+
+v31 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_ALIGN"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v59 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_SUMMARY"];
+v50 -> v59;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 -> v51 [label="alignment_reports"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v59 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_SUMMARY"];
+v52 -> v59;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 -> v53 [label="alignment_reports"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v59 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_SUMMARY"];
+v54 -> v59;
+
+v40 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_METHYLATIONEXTRACTOR"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v59 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_SUMMARY"];
+v56 -> v59;
+
+v40 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_METHYLATIONEXTRACTOR"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v59 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_SUMMARY"];
+v58 -> v59;
+
+v59 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_SUMMARY"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v59 -> v64;
+
+v59 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_SUMMARY"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v63 [label="versions"];
+
+v37 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_DEDUPLICATE"];
+v61 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:SAMTOOLS_SORT_DEDUPLICATED"];
+v37 -> v61 [label="alignments"];
+
+v61 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:SAMTOOLS_SORT_DEDUPLICATED"];
+v78 [label="NFCORE_METHYLSEQ:METHYLSEQ:QUALIMAP_BAMQC"];
+v61 -> v78 [label="dedup"];
+
+v61 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:SAMTOOLS_SORT_DEDUPLICATED"];
+v62 [shape=point];
+v61 -> v62;
+
+v61 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:SAMTOOLS_SORT_DEDUPLICATED"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v63 -> v75 [label="versions"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v66;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 -> v65 [label="alignment_reports"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v68;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 -> v67 [label="alignment_reports"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v70;
+
+v40 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_METHYLATIONEXTRACTOR"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v72;
+
+v40 [label="NFCORE_METHYLSEQ:METHYLSEQ:ALIGNER:BISMARK_METHYLATIONEXTRACTOR"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v74;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v74 -> v106 [label="mqc"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v80 [label="versions"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1];
+v78 [label="NFCORE_METHYLSEQ:METHYLSEQ:QUALIMAP_BAMQC"];
+v77 -> v78 [label="gff"];
+
+v78 [label="NFCORE_METHYLSEQ:METHYLSEQ:QUALIMAP_BAMQC"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v78 -> v100;
+
+v78 [label="NFCORE_METHYLSEQ:METHYLSEQ:QUALIMAP_BAMQC"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v85 [label="versions"];
+
+v81 [label="NFCORE_METHYLSEQ:METHYLSEQ:PRESEQ_LCEXTRAP"];
+v82 [shape=point];
+v81 -> v82;
+
+v81 [label="NFCORE_METHYLSEQ:METHYLSEQ:PRESEQ_LCEXTRAP"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 -> v103;
+
+v81 [label="NFCORE_METHYLSEQ:METHYLSEQ:PRESEQ_LCEXTRAP"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v81 -> v83;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v85 -> v86 [label="versions"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v88 [label="NFCORE_METHYLSEQ:METHYLSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v87 -> v88;
+
+v88 [label="NFCORE_METHYLSEQ:METHYLSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v90 [shape=point];
+v88 -> v90;
+
+v88 [label="NFCORE_METHYLSEQ:METHYLSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v88 -> v98;
+
+v88 [label="NFCORE_METHYLSEQ:METHYLSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v89 [shape=point];
+v88 -> v89;
+
+v91 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v94 [label="ch_multiqc_files"];
+
+v92 [shape=point,label="",fixedsize=true,width=0.1];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v92 -> v93 [label="ch_workflow_summary"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v97 [label="ch_multiqc_files"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v95 -> v96 [label="ch_methods_description"];
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v99 [label="ch_multiqc_files"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v102 [label="ch_multiqc_files"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v105 [label="ch_multiqc_files"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v107 [label="ch_multiqc_files"];
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v109 [label="ch_multiqc_files"];
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v112 [label="ch_multiqc_files"];
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v110 -> v111;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v112 -> v113 [label="ch_multiqc_files"];
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v120 [label="NFCORE_METHYLSEQ:METHYLSEQ:MULTIQC"];
+v113 -> v120;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v114 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v120 [label="NFCORE_METHYLSEQ:METHYLSEQ:MULTIQC"];
+v115 -> v120;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v116 -> v117;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v120 [label="NFCORE_METHYLSEQ:METHYLSEQ:MULTIQC"];
+v117 -> v120;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v120 [label="NFCORE_METHYLSEQ:METHYLSEQ:MULTIQC"];
+v119 -> v120;
+
+v120 [label="NFCORE_METHYLSEQ:METHYLSEQ:MULTIQC"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v120 -> v123;
+
+v120 [label="NFCORE_METHYLSEQ:METHYLSEQ:MULTIQC"];
+v122 [shape=point];
+v120 -> v122;
+
+v120 [label="NFCORE_METHYLSEQ:METHYLSEQ:MULTIQC"];
+v121 [shape=point];
+v120 -> v121;
+
+v120 [label="NFCORE_METHYLSEQ:METHYLSEQ:MULTIQC"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v125;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v124 [shape=point];
+v123 -> v124;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v125 [label="versions"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 [shape=point];
+v125 -> v126 [label="versions"];
+
+}

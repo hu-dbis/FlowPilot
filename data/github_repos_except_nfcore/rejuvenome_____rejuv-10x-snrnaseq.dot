@@ -1,0 +1,242 @@
+digraph "rejuvenome_____rejuv10xsnrnaseq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v36 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v9 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="NFCORE_SNRNASEQ:SNRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v2 -> v3 [label="samplesheet"];
+
+v3 [label="NFCORE_SNRNASEQ:SNRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 -> v4;
+
+v3 [label="NFCORE_SNRNASEQ:SNRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v9 [label="versions"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6 [label="reads"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [label="NFCORE_SNRNASEQ:SNRNASEQ:FASTQC"];
+v8 -> v10 [label="ch_fastq"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v13 [label="ch_versions"];
+
+v10 [label="NFCORE_SNRNASEQ:SNRNASEQ:FASTQC"];
+v11 [shape=point];
+v10 -> v11;
+
+v10 [label="NFCORE_SNRNASEQ:SNRNASEQ:FASTQC"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v44;
+
+v10 [label="NFCORE_SNRNASEQ:SNRNASEQ:FASTQC"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v10 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v17 [label="ch_versions"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="NFCORE_SNRNASEQ:SNRNASEQ:UNTAR"];
+v14 -> v15;
+
+v15 [label="NFCORE_SNRNASEQ:SNRNASEQ:UNTAR"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16;
+
+v15 [label="NFCORE_SNRNASEQ:SNRNASEQ:UNTAR"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v17;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 [label="NFCORE_SNRNASEQ:SNRNASEQ:CELLRANGER_PIPELINE:CELLRANGER_COUNT"];
+v16 -> v20 [label="cellranger_reference"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v27 [label="ch_versions"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v22 [label="ch_versions"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v19 [label="ch_fastq"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 [label="NFCORE_SNRNASEQ:SNRNASEQ:CELLRANGER_PIPELINE:CELLRANGER_COUNT"];
+v19 -> v20;
+
+v20 [label="NFCORE_SNRNASEQ:SNRNASEQ:CELLRANGER_PIPELINE:CELLRANGER_COUNT"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 -> v23;
+
+v20 [label="NFCORE_SNRNASEQ:SNRNASEQ:CELLRANGER_PIPELINE:CELLRANGER_COUNT"];
+v21 [shape=point];
+v20 -> v21 [label="cellranger_out"];
+
+v20 [label="NFCORE_SNRNASEQ:SNRNASEQ:CELLRANGER_PIPELINE:CELLRANGER_COUNT"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 -> v24 [label="meta"];
+
+v20 [label="NFCORE_SNRNASEQ:SNRNASEQ:CELLRANGER_PIPELINE:CELLRANGER_COUNT"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v27 [label="ch_versions"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 [label="NFCORE_SNRNASEQ:SNRNASEQ:CELLRANGER_PIPELINE:CELLRANGER_AGGREGATE_REPORTS"];
+v23 -> v25;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 [label="NFCORE_SNRNASEQ:SNRNASEQ:CELLRANGER_PIPELINE:CELLRANGER_AGGREGATE_REPORTS"];
+v24 -> v25;
+
+v25 [label="NFCORE_SNRNASEQ:SNRNASEQ:CELLRANGER_PIPELINE:CELLRANGER_AGGREGATE_REPORTS"];
+v26 [shape=point];
+v25 -> v26 [label="aggregated_report"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v27 -> v28 [label="ch_versions"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v30 [label="NFCORE_SNRNASEQ:SNRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v29 -> v30;
+
+v30 [label="NFCORE_SNRNASEQ:SNRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v32 [shape=point];
+v30 -> v32;
+
+v30 [label="NFCORE_SNRNASEQ:SNRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 -> v42;
+
+v30 [label="NFCORE_SNRNASEQ:SNRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v31 [shape=point];
+v30 -> v31;
+
+v33 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v35 [label="ch_multiqc_files"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v38 [label="ch_multiqc_files"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v41 [label="ch_multiqc_files"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v39 -> v40 [label="ch_workflow_summary"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v43 [label="ch_multiqc_files"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v46 [label="ch_multiqc_files"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 -> v47 [label="ch_multiqc_files"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v48 [label="NFCORE_SNRNASEQ:SNRNASEQ:MULTIQC"];
+v47 -> v48;
+
+v48 [label="NFCORE_SNRNASEQ:SNRNASEQ:MULTIQC"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v48 -> v51;
+
+v48 [label="NFCORE_SNRNASEQ:SNRNASEQ:MULTIQC"];
+v50 [shape=point];
+v48 -> v50;
+
+v48 [label="NFCORE_SNRNASEQ:SNRNASEQ:MULTIQC"];
+v49 [shape=point];
+v48 -> v49;
+
+v48 [label="NFCORE_SNRNASEQ:SNRNASEQ:MULTIQC"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v53;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v52 [shape=point];
+v51 -> v52;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v53 [label="ch_versions"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=point];
+v53 -> v54 [label="ch_versions"];
+
+}

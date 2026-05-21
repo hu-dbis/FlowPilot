@@ -1,0 +1,102 @@
+digraph "UWLutzLab_____tbSeq_pipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v3 [label="CreateOutdir"];
+v0 -> v3 [label="bam_channel"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v2 [shape=point];
+v1 -> v2 [label="ref_ch"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v4 [label="SortBamUnaligned"];
+v0 -> v4 [label="bam_channel"];
+
+v4 [label="SortBamUnaligned"];
+v6 [label="NanoPlotQC_Unaligned"];
+v4 -> v6;
+
+v4 [label="SortBamUnaligned"];
+v6 [label="NanoPlotQC_Unaligned"];
+v4 -> v6;
+
+v4 [label="SortBamUnaligned"];
+v11 [label="BamConvertQualFilter"];
+v4 -> v11;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="NanoPlotQC_Unaligned"];
+v5 -> v6 [label="input_type"];
+
+v6 [label="NanoPlotQC_Unaligned"];
+v7 [shape=point];
+v6 -> v7;
+
+v4 [label="SortBamUnaligned"];
+v11 [label="BamConvertQualFilter"];
+v4 -> v11 [label="reads"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="BamConvertQualFilter"];
+v8 -> v11 [label="quality_level"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="BamConvertQualFilter"];
+v9 -> v11 [label="minlength"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="BamConvertQualFilter"];
+v10 -> v11 [label="maxlength"];
+
+v4 [label="SortBamUnaligned"];
+v11 [label="BamConvertQualFilter"];
+v4 -> v11 [label="read_alias"];
+
+v11 [label="BamConvertQualFilter"];
+v12 [label="AlignReads"];
+v11 -> v12;
+
+v11 [label="BamConvertQualFilter"];
+v12 [label="AlignReads"];
+v11 -> v12 [label="read_alias"];
+
+v11 [label="BamConvertQualFilter"];
+v12 [label="AlignReads"];
+v11 -> v12 [label="reference"];
+
+v12 [label="AlignReads"];
+v13 [label="SortBamAligned"];
+v12 -> v13;
+
+v12 [label="AlignReads"];
+v13 [label="SortBamAligned"];
+v12 -> v13 [label="read_alias"];
+
+v13 [label="SortBamAligned"];
+v15 [label="NanoPlotQC_Aligned"];
+v13 -> v15;
+
+v13 [label="SortBamAligned"];
+v15 [label="NanoPlotQC_Aligned"];
+v13 -> v15 [label="read_alias"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="NanoPlotQC_Aligned"];
+v14 -> v15 [label="input_type"];
+
+v15 [label="NanoPlotQC_Aligned"];
+v16 [shape=point];
+v15 -> v16;
+
+v13 [label="SortBamAligned"];
+v17 [label="CoverageDepth"];
+v13 -> v17 [label="reads"];
+
+v13 [label="SortBamAligned"];
+v17 [label="CoverageDepth"];
+v13 -> v17 [label="read_alias"];
+
+v17 [label="CoverageDepth"];
+v18 [shape=point];
+v17 -> v18;
+
+}

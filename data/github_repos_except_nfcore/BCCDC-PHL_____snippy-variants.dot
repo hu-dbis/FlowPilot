@@ -1,0 +1,70 @@
+digraph "BCCDCPHL_____snippyvariants" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v0 -> v7 [label="ch_ref"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v4 [label="fastp"];
+v3 -> v4 [label="ch_fastq"];
+
+v4 [label="fastp"];
+v6 [shape=point];
+v4 -> v6;
+
+v4 [label="fastp"];
+v5 [shape=point];
+v4 -> v5;
+
+v4 [label="fastp"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 [label="snippy"];
+v7 -> v8;
+
+v8 [label="snippy"];
+v10 [shape=point];
+v8 -> v10;
+
+v8 [label="snippy"];
+v9 [shape=point];
+v8 -> v9;
+
+v8 [label="snippy"];
+v11 [label="qualimap_bamqc"];
+v8 -> v11;
+
+v8 [label="snippy"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 -> v14;
+
+v11 [label="qualimap_bamqc"];
+v13 [shape=point];
+v11 -> v13;
+
+v11 [label="qualimap_bamqc"];
+v12 [shape=point];
+v11 -> v12;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v0 -> v14 [label="ch_ref"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 [label="count_variants"];
+v14 -> v15;
+
+v15 [label="count_variants"];
+v16 [shape=point];
+v15 -> v16;
+
+}

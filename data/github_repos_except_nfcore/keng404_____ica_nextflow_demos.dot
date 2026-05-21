@@ -1,0 +1,1178 @@
+digraph "keng404_____ica_nextflow_demos" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v221 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v2 [shape=point];
+v1 -> v2 [label="combined_gvcf"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v15 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v14 [label="ch_all_reads"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v6 [shape=point];
+v5 -> v6 [label="ch_sra_reads"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=point];
+v7 -> v8 [label="ch_sra_list"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v15 [label="versions"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [label="NFCORE_MYCOSNP:MYCOSNP:INPUT_CHECK:LANE_MERGE"];
+v12 -> v13 [label="precheck_reads"];
+
+v13 [label="NFCORE_MYCOSNP:MYCOSNP:INPUT_CHECK:LANE_MERGE"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v14 [label="reads"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SEQKIT_PAIR"];
+v14 -> v77 [label="reads"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v56 [label="ch_versions"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v17 [shape=point];
+v16 -> v17 [label="fas_file"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v19 [shape=point];
+v18 -> v19 [label="fai_file"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=point];
+v20 -> v21 [label="bai_file"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v23 [shape=point];
+v22 -> v23 [label="dict_file"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v25 [shape=point];
+v24 -> v25 [label="meta_val"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v27 [shape=point];
+v26 -> v27 [label="ch_use_fasta"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v29 [shape=point];
+v28 -> v29 [label="ch_masked_fasta"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v31 [shape=point];
+v30 -> v31 [label="ch_samtools_index"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v33 [shape=point];
+v32 -> v33 [label="ch_bwa_index"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v35 [shape=point];
+v34 -> v35 [label="ch_dict"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v37 [shape=point];
+v36 -> v37 [label="ch_reference_combined"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v55 [label="ch_versions"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:INPUT_PROC"];
+v39 -> v40 [label="fasta"];
+
+v40 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:INPUT_PROC"];
+v41 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:NUCMER"];
+v40 -> v41;
+
+v41 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:NUCMER"];
+v43 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:COORDSTOBED"];
+v41 -> v43;
+
+v41 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:NUCMER"];
+v42 [shape=point];
+v41 -> v42;
+
+v41 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:NUCMER"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v55;
+
+v43 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:COORDSTOBED"];
+v45 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:BEDTOOLS_MASKFASTA"];
+v43 -> v45;
+
+v40 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:INPUT_PROC"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:BEDTOOLS_MASKFASTA"];
+v44 -> v45;
+
+v45 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:BEDTOOLS_MASKFASTA"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 -> v47 [label="masked_fasta"];
+
+v45 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:BEDTOOLS_MASKFASTA"];
+v46 [shape=point];
+v45 -> v46;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:BWA_INDEX"];
+v47 -> v48;
+
+v48 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:BWA_INDEX"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v48 -> v52 [label="bwa_index"];
+
+v48 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:BWA_INDEX"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v55;
+
+v45 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:BEDTOOLS_MASKFASTA"];
+v49 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:SAMTOOLS_FAIDX"];
+v45 -> v49 [label="masked_fasta"];
+
+v49 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:SAMTOOLS_FAIDX"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v49 -> v51 [label="samtools_index"];
+
+v49 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:SAMTOOLS_FAIDX"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v55;
+
+v45 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:BEDTOOLS_MASKFASTA"];
+v50 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:PICARD_CREATESEQUENCEDICTIONARY"];
+v45 -> v50 [label="masked_fasta"];
+
+v50 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:PICARD_CREATESEQUENCEDICTIONARY"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v50 -> v53 [label="dict"];
+
+v50 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:PICARD_CREATESEQUENCEDICTIONARY"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v55;
+
+v45 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_REFERENCE:BEDTOOLS_MASKFASTA"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v45 -> v51 [label="masked_fasta"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v57 [label="reference_combined"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v56 [label="versions"];
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v119 [label="ch_versions"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v81 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:DOWNSAMPLE_RATE"];
+v58 -> v81 [label="fasta"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v59 [label="reference_combined"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v126 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_HAPLOTYPECALLER"];
+v60 -> v126 [label="fai"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v61 [label="reference_combined"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v93 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:BWA_MEM"];
+v62 -> v93 [label="bai"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v63 [label="reference_combined"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v126 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_HAPLOTYPECALLER"];
+v64 -> v126 [label="dict"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v65 [label="reference_combined"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v67 [shape=point];
+v66 -> v67 [label="meta_val"];
+
+v68 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v118 [label="ch_versions"];
+
+v69 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v70 [shape=point];
+v69 -> v70 [label="ch_alignment"];
+
+v71 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v72 [shape=point];
+v71 -> v72 [label="ch_alignment_index"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v74 [shape=point];
+v73 -> v74 [label="ch_alignment_combined"];
+
+v75 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v76 [shape=point];
+v75 -> v76 [label="ch_seq_samplerate"];
+
+v77 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SEQKIT_PAIR"];
+v81 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:DOWNSAMPLE_RATE"];
+v77 -> v81;
+
+v77 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SEQKIT_PAIR"];
+v78 [shape=point];
+v77 -> v78;
+
+v77 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SEQKIT_PAIR"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v118;
+
+v79 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:DOWNSAMPLE_RATE"];
+v79 -> v81 [label="coverage"];
+
+v80 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:DOWNSAMPLE_RATE"];
+v80 -> v81 [label="rate"];
+
+v81 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:DOWNSAMPLE_RATE"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v81 -> v83;
+
+v81 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:DOWNSAMPLE_RATE"];
+v82 [shape=point];
+v81 -> v82 [label="SAMPLED_NUM_READS"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v83 -> v84;
+
+v77 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SEQKIT_PAIR"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v77 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v85 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SEQTK_SAMPLE"];
+v84 -> v85 [label="ch_seq_samplerate"];
+
+v85 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SEQTK_SAMPLE"];
+v86 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:FAQCS"];
+v85 -> v86;
+
+v85 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SEQTK_SAMPLE"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v118;
+
+v86 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:FAQCS"];
+v93 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:BWA_MEM"];
+v86 -> v93;
+
+v86 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:FAQCS"];
+v91 [shape=point];
+v86 -> v91;
+
+v86 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:FAQCS"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v86 -> v114;
+
+v86 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:FAQCS"];
+v90 [shape=point];
+v86 -> v90;
+
+v86 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:FAQCS"];
+v89 [shape=point];
+v86 -> v89;
+
+v86 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:FAQCS"];
+v88 [shape=point];
+v86 -> v88;
+
+v86 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:FAQCS"];
+v87 [shape=point];
+v86 -> v87;
+
+v86 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:FAQCS"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v118;
+
+v92 [shape=point,label="",fixedsize=true,width=0.1];
+v93 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:BWA_MEM"];
+v92 -> v93 [label="sort_bam"];
+
+v93 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:BWA_MEM"];
+v94 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_MARKDUPLICATES"];
+v93 -> v94;
+
+v93 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:BWA_MEM"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v118;
+
+v94 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_MARKDUPLICATES"];
+v97 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_CLEANSAM"];
+v94 -> v97;
+
+v94 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_MARKDUPLICATES"];
+v96 [shape=point];
+v94 -> v96;
+
+v94 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_MARKDUPLICATES"];
+v95 [shape=point];
+v94 -> v95;
+
+v94 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_MARKDUPLICATES"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v118;
+
+v97 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_CLEANSAM"];
+v98 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_FIXMATEINFORMATION"];
+v97 -> v98;
+
+v97 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_CLEANSAM"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v118;
+
+v98 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_FIXMATEINFORMATION"];
+v99 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_ADDORREPLACEREADGROUPS"];
+v98 -> v99;
+
+v98 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_FIXMATEINFORMATION"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v118;
+
+v99 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_ADDORREPLACEREADGROUPS"];
+v100 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_INDEX"];
+v99 -> v100 [label="alignment"];
+
+v99 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_ADDORREPLACEREADGROUPS"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v118;
+
+v100 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_INDEX"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v100 -> v108 [label="alignment_index"];
+
+v100 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_INDEX"];
+v102 [shape=point];
+v100 -> v102;
+
+v100 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_INDEX"];
+v101 [shape=point];
+v100 -> v101;
+
+v100 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_INDEX"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v118;
+
+v86 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:FAQCS"];
+v103 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:FASTQC_POST"];
+v86 -> v103;
+
+v103 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:FASTQC_POST"];
+v104 [shape=point];
+v103 -> v104;
+
+v103 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:FASTQC_POST"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v103 -> v232 [label="post_qc"];
+
+v103 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:FASTQC_POST"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v118;
+
+v99 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_ADDORREPLACEREADGROUPS"];
+v107 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:QUALIMAP_BAMQC"];
+v99 -> v107 [label="alignment"];
+
+v105 [shape=point,label="",fixedsize=true,width=0.1];
+v107 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:QUALIMAP_BAMQC"];
+v105 -> v107 [label="gff"];
+
+v106 [shape=point,label="",fixedsize=true,width=0.1];
+v107 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:QUALIMAP_BAMQC"];
+v106 -> v107 [label="use_gff"];
+
+v107 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:QUALIMAP_BAMQC"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v107 -> v114 [label="qualimap"];
+
+v107 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:QUALIMAP_BAMQC"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v118;
+
+v99 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:PICARD_ADDORREPLACEREADGROUPS"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v99 -> v108 [label="alignment"];
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v109 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_STATS"];
+v108 -> v109 [label="alignment_combined"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v109 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_STATS"];
+v58 -> v109 [label="fasta"];
+
+v109 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_STATS"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v109 -> v235 [label="stats"];
+
+v109 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_STATS"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v118;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v110 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_FLAGSTAT"];
+v108 -> v110 [label="alignment_combined"];
+
+v110 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_FLAGSTAT"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v110 -> v238 [label="flagstat"];
+
+v110 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_FLAGSTAT"];
+v111 [shape=point];
+v110 -> v111;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v112 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_IDXSTATS"];
+v108 -> v112 [label="alignment_combined"];
+
+v112 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_IDXSTATS"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v112 -> v241 [label="idxstats"];
+
+v112 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:SAMTOOLS_IDXSTATS"];
+v113 [shape=point];
+v112 -> v113;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v114 -> v115 [label="ch_qcreport_input"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v116 [shape=point];
+v115 -> v116;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v117 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:QC_REPORT"];
+v114 -> v117 [label="ch_qcreport_input"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v117 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:QC_REPORT"];
+v58 -> v117 [label="fasta"];
+
+v117 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:QC_REPORT"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v117 -> v120 [label="qc_lines"];
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v119 [label="versions"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v127 [label="ch_versions"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v121 [label="NFCORE_MYCOSNP:MYCOSNP:QC_REPORTSHEET"];
+v120 -> v121 [label="ch_qcreportsheet"];
+
+v121 [label="NFCORE_MYCOSNP:MYCOSNP:QC_REPORTSHEET"];
+v122 [shape=point];
+v121 -> v122;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 -> v123 [label="alignment_combined"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_HAPLOTYPECALLER"];
+v123 -> v126;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v126 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_HAPLOTYPECALLER"];
+v58 -> v126 [label="fasta"];
+
+v124 [shape=point,label="",fixedsize=true,width=0.1];
+v126 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_HAPLOTYPECALLER"];
+v124 -> v126 [label="dbsnp"];
+
+v125 [shape=point,label="",fixedsize=true,width=0.1];
+v126 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_HAPLOTYPECALLER"];
+v125 -> v126 [label="dbsnp_tbi"];
+
+v126 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_HAPLOTYPECALLER"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 -> v132;
+
+v126 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_HAPLOTYPECALLER"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 -> v135;
+
+v126 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_HAPLOTYPECALLER"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v185 [label="ch_versions"];
+
+v128 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v129 [shape=point];
+v128 -> v129 [label="ch_vcf_files"];
+
+v130 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v134 [label="ch_vcf_files"];
+
+v131 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v137 [label="ch_vcfidx_files"];
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v132 -> v133;
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v134 [label="ch_vcf"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v138 [label="ch_vcf"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v135 -> v136;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v137 [label="ch_vcf_idx"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v138 [label="ch_vcf_idx"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v141 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_LOCALCOMBINEGVCFS"];
+v139 -> v141 [label="ch_vcfs"];
+
+v140 [shape=point,label="",fixedsize=true,width=0.1];
+v141 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_LOCALCOMBINEGVCFS"];
+v140 -> v141 [label="meta"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v141 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_LOCALCOMBINEGVCFS"];
+v58 -> v141 [label="fasta"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v141 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_LOCALCOMBINEGVCFS"];
+v60 -> v141 [label="fai"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v141 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_LOCALCOMBINEGVCFS"];
+v64 -> v141 [label="dict"];
+
+v141 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_LOCALCOMBINEGVCFS"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v141 -> v143;
+
+v141 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_LOCALCOMBINEGVCFS"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v141 -> v145 [label="vcffile"];
+
+v141 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_LOCALCOMBINEGVCFS"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v141 -> v146 [label="vcfidx"];
+
+v141 [label="NFCORE_MYCOSNP:MYCOSNP:GATK4_LOCALCOMBINEGVCFS"];
+v142 [shape=point];
+v141 -> v142;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v143 -> v145 [label="thismeta"];
+
+v144 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v184 [label="ch_versions"];
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v145 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v146 -> v147 [label="combined_gvcf"];
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v150 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_GENOTYPEGVCFS"];
+v147 -> v150;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v150 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_GENOTYPEGVCFS"];
+v58 -> v150 [label="fasta"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v150 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_GENOTYPEGVCFS"];
+v60 -> v150 [label="fai"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v150 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_GENOTYPEGVCFS"];
+v64 -> v150 [label="dict"];
+
+v148 [shape=point,label="",fixedsize=true,width=0.1];
+v150 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_GENOTYPEGVCFS"];
+v148 -> v150 [label="dbsnp"];
+
+v149 [shape=point,label="",fixedsize=true,width=0.1];
+v150 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_GENOTYPEGVCFS"];
+v149 -> v150 [label="dbsnp_index"];
+
+v150 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_GENOTYPEGVCFS"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v150 -> v151;
+
+v150 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_GENOTYPEGVCFS"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v150 -> v151;
+
+v150 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_GENOTYPEGVCFS"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 -> v184;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v151 -> v152;
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v153 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_VARIANTFILTRATION"];
+v152 -> v153;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v153 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_VARIANTFILTRATION"];
+v58 -> v153 [label="fasta"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v153 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_VARIANTFILTRATION"];
+v60 -> v153 [label="fai"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v153 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_VARIANTFILTRATION"];
+v64 -> v153 [label="dict"];
+
+v153 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_VARIANTFILTRATION"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v153 -> v154;
+
+v153 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_VARIANTFILTRATION"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v153 -> v154;
+
+v153 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_VARIANTFILTRATION"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v184;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v156 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_SELECTVARIANTS"];
+v155 -> v156;
+
+v156 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_SELECTVARIANTS"];
+v158 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:FILTER_GATK_GENOTYPES"];
+v156 -> v158;
+
+v156 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_SELECTVARIANTS"];
+v157 [shape=point];
+v156 -> v157;
+
+v156 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:GATK4_SELECTVARIANTS"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 -> v184;
+
+v158 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:FILTER_GATK_GENOTYPES"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v158 -> v159;
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v159 -> v160 [label="fin_comb_vcf"];
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v164 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:BCFTOOLS_VIEW_CONVERT"];
+v160 -> v164;
+
+v161 [shape=point,label="",fixedsize=true,width=0.1];
+v164 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:BCFTOOLS_VIEW_CONVERT"];
+v161 -> v164 [label="regions"];
+
+v162 [shape=point,label="",fixedsize=true,width=0.1];
+v164 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:BCFTOOLS_VIEW_CONVERT"];
+v162 -> v164 [label="targets"];
+
+v163 [shape=point,label="",fixedsize=true,width=0.1];
+v164 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:BCFTOOLS_VIEW_CONVERT"];
+v163 -> v164 [label="samples"];
+
+v164 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:BCFTOOLS_VIEW_CONVERT"];
+v165 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:BCFTOOLS_INDEX"];
+v164 -> v165;
+
+v164 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:BCFTOOLS_VIEW_CONVERT"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v184;
+
+v165 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:BCFTOOLS_INDEX"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v165 -> v167;
+
+v165 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:BCFTOOLS_INDEX"];
+v166 [shape=point];
+v165 -> v166;
+
+v165 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:BCFTOOLS_INDEX"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 -> v184;
+
+v164 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:BCFTOOLS_VIEW_CONVERT"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v164 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v167 -> v168;
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v169 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:SPLIT_VCF"];
+v168 -> v169;
+
+v169 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:SPLIT_VCF"];
+v170 [shape=point];
+v169 -> v170;
+
+v169 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:SPLIT_VCF"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v169 -> v173;
+
+v169 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:SPLIT_VCF"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v184;
+
+v171 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v172 [shape=point];
+v171 -> v172 [label="final_vcf_txt"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v159 -> v173 [label="fin_comb_vcf"];
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v173 -> v174;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v180 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:VCF_TO_FASTA"];
+v174 -> v180 [label="final_vcf_txt"];
+
+v165 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:BCFTOOLS_INDEX"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v165 -> v175;
+
+v164 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:BCFTOOLS_VIEW_CONVERT"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v164 -> v175;
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v175 -> v176;
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v177 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:VCF_CONSENSUS"];
+v176 -> v177;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v177 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:VCF_CONSENSUS"];
+v58 -> v177 [label="fasta"];
+
+v177 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:VCF_CONSENSUS"];
+v179 [shape=point];
+v177 -> v179;
+
+v177 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:VCF_CONSENSUS"];
+v178 [shape=point];
+v177 -> v178;
+
+v177 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:VCF_CONSENSUS"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v184;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v180 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:VCF_TO_FASTA"];
+v58 -> v180 [label="fasta"];
+
+v180 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:VCF_TO_FASTA"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v180 -> v181 [label="snps_fasta"];
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v182 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:VCF_QC"];
+v181 -> v182;
+
+v182 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:VCF_QC"];
+v183 [shape=point];
+v182 -> v183;
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 -> v185 [label="versions"];
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v185 -> v209 [label="ch_versions"];
+
+v180 [label="NFCORE_MYCOSNP:MYCOSNP:GATK_VARIANTS:VCF_TO_FASTA"];
+v186 [label="NFCORE_MYCOSNP:MYCOSNP:SEQKIT_REPLACE"];
+v180 -> v186 [label="snps_fasta"];
+
+v186 [label="NFCORE_MYCOSNP:MYCOSNP:SEQKIT_REPLACE"];
+v188 [label="NFCORE_MYCOSNP:MYCOSNP:SNPDISTS"];
+v186 -> v188;
+
+v186 [label="NFCORE_MYCOSNP:MYCOSNP:SEQKIT_REPLACE"];
+v187 [shape=point];
+v186 -> v187;
+
+v188 [label="NFCORE_MYCOSNP:MYCOSNP:SNPDISTS"];
+v190 [shape=point];
+v188 -> v190;
+
+v188 [label="NFCORE_MYCOSNP:MYCOSNP:SNPDISTS"];
+v189 [shape=point];
+v188 -> v189;
+
+v186 [label="NFCORE_MYCOSNP:MYCOSNP:SEQKIT_REPLACE"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v186 -> v191;
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v195 [label="NFCORE_MYCOSNP:MYCOSNP:CREATE_PHYLOGENY:RAPIDNJ"];
+v191 -> v195 [label="fasta"];
+
+v192 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v192 -> v198 [label="ch_versions"];
+
+v193 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v194 [shape=point];
+v193 -> v194 [label="rapidnj_tree"];
+
+v195 [label="NFCORE_MYCOSNP:MYCOSNP:CREATE_PHYLOGENY:RAPIDNJ"];
+v197 [shape=point];
+v195 -> v197;
+
+v195 [label="NFCORE_MYCOSNP:MYCOSNP:CREATE_PHYLOGENY:RAPIDNJ"];
+v196 [shape=point];
+v195 -> v196 [label="rapidnj_tree"];
+
+v195 [label="NFCORE_MYCOSNP:MYCOSNP:CREATE_PHYLOGENY:RAPIDNJ"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 -> v198;
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 -> v203 [label="ch_versions"];
+
+v199 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v200 [shape=point];
+v199 -> v200 [label="fasttree_tree"];
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v201 [label="NFCORE_MYCOSNP:MYCOSNP:CREATE_PHYLOGENY:FASTTREE"];
+v191 -> v201 [label="fasta"];
+
+v201 [label="NFCORE_MYCOSNP:MYCOSNP:CREATE_PHYLOGENY:FASTTREE"];
+v202 [shape=point];
+v201 -> v202 [label="fasttree_tree"];
+
+v201 [label="NFCORE_MYCOSNP:MYCOSNP:CREATE_PHYLOGENY:FASTTREE"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 -> v203;
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v204 [shape=point];
+v203 -> v204 [label="versions"];
+
+v205 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v206 [shape=point];
+v205 -> v206 [label="iqtree_tree"];
+
+v207 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v208 [shape=point];
+v207 -> v208 [label="raxmlng_tree"];
+
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v209 -> v210;
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v211 [label="NFCORE_MYCOSNP:MYCOSNP:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v210 -> v211;
+
+v211 [label="NFCORE_MYCOSNP:MYCOSNP:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v213 [shape=point];
+v211 -> v213;
+
+v211 [label="NFCORE_MYCOSNP:MYCOSNP:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v211 -> v227;
+
+v211 [label="NFCORE_MYCOSNP:MYCOSNP:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v212 [shape=point];
+v211 -> v212;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v214 [label="NFCORE_MYCOSNP:MYCOSNP:FASTQC_RAW"];
+v14 -> v214 [label="reads"];
+
+v214 [label="NFCORE_MYCOSNP:MYCOSNP:FASTQC_RAW"];
+v215 [shape=point];
+v214 -> v215;
+
+v214 [label="NFCORE_MYCOSNP:MYCOSNP:FASTQC_RAW"];
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v214 -> v229;
+
+v214 [label="NFCORE_MYCOSNP:MYCOSNP:FASTQC_RAW"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v214 -> v216;
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 -> v217;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v217 [label="ch_versions"];
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v217 -> v253 [label="ch_versions"];
+
+v218 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 -> v220 [label="ch_multiqc_files"];
+
+v219 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 -> v220;
+
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 -> v223 [label="ch_multiqc_files"];
+
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v221 -> v222;
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v222 -> v223;
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 -> v226 [label="ch_multiqc_files"];
+
+v224 [shape=point,label="",fixedsize=true,width=0.1];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v224 -> v225 [label="ch_workflow_summary"];
+
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v225 -> v226;
+
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v226 -> v228 [label="ch_multiqc_files"];
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 -> v228;
+
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 -> v231 [label="ch_multiqc_files"];
+
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v229 -> v230;
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v230 -> v231;
+
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v231 -> v234 [label="ch_multiqc_files"];
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v232 -> v233;
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v234;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v234 -> v237 [label="ch_multiqc_files"];
+
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v235 -> v236;
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 -> v237;
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v237 -> v240 [label="ch_multiqc_files"];
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v238 -> v239;
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v239 -> v240;
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v240 -> v243 [label="ch_multiqc_files"];
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v241 -> v242;
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v242 -> v243;
+
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v243 -> v246 [label="ch_multiqc_files"];
+
+v107 [label="NFCORE_MYCOSNP:MYCOSNP:BWA_PREPROCESS:QUALIMAP_BAMQC"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v107 -> v244 [label="qualimap"];
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v244 -> v245;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 -> v246;
+
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v246 -> v247 [label="ch_multiqc_files"];
+
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v248 [label="NFCORE_MYCOSNP:MYCOSNP:MULTIQC"];
+v247 -> v248;
+
+v248 [label="NFCORE_MYCOSNP:MYCOSNP:MULTIQC"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v248 -> v251;
+
+v248 [label="NFCORE_MYCOSNP:MYCOSNP:MULTIQC"];
+v250 [shape=point];
+v248 -> v250;
+
+v248 [label="NFCORE_MYCOSNP:MYCOSNP:MULTIQC"];
+v249 [shape=point];
+v248 -> v249;
+
+v248 [label="NFCORE_MYCOSNP:MYCOSNP:MULTIQC"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v248 -> v253;
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v252 [shape=point];
+v251 -> v252;
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v254 [shape=point];
+v253 -> v254 [label="ch_versions"];
+
+}

@@ -1,0 +1,298 @@
+digraph "BCCDCPHL_____kmacgmlst" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v7 [label="ch_illumina_fastq"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v8 [label="ch_nanopore_fastq"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v34 [label="ch_scheme"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v7 -> v9 [label="ch_illumina_sample_ids"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v8 -> v9 [label="ch_nanopore_sample_ids"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v45 [label="ch_provenance"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v12;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v12 [label="ch_illumina_fastq"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 [label="hash_fastq_short"];
+v12 -> v13;
+
+v13 [label="hash_fastq_short"];
+v14 [shape=point];
+v13 -> v14;
+
+v13 [label="hash_fastq_short"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v13 -> v47;
+
+v15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v16;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v16 [label="ch_nanopore_fastq"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 [label="hash_fastq_long"];
+v16 -> v17;
+
+v17 [label="hash_fastq_long"];
+v18 [shape=point];
+v17 -> v18;
+
+v17 [label="hash_fastq_long"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 -> v51;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v19 [label="fastp"];
+v2 -> v19 [label="ch_illumina_fastq"];
+
+v19 [label="fastp"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v33;
+
+v19 [label="fastp"];
+v21 [shape=point];
+v19 -> v21;
+
+v19 [label="fastp"];
+v20 [shape=point];
+v19 -> v20;
+
+v19 [label="fastp"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 -> v49;
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v22 -> v23;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v23 [label="ch_nanopore_fastq"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v24 [label="nanoq_pre_filter"];
+v23 -> v24;
+
+v24 [label="nanoq_pre_filter"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 -> v29;
+
+v24 [label="nanoq_pre_filter"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 -> v53;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v25 [label="filtlong"];
+v5 -> v25 [label="ch_nanopore_fastq"];
+
+v25 [label="filtlong"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v25 -> v27;
+
+v25 [label="filtlong"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v25 -> v55;
+
+v26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v28 [label="nanoq_post_filter"];
+v27 -> v28;
+
+v28 [label="nanoq_post_filter"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 -> v29;
+
+v28 [label="nanoq_post_filter"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 -> v57;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 [label="merge_nanoq_reports"];
+v29 -> v30;
+
+v30 [label="merge_nanoq_reports"];
+v31 [shape=point];
+v30 -> v31;
+
+v25 [label="filtlong"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v33 -> v34 [label="trimmed_reads"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v36 [label="kma_align"];
+v35 -> v36;
+
+v36 [label="kma_align"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v36 -> v38;
+
+v36 [label="kma_align"];
+v37 [shape=point];
+v36 -> v37;
+
+v36 [label="kma_align"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 -> v60;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v38 [label="ch_scheme"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v39 [label="kma_result_to_mlst"];
+v38 -> v39;
+
+v39 [label="kma_result_to_mlst"];
+v41 [label="count_called_alleles"];
+v39 -> v41;
+
+v39 [label="kma_result_to_mlst"];
+v40 [shape=point];
+v39 -> v40;
+
+v41 [label="count_called_alleles"];
+v42 [shape=point];
+v41 -> v42;
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="pipeline_provenance"];
+v43 -> v44 [label="ch_workflow_metadata"];
+
+v44 [label="pipeline_provenance"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v46 -> v47 [label="ch_provenance"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v48 -> v49 [label="ch_provenance_short"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v59 [label="ch_provenance_short"];
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v46 -> v51 [label="ch_provenance"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 -> v53 [label="ch_provenance_long"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v54 -> v55 [label="ch_provenance_long"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v57 [label="ch_provenance_long"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v59 [label="ch_provenance_long"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v59 -> v60 [label="ch_provenance"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [label="collect_provenance"];
+v61 -> v62 [label="ch_provenance"];
+
+v62 [label="collect_provenance"];
+v63 [shape=point];
+v62 -> v63;
+
+}

@@ -1,0 +1,314 @@
+digraph "fetchngs" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v6 [label="NFCORE_FETCHNGS:SRA:SRA_IDS_TO_RUNINFO"];
+v3 -> v6 [label="ids"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v8 [label="ch_versions"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="NFCORE_FETCHNGS:SRA:SRA_IDS_TO_RUNINFO"];
+v5 -> v6 [label="fields"];
+
+v6 [label="NFCORE_FETCHNGS:SRA:SRA_IDS_TO_RUNINFO"];
+v9 [label="NFCORE_FETCHNGS:SRA:SRA_RUNINFO_TO_FTP"];
+v6 -> v9;
+
+v6 [label="NFCORE_FETCHNGS:SRA:SRA_IDS_TO_RUNINFO"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v11 [label="ch_versions"];
+
+v9 [label="NFCORE_FETCHNGS:SRA:SRA_RUNINFO_TO_FTP"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v9 -> v12;
+
+v9 [label="NFCORE_FETCHNGS:SRA:SRA_RUNINFO_TO_FTP"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v19 [label="ch_versions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v14 -> v15 [label="ch_sra_metadata"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v35 [label="NFCORE_FETCHNGS:SRA:ASPERA_CLI"];
+v15 -> v35;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 -> v21 [label="ch_sra_ids"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v16 [label="NFCORE_FETCHNGS:SRA:SRA_FASTQ_FTP"];
+v15 -> v16;
+
+v16 [label="NFCORE_FETCHNGS:SRA:SRA_FASTQ_FTP"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v39;
+
+v16 [label="NFCORE_FETCHNGS:SRA:SRA_FASTQ_FTP"];
+v17 [shape=point];
+v16 -> v17;
+
+v16 [label="NFCORE_FETCHNGS:SRA:SRA_FASTQ_FTP"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v16 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v33 [label="ch_versions"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v23 [label="ch_versions"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [label="NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS:CUSTOM_SRATOOLSNCBISETTINGS"];
+v21 -> v22;
+
+v22 [label="NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS:CUSTOM_SRATOOLSNCBISETTINGS"];
+v25 [label="NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS:SRATOOLS_PREFETCH"];
+v22 -> v25 [label="ch_ncbi_settings"];
+
+v22 [label="NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS:CUSTOM_SRATOOLSNCBISETTINGS"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v27 [label="ch_versions"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v25 [label="NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS:SRATOOLS_PREFETCH"];
+v15 -> v25 [label="ch_sra_ids"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v25 [label="NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS:SRATOOLS_PREFETCH"];
+v24 -> v25 [label="certificate"];
+
+v25 [label="NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS:SRATOOLS_PREFETCH"];
+v29 [label="NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS:SRATOOLS_FASTERQDUMP"];
+v25 -> v29;
+
+v25 [label="NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS:SRATOOLS_PREFETCH"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v31 [label="ch_versions"];
+
+v22 [label="NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS:CUSTOM_SRATOOLSNCBISETTINGS"];
+v29 [label="NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS:SRATOOLS_FASTERQDUMP"];
+v22 -> v29 [label="ch_ncbi_settings"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS:SRATOOLS_FASTERQDUMP"];
+v28 -> v29 [label="certificate"];
+
+v29 [label="NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS:SRATOOLS_FASTERQDUMP"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v39 [label="reads"];
+
+v29 [label="NFCORE_FETCHNGS:SRA:FASTQ_DOWNLOAD_PREFETCH_FASTERQDUMP_SRATOOLS:SRATOOLS_FASTERQDUMP"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v31 -> v32 [label="versions"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v38 [label="ch_versions"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v35 [label="NFCORE_FETCHNGS:SRA:ASPERA_CLI"];
+v34 -> v35 [label="user"];
+
+v35 [label="NFCORE_FETCHNGS:SRA:ASPERA_CLI"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v40;
+
+v35 [label="NFCORE_FETCHNGS:SRA:ASPERA_CLI"];
+v36 [shape=point];
+v35 -> v36;
+
+v35 [label="NFCORE_FETCHNGS:SRA:ASPERA_CLI"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v35 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v59 [label="ch_versions"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [label="NFCORE_FETCHNGS:SRA:SRA_TO_SAMPLESHEET"];
+v41 -> v45 [label="sra_metadata"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="NFCORE_FETCHNGS:SRA:SRA_TO_SAMPLESHEET"];
+v42 -> v45 [label="pipeline"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="NFCORE_FETCHNGS:SRA:SRA_TO_SAMPLESHEET"];
+v43 -> v45 [label="strandedness"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="NFCORE_FETCHNGS:SRA:SRA_TO_SAMPLESHEET"];
+v44 -> v45 [label="mapping_fields"];
+
+v45 [label="NFCORE_FETCHNGS:SRA:SRA_TO_SAMPLESHEET"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 -> v46;
+
+v45 [label="NFCORE_FETCHNGS:SRA:SRA_TO_SAMPLESHEET"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 -> v51;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v50 [shape=point];
+v49 -> v50 [label="samplesheet"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v57 [label="NFCORE_FETCHNGS:SRA:MULTIQC_MAPPINGS_CONFIG"];
+v54 -> v57 [label="mappings"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v56 [shape=point];
+v55 -> v56 [label="ch_sample_mappings_yml"];
+
+v57 [label="NFCORE_FETCHNGS:SRA:MULTIQC_MAPPINGS_CONFIG"];
+v58 [shape=point];
+v57 -> v58 [label="sample_mappings"];
+
+v57 [label="NFCORE_FETCHNGS:SRA:MULTIQC_MAPPINGS_CONFIG"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v59 -> v60 [label="ch_versions"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v64;
+
+v63 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v66 [shape=point];
+v65 -> v66;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v59 -> v67 [label="ch_versions"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v68 [shape=point];
+v67 -> v68 [label="versions"];
+
+}

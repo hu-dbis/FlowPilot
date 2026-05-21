@@ -1,0 +1,290 @@
+digraph "StephenRicher_____AssociationAnalysis" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [label="PLINK_UPDATE_PHENO"];
+v3 -> v7 [label="plink"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [label="FIX_PHENO"];
+v4 -> v5 [label="pheno"];
+
+v5 [label="FIX_PHENO"];
+v7 [label="PLINK_UPDATE_PHENO"];
+v5 -> v7;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="PLINK_UPDATE_PHENO"];
+v6 -> v7 [label="pheno_name"];
+
+v7 [label="PLINK_UPDATE_PHENO"];
+v8 [label="SUMMARISE:PLINK_SUMMARY_MISSING"];
+v7 -> v8 [label="plink"];
+
+v8 [label="SUMMARISE:PLINK_SUMMARY_MISSING"];
+v34 [label="PLOT_STATS:PLOT_MISSING"];
+v8 -> v34 [label="imiss"];
+
+v8 [label="SUMMARISE:PLINK_SUMMARY_MISSING"];
+v34 [label="PLOT_STATS:PLOT_MISSING"];
+v8 -> v34 [label="lmiss"];
+
+v7 [label="PLINK_UPDATE_PHENO"];
+v9 [label="SUMMARISE:PLINK_SUMMARY_MAF"];
+v7 -> v9 [label="plink"];
+
+v9 [label="SUMMARISE:PLINK_SUMMARY_MAF"];
+v37 [label="PLOT_STATS:PLOT_MAF"];
+v9 -> v37 [label="maf"];
+
+v7 [label="PLINK_UPDATE_PHENO"];
+v10 [label="SUMMARISE:PLINK_SUMMARY_HWE"];
+v7 -> v10 [label="plink"];
+
+v10 [label="SUMMARISE:PLINK_SUMMARY_HWE"];
+v39 [label="PLOT_STATS:PLOT_HWE"];
+v10 -> v39 [label="hwe"];
+
+v7 [label="PLINK_UPDATE_PHENO"];
+v12 [label="FILTER:PLINK_QC_GENO"];
+v7 -> v12 [label="plink"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [label="FILTER:PLINK_QC_GENO"];
+v11 -> v12 [label="threshold"];
+
+v12 [label="FILTER:PLINK_QC_GENO"];
+v14 [label="FILTER:PLINK_QC_MIND"];
+v12 -> v14;
+
+v12 [label="FILTER:PLINK_QC_GENO"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v12 -> v28;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="FILTER:PLINK_QC_MIND"];
+v13 -> v14 [label="threshold"];
+
+v14 [label="FILTER:PLINK_QC_MIND"];
+v16 [label="FILTER:PLINK_QC_MAF"];
+v14 -> v16;
+
+v14 [label="FILTER:PLINK_QC_MIND"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v14 -> v28;
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="FILTER:PLINK_QC_MAF"];
+v15 -> v16 [label="threshold"];
+
+v16 [label="FILTER:PLINK_QC_MAF"];
+v18 [label="FILTER:PLINK_QC_HWE_CONTROL"];
+v16 -> v18;
+
+v16 [label="FILTER:PLINK_QC_MAF"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v16 -> v28;
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v18 [label="FILTER:PLINK_QC_HWE_CONTROL"];
+v17 -> v18 [label="threshold"];
+
+v18 [label="FILTER:PLINK_QC_HWE_CONTROL"];
+v20 [label="FILTER:PLINK_QC_HWE_CASE"];
+v18 -> v20;
+
+v18 [label="FILTER:PLINK_QC_HWE_CONTROL"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v18 -> v28;
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [label="FILTER:PLINK_QC_HWE_CASE"];
+v19 -> v20 [label="threshold"];
+
+v20 [label="FILTER:PLINK_QC_HWE_CASE"];
+v21 [label="FILTER:PLINK_QC_HET"];
+v20 -> v21;
+
+v20 [label="FILTER:PLINK_QC_HWE_CASE"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v20 -> v28;
+
+v21 [label="FILTER:PLINK_QC_HET"];
+v23 [label="FILTER:GET_HET_FAIL"];
+v21 -> v23;
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v23 [label="FILTER:GET_HET_FAIL"];
+v22 -> v23 [label="threshold"];
+
+v23 [label="FILTER:GET_HET_FAIL"];
+v32 [label="PLOT_STATS:PLOT_HET"];
+v23 -> v32 [label="heterozygosity"];
+
+v23 [label="FILTER:GET_HET_FAIL"];
+v24 [label="FILTER:PLINK_QC_HET_EXC"];
+v23 -> v24;
+
+v20 [label="FILTER:PLINK_QC_HWE_CASE"];
+v24 [label="FILTER:PLINK_QC_HET_EXC"];
+v20 -> v24;
+
+v24 [label="FILTER:PLINK_QC_HET_EXC"];
+v26 [label="FILTER:PLINK_QC_RELATED"];
+v24 -> v26;
+
+v24 [label="FILTER:PLINK_QC_HET_EXC"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v24 -> v28;
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [label="FILTER:PLINK_QC_RELATED"];
+v25 -> v26 [label="threshold"];
+
+v26 [label="FILTER:PLINK_QC_RELATED"];
+v47 [label="ASSOCIATION:PLINK_TO_VCF"];
+v26 -> v47 [label="plink"];
+
+v26 [label="FILTER:PLINK_QC_RELATED"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v26 -> v28;
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 [label="FILTER:FILTER_SUMMARY"];
+v29 -> v30 [label="filter_logs"];
+
+v30 [label="FILTER:FILTER_SUMMARY"];
+v31 [shape=point];
+v30 -> v31;
+
+v32 [label="PLOT_STATS:PLOT_HET"];
+v33 [shape=point];
+v32 -> v33;
+
+v34 [label="PLOT_STATS:PLOT_MISSING"];
+v36 [shape=point];
+v34 -> v36;
+
+v34 [label="PLOT_STATS:PLOT_MISSING"];
+v35 [shape=point];
+v34 -> v35;
+
+v37 [label="PLOT_STATS:PLOT_MAF"];
+v38 [shape=point];
+v37 -> v38;
+
+v39 [label="PLOT_STATS:PLOT_HWE"];
+v40 [shape=point];
+v39 -> v40;
+
+v23 [label="FILTER:GET_HET_FAIL"];
+v42 [label="PLOT_STATS:PLOT_MIND_HET"];
+v23 -> v42 [label="heterozygosity"];
+
+v8 [label="SUMMARISE:PLINK_SUMMARY_MISSING"];
+v42 [label="PLOT_STATS:PLOT_MIND_HET"];
+v8 -> v42 [label="imiss"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v42 [label="PLOT_STATS:PLOT_MIND_HET"];
+v41 -> v42 [label="het_sd"];
+
+v42 [label="PLOT_STATS:PLOT_MIND_HET"];
+v43 [shape=point];
+v42 -> v43;
+
+v44 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v46 [label="ASSOCIATION:GFF3_TO_EXON_SET"];
+v44 -> v46 [label="gff3"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v46 [label="ASSOCIATION:GFF3_TO_EXON_SET"];
+v45 -> v46 [label="key"];
+
+v46 [label="ASSOCIATION:GFF3_TO_EXON_SET"];
+v54 [label="ASSOCIATION:RVTEST_SKAT"];
+v46 -> v54;
+
+v47 [label="ASSOCIATION:PLINK_TO_VCF"];
+v48 [label="ASSOCIATION:INDEX_VCF"];
+v47 -> v48;
+
+v48 [label="ASSOCIATION:INDEX_VCF"];
+v54 [label="ASSOCIATION:RVTEST_SKAT"];
+v48 -> v54;
+
+v49 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v50 [label="ASSOCIATION:FIX_PHENO"];
+v49 -> v50 [label="covar_file"];
+
+v50 [label="ASSOCIATION:FIX_PHENO"];
+v52 [label="ASSOCIATION:MAKE_COVAR"];
+v50 -> v52;
+
+v26 [label="FILTER:PLINK_QC_RELATED"];
+v52 [label="ASSOCIATION:MAKE_COVAR"];
+v26 -> v52 [label="plink"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="ASSOCIATION:MAKE_COVAR"];
+v51 -> v52 [label="covar_name"];
+
+v52 [label="ASSOCIATION:MAKE_COVAR"];
+v54 [label="ASSOCIATION:RVTEST_SKAT"];
+v52 -> v54;
+
+v26 [label="FILTER:PLINK_QC_RELATED"];
+v54 [label="ASSOCIATION:RVTEST_SKAT"];
+v26 -> v54 [label="plink"];
+
+v47 [label="ASSOCIATION:PLINK_TO_VCF"];
+v54 [label="ASSOCIATION:RVTEST_SKAT"];
+v47 -> v54;
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="ASSOCIATION:RVTEST_SKAT"];
+v53 -> v54 [label="covar_name"];
+
+v54 [label="ASSOCIATION:RVTEST_SKAT"];
+v55 [shape=point];
+v54 -> v55;
+
+v26 [label="FILTER:PLINK_QC_RELATED"];
+v56 [label="ASSOCIATION:RVTEST_CMC"];
+v26 -> v56 [label="plink"];
+
+v47 [label="ASSOCIATION:PLINK_TO_VCF"];
+v56 [label="ASSOCIATION:RVTEST_CMC"];
+v47 -> v56;
+
+v48 [label="ASSOCIATION:INDEX_VCF"];
+v56 [label="ASSOCIATION:RVTEST_CMC"];
+v48 -> v56;
+
+v46 [label="ASSOCIATION:GFF3_TO_EXON_SET"];
+v56 [label="ASSOCIATION:RVTEST_CMC"];
+v46 -> v56 [label="setFile"];
+
+v56 [label="ASSOCIATION:RVTEST_CMC"];
+v57 [shape=point];
+v56 -> v57;
+
+}

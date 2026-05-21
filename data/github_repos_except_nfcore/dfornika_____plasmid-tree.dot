@@ -1,0 +1,126 @@
+digraph "dfornika_____plasmidtree" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v0 -> v4 [label="ch_start_time"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v1 -> v3 [label="ch_pipeline_name"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v3 [label="ch_pipeline_version"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 [label="pipeline_provenance"];
+v4 -> v5;
+
+v5 [label="pipeline_provenance"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v24;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v16 [label="ch_tree_id"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v9 -> v11 [label="ch_assemblies"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 [label="hash_files"];
+v11 -> v12;
+
+v12 [label="hash_files"];
+v13 [shape=point];
+v12 -> v13;
+
+v12 [label="hash_files"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v12 -> v22;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v14 [label="ch_assemblies"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 [label="concatenate_assemblies"];
+v14 -> v15;
+
+v15 [label="concatenate_assemblies"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 [label="mafft"];
+v16 -> v17;
+
+v17 [label="mafft"];
+v18 [label="iqtree"];
+v17 -> v18;
+
+v17 [label="mafft"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 -> v20 [label="ch_provenance"];
+
+v18 [label="iqtree"];
+v19 [shape=point];
+v18 -> v19;
+
+v18 [label="iqtree"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 -> v22 [label="ch_provenance"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 -> v25 [label="ch_provenance"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v24 [label="ch_tree_id"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [label="collect_provenance"];
+v26 -> v27 [label="ch_provenance"];
+
+v27 [label="collect_provenance"];
+v28 [shape=point];
+v27 -> v28;
+
+}

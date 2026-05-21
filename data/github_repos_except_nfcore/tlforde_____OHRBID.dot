@@ -1,0 +1,242 @@
+digraph "tlforde_____OHRBID" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v7 [label="bactocap1:trimmomatic"];
+v1 -> v7 [label="input_files"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v9 [label="bowtieDir"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v3 -> v25 [label="refFasta"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v4 -> v15 [label="genBank"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [shape=point];
+v5 -> v6 [label="discRegFileCustom"];
+
+v7 [label="bactocap1:trimmomatic"];
+v10 [label="bactocap1:bowtie2"];
+v7 -> v10;
+
+v7 [label="bactocap1:trimmomatic"];
+v8 [shape=point];
+v7 -> v8;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v10 [label="bactocap1:bowtie2"];
+v9 -> v10;
+
+v10 [label="bactocap1:bowtie2"];
+v11 [label="bactocap1:sam2bam"];
+v10 -> v11;
+
+v11 [label="bactocap1:sam2bam"];
+v12 [label="bactocap1:indexbam"];
+v11 -> v12;
+
+v12 [label="bactocap1:indexbam"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v12 -> v13;
+
+v11 [label="bactocap1:sam2bam"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v11 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v14 [label="bactocap1:picard"];
+v13 -> v14;
+
+v14 [label="bactocap1:picard"];
+v17 [label="bactocap2:bedtools"];
+v14 -> v17 [label="picardBam"];
+
+v14 [label="bactocap1:picard"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v14 -> v18 [label="picardMetrics"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v16 [label="bactocap2:discardRegions"];
+v15 -> v16;
+
+v16 [label="bactocap2:discardRegions"];
+v31 [label="bactocap2:filterPanSNPsNoCustom"];
+v16 -> v31;
+
+v17 [label="bactocap2:bedtools"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 [label="bactocap2:computeStatistics"];
+v18 -> v19;
+
+v19 [label="bactocap2:computeStatistics"];
+v21 [shape=point];
+v19 -> v21;
+
+v19 [label="bactocap2:computeStatistics"];
+v20 [shape=point];
+v19 -> v20;
+
+v19 [label="bactocap2:computeStatistics"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 [label="bactocap2:createStatsFile"];
+v22 -> v23;
+
+v23 [label="bactocap2:createStatsFile"];
+v24 [shape=point];
+v23 -> v24;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v26 [label="bactocap2:mpileupVarscan"];
+v25 -> v26;
+
+v14 [label="bactocap1:picard"];
+v26 [label="bactocap2:mpileupVarscan"];
+v14 -> v26 [label="picardBam"];
+
+v26 [label="bactocap2:mpileupVarscan"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 [label="bactocap2:extractPanSNPs"];
+v27 -> v28;
+
+v28 [label="bactocap2:extractPanSNPs"];
+v30 [label="bactocap2:extractMutatedGenes"];
+v28 -> v30 [label="panSNPs"];
+
+v28 [label="bactocap2:extractPanSNPs"];
+v43 [label="bactocap3:bamreadcount"];
+v28 -> v43 [label="panSNPsIntervals"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v4 -> v29 [label="genBank"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v30 [label="bactocap2:extractMutatedGenes"];
+v29 -> v30;
+
+v30 [label="bactocap2:extractMutatedGenes"];
+v33 [label="bactocap1Repeat:trimmomaticRepeat"];
+v30 -> v33 [label="trigger"];
+
+v28 [label="bactocap2:extractPanSNPs"];
+v31 [label="bactocap2:filterPanSNPsNoCustom"];
+v28 -> v31 [label="panSNPs"];
+
+v31 [label="bactocap2:filterPanSNPsNoCustom"];
+v32 [shape=point];
+v31 -> v32;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v33 [label="bactocap1Repeat:trimmomaticRepeat"];
+v1 -> v33 [label="input_files"];
+
+v33 [label="bactocap1Repeat:trimmomaticRepeat"];
+v36 [label="bactocap1Repeat:bowtie2Repeat"];
+v33 -> v36;
+
+v33 [label="bactocap1Repeat:trimmomaticRepeat"];
+v34 [shape=point];
+v33 -> v34;
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v35 [label="bowtieDir"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v36 [label="bactocap1Repeat:bowtie2Repeat"];
+v35 -> v36;
+
+v36 [label="bactocap1Repeat:bowtie2Repeat"];
+v37 [label="bactocap1Repeat:sam2bamRepeat"];
+v36 -> v37;
+
+v37 [label="bactocap1Repeat:sam2bamRepeat"];
+v38 [label="bactocap1Repeat:indexbamRepeat"];
+v37 -> v38;
+
+v38 [label="bactocap1Repeat:indexbamRepeat"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v38 -> v39;
+
+v37 [label="bactocap1Repeat:sam2bamRepeat"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v37 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 [label="bactocap1Repeat:picardRepeat"];
+v39 -> v40;
+
+v40 [label="bactocap1Repeat:picardRepeat"];
+v43 [label="bactocap3:bamreadcount"];
+v40 -> v43 [label="picardBam"];
+
+v40 [label="bactocap1Repeat:picardRepeat"];
+v41 [shape=point];
+v40 -> v41 [label="picardMetrics"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v3 -> v42 [label="refFasta"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v43 [label="bactocap3:bamreadcount"];
+v42 -> v43;
+
+v43 [label="bactocap3:bamreadcount"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 [label="bactocap3:makeVCtable"];
+v44 -> v45;
+
+v28 [label="bactocap2:extractPanSNPs"];
+v45 [label="bactocap3:makeVCtable"];
+v28 -> v45 [label="panSNPs"];
+
+v45 [label="bactocap3:makeVCtable"];
+v46 [label="bactocap3:makeVCflagTable"];
+v45 -> v46;
+
+v46 [label="bactocap3:makeVCflagTable"];
+v48 [shape=point];
+v46 -> v48;
+
+v46 [label="bactocap3:makeVCflagTable"];
+v49 [label="bactocap3:removeSelectedRegions"];
+v46 -> v49;
+
+v46 [label="bactocap3:makeVCflagTable"];
+v47 [shape=point];
+v46 -> v47;
+
+v45 [label="bactocap3:makeVCtable"];
+v49 [label="bactocap3:removeSelectedRegions"];
+v45 -> v49 [label="vctable"];
+
+v49 [label="bactocap3:removeSelectedRegions"];
+v50 [label="bactocap3:generateAlignmentTable"];
+v49 -> v50;
+
+v50 [label="bactocap3:generateAlignmentTable"];
+v51 [shape=point];
+v50 -> v51;
+
+}

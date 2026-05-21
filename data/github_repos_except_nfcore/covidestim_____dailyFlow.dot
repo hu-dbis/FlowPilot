@@ -1,0 +1,142 @@
+digraph "covidestim_____dailyFlow" {
+v0 [label="combinedVaxData"];
+v1 [label="splitTractData"];
+v0 -> v1 [label="input"];
+
+v0 [label="combinedVaxData"];
+v1 [label="splitTractData"];
+v0 -> v1 [label="rejects"];
+
+v0 [label="combinedVaxData"];
+v1 [label="splitTractData"];
+v0 -> v1;
+
+v1 [label="splitTractData"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v1 -> v2;
+
+v1 [label="splitTractData"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v1 -> v4;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v3 -> v6 [label="chan1Lists"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v5 -> v6 [label="chan2Lists"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v8 [label="runTractOptimizer"];
+v7 -> v8;
+
+v8 [label="runTractOptimizer"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v8 -> v10;
+
+v8 [label="runTractOptimizer"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v8 -> v11;
+
+v8 [label="runTractOptimizer"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v8 -> v12;
+
+v8 [label="runTractOptimizer"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v8 -> v13;
+
+v8 [label="runTractOptimizer"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v8 -> v14;
+
+v8 [label="runTractOptimizer"];
+v9 [shape=point];
+v8 -> v9;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v17 [label="publishCountyResults"];
+v10 -> v17 [label="summary"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v17 [label="publishCountyResults"];
+v11 -> v17 [label="warning"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v17 [label="publishCountyResults"];
+v12 -> v17 [label="optvals"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v21 [label="insertResults"];
+v13 -> v21 [label="method"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v17 [label="publishCountyResults"];
+v16 -> v17 [label="metadata"];
+
+v0 [label="combinedVaxData"];
+v17 [label="publishCountyResults"];
+v0 -> v17 [label="input"];
+
+v0 [label="combinedVaxData"];
+v17 [label="publishCountyResults"];
+v0 -> v17 [label="rejects"];
+
+v17 [label="publishCountyResults"];
+v20 [shape=point];
+v17 -> v20;
+
+v17 [label="publishCountyResults"];
+v19 [shape=point];
+v17 -> v19;
+
+v17 [label="publishCountyResults"];
+v18 [shape=point];
+v17 -> v18;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v21 [label="insertResults"];
+v10 -> v21 [label="summary"];
+
+v0 [label="combinedVaxData"];
+v21 [label="insertResults"];
+v0 -> v21 [label="input"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v21 [label="insertResults"];
+v16 -> v21 [label="metadata"];
+
+v21 [label="insertResults"];
+v22 [shape=point];
+v21 -> v22;
+
+v0 [label="combinedVaxData"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v0 -> v23 [label="rejects"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v24 [shape=point];
+v23 -> v24;
+
+}

@@ -1,0 +1,22 @@
+digraph "garciafertson_____nf_assembly_megahit" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="NF_META_ASSEMBLY:ASSEMBLY:fastp"];
+v2 -> v3 [label="ch_raw_short_reads"];
+
+v3 [label="NF_META_ASSEMBLY:ASSEMBLY:fastp"];
+v4 [label="NF_META_ASSEMBLY:ASSEMBLY:megahit_assembly"];
+v3 -> v4 [label="fastq_trimmed"];
+
+v4 [label="NF_META_ASSEMBLY:ASSEMBLY:megahit_assembly"];
+v5 [shape=point];
+v4 -> v5;
+
+}

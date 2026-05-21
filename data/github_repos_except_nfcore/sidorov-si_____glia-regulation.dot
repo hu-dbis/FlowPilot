@@ -1,0 +1,38 @@
+digraph "sidorovsi_____gliaregulation" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v1 -> v3 [label="input_data_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v5;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 [label="SELECT_SAMPLES"];
+v5 -> v7 [label="consensus_element_counts_ch"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v7 [label="SELECT_SAMPLES"];
+v6 -> v7 [label="conditions_to_compare"];
+
+v7 [label="SELECT_SAMPLES"];
+v9 [shape=point];
+v7 -> v9;
+
+v7 [label="SELECT_SAMPLES"];
+v8 [shape=point];
+v7 -> v8;
+
+}

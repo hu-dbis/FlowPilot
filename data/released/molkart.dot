@@ -1,0 +1,418 @@
+digraph "molkart" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v78 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v79 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v80 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v10 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5 [label="ch_from_samplesheet"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v8 [label="membrane_tuple"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v6 [label="ch_from_samplesheet"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v8 [label="image_tuple"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v7 [label="ch_from_samplesheet"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [label="NFCORE_MOLKART:MOLKART:MINDAGAP_DUPLICATEFINDER"];
+v7 -> v25 [label="spot_tuple"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 [label="NFCORE_MOLKART:MOLKART:MINDAGAP_MINDAGAP"];
+v8 -> v9 [label="mindagap_in"];
+
+v9 [label="NFCORE_MOLKART:MOLKART:MINDAGAP_MINDAGAP"];
+v11 [label="NFCORE_MOLKART:MOLKART:CLAHE"];
+v9 -> v11;
+
+v9 [label="NFCORE_MOLKART:MOLKART:MINDAGAP_MINDAGAP"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v12 [label="ch_versions"];
+
+v11 [label="NFCORE_MOLKART:MOLKART:CLAHE"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v13 [label="map_for_stacks"];
+
+v11 [label="NFCORE_MOLKART:MOLKART:CLAHE"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v23 [label="ch_versions"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v18 -> v19 [label="grouped_map_stack"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v24 [label="no_stack"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v18 -> v20 [label="grouped_map_stack"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [label="NFCORE_MOLKART:MOLKART:CREATE_STACK"];
+v21 -> v22 [label="create_stack_in"];
+
+v22 [label="NFCORE_MOLKART:MOLKART:CREATE_STACK"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v24;
+
+v22 [label="NFCORE_MOLKART:MOLKART:CREATE_STACK"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v26 [label="ch_versions"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [label="NFCORE_MOLKART:MOLKART:CELLPOSE"];
+v24 -> v36 [label="stack_mix"];
+
+v25 [label="NFCORE_MOLKART:MOLKART:MINDAGAP_DUPLICATEFINDER"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v25 -> v46 [label="qc_spots"];
+
+v25 [label="NFCORE_MOLKART:MOLKART:MINDAGAP_DUPLICATEFINDER"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v31 [label="ch_versions"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v34 [label="segmentation_masks"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v28 [label="grouped_map_stack"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [label="NFCORE_MOLKART:MOLKART:DEEPCELL_MESMER"];
+v28 -> v30;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v29 [label="grouped_map_stack"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [label="NFCORE_MOLKART:MOLKART:DEEPCELL_MESMER"];
+v29 -> v30;
+
+v30 [label="NFCORE_MOLKART:MOLKART:DEEPCELL_MESMER"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v30 -> v33;
+
+v30 [label="NFCORE_MOLKART:MOLKART:DEEPCELL_MESMER"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v38 [label="ch_versions"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v41 [label="segmentation_masks"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="NFCORE_MOLKART:MOLKART:CELLPOSE"];
+v35 -> v36 [label="model"];
+
+v36 [label="NFCORE_MOLKART:MOLKART:CELLPOSE"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v36 -> v40;
+
+v36 [label="NFCORE_MOLKART:MOLKART:CELLPOSE"];
+v37 [shape=point];
+v36 -> v37;
+
+v36 [label="NFCORE_MOLKART:MOLKART:CELLPOSE"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v44 [label="ch_versions"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 -> v42 [label="segmentation_masks"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 [label="NFCORE_MOLKART:MOLKART:MASKFILTER"];
+v42 -> v43 [label="matched_segmasks"];
+
+v43 [label="NFCORE_MOLKART:MOLKART:MASKFILTER"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 -> v45;
+
+v43 [label="NFCORE_MOLKART:MOLKART:MASKFILTER"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v43 -> v55;
+
+v43 [label="NFCORE_MOLKART:MOLKART:MASKFILTER"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v51 [label="ch_versions"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v45 -> v46 [label="filtered_masks"];
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 -> v48 [label="dedup_spots"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 [label="NFCORE_MOLKART:MOLKART:SPOT2CELL"];
+v48 -> v50;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 -> v49 [label="dedup_spots"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 [label="NFCORE_MOLKART:MOLKART:SPOT2CELL"];
+v49 -> v50;
+
+v50 [label="NFCORE_MOLKART:MOLKART:SPOT2CELL"];
+v52 [label="NFCORE_MOLKART:MOLKART:CREATE_ANNDATA"];
+v50 -> v52;
+
+v50 [label="NFCORE_MOLKART:MOLKART:SPOT2CELL"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v54 [label="ch_versions"];
+
+v52 [label="NFCORE_MOLKART:MOLKART:CREATE_ANNDATA"];
+v53 [shape=point];
+v52 -> v53;
+
+v52 [label="NFCORE_MOLKART:MOLKART:CREATE_ANNDATA"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v59 [label="ch_versions"];
+
+v50 [label="NFCORE_MOLKART:MOLKART:SPOT2CELL"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v50 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v56 -> v57 [label="spot2cell_out"];
+
+v25 [label="NFCORE_MOLKART:MOLKART:MINDAGAP_DUPLICATEFINDER"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v25 -> v57 [label="qc_spots"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v58 [label="NFCORE_MOLKART:MOLKART:MOLKARTQC"];
+v57 -> v58 [label="molkartqc"];
+
+v58 [label="NFCORE_MOLKART:MOLKART:MOLKARTQC"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 -> v66;
+
+v58 [label="NFCORE_MOLKART:MOLKART:MOLKARTQC"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v59 -> v60 [label="ch_versions"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v62 [label="NFCORE_MOLKART:MOLKART:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v61 -> v62;
+
+v62 [label="NFCORE_MOLKART:MOLKART:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v64 [shape=point];
+v62 -> v64;
+
+v62 [label="NFCORE_MOLKART:MOLKART:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 -> v75;
+
+v62 [label="NFCORE_MOLKART:MOLKART:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v63 [shape=point];
+v62 -> v63;
+
+v65 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v68 [label="ch_multiqc_files"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v66 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v71 [label="ch_multiqc_files"];
+
+v69 [shape=point,label="",fixedsize=true,width=0.1];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v69 -> v70 [label="ch_workflow_summary"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v74 [label="ch_multiqc_files"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v72 -> v73 [label="ch_methods_description"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v76 [label="ch_multiqc_files"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v76 -> v77 [label="ch_multiqc_files"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 [label="NFCORE_MOLKART:MOLKART:MULTIQC"];
+v77 -> v81;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v81 [label="NFCORE_MOLKART:MOLKART:MULTIQC"];
+v78 -> v81;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v81 [label="NFCORE_MOLKART:MOLKART:MULTIQC"];
+v79 -> v81;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v81 [label="NFCORE_MOLKART:MOLKART:MULTIQC"];
+v80 -> v81;
+
+v81 [label="NFCORE_MOLKART:MOLKART:MULTIQC"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v81 -> v85;
+
+v81 [label="NFCORE_MOLKART:MOLKART:MULTIQC"];
+v84 [shape=point];
+v81 -> v84;
+
+v81 [label="NFCORE_MOLKART:MOLKART:MULTIQC"];
+v83 [shape=point];
+v81 -> v83;
+
+v81 [label="NFCORE_MOLKART:MOLKART:MULTIQC"];
+v82 [shape=point];
+v81 -> v82;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v86 [shape=point];
+v85 -> v86;
+
+}

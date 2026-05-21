@@ -1,0 +1,106 @@
+digraph "chihyuchg_____virus_variant_calling" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v2 -> v3 [label="sample_ch"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v4 [shape=point];
+v3 -> v4;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v5 [label="VIRUS_VARIANT_CALLING:TRIMMOMATIC"];
+v2 -> v5 [label="sample_ch"];
+
+v5 [label="VIRUS_VARIANT_CALLING:TRIMMOMATIC"];
+v8 [label="VIRUS_VARIANT_CALLING:HISAT2"];
+v5 -> v8;
+
+v5 [label="VIRUS_VARIANT_CALLING:TRIMMOMATIC"];
+v6 [shape=point];
+v5 -> v6;
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="VIRUS_VARIANT_CALLING:HISAT2"];
+v7 -> v8 [label="ref_fa"];
+
+v8 [label="VIRUS_VARIANT_CALLING:HISAT2"];
+v10 [label="VIRUS_VARIANT_CALLING:HAPLOTYPECALLER"];
+v8 -> v10;
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="VIRUS_VARIANT_CALLING:HAPLOTYPECALLER"];
+v9 -> v10 [label="ref_fa"];
+
+v10 [label="VIRUS_VARIANT_CALLING:HAPLOTYPECALLER"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v11 [label="gvcfs"];
+
+v10 [label="VIRUS_VARIANT_CALLING:HAPLOTYPECALLER"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v15 [label="gvcfs_idx"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v13 [shape=point];
+v12 -> v13;
+
+v10 [label="VIRUS_VARIANT_CALLING:HAPLOTYPECALLER"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v14 [label="gvcfs"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 [label="COMBINE_VCFS:GATKREF"];
+v14 -> v17 [label="gvcf_ch"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 [label="COMBINE_VCFS:GENOTYPEGVCFS"];
+v15 -> v18 [label="gvcf_idx_ch"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="COMBINE_VCFS:GATKREF"];
+v16 -> v17 [label="ref_fa"];
+
+v17 [label="COMBINE_VCFS:GATKREF"];
+v18 [label="COMBINE_VCFS:GENOTYPEGVCFS"];
+v17 -> v18;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 [label="COMBINE_VCFS:GENOTYPEGVCFS"];
+v14 -> v18 [label="gvcf_ch"];
+
+v18 [label="COMBINE_VCFS:GENOTYPEGVCFS"];
+v19 [label="COMBINE_VCFS:VARIANTFILTER"];
+v18 -> v19;
+
+v17 [label="COMBINE_VCFS:GATKREF"];
+v19 [label="COMBINE_VCFS:VARIANTFILTER"];
+v17 -> v19;
+
+v19 [label="COMBINE_VCFS:VARIANTFILTER"];
+v20 [label="COMBINE_VCFS:LEFTALIGNANDTRIMVARIANTS"];
+v19 -> v20;
+
+v17 [label="COMBINE_VCFS:GATKREF"];
+v20 [label="COMBINE_VCFS:LEFTALIGNANDTRIMVARIANTS"];
+v17 -> v20;
+
+v20 [label="COMBINE_VCFS:LEFTALIGNANDTRIMVARIANTS"];
+v21 [label="COMBINE_VCFS:SNPEFF"];
+v20 -> v21;
+
+v21 [label="COMBINE_VCFS:SNPEFF"];
+v22 [shape=point];
+v21 -> v22 [label="vcf"];
+
+}

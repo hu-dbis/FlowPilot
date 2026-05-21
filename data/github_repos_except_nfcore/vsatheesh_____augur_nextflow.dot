@@ -1,0 +1,206 @@
+digraph "vsatheesh_____augur_nextflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [label="index_sequences"];
+v0 -> v4 [label="input_fasta_ch"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [label="filter_sequences"];
+v1 -> v5 [label="input_metadata_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [label="filter_sequences"];
+v2 -> v5 [label="dropped_strains_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [label="align_sequences"];
+v3 -> v6 [label="reference_ch"];
+
+v4 [label="index_sequences"];
+v5 [label="filter_sequences"];
+v4 -> v5;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [label="filter_sequences"];
+v0 -> v5 [label="input_fasta_ch"];
+
+v5 [label="filter_sequences"];
+v6 [label="align_sequences"];
+v5 -> v6;
+
+v6 [label="align_sequences"];
+v7 [label="build_tree"];
+v6 -> v7;
+
+v7 [label="build_tree"];
+v11 [label="refine_tree"];
+v7 -> v11;
+
+v6 [label="align_sequences"];
+v11 [label="refine_tree"];
+v6 -> v11 [label="alignment"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [label="refine_tree"];
+v1 -> v11 [label="input_metadata_ch"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="refine_tree"];
+v8 -> v11 [label="coalescent"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="refine_tree"];
+v9 -> v11 [label="date_inference"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="refine_tree"];
+v10 -> v11 [label="clock_filter_iqd"];
+
+v11 [label="refine_tree"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v12;
+
+v6 [label="align_sequences"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [label="ancestral_sequences"];
+v14 -> v15;
+
+v15 [label="ancestral_sequences"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v18;
+
+v11 [label="refine_tree"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 -> v18 [label="tree_ch_from_refined_tree"];
+
+v11 [label="refine_tree"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 -> v28 [label="branch_ch_from_refined_tree"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v19;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v19 [label="reference_ch"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 [label="translate"];
+v19 -> v20;
+
+v20 [label="translate"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 -> v31;
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v1 -> v21 [label="input_metadata_ch"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 -> v21 [label="tree_ch_from_refined_tree"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [label="traits"];
+v22 -> v23;
+
+v23 [label="traits"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v25 [shape=point];
+v24 -> v25;
+
+v23 [label="traits"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 -> v29 [label="traits_from_traits_ch"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v1 -> v27 [label="input_metadata_ch"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 -> v27 [label="tree_ch_from_refined_tree"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v29 -> v30;
+
+v15 [label="ancestral_sequences"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v31 -> v33;
+
+v32 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v32 -> v33 [label="colors_ch"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v33 -> v35;
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v34 -> v35 [label="lat_longs_ch"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v35 -> v37;
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v36 -> v37 [label="auspice_config_ch"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v38 [label="export"];
+v37 -> v38;
+
+v38 [label="export"];
+v39 [shape=point];
+v38 -> v39;
+
+}

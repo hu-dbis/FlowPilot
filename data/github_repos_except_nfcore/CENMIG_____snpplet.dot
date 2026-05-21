@@ -1,0 +1,246 @@
+digraph "CENMIG_____snpplet" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v8 [label="FASTQC_BEFORE_TRIM"];
+v0 -> v8 [label="read_pairs"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v47 [label="JOINT_GENOTYPING"];
+v1 -> v47 [label="sample_map_usr"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="PREPARE_GENOME_SAMTOOLS"];
+v2 -> v3 [label="ref_genome"];
+
+v3 [label="PREPARE_GENOME_SAMTOOLS"];
+v37 [label="CALL_VARIANTS"];
+v3 -> v37;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="PREPARE_GENOME_PICARD"];
+v4 -> v5 [label="ref_genome"];
+
+v5 [label="PREPARE_GENOME_PICARD"];
+v37 [label="CALL_VARIANTS"];
+v5 -> v37;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="PREPARE_GENOME_BWA"];
+v6 -> v7 [label="ref_genome"];
+
+v7 [label="PREPARE_GENOME_BWA"];
+v24 [label="READ_MAPPING_BWA"];
+v7 -> v24;
+
+v8 [label="FASTQC_BEFORE_TRIM"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 [label="MULTIQC_FASTQC_BEFORE_TRIM"];
+v9 -> v10;
+
+v10 [label="MULTIQC_FASTQC_BEFORE_TRIM"];
+v12 [shape=point];
+v10 -> v12;
+
+v10 [label="MULTIQC_FASTQC_BEFORE_TRIM"];
+v11 [shape=point];
+v10 -> v11;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v15 [label="TRIM"];
+v0 -> v15 [label="read_pairs"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="TRIM"];
+v13 -> v15 [label="adapter"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="TRIM"];
+v14 -> v15 [label="trimming_option"];
+
+v15 [label="TRIM"];
+v16 [label="FASTQC_AFTER_TRIM"];
+v15 -> v16;
+
+v16 [label="FASTQC_AFTER_TRIM"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 [label="MULTIQC_FASTQC_AFTER_TRIM"];
+v17 -> v18;
+
+v18 [label="MULTIQC_FASTQC_AFTER_TRIM"];
+v20 [shape=point];
+v18 -> v20;
+
+v18 [label="MULTIQC_FASTQC_AFTER_TRIM"];
+v19 [shape=point];
+v18 -> v19;
+
+v21 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="READ_MAPPING_BWA"];
+v21 -> v24 [label="ref_genome"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="READ_MAPPING_BWA"];
+v22 -> v24 [label="ref_genome_name"];
+
+v15 [label="TRIM"];
+v24 [label="READ_MAPPING_BWA"];
+v15 -> v24;
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="READ_MAPPING_BWA"];
+v23 -> v24 [label="mapping_option"];
+
+v24 [label="READ_MAPPING_BWA"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v24 -> v34;
+
+v24 [label="READ_MAPPING_BWA"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 -> v25;
+
+v24 [label="READ_MAPPING_BWA"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 -> v28;
+
+v24 [label="READ_MAPPING_BWA"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 -> v31;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [label="FLAGSTAT_OUTPUT"];
+v25 -> v26;
+
+v26 [label="FLAGSTAT_OUTPUT"];
+v27 [shape=point];
+v26 -> v27;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [label="COVERAGE_OUTPUT"];
+v28 -> v29;
+
+v29 [label="COVERAGE_OUTPUT"];
+v30 [shape=point];
+v29 -> v30;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 [label="DEPTH_OUTPUT"];
+v31 -> v32;
+
+v32 [label="DEPTH_OUTPUT"];
+v33 [shape=point];
+v32 -> v33;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v37 [label="CALL_VARIANTS"];
+v34 -> v37;
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="CALL_VARIANTS"];
+v35 -> v37 [label="ref_genome"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="CALL_VARIANTS"];
+v36 -> v37 [label="haplotypecaller_option"];
+
+v37 [label="CALL_VARIANTS"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 -> v38;
+
+v37 [label="CALL_VARIANTS"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 -> v42;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [label="CREATE_SAMPLE_MAP"];
+v38 -> v39;
+
+v39 [label="CREATE_SAMPLE_MAP"];
+v40 [shape=point];
+v39 -> v40;
+
+v37 [label="CALL_VARIANTS"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 [label="JOINT_GENOTYPING"];
+v41 -> v47;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 [label="JOINT_GENOTYPING"];
+v42 -> v47;
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="JOINT_GENOTYPING"];
+v43 -> v47 [label="ref_genome"];
+
+v3 [label="PREPARE_GENOME_SAMTOOLS"];
+v47 [label="JOINT_GENOTYPING"];
+v3 -> v47 [label="index"];
+
+v5 [label="PREPARE_GENOME_PICARD"];
+v47 [label="JOINT_GENOTYPING"];
+v5 -> v47 [label="dict"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="JOINT_GENOTYPING"];
+v44 -> v47 [label="ref_genome_name"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="JOINT_GENOTYPING"];
+v45 -> v47 [label="genomicsdbimport_option"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="JOINT_GENOTYPING"];
+v46 -> v47 [label="genotypegvcfs_option"];
+
+v47 [label="JOINT_GENOTYPING"];
+v52 [label="FILTER_VARIANTS"];
+v47 -> v52;
+
+v48 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="FILTER_VARIANTS"];
+v48 -> v52 [label="ref_genome"];
+
+v3 [label="PREPARE_GENOME_SAMTOOLS"];
+v52 [label="FILTER_VARIANTS"];
+v3 -> v52 [label="index"];
+
+v5 [label="PREPARE_GENOME_PICARD"];
+v52 [label="FILTER_VARIANTS"];
+v5 -> v52 [label="dict"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="FILTER_VARIANTS"];
+v49 -> v52 [label="variant_filter"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="FILTER_VARIANTS"];
+v50 -> v52 [label="variant_filter_name"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="FILTER_VARIANTS"];
+v51 -> v52 [label="selectvariant_option"];
+
+v52 [label="FILTER_VARIANTS"];
+v54 [label="VCF_TO_FASTA"];
+v52 -> v54;
+
+v52 [label="FILTER_VARIANTS"];
+v53 [shape=point];
+v52 -> v53;
+
+v54 [label="VCF_TO_FASTA"];
+v56 [shape=point];
+v54 -> v56;
+
+v54 [label="VCF_TO_FASTA"];
+v55 [shape=point];
+v54 -> v55;
+
+}

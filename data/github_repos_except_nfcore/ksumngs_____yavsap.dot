@@ -1,0 +1,1402 @@
+digraph "ksumngs_____yavsap" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v262 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v10 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v9 [label="versions"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [label="YAVSAP:READS_INGEST:CAT_FASTQ"];
+v6 -> v8 [label="ListedSamples"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="YAVSAP:READS_INGEST:CAT_FASTQ"];
+v7 -> v8 [label="gzipped"];
+
+v8 [label="YAVSAP:READS_INGEST:CAT_FASTQ"];
+v14 [label="YAVSAP:QC:SEQTK_MERGEPE"];
+v8 -> v14 [label="reads"];
+
+v8 [label="YAVSAP:READS_INGEST:CAT_FASTQ"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v10 [label="versions"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v19 [label="ch_versions"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=point];
+v11 -> v12 [label="ch_qc"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v17 [label="versions"];
+
+v14 [label="YAVSAP:QC:SEQTK_MERGEPE"];
+v15 [label="YAVSAP:QC:FASTQC"];
+v14 -> v15;
+
+v14 [label="YAVSAP:QC:SEQTK_MERGEPE"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v17;
+
+v15 [label="YAVSAP:QC:FASTQC"];
+v16 [shape=point];
+v15 -> v16;
+
+v15 [label="YAVSAP:QC:FASTQC"];
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 -> v270 [label="ch_qc"];
+
+v15 [label="YAVSAP:QC:FASTQC"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v18;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v18 [label="versions"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19 [label="versions"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v25 [label="ch_versions"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=point];
+v20 -> v21 [label="ch_trimlog"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v24 [label="versions"];
+
+v8 [label="YAVSAP:READS_INGEST:CAT_FASTQ"];
+v23 [label="YAVSAP:TRIMMING:TRIMMOMATIC"];
+v8 -> v23 [label="reads"];
+
+v23 [label="YAVSAP:TRIMMING:TRIMMOMATIC"];
+v34 [label="YAVSAP:FILTERING:KRAKEN2"];
+v23 -> v34 [label="reads"];
+
+v23 [label="YAVSAP:TRIMMING:TRIMMOMATIC"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v273 [label="ch_trimlog"];
+
+v23 [label="YAVSAP:TRIMMING:TRIMMOMATIC"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v25 [label="versions"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v50 [label="ch_versions"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v27 [shape=point];
+v26 -> v27 [label="ch_krona"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v29 [shape=point];
+v28 -> v29 [label="ch_kreport"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v33 [label="versions"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="YAVSAP:FILTERING:KRAKEN2_DBPREPARATION"];
+v31 -> v32 [label="db"];
+
+v32 [label="YAVSAP:FILTERING:KRAKEN2_DBPREPARATION"];
+v34 [label="YAVSAP:FILTERING:KRAKEN2"];
+v32 -> v34 [label="KrakenDb"];
+
+v32 [label="YAVSAP:FILTERING:KRAKEN2_DBPREPARATION"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v41 [label="versions"];
+
+v34 [label="YAVSAP:FILTERING:KRAKEN2"];
+v36 [shape=point];
+v34 -> v36;
+
+v34 [label="YAVSAP:FILTERING:KRAKEN2"];
+v35 [shape=point];
+v34 -> v35;
+
+v34 [label="YAVSAP:FILTERING:KRAKEN2"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v37;
+
+v34 [label="YAVSAP:FILTERING:KRAKEN2"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v38 [label="ch_kreport"];
+
+v34 [label="YAVSAP:FILTERING:KRAKEN2"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v47;
+
+v23 [label="YAVSAP:TRIMMING:TRIMMOMATIC"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 -> v37 [label="reads"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 [label="YAVSAP:FILTERING:KRAKENTOOLS_EXTRACT"];
+v38 -> v40;
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="YAVSAP:FILTERING:KRAKENTOOLS_EXTRACT"];
+v39 -> v40 [label="taxids"];
+
+v40 [label="YAVSAP:FILTERING:KRAKENTOOLS_EXTRACT"];
+v97 [label="YAVSAP:MINIMAP2_ALIGN"];
+v40 -> v97 [label="ch_filtered"];
+
+v40 [label="YAVSAP:FILTERING:KRAKENTOOLS_EXTRACT"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v47 [label="versions"];
+
+v34 [label="YAVSAP:FILTERING:KRAKEN2"];
+v42 [label="YAVSAP:FILTERING:KRAKENTOOLS_KREPORT2KRONA"];
+v34 -> v42 [label="ch_kreport"];
+
+v42 [label="YAVSAP:FILTERING:KRAKENTOOLS_KREPORT2KRONA"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 -> v43;
+
+v42 [label="YAVSAP:FILTERING:KRAKENTOOLS_KREPORT2KRONA"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v49;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 [label="YAVSAP:FILTERING:KRONA_IMPORTTEXT"];
+v44 -> v45;
+
+v45 [label="YAVSAP:FILTERING:KRONA_IMPORTTEXT"];
+v46 [shape=point];
+v45 -> v46 [label="ch_krona"];
+
+v45 [label="YAVSAP:FILTERING:KRONA_IMPORTTEXT"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v48;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v48 [label="versions"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v49 [label="versions"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v50 [label="versions"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v92 [label="ch_versions"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v80 [label="versions"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v54 [label="YAVSAP:REFERENCE_DOWNLOAD:EDIRECT_ESEARCH"];
+v52 -> v54 [label="ch_accession_query"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="YAVSAP:REFERENCE_DOWNLOAD:EDIRECT_ESEARCH"];
+v53 -> v54 [label="db"];
+
+v54 [label="YAVSAP:REFERENCE_DOWNLOAD:EDIRECT_ESEARCH"];
+v57 [label="YAVSAP:REFERENCE_DOWNLOAD:EDIRECT_EFETCH"];
+v54 -> v57;
+
+v54 [label="YAVSAP:REFERENCE_DOWNLOAD:EDIRECT_ESEARCH"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v54 -> v79;
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="YAVSAP:REFERENCE_DOWNLOAD:EDIRECT_EFETCH"];
+v55 -> v57 [label="format"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="YAVSAP:REFERENCE_DOWNLOAD:EDIRECT_EFETCH"];
+v56 -> v57 [label="mode"];
+
+v57 [label="YAVSAP:REFERENCE_DOWNLOAD:EDIRECT_EFETCH"];
+v59 [label="YAVSAP:REFERENCE_DOWNLOAD:SEQRET_FASTA"];
+v57 -> v59;
+
+v57 [label="YAVSAP:REFERENCE_DOWNLOAD:EDIRECT_EFETCH"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v57 -> v81;
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="YAVSAP:REFERENCE_DOWNLOAD:SEQRET_FASTA"];
+v58 -> v59 [label="out_ext"];
+
+v59 [label="YAVSAP:REFERENCE_DOWNLOAD:SEQRET_FASTA"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 -> v62;
+
+v59 [label="YAVSAP:REFERENCE_DOWNLOAD:SEQRET_FASTA"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v59 -> v84;
+
+v57 [label="YAVSAP:REFERENCE_DOWNLOAD:EDIRECT_EFETCH"];
+v61 [label="YAVSAP:REFERENCE_DOWNLOAD:SEQRET_GFF"];
+v57 -> v61;
+
+v60 [shape=point,label="",fixedsize=true,width=0.1];
+v61 [label="YAVSAP:REFERENCE_DOWNLOAD:SEQRET_GFF"];
+v60 -> v61 [label="out_ext"];
+
+v61 [label="YAVSAP:REFERENCE_DOWNLOAD:SEQRET_GFF"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v74;
+
+v61 [label="YAVSAP:REFERENCE_DOWNLOAD:SEQRET_GFF"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v61 -> v86;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 -> v67 [label="fasta"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v69 [shape=point];
+v68 -> v69;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 -> v70 [label="fasta"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v72 [shape=point];
+v71 -> v72;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 [label="YAVSAP:REFERENCE_DOWNLOAD:SAMTOOLS_FAIDX"];
+v66 -> v73 [label="fasta"];
+
+v73 [label="YAVSAP:REFERENCE_DOWNLOAD:SAMTOOLS_FAIDX"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v73 -> v89 [label="fai"];
+
+v73 [label="YAVSAP:REFERENCE_DOWNLOAD:SAMTOOLS_FAIDX"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v83;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v74 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v77 [label="YAVSAP:REFERENCE_DOWNLOAD:GFFCAT"];
+v76 -> v77 [label="ch_sorted_gff"];
+
+v77 [label="YAVSAP:REFERENCE_DOWNLOAD:GFFCAT"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v77 -> v91 [label="gff"];
+
+v77 [label="YAVSAP:REFERENCE_DOWNLOAD:GFFCAT"];
+v78 [shape=point];
+v77 -> v78;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v82 [label="versions"];
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v83 [label="versions"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v85 [label="versions"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v87 [label="versions"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v92 [label="versions"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v66 -> v88 [label="fasta"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 -> v93 [label="reference"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v90 [shape=point];
+v89 -> v90 [label="fai"];
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 -> v234 [label="gff"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v100 [label="ch_versions"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v97 [label="YAVSAP:MINIMAP2_ALIGN"];
+v93 -> v97;
+
+v94 [shape=point,label="",fixedsize=true,width=0.1];
+v97 [label="YAVSAP:MINIMAP2_ALIGN"];
+v94 -> v97 [label="bam_format"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v97 [label="YAVSAP:MINIMAP2_ALIGN"];
+v95 -> v97 [label="cigar_paf_format"];
+
+v96 [shape=point,label="",fixedsize=true,width=0.1];
+v97 [label="YAVSAP:MINIMAP2_ALIGN"];
+v96 -> v97 [label="cigar_bam"];
+
+v97 [label="YAVSAP:MINIMAP2_ALIGN"];
+v98 [shape=point];
+v97 -> v98;
+
+v97 [label="YAVSAP:MINIMAP2_ALIGN"];
+v101 [label="YAVSAP:SAMTOOLS_INDEX"];
+v97 -> v101 [label="bam"];
+
+v97 [label="YAVSAP:MINIMAP2_ALIGN"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v97 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v106 [label="ch_versions"];
+
+v101 [label="YAVSAP:SAMTOOLS_INDEX"];
+v104 [shape=point];
+v101 -> v104 [label="bai"];
+
+v101 [label="YAVSAP:SAMTOOLS_INDEX"];
+v103 [shape=point];
+v101 -> v103;
+
+v101 [label="YAVSAP:SAMTOOLS_INDEX"];
+v102 [shape=point];
+v101 -> v102;
+
+v101 [label="YAVSAP:SAMTOOLS_INDEX"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v101 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v114 [label="ch_versions"];
+
+v107 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v109 [label="versions"];
+
+v97 [label="YAVSAP:MINIMAP2_ALIGN"];
+v108 [label="YAVSAP:CONSENSUS:CLIQUESNV_CONSENSUSILLUMINA"];
+v97 -> v108 [label="bam"];
+
+v108 [label="YAVSAP:CONSENSUS:CLIQUESNV_CONSENSUSILLUMINA"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v108 -> v112 [label="fasta"];
+
+v108 [label="YAVSAP:CONSENSUS:CLIQUESNV_CONSENSUSILLUMINA"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v114 [label="versions"];
+
+v97 [label="YAVSAP:MINIMAP2_ALIGN"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v97 -> v110 [label="bam"];
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v110 -> v111;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v88 -> v111 [label="reference"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v111 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v139 [label="YAVSAP:CLOSEST_REFERENCE:BLAST_BLASTN"];
+v113 -> v139 [label="consensus"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v132 [label="ch_versions"];
+
+v115 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v119 [label="versions"];
+
+v116 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v118 [label="YAVSAP:GENOME_DOWNLOAD:EDIRECT_ESEARCH"];
+v116 -> v118 [label="ch_genome_query"];
+
+v117 [shape=point,label="",fixedsize=true,width=0.1];
+v118 [label="YAVSAP:GENOME_DOWNLOAD:EDIRECT_ESEARCH"];
+v117 -> v118 [label="db"];
+
+v118 [label="YAVSAP:GENOME_DOWNLOAD:EDIRECT_ESEARCH"];
+v122 [label="YAVSAP:GENOME_DOWNLOAD:EDIRECT_EFETCH"];
+v118 -> v122;
+
+v118 [label="YAVSAP:GENOME_DOWNLOAD:EDIRECT_ESEARCH"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v123 [label="versions"];
+
+v120 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="YAVSAP:GENOME_DOWNLOAD:EDIRECT_EFETCH"];
+v120 -> v122 [label="format"];
+
+v121 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="YAVSAP:GENOME_DOWNLOAD:EDIRECT_EFETCH"];
+v121 -> v122 [label="mode"];
+
+v122 [label="YAVSAP:GENOME_DOWNLOAD:EDIRECT_EFETCH"];
+v125 [label="YAVSAP:GENOME_DOWNLOAD:SEQRET_FASTA"];
+v122 -> v125;
+
+v122 [label="YAVSAP:GENOME_DOWNLOAD:EDIRECT_EFETCH"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v126 [label="versions"];
+
+v124 [shape=point,label="",fixedsize=true,width=0.1];
+v125 [label="YAVSAP:GENOME_DOWNLOAD:SEQRET_FASTA"];
+v124 -> v125 [label="out_ext"];
+
+v125 [label="YAVSAP:GENOME_DOWNLOAD:SEQRET_FASTA"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v125 -> v127;
+
+v125 [label="YAVSAP:GENOME_DOWNLOAD:SEQRET_FASTA"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v126;
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v132 [label="versions"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v128 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v131 -> v134 [label="genome_fasta"];
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v150 [label="ch_versions"];
+
+v133 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v137 [label="versions"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v134 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v136 [label="YAVSAP:CLOSEST_REFERENCE:BLAST_MAKEBLASTDB"];
+v135 -> v136;
+
+v136 [label="YAVSAP:CLOSEST_REFERENCE:BLAST_MAKEBLASTDB"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v136 -> v138;
+
+v136 [label="YAVSAP:CLOSEST_REFERENCE:BLAST_MAKEBLASTDB"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v137;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v144 [label="versions"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v139 [label="YAVSAP:CLOSEST_REFERENCE:BLAST_BLASTN"];
+v138 -> v139;
+
+v139 [label="YAVSAP:CLOSEST_REFERENCE:BLAST_BLASTN"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v139 -> v140;
+
+v139 [label="YAVSAP:CLOSEST_REFERENCE:BLAST_BLASTN"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v144;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v140 -> v142;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v131 -> v141 [label="genome_fasta"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v141 -> v142;
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v142 -> v143;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v143 -> v148 [label="fasta"];
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v150 [label="versions"];
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v113 -> v145 [label="consensus"];
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v145 -> v146;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v88 -> v146 [label="reference"];
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v147 -> v148;
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v148 -> v149;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v149 -> v152 [label="strain"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 -> v161 [label="ch_versions"];
+
+v40 [label="YAVSAP:FILTERING:KRAKENTOOLS_EXTRACT"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v151 [label="ch_filtered"];
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v151 -> v153;
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v152 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v153 -> v154;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v158 [label="YAVSAP:MINIMAP2_REALIGN"];
+v154 -> v158;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v158 [label="YAVSAP:MINIMAP2_REALIGN"];
+v154 -> v158;
+
+v155 [shape=point,label="",fixedsize=true,width=0.1];
+v158 [label="YAVSAP:MINIMAP2_REALIGN"];
+v155 -> v158 [label="bam_format"];
+
+v156 [shape=point,label="",fixedsize=true,width=0.1];
+v158 [label="YAVSAP:MINIMAP2_REALIGN"];
+v156 -> v158 [label="cigar_paf_format"];
+
+v157 [shape=point,label="",fixedsize=true,width=0.1];
+v158 [label="YAVSAP:MINIMAP2_REALIGN"];
+v157 -> v158 [label="cigar_bam"];
+
+v158 [label="YAVSAP:MINIMAP2_REALIGN"];
+v159 [shape=point];
+v158 -> v159;
+
+v158 [label="YAVSAP:MINIMAP2_REALIGN"];
+v162 [label="YAVSAP:SAMTOOLS_REINDEX"];
+v158 -> v162 [label="bam"];
+
+v158 [label="YAVSAP:MINIMAP2_REALIGN"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v158 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v161;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v167 [label="ch_versions"];
+
+v162 [label="YAVSAP:SAMTOOLS_REINDEX"];
+v165 [shape=point];
+v162 -> v165 [label="bai"];
+
+v162 [label="YAVSAP:SAMTOOLS_REINDEX"];
+v164 [shape=point];
+v162 -> v164;
+
+v162 [label="YAVSAP:SAMTOOLS_REINDEX"];
+v163 [shape=point];
+v162 -> v163;
+
+v162 [label="YAVSAP:SAMTOOLS_REINDEX"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v162 -> v166;
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v175 [label="ch_versions"];
+
+v168 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v173 [label="versions"];
+
+v169 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v170 [shape=point];
+v169 -> v170 [label="vcf"];
+
+v158 [label="YAVSAP:MINIMAP2_REALIGN"];
+v171 [label="YAVSAP:VARIANTS:CLIQUESNV_ILLUMINAVC"];
+v158 -> v171 [label="bam"];
+
+v171 [label="YAVSAP:VARIANTS:CLIQUESNV_ILLUMINAVC"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v171 -> v215 [label="variants"];
+
+v171 [label="YAVSAP:VARIANTS:CLIQUESNV_ILLUMINAVC"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v171 -> v172;
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 -> v173;
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v173 -> v174 [label="versions"];
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 -> v175;
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 -> v185 [label="ch_versions"];
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v149 -> v176 [label="strain"];
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v177 [shape=point];
+v176 -> v177 [label="ch_haplotype_fasta"];
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v149 -> v178 [label="strain"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v179 [shape=point];
+v178 -> v179 [label="ch_haplotype_yaml"];
+
+v180 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 -> v182 [label="versions"];
+
+v158 [label="YAVSAP:MINIMAP2_REALIGN"];
+v181 [label="YAVSAP:HAPLOTYPING:CLIQUESNV_ILLUMINA"];
+v158 -> v181 [label="bam"];
+
+v181 [label="YAVSAP:HAPLOTYPING:CLIQUESNV_ILLUMINA"];
+v183 [label="YAVSAP:HAPLOTYPING:JSON2YAML"];
+v181 -> v183;
+
+v181 [label="YAVSAP:HAPLOTYPING:CLIQUESNV_ILLUMINA"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v181 -> v189 [label="haplotype_fasta"];
+
+v181 [label="YAVSAP:HAPLOTYPING:CLIQUESNV_ILLUMINA"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 -> v182;
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v184 [label="versions"];
+
+v183 [label="YAVSAP:HAPLOTYPING:JSON2YAML"];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v183 -> v225 [label="haplotype_yaml"];
+
+v183 [label="YAVSAP:HAPLOTYPING:JSON2YAML"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 -> v184;
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 -> v185 [label="versions"];
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v213 [label="ch_versions"];
+
+v186 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v187 [shape=point];
+v186 -> v187 [label="ch_tree"];
+
+v188 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 -> v203 [label="versions"];
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v189 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v190 -> v191;
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v191 -> v192;
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v192 -> v193;
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v193 -> v194;
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v198 [label="ch_renamed_haplotype"];
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v113 -> v195 [label="consensus"];
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v195 -> v196;
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v198 [label="ch_renamed_consensus"];
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v131 -> v197 [label="genome_fasta"];
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 -> v199 [label="ch_renamed_genome"];
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 -> v199;
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v199 -> v200;
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v200 -> v201;
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v202 [label="YAVSAP:PHYLOGENETIC_TREE:MAFFT"];
+v201 -> v202 [label="ch_all_sequences"];
+
+v202 [label="YAVSAP:PHYLOGENETIC_TREE:MAFFT"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v202 -> v204;
+
+v202 [label="YAVSAP:PHYLOGENETIC_TREE:MAFFT"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 -> v203;
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v203 -> v206 [label="versions"];
+
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v205 [label="YAVSAP:PHYLOGENETIC_TREE:RAXMLNG_PARSE"];
+v204 -> v205;
+
+v205 [label="YAVSAP:PHYLOGENETIC_TREE:RAXMLNG_PARSE"];
+v207 [label="YAVSAP:PHYLOGENETIC_TREE:RAXMLNG_SEARCH"];
+v205 -> v207;
+
+v205 [label="YAVSAP:PHYLOGENETIC_TREE:RAXMLNG_PARSE"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v205 -> v206;
+
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 -> v208 [label="versions"];
+
+v207 [label="YAVSAP:PHYLOGENETIC_TREE:RAXMLNG_SEARCH"];
+v211 [label="YAVSAP:PHYLOGENETIC_TREE:RAXMLNG_SUPPORT"];
+v207 -> v211;
+
+v207 [label="YAVSAP:PHYLOGENETIC_TREE:RAXMLNG_SEARCH"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 -> v208;
+
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 -> v210 [label="versions"];
+
+v205 [label="YAVSAP:PHYLOGENETIC_TREE:RAXMLNG_PARSE"];
+v209 [label="YAVSAP:PHYLOGENETIC_TREE:RAXMLNG_BOOTSTRAP"];
+v205 -> v209 [label="msa"];
+
+v209 [label="YAVSAP:PHYLOGENETIC_TREE:RAXMLNG_BOOTSTRAP"];
+v211 [label="YAVSAP:PHYLOGENETIC_TREE:RAXMLNG_SUPPORT"];
+v209 -> v211;
+
+v209 [label="YAVSAP:PHYLOGENETIC_TREE:RAXMLNG_BOOTSTRAP"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 -> v210;
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 -> v212 [label="versions"];
+
+v211 [label="YAVSAP:PHYLOGENETIC_TREE:RAXMLNG_SUPPORT"];
+v251 [label="YAVSAP:PRESENTATION:PHYLOTREEJS"];
+v211 -> v251 [label="tree"];
+
+v211 [label="YAVSAP:PHYLOGENETIC_TREE:RAXMLNG_SUPPORT"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v211 -> v212;
+
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v212 -> v213 [label="versions"];
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v213 -> v253 [label="ch_versions"];
+
+v214 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v214 -> v219 [label="versions"];
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v218 [label="YAVSAP:PRESENTATION:VARTABLE"];
+v215 -> v218;
+
+v216 [shape=point,label="",fixedsize=true,width=0.1];
+v218 [label="YAVSAP:PRESENTATION:VARTABLE"];
+v216 -> v218 [label="metadata"];
+
+v217 [shape=point,label="",fixedsize=true,width=0.1];
+v218 [label="YAVSAP:PRESENTATION:VARTABLE"];
+v217 -> v218 [label="template"];
+
+v218 [label="YAVSAP:PRESENTATION:VARTABLE"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v218 -> v279 [label="ch_vartable_mqc"];
+
+v218 [label="YAVSAP:PRESENTATION:VARTABLE"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 -> v219;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 -> v232 [label="versions"];
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v149 -> v220 [label="strain"];
+
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v220 -> v222;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v113 -> v221 [label="consensus"];
+
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v221 -> v222;
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v222 -> v223;
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v223 -> v224;
+
+v181 [label="YAVSAP:HAPLOTYPING:CLIQUESNV_ILLUMINA"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v181 -> v224 [label="haplotype_fasta"];
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v224 -> v225;
+
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v225 -> v226;
+
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v226 -> v227;
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v229 [label="YAVSAP:PRESENTATION:HAPLOTYPECONVERT"];
+v227 -> v229 [label="ch_haplotype_meta"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 -> v228 [label="reference"];
+
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v229 [label="YAVSAP:PRESENTATION:HAPLOTYPECONVERT"];
+v228 -> v229;
+
+v229 [label="YAVSAP:PRESENTATION:HAPLOTYPECONVERT"];
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v229 -> v230;
+
+v229 [label="YAVSAP:PRESENTATION:HAPLOTYPECONVERT"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v229 -> v232;
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v230 -> v231;
+
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v238 [label="YAVSAP:PRESENTATION:SEQUENCETABLE"];
+v231 -> v238 [label="ch_collected_haplotypes"];
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 -> v239 [label="versions"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 -> v233 [label="reference"];
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v238 [label="YAVSAP:PRESENTATION:SEQUENCETABLE"];
+v233 -> v238;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v238 [label="YAVSAP:PRESENTATION:SEQUENCETABLE"];
+v234 -> v238;
+
+v235 [shape=point,label="",fixedsize=true,width=0.1];
+v238 [label="YAVSAP:PRESENTATION:SEQUENCETABLE"];
+v235 -> v238 [label="template"];
+
+v236 [shape=point,label="",fixedsize=true,width=0.1];
+v238 [label="YAVSAP:PRESENTATION:SEQUENCETABLE"];
+v236 -> v238 [label="toolmeta"];
+
+v237 [shape=point,label="",fixedsize=true,width=0.1];
+v238 [label="YAVSAP:PRESENTATION:SEQUENCETABLE"];
+v237 -> v238 [label="freezetable_js"];
+
+v238 [label="YAVSAP:PRESENTATION:SEQUENCETABLE"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v238 -> v281 [label="ch_seqtable_mqc"];
+
+v238 [label="YAVSAP:PRESENTATION:SEQUENCETABLE"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v238 -> v239;
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v239 -> v245 [label="versions"];
+
+v97 [label="YAVSAP:MINIMAP2_ALIGN"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v97 -> v240 [label="bam"];
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v240 -> v241;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v244 [label="YAVSAP:PRESENTATION:IGV"];
+v241 -> v244;
+
+v242 [shape=point,label="",fixedsize=true,width=0.1];
+v244 [label="YAVSAP:PRESENTATION:IGV"];
+v242 -> v244 [label="igvjs"];
+
+v243 [shape=point,label="",fixedsize=true,width=0.1];
+v244 [label="YAVSAP:PRESENTATION:IGV"];
+v243 -> v244 [label="template"];
+
+v244 [label="YAVSAP:PRESENTATION:IGV"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v244 -> v283 [label="ch_igv_mqc"];
+
+v244 [label="YAVSAP:PRESENTATION:IGV"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v244 -> v245;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 -> v252 [label="versions"];
+
+v246 [shape=point,label="",fixedsize=true,width=0.1];
+v251 [label="YAVSAP:PRESENTATION:PHYLOTREEJS"];
+v246 -> v251 [label="template"];
+
+v247 [shape=point,label="",fixedsize=true,width=0.1];
+v251 [label="YAVSAP:PRESENTATION:PHYLOTREEJS"];
+v247 -> v251 [label="css"];
+
+v248 [shape=point,label="",fixedsize=true,width=0.1];
+v251 [label="YAVSAP:PRESENTATION:PHYLOTREEJS"];
+v248 -> v251 [label="d3"];
+
+v249 [shape=point,label="",fixedsize=true,width=0.1];
+v251 [label="YAVSAP:PRESENTATION:PHYLOTREEJS"];
+v249 -> v251 [label="underscore"];
+
+v250 [shape=point,label="",fixedsize=true,width=0.1];
+v251 [label="YAVSAP:PRESENTATION:PHYLOTREEJS"];
+v250 -> v251 [label="phylotree"];
+
+v251 [label="YAVSAP:PRESENTATION:PHYLOTREEJS"];
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v251 -> v285 [label="ch_phylotree_mqc"];
+
+v251 [label="YAVSAP:PRESENTATION:PHYLOTREEJS"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v251 -> v252;
+
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v252 -> v253 [label="versions"];
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v253 -> v254 [label="ch_versions"];
+
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v254 -> v255;
+
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v256 [label="YAVSAP:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v255 -> v256;
+
+v256 [label="YAVSAP:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v258 [shape=point];
+v256 -> v258;
+
+v256 [label="YAVSAP:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v256 -> v268;
+
+v256 [label="YAVSAP:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v257 [shape=point];
+v256 -> v257;
+
+v259 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 -> v261 [label="ch_multiqc_files"];
+
+v260 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v260 -> v261;
+
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v261 -> v264 [label="ch_multiqc_files"];
+
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v262 -> v263;
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v263 -> v264;
+
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v264 -> v267 [label="ch_multiqc_files"];
+
+v265 [shape=point,label="",fixedsize=true,width=0.1];
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v265 -> v266 [label="ch_workflow_summary"];
+
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v266 -> v267;
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v267 -> v269 [label="ch_multiqc_files"];
+
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v268 -> v269;
+
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v269 -> v272 [label="ch_multiqc_files"];
+
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v270 -> v271;
+
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v271 -> v272;
+
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v272 -> v275 [label="ch_multiqc_files"];
+
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v273 -> v274;
+
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v274 -> v275;
+
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 -> v278 [label="ch_multiqc_files"];
+
+v34 [label="YAVSAP:FILTERING:KRAKEN2"];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 -> v276 [label="ch_kreport"];
+
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v276 -> v277;
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v277 -> v278;
+
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v278 -> v280 [label="ch_multiqc_files"];
+
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v279 -> v280;
+
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 -> v282 [label="ch_multiqc_files"];
+
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v281 -> v282;
+
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v282 -> v284 [label="ch_multiqc_files"];
+
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v283 -> v284;
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v284 -> v286 [label="ch_multiqc_files"];
+
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v285 -> v286;
+
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v286 -> v287 [label="ch_multiqc_files"];
+
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v288 [label="YAVSAP:MULTIQC"];
+v287 -> v288;
+
+v288 [label="YAVSAP:MULTIQC"];
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v288 -> v291;
+
+v288 [label="YAVSAP:MULTIQC"];
+v290 [shape=point];
+v288 -> v290;
+
+v288 [label="YAVSAP:MULTIQC"];
+v289 [shape=point];
+v288 -> v289;
+
+v288 [label="YAVSAP:MULTIQC"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v288 -> v293;
+
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v292 [shape=point];
+v291 -> v292;
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v253 -> v293 [label="ch_versions"];
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v294 [shape=point];
+v293 -> v294 [label="ch_versions"];
+
+}

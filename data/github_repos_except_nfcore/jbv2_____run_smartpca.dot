@@ -1,0 +1,74 @@
+digraph "jbv2_____run_smartpca" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v1 -> v3 [label="eigenstrat"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v10 [label="ch_versions"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v5 [label="EIGEN2SMARTPCA:MAKE_PAR"];
+v3 -> v5;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v5 [label="EIGEN2SMARTPCA:MAKE_PAR"];
+v3 -> v5;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v5 [label="EIGEN2SMARTPCA:MAKE_PAR"];
+v3 -> v5;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="EIGEN2SMARTPCA:MAKE_PAR"];
+v4 -> v5 [label="poplistFile"];
+
+v5 [label="EIGEN2SMARTPCA:MAKE_PAR"];
+v7 [label="EIGEN2SMARTPCA:SMARTPCA"];
+v5 -> v7;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v7 [label="EIGEN2SMARTPCA:SMARTPCA"];
+v3 -> v7;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v7 [label="EIGEN2SMARTPCA:SMARTPCA"];
+v3 -> v7;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v7 [label="EIGEN2SMARTPCA:SMARTPCA"];
+v3 -> v7;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="EIGEN2SMARTPCA:SMARTPCA"];
+v6 -> v7 [label="popList"];
+
+v7 [label="EIGEN2SMARTPCA:SMARTPCA"];
+v12 [label="EIGEN2SMARTPCA:FORMAT_EVEC"];
+v7 -> v12;
+
+v7 [label="EIGEN2SMARTPCA:SMARTPCA"];
+v9 [shape=point];
+v7 -> v9 [label="eval"];
+
+v7 [label="EIGEN2SMARTPCA:SMARTPCA"];
+v8 [shape=point];
+v7 -> v8;
+
+v7 [label="EIGEN2SMARTPCA:SMARTPCA"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 [shape=point];
+v10 -> v11 [label="versions"];
+
+v12 [label="EIGEN2SMARTPCA:FORMAT_EVEC"];
+v13 [shape=point];
+v12 -> v13;
+
+}

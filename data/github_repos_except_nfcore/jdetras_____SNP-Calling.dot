@@ -1,0 +1,74 @@
+digraph "jdetras_____SNPCalling" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v7 [label="alignment"];
+v0 -> v7 [label="reads_ch"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="alignment"];
+v1 -> v7 [label="genome"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="alignment"];
+v2 -> v7 [label="genome_amb"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="alignment"];
+v3 -> v7 [label="genome_ann"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="alignment"];
+v4 -> v7 [label="genome_bwt"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="alignment"];
+v5 -> v7 [label="genome_pac"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="alignment"];
+v6 -> v7 [label="genome_sa"];
+
+v7 [label="alignment"];
+v8 [label="sort_sam"];
+v7 -> v8;
+
+v8 [label="sort_sam"];
+v9 [label="fix_mate"];
+v8 -> v9;
+
+v9 [label="fix_mate"];
+v10 [label="mark_duplicates"];
+v9 -> v10;
+
+v10 [label="mark_duplicates"];
+v11 [label="add_read_groups"];
+v10 -> v11;
+
+v11 [label="add_read_groups"];
+v13 [label="merge_bam"];
+v11 -> v13;
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="merge_bam"];
+v12 -> v13 [label="__$pathinparam<0>"];
+
+v13 [label="merge_bam"];
+v17 [label="haplotype_caller"];
+v13 -> v17;
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="haplotype_caller"];
+v14 -> v17 [label="genome"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="haplotype_caller"];
+v15 -> v17 [label="genome_fai"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="haplotype_caller"];
+v16 -> v17 [label="genome_dic"];
+
+v17 [label="haplotype_caller"];
+v18 [shape=point];
+v17 -> v18;
+
+}

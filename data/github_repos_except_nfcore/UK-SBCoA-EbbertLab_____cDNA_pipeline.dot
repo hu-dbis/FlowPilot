@@ -1,0 +1,90 @@
+digraph "UKSBCoAEbbertLab_____cDNA_pipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v12 [label="DOWNSAMPLING"];
+v0 -> v12 [label="downsizes"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v2 [label="DECOMPRESS"];
+v1 -> v2 [label="fastq_list"];
+
+v2 [label="DECOMPRESS"];
+v3 [label="TRIM_GALORE"];
+v2 -> v3;
+
+v2 [label="DECOMPRESS"];
+v3 [label="TRIM_GALORE"];
+v2 -> v3;
+
+v2 [label="DECOMPRESS"];
+v3 [label="TRIM_GALORE"];
+v2 -> v3;
+
+v3 [label="TRIM_GALORE"];
+v9 [label="STAR_MAPPING_TRANSCRIPTOME"];
+v3 -> v9;
+
+v3 [label="TRIM_GALORE"];
+v9 [label="STAR_MAPPING_TRANSCRIPTOME"];
+v3 -> v9;
+
+v3 [label="TRIM_GALORE"];
+v9 [label="STAR_MAPPING_TRANSCRIPTOME"];
+v3 -> v9;
+
+v3 [label="TRIM_GALORE"];
+v5 [shape=point];
+v3 -> v5;
+
+v3 [label="TRIM_GALORE"];
+v4 [shape=point];
+v3 -> v4;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="MAKE_STAR_INDEX"];
+v6 -> v8 [label="reference"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="MAKE_STAR_INDEX"];
+v7 -> v8 [label="annotation"];
+
+v8 [label="MAKE_STAR_INDEX"];
+v9 [label="STAR_MAPPING_TRANSCRIPTOME"];
+v8 -> v9;
+
+v9 [label="STAR_MAPPING_TRANSCRIPTOME"];
+v12 [label="DOWNSAMPLING"];
+v9 -> v12;
+
+v9 [label="STAR_MAPPING_TRANSCRIPTOME"];
+v12 [label="DOWNSAMPLING"];
+v9 -> v12;
+
+v9 [label="STAR_MAPPING_TRANSCRIPTOME"];
+v11 [shape=point];
+v9 -> v11;
+
+v9 [label="STAR_MAPPING_TRANSCRIPTOME"];
+v10 [shape=point];
+v9 -> v10;
+
+v12 [label="DOWNSAMPLING"];
+v14 [label="SALMON_ALIGNMENT_MODE"];
+v12 -> v14;
+
+v12 [label="DOWNSAMPLING"];
+v14 [label="SALMON_ALIGNMENT_MODE"];
+v12 -> v14;
+
+v12 [label="DOWNSAMPLING"];
+v14 [label="SALMON_ALIGNMENT_MODE"];
+v12 -> v14;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="SALMON_ALIGNMENT_MODE"];
+v13 -> v14 [label="transcriptome"];
+
+v14 [label="SALMON_ALIGNMENT_MODE"];
+v15 [shape=point];
+v14 -> v15;
+
+}

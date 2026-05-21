@@ -1,0 +1,122 @@
+digraph "PlantFoodResearchOpen_____HEImiRApipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [label="rawqc:fastqc"];
+v0 -> v1 [label="file_list"];
+
+v1 [label="rawqc:fastqc"];
+v2 [shape=point];
+v1 -> v2;
+
+v1 [label="rawqc:fastqc"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 [label="rawqc:multiqc"];
+v3 -> v5;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="rawqc:multiqc"];
+v4 -> v5 [label="config"];
+
+v5 [label="rawqc:multiqc"];
+v7 [shape=point];
+v5 -> v7;
+
+v5 [label="rawqc:multiqc"];
+v6 [shape=point];
+v5 -> v6;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [label="clip"];
+v0 -> v8 [label="file_list"];
+
+v8 [label="clip"];
+v9 [label="filter_reads"];
+v8 -> v9;
+
+v9 [label="filter_reads"];
+v11 [label="postqc:fastqc"];
+v9 -> v11 [label="reads"];
+
+v9 [label="filter_reads"];
+v10 [shape=point];
+v9 -> v10;
+
+v11 [label="postqc:fastqc"];
+v12 [shape=point];
+v11 -> v12;
+
+v11 [label="postqc:fastqc"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 [label="postqc:multiqc"];
+v13 -> v15;
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="postqc:multiqc"];
+v14 -> v15 [label="config"];
+
+v15 [label="postqc:multiqc"];
+v17 [shape=point];
+v15 -> v17;
+
+v15 [label="postqc:multiqc"];
+v16 [shape=point];
+v15 -> v16;
+
+v18 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [label="prepare_reference:make_reference"];
+v18 -> v20 [label="ref"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [label="prepare_reference:make_reference"];
+v19 -> v20 [label="taxa"];
+
+v20 [label="prepare_reference:make_reference"];
+v21 [label="map_reads:ref_size"];
+v20 -> v21 [label="reference"];
+
+v20 [label="prepare_reference:make_reference"];
+v27 [label="process_counts"];
+v20 -> v27 [label="data"];
+
+v21 [label="map_reads:ref_size"];
+v23 [label="map_reads:star_index"];
+v21 -> v23 [label="REFSIZE"];
+
+v20 [label="prepare_reference:make_reference"];
+v22 [label="map_reads:decompress"];
+v20 -> v22 [label="reference"];
+
+v22 [label="map_reads:decompress"];
+v23 [label="map_reads:star_index"];
+v22 -> v23;
+
+v23 [label="map_reads:star_index"];
+v24 [label="map_reads:star_align"];
+v23 -> v24 [label="index_dir"];
+
+v9 [label="filter_reads"];
+v24 [label="map_reads:star_align"];
+v9 -> v24 [label="reads"];
+
+v24 [label="map_reads:star_align"];
+v25 [label="map_reads:samtools_index"];
+v24 -> v25;
+
+v25 [label="map_reads:samtools_index"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 [label="process_counts"];
+v26 -> v27;
+
+v27 [label="process_counts"];
+v28 [shape=point];
+v27 -> v28;
+
+}

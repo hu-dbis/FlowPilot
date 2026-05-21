@@ -1,0 +1,182 @@
+digraph "marcodelapierre_____illuminanf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [label="merge_interl"];
+v1 -> v4 [label="read_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [label="seqfile"];
+v2 -> v22 [label="seqs_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v24 [label="contigs_ch"];
+
+v4 [label="merge_interl"];
+v5 [label="qc_post_merge_interl"];
+v4 -> v5;
+
+v5 [label="qc_post_merge_interl"];
+v6 [shape=point];
+v5 -> v6;
+
+v4 [label="merge_interl"];
+v7 [label="trim"];
+v4 -> v7;
+
+v7 [label="trim"];
+v8 [label="qc_post_trim"];
+v7 -> v8;
+
+v8 [label="qc_post_trim"];
+v9 [shape=point];
+v8 -> v9;
+
+v7 [label="trim"];
+v10 [label="assemble"];
+v7 -> v10;
+
+v10 [label="assemble"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v10 -> v12;
+
+v10 [label="assemble"];
+v11 [shape=point];
+v10 -> v11;
+
+v7 [label="trim"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v7 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v13 [label="map_contigs"];
+v12 -> v13;
+
+v13 [label="map_contigs"];
+v14 [label="sam_post_map_contigs"];
+v13 -> v14;
+
+v14 [label="sam_post_map_contigs"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v14 -> v16;
+
+v14 [label="sam_post_map_contigs"];
+v15 [shape=point];
+v14 -> v15;
+
+v10 [label="assemble"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v10 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 [label="bcf_post_map_contigs"];
+v16 -> v17;
+
+v17 [label="bcf_post_map_contigs"];
+v18 [shape=point];
+v17 -> v18;
+
+v17 [label="bcf_post_map_contigs"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 -> v24;
+
+v10 [label="assemble"];
+v19 [label="blast"];
+v10 -> v19;
+
+v19 [label="blast"];
+v21 [shape=point];
+v19 -> v21;
+
+v19 [label="blast"];
+v20 [shape=point];
+v19 -> v20;
+
+v22 [label="seqfile"];
+v23 [label="sam_post_seqfile"];
+v22 -> v23;
+
+v23 [label="sam_post_seqfile"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v26;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v25 [label="contigfile"];
+v24 -> v25;
+
+v25 [label="contigfile"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v25 -> v37;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 -> v27;
+
+v7 [label="trim"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v28 [label="map_refs"];
+v27 -> v28;
+
+v28 [label="map_refs"];
+v29 [label="sam_post_map_refs"];
+v28 -> v29;
+
+v29 [label="sam_post_map_refs"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v29 -> v32;
+
+v29 [label="sam_post_map_refs"];
+v30 [shape=point];
+v29 -> v30;
+
+v23 [label="sam_post_seqfile"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [label="bcf_post_map_refs"];
+v33 -> v34;
+
+v34 [label="bcf_post_map_refs"];
+v35 [shape=point];
+v34 -> v35;
+
+v34 [label="bcf_post_map_refs"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v34 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 -> v38;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 [label="align"];
+v39 -> v40;
+
+v40 [label="align"];
+v41 [shape=point];
+v40 -> v41;
+
+}

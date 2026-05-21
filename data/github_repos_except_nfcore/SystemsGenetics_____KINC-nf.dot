@@ -1,0 +1,126 @@
+digraph "SystemsGenetics_____KINCnf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v5 [label="import_emx"];
+v0 -> v5 [label="emx_txt_files"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v6 [label="emx_files"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v12 [label="ccm_files"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v13 [label="cmx_files"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v4 -> v18 [label="amx_files"];
+
+v5 [label="import_emx"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 [label="similarity_chunk"];
+v6 -> v8 [label="emx_files"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v8 [label="similarity_chunk"];
+v7 -> v8 [label="indices"];
+
+v8 [label="similarity_chunk"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 -> v10 [label="chunks"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v6 -> v10 [label="emx_files"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v11 [label="similarity_merge"];
+v10 -> v11 [label="merge_inputs"];
+
+v11 [label="similarity_merge"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v12;
+
+v11 [label="similarity_merge"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v13;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v12 -> v14 [label="ccm_files"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v13 -> v14 [label="cmx_files"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 [label="corrpower"];
+v14 -> v15 [label="inputs"];
+
+v15 [label="corrpower"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 -> v16 [label="paf_ccm_files"];
+
+v15 [label="corrpower"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 -> v17 [label="paf_cmx_files"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v6 -> v16 [label="emx_files"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 [label="condtest"];
+v18 -> v19 [label="inputs"];
+
+v19 [label="condtest"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 -> v22 [label="csm_files"];
+
+v15 [label="corrpower"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 -> v20 [label="paf_ccm_files"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v6 -> v20 [label="emx_files"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v20 -> v21;
+
+v15 [label="corrpower"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 -> v21 [label="paf_cmx_files"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 [label="extract"];
+v22 -> v23 [label="inputs"];
+
+v23 [label="extract"];
+v24 [shape=point];
+v23 -> v24;
+
+}

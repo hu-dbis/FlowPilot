@@ -1,0 +1,122 @@
+digraph "clemensma_____endoMiner" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v3 [label="RAWQC"];
+v2 -> v3 [label="ch_rawReads"];
+
+v3 [label="RAWQC"];
+v4 [shape=point];
+v3 -> v4;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v5 [label="TRIMMING"];
+v2 -> v5 [label="ch_rawReads"];
+
+v5 [label="TRIMMING"];
+v6 [label="TRIMMEDQC"];
+v5 -> v6;
+
+v6 [label="TRIMMEDQC"];
+v7 [shape=point];
+v6 -> v7;
+
+v5 [label="TRIMMING"];
+v9 [label="DENOVOASSEMBLY"];
+v5 -> v9;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [label="DENOVOASSEMBLY"];
+v8 -> v9 [label="kmers"];
+
+v9 [label="DENOVOASSEMBLY"];
+v10 [label="ENDOSYMBIONTCONTIGFILTERING"];
+v9 -> v10;
+
+v10 [label="ENDOSYMBIONTCONTIGFILTERING"];
+v11 [label="ENDOSYMBIONTGENOMEQUALITY"];
+v10 -> v11;
+
+v11 [label="ENDOSYMBIONTGENOMEQUALITY"];
+v12 [shape=point];
+v11 -> v12;
+
+v10 [label="ENDOSYMBIONTCONTIGFILTERING"];
+v13 [label="CHECKENDOSYMBIONT"];
+v10 -> v13 [label="endosymbiont_genome"];
+
+v13 [label="CHECKENDOSYMBIONT"];
+v14 [shape=point];
+v13 -> v14;
+
+v5 [label="TRIMMING"];
+v15 [label="READMAPPINGFORCOVERAGE"];
+v5 -> v15;
+
+v10 [label="ENDOSYMBIONTCONTIGFILTERING"];
+v15 [label="READMAPPINGFORCOVERAGE"];
+v10 -> v15 [label="assembled_endosymbiont"];
+
+v15 [label="READMAPPINGFORCOVERAGE"];
+v16 [label="COVERAGEESTIMATE"];
+v15 -> v16;
+
+v5 [label="TRIMMING"];
+v16 [label="COVERAGEESTIMATE"];
+v5 -> v16;
+
+v10 [label="ENDOSYMBIONTCONTIGFILTERING"];
+v16 [label="COVERAGEESTIMATE"];
+v10 -> v16 [label="assembled_endosymbiont"];
+
+v16 [label="COVERAGEESTIMATE"];
+v17 [shape=point];
+v16 -> v17;
+
+v9 [label="DENOVOASSEMBLY"];
+v18 [label="EXTRACTMITOGENOME"];
+v9 -> v18 [label="contigs"];
+
+v18 [label="EXTRACTMITOGENOME"];
+v20 [label="REASSEMBLEMITOGENOME"];
+v18 -> v20;
+
+v18 [label="EXTRACTMITOGENOME"];
+v19 [shape=point];
+v18 -> v19;
+
+v9 [label="DENOVOASSEMBLY"];
+v20 [label="REASSEMBLEMITOGENOME"];
+v9 -> v20 [label="contigs"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v20 [label="REASSEMBLEMITOGENOME"];
+v2 -> v20 [label="ch_rawReads"];
+
+v20 [label="REASSEMBLEMITOGENOME"];
+v22 [label="STRANDCONTROL"];
+v20 -> v22;
+
+v20 [label="REASSEMBLEMITOGENOME"];
+v21 [shape=point];
+v20 -> v21;
+
+v22 [label="STRANDCONTROL"];
+v23 [label="ANNOTATEMITOGENOME"];
+v22 -> v23;
+
+v23 [label="ANNOTATEMITOGENOME"];
+v24 [label="MITOSFORMATTING"];
+v23 -> v24;
+
+v24 [label="MITOSFORMATTING"];
+v25 [shape=point];
+v24 -> v25;
+
+}

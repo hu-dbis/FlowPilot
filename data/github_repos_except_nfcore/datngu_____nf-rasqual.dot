@@ -1,0 +1,542 @@
+digraph "datngu_____nfrasqual" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v16 [label="ATAC_SPLIT_chromosome"];
+v0 -> v16 [label="chrom_list_ch"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v2 [shape=point];
+v1 -> v2 [label="permute_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="VCF_filtering"];
+v3 -> v5 [label="in_vcf"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="VCF_filtering"];
+v4 -> v5 [label="meta"];
+
+v5 [label="VCF_filtering"];
+v10 [label="ATAC_ADD_AS_vcf"];
+v5 -> v10;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v7 [label="atac_bam_ch"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 [label="ATAC_BAM_rename"];
+v7 -> v9;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [label="ATAC_BAM_rename"];
+v8 -> v9 [label="meta"];
+
+v9 [label="ATAC_BAM_rename"];
+v10 [label="ATAC_ADD_AS_vcf"];
+v9 -> v10;
+
+v10 [label="ATAC_ADD_AS_vcf"];
+v16 [label="ATAC_SPLIT_chromosome"];
+v10 -> v16;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="ATAC_FILTERING_expression"];
+v11 -> v13 [label="atac_count"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="ATAC_FILTERING_expression"];
+v12 -> v13 [label="meta"];
+
+v13 [label="ATAC_FILTERING_expression"];
+v15 [label="ATAC_PROCESS_covariates"];
+v13 -> v15;
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="ATAC_PROCESS_covariates"];
+v14 -> v15 [label="meta"];
+
+v15 [label="ATAC_PROCESS_covariates"];
+v22 [label="ATAC_RUN_rasqual_eigenMT"];
+v15 -> v22;
+
+v13 [label="ATAC_FILTERING_expression"];
+v16 [label="ATAC_SPLIT_chromosome"];
+v13 -> v16 [label="in_exp"];
+
+v16 [label="ATAC_SPLIT_chromosome"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 [label="ATAC_PREPROCESS_rasqual"];
+v17 -> v19;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v19 [label="ATAC_PREPROCESS_rasqual"];
+v0 -> v19 [label="chrom_list_ch"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1];
+v19 [label="ATAC_PREPROCESS_rasqual"];
+v18 -> v19 [label="genome"];
+
+v19 [label="ATAC_PREPROCESS_rasqual"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [label="ATAC_RUN_rasqual_eigenMT"];
+v20 -> v22;
+
+v16 [label="ATAC_SPLIT_chromosome"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [label="ATAC_RUN_rasqual_eigenMT"];
+v21 -> v22;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v22 [label="ATAC_RUN_rasqual_eigenMT"];
+v0 -> v22 [label="chrom_list_ch"];
+
+v22 [label="ATAC_RUN_rasqual_eigenMT"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 [label="ATAC_rasqual_TO_eigenMT"];
+v23 -> v24;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v24 [label="ATAC_rasqual_TO_eigenMT"];
+v0 -> v24 [label="chrom_list_ch"];
+
+v24 [label="ATAC_rasqual_TO_eigenMT"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 -> v32;
+
+v19 [label="ATAC_PREPROCESS_rasqual"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 [label="ATAC_RUN_rasqual_eigenMT_permute"];
+v25 -> v27;
+
+v16 [label="ATAC_SPLIT_chromosome"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 [label="ATAC_RUN_rasqual_eigenMT_permute"];
+v26 -> v27;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v27 [label="ATAC_RUN_rasqual_eigenMT_permute"];
+v0 -> v27 [label="chrom_list_ch"];
+
+v15 [label="ATAC_PROCESS_covariates"];
+v27 [label="ATAC_RUN_rasqual_eigenMT_permute"];
+v15 -> v27 [label="covariates"];
+
+v27 [label="ATAC_RUN_rasqual_eigenMT_permute"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [label="ATAC_rasqual_TO_eigenMT_permute"];
+v28 -> v29;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v29 [label="ATAC_rasqual_TO_eigenMT_permute"];
+v0 -> v29 [label="chrom_list_ch"];
+
+v29 [label="ATAC_rasqual_TO_eigenMT_permute"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 -> v42;
+
+v16 [label="ATAC_SPLIT_chromosome"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 [label="ATAC_eigenMT_process_input"];
+v30 -> v31;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v31 [label="ATAC_eigenMT_process_input"];
+v0 -> v31 [label="chrom_list_ch"];
+
+v31 [label="ATAC_eigenMT_process_input"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v33;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 [label="ATAC_eigenMT"];
+v32 -> v34;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 [label="ATAC_eigenMT"];
+v33 -> v34;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v34 [label="ATAC_eigenMT"];
+v0 -> v34 [label="chrom_list_ch"];
+
+v34 [label="ATAC_eigenMT"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 -> v36;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="max"];
+v0 -> v35 [label="chrom_list_ch"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="max"];
+v37 [label="ATAC_MERGE_eigenMT"];
+v35 -> v37;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="ATAC_MERGE_eigenMT"];
+v36 -> v37;
+
+v37 [label="ATAC_MERGE_eigenMT"];
+v40 [label="ATAC_GET_lead_SNP"];
+v37 -> v40;
+
+v24 [label="ATAC_rasqual_TO_eigenMT"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [label="ATAC_MERGE_rasqual_normial"];
+v38 -> v39;
+
+v39 [label="ATAC_MERGE_rasqual_normial"];
+v40 [label="ATAC_GET_lead_SNP"];
+v39 -> v40;
+
+v40 [label="ATAC_GET_lead_SNP"];
+v41 [shape=point];
+v40 -> v41;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 [label="ATAC_eigenMT_permute"];
+v42 -> v44;
+
+v31 [label="ATAC_eigenMT_process_input"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 [label="ATAC_eigenMT_permute"];
+v43 -> v44;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v44 [label="ATAC_eigenMT_permute"];
+v0 -> v44 [label="chrom_list_ch"];
+
+v44 [label="ATAC_eigenMT_permute"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 -> v46;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="max"];
+v0 -> v45 [label="chrom_list_ch"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="max"];
+v47 [label="ATAC_MERGE_eigenMT_permute"];
+v45 -> v47;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 [label="ATAC_MERGE_eigenMT_permute"];
+v46 -> v47;
+
+v47 [label="ATAC_MERGE_eigenMT_permute"];
+v50 [label="ATAC_GET_lead_SNP_permute"];
+v47 -> v50;
+
+v29 [label="ATAC_rasqual_TO_eigenMT_permute"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 [label="ATAC_MERGE_rasqual_normial_permute"];
+v48 -> v49;
+
+v49 [label="ATAC_MERGE_rasqual_normial_permute"];
+v50 [label="ATAC_GET_lead_SNP_permute"];
+v49 -> v50;
+
+v50 [label="ATAC_GET_lead_SNP_permute"];
+v51 [shape=point];
+v50 -> v51;
+
+v52 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v52 -> v53 [label="rna_bam_ch"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 [label="RNA_BAM_rename"];
+v53 -> v55;
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v55 [label="RNA_BAM_rename"];
+v54 -> v55 [label="meta"];
+
+v55 [label="RNA_BAM_rename"];
+v56 [label="RNA_ADD_AS_vcf"];
+v55 -> v56;
+
+v5 [label="VCF_filtering"];
+v56 [label="RNA_ADD_AS_vcf"];
+v5 -> v56 [label="in_vcf"];
+
+v56 [label="RNA_ADD_AS_vcf"];
+v64 [label="RNA_SPLIT_chromosome"];
+v56 -> v64;
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v58 [label="GTF_GENE_INFO_parser"];
+v57 -> v58 [label="gtf"];
+
+v58 [label="GTF_GENE_INFO_parser"];
+v61 [label="RNA_FILTERING_expression"];
+v58 -> v61;
+
+v59 [shape=point,label="",fixedsize=true,width=0.1];
+v61 [label="RNA_FILTERING_expression"];
+v59 -> v61 [label="rna_count"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1];
+v61 [label="RNA_FILTERING_expression"];
+v60 -> v61 [label="meta"];
+
+v61 [label="RNA_FILTERING_expression"];
+v63 [label="RNA_PROCESS_covariates"];
+v61 -> v63;
+
+v62 [shape=point,label="",fixedsize=true,width=0.1];
+v63 [label="RNA_PROCESS_covariates"];
+v62 -> v63 [label="meta"];
+
+v63 [label="RNA_PROCESS_covariates"];
+v70 [label="RNA_RUN_rasqual_eigenMT"];
+v63 -> v70;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v64 [label="RNA_SPLIT_chromosome"];
+v0 -> v64 [label="chrom_list_ch"];
+
+v61 [label="RNA_FILTERING_expression"];
+v64 [label="RNA_SPLIT_chromosome"];
+v61 -> v64 [label="in_exp"];
+
+v64 [label="RNA_SPLIT_chromosome"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v67 [label="RNA_PREPROCESS_rasqual"];
+v65 -> v67;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v67 [label="RNA_PREPROCESS_rasqual"];
+v0 -> v67 [label="chrom_list_ch"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [label="RNA_PREPROCESS_rasqual"];
+v66 -> v67 [label="genome"];
+
+v67 [label="RNA_PREPROCESS_rasqual"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v70 [label="RNA_RUN_rasqual_eigenMT"];
+v68 -> v70;
+
+v64 [label="RNA_SPLIT_chromosome"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v70 [label="RNA_RUN_rasqual_eigenMT"];
+v69 -> v70;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v70 [label="RNA_RUN_rasqual_eigenMT"];
+v0 -> v70 [label="chrom_list_ch"];
+
+v70 [label="RNA_RUN_rasqual_eigenMT"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 [label="RNA_rasqual_TO_eigenMT"];
+v71 -> v72;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v72 [label="RNA_rasqual_TO_eigenMT"];
+v0 -> v72 [label="chrom_list_ch"];
+
+v72 [label="RNA_rasqual_TO_eigenMT"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 -> v80;
+
+v67 [label="RNA_PREPROCESS_rasqual"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v67 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v75 [label="RNA_RUN_rasqual_eigenMT_permute"];
+v73 -> v75;
+
+v64 [label="RNA_SPLIT_chromosome"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v75 [label="RNA_RUN_rasqual_eigenMT_permute"];
+v74 -> v75;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v75 [label="RNA_RUN_rasqual_eigenMT_permute"];
+v0 -> v75 [label="chrom_list_ch"];
+
+v63 [label="RNA_PROCESS_covariates"];
+v75 [label="RNA_RUN_rasqual_eigenMT_permute"];
+v63 -> v75 [label="covariates"];
+
+v75 [label="RNA_RUN_rasqual_eigenMT_permute"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 [label="RNA_rasqual_TO_eigenMT_permute"];
+v76 -> v77;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v77 [label="RNA_rasqual_TO_eigenMT_permute"];
+v0 -> v77 [label="chrom_list_ch"];
+
+v77 [label="RNA_rasqual_TO_eigenMT_permute"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 -> v90;
+
+v64 [label="RNA_SPLIT_chromosome"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 [label="RNA_eigenMT_process_input"];
+v78 -> v79;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v79 [label="RNA_eigenMT_process_input"];
+v0 -> v79 [label="chrom_list_ch"];
+
+v79 [label="RNA_eigenMT_process_input"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 -> v81;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v82 [label="RNA_eigenMT"];
+v80 -> v82;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v82 [label="RNA_eigenMT"];
+v81 -> v82;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v82 [label="RNA_eigenMT"];
+v0 -> v82 [label="chrom_list_ch"];
+
+v82 [label="RNA_eigenMT"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v82 -> v84;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="max"];
+v0 -> v83 [label="chrom_list_ch"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="max"];
+v85 [label="RNA_MERGE_eigenMT"];
+v83 -> v85;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v85 [label="RNA_MERGE_eigenMT"];
+v84 -> v85;
+
+v85 [label="RNA_MERGE_eigenMT"];
+v88 [label="RNA_GET_lead_SNP"];
+v85 -> v88;
+
+v72 [label="RNA_rasqual_TO_eigenMT"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v87 [label="RNA_MERGE_rasqual_normial"];
+v86 -> v87;
+
+v87 [label="RNA_MERGE_rasqual_normial"];
+v88 [label="RNA_GET_lead_SNP"];
+v87 -> v88;
+
+v88 [label="RNA_GET_lead_SNP"];
+v89 [shape=point];
+v88 -> v89;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v92 [label="RNA_eigenMT_permute"];
+v90 -> v92;
+
+v79 [label="RNA_eigenMT_process_input"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v92 [label="RNA_eigenMT_permute"];
+v91 -> v92;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v92 [label="RNA_eigenMT_permute"];
+v0 -> v92 [label="chrom_list_ch"];
+
+v92 [label="RNA_eigenMT_permute"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v92 -> v94;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="max"];
+v0 -> v93 [label="chrom_list_ch"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="max"];
+v95 [label="RNA_MERGE_eigenMT_permute"];
+v93 -> v95;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v95 [label="RNA_MERGE_eigenMT_permute"];
+v94 -> v95;
+
+v95 [label="RNA_MERGE_eigenMT_permute"];
+v98 [label="RNA_GET_lead_SNP_permute"];
+v95 -> v98;
+
+v77 [label="RNA_rasqual_TO_eigenMT_permute"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v97 [label="RNA_MERGE_rasqual_normial_permute"];
+v96 -> v97;
+
+v97 [label="RNA_MERGE_rasqual_normial_permute"];
+v98 [label="RNA_GET_lead_SNP_permute"];
+v97 -> v98;
+
+v98 [label="RNA_GET_lead_SNP_permute"];
+v99 [shape=point];
+v98 -> v99;
+
+}

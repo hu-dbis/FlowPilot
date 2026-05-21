@@ -1,0 +1,118 @@
+digraph "BCCDCPHL_____mlstnf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v4 [label="ch_assemblies"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 [label="hash_files"];
+v4 -> v5;
+
+v5 [label="hash_files"];
+v6 [shape=point];
+v5 -> v6;
+
+v5 [label="hash_files"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v5 -> v19;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v7 [label="quast"];
+v2 -> v7 [label="ch_assemblies"];
+
+v7 [label="quast"];
+v8 [label="parse_quast_report"];
+v7 -> v8;
+
+v7 [label="quast"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v7 -> v23;
+
+v8 [label="parse_quast_report"];
+v9 [shape=point];
+v8 -> v9;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v10 [label="mlst"];
+v2 -> v10 [label="ch_assemblies"];
+
+v10 [label="mlst"];
+v11 [label="parse_alleles"];
+v10 -> v11;
+
+v10 [label="mlst"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v10 -> v21;
+
+v11 [label="parse_alleles"];
+v13 [shape=point];
+v11 -> v13;
+
+v11 [label="parse_alleles"];
+v12 [shape=point];
+v11 -> v12;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v14 [label="ch_assemblies"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v17 [label="ch_provenance"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="pipeline_provenance"];
+v15 -> v16 [label="ch_workflow_metadata"];
+
+v16 [label="pipeline_provenance"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v19 [label="ch_provenance"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v20 -> v21 [label="ch_provenance"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v22 -> v23 [label="ch_provenance"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [label="collect_provenance"];
+v24 -> v25 [label="ch_provenance"];
+
+v25 [label="collect_provenance"];
+v26 [shape=point];
+v25 -> v26;
+
+}

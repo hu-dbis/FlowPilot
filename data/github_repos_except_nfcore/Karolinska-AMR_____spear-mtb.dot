@@ -1,0 +1,310 @@
+digraph "KarolinskaAMR_____spearmtb" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v0 -> v2;
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v4 [label="input_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v37 [label="ref_fa"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [label="MTB_FINDER:KRAKEN2_KRAKEN2"];
+v4 -> v8 [label="input_ch"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="MTB_FINDER:KRAKEN2_KRAKEN2"];
+v5 -> v8 [label="db"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="MTB_FINDER:KRAKEN2_KRAKEN2"];
+v6 -> v8 [label="save_output_fastqs"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="MTB_FINDER:KRAKEN2_KRAKEN2"];
+v7 -> v8 [label="save_reads_assignment"];
+
+v8 [label="MTB_FINDER:KRAKEN2_KRAKEN2"];
+v12 [shape=point];
+v8 -> v12;
+
+v8 [label="MTB_FINDER:KRAKEN2_KRAKEN2"];
+v11 [shape=point];
+v8 -> v11;
+
+v8 [label="MTB_FINDER:KRAKEN2_KRAKEN2"];
+v10 [shape=point];
+v8 -> v10;
+
+v8 [label="MTB_FINDER:KRAKEN2_KRAKEN2"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 -> v14;
+
+v8 [label="MTB_FINDER:KRAKEN2_KRAKEN2"];
+v9 [shape=point];
+v8 -> v9;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 -> v14 [label="level_ch"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 [label="MTB_FINDER:BRACKEN_BRACKEN"];
+v14 -> v16 [label="bracken_ch"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="MTB_FINDER:BRACKEN_BRACKEN"];
+v15 -> v16 [label="database"];
+
+v16 [label="MTB_FINDER:BRACKEN_BRACKEN"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v18;
+
+v16 [label="MTB_FINDER:BRACKEN_BRACKEN"];
+v17 [shape=point];
+v16 -> v17;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 [label="MTB_FINDER:MERGE_BARACKEN"];
+v20 -> v21 [label="tsv_ch"];
+
+v21 [label="MTB_FINDER:MERGE_BARACKEN"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v21 -> v22 [label="species_tsvs"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 -> v25 [label="mtbs_smaples"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v4 -> v25 [label="input_ch"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v26 -> v27 [label="input_ch"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v28 [shape=point];
+v27 -> v28;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v29 [label="input_ch"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [label="tbp"];
+v29 -> v30 [label="tbpr_ch"];
+
+v30 [label="tbp"];
+v35 [shape=point];
+v30 -> v35;
+
+v30 [label="tbp"];
+v34 [shape=point];
+v30 -> v34;
+
+v30 [label="tbp"];
+v33 [shape=point];
+v30 -> v33;
+
+v30 [label="tbp"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v30 -> v61;
+
+v30 [label="tbp"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v30 -> v60;
+
+v30 [label="tbp"];
+v32 [shape=point];
+v30 -> v32;
+
+v30 [label="tbp"];
+v31 [shape=point];
+v30 -> v31;
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v36 -> v40 [label="contam_ref_ch"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 -> v37 [label="input_ch"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [label="mpr"];
+v38 -> v39 [label="cryptic_ch"];
+
+v39 [label="mpr"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v41 [label="rmc"];
+v40 -> v41;
+
+v41 [label="rmc"];
+v44 [label="vrc"];
+v41 -> v44;
+
+v41 [label="rmc"];
+v42 [shape=point];
+v41 -> v42;
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="vrc"];
+v43 -> v44 [label="h37Rv_dir"];
+
+v44 [label="vrc"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 -> v47;
+
+v44 [label="vrc"];
+v46 [shape=point];
+v44 -> v46;
+
+v44 [label="vrc"];
+v45 [shape=point];
+v44 -> v45;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v50 [shape=point];
+v49 -> v50;
+
+v51 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v51 -> v53 [label="catalog_ch"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v52 -> v54 [label="refpkl_ch"];
+
+v44 [label="vrc"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v44 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [label="prd"];
+v55 -> v56 [label="ch"];
+
+v56 [label="prd"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v56 -> v57;
+
+v56 [label="prd"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v56 -> v57;
+
+v56 [label="prd"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v56 -> v58;
+
+v56 [label="prd"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v56 -> v59;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v62 -> v63;
+
+v21 [label="MTB_FINDER:MERGE_BARACKEN"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v21 -> v63 [label="species_tsvs"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v65 -> v66 [label="ser_ch"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v68 [label="grp"];
+v66 -> v68;
+
+v67 [shape=point,label="",fixedsize=true,width=0.1];
+v68 [label="grp"];
+v67 -> v68 [label="html"];
+
+v68 [label="grp"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v70 [shape=point];
+v69 -> v70;
+
+}

@@ -1,0 +1,50 @@
+digraph "eresearchqut_____ontprocessing" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="MERGE"];
+v2 -> v3 [label="ch_sample"];
+
+v3 [label="MERGE"];
+v4 [label="FLYE"];
+v3 -> v4;
+
+v4 [label="FLYE"];
+v5 [shape=point];
+v4 -> v5;
+
+v4 [label="FLYE"];
+v6 [label="BLASTN"];
+v4 -> v6;
+
+v6 [label="BLASTN"];
+v7 [shape=point];
+v6 -> v7;
+
+v3 [label="MERGE"];
+v8 [label="MINIMAP2"];
+v3 -> v8;
+
+v8 [label="MINIMAP2"];
+v9 [label="INFOSEQ"];
+v8 -> v9;
+
+v9 [label="INFOSEQ"];
+v10 [label="SAMTOOLS"];
+v9 -> v10;
+
+v10 [label="SAMTOOLS"];
+v11 [label="NANOQ"];
+v10 -> v11;
+
+v11 [label="NANOQ"];
+v12 [shape=point];
+v11 -> v12;
+
+}

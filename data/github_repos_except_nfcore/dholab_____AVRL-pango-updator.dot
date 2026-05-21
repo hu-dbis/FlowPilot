@@ -1,0 +1,222 @@
+digraph "dholab_____AVRLpangoupdator" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v12 [label="ch_consensus_seqs"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v15 [label="FIND_TARGET_SEQS"];
+v4 -> v15 [label="ch_runs_of_interest"];
+
+v5 [label="UPDATE_PANGO_DOCKER"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v5 -> v9 [label="version"];
+
+v6 [label="UPDATE_PANGO_CONDA"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v6 -> v7 [label="version"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v8 [shape=point];
+v7 -> v8;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v10 [shape=point];
+v9 -> v10;
+
+v5 [label="UPDATE_PANGO_DOCKER"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v11;
+
+v6 [label="UPDATE_PANGO_CONDA"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 [label="RECLASSIFY_ALL_LINEAGES"];
+v11 -> v13;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [label="RECLASSIFY_ALL_LINEAGES"];
+v12 -> v13;
+
+v13 [label="RECLASSIFY_ALL_LINEAGES"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v17;
+
+v5 [label="UPDATE_PANGO_DOCKER"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v14;
+
+v6 [label="UPDATE_PANGO_CONDA"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 [label="FIND_TARGET_SEQS"];
+v14 -> v15;
+
+v15 [label="FIND_TARGET_SEQS"];
+v16 [label="CLASSIFY_TARGET_SEQS"];
+v15 -> v16;
+
+v16 [label="CLASSIFY_TARGET_SEQS"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v18;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v19;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 [label="CONCAT_CSVS"];
+v20 -> v21;
+
+v21 [label="CONCAT_CSVS"];
+v45 [label="CLASSIFY_LEVELS"];
+v21 -> v45;
+
+v22 [label="GET_DESIGNATION_DATES"];
+v24 [label="FIND_LONG_INFECTIONS"];
+v22 -> v24;
+
+v16 [label="CLASSIFY_TARGET_SEQS"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v23;
+
+v13 [label="RECLASSIFY_ALL_LINEAGES"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 [label="FIND_LONG_INFECTIONS"];
+v23 -> v24;
+
+v24 [label="FIND_LONG_INFECTIONS"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [label="CONCAT_LONG_INFECTIONS"];
+v25 -> v26;
+
+v26 [label="CONCAT_LONG_INFECTIONS"];
+v27 [shape=point];
+v26 -> v27;
+
+v28 [label="GET_LINEAGE_SEQS"];
+v29 [label="UNZIP_LINEAGE_SEQS"];
+v28 -> v29;
+
+v29 [label="UNZIP_LINEAGE_SEQS"];
+v30 [label="ISOLATE_BA_2"];
+v29 -> v30;
+
+v30 [label="ISOLATE_BA_2"];
+v33 [label="ALIGN_ALL_TO_BA_2"];
+v30 -> v33;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v1 -> v31 [label="ch_consensus_seqs"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v33 [label="ALIGN_ALL_TO_BA_2"];
+v32 -> v33;
+
+v33 [label="ALIGN_ALL_TO_BA_2"];
+v34 [label="EXTRACT_SAMPLE"];
+v33 -> v34;
+
+v34 [label="EXTRACT_SAMPLE"];
+v35 [label="MAP_ALL_TO_BA_2"];
+v34 -> v35;
+
+v30 [label="ISOLATE_BA_2"];
+v35 [label="MAP_ALL_TO_BA_2"];
+v30 -> v35;
+
+v35 [label="MAP_ALL_TO_BA_2"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v42;
+
+v15 [label="FIND_TARGET_SEQS"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v39 [label="ALIGN_TARGETS_TO_BA_2"];
+v38 -> v39;
+
+v30 [label="ISOLATE_BA_2"];
+v39 [label="ALIGN_TARGETS_TO_BA_2"];
+v30 -> v39;
+
+v39 [label="ALIGN_TARGETS_TO_BA_2"];
+v40 [label="EXTRACT_TARGET_SAMPLE"];
+v39 -> v40;
+
+v40 [label="EXTRACT_TARGET_SAMPLE"];
+v41 [label="MAP_TARGETS_TO_BA_2"];
+v40 -> v41;
+
+v30 [label="ISOLATE_BA_2"];
+v41 [label="MAP_TARGETS_TO_BA_2"];
+v30 -> v41;
+
+v41 [label="MAP_TARGETS_TO_BA_2"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [label="CALL_RBD_VARIANTS"];
+v42 -> v43;
+
+v30 [label="ISOLATE_BA_2"];
+v43 [label="CALL_RBD_VARIANTS"];
+v30 -> v43;
+
+v43 [label="CALL_RBD_VARIANTS"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 [label="CLASSIFY_LEVELS"];
+v44 -> v45;
+
+v45 [label="CLASSIFY_LEVELS"];
+v46 [shape=point];
+v45 -> v46;
+
+}

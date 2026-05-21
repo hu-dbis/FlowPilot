@@ -1,0 +1,43 @@
+# ---------------------------------------------------------------------------
+# FlowPilot dependencies
+#
+# System prerequisite: Graphviz must be installed for pygraphviz to build:
+#   macOS:         brew install graphviz
+#   Debian/Ubuntu: sudo apt-get install graphviz graphviz-dev
+# On macOS, if pygraphviz cannot find Graphviz, point it at the Homebrew prefix:
+#   export CFLAGS="-I$(brew --prefix graphviz)/include"
+#   export LDFLAGS="-L$(brew --prefix graphviz)/lib"
+#
+# The pinned versions below were installed together in a clean virtual
+# environment (Python 3.12) and verified end-to-end. NumPy 2.x is required
+# (mlxtend >= 0.24.0 needs it); the rest of the stack is numpy-2 compatible.
+# ---------------------------------------------------------------------------
+
+# --- Core: FlowPilot + similarity knowledge base (src/flowpilot.py) ---
+numpy==2.4.6
+torch==2.12.0
+sentence-transformers==5.5.1
+hnswlib==0.8.0
+scipy==1.17.1
+scikit-learn==1.8.0
+networkx==3.6.1
+pygraphviz==1.14
+graphviz==0.21
+tqdm==4.67.3
+matplotlib==3.10.9
+
+# --- Baselines: FIM / FIM-L, association-rule mining (src/fim.py, src/fim_l.py) ---
+# association_rules(..., num_itemsets=...) requires mlxtend >= 0.24.0.
+mlxtend==0.24.0
+pandas==3.0.3
+
+# --- Baseline: Code-LLMs via a local Ollama server (src/llm_baselines.py) ---
+# Also requires a running Ollama instance with the model pulled (see README).
+ollama==0.6.2
+
+# --- Baselines: CodeT5+ / FT-NAP, HuggingFace fine-tuning (src/classes/t5p.py, src/FT-NAP.py) ---
+transformers==5.9.0
+datasets==4.8.5
+
+# --- Baseline: bidirectional LSTM (src/blstm.py) ---
+tensorflow==2.21.0

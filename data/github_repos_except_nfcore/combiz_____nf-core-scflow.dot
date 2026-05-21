@@ -1,0 +1,198 @@
+digraph "combiz_____nfcorescflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="SCFLOW:SCFLOW_CHECKINPUTS"];
+v0 -> v2 [label="manifest"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="SCFLOW:SCFLOW_CHECKINPUTS"];
+v1 -> v2 [label="input"];
+
+v2 [label="SCFLOW:SCFLOW_CHECKINPUTS"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [label="SCFLOW:SCFLOW_QC"];
+v4 -> v7;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="SCFLOW:SCFLOW_QC"];
+v5 -> v7 [label="input"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="SCFLOW:SCFLOW_QC"];
+v6 -> v7 [label="ensembl_mappings"];
+
+v7 [label="SCFLOW:SCFLOW_QC"];
+v10 [shape=point];
+v7 -> v10;
+
+v7 [label="SCFLOW:SCFLOW_QC"];
+v9 [shape=point];
+v7 -> v9;
+
+v7 [label="SCFLOW:SCFLOW_QC"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v11;
+
+v7 [label="SCFLOW:SCFLOW_QC"];
+v8 [shape=point];
+v7 -> v8;
+
+v7 [label="SCFLOW:SCFLOW_QC"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v14;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 [label="SCFLOW:SCFLOW_MERGEQCTABLES"];
+v11 -> v12;
+
+v12 [label="SCFLOW:SCFLOW_MERGEQCTABLES"];
+v13 [shape=point];
+v12 -> v13;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 [label="SCFLOW:SCFLOW_MERGE"];
+v14 -> v16;
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="SCFLOW:SCFLOW_MERGE"];
+v15 -> v16 [label="ensembl_mappings"];
+
+v16 [label="SCFLOW:SCFLOW_MERGE"];
+v20 [label="SCFLOW:SCFLOW_INTEGRATE"];
+v16 -> v20;
+
+v16 [label="SCFLOW:SCFLOW_MERGE"];
+v19 [shape=point];
+v16 -> v19;
+
+v16 [label="SCFLOW:SCFLOW_MERGE"];
+v18 [shape=point];
+v16 -> v18;
+
+v16 [label="SCFLOW:SCFLOW_MERGE"];
+v17 [shape=point];
+v16 -> v17;
+
+v20 [label="SCFLOW:SCFLOW_INTEGRATE"];
+v21 [label="SCFLOW:SCFLOW_REDUCEDIMS"];
+v20 -> v21;
+
+v21 [label="SCFLOW:SCFLOW_REDUCEDIMS"];
+v22 [label="SCFLOW:SCFLOW_CLUSTER"];
+v21 -> v22;
+
+v22 [label="SCFLOW:SCFLOW_CLUSTER"];
+v23 [label="SCFLOW:SCFLOW_REPORTINTEGRATED"];
+v22 -> v23;
+
+v23 [label="SCFLOW:SCFLOW_REPORTINTEGRATED"];
+v24 [shape=point];
+v23 -> v24;
+
+v22 [label="SCFLOW:SCFLOW_CLUSTER"];
+v26 [label="SCFLOW:SCFLOW_MAPCELLTYPES"];
+v22 -> v26 [label="sce"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [label="SCFLOW:SCFLOW_MAPCELLTYPES"];
+v25 -> v26 [label="ctd_path"];
+
+v26 [label="SCFLOW:SCFLOW_MAPCELLTYPES"];
+v29 [label="SCFLOW:SCFLOW_FINALIZE"];
+v26 -> v29;
+
+v26 [label="SCFLOW:SCFLOW_MAPCELLTYPES"];
+v27 [shape=point];
+v26 -> v27;
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="SCFLOW:SCFLOW_FINALIZE"];
+v28 -> v29 [label="celltype_mappings"];
+
+v29 [label="SCFLOW:SCFLOW_FINALIZE"];
+v37 [label="SCFLOW:SCFLOW_DGE"];
+v29 -> v37;
+
+v29 [label="SCFLOW:SCFLOW_FINALIZE"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v29 -> v33;
+
+v29 [label="SCFLOW:SCFLOW_FINALIZE"];
+v32 [shape=point];
+v29 -> v32;
+
+v29 [label="SCFLOW:SCFLOW_FINALIZE"];
+v31 [shape=point];
+v29 -> v31;
+
+v29 [label="SCFLOW:SCFLOW_FINALIZE"];
+v30 [shape=point];
+v29 -> v30;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [label="SCFLOW:SCFLOW_DGE"];
+v34 -> v37;
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="SCFLOW:SCFLOW_DGE"];
+v35 -> v37;
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="SCFLOW:SCFLOW_DGE"];
+v36 -> v37 [label="ensembl_mappings"];
+
+v37 [label="SCFLOW:SCFLOW_DGE"];
+v40 [label="SCFLOW:SCFLOW_IPA"];
+v37 -> v40;
+
+v37 [label="SCFLOW:SCFLOW_DGE"];
+v39 [shape=point];
+v37 -> v39;
+
+v37 [label="SCFLOW:SCFLOW_DGE"];
+v38 [shape=point];
+v37 -> v38;
+
+v40 [label="SCFLOW:SCFLOW_IPA"];
+v42 [shape=point];
+v40 -> v42;
+
+v40 [label="SCFLOW:SCFLOW_IPA"];
+v41 [shape=point];
+v40 -> v41;
+
+v29 [label="SCFLOW:SCFLOW_FINALIZE"];
+v43 [label="SCFLOW:SCFLOW_DIRICHLET"];
+v29 -> v43 [label="sce"];
+
+v43 [label="SCFLOW:SCFLOW_DIRICHLET"];
+v44 [shape=point];
+v43 -> v44;
+
+v22 [label="SCFLOW:SCFLOW_CLUSTER"];
+v46 [label="SCFLOW:SCFLOW_PLOTREDDIMGENES"];
+v22 -> v46 [label="sce"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v46 [label="SCFLOW:SCFLOW_PLOTREDDIMGENES"];
+v45 -> v46 [label="reddim_genes_yml"];
+
+v46 [label="SCFLOW:SCFLOW_PLOTREDDIMGENES"];
+v47 [shape=point];
+v46 -> v47;
+
+v48 [label="SCFLOW:GET_SOFTWARE_VERSIONS"];
+v49 [shape=point];
+v48 -> v49;
+
+}

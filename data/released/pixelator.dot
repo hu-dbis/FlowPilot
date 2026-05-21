@@ -1,0 +1,770 @@
+digraph "pixelator" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v6 [label="ch_versions"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v14 [label="ch_input"];
+
+v5 [label="PIPELINE_INITIALISATION:PIXELATOR_LIST_OPTIONS"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v5 -> v8;
+
+v5 [label="PIPELINE_INITIALISATION:PIXELATOR_LIST_OPTIONS"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v5 -> v11;
+
+v5 [label="PIPELINE_INITIALISATION:PIXELATOR_LIST_OPTIONS"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 [shape=point];
+v6 -> v7 [label="versions"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v16 [label="ch_design_options"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 -> v15 [label="ch_panel_options"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 -> v18;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v4 -> v18 [label="ch_input"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v20 [label="ch_samplesheet"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v26 [label="ch_versions"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v20 -> v22 [label="ch_reads"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v21 [label="ch_samplesheet"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v29 [label="ch_panel_files"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v27 [label="NFCORE_PIXELATOR:PIXELATOR:CAT_FASTQ"];
+v23 -> v27;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v28;
+
+v24 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_COLLECT_METADATA"];
+v25 [shape=point];
+v24 -> v25;
+
+v24 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_COLLECT_METADATA"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v36 [label="ch_versions"];
+
+v27 [label="NFCORE_PIXELATOR:PIXELATOR:CAT_FASTQ"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v28;
+
+v27 [label="NFCORE_PIXELATOR:PIXELATOR:CAT_FASTQ"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v27 -> v35;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 -> v32 [label="ch_cat_fastq"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 -> v33 [label="ch_checked_panel_files"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v53 [label="panel_files"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v40 [label="ch_versions"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_AMPLICON"];
+v28 -> v37 [label="ch_cat_fastq"];
+
+v37 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_AMPLICON"];
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v37 -> v41 [label="ch_input_reads"];
+
+v37 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_AMPLICON"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v37 -> v93;
+
+v37 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_AMPLICON"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v37 -> v93;
+
+v37 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_AMPLICON"];
+v38 [shape=point];
+v37 -> v38;
+
+v37 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_AMPLICON"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v37 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v52 [label="ch_versions"];
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v41 -> v53 [label="ch_qc"];
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v50 [shape=point];
+v41 -> v50;
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v49 [shape=point];
+v41 -> v49;
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v48 [shape=point];
+v41 -> v48;
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v47 [shape=point];
+v41 -> v47;
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v46 [shape=point];
+v41 -> v46;
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v41 -> v97;
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v41 -> v95;
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v45 [shape=point];
+v41 -> v45;
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v44 [shape=point];
+v41 -> v44;
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v41 -> v97;
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v41 -> v95;
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v43 [shape=point];
+v41 -> v43;
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v42 [shape=point];
+v41 -> v42;
+
+v41 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_QC"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v41 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v59 [label="ch_versions"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_DEMUX"];
+v54 -> v55 [label="ch_fq_and_panel"];
+
+v55 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_DEMUX"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v55 -> v60 [label="ch_demuxed"];
+
+v55 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_DEMUX"];
+v57 [shape=point];
+v55 -> v57;
+
+v55 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_DEMUX"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v55 -> v99;
+
+v55 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_DEMUX"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v55 -> v99;
+
+v55 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_DEMUX"];
+v56 [shape=point];
+v55 -> v56;
+
+v55 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_DEMUX"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v55 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v65 [label="ch_versions"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v60 [label="panel_files"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_COLLAPSE"];
+v61 -> v62 [label="ch_demuxed_and_panel"];
+
+v62 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_COLLAPSE"];
+v66 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_GRAPH"];
+v62 -> v66 [label="ch_collapsed"];
+
+v62 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_COLLAPSE"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v62 -> v101;
+
+v62 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_COLLAPSE"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v62 -> v101;
+
+v62 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_COLLAPSE"];
+v63 [shape=point];
+v62 -> v63;
+
+v62 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_COLLAPSE"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v62 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v72 [label="ch_versions"];
+
+v66 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_GRAPH"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v66 -> v73 [label="ch_clustered"];
+
+v66 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_GRAPH"];
+v70 [shape=point];
+v66 -> v70;
+
+v66 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_GRAPH"];
+v69 [shape=point];
+v66 -> v69;
+
+v66 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_GRAPH"];
+v68 [shape=point];
+v66 -> v68;
+
+v66 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_GRAPH"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 -> v115 [label="graph_data"];
+
+v66 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_GRAPH"];
+v67 [shape=point];
+v66 -> v67;
+
+v66 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_GRAPH"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v66 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v80 [label="ch_versions"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v73 [label="panel_files"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v75 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_ANNOTATE"];
+v74 -> v75 [label="ch_clustered_and_panel"];
+
+v75 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_ANNOTATE"];
+v81 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_ANALYSIS"];
+v75 -> v81 [label="ch_annotated"];
+
+v75 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_ANNOTATE"];
+v78 [shape=point];
+v75 -> v78;
+
+v75 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_ANNOTATE"];
+v77 [shape=point];
+v75 -> v77;
+
+v75 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_ANNOTATE"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v75 -> v116 [label="annotate_data"];
+
+v75 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_ANNOTATE"];
+v76 [shape=point];
+v75 -> v76;
+
+v75 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_ANNOTATE"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v75 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v86 [label="ch_versions"];
+
+v81 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_ANALYSIS"];
+v87 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_LAYOUT"];
+v81 -> v87 [label="ch_layout_input"];
+
+v81 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_ANALYSIS"];
+v84 [shape=point];
+v81 -> v84;
+
+v81 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_ANALYSIS"];
+v83 [shape=point];
+v81 -> v83;
+
+v81 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_ANALYSIS"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v81 -> v117 [label="analysis_data"];
+
+v81 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_ANALYSIS"];
+v82 [shape=point];
+v81 -> v82;
+
+v81 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_ANALYSIS"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v81 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v92 [label="ch_versions"];
+
+v87 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_LAYOUT"];
+v90 [shape=point];
+v87 -> v90 [label="ch_layout"];
+
+v87 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_LAYOUT"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v87 -> v103;
+
+v87 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_LAYOUT"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v87 -> v103;
+
+v87 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_LAYOUT"];
+v89 [shape=point];
+v87 -> v89;
+
+v87 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_LAYOUT"];
+v88 [shape=point];
+v87 -> v88;
+
+v87 [label="NFCORE_PIXELATOR:PIXELATOR:PIXELATOR_LAYOUT"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v87 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v145 [label="ch_versions"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v93 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v94 -> v110 [label="amplicon_data"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v95 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v96 -> v111 [label="preqc_data"];
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v97 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 -> v112 [label="adapterqc_data"];
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v100 -> v113 [label="demux_data"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 -> v114 [label="collapse_data"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 -> v118 [label="layout_data"];
+
+v105 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v144 [label="ch_versions"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 -> v106 [label="panel_files"];
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v108 -> v119 [label="ch_meta_col"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 -> v109 [label="panel_files"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v109 -> v119 [label="ch_panel_col"];
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v110 -> v120 [label="ch_amplicon_col"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v111 -> v121 [label="ch_preqc_col"];
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v112 -> v122 [label="ch_adapterqc_col"];
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v113 -> v123 [label="ch_demux_col"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v114 -> v124 [label="ch_collapse_col"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v115 -> v125 [label="ch_graph_col"];
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v116 -> v126 [label="ch_annotate_col"];
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v117 -> v127 [label="ch_analysis_col"];
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v118 -> v128 [label="ch_layout_col"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v119 -> v120;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v121 -> v122;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v124 -> v125;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v125 -> v126;
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v126 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v128 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v130 [label="ch_report_data"];
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [label="NFCORE_PIXELATOR:PIXELATOR:GENERATE_REPORTS:PIXELATOR_REPORT"];
+v130 -> v140 [label="ch_panel_files_grouped"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v131 [label="ch_report_data"];
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [label="NFCORE_PIXELATOR:PIXELATOR:GENERATE_REPORTS:PIXELATOR_REPORT"];
+v131 -> v140 [label="ch_amplicon_grouped"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v132 [label="ch_report_data"];
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [label="NFCORE_PIXELATOR:PIXELATOR:GENERATE_REPORTS:PIXELATOR_REPORT"];
+v132 -> v140 [label="ch_preqc_grouped"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v133 [label="ch_report_data"];
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [label="NFCORE_PIXELATOR:PIXELATOR:GENERATE_REPORTS:PIXELATOR_REPORT"];
+v133 -> v140 [label="ch_adapterqc_grouped"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v134 [label="ch_report_data"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [label="NFCORE_PIXELATOR:PIXELATOR:GENERATE_REPORTS:PIXELATOR_REPORT"];
+v134 -> v140 [label="ch_demux_grouped"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v135 [label="ch_report_data"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [label="NFCORE_PIXELATOR:PIXELATOR:GENERATE_REPORTS:PIXELATOR_REPORT"];
+v135 -> v140 [label="ch_collapse_grouped"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v136 [label="ch_report_data"];
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [label="NFCORE_PIXELATOR:PIXELATOR:GENERATE_REPORTS:PIXELATOR_REPORT"];
+v136 -> v140 [label="ch_graph_grouped"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v137 [label="ch_report_data"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [label="NFCORE_PIXELATOR:PIXELATOR:GENERATE_REPORTS:PIXELATOR_REPORT"];
+v137 -> v140 [label="ch_annotate_grouped"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v138 [label="ch_report_data"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [label="NFCORE_PIXELATOR:PIXELATOR:GENERATE_REPORTS:PIXELATOR_REPORT"];
+v138 -> v140 [label="ch_analysis_grouped"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v139 [label="ch_report_data"];
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [label="NFCORE_PIXELATOR:PIXELATOR:GENERATE_REPORTS:PIXELATOR_REPORT"];
+v139 -> v140 [label="ch_layout_grouped"];
+
+v140 [label="NFCORE_PIXELATOR:PIXELATOR:GENERATE_REPORTS:PIXELATOR_REPORT"];
+v142 [shape=point];
+v140 -> v142 [label="pixelator_reports"];
+
+v140 [label="NFCORE_PIXELATOR:PIXELATOR:GENERATE_REPORTS:PIXELATOR_REPORT"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v140 -> v143;
+
+v140 [label="NFCORE_PIXELATOR:PIXELATOR:GENERATE_REPORTS:PIXELATOR_REPORT"];
+v141 [shape=point];
+v140 -> v141;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v145 [label="versions"];
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v145 -> v146 [label="versions"];
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v147 -> v148;
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 -> v150;
+
+v149 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v150;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v150 -> v151;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v152 [shape=point];
+v151 -> v152 [label="ch_collated_versions"];
+
+}

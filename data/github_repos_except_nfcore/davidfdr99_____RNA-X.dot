@@ -1,0 +1,58 @@
+digraph "davidfdr99_____RNAX" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [label="TRIMMING"];
+v0 -> v1 [label="read_pairs_ch"];
+
+v1 [label="TRIMMING"];
+v2 [label="FASTQC"];
+v1 -> v2;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v2 [label="FASTQC"];
+v0 -> v2 [label="read_pairs_ch"];
+
+v2 [label="FASTQC"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v6;
+
+v2 [label="FASTQC"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v6;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="INDEX"];
+v3 -> v4 [label="transcriptome"];
+
+v4 [label="INDEX"];
+v5 [label="QUANTIFICATION"];
+v4 -> v5;
+
+v1 [label="TRIMMING"];
+v5 [label="QUANTIFICATION"];
+v1 -> v5;
+
+v5 [label="QUANTIFICATION"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 [label="MULTIQC"];
+v7 -> v8;
+
+v8 [label="MULTIQC"];
+v9 [shape=point];
+v8 -> v9;
+
+v5 [label="QUANTIFICATION"];
+v10 [label="MERGEFILES"];
+v5 -> v10 [label="*"];
+
+v10 [label="MERGEFILES"];
+v11 [shape=point];
+v10 -> v11;
+
+}

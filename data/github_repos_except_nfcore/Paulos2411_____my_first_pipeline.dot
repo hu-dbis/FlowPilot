@@ -1,0 +1,134 @@
+digraph "Paulos2411_____my_first_pipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v1 -> v2 [label="input_"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v6 [label="chRun"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v5 -> v30 [label="chPassthrough"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7 [label="chArgs"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8 [label="chArgsWithDefaults"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v8 -> v9 [label="input_ch"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11 [label="output_ch"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v13 [label="chInitialOutput"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v12 [label="chRun"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v12 -> v15;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=point];
+v13 -> v14;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v11 -> v15 [label="chInitialOutput"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v18 [label="chNewState"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v20 [label="chPublish"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v19 [label="chArgsWithDefaults"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v19 -> v22;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [shape=point];
+v20 -> v21;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v18 -> v22 [label="chPublish"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v25 [label="input_ch"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 [label="vsh_toList:publishStatesSimpleWf:publishStatesProc"];
+v25 -> v26;
+
+v26 [label="vsh_toList:publishStatesSimpleWf:publishStatesProc"];
+v27 [shape=point];
+v26 -> v27;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v28 [label="chNewState"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v31 [shape=point];
+v30 -> v31 [label="chReturn"];
+
+}

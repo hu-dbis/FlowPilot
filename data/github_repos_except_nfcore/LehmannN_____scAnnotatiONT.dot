@@ -1,0 +1,98 @@
+digraph "LehmannN_____scAnnotatiONT" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [label="REANNOTATION:reannotate"];
+v0 -> v8 [label="gtfREF"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [label="REANNOTATION:reannotate"];
+v1 -> v8 [label="bamONT"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v12 [label="MERGEGTF:mergeGTF"];
+v2 -> v12 [label="genomeREF"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v15 [label="QUANTIF:featureCounts"];
+v3 -> v15 [label="bam"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=point];
+v4 -> v5 [label="rscripts"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [shape=point];
+v6 -> v7 [label="matrix"];
+
+v8 [label="REANNOTATION:reannotate"];
+v10 [label="COMPAREGTF_1:compareGTF"];
+v8 -> v10 [label="gtfNOVEL"];
+
+v8 [label="REANNOTATION:reannotate"];
+v9 [shape=point];
+v8 -> v9;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [label="COMPAREGTF_1:compareGTF"];
+v0 -> v10 [label="gtfREF"];
+
+v10 [label="COMPAREGTF_1:compareGTF"];
+v11 [shape=point];
+v10 -> v11;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v12 [label="MERGEGTF:mergeGTF"];
+v0 -> v12 [label="gtfREF"];
+
+v8 [label="REANNOTATION:reannotate"];
+v12 [label="MERGEGTF:mergeGTF"];
+v8 -> v12 [label="gtfNOVEL"];
+
+v12 [label="MERGEGTF:mergeGTF"];
+v13 [label="COMPAREGTF_2:compareGTF"];
+v12 -> v13 [label="gtf"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v13 [label="COMPAREGTF_2:compareGTF"];
+v0 -> v13 [label="gtfREF"];
+
+v13 [label="COMPAREGTF_2:compareGTF"];
+v14 [shape=point];
+v13 -> v14;
+
+v12 [label="MERGEGTF:mergeGTF"];
+v15 [label="QUANTIF:featureCounts"];
+v12 -> v15 [label="gtf"];
+
+v15 [label="QUANTIF:featureCounts"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="last"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="last"];
+v18 [label="QUANTIF:sortBAMFiles"];
+v17 -> v18;
+
+v18 [label="QUANTIF:sortBAMFiles"];
+v19 [label="QUANTIF:buildCountMatrix"];
+v18 -> v19;
+
+v18 [label="QUANTIF:sortBAMFiles"];
+v19 [label="QUANTIF:buildCountMatrix"];
+v18 -> v19;
+
+v19 [label="QUANTIF:buildCountMatrix"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v19 -> v21 [label="countMatrix"];
+
+v19 [label="QUANTIF:buildCountMatrix"];
+v20 [shape=point];
+v19 -> v20;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v22 [shape=point];
+v21 -> v22;
+
+}

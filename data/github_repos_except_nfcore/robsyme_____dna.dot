@@ -1,0 +1,626 @@
+digraph "robsyme_____dna" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v123 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v7 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="GENFLOW_DNA:DNA:INPUT_CHECK:READSETS_CHECK"];
+v2 -> v3 [label="readsets"];
+
+v3 [label="GENFLOW_DNA:DNA:INPUT_CHECK:READSETS_CHECK"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 -> v4;
+
+v3 [label="GENFLOW_DNA:DNA:INPUT_CHECK:READSETS_CHECK"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v7 [label="versions"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v6 [shape=point];
+v5 -> v6;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v48 [label="GENFLOW_DNA:DNA:FASTP"];
+v5 -> v48 [label="reads"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v55 [label="ch_versions"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v13 [label="ch_versions"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v10 [shape=point];
+v9 -> v10 [label="ch_bwa_index"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:BWA_INDEX"];
+v11 -> v12 [label="fasta"];
+
+v12 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:BWA_INDEX"];
+v57 [label="GENFLOW_DNA:DNA:BWA_MEM"];
+v12 -> v57 [label="bwa_index"];
+
+v12 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:BWA_INDEX"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v20 [label="ch_versions"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=point];
+v14 -> v15 [label="ch_dict_index"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:PICARD_CREATESEQUENCEDICTIONARY"];
+v17 -> v18;
+
+v18 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:PICARD_CREATESEQUENCEDICTIONARY"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v19;
+
+v18 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:PICARD_CREATESEQUENCEDICTIONARY"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v20;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v19 -> v43 [label="ch_dict_index"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v27 [label="ch_versions"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=point];
+v21 -> v22 [label="ch_fai_index"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v24 -> v25;
+
+v25 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v26;
+
+v25 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v27;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v26 -> v42 [label="ch_fai_index"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v36 [label="ch_versions"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v29 [shape=point];
+v28 -> v29 [label="ch_interval_list"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 -> v32;
+
+v25 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v25 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 -> v33;
+
+v18 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:PICARD_CREATESEQUENCEDICTIONARY"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:PICARD_SCATTERINTERVALSBYNS"];
+v33 -> v34;
+
+v34 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:PICARD_SCATTERINTERVALSBYNS"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 -> v35;
+
+v34 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:PICARD_SCATTERINTERVALSBYNS"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v36;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v35 -> v37 [label="interval_list"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v36 -> v44 [label="ch_versions"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:GATK4_CONCAT_INTERVALLIST"];
+v38 -> v39;
+
+v39 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:GATK4_CONCAT_INTERVALLIST"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v41;
+
+v39 [label="GENFLOW_DNA:DNA:PREPARE_GENOME:GATK4_CONCAT_INTERVALLIST"];
+v40 [shape=point];
+v39 -> v40;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v41 -> v84 [label="interval_list_concat"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v90 [label="GENFLOW_DNA:DNA:GATK4_BASERECALIBRATOR"];
+v42 -> v90 [label="fai"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v90 [label="GENFLOW_DNA:DNA:GATK4_BASERECALIBRATOR"];
+v43 -> v90 [label="dict"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v45 [shape=point];
+v44 -> v45 [label="versions"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [label="GENFLOW_DNA:DNA:FASTP"];
+v46 -> v48 [label="save_trimmed_fail"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [label="GENFLOW_DNA:DNA:FASTP"];
+v47 -> v48 [label="save_merged"];
+
+v48 [label="GENFLOW_DNA:DNA:FASTP"];
+v57 [label="GENFLOW_DNA:DNA:BWA_MEM"];
+v48 -> v57;
+
+v48 [label="GENFLOW_DNA:DNA:FASTP"];
+v53 [shape=point];
+v48 -> v53;
+
+v48 [label="GENFLOW_DNA:DNA:FASTP"];
+v52 [shape=point];
+v48 -> v52;
+
+v48 [label="GENFLOW_DNA:DNA:FASTP"];
+v51 [shape=point];
+v48 -> v51;
+
+v48 [label="GENFLOW_DNA:DNA:FASTP"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v48 -> v54;
+
+v48 [label="GENFLOW_DNA:DNA:FASTP"];
+v50 [shape=point];
+v48 -> v50;
+
+v48 [label="GENFLOW_DNA:DNA:FASTP"];
+v49 [shape=point];
+v48 -> v49;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v62 [label="ch_versions"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="GENFLOW_DNA:DNA:BWA_MEM"];
+v56 -> v57 [label="sort_bam"];
+
+v57 [label="GENFLOW_DNA:DNA:BWA_MEM"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 -> v58;
+
+v57 [label="GENFLOW_DNA:DNA:BWA_MEM"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v57 -> v61;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v60 [label="GENFLOW_DNA:DNA:PICARD_MERGESAMFILES"];
+v59 -> v60;
+
+v60 [label="GENFLOW_DNA:DNA:PICARD_MERGESAMFILES"];
+v66 [label="GENFLOW_DNA:DNA:PICARD_SORT_BEFORE_DEDUP"];
+v60 -> v66;
+
+v60 [label="GENFLOW_DNA:DNA:PICARD_MERGESAMFILES"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v60 -> v63;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v64 [label="ch_versions"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v74 [label="ch_versions"];
+
+v65 [shape=point,label="",fixedsize=true,width=0.1];
+v66 [label="GENFLOW_DNA:DNA:PICARD_SORT_BEFORE_DEDUP"];
+v65 -> v66 [label="sort_order"];
+
+v66 [label="GENFLOW_DNA:DNA:PICARD_SORT_BEFORE_DEDUP"];
+v67 [label="GENFLOW_DNA:DNA:PICARD_MARKDUPLICATES"];
+v66 -> v67;
+
+v66 [label="GENFLOW_DNA:DNA:PICARD_SORT_BEFORE_DEDUP"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v66 -> v73;
+
+v67 [label="GENFLOW_DNA:DNA:PICARD_MARKDUPLICATES"];
+v71 [label="GENFLOW_DNA:DNA:PICARD_SORT_AFTER_DEDUP"];
+v67 -> v71;
+
+v67 [label="GENFLOW_DNA:DNA:PICARD_MARKDUPLICATES"];
+v69 [shape=point];
+v67 -> v69;
+
+v67 [label="GENFLOW_DNA:DNA:PICARD_MARKDUPLICATES"];
+v68 [shape=point];
+v67 -> v68;
+
+v67 [label="GENFLOW_DNA:DNA:PICARD_MARKDUPLICATES"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v67 -> v75;
+
+v70 [shape=point,label="",fixedsize=true,width=0.1];
+v71 [label="GENFLOW_DNA:DNA:PICARD_SORT_AFTER_DEDUP"];
+v70 -> v71 [label="sort_order"];
+
+v71 [label="GENFLOW_DNA:DNA:PICARD_SORT_AFTER_DEDUP"];
+v77 [label="GENFLOW_DNA:DNA:SAMTOOLS_INDEX"];
+v71 -> v77;
+
+v71 [label="GENFLOW_DNA:DNA:PICARD_SORT_AFTER_DEDUP"];
+v72 [shape=point];
+v71 -> v72;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v76 [label="ch_versions"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v76 -> v115 [label="ch_versions"];
+
+v77 [label="GENFLOW_DNA:DNA:SAMTOOLS_INDEX"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v77 -> v83;
+
+v77 [label="GENFLOW_DNA:DNA:SAMTOOLS_INDEX"];
+v80 [shape=point];
+v77 -> v80;
+
+v77 [label="GENFLOW_DNA:DNA:SAMTOOLS_INDEX"];
+v79 [shape=point];
+v77 -> v79;
+
+v77 [label="GENFLOW_DNA:DNA:SAMTOOLS_INDEX"];
+v78 [shape=point];
+v77 -> v78;
+
+v81 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v82 [shape=point];
+v81 -> v82 [label="ch_recal_intervals"];
+
+v71 [label="GENFLOW_DNA:DNA:PICARD_SORT_AFTER_DEDUP"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v71 -> v83;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v83 -> v84 [label="ch_bam_bai"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v90 [label="GENFLOW_DNA:DNA:GATK4_BASERECALIBRATOR"];
+v84 -> v90 [label="ch_bam_bai_intervals"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v85 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v90 [label="GENFLOW_DNA:DNA:GATK4_BASERECALIBRATOR"];
+v86 -> v90 [label="ch_recalibration_vcfs"];
+
+v87 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v87 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v90 [label="GENFLOW_DNA:DNA:GATK4_BASERECALIBRATOR"];
+v88 -> v90 [label="ch_recalibration_tbis"];
+
+v89 [shape=point,label="",fixedsize=true,width=0.1];
+v90 [label="GENFLOW_DNA:DNA:GATK4_BASERECALIBRATOR"];
+v89 -> v90 [label="fasta"];
+
+v90 [label="GENFLOW_DNA:DNA:GATK4_BASERECALIBRATOR"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v90 -> v92;
+
+v90 [label="GENFLOW_DNA:DNA:GATK4_BASERECALIBRATOR"];
+v91 [shape=point];
+v90 -> v91;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v83 -> v92 [label="ch_bam_bai"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v92 -> v93 [label="ch_bam_bai_recal"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v41 -> v93 [label="interval_list_concat"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v94 [label="GENFLOW_DNA:DNA:GATK4_APPLYBQSR"];
+v93 -> v94 [label="ch_bam_bai_recal_intervals"];
+
+v89 [shape=point,label="",fixedsize=true,width=0.1];
+v94 [label="GENFLOW_DNA:DNA:GATK4_APPLYBQSR"];
+v89 -> v94 [label="fasta"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v94 [label="GENFLOW_DNA:DNA:GATK4_APPLYBQSR"];
+v42 -> v94 [label="fai"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v94 [label="GENFLOW_DNA:DNA:GATK4_APPLYBQSR"];
+v43 -> v94 [label="dict"];
+
+v94 [label="GENFLOW_DNA:DNA:GATK4_APPLYBQSR"];
+v97 [label="GENFLOW_DNA:DNA:SAMTOOLS_INDEX_FOR_HAPLOTYPING"];
+v94 -> v97 [label="ch_bam_for_haplotypecaller"];
+
+v94 [label="GENFLOW_DNA:DNA:GATK4_APPLYBQSR"];
+v96 [shape=point];
+v94 -> v96;
+
+v94 [label="GENFLOW_DNA:DNA:GATK4_APPLYBQSR"];
+v95 [shape=point];
+v94 -> v95;
+
+v97 [label="GENFLOW_DNA:DNA:SAMTOOLS_INDEX_FOR_HAPLOTYPING"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v97 -> v101;
+
+v97 [label="GENFLOW_DNA:DNA:SAMTOOLS_INDEX_FOR_HAPLOTYPING"];
+v100 [shape=point];
+v97 -> v100;
+
+v97 [label="GENFLOW_DNA:DNA:SAMTOOLS_INDEX_FOR_HAPLOTYPING"];
+v99 [shape=point];
+v97 -> v99;
+
+v97 [label="GENFLOW_DNA:DNA:SAMTOOLS_INDEX_FOR_HAPLOTYPING"];
+v98 [shape=point];
+v97 -> v98;
+
+v94 [label="GENFLOW_DNA:DNA:GATK4_APPLYBQSR"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v94 -> v101 [label="ch_bam_for_haplotypecaller"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v101 -> v102;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v35 -> v102 [label="interval_list"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v109 [label="GENFLOW_DNA:DNA:GATK4_HAPLOTYPECALLER"];
+v102 -> v109 [label="ch_haplotypecaller_inputs"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v109 [label="GENFLOW_DNA:DNA:GATK4_HAPLOTYPECALLER"];
+v105 -> v109 [label="ch_dbsnp_vcfs"];
+
+v106 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v109 [label="GENFLOW_DNA:DNA:GATK4_HAPLOTYPECALLER"];
+v108 -> v109 [label="ch_dbsnp_tbis"];
+
+v89 [shape=point,label="",fixedsize=true,width=0.1];
+v109 [label="GENFLOW_DNA:DNA:GATK4_HAPLOTYPECALLER"];
+v89 -> v109 [label="fasta"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v109 [label="GENFLOW_DNA:DNA:GATK4_HAPLOTYPECALLER"];
+v42 -> v109 [label="fai"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v109 [label="GENFLOW_DNA:DNA:GATK4_HAPLOTYPECALLER"];
+v43 -> v109 [label="dict"];
+
+v109 [label="GENFLOW_DNA:DNA:GATK4_HAPLOTYPECALLER"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v109 -> v111;
+
+v109 [label="GENFLOW_DNA:DNA:GATK4_HAPLOTYPECALLER"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v109 -> v111;
+
+v109 [label="GENFLOW_DNA:DNA:GATK4_HAPLOTYPECALLER"];
+v110 [shape=point];
+v109 -> v110;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v111 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v114 [shape=point];
+v113 -> v114;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v115 -> v116;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v117 [label="GENFLOW_DNA:DNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v116 -> v117;
+
+v117 [label="GENFLOW_DNA:DNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v119 [shape=point];
+v117 -> v119;
+
+v117 [label="GENFLOW_DNA:DNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v117 -> v129;
+
+v117 [label="GENFLOW_DNA:DNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v118 [shape=point];
+v117 -> v118;
+
+v120 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v122 [label="ch_multiqc_files"];
+
+v121 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v122;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v125 [label="ch_multiqc_files"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v125;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v128 [label="ch_multiqc_files"];
+
+v126 [shape=point,label="",fixedsize=true,width=0.1];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v126 -> v127 [label="ch_workflow_summary"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v130 [label="ch_multiqc_files"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v130 -> v131 [label="ch_multiqc_files"];
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v132 [label="GENFLOW_DNA:DNA:MULTIQC"];
+v131 -> v132;
+
+v132 [label="GENFLOW_DNA:DNA:MULTIQC"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v132 -> v135;
+
+v132 [label="GENFLOW_DNA:DNA:MULTIQC"];
+v134 [shape=point];
+v132 -> v134;
+
+v132 [label="GENFLOW_DNA:DNA:MULTIQC"];
+v133 [shape=point];
+v132 -> v133;
+
+v132 [label="GENFLOW_DNA:DNA:MULTIQC"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v137;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v136 [shape=point];
+v135 -> v136;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v137 [label="ch_versions"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 [shape=point];
+v137 -> v138 [label="ch_versions"];
+
+}

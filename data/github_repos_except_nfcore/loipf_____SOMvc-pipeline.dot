@@ -1,0 +1,194 @@
+digraph "loipf_____SOMvcpipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v9 [label="SOMVC_LOFREQ"];
+v4 -> v9 [label="channel_sample_match"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="INDEX_REFERENCE"];
+v5 -> v7 [label="reference_genome"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="INDEX_REFERENCE"];
+v6 -> v7 [label="bed_file"];
+
+v7 [label="INDEX_REFERENCE"];
+v9 [label="SOMVC_LOFREQ"];
+v7 -> v9;
+
+v7 [label="INDEX_REFERENCE"];
+v9 [label="SOMVC_LOFREQ"];
+v7 -> v9;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [label="SOMVC_LOFREQ"];
+v8 -> v9 [label="num_threads"];
+
+v9 [label="SOMVC_LOFREQ"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 -> v20;
+
+v9 [label="SOMVC_LOFREQ"];
+v11 [shape=point];
+v9 -> v11;
+
+v9 [label="SOMVC_LOFREQ"];
+v10 [shape=point];
+v9 -> v10;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v13 [label="SOMVC_MUTECT2"];
+v4 -> v13 [label="channel_sample_match"];
+
+v7 [label="INDEX_REFERENCE"];
+v13 [label="SOMVC_MUTECT2"];
+v7 -> v13 [label="reference_genome"];
+
+v7 [label="INDEX_REFERENCE"];
+v13 [label="SOMVC_MUTECT2"];
+v7 -> v13 [label="bed_file"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="SOMVC_MUTECT2"];
+v12 -> v13 [label="num_threads"];
+
+v13 [label="SOMVC_MUTECT2"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v13 -> v20;
+
+v13 [label="SOMVC_MUTECT2"];
+v14 [shape=point];
+v13 -> v14;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v16 [label="SOMVC_STRELKA"];
+v4 -> v16 [label="channel_sample_match"];
+
+v7 [label="INDEX_REFERENCE"];
+v16 [label="SOMVC_STRELKA"];
+v7 -> v16 [label="reference_genome"];
+
+v7 [label="INDEX_REFERENCE"];
+v16 [label="SOMVC_STRELKA"];
+v7 -> v16 [label="bed_file"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="SOMVC_STRELKA"];
+v15 -> v16 [label="num_threads"];
+
+v16 [label="SOMVC_STRELKA"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v16 -> v21;
+
+v16 [label="SOMVC_STRELKA"];
+v17 [shape=point];
+v16 -> v17 [label="manta_sv"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v19 [label="SOMVC_VARDICT"];
+v4 -> v19 [label="channel_sample_match"];
+
+v7 [label="INDEX_REFERENCE"];
+v19 [label="SOMVC_VARDICT"];
+v7 -> v19 [label="reference_genome"];
+
+v7 [label="INDEX_REFERENCE"];
+v19 [label="SOMVC_VARDICT"];
+v7 -> v19 [label="bed_file"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1];
+v19 [label="SOMVC_VARDICT"];
+v18 -> v19 [label="num_threads"];
+
+v19 [label="SOMVC_VARDICT"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 -> v22;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 [label="SOMATIC_COMBINER"];
+v22 -> v23 [label="channel_all_vc"];
+
+v23 [label="SOMATIC_COMBINER"];
+v25 [label="VARIANT_CALLING_STATS"];
+v23 -> v25;
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v25 [label="VARIANT_CALLING_STATS"];
+v24 -> v25 [label="num_threads"];
+
+v25 [label="VARIANT_CALLING_STATS"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 -> v33;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v26 [label="CONPAIR_CONTAMINATION"];
+v4 -> v26 [label="channel_sample_match"];
+
+v7 [label="INDEX_REFERENCE"];
+v26 [label="CONPAIR_CONTAMINATION"];
+v7 -> v26 [label="reference_genome"];
+
+v26 [label="CONPAIR_CONTAMINATION"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 -> v34;
+
+v23 [label="SOMATIC_COMBINER"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [label="MERGE_VCF"];
+v27 -> v29;
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="MERGE_VCF"];
+v28 -> v29 [label="num_threads"];
+
+v29 [label="MERGE_VCF"];
+v31 [label="VARIANT_ANNOTATION"];
+v29 -> v31;
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [label="VARIANT_ANNOTATION"];
+v30 -> v31 [label="num_threads"];
+
+v31 [label="VARIANT_ANNOTATION"];
+v32 [shape=point];
+v31 -> v32;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v35 [label="MULTIQC_VCF"];
+v33 -> v35;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v35 [label="MULTIQC_VCF"];
+v34 -> v35;
+
+v35 [label="MULTIQC_VCF"];
+v36 [shape=point];
+v35 -> v36;
+
+}

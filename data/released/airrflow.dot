@@ -1,0 +1,1558 @@
+digraph "airrflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v316 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v317 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3 [label="ch_multiqc_logo"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 -> v265 [label="ch_report_rmd"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 -> v266 [label="ch_report_css"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v267 [label="ch_report_logo"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v185 [label="ch_report_logo_img"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=point];
+v8 -> v9 [label="ch_report_rmd"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [shape=point];
+v10 -> v11 [label="ch_report_css"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v13 [shape=point];
+v12 -> v13 [label="versions"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v35 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:FASTQ_INPUT_CHECK:SAMPLESHEET_CHECK"];
+v14 -> v35 [label="samplesheet"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v122 [label="ch_versions"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v252 [label="ch_reassign_logs"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v22 [label="ch_versions"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v20 [label="ch_igblast_zipped"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 [label="NFCORE_AIRRFLOW:AIRRFLOW:DATABASES:UNZIP_IGBLAST"];
+v20 -> v21;
+
+v21 [label="NFCORE_AIRRFLOW:AIRRFLOW:DATABASES:UNZIP_IGBLAST"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 -> v29 [label="igblast"];
+
+v21 [label="NFCORE_AIRRFLOW:AIRRFLOW:DATABASES:UNZIP_IGBLAST"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v27 [label="ch_versions"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 -> v25 [label="ch_reference_fasta_zipped"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [label="NFCORE_AIRRFLOW:AIRRFLOW:DATABASES:UNZIP_REFERENCE_FASTA"];
+v25 -> v26;
+
+v26 [label="NFCORE_AIRRFLOW:AIRRFLOW:DATABASES:UNZIP_REFERENCE_FASTA"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 -> v135 [label="reference_fasta"];
+
+v26 [label="NFCORE_AIRRFLOW:AIRRFLOW:DATABASES:UNZIP_REFERENCE_FASTA"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 [shape=point];
+v27 -> v28 [label="versions"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 -> v44 [label="ch_igblast"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 -> v70 [label="ch_vprimers"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v69 [label="ch_cprimers"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v33 [shape=point];
+v32 -> v33 [label="ch_internal_cregion"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v43 [label="ch_versions"];
+
+v35 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:FASTQ_INPUT_CHECK:SAMPLESHEET_CHECK"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v35 -> v36 [label="samplesheet"];
+
+v35 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:FASTQ_INPUT_CHECK:SAMPLESHEET_CHECK"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v42 [label="ch_versions"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v41;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v40 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:FASTQ_INPUT_CHECK:CAT_FASTQ"];
+v39 -> v40;
+
+v40 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:FASTQ_INPUT_CHECK:CAT_FASTQ"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v41;
+
+v40 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:FASTQ_INPUT_CHECK:CAT_FASTQ"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v42;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 -> v47 [label="ch_reads"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v43 [label="versions"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v121 [label="ch_versions"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 [shape=point];
+v44 -> v45 [label="ch_igblast"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v55 [label="ch_versions"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTP"];
+v47 -> v51 [label="ch_reads_R1_R2"];
+
+v48 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTP"];
+v48 -> v51 [label="adapter_fasta"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTP"];
+v49 -> v51 [label="save_trimmed_fail"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTP"];
+v50 -> v51 [label="save_merged"];
+
+v51 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTP"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 -> v56;
+
+v51 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTP"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 -> v112;
+
+v51 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTP"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 -> v113;
+
+v51 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTP"];
+v54 [shape=point];
+v51 -> v54;
+
+v51 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTP"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v55;
+
+v51 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTP"];
+v53 [shape=point];
+v51 -> v53;
+
+v51 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTP"];
+v52 [shape=point];
+v51 -> v52;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v61 [label="ch_versions"];
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v58 [label="ch_meta_R1_R2"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 -> v57 [label="ch_reads"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v57 -> v58 [label="ch_meta_index"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:MERGE_UMI"];
+v59 -> v60 [label="ch_meta_R1_R2_index"];
+
+v60 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:MERGE_UMI"];
+v62 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:GUNZIP_UMI"];
+v60 -> v62 [label="ch_gunzip"];
+
+v60 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:MERGE_UMI"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v63 [label="ch_versions"];
+
+v62 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:GUNZIP_UMI"];
+v64 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_FILTERSEQ_UMI"];
+v62 -> v64;
+
+v62 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:GUNZIP_UMI"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v68 [label="ch_versions"];
+
+v64 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_FILTERSEQ_UMI"];
+v71 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_MASKPRIMERS_UMI"];
+v64 -> v71;
+
+v64 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_FILTERSEQ_UMI"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v64 -> v124 [label="presto_filterseq_logs"];
+
+v64 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_FILTERSEQ_UMI"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v68;
+
+v64 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_FILTERSEQ_UMI"];
+v67 [shape=point];
+v64 -> v67;
+
+v64 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_FILTERSEQ_UMI"];
+v66 [shape=point];
+v64 -> v66;
+
+v64 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_FILTERSEQ_UMI"];
+v65 [shape=point];
+v64 -> v65;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v75 [label="ch_versions"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v71 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_MASKPRIMERS_UMI"];
+v69 -> v71;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v71 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_MASKPRIMERS_UMI"];
+v70 -> v71;
+
+v71 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_MASKPRIMERS_UMI"];
+v76 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PAIRSEQ_UMI"];
+v71 -> v76;
+
+v71 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_MASKPRIMERS_UMI"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v71 -> v114 [label="ch_maskprimers_logs"];
+
+v71 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_MASKPRIMERS_UMI"];
+v74 [shape=point];
+v71 -> v74;
+
+v71 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_MASKPRIMERS_UMI"];
+v73 [shape=point];
+v71 -> v73;
+
+v71 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_MASKPRIMERS_UMI"];
+v72 [shape=point];
+v71 -> v72;
+
+v71 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_MASKPRIMERS_UMI"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v77 [label="ch_versions"];
+
+v76 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PAIRSEQ_UMI"];
+v78 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_CLUSTERSETS_UMI"];
+v76 -> v78 [label="ch_for_clustersets"];
+
+v76 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PAIRSEQ_UMI"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v76 -> v115 [label="ch_pairseq_logs"];
+
+v76 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PAIRSEQ_UMI"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v81 [label="ch_versions"];
+
+v78 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_CLUSTERSETS_UMI"];
+v82 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PARSE_CLUSTER_UMI"];
+v78 -> v82;
+
+v78 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_CLUSTERSETS_UMI"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v78 -> v85;
+
+v78 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_CLUSTERSETS_UMI"];
+v80 [shape=point];
+v78 -> v80;
+
+v78 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_CLUSTERSETS_UMI"];
+v79 [shape=point];
+v78 -> v79;
+
+v78 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_CLUSTERSETS_UMI"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v84 [label="ch_versions"];
+
+v82 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PARSE_CLUSTER_UMI"];
+v86 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_BUILDCONSENSUS_UMI"];
+v82 -> v86 [label="ch_for_buildconsensus"];
+
+v82 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PARSE_CLUSTER_UMI"];
+v83 [shape=point];
+v82 -> v83;
+
+v82 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PARSE_CLUSTER_UMI"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v90 [label="ch_versions"];
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v85 -> v127 [label="presto_clustersets_logs"];
+
+v86 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_BUILDCONSENSUS_UMI"];
+v91 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_POSTCONSENSUS_PAIRSEQ_UMI"];
+v86 -> v91 [label="ch_postconsensus"];
+
+v86 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_BUILDCONSENSUS_UMI"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v86 -> v116 [label="ch_buildconsensus_logs"];
+
+v86 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_BUILDCONSENSUS_UMI"];
+v89 [shape=point];
+v86 -> v89;
+
+v86 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_BUILDCONSENSUS_UMI"];
+v88 [shape=point];
+v86 -> v88;
+
+v86 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_BUILDCONSENSUS_UMI"];
+v87 [shape=point];
+v86 -> v87;
+
+v86 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_BUILDCONSENSUS_UMI"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v92 [label="ch_versions"];
+
+v91 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_POSTCONSENSUS_PAIRSEQ_UMI"];
+v93 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_ASSEMBLEPAIRS_UMI"];
+v91 -> v93;
+
+v91 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_POSTCONSENSUS_PAIRSEQ_UMI"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v91 -> v117;
+
+v91 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_POSTCONSENSUS_PAIRSEQ_UMI"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v96 [label="ch_versions"];
+
+v93 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_ASSEMBLEPAIRS_UMI"];
+v97 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTQC_POSTASSEMBLY_UMI"];
+v93 -> v97 [label="ch_parseheaders_reads"];
+
+v93 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_ASSEMBLEPAIRS_UMI"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v93 -> v118 [label="ch_assemblepairs_logs"];
+
+v93 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_ASSEMBLEPAIRS_UMI"];
+v95 [shape=point];
+v93 -> v95;
+
+v93 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_ASSEMBLEPAIRS_UMI"];
+v94 [shape=point];
+v93 -> v94;
+
+v93 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_ASSEMBLEPAIRS_UMI"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v99 [label="ch_versions"];
+
+v97 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTQC_POSTASSEMBLY_UMI"];
+v98 [shape=point];
+v97 -> v98;
+
+v97 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTQC_POSTASSEMBLY_UMI"];
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v97 -> v312 [label="ch_fastqc_postassembly_mqc"];
+
+v97 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:FASTQC_POSTASSEMBLY_UMI"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v101 [label="ch_versions"];
+
+v93 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_ASSEMBLEPAIRS_UMI"];
+v100 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PARSEHEADERS_COLLAPSE_UMI"];
+v93 -> v100 [label="ch_parseheaders_reads"];
+
+v100 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PARSEHEADERS_COLLAPSE_UMI"];
+v102 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PARSEHEADERS_PRIMERS_UMI"];
+v100 -> v102;
+
+v100 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PARSEHEADERS_COLLAPSE_UMI"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v103 [label="ch_versions"];
+
+v102 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PARSEHEADERS_PRIMERS_UMI"];
+v104 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_COLLAPSESEQ_UMI"];
+v102 -> v104;
+
+v102 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PARSEHEADERS_PRIMERS_UMI"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v107 [label="ch_versions"];
+
+v104 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_COLLAPSESEQ_UMI"];
+v108 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PARSEHEADERS_METADATA_UMI"];
+v104 -> v108 [label="ch_collapsed"];
+
+v104 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_COLLAPSESEQ_UMI"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v104 -> v119 [label="ch_collapse_logs"];
+
+v104 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_COLLAPSESEQ_UMI"];
+v106 [shape=point];
+v104 -> v106;
+
+v104 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_COLLAPSESEQ_UMI"];
+v105 [shape=point];
+v104 -> v105;
+
+v104 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_COLLAPSESEQ_UMI"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v109 [label="ch_versions"];
+
+v108 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PARSEHEADERS_METADATA_UMI"];
+v110 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_SPLITSEQ_UMI"];
+v108 -> v110;
+
+v108 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_PARSEHEADERS_METADATA_UMI"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v111 [label="ch_versions"];
+
+v110 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_SPLITSEQ_UMI"];
+v139 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_ASSIGNGENES"];
+v110 -> v139 [label="ch_fasta"];
+
+v110 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_SPLITSEQ_UMI"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v110 -> v120;
+
+v110 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:PRESTO_UMI:PRESTO_SPLITSEQ_UMI"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v111;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v121 [label="ch_presto_software"];
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v309 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v112 -> v309 [label="ch_fastp_json"];
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v113 -> v306 [label="ch_fastp_html"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v114 -> v125 [label="presto_maskprimers_logs"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v115 -> v126 [label="presto_pairseq_logs"];
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v116 -> v128 [label="presto_buildconsensus_logs"];
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v117 -> v129 [label="presto_postconsensus_pairseq_logs"];
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v118 -> v130 [label="presto_assemblepairs_logs"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v119 -> v131 [label="presto_collapseseq_logs"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v120 -> v132 [label="presto_splitseq_logs"];
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v122 [label="versions"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v158 [label="ch_versions"];
+
+v35 [label="NFCORE_AIRRFLOW:AIRRFLOW:SEQUENCE_ASSEMBLY:FASTQ_INPUT_CHECK:SAMPLESHEET_CHECK"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v35 -> v123 [label="samplesheet"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v123 -> v133 [label="ch_validated_samplesheet"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v124 -> v234 [label="ch_presto_filterseq_logs"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v125 -> v236 [label="ch_presto_maskprimers_logs"];
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 -> v238 [label="ch_presto_pairseq_logs"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v127 -> v240 [label="ch_presto_clustersets_logs"];
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v128 -> v242 [label="ch_presto_buildconsensus_logs"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v129 -> v244 [label="ch_presto_postconsensus_pairseq_logs"];
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v130 -> v246 [label="ch_presto_assemblepairs_logs"];
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v131 -> v248 [label="ch_presto_collapseseq_logs"];
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v132 -> v250 [label="ch_presto_splitseq_logs"];
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v155 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:ADD_META_TO_TAB"];
+v133 -> v155 [label="ch_validated_samplesheet"];
+
+v21 [label="NFCORE_AIRRFLOW:AIRRFLOW:DATABASES:UNZIP_IGBLAST"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 -> v134 [label="igblast"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v134 -> v138 [label="reference_igblast"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v135 -> v142 [label="reference_fasta"];
+
+v136 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v141 [label="ch_versions"];
+
+v137 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v140 [label="ch_logs"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v139 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_ASSIGNGENES"];
+v138 -> v139;
+
+v139 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_ASSIGNGENES"];
+v143 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_MAKEDB"];
+v139 -> v143;
+
+v139 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_ASSIGNGENES"];
+v143 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_MAKEDB"];
+v139 -> v143;
+
+v139 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_ASSIGNGENES"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v141;
+
+v139 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_ASSIGNGENES"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v144 [label="ch_logs"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v145 [label="ch_versions"];
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v143 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_MAKEDB"];
+v142 -> v143;
+
+v143 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_MAKEDB"];
+v146 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:FILTER_QUALITY"];
+v143 -> v146 [label="ch_assigned_tab"];
+
+v143 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_MAKEDB"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v144 [label="changeo_makedb_logs"];
+
+v143 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_MAKEDB"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v145;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v147 [label="ch_logs"];
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v148 [label="ch_versions"];
+
+v146 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:FILTER_QUALITY"];
+v149 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_PARSEDB_SPLIT"];
+v146 -> v149;
+
+v146 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:FILTER_QUALITY"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 -> v147;
+
+v146 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:FILTER_QUALITY"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 -> v148;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v150 [label="ch_logs"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 -> v151 [label="ch_versions"];
+
+v149 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_PARSEDB_SPLIT"];
+v152 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:FILTER_JUNCTION_MOD3"];
+v149 -> v152;
+
+v149 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_PARSEDB_SPLIT"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v150;
+
+v149 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_PARSEDB_SPLIT"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v151;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 -> v153 [label="ch_logs"];
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 -> v154 [label="ch_versions"];
+
+v152 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:FILTER_JUNCTION_MOD3"];
+v155 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:ADD_META_TO_TAB"];
+v152 -> v155 [label="ch_repertoire"];
+
+v152 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:FILTER_JUNCTION_MOD3"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v153;
+
+v152 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:FILTER_JUNCTION_MOD3"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v154;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v156 [label="ch_logs"];
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 -> v157 [label="ch_versions"];
+
+v155 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:ADD_META_TO_TAB"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v155 -> v159 [label="repertoire"];
+
+v155 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:ADD_META_TO_TAB"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v156;
+
+v155 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:ADD_META_TO_TAB"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v157;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v156 -> v256 [label="logs"];
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 -> v158 [label="versions"];
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 -> v168 [label="ch_versions"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v164 [label="NFCORE_AIRRFLOW:AIRRFLOW:BULK_QC_AND_FILTER:COLLAPSE_DUPLICATES"];
+v159 -> v164 [label="ch_bulk_chimeric_pass"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v159 -> v171 [label="repertoires"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v135 -> v160 [label="reference_fasta"];
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v161 [shape=point];
+v160 -> v161 [label="ch_reference_fasta"];
+
+v162 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v166 [label="ch_versions"];
+
+v163 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v167 [label="ch_logs"];
+
+v164 [label="NFCORE_AIRRFLOW:AIRRFLOW:BULK_QC_AND_FILTER:COLLAPSE_DUPLICATES"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v183 [label="ch_bulk_filtered"];
+
+v164 [label="NFCORE_AIRRFLOW:AIRRFLOW:BULK_QC_AND_FILTER:COLLAPSE_DUPLICATES"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v167;
+
+v164 [label="NFCORE_AIRRFLOW:AIRRFLOW:BULK_QC_AND_FILTER:COLLAPSE_DUPLICATES"];
+v165 [shape=point];
+v164 -> v165;
+
+v164 [label="NFCORE_AIRRFLOW:AIRRFLOW:BULK_QC_AND_FILTER:COLLAPSE_DUPLICATES"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v166;
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v168 [label="versions"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v167 -> v258 [label="logs"];
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v182 [label="ch_versions"];
+
+v169 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v179 [label="ch_versions"];
+
+v170 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 -> v178 [label="ch_logs"];
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v171 -> v180 [label="ch_onlymeta"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v159 -> v172 [label="repertoires"];
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v172 -> v173;
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v174 [label="NFCORE_AIRRFLOW:AIRRFLOW:SINGLE_CELL_QC_AND_FILTERING:SINGLE_CELL_QC"];
+v173 -> v174 [label="ch_repertoire_allsc"];
+
+v174 [label="NFCORE_AIRRFLOW:AIRRFLOW:SINGLE_CELL_QC_AND_FILTERING:SINGLE_CELL_QC"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v174 -> v176;
+
+v174 [label="NFCORE_AIRRFLOW:AIRRFLOW:SINGLE_CELL_QC_AND_FILTERING:SINGLE_CELL_QC"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 -> v178;
+
+v174 [label="NFCORE_AIRRFLOW:AIRRFLOW:SINGLE_CELL_QC_AND_FILTERING:SINGLE_CELL_QC"];
+v175 [shape=point];
+v174 -> v175;
+
+v174 [label="NFCORE_AIRRFLOW:AIRRFLOW:SINGLE_CELL_QC_AND_FILTERING:SINGLE_CELL_QC"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 -> v179;
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v176 -> v177;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v177 -> v180 [label="ch_repertoire_after_scqc_with_sampleid"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v178 -> v260 [label="logs"];
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v182 [label="versions"];
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v180 -> v181;
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 -> v183 [label="repertoires"];
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v233 [label="ch_versions"];
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v183 -> v189 [label="ch_repertoire"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v135 -> v184 [label="reference_fasta"];
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v184 -> v207 [label="ch_reference_fasta"];
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v185 -> v186;
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v194 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:FIND_CLONAL_THRESHOLD"];
+v186 -> v194 [label="ch_logo"];
+
+v187 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 -> v198 [label="ch_versions"];
+
+v188 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v188 -> v262 [label="logs"];
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v189 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v190 -> v191 [label="ch_find_threshold"];
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v191 -> v192;
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v192 -> v193;
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v194 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:FIND_CLONAL_THRESHOLD"];
+v193 -> v194 [label="ch_find_threshold_samplesheet"];
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v194 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:FIND_CLONAL_THRESHOLD"];
+v190 -> v194 [label="ch_find_threshold"];
+
+v194 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:FIND_CLONAL_THRESHOLD"];
+v197 [shape=point];
+v194 -> v197;
+
+v194 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:FIND_CLONAL_THRESHOLD"];
+v196 [shape=point];
+v194 -> v196;
+
+v194 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:FIND_CLONAL_THRESHOLD"];
+v195 [shape=point];
+v194 -> v195;
+
+v194 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:FIND_CLONAL_THRESHOLD"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v194 -> v199 [label="ch_threshold"];
+
+v194 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:FIND_CLONAL_THRESHOLD"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v198;
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 -> v212 [label="ch_versions"];
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v199 -> v200;
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v200 -> v201;
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v201 -> v202;
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v202 -> v206 [label="clone_threshold"];
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v183 -> v203 [label="ch_repertoire"];
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v203 -> v204;
+
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v204 -> v205;
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v209 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_COMPUTE"];
+v205 -> v209 [label="ch_define_clones"];
+
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v209 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_COMPUTE"];
+v206 -> v209;
+
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v209 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_COMPUTE"];
+v207 -> v209;
+
+v208 [shape=point,label="",fixedsize=true,width=0.1];
+v209 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_COMPUTE"];
+v208 -> v209 [label="repertoires_samplesheet"];
+
+v209 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_COMPUTE"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v209 -> v214;
+
+v209 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_COMPUTE"];
+v211 [shape=point];
+v209 -> v211;
+
+v209 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_COMPUTE"];
+v210 [shape=point];
+v209 -> v210;
+
+v209 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_COMPUTE"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 -> v212;
+
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v213 [shape=point];
+v212 -> v213 [label="ch_versions"];
+
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v214 -> v215;
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v215 -> v216 [label="ch_repertoires"];
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v216 -> v217;
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v217 -> v218;
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v218 -> v219;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v219 -> v220;
+
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v223 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_REPORT"];
+v220 -> v223 [label="ch_all_repertoires_cloned_samplesheet"];
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v202 -> v221 [label="clone_threshold"];
+
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v223 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_REPORT"];
+v221 -> v223;
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v184 -> v222 [label="ch_reference_fasta"];
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v223 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_REPORT"];
+v222 -> v223;
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v223 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_REPORT"];
+v215 -> v223 [label="ch_repertoires"];
+
+v223 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_REPORT"];
+v226 [shape=point];
+v223 -> v226;
+
+v223 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_REPORT"];
+v225 [shape=point];
+v223 -> v225;
+
+v223 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_REPORT"];
+v224 [shape=point];
+v223 -> v224;
+
+v223 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_REPORT"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 -> v232 [label="ch_versions"];
+
+v209 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DEFINE_CLONES_COMPUTE"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v209 -> v227;
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v227 -> v228;
+
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v229 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DOWSER_LINEAGES"];
+v228 -> v229 [label="ch_repertoires_cloned"];
+
+v229 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DOWSER_LINEAGES"];
+v231 [shape=point];
+v229 -> v231;
+
+v229 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DOWSER_LINEAGES"];
+v230 [shape=point];
+v229 -> v230;
+
+v229 [label="NFCORE_AIRRFLOW:AIRRFLOW:CLONAL_ANALYSIS:DOWSER_LINEAGES"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v229 -> v232;
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 -> v233 [label="versions"];
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v291 [label="ch_versions"];
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v234 -> v235;
+
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v270 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:PARSE_LOGS"];
+v235 -> v270 [label="ch_presto_filterseq_logs"];
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v236 -> v237;
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v270 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:PARSE_LOGS"];
+v237 -> v270 [label="ch_presto_maskprimers_logs"];
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v238 -> v239;
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v270 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:PARSE_LOGS"];
+v239 -> v270 [label="ch_presto_pairseq_logs"];
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v240 -> v241;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v270 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:PARSE_LOGS"];
+v241 -> v270 [label="ch_presto_clustersets_logs"];
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v242 -> v243;
+
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v270 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:PARSE_LOGS"];
+v243 -> v270 [label="ch_presto_buildconsensus_logs"];
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v244 -> v245;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v270 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:PARSE_LOGS"];
+v245 -> v270 [label="ch_presto_postconsensus_pairseq_logs"];
+
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v246 -> v247;
+
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v270 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:PARSE_LOGS"];
+v247 -> v270 [label="ch_presto_assemblepairs_logs"];
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v248 -> v249;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v270 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:PARSE_LOGS"];
+v249 -> v270 [label="ch_presto_collapseseq_logs"];
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v250 -> v251;
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v270 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:PARSE_LOGS"];
+v251 -> v270 [label="ch_presto_splitseq_logs"];
+
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v252 -> v253;
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v253 -> v273 [label="ch_reassign_logs"];
+
+v143 [label="NFCORE_AIRRFLOW:AIRRFLOW:VDJ_ANNOTATION:CHANGEO_MAKEDB"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v143 -> v254 [label="changeo_makedb_logs"];
+
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v254 -> v255;
+
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v270 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:PARSE_LOGS"];
+v255 -> v270 [label="ch_changeo_makedb_logs"];
+
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v256 -> v257;
+
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v257 -> v273 [label="ch_vdj_annotation_logs"];
+
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v258 -> v259;
+
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 -> v273 [label="ch_bulk_qc_and_filter_logs"];
+
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v260 -> v261;
+
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v261 -> v273 [label="ch_sc_qc_and_filter_logs"];
+
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v262 -> v263;
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v263 -> v273 [label="ch_clonal_analysis_logs"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 -> v264 [label="samplesheet"];
+
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v270 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:PARSE_LOGS"];
+v264 -> v270 [label="ch_input"];
+
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v287 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:AIRRFLOW_REPORT"];
+v265 -> v287 [label="ch_report_rmd"];
+
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v287 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:AIRRFLOW_REPORT"];
+v266 -> v287 [label="ch_report_css"];
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v287 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:AIRRFLOW_REPORT"];
+v267 -> v287 [label="ch_report_logo"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v123 -> v268 [label="ch_validated_samplesheet"];
+
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v280 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:REPORT_FILE_SIZE"];
+v268 -> v280 [label="ch_metadata"];
+
+v269 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v269 -> v272 [label="ch_versions"];
+
+v270 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:PARSE_LOGS"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v270 -> v283 [label="ch_parsed_logs"];
+
+v270 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:PARSE_LOGS"];
+v271 [shape=point];
+v270 -> v271;
+
+v270 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:PARSE_LOGS"];
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v270 -> v272;
+
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v272 -> v282 [label="ch_versions"];
+
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v273 -> v274 [label="ch_logs"];
+
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v274 -> v275;
+
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v275 -> v276;
+
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v276 -> v277;
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v280 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:REPORT_FILE_SIZE"];
+v277 -> v280 [label="ch_logs_tabs"];
+
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v273 -> v278 [label="ch_logs"];
+
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v278 -> v279;
+
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v280 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:REPORT_FILE_SIZE"];
+v279 -> v280;
+
+v280 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:REPORT_FILE_SIZE"];
+v281 [shape=point];
+v280 -> v281;
+
+v280 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:REPORT_FILE_SIZE"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 -> v282;
+
+v280 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:REPORT_FILE_SIZE"];
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v280 -> v285;
+
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v282 -> v290 [label="ch_versions"];
+
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v283 -> v284;
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v287 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:AIRRFLOW_REPORT"];
+v284 -> v287;
+
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v285 -> v286;
+
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v287 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:AIRRFLOW_REPORT"];
+v286 -> v287;
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v287 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:AIRRFLOW_REPORT"];
+v215 -> v287 [label="ch_repertoires"];
+
+v287 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:AIRRFLOW_REPORT"];
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v287 -> v290;
+
+v287 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:AIRRFLOW_REPORT"];
+v289 [shape=point];
+v287 -> v289;
+
+v287 [label="NFCORE_AIRRFLOW:AIRRFLOW:REPERTOIRE_ANALYSIS_REPORTING:AIRRFLOW_REPORT"];
+v288 [shape=point];
+v287 -> v288;
+
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v290 -> v291 [label="versions"];
+
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v291 -> v292 [label="versions"];
+
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v292 -> v293;
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v293 -> v294;
+
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v294 -> v296;
+
+v295 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v295 -> v296;
+
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v296 -> v297;
+
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v297 -> v305 [label="ch_collated_versions"];
+
+v298 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v301 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v298 -> v301 [label="ch_multiqc_files"];
+
+v299 [shape=point,label="",fixedsize=true,width=0.1];
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v299 -> v300 [label="ch_workflow_summary"];
+
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v301 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v300 -> v301;
+
+v301 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v301 -> v304 [label="ch_multiqc_files"];
+
+v302 [shape=point,label="",fixedsize=true,width=0.1];
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v302 -> v303 [label="ch_methods_description"];
+
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v303 -> v304;
+
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v304 -> v305 [label="ch_multiqc_files"];
+
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v308 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v305 -> v308 [label="ch_multiqc_files"];
+
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v307 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v306 -> v307;
+
+v307 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v308 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v307 -> v308;
+
+v308 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v308 -> v311 [label="ch_multiqc_files"];
+
+v309 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v309 -> v310;
+
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v310 -> v311;
+
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v311 -> v314 [label="ch_multiqc_files"];
+
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v312 -> v313;
+
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v313 -> v314;
+
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v314 -> v315 [label="ch_multiqc_files"];
+
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v319 [label="NFCORE_AIRRFLOW:AIRRFLOW:MULTIQC"];
+v315 -> v319;
+
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v319 [label="NFCORE_AIRRFLOW:AIRRFLOW:MULTIQC"];
+v316 -> v319;
+
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v319 [label="NFCORE_AIRRFLOW:AIRRFLOW:MULTIQC"];
+v317 -> v319;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v6 -> v318 [label="ch_report_logo"];
+
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v319 [label="NFCORE_AIRRFLOW:AIRRFLOW:MULTIQC"];
+v318 -> v319;
+
+v319 [label="NFCORE_AIRRFLOW:AIRRFLOW:MULTIQC"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v319 -> v323;
+
+v319 [label="NFCORE_AIRRFLOW:AIRRFLOW:MULTIQC"];
+v322 [shape=point];
+v319 -> v322;
+
+v319 [label="NFCORE_AIRRFLOW:AIRRFLOW:MULTIQC"];
+v321 [shape=point];
+v319 -> v321;
+
+v319 [label="NFCORE_AIRRFLOW:AIRRFLOW:MULTIQC"];
+v320 [shape=point];
+v319 -> v320;
+
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v324 [shape=point];
+v323 -> v324 [label="multiqc_report"];
+
+}

@@ -1,0 +1,162 @@
+digraph "tdnipper_____nf_clipseq_dusp11" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [label="reads_with_samplename"];
+v0 -> v1 [label="raw_reads"];
+
+v1 [label="reads_with_samplename"];
+v2 [label="fastqc"];
+v1 -> v2;
+
+v2 [label="fastqc"];
+v3 [shape=point];
+v2 -> v3;
+
+v1 [label="reads_with_samplename"];
+v4 [label="trim"];
+v1 -> v4;
+
+v4 [label="trim"];
+v7 [label="bbduk"];
+v4 -> v7 [label="trimmed"];
+
+v4 [label="trim"];
+v6 [shape=point];
+v4 -> v6;
+
+v4 [label="trim"];
+v5 [shape=point];
+v4 -> v5;
+
+v7 [label="bbduk"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v9 [label="ribodepleted"];
+
+v7 [label="bbduk"];
+v8 [shape=point];
+v7 -> v8;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 [label="star_index"];
+v9 -> v10;
+
+v10 [label="star_index"];
+v11 [label="star_align"];
+v10 -> v11;
+
+v7 [label="bbduk"];
+v11 [label="star_align"];
+v7 -> v11 [label="ribodepleted"];
+
+v11 [label="star_align"];
+v17 [shape=point];
+v11 -> v17;
+
+v11 [label="star_align"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v18;
+
+v11 [label="star_align"];
+v16 [shape=point];
+v11 -> v16;
+
+v11 [label="star_align"];
+v15 [shape=point];
+v11 -> v15;
+
+v11 [label="star_align"];
+v14 [shape=point];
+v11 -> v14;
+
+v11 [label="star_align"];
+v13 [shape=point];
+v11 -> v13;
+
+v11 [label="star_align"];
+v12 [shape=point];
+v11 -> v12;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 [label="dedup"];
+v18 -> v19;
+
+v11 [label="star_align"];
+v19 [label="dedup"];
+v11 -> v19;
+
+v19 [label="dedup"];
+v21 [label="index"];
+v19 -> v21 [label="deduplicated"];
+
+v19 [label="dedup"];
+v20 [shape=point];
+v19 -> v20;
+
+v21 [label="index"];
+v22 [label="get_xlinks"];
+v21 -> v22 [label="dedupIndexed"];
+
+v22 [label="get_xlinks"];
+v24 [label="paraclu_call_peaks"];
+v22 -> v24 [label="ch_xlinks"];
+
+v22 [label="get_xlinks"];
+v23 [shape=point];
+v22 -> v23;
+
+v24 [label="paraclu_call_peaks"];
+v25 [shape=point];
+v24 -> v25;
+
+v22 [label="get_xlinks"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 -> v26 [label="ch_xlinks"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 [label="get_segments"];
+v26 -> v27;
+
+v27 [label="get_segments"];
+v28 [label="icount_call_peaks"];
+v27 -> v28;
+
+v22 [label="get_xlinks"];
+v28 [label="icount_call_peaks"];
+v22 -> v28 [label="ch_xlinks"];
+
+v28 [label="icount_call_peaks"];
+v29 [shape=point];
+v28 -> v29;
+
+v21 [label="index"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 -> v30 [label="dedupIndexed"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 [label="interleave_for_streme"];
+v30 -> v31;
+
+v7 [label="bbduk"];
+v31 [label="interleave_for_streme"];
+v7 -> v31 [label="ribodepleted"];
+
+v31 [label="interleave_for_streme"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v34 [label="subsample_for_streme"];
+v32 -> v34;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v33 [shape=point];
+v32 -> v33;
+
+v34 [label="subsample_for_streme"];
+v35 [label="get_streme_motifs"];
+v34 -> v35;
+
+v35 [label="get_streme_motifs"];
+v36 [shape=point];
+v35 -> v36;
+
+}

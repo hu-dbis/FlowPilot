@@ -1,0 +1,38 @@
+digraph "TFWsi_____nextflow_ld_pipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [label="RECODE_VCF"];
+v0 -> v4 [label="vcf_file"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [label="HAPLOTYPES"];
+v1 -> v6 [label="beagle"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v7 [label="CALCULATE_LD"];
+v2 -> v7 [label="chr_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v4 [label="RECODE_VCF"];
+v3 -> v4 [label="nam"];
+
+v4 [label="RECODE_VCF"];
+v5 [label="MODIFY_GENOTYPES"];
+v4 -> v5;
+
+v5 [label="MODIFY_GENOTYPES"];
+v6 [label="HAPLOTYPES"];
+v5 -> v6;
+
+v6 [label="HAPLOTYPES"];
+v7 [label="CALCULATE_LD"];
+v6 -> v7;
+
+v7 [label="CALCULATE_LD"];
+v8 [label="FILTER_LD"];
+v7 -> v8;
+
+v8 [label="FILTER_LD"];
+v9 [shape=point];
+v8 -> v9;
+
+}

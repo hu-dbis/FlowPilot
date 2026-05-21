@@ -1,0 +1,506 @@
+digraph "createtaxdb" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v5 [label="ch_samplesheet"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v12 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v95 [label="ch_multiqc_files"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v6 -> v7 [label="ch_dna_refs_for_singleref"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v9;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v8 [label="NFCORE_CREATETAXDB:CREATETAXDB:GUNZIP_DNA"];
+v7 -> v8;
+
+v8 [label="NFCORE_CREATETAXDB:CREATETAXDB:GUNZIP_DNA"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v9;
+
+v8 [label="NFCORE_CREATETAXDB:CREATETAXDB:GUNZIP_DNA"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v8 -> v11;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v13 [label="NFCORE_CREATETAXDB:CREATETAXDB:CAT_CAT_DNA"];
+v10 -> v13 [label="ch_prepped_dna_fastas"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v15 [label="ch_versions"];
+
+v13 [label="NFCORE_CREATETAXDB:CREATETAXDB:CAT_CAT_DNA"];
+v30 [label="NFCORE_CREATETAXDB:CREATETAXDB:CENTRIFUGE_BUILD"];
+v13 -> v30 [label="ch_fasta"];
+
+v13 [label="NFCORE_CREATETAXDB:CREATETAXDB:CAT_CAT_DNA"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v25 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v16 [label="ch_samplesheet"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v17 -> v18 [label="ch_aa_refs_for_singleref"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v21;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v19 [label="NFCORE_CREATETAXDB:CREATETAXDB:PIGZ_COMPRESS_AA"];
+v18 -> v19;
+
+v19 [label="NFCORE_CREATETAXDB:CREATETAXDB:PIGZ_COMPRESS_AA"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v21;
+
+v19 [label="NFCORE_CREATETAXDB:CREATETAXDB:PIGZ_COMPRESS_AA"];
+v20 [shape=point];
+v19 -> v20;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v23 [label="NFCORE_CREATETAXDB:CREATETAXDB:CAT_CAT_AA"];
+v22 -> v23 [label="ch_prepped_aa_fastas"];
+
+v23 [label="NFCORE_CREATETAXDB:CREATETAXDB:CAT_CAT_AA"];
+v37 [label="NFCORE_CREATETAXDB:CREATETAXDB:DIAMOND_MAKEDB"];
+v23 -> v37;
+
+v23 [label="NFCORE_CREATETAXDB:CREATETAXDB:CAT_CAT_AA"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v33 [label="ch_versions"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="NFCORE_CREATETAXDB:CREATETAXDB:CENTRIFUGE_BUILD"];
+v26 -> v30 [label="conversion_table"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="NFCORE_CREATETAXDB:CREATETAXDB:CENTRIFUGE_BUILD"];
+v27 -> v30 [label="taxonomy_tree"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="NFCORE_CREATETAXDB:CREATETAXDB:CENTRIFUGE_BUILD"];
+v28 -> v30 [label="name_table"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="NFCORE_CREATETAXDB:CREATETAXDB:CENTRIFUGE_BUILD"];
+v29 -> v30 [label="size_table"];
+
+v30 [label="NFCORE_CREATETAXDB:CREATETAXDB:CENTRIFUGE_BUILD"];
+v31 [shape=point];
+v30 -> v31 [label="centrifuge_database"];
+
+v30 [label="NFCORE_CREATETAXDB:CREATETAXDB:CENTRIFUGE_BUILD"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v30 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v40 [label="ch_versions"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="NFCORE_CREATETAXDB:CREATETAXDB:DIAMOND_MAKEDB"];
+v34 -> v37 [label="taxonmap"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="NFCORE_CREATETAXDB:CREATETAXDB:DIAMOND_MAKEDB"];
+v35 -> v37 [label="taxonnodes"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="NFCORE_CREATETAXDB:CREATETAXDB:DIAMOND_MAKEDB"];
+v36 -> v37 [label="taxonnames"];
+
+v37 [label="NFCORE_CREATETAXDB:CREATETAXDB:DIAMOND_MAKEDB"];
+v38 [shape=point];
+v37 -> v38 [label="diamond_database"];
+
+v37 [label="NFCORE_CREATETAXDB:CREATETAXDB:DIAMOND_MAKEDB"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v37 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v44 [label="ch_versions"];
+
+v23 [label="NFCORE_CREATETAXDB:CREATETAXDB:CAT_CAT_AA"];
+v41 [label="NFCORE_CREATETAXDB:CREATETAXDB:KAIJU_MKFMI"];
+v23 -> v41;
+
+v41 [label="NFCORE_CREATETAXDB:CREATETAXDB:KAIJU_MKFMI"];
+v42 [shape=point];
+v41 -> v42 [label="kaiju_database"];
+
+v41 [label="NFCORE_CREATETAXDB:CREATETAXDB:KAIJU_MKFMI"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v41 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v62 [label="ch_versions"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v51 [label="ch_versions"];
+
+v13 [label="NFCORE_CREATETAXDB:CREATETAXDB:CAT_CAT_DNA"];
+v49 [label="NFCORE_CREATETAXDB:CREATETAXDB:FASTA_BUILD_ADD_KRAKEN2_BRACKEN:KRAKEN2_ADD"];
+v13 -> v49 [label="ch_fasta"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v49 [label="NFCORE_CREATETAXDB:CREATETAXDB:FASTA_BUILD_ADD_KRAKEN2_BRACKEN:KRAKEN2_ADD"];
+v46 -> v49 [label="taxonomy_names"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v49 [label="NFCORE_CREATETAXDB:CREATETAXDB:FASTA_BUILD_ADD_KRAKEN2_BRACKEN:KRAKEN2_ADD"];
+v47 -> v49 [label="taxonomy_nodes"];
+
+v48 [shape=point,label="",fixedsize=true,width=0.1];
+v49 [label="NFCORE_CREATETAXDB:CREATETAXDB:FASTA_BUILD_ADD_KRAKEN2_BRACKEN:KRAKEN2_ADD"];
+v48 -> v49 [label="accession2taxid"];
+
+v49 [label="NFCORE_CREATETAXDB:CREATETAXDB:FASTA_BUILD_ADD_KRAKEN2_BRACKEN:KRAKEN2_ADD"];
+v53 [label="NFCORE_CREATETAXDB:CREATETAXDB:FASTA_BUILD_ADD_KRAKEN2_BRACKEN:KRAKEN2_BUILD"];
+v49 -> v53;
+
+v49 [label="NFCORE_CREATETAXDB:CREATETAXDB:FASTA_BUILD_ADD_KRAKEN2_BRACKEN:KRAKEN2_ADD"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v55 [label="ch_versions"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1];
+v53 [label="NFCORE_CREATETAXDB:CREATETAXDB:FASTA_BUILD_ADD_KRAKEN2_BRACKEN:KRAKEN2_BUILD"];
+v52 -> v53 [label="cleaning"];
+
+v53 [label="NFCORE_CREATETAXDB:CREATETAXDB:FASTA_BUILD_ADD_KRAKEN2_BRACKEN:KRAKEN2_BUILD"];
+v56 [label="NFCORE_CREATETAXDB:CREATETAXDB:FASTA_BUILD_ADD_KRAKEN2_BRACKEN:BRACKEN_BUILD"];
+v53 -> v56;
+
+v53 [label="NFCORE_CREATETAXDB:CREATETAXDB:FASTA_BUILD_ADD_KRAKEN2_BRACKEN:KRAKEN2_BUILD"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v60 [label="ch_versions"];
+
+v56 [label="NFCORE_CREATETAXDB:CREATETAXDB:FASTA_BUILD_ADD_KRAKEN2_BRACKEN:BRACKEN_BUILD"];
+v58 [shape=point];
+v56 -> v58 [label="kraken2_bracken_database"];
+
+v56 [label="NFCORE_CREATETAXDB:CREATETAXDB:FASTA_BUILD_ADD_KRAKEN2_BRACKEN:BRACKEN_BUILD"];
+v57 [shape=point];
+v56 -> v57;
+
+v56 [label="NFCORE_CREATETAXDB:CREATETAXDB:FASTA_BUILD_ADD_KRAKEN2_BRACKEN:BRACKEN_BUILD"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v56 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v60 -> v61 [label="versions"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v72 [label="ch_versions"];
+
+v63 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v63 -> v65;
+
+v64 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v66 -> v67 [label="ch_taxdmpfiles_for_krakenuniq"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v67 [label="ch_prepped_dna_fastas"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 [label="NFCORE_CREATETAXDB:CREATETAXDB:KRAKENUNIQ_BUILD"];
+v68 -> v69 [label="ch_input_for_krakenuniq"];
+
+v69 [label="NFCORE_CREATETAXDB:CREATETAXDB:KRAKENUNIQ_BUILD"];
+v70 [shape=point];
+v69 -> v70 [label="krakenuniq_database"];
+
+v69 [label="NFCORE_CREATETAXDB:CREATETAXDB:KRAKENUNIQ_BUILD"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v69 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v83 [label="ch_versions"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1];
+v74 [label="NFCORE_CREATETAXDB:CREATETAXDB:UNZIP"];
+v73 -> v74;
+
+v74 [label="NFCORE_CREATETAXDB:CREATETAXDB:UNZIP"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v74 -> v76;
+
+v74 [label="NFCORE_CREATETAXDB:CREATETAXDB:UNZIP"];
+v75 [shape=point];
+v74 -> v75;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v79 [label="NFCORE_CREATETAXDB:CREATETAXDB:MALT_BUILD"];
+v76 -> v79 [label="ch_malt_mapdb"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v77 [label="ch_prepped_dna_fastas"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v79 [label="NFCORE_CREATETAXDB:CREATETAXDB:MALT_BUILD"];
+v77 -> v79 [label="ch_input_for_malt"];
+
+v78 [shape=point,label="",fixedsize=true,width=0.1];
+v79 [label="NFCORE_CREATETAXDB:CREATETAXDB:MALT_BUILD"];
+v78 -> v79 [label="gff"];
+
+v79 [label="NFCORE_CREATETAXDB:CREATETAXDB:MALT_BUILD"];
+v81 [shape=point];
+v79 -> v81 [label="malt_database"];
+
+v79 [label="NFCORE_CREATETAXDB:CREATETAXDB:MALT_BUILD"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v79 -> v82;
+
+v79 [label="NFCORE_CREATETAXDB:CREATETAXDB:MALT_BUILD"];
+v80 [shape=point];
+v79 -> v80;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v83;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v83 -> v84 [label="versions"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v85 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v88;
+
+v87 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v88 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v96 [label="ch_collated_versions"];
+
+v90 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v90 -> v101 [label="ch_multiqc_config"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v91 -> v102 [label="ch_multiqc_custom_config"];
+
+v92 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v92 -> v103 [label="ch_multiqc_logo"];
+
+v93 [shape=point,label="",fixedsize=true,width=0.1];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v93 -> v94 [label="ch_workflow_summary"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v96 [label="ch_multiqc_files"];
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v99 [label="ch_multiqc_files"];
+
+v97 [shape=point,label="",fixedsize=true,width=0.1];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v97 -> v98 [label="ch_methods_description"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v99 -> v100 [label="ch_multiqc_files"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v106 [label="NFCORE_CREATETAXDB:CREATETAXDB:MULTIQC"];
+v100 -> v106;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 [label="NFCORE_CREATETAXDB:CREATETAXDB:MULTIQC"];
+v101 -> v106;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 [label="NFCORE_CREATETAXDB:CREATETAXDB:MULTIQC"];
+v102 -> v106;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 [label="NFCORE_CREATETAXDB:CREATETAXDB:MULTIQC"];
+v103 -> v106;
+
+v104 [shape=point,label="",fixedsize=true,width=0.1];
+v106 [label="NFCORE_CREATETAXDB:CREATETAXDB:MULTIQC"];
+v104 -> v106 [label="replace_names"];
+
+v105 [shape=point,label="",fixedsize=true,width=0.1];
+v106 [label="NFCORE_CREATETAXDB:CREATETAXDB:MULTIQC"];
+v105 -> v106 [label="sample_names"];
+
+v106 [label="NFCORE_CREATETAXDB:CREATETAXDB:MULTIQC"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 -> v110;
+
+v106 [label="NFCORE_CREATETAXDB:CREATETAXDB:MULTIQC"];
+v109 [shape=point];
+v106 -> v109;
+
+v106 [label="NFCORE_CREATETAXDB:CREATETAXDB:MULTIQC"];
+v108 [shape=point];
+v106 -> v108;
+
+v106 [label="NFCORE_CREATETAXDB:CREATETAXDB:MULTIQC"];
+v107 [shape=point];
+v106 -> v107;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v111 [shape=point];
+v110 -> v111 [label="multiqc_report"];
+
+v106 [label="NFCORE_CREATETAXDB:CREATETAXDB:MULTIQC"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v113 [shape=point];
+v112 -> v113 [label="multiqc_report"];
+
+v106 [label="NFCORE_CREATETAXDB:CREATETAXDB:MULTIQC"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v115 [shape=point];
+v114 -> v115 [label="multiqc_report"];
+
+}

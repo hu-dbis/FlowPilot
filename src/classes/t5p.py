@@ -1,3 +1,4 @@
+import os
 import torch
 from transformers import T5ForConditionalGeneration, AutoModelForSeq2SeqLM, AutoTokenizer, AutoConfig, T5Config, AutoModel
 from datasets import Dataset
@@ -107,6 +108,9 @@ class T5P:
 
         trainer.train()
 
-        # Save the model
-        self.model.save_pretrained(f"../../outputs/fine_tuned_codet5p_{model_suffix}")
-        self.tokenizer.save_pretrained(f"../../outputs/fine_tuned_codet5p_{model_suffix}")
+        # Save the model under <repo>/outputs/, anchored to the repo root.
+        out_dir = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+            'outputs', f'fine_tuned_codet5p_{model_suffix}')
+        self.model.save_pretrained(out_dir)
+        self.tokenizer.save_pretrained(out_dir)

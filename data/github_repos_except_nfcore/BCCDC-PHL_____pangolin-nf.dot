@@ -1,0 +1,54 @@
+digraph "BCCDCPHL_____pangolinnf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v7 [label="ch_analysis_dirs"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="update_pangolin"];
+v1 -> v2 [label="should_update"];
+
+v2 [label="update_pangolin"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v4 [label="did_update"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 [label="update_pangolin_data"];
+v4 -> v5;
+
+v5 [label="update_pangolin_data"];
+v6 [shape=point];
+v5 -> v6 [label="did_update"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v10 [label="prepare_multi_fasta"];
+v9 -> v10;
+
+v10 [label="prepare_multi_fasta"];
+v11 [label="pangolin"];
+v10 -> v11;
+
+v11 [label="pangolin"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v14 [shape=point];
+v13 -> v14;
+
+}

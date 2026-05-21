@@ -1,0 +1,974 @@
+digraph "circdna" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1 [label="ch_fasta"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 [label="NFCORE_CIRCDNA:CIRCDNA:BWA_INDEX"];
+v2 -> v44 [label="ch_fasta"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v4 [shape=point];
+v3 -> v4 [label="ch_bwa_index"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v5 -> v191 [label="ch_multiqc_config"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v167 [label="ch_multiqc_custom_config"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=point];
+v7 -> v8 [label="ch_multiqc_logo"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v31 [label="ch_versions"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v11 [shape=point];
+v10 -> v11 [label="ch_samtools_stats"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v13 [shape=point];
+v12 -> v13 [label="ch_samtools_flagstat"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=point];
+v14 -> v15 [label="ch_samtools_idxstats"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v17 [shape=point];
+v16 -> v17 [label="ch_markduplicates_stats"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v19 [shape=point];
+v18 -> v19 [label="ch_markduplicates_flagstat"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=point];
+v20 -> v21 [label="ch_markduplicates_idxstats"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v23 [shape=point];
+v22 -> v23 [label="ch_markduplicates_multiqc"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v25 [label="NFCORE_CIRCDNA:CIRCDNA:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v24 -> v25 [label="samplesheet"];
+
+v25 [label="NFCORE_CIRCDNA:CIRCDNA:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v25 -> v26;
+
+v25 [label="NFCORE_CIRCDNA:CIRCDNA:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v31 [label="versions"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v28 [label="reads"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v33;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v32 [label="NFCORE_CIRCDNA:CIRCDNA:CAT_FASTQ"];
+v30 -> v32;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v34 [label="ch_versions"];
+
+v32 [label="NFCORE_CIRCDNA:CIRCDNA:CAT_FASTQ"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v32 [label="NFCORE_CIRCDNA:CIRCDNA:CAT_FASTQ"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v34;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 [label="NFCORE_CIRCDNA:CIRCDNA:FASTQC"];
+v33 -> v37 [label="ch_cat_fastq"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v39 [label="ch_versions"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v36 [shape=point];
+v35 -> v36 [label="ch_fastqc_multiqc"];
+
+v37 [label="NFCORE_CIRCDNA:CIRCDNA:FASTQC"];
+v38 [shape=point];
+v37 -> v38;
+
+v37 [label="NFCORE_CIRCDNA:CIRCDNA:FASTQC"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 -> v171 [label="ch_fastqc_multiqc"];
+
+v37 [label="NFCORE_CIRCDNA:CIRCDNA:FASTQC"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v43 [label="ch_versions"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [label="NFCORE_CIRCDNA:CIRCDNA:TRIMGALORE"];
+v33 -> v40 [label="ch_cat_fastq"];
+
+v40 [label="NFCORE_CIRCDNA:CIRCDNA:TRIMGALORE"];
+v49 [label="NFCORE_CIRCDNA:CIRCDNA:BWA_MEM"];
+v40 -> v49 [label="ch_trimmed_reads"];
+
+v40 [label="NFCORE_CIRCDNA:CIRCDNA:TRIMGALORE"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v175 [label="ch_trimgalore_multiqc_log"];
+
+v40 [label="NFCORE_CIRCDNA:CIRCDNA:TRIMGALORE"];
+v42 [shape=point];
+v40 -> v42;
+
+v40 [label="NFCORE_CIRCDNA:CIRCDNA:TRIMGALORE"];
+v41 [shape=point];
+v40 -> v41;
+
+v40 [label="NFCORE_CIRCDNA:CIRCDNA:TRIMGALORE"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v173 [label="ch_trimgalore_multiqc"];
+
+v40 [label="NFCORE_CIRCDNA:CIRCDNA:TRIMGALORE"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v47 [label="ch_versions"];
+
+v44 [label="NFCORE_CIRCDNA:CIRCDNA:BWA_INDEX"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 -> v45;
+
+v44 [label="NFCORE_CIRCDNA:CIRCDNA:BWA_INDEX"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v47;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 [label="NFCORE_CIRCDNA:CIRCDNA:BWA_MEM"];
+v46 -> v49 [label="ch_bwa_index"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v50 [label="ch_versions"];
+
+v48 [shape=point,label="",fixedsize=true,width=0.1];
+v49 [label="NFCORE_CIRCDNA:CIRCDNA:BWA_MEM"];
+v48 -> v49 [label="sort_bam"];
+
+v49 [label="NFCORE_CIRCDNA:CIRCDNA:BWA_MEM"];
+v51 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_INDEX_BAM"];
+v49 -> v51 [label="ch_bam"];
+
+v49 [label="NFCORE_CIRCDNA:CIRCDNA:BWA_MEM"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v54 [label="ch_versions"];
+
+v51 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_INDEX_BAM"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 -> v57 [label="ch_full_bam_sorted_bai"];
+
+v51 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_INDEX_BAM"];
+v53 [shape=point];
+v51 -> v53;
+
+v51 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_INDEX_BAM"];
+v52 [shape=point];
+v51 -> v52;
+
+v51 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_INDEX_BAM"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v66 [label="ch_versions"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v55 [label="ch_fasta"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v128 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCLEMAP_REALIGN"];
+v56 -> v128 [label="ch_fasta"];
+
+v49 [label="NFCORE_CIRCDNA:CIRCDNA:BWA_MEM"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v49 -> v57 [label="ch_bam"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v58 -> v60 [label="ch_bam_bai"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v61 [label="ch_versions"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v2 -> v60 [label="ch_fasta"];
+
+v60 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 -> v177 [label="ch_samtools_stats"];
+
+v60 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v63 [label="ch_versions"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v58 -> v62 [label="ch_bam_bai"];
+
+v62 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 -> v179 [label="ch_samtools_flagstat"];
+
+v62 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v65 [label="ch_versions"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v58 -> v64 [label="ch_bam_bai"];
+
+v64 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 -> v181 [label="ch_samtools_idxstats"];
+
+v64 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v66 [label="versions"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v93 [label="ch_versions"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v68 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_FAIDX"];
+v2 -> v68 [label="ch_fasta"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1];
+v68 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_FAIDX"];
+v67 -> v68;
+
+v68 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_FAIDX"];
+v71 [shape=point];
+v68 -> v71;
+
+v68 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_FAIDX"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v68 -> v72;
+
+v68 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_FAIDX"];
+v70 [shape=point];
+v68 -> v70;
+
+v68 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_FAIDX"];
+v69 [shape=point];
+v68 -> v69;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v74 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v72 -> v74 [label="ch_fai"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v77 [label="ch_versions"];
+
+v49 [label="NFCORE_CIRCDNA:CIRCDNA:BWA_MEM"];
+v74 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v49 -> v74 [label="ch_bam"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v74 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v2 -> v74 [label="ch_fasta"];
+
+v74 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v78 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v74 -> v78 [label="ch_bam_sorted"];
+
+v74 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v75 [shape=point];
+v74 -> v75;
+
+v74 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v74 -> v189 [label="ch_markduplicates_multiqc"];
+
+v74 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v74 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v81 [label="ch_versions"];
+
+v78 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v78 -> v82 [label="ch_bam_sorted_bai"];
+
+v78 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v78 -> v83 [label="csi"];
+
+v78 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v79 [shape=point];
+v78 -> v79;
+
+v78 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v78 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v92 [label="ch_versions"];
+
+v74 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v74 -> v82 [label="ch_bam_sorted"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v82 -> v83;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v86 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v84 -> v86 [label="ch_bam_bai"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v87 [label="ch_versions"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v86 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v2 -> v86 [label="ch_fasta"];
+
+v86 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v86 -> v185 [label="ch_markduplicates_stats"];
+
+v86 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v89 [label="ch_versions"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v84 -> v88 [label="ch_bam_bai"];
+
+v88 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v88 -> v183 [label="ch_markduplicates_flagstat"];
+
+v88 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v91 [label="ch_versions"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v90 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v84 -> v90 [label="ch_bam_bai"];
+
+v90 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v90 -> v187 [label="ch_markduplicates_idxstats"];
+
+v90 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v92 [label="versions"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v93 [label="versions"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v96 [label="ch_versions"];
+
+v49 [label="NFCORE_CIRCDNA:CIRCDNA:BWA_MEM"];
+v94 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_QNAME_CF"];
+v49 -> v94 [label="ch_bam"];
+
+v94 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_QNAME_CF"];
+v97 [label="NFCORE_CIRCDNA:CIRCDNA:SAMBLASTER"];
+v94 -> v97;
+
+v94 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_QNAME_CF"];
+v95 [shape=point];
+v94 -> v95;
+
+v94 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_QNAME_CF"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v98 [label="ch_versions"];
+
+v97 [label="NFCORE_CIRCDNA:CIRCDNA:SAMBLASTER"];
+v99 [label="NFCORE_CIRCDNA:CIRCDNA:BEDTOOLS_SPLITBAM2BED"];
+v97 -> v99;
+
+v97 [label="NFCORE_CIRCDNA:CIRCDNA:SAMBLASTER"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v100 [label="ch_versions"];
+
+v99 [label="NFCORE_CIRCDNA:CIRCDNA:BEDTOOLS_SPLITBAM2BED"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v99 -> v104 [label="ch_b2b_split"];
+
+v99 [label="NFCORE_CIRCDNA:CIRCDNA:BEDTOOLS_SPLITBAM2BED"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v103 [label="ch_versions"];
+
+v49 [label="NFCORE_CIRCDNA:CIRCDNA:BWA_MEM"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v49 -> v101 [label="ch_bam"];
+
+v51 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_INDEX_BAM"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 -> v101 [label="ch_full_bam_sorted_bai"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v102 [label="NFCORE_CIRCDNA:CIRCDNA:BEDTOOLS_SORTEDBAM2BED"];
+v101 -> v102;
+
+v102 [label="NFCORE_CIRCDNA:CIRCDNA:BEDTOOLS_SORTEDBAM2BED"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v102 -> v104 [label="ch_b2b_sorted"];
+
+v102 [label="NFCORE_CIRCDNA:CIRCDNA:BEDTOOLS_SORTEDBAM2BED"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v110 [label="ch_versions"];
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCLEFINDER"];
+v104 -> v105;
+
+v105 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCLEFINDER"];
+v107 [shape=point];
+v105 -> v107;
+
+v105 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCLEFINDER"];
+v106 [shape=point];
+v105 -> v106;
+
+v74 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v108 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_QNAME_CM"];
+v74 -> v108 [label="ch_bam_sorted"];
+
+v108 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_QNAME_CM"];
+v111 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCLEMAP_READEXTRACTOR"];
+v108 -> v111 [label="ch_qname_sorted_bam"];
+
+v108 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_QNAME_CM"];
+v109 [shape=point];
+v108 -> v109;
+
+v108 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_QNAME_CM"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v112 [label="ch_versions"];
+
+v111 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCLEMAP_READEXTRACTOR"];
+v113 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_RE"];
+v111 -> v113;
+
+v111 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCLEMAP_READEXTRACTOR"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v115 [label="ch_versions"];
+
+v113 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_RE"];
+v116 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_INDEX_RE"];
+v113 -> v116 [label="ch_re_sorted_bam"];
+
+v113 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_RE"];
+v114 [shape=point];
+v113 -> v114;
+
+v113 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_RE"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v119 [label="ch_versions"];
+
+v116 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_INDEX_RE"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v116 -> v120 [label="ch_re_sorted_bai"];
+
+v116 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_INDEX_RE"];
+v118 [shape=point];
+v116 -> v118;
+
+v116 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_INDEX_RE"];
+v117 [shape=point];
+v116 -> v117;
+
+v116 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_INDEX_RE"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v123 [label="ch_versions"];
+
+v113 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_RE"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v113 -> v120 [label="ch_re_sorted_bam"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v121 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCLEMAP_REPEATS"];
+v120 -> v121;
+
+v121 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCLEMAP_REPEATS"];
+v122 [shape=point];
+v121 -> v122;
+
+v121 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCLEMAP_REPEATS"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v130 [label="ch_versions"];
+
+v116 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_INDEX_RE"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v116 -> v124 [label="ch_re_sorted_bai"];
+
+v113 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_RE"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v113 -> v124 [label="ch_re_sorted_bam"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v124 -> v125;
+
+v108 [label="NFCORE_CIRCDNA:CIRCDNA:SAMTOOLS_SORT_QNAME_CM"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v108 -> v125 [label="ch_qname_sorted_bam"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v125 -> v126;
+
+v74 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v74 -> v126 [label="ch_bam_sorted"];
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v126 -> v127;
+
+v78 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v78 -> v127 [label="ch_bam_sorted_bai"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v128 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCLEMAP_REALIGN"];
+v127 -> v128;
+
+v128 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCLEMAP_REALIGN"];
+v129 [shape=point];
+v128 -> v129;
+
+v128 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCLEMAP_REALIGN"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v135 [label="ch_versions"];
+
+v78 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v78 -> v131 [label="ch_bam_sorted_bai"];
+
+v74 [label="NFCORE_CIRCDNA:CIRCDNA:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v74 -> v131 [label="ch_bam_sorted"];
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v132 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCEXPLORER2_PARSE"];
+v131 -> v132;
+
+v132 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCEXPLORER2_PARSE"];
+v134 [shape=point];
+v132 -> v134;
+
+v132 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCEXPLORER2_PARSE"];
+v133 [shape=point];
+v132 -> v133;
+
+v132 [label="NFCORE_CIRCDNA:CIRCDNA:CIRCEXPLORER2_PARSE"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v139 [label="ch_versions"];
+
+v40 [label="NFCORE_CIRCDNA:CIRCDNA:TRIMGALORE"];
+v136 [label="NFCORE_CIRCDNA:CIRCDNA:UNICYCLER"];
+v40 -> v136 [label="ch_trimmed_reads"];
+
+v136 [label="NFCORE_CIRCDNA:CIRCDNA:UNICYCLER"];
+v140 [label="NFCORE_CIRCDNA:CIRCDNA:SEQTK_SEQ"];
+v136 -> v140;
+
+v136 [label="NFCORE_CIRCDNA:CIRCDNA:UNICYCLER"];
+v138 [shape=point];
+v136 -> v138;
+
+v136 [label="NFCORE_CIRCDNA:CIRCDNA:UNICYCLER"];
+v137 [shape=point];
+v136 -> v137;
+
+v136 [label="NFCORE_CIRCDNA:CIRCDNA:UNICYCLER"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v141 [label="ch_versions"];
+
+v140 [label="NFCORE_CIRCDNA:CIRCDNA:SEQTK_SEQ"];
+v142 [label="NFCORE_CIRCDNA:CIRCDNA:GETCIRCULARREADS"];
+v140 -> v142;
+
+v140 [label="NFCORE_CIRCDNA:CIRCDNA:SEQTK_SEQ"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v151 [label="ch_versions"];
+
+v142 [label="NFCORE_CIRCDNA:CIRCDNA:GETCIRCULARREADS"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v142 -> v144;
+
+v142 [label="NFCORE_CIRCDNA:CIRCDNA:GETCIRCULARREADS"];
+v143 [shape=point];
+v142 -> v143;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v148 [label="NFCORE_CIRCDNA:CIRCDNA:MINIMAP2_ALIGN"];
+v144 -> v148 [label="ch_circular_fastq"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v148 [label="NFCORE_CIRCDNA:CIRCDNA:MINIMAP2_ALIGN"];
+v2 -> v148 [label="ch_fasta"];
+
+v145 [shape=point,label="",fixedsize=true,width=0.1];
+v148 [label="NFCORE_CIRCDNA:CIRCDNA:MINIMAP2_ALIGN"];
+v145 -> v148 [label="bam_format"];
+
+v146 [shape=point,label="",fixedsize=true,width=0.1];
+v148 [label="NFCORE_CIRCDNA:CIRCDNA:MINIMAP2_ALIGN"];
+v146 -> v148 [label="cigar_paf_format"];
+
+v147 [shape=point,label="",fixedsize=true,width=0.1];
+v148 [label="NFCORE_CIRCDNA:CIRCDNA:MINIMAP2_ALIGN"];
+v147 -> v148 [label="cigar_bam"];
+
+v148 [label="NFCORE_CIRCDNA:CIRCDNA:MINIMAP2_ALIGN"];
+v150 [shape=point];
+v148 -> v150;
+
+v148 [label="NFCORE_CIRCDNA:CIRCDNA:MINIMAP2_ALIGN"];
+v149 [shape=point];
+v148 -> v149;
+
+v148 [label="NFCORE_CIRCDNA:CIRCDNA:MINIMAP2_ALIGN"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 -> v151;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v151 -> v152 [label="ch_versions"];
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v152 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v154 [label="NFCORE_CIRCDNA:CIRCDNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v153 -> v154;
+
+v154 [label="NFCORE_CIRCDNA:CIRCDNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v156 [shape=point];
+v154 -> v156;
+
+v154 [label="NFCORE_CIRCDNA:CIRCDNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v154 -> v164;
+
+v154 [label="NFCORE_CIRCDNA:CIRCDNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v155 [shape=point];
+v154 -> v155;
+
+v157 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 -> v160 [label="ch_multiqc_files"];
+
+v158 [shape=point,label="",fixedsize=true,width=0.1];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v158 -> v159 [label="ch_workflow_summary"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v163 [label="ch_multiqc_files"];
+
+v161 [shape=point,label="",fixedsize=true,width=0.1];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v161 -> v162 [label="ch_methods_description"];
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v163;
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v165 [label="ch_multiqc_files"];
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v165;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 [shape=point];
+v165 -> v166 [label="ch_multiqc_files"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v167 -> v168;
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v168 -> v191;
+
+v154 [label="NFCORE_CIRCDNA:CIRCDNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v154 -> v169;
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v169 -> v191;
+
+v158 [shape=point,label="",fixedsize=true,width=0.1];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v158 -> v170 [label="ch_workflow_summary"];
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v170 -> v191;
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v171 -> v172;
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v172 -> v191;
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v173 -> v174;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v174 -> v191;
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v175 -> v176;
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v176 -> v191;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v177 -> v178;
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v178 -> v191;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v179 -> v180;
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v180 -> v191;
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v181 -> v182;
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v182 -> v191;
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v183 -> v184;
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v184 -> v191;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v185 -> v186;
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v186 -> v191;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v187 -> v188;
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v188 -> v191;
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v189 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v190 -> v191;
+
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v191 -> v195;
+
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v194 [shape=point];
+v191 -> v194;
+
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v193 [shape=point];
+v191 -> v193;
+
+v191 [label="NFCORE_CIRCDNA:CIRCDNA:MULTIQC"];
+v192 [shape=point];
+v191 -> v192;
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v196 [shape=point];
+v195 -> v196;
+
+}

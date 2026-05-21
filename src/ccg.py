@@ -1,44 +1,26 @@
+import argparse
 import glob
-import os
-from tqdm import tqdm
-from src.classes.mygraph import my_graph
-from src.classes.helper import *
-import hnswlib
-from src.classes.t5p import T5P
-import itertools
-import pandas as pd
-from mlxtend.frequent_patterns import apriori, association_rules
-from mlxtend.preprocessing import TransactionEncoder
-import warnings
-from src.classes.hmm import HiddenMarkovModel
-warnings.filterwarnings("ignore")
-import numpy as np
-from src.classes.code_aware_recommender import CodeAwareRecommender
-from scipy.spatial.distance import cdist
-from src.Helper.recommender_helper_functions import *
-import matplotlib.pyplot as plt
 import heapq
+import os
+import warnings
 
-module_nf = {}
-label_to_path = {}
-label_to_swf = None
-label_to_embedding = None
-released_source_path = '../../datasets/dags/dot/released/'
-under_development_source_path = '../../datasets/dags/dot/under_development_dags/'
-git_source_path = '../../datasets/dags/dot/github_repos_except_nfcore/'
+import numpy as np
+from tqdm import tqdm
+
+from src.classes.mygraph import my_graph
+from src.classes.hmm import HiddenMarkovModel
+
+warnings.filterwarnings("ignore")
+
+# Bundled DAG corpora, anchored to the repository root. See the README for how
+# to extract the .dot files from data/*.zip.
+_DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
+released_source_path = f'{_DATA_DIR}/released/'
+under_development_source_path = f'{_DATA_DIR}/under_development_dags/'
+git_source_path = f'{_DATA_DIR}/github_repos_except_nfcore/'
 KB = None
 max_path_length = 20
 min_path_length = 4
-swf_to_inout = None
-swf_to_schema = None
-embedding_size = 384
-
-USE_NGRAM_EMBEDDING = True
-USE_INOUT_EMBEDDING = True
-USE_PARAMS_EMBEDDING = False
-USE_README_EMBEDDING = True
-
-embedding_config = str(USE_NGRAM_EMBEDDING) + str(USE_INOUT_EMBEDDING) + str(USE_PARAMS_EMBEDDING) + str(USE_README_EMBEDDING)
 
 nf_ops_list = [x.upper() for x in list(
     {'branch', 'channel', 'collect', 'combine', 'emit', 'flatten', 'join', 'merge', 'output', 'scatter',
@@ -183,12 +165,10 @@ def recommender(QUERY_CORPUS, INDEX_CORPUS, INDEX_CACHE, INDEX_EMPTY, leave_one_
 
             try:
                 query_graph = my_graph(graphpath)
-            except:
-                print('Error in reading the graph')
-                os.remove(graphpath)
+            except Exception:
+                print(f'Skipping unreadable graph: {graphpath}')
                 continue
             if len(query_graph.nodes) < 3:
-                os.remove(graphpath)
                 continue
 
             query_ngrams = query_graph.get_all_paths_with_edges_for_given_nodes(min_length=query_path_min_length + 2,
@@ -301,10 +281,32 @@ def recommender(QUERY_CORPUS, INDEX_CORPUS, INDEX_CACHE, INDEX_EMPTY, leave_one_
         print(f'User label required: {user_label_counter}')
 
 
-def run():
-    print('FlowPilot AL n-gram without data Under')
-    recommender(QUERY_CORPUS=under_development_source_path, INDEX_CORPUS=under_development_source_path, INDEX_CACHE=False, INDEX_EMPTY=True, leave_one_out=False)
+def main():
+    corpora = {
+        'released': released_source_path,
+        'under_development': under_development_source_path,
+        'github': git_source_path,
+    }
+    parser = argparse.ArgumentParser(
+        description='Run the CCG (distance-based) retrieval baseline (paper, Sec. 8.2).')
+    parser.add_argument('--query', choices=corpora, default='under_development',
+                        help='Corpus to draw query workflows from.')
+    parser.add_argument('--alpha', type=float, default=0.7)
+    parser.add_argument('--beta', type=float, default=0.01)
+    parser.add_argument('--gamma', type=float, default=0.01)
+    args = parser.parse_args()
 
-run()
+    recommender(
+        QUERY_CORPUS=corpora[args.query],
+        INDEX_CORPUS=corpora[args.query],
+        INDEX_CACHE=False,
+        INDEX_EMPTY=True,
+        leave_one_out=False,
+        alpha=args.alpha, beta=args.beta, gamma=args.gamma,
+    )
+
+
+if __name__ == '__main__':
+    main()
 
 

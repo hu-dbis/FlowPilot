@@ -1,0 +1,350 @@
+digraph "pairgenomealign" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v10 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:CUTN_QUERY"];
+v2 -> v10 [label="ch_samplesheet"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v8 [label="ch_target"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v45 [label="ch_versions"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v59 [label="ch_multiqc_files"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:CUTN_TARGET"];
+v8 -> v9;
+
+v9 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:CUTN_TARGET"];
+v28 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_DOTPLOT_M2O"];
+v9 -> v28 [label="ch_target_bed"];
+
+v9 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:CUTN_TARGET"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v45;
+
+v10 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:CUTN_QUERY"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v16;
+
+v10 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:CUTN_QUERY"];
+v11 [shape=point];
+v10 -> v11;
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v12 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:ASSEMBLYSCAN"];
+v2 -> v12 [label="ch_samplesheet"];
+
+v12 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:ASSEMBLYSCAN"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 -> v13;
+
+v12 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:ASSEMBLYSCAN"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v46;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:MULTIQC_ASSEMBLYSCAN_PLOT_DATA"];
+v13 -> v14;
+
+v14 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:MULTIQC_ASSEMBLYSCAN_PLOT_DATA"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v60;
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v15 [label="ch_samplesheet"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_TRAIN"];
+v15 -> v19 [label="ch_queries"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v16 -> v26 [label="ch_queries_bed"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_LASTDB"];
+v5 -> v17 [label="ch_target"];
+
+v17 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_LASTDB"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v18;
+
+v17 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_LASTDB"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v47 [label="versions"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_TRAIN"];
+v18 -> v19;
+
+v19 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_TRAIN"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 -> v21;
+
+v19 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_TRAIN"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v41;
+
+v19 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_TRAIN"];
+v20 [shape=point];
+v19 -> v20;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 -> v21 [label="ch_queries"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_LASTAL_M2O"];
+v21 -> v23;
+
+v17 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_LASTDB"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_LASTAL_M2O"];
+v22 -> v23;
+
+v23 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_LASTAL_M2O"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 -> v26 [label="m2o"];
+
+v23 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_LASTAL_M2O"];
+v25 [shape=point];
+v23 -> v25;
+
+v23 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_LASTAL_M2O"];
+v24 [shape=point];
+v23 -> v24;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_DOTPLOT_M2O"];
+v26 -> v28;
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_DOTPLOT_M2O"];
+v27 -> v28 [label="format"];
+
+v28 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_DOTPLOT_M2O"];
+v31 [shape=point];
+v28 -> v31;
+
+v28 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_DOTPLOT_M2O"];
+v30 [shape=point];
+v28 -> v30;
+
+v28 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_DOTPLOT_M2O"];
+v29 [shape=point];
+v28 -> v29;
+
+v23 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_LASTAL_M2O"];
+v32 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_SPLIT_O2O"];
+v23 -> v32 [label="m2o"];
+
+v32 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_SPLIT_O2O"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 -> v34 [label="o2o"];
+
+v32 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_SPLIT_O2O"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v43;
+
+v32 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_SPLIT_O2O"];
+v33 [shape=point];
+v32 -> v33;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v16 -> v34 [label="ch_queries_bed"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_DOTPLOT_O2O"];
+v34 -> v36;
+
+v9 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:CUTN_TARGET"];
+v36 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_DOTPLOT_O2O"];
+v9 -> v36 [label="ch_target_bed"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_DOTPLOT_O2O"];
+v35 -> v36 [label="format"];
+
+v36 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_DOTPLOT_O2O"];
+v39 [shape=point];
+v36 -> v39;
+
+v36 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_DOTPLOT_O2O"];
+v38 [shape=point];
+v36 -> v38;
+
+v36 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:PAIRALIGN_M2O:ALIGNMENT_DOTPLOT_O2O"];
+v37 [shape=point];
+v36 -> v37;
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v42;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v44;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v61 [label="multiqc"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v47 -> v48 [label="versions"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v52;
+
+v51 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v62 [label="ch_collated_versions"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v54 -> v67 [label="ch_multiqc_config"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v55 -> v68 [label="ch_multiqc_custom_config"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v56 -> v69 [label="ch_multiqc_logo"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v57 -> v58 [label="ch_workflow_summary"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v65;
+
+v63 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v63 -> v64 [label="ch_methods_description"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v65 -> v66 [label="ch_multiqc_files"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:MULTIQC"];
+v66 -> v72;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v72 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:MULTIQC"];
+v67 -> v72;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v72 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:MULTIQC"];
+v68 -> v72;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v72 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:MULTIQC"];
+v69 -> v72;
+
+v70 [shape=point,label="",fixedsize=true,width=0.1];
+v72 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:MULTIQC"];
+v70 -> v72 [label="replace_names"];
+
+v71 [shape=point,label="",fixedsize=true,width=0.1];
+v72 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:MULTIQC"];
+v71 -> v72 [label="sample_names"];
+
+v72 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:MULTIQC"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v72 -> v76;
+
+v72 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:MULTIQC"];
+v75 [shape=point];
+v72 -> v75;
+
+v72 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:MULTIQC"];
+v74 [shape=point];
+v72 -> v74;
+
+v72 [label="NFCORE_PAIRGENOMEALIGN:PAIRGENOMEALIGN:MULTIQC"];
+v73 [shape=point];
+v72 -> v73;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v77 [shape=point];
+v76 -> v77 [label="multiqc_report"];
+
+}

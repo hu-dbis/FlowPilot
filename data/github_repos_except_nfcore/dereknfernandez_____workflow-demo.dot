@@ -1,0 +1,170 @@
+digraph "dereknfernandez_____workflowdemo" {
+v0 [label="download_data"];
+v1 [label="prepare_data"];
+v0 -> v1;
+
+v0 [label="download_data"];
+v1 [label="prepare_data"];
+v0 -> v1;
+
+v1 [label="prepare_data"];
+v2 [label="process_features"];
+v1 -> v2;
+
+v1 [label="prepare_data"];
+v2 [label="process_features"];
+v1 -> v2;
+
+v2 [label="process_features"];
+v4 [label="knn_subclass"];
+v2 -> v4;
+
+v2 [label="process_features"];
+v3 [label="knn"];
+v2 -> v3;
+
+v2 [label="process_features"];
+v4 [label="knn_subclass"];
+v2 -> v4;
+
+v2 [label="process_features"];
+v3 [label="knn"];
+v2 -> v3;
+
+v2 [label="process_features"];
+v4 [label="knn_subclass"];
+v2 -> v4;
+
+v2 [label="process_features"];
+v9 [label="evaluate_models"];
+v2 -> v9;
+
+v2 [label="process_features"];
+v4 [label="knn_subclass"];
+v2 -> v4;
+
+v2 [label="process_features"];
+v3 [label="knn"];
+v2 -> v3;
+
+v2 [label="process_features"];
+v9 [label="evaluate_models"];
+v2 -> v9;
+
+v2 [label="process_features"];
+v3 [label="knn"];
+v2 -> v3;
+
+v2 [label="process_features"];
+v9 [label="evaluate_models"];
+v2 -> v9;
+
+v2 [label="process_features"];
+v9 [label="evaluate_models"];
+v2 -> v9;
+
+v3 [label="knn"];
+v9 [label="evaluate_models"];
+v3 -> v9;
+
+v4 [label="knn_subclass"];
+v9 [label="evaluate_models"];
+v4 -> v9;
+
+v2 [label="process_features"];
+v5 [label="decision_tree"];
+v2 -> v5 [label="kbest_20"];
+
+v2 [label="process_features"];
+v5 [label="decision_tree"];
+v2 -> v5 [label="y1_enco"];
+
+v2 [label="process_features"];
+v5 [label="decision_tree"];
+v2 -> v5 [label="kbest_val"];
+
+v2 [label="process_features"];
+v5 [label="decision_tree"];
+v2 -> v5 [label="y1_en_val"];
+
+v5 [label="decision_tree"];
+v9 [label="evaluate_models"];
+v5 -> v9;
+
+v2 [label="process_features"];
+v6 [label="decision_tree_subclass"];
+v2 -> v6 [label="kbest_20d"];
+
+v2 [label="process_features"];
+v6 [label="decision_tree_subclass"];
+v2 -> v6 [label="y2_enco"];
+
+v2 [label="process_features"];
+v6 [label="decision_tree_subclass"];
+v2 -> v6 [label="kbest_vald"];
+
+v2 [label="process_features"];
+v6 [label="decision_tree_subclass"];
+v2 -> v6 [label="y2_en_val"];
+
+v6 [label="decision_tree_subclass"];
+v9 [label="evaluate_models"];
+v6 -> v9;
+
+v2 [label="process_features"];
+v7 [label="logistic_regression"];
+v2 -> v7 [label="kbest_20"];
+
+v2 [label="process_features"];
+v7 [label="logistic_regression"];
+v2 -> v7 [label="y1_enco"];
+
+v2 [label="process_features"];
+v7 [label="logistic_regression"];
+v2 -> v7 [label="kbest_val"];
+
+v2 [label="process_features"];
+v7 [label="logistic_regression"];
+v2 -> v7 [label="y1_en_val"];
+
+v7 [label="logistic_regression"];
+v9 [label="evaluate_models"];
+v7 -> v9;
+
+v2 [label="process_features"];
+v8 [label="logistic_regression_subclass"];
+v2 -> v8 [label="kbest_20d"];
+
+v2 [label="process_features"];
+v8 [label="logistic_regression_subclass"];
+v2 -> v8 [label="y2_enco"];
+
+v2 [label="process_features"];
+v8 [label="logistic_regression_subclass"];
+v2 -> v8 [label="kbest_vald"];
+
+v2 [label="process_features"];
+v8 [label="logistic_regression_subclass"];
+v2 -> v8 [label="y2_en_val"];
+
+v8 [label="logistic_regression_subclass"];
+v9 [label="evaluate_models"];
+v8 -> v9;
+
+v0 [label="download_data"];
+v9 [label="evaluate_models"];
+v0 -> v9 [label="test_dataset"];
+
+v9 [label="evaluate_models"];
+v12 [shape=point];
+v9 -> v12;
+
+v9 [label="evaluate_models"];
+v11 [shape=point];
+v9 -> v11;
+
+v9 [label="evaluate_models"];
+v10 [shape=point];
+v9 -> v10;
+
+}

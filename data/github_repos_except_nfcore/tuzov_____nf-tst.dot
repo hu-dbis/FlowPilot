@@ -1,0 +1,62 @@
+digraph "tuzov_____nftst" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v0 -> v1 [label="vcf_ch"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v2 [shape=point];
+v1 -> v2;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [label="tabix"];
+v0 -> v3 [label="vcf_ch"];
+
+v3 [label="tabix"];
+v4 [shape=point];
+v3 -> v4;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [label="qc1"];
+v0 -> v5 [label="vcf_ch"];
+
+v5 [label="qc1"];
+v6 [label="qc2"];
+v5 -> v6;
+
+v6 [label="qc2"];
+v7 [label="qc3"];
+v6 -> v7;
+
+v7 [label="qc3"];
+v8 [label="qc4"];
+v7 -> v8;
+
+v8 [label="qc4"];
+v9 [label="qc5"];
+v8 -> v9;
+
+v9 [label="qc5"];
+v12 [label="phasing"];
+v9 -> v12;
+
+v9 [label="qc5"];
+v11 [shape=point];
+v9 -> v11;
+
+v9 [label="qc5"];
+v10 [shape=point];
+v9 -> v10;
+
+v12 [label="phasing"];
+v13 [label="impute"];
+v12 -> v13;
+
+v12 [label="phasing"];
+v13 [label="impute"];
+v12 -> v13;
+
+v13 [label="impute"];
+v14 [shape=point];
+v13 -> v14;
+
+}

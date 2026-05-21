@@ -1,0 +1,158 @@
+digraph "RasmusKoRiis_____nfcoresars" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v6 [label="ch_sample_information"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v9 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=point];
+v4 -> v5 [label="ch_multiqc_files"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:CAT_FASTQ"];
+v6 -> v7 [label="read_input"];
+
+v7 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:CAT_FASTQ"];
+v11 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:CHOPPER"];
+v7 -> v11;
+
+v7 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:CAT_FASTQ"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 [shape=point];
+v9 -> v10 [label="ch_versions"];
+
+v11 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:CHOPPER"];
+v13 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:AMPLIGONE"];
+v11 -> v13;
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:AMPLIGONE"];
+v12 -> v13 [label="primerdir"];
+
+v13 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:AMPLIGONE"];
+v14 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:IRMA"];
+v13 -> v14;
+
+v14 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:IRMA"];
+v19 [shape=point];
+v14 -> v19;
+
+v14 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:IRMA"];
+v20 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:DEPTH_ANALYSIS"];
+v14 -> v20;
+
+v14 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:IRMA"];
+v18 [shape=point];
+v14 -> v18;
+
+v14 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:IRMA"];
+v17 [shape=point];
+v14 -> v17;
+
+v14 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:IRMA"];
+v16 [shape=point];
+v14 -> v16;
+
+v14 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:IRMA"];
+v22 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:NEXTCLADE"];
+v14 -> v22;
+
+v14 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:IRMA"];
+v15 [shape=point];
+v14 -> v15;
+
+v20 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:DEPTH_ANALYSIS"];
+v21 [shape=point];
+v20 -> v21;
+
+v22 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:NEXTCLADE"];
+v23 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:CSV_CONVERSION"];
+v22 -> v23;
+
+v23 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:CSV_CONVERSION"];
+v24 [shape=point];
+v23 -> v24;
+
+v23 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:CSV_CONVERSION"];
+v28 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:TABLELOOKUP"];
+v23 -> v28;
+
+v23 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:CSV_CONVERSION"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v30;
+
+v23 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:CSV_CONVERSION"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v31;
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:TABLELOOKUP"];
+v25 -> v28 [label="spike"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:TABLELOOKUP"];
+v26 -> v28 [label="rdrp"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:TABLELOOKUP"];
+v27 -> v28 [label="clpro"];
+
+v28 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:TABLELOOKUP"];
+v29 [shape=point];
+v28 -> v29;
+
+v28 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:TABLELOOKUP"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 -> v32;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:REPORT"];
+v30 -> v37;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:REPORT"];
+v31 -> v37;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:REPORT"];
+v32 -> v37;
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:REPORT"];
+v33 -> v37 [label="runid"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:REPORT"];
+v34 -> v37 [label="seq_instrument"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:REPORT"];
+v35 -> v37 [label="samplesheet"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:REPORT"];
+v36 -> v37 [label="primer"];
+
+v37 [label="NFCORE_SARSCOVSEQ:SARSCOVSEQ:REPORT"];
+v38 [shape=point];
+v37 -> v38;
+
+}

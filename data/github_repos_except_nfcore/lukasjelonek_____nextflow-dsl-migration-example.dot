@@ -1,0 +1,94 @@
+digraph "lukasjelonek_____nextflowdslmigrationexample" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="besorgeBrötchen"];
+v0 -> v1 [label="count"];
+
+v1 [label="besorgeBrötchen"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v12 [label="schneideBrötchenAuf"];
+v2 -> v12 [label="brötchen"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="holeSalami"];
+v3 -> v4 [label="scheiben"];
+
+v4 [label="holeSalami"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v16 [label="belegeSalamiBrötchen"];
+v5 -> v16 [label="salami"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="holeSalat"];
+v6 -> v7 [label="scheiben"];
+
+v7 [label="holeSalat"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v18 [label="belegeVegetarischeBrötchen"];
+v8 -> v18 [label="salat"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="holeKäse"];
+v9 -> v10 [label="scheiben"];
+
+v10 [label="holeKäse"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v18 [label="belegeVegetarischeBrötchen"];
+v11 -> v18 [label="käse"];
+
+v12 [label="schneideBrötchenAuf"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v13 -> v14 [label="brötchenhälften"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v15 [label="schmiereButter"];
+v14 -> v15;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v17 [label="schmiereMargarine"];
+v14 -> v17;
+
+v15 [label="schmiereButter"];
+v16 [label="belegeSalamiBrötchen"];
+v15 -> v16;
+
+v16 [label="belegeSalamiBrötchen"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v16 -> v19;
+
+v17 [label="schmiereMargarine"];
+v18 [label="belegeVegetarischeBrötchen"];
+v17 -> v18;
+
+v18 [label="belegeVegetarischeBrötchen"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v18 -> v20;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v21 [label="legeBrötchenAufEinTablett"];
+v19 -> v21;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v21 [label="legeBrötchenAufEinTablett"];
+v20 -> v21;
+
+v21 [label="legeBrötchenAufEinTablett"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v21 -> v22;
+
+}

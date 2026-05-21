@@ -1,0 +1,90 @@
+digraph "chrismahony_____UoB_RNAseq_STAR" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [label="RNASEQ:FASTQC"];
+v3 -> v4 [label="reads_ch"];
+
+v4 [label="RNASEQ:FASTQC"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v15;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [label="RNASEQ:STAR_ALIGN"];
+v3 -> v7 [label="reads_ch"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="RNASEQ:STAR_ALIGN"];
+v5 -> v7 [label="genome_dir"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="RNASEQ:STAR_ALIGN"];
+v6 -> v7 [label="gtf_file"];
+
+v7 [label="RNASEQ:STAR_ALIGN"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v9;
+
+v7 [label="RNASEQ:STAR_ALIGN"];
+v8 [shape=point];
+v7 -> v8;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 [label="RNASEQ:FEATURECOUNTS"];
+v10 -> v12 [label="all_bams"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [label="RNASEQ:FEATURECOUNTS"];
+v11 -> v12 [label="gtf"];
+
+v12 [label="RNASEQ:FEATURECOUNTS"];
+v14 [shape=point];
+v12 -> v14;
+
+v12 [label="RNASEQ:FEATURECOUNTS"];
+v13 [shape=point];
+v12 -> v13;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 [label="RNASEQ:MULTIQC"];
+v17 -> v19 [label="ch_fastqc_outputs"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v19 [label="RNASEQ:MULTIQC"];
+v18 -> v19 [label="ch_multiqc_config"];
+
+v19 [label="RNASEQ:MULTIQC"];
+v22 [shape=point];
+v19 -> v22;
+
+v19 [label="RNASEQ:MULTIQC"];
+v21 [shape=point];
+v19 -> v21;
+
+v19 [label="RNASEQ:MULTIQC"];
+v20 [shape=point];
+v19 -> v20;
+
+}

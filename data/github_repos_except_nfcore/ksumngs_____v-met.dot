@@ -1,0 +1,362 @@
+digraph "ksumngs_____vmet" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v17 [label="LogFiles"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v10 [label="VersionFiles"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v9 [label="versions"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [label="READS_INGEST:CAT_FASTQ"];
+v6 -> v8 [label="ListedSamples"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="READS_INGEST:CAT_FASTQ"];
+v7 -> v8 [label="gzipped"];
+
+v8 [label="READS_INGEST:CAT_FASTQ"];
+v12 [label="QC:SEQTK_MERGEPE"];
+v8 -> v12 [label="reads"];
+
+v8 [label="READS_INGEST:CAT_FASTQ"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v10 [label="versions"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v18 [label="VersionFiles"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v15 [label="versions"];
+
+v12 [label="QC:SEQTK_MERGEPE"];
+v13 [label="QC:FASTQC"];
+v12 -> v13;
+
+v12 [label="QC:SEQTK_MERGEPE"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v15;
+
+v13 [label="QC:FASTQC"];
+v14 [shape=point];
+v13 -> v14;
+
+v13 [label="QC:FASTQC"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v17 [label="report"];
+
+v13 [label="QC:FASTQC"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v16;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v16 [label="versions"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v18 [label="versions"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v22 [label="LogFiles"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v23 [label="VersionFiles"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v21 [label="versions"];
+
+v8 [label="READS_INGEST:CAT_FASTQ"];
+v20 [label="TRIMMING:TRIMMOMATIC"];
+v8 -> v20 [label="reads"];
+
+v20 [label="TRIMMING:TRIMMOMATIC"];
+v27 [label="KRAKEN2"];
+v20 -> v27 [label="TrimmedReads"];
+
+v20 [label="TRIMMING:TRIMMOMATIC"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v22 [label="log_out"];
+
+v20 [label="TRIMMING:TRIMMOMATIC"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v23 [label="versions"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v31 [label="LogFiles"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v26 [label="VersionFiles"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v25 [label="KRAKEN2_DBPREPARATION"];
+v24 -> v25 [label="db"];
+
+v25 [label="KRAKEN2_DBPREPARATION"];
+v27 [label="KRAKEN2"];
+v25 -> v27 [label="KrakenDb"];
+
+v25 [label="KRAKEN2_DBPREPARATION"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v30 [label="VersionFiles"];
+
+v27 [label="KRAKEN2"];
+v29 [shape=point];
+v27 -> v29;
+
+v27 [label="KRAKEN2"];
+v28 [shape=point];
+v27 -> v28;
+
+v27 [label="KRAKEN2"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 -> v39;
+
+v27 [label="KRAKEN2"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v31;
+
+v27 [label="KRAKEN2"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v37 [label="VersionFiles"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v58 [label="LogFiles"];
+
+v27 [label="KRAKEN2"];
+v32 [label="KRAKENTOOLS_KREPORT2KRONA"];
+v27 -> v32;
+
+v32 [label="KRAKENTOOLS_KREPORT2KRONA"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 -> v33;
+
+v32 [label="KRAKENTOOLS_KREPORT2KRONA"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v37;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v35 [label="KRONA_IMPORTTEXT"];
+v34 -> v35;
+
+v35 [label="KRONA_IMPORTTEXT"];
+v36 [shape=point];
+v35 -> v36;
+
+v35 [label="KRONA_IMPORTTEXT"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v38;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38 [label="VersionFiles"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v43 [label="VersionFiles"];
+
+v20 [label="TRIMMING:TRIMMOMATIC"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v20 -> v39 [label="TrimmedReads"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 -> v40;
+
+v27 [label="KRAKEN2"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 [label="KRAKENTOOLS_EXTRACT"];
+v40 -> v42 [label="ReadPlusReports"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v42 [label="KRAKENTOOLS_EXTRACT"];
+v41 -> v42 [label="taxids"];
+
+v42 [label="KRAKENTOOLS_EXTRACT"];
+v44 [label="SEQTK_SEQ"];
+v42 -> v44 [label="FilteredReads"];
+
+v42 [label="KRAKENTOOLS_EXTRACT"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v45 [label="VersionFiles"];
+
+v44 [label="SEQTK_SEQ"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 -> v46;
+
+v44 [label="SEQTK_SEQ"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v49 [label="VersionFiles"];
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 [label="UNZIP_FASTA"];
+v46 -> v48;
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [label="UNZIP_FASTA"];
+v47 -> v48 [label="gzipped"];
+
+v48 [label="UNZIP_FASTA"];
+v53 [label="BLAST_BLASTN"];
+v48 -> v53;
+
+v48 [label="UNZIP_FASTA"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v52 [label="VersionFiles"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="BLAST_DBPREPARATION"];
+v50 -> v51 [label="db"];
+
+v51 [label="BLAST_DBPREPARATION"];
+v53 [label="BLAST_BLASTN"];
+v51 -> v53 [label="BlastDb"];
+
+v51 [label="BLAST_DBPREPARATION"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v54 [label="VersionFiles"];
+
+v53 [label="BLAST_BLASTN"];
+v56 [label="BLAST_ADDHEADER"];
+v53 -> v56;
+
+v53 [label="BLAST_BLASTN"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v67 [label="VersionFiles"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="BLAST_ADDHEADER"];
+v55 -> v56 [label="header"];
+
+v56 [label="BLAST_ADDHEADER"];
+v57 [shape=point];
+v56 -> v57;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v60;
+
+v59 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 [label="MULTIQC"];
+v62 -> v63 [label="LogFiles"];
+
+v63 [label="MULTIQC"];
+v66 [shape=point];
+v63 -> v66;
+
+v63 [label="MULTIQC"];
+v65 [shape=point];
+v63 -> v65;
+
+v63 [label="MULTIQC"];
+v64 [shape=point];
+v63 -> v64;
+
+v63 [label="MULTIQC"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v67 -> v68 [label="VersionFiles"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v70 [label="CUSTOM_DUMPSOFTWAREVERSIONS"];
+v69 -> v70;
+
+v70 [label="CUSTOM_DUMPSOFTWAREVERSIONS"];
+v73 [shape=point];
+v70 -> v73;
+
+v70 [label="CUSTOM_DUMPSOFTWAREVERSIONS"];
+v72 [shape=point];
+v70 -> v72;
+
+v70 [label="CUSTOM_DUMPSOFTWAREVERSIONS"];
+v71 [shape=point];
+v70 -> v71;
+
+}

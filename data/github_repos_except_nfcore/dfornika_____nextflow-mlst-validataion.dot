@@ -1,0 +1,58 @@
+digraph "dfornika_____nextflowmlstvalidataion" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1 [label="ch_assembly"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [label="mlst_on_assembly:mlst"];
+v1 -> v2 [label="ch_assembly_with_assembly_id"];
+
+v2 [label="mlst_on_assembly:mlst"];
+v3 [shape=point];
+v2 -> v3;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v6 [label="ch_fold_coverage"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v5 [label="ch_assembly"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v6 [label="ch_assembly_with_id"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 [label="simulate_reads:art"];
+v6 -> v7;
+
+v7 [label="simulate_reads:art"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v8 [label="ch_simulated_reads"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v0 -> v8 [label="ch_assembly"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v9 [label="align_reads_to_assembly:bwa_mem"];
+v8 -> v9;
+
+v9 [label="align_reads_to_assembly:bwa_mem"];
+v10 [shape=point];
+v9 -> v10;
+
+v7 [label="simulate_reads:art"];
+v11 [label="assemble_and_mlst:shovill"];
+v7 -> v11 [label="ch_simulated_reads"];
+
+v11 [label="assemble_and_mlst:shovill"];
+v12 [label="assemble_and_mlst:mlst"];
+v11 -> v12;
+
+v12 [label="assemble_and_mlst:mlst"];
+v13 [shape=point];
+v12 -> v13;
+
+}

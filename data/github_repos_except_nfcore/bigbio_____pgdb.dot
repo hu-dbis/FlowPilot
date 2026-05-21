@@ -1,0 +1,338 @@
+digraph "bigbio_____pgdb" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="NFCORE_PGDB:PGDB:ENSEMBL_FASTA_DOWNLOAD"];
+v0 -> v2 [label="ensembl_downloader_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="NFCORE_PGDB:PGDB:ENSEMBL_FASTA_DOWNLOAD"];
+v1 -> v2 [label="ensembl_name"];
+
+v2 [label="NFCORE_PGDB:PGDB:ENSEMBL_FASTA_DOWNLOAD"];
+v3 [label="NFCORE_PGDB:PGDB:ADD_REFERENCE_PROTEOME"];
+v2 -> v3;
+
+v2 [label="NFCORE_PGDB:PGDB:ENSEMBL_FASTA_DOWNLOAD"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v4;
+
+v2 [label="NFCORE_PGDB:PGDB:ENSEMBL_FASTA_DOWNLOAD"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v5;
+
+v2 [label="NFCORE_PGDB:PGDB:ENSEMBL_FASTA_DOWNLOAD"];
+v35 [label="NFCORE_PGDB:PGDB:GTF_TO_FASTA"];
+v2 -> v35;
+
+v2 [label="NFCORE_PGDB:PGDB:ENSEMBL_FASTA_DOWNLOAD"];
+v32 [label="NFCORE_PGDB:PGDB:ENSEMBL_VCF_PROTEINDB"];
+v2 -> v32;
+
+v3 [label="NFCORE_PGDB:PGDB:ADD_REFERENCE_PROTEOME"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v9;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 [label="NFCORE_PGDB:PGDB:MERGE_CDNAS"];
+v4 -> v6;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 [label="NFCORE_PGDB:PGDB:MERGE_CDNAS"];
+v5 -> v6;
+
+v6 [label="NFCORE_PGDB:PGDB:MERGE_CDNAS"];
+v8 [label="NFCORE_PGDB:PGDB:ADD_NCRNA"];
+v6 -> v8;
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="NFCORE_PGDB:PGDB:ADD_NCRNA"];
+v7 -> v8 [label="ensembl_config"];
+
+v8 [label="NFCORE_PGDB:PGDB:ADD_NCRNA"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v12 [label="merged_databases"];
+
+v6 [label="NFCORE_PGDB:PGDB:MERGE_CDNAS"];
+v11 [label="NFCORE_PGDB:PGDB:ADD_PSEUDOGENES"];
+v6 -> v11 [label="x"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="NFCORE_PGDB:PGDB:ADD_PSEUDOGENES"];
+v10 -> v11 [label="ensembl_config"];
+
+v11 [label="NFCORE_PGDB:PGDB:ADD_PSEUDOGENES"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v15 [label="merged_databases"];
+
+v2 [label="NFCORE_PGDB:PGDB:ENSEMBL_FASTA_DOWNLOAD"];
+v14 [label="NFCORE_PGDB:PGDB:ADD_ALTORFS"];
+v2 -> v14 [label="x"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="NFCORE_PGDB:PGDB:ADD_ALTORFS"];
+v13 -> v14 [label="ensembl_config"];
+
+v14 [label="NFCORE_PGDB:PGDB:ADD_ALTORFS"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v21 [label="merged_databases"];
+
+v16 [label="NFCORE_PGDB:PGDB:COSMIC_DOWNLOAD"];
+v20 [label="NFCORE_PGDB:PGDB:COSMIC_PROTEINDB"];
+v16 -> v20;
+
+v16 [label="NFCORE_PGDB:PGDB:COSMIC_DOWNLOAD"];
+v20 [label="NFCORE_PGDB:PGDB:COSMIC_PROTEINDB"];
+v16 -> v20;
+
+v17 [label="NFCORE_PGDB:PGDB:COSMIC_CELLLINES_DOWNLOAD"];
+v24 [label="NFCORE_PGDB:PGDB:COSMIC_CELLLINES_PROTEINDB"];
+v17 -> v24;
+
+v17 [label="NFCORE_PGDB:PGDB:COSMIC_CELLLINES_DOWNLOAD"];
+v24 [label="NFCORE_PGDB:PGDB:COSMIC_CELLLINES_PROTEINDB"];
+v17 -> v24;
+
+v18 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [label="NFCORE_PGDB:PGDB:COSMIC_PROTEINDB"];
+v18 -> v20 [label="cosmic_config"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [label="NFCORE_PGDB:PGDB:COSMIC_PROTEINDB"];
+v19 -> v20 [label="cosmic_cancer_type"];
+
+v20 [label="NFCORE_PGDB:PGDB:COSMIC_PROTEINDB"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v25 [label="merged_databases"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="NFCORE_PGDB:PGDB:COSMIC_CELLLINES_PROTEINDB"];
+v22 -> v24 [label="cosmic_config"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="NFCORE_PGDB:PGDB:COSMIC_CELLLINES_PROTEINDB"];
+v23 -> v24 [label="cosmic_cellline_name"];
+
+v24 [label="NFCORE_PGDB:PGDB:COSMIC_CELLLINES_PROTEINDB"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v34 [label="merged_databases"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="NFCORE_PGDB:PGDB:ENSEMBL_VCF_DOWNLOAD"];
+v26 -> v28 [label="ensembl_downloader_config"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="NFCORE_PGDB:PGDB:ENSEMBL_VCF_DOWNLOAD"];
+v27 -> v28 [label="ensembl_name"];
+
+v28 [label="NFCORE_PGDB:PGDB:ENSEMBL_VCF_DOWNLOAD"];
+v29 [label="NFCORE_PGDB:PGDB:CHECK_ENSEMBL_VCF"];
+v28 -> v29;
+
+v29 [label="NFCORE_PGDB:PGDB:CHECK_ENSEMBL_VCF"];
+v32 [label="NFCORE_PGDB:PGDB:ENSEMBL_VCF_PROTEINDB"];
+v29 -> v32;
+
+v6 [label="NFCORE_PGDB:PGDB:MERGE_CDNAS"];
+v32 [label="NFCORE_PGDB:PGDB:ENSEMBL_VCF_PROTEINDB"];
+v6 -> v32 [label="f"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="NFCORE_PGDB:PGDB:ENSEMBL_VCF_PROTEINDB"];
+v30 -> v32 [label="e"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="NFCORE_PGDB:PGDB:ENSEMBL_VCF_PROTEINDB"];
+v31 -> v32 [label="af_field"];
+
+v32 [label="NFCORE_PGDB:PGDB:ENSEMBL_VCF_PROTEINDB"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v34 [label="proteinDB_vcf_final"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v40 [label="merged_databases"];
+
+v2 [label="NFCORE_PGDB:PGDB:ENSEMBL_FASTA_DOWNLOAD"];
+v35 [label="NFCORE_PGDB:PGDB:GTF_TO_FASTA"];
+v2 -> v35 [label="g"];
+
+v35 [label="NFCORE_PGDB:PGDB:GTF_TO_FASTA"];
+v39 [label="NFCORE_PGDB:PGDB:VCF_PROTEINDB"];
+v35 -> v39;
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v39 [label="NFCORE_PGDB:PGDB:VCF_PROTEINDB"];
+v36 -> v39 [label="vcf_file"];
+
+v2 [label="NFCORE_PGDB:PGDB:ENSEMBL_FASTA_DOWNLOAD"];
+v39 [label="NFCORE_PGDB:PGDB:VCF_PROTEINDB"];
+v2 -> v39 [label="g"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v39 [label="NFCORE_PGDB:PGDB:VCF_PROTEINDB"];
+v37 -> v39 [label="e"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v39 [label="NFCORE_PGDB:PGDB:VCF_PROTEINDB"];
+v38 -> v39 [label="af_field"];
+
+v39 [label="NFCORE_PGDB:PGDB:VCF_PROTEINDB"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v51 [label="merged_databases"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v42 [label="NFCORE_PGDB:PGDB:GENCODE_DOWNLOAD"];
+v41 -> v42 [label="g"];
+
+v42 [label="NFCORE_PGDB:PGDB:GENCODE_DOWNLOAD"];
+v49 [label="NFCORE_PGDB:PGDB:GNOMAD_PROTEINDB"];
+v42 -> v49;
+
+v42 [label="NFCORE_PGDB:PGDB:GENCODE_DOWNLOAD"];
+v49 [label="NFCORE_PGDB:PGDB:GNOMAD_PROTEINDB"];
+v42 -> v49;
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="NFCORE_PGDB:PGDB:GNOMAD_DOWNLOAD"];
+v43 -> v44 [label="g"];
+
+v44 [label="NFCORE_PGDB:PGDB:GNOMAD_DOWNLOAD"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 [label="NFCORE_PGDB:PGDB:EXTRACT_GNOMAD_VCF"];
+v46 -> v47;
+
+v47 [label="NFCORE_PGDB:PGDB:EXTRACT_GNOMAD_VCF"];
+v49 [label="NFCORE_PGDB:PGDB:GNOMAD_PROTEINDB"];
+v47 -> v49;
+
+v48 [shape=point,label="",fixedsize=true,width=0.1];
+v49 [label="NFCORE_PGDB:PGDB:GNOMAD_PROTEINDB"];
+v48 -> v49 [label="e"];
+
+v49 [label="NFCORE_PGDB:PGDB:GNOMAD_PROTEINDB"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v51 [label="gnomad_vcf_proteindb_final"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v60 [label="merged_databases"];
+
+v52 [label="NFCORE_PGDB:PGDB:CDS_GRCH37_DOWNLOAD"];
+v59 [label="NFCORE_PGDB:PGDB:CBIOPORTAL_PROTEINDB"];
+v52 -> v59;
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v55 [label="NFCORE_PGDB:PGDB:DOWNLOAD_ALL_CBIOPORTAL"];
+v53 -> v55 [label="cbioportal_config"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v55 [label="NFCORE_PGDB:PGDB:DOWNLOAD_ALL_CBIOPORTAL"];
+v54 -> v55 [label="cbioportal_study_id"];
+
+v55 [label="NFCORE_PGDB:PGDB:DOWNLOAD_ALL_CBIOPORTAL"];
+v59 [label="NFCORE_PGDB:PGDB:CBIOPORTAL_PROTEINDB"];
+v55 -> v59;
+
+v55 [label="NFCORE_PGDB:PGDB:DOWNLOAD_ALL_CBIOPORTAL"];
+v59 [label="NFCORE_PGDB:PGDB:CBIOPORTAL_PROTEINDB"];
+v55 -> v59;
+
+v56 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="NFCORE_PGDB:PGDB:CBIOPORTAL_PROTEINDB"];
+v56 -> v59 [label="cbioportal_config"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="NFCORE_PGDB:PGDB:CBIOPORTAL_PROTEINDB"];
+v57 -> v59 [label="cbioportal_filter_column"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="NFCORE_PGDB:PGDB:CBIOPORTAL_PROTEINDB"];
+v58 -> v59 [label="cbioportal_accepted_values"];
+
+v59 [label="NFCORE_PGDB:PGDB:CBIOPORTAL_PROTEINDB"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 -> v61 [label="merged_databases"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 [label="NFCORE_PGDB:PGDB:MERGE_PROTEINDBS"];
+v61 -> v62;
+
+v62 [label="NFCORE_PGDB:PGDB:MERGE_PROTEINDBS"];
+v65 [label="NFCORE_PGDB:PGDB:CLEAN_PROTEIN_DATABASE"];
+v62 -> v65;
+
+v63 [shape=point,label="",fixedsize=true,width=0.1];
+v65 [label="NFCORE_PGDB:PGDB:CLEAN_PROTEIN_DATABASE"];
+v63 -> v65 [label="ensembl_config"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1];
+v65 [label="NFCORE_PGDB:PGDB:CLEAN_PROTEIN_DATABASE"];
+v64 -> v65 [label="minimum_aa"];
+
+v65 [label="NFCORE_PGDB:PGDB:CLEAN_PROTEIN_DATABASE"];
+v70 [label="NFCORE_PGDB:PGDB:DECOY"];
+v65 -> v70 [label="to_protein_decoy_ch"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1];
+v70 [label="NFCORE_PGDB:PGDB:DECOY"];
+v66 -> v70 [label="protein_decoy_config"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1];
+v70 [label="NFCORE_PGDB:PGDB:DECOY"];
+v67 -> v70 [label="decoy_method"];
+
+v68 [shape=point,label="",fixedsize=true,width=0.1];
+v70 [label="NFCORE_PGDB:PGDB:DECOY"];
+v68 -> v70 [label="decoy_enzyme"];
+
+v69 [shape=point,label="",fixedsize=true,width=0.1];
+v70 [label="NFCORE_PGDB:PGDB:DECOY"];
+v69 -> v70 [label="decoy_prefix"];
+
+v70 [label="NFCORE_PGDB:PGDB:DECOY"];
+v71 [shape=point];
+v70 -> v71;
+
+}

@@ -1,0 +1,58 @@
+digraph "kane9530_____nextflowcellrangeratacscatacseq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3 [label="info_ch"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [label="scATACseqFlow:CELLRANGER_ATAC_COUNT"];
+v5 -> v13 [label="grouped_ch"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [label="scATACseqFlow:QC_FASTP"];
+v2 -> v6 [label="info_ch"];
+
+v6 [label="scATACseqFlow:QC_FASTP"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v9;
+
+v6 [label="scATACseqFlow:QC_FASTP"];
+v8 [shape=point];
+v6 -> v8;
+
+v6 [label="scATACseqFlow:QC_FASTP"];
+v7 [shape=point];
+v6 -> v7;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 [label="scATACseqFlow:QC_MULTIQC"];
+v9 -> v10;
+
+v10 [label="scATACseqFlow:QC_MULTIQC"];
+v11 [shape=point];
+v10 -> v11;
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="scATACseqFlow:CELLRANGER_ATAC_COUNT"];
+v12 -> v13 [label="reference_ch"];
+
+v13 [label="scATACseqFlow:CELLRANGER_ATAC_COUNT"];
+v14 [shape=point];
+v13 -> v14;
+
+}

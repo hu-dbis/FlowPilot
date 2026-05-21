@@ -1,0 +1,106 @@
+digraph "StephenRicher_____RNANextFlow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v3 -> v4 [label="data"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v5 [label="ANALYSIS:FASTQC"];
+v4 -> v5 [label="data_flat"];
+
+v5 [label="ANALYSIS:FASTQC"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v5 -> v19;
+
+v5 [label="ANALYSIS:FASTQC"];
+v6 [shape=point];
+v5 -> v6;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [label="ANALYSIS:CUTADAPT"];
+v3 -> v7 [label="data"];
+
+v7 [label="ANALYSIS:CUTADAPT"];
+v12 [label="ANALYSIS:SALMON_QUANT"];
+v7 -> v12;
+
+v7 [label="ANALYSIS:CUTADAPT"];
+v8 [label="ANALYSIS:CUTADAPT_QC_NAME"];
+v7 -> v8;
+
+v8 [label="ANALYSIS:CUTADAPT_QC_NAME"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v8 -> v19;
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [label="ANALYSIS:SALMON_INDEX"];
+v9 -> v10 [label="transcriptome"];
+
+v10 [label="ANALYSIS:SALMON_INDEX"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 [label="ANALYSIS:SALMON_QUANT"];
+v11 -> v12 [label="salmon_idx"];
+
+v12 [label="ANALYSIS:SALMON_QUANT"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v12 -> v19;
+
+v12 [label="ANALYSIS:SALMON_QUANT"];
+v13 [label="ANALYSIS:GET_STRAND"];
+v12 -> v13;
+
+v13 [label="ANALYSIS:GET_STRAND"];
+v16 [label="ANALYSIS:HISAT2"];
+v13 -> v16;
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 [label="ANALYSIS:HISAT2"];
+v15 -> v16 [label="index"];
+
+v7 [label="ANALYSIS:CUTADAPT"];
+v16 [label="ANALYSIS:HISAT2"];
+v7 -> v16;
+
+v16 [label="ANALYSIS:HISAT2"];
+v17 [shape=point];
+v16 -> v17;
+
+v16 [label="ANALYSIS:HISAT2"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v16 -> v19;
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 [label="ANALYSIS:MULTIQC"];
+v20 -> v21 [label="qc_reports"];
+
+v21 [label="ANALYSIS:MULTIQC"];
+v22 [shape=point];
+v21 -> v22;
+
+}

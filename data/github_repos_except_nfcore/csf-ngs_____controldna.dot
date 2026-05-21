@@ -1,0 +1,830 @@
+digraph "csfngs_____controldna" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v130 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v6 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v4 -> v8 [label="reads"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v35 [label="ch_versions"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v18 [label="ch_versions"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v19;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v8 -> v10 [label="reads"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v9 -> v16 [label="ch_versions"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v12 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:UMI_PROCESS:UMITOOLS_UMI_EXTRACT"];
+v10 -> v12;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v11 [shape=point];
+v10 -> v11;
+
+v12 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:UMI_PROCESS:UMITOOLS_UMI_EXTRACT"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v19 [label="reads"];
+
+v12 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:UMI_PROCESS:UMITOOLS_UMI_EXTRACT"];
+v13 [shape=point];
+v12 -> v13;
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=point];
+v14 -> v15 [label="umi_log"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v16 -> v17 [label="versions"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v23 [label="ch_versions"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:SEQTK_SAMPLE"];
+v19 -> v21 [label="umi_processed"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:SEQTK_SAMPLE"];
+v20 -> v21 [label="subsample_str"];
+
+v21 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:SEQTK_SAMPLE"];
+v24 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:FASTQC"];
+v21 -> v24 [label="trim_reads"];
+
+v21 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:SEQTK_SAMPLE"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v27 [label="ch_versions"];
+
+v24 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:FASTQC"];
+v25 [shape=point];
+v24 -> v25;
+
+v24 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:FASTQC"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 -> v138 [label="fastqc"];
+
+v24 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:FASTQC"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v24 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v32 [label="ch_versions"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v29 [shape=point];
+v28 -> v29 [label="trim_log"];
+
+v21 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:SEQTK_SAMPLE"];
+v30 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:CUTADAPT"];
+v21 -> v30 [label="trim_reads"];
+
+v30 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:CUTADAPT"];
+v36 [label="NFCORE_CONTROLDNA:CONTROLDNA:FASTQC_TRIMMED"];
+v30 -> v36 [label="reads"];
+
+v30 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:CUTADAPT"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 -> v141 [label="trim_log"];
+
+v30 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:CUTADAPT"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v32 -> v33 [label="ch_versions"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v33 -> v34 [label="versions"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v39 [label="ch_versions"];
+
+v36 [label="NFCORE_CONTROLDNA:CONTROLDNA:FASTQC_TRIMMED"];
+v37 [shape=point];
+v36 -> v37;
+
+v36 [label="NFCORE_CONTROLDNA:CONTROLDNA:FASTQC_TRIMMED"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v36 -> v144;
+
+v36 [label="NFCORE_CONTROLDNA:CONTROLDNA:FASTQC_TRIMMED"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v36 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v95 [label="ch_versions"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:BWA_MEM"];
+v41 -> v46 [label="genome"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v43 [shape=point];
+v42 -> v43 [label="bam_from_aligner"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v48 [label="ch_versions"];
+
+v30 [label="NFCORE_CONTROLDNA:CONTROLDNA:TRIM_CUTADAPT:CUTADAPT"];
+v46 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:BWA_MEM"];
+v30 -> v46 [label="reads"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v46 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:BWA_MEM"];
+v45 -> v46 [label="sort_bam"];
+
+v46 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:BWA_MEM"];
+v51 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_SORTBAM"];
+v46 -> v51;
+
+v46 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:BWA_MEM"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v53 [label="ch_versions"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_SORTBAM"];
+v49 -> v51 [label="sort_order"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_SORTBAM"];
+v50 -> v51 [label="outname"];
+
+v51 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_SORTBAM"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v51 -> v54 [label="bams"];
+
+v51 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_SORTBAM"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v73 [label="ch_versions"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v74 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:ADD_UMI_TO_BAM"];
+v54 -> v74;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v80 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_MARKDUPLICATESWITHMATECIGAR"];
+v54 -> v80;
+
+v55 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v56 [shape=point];
+v55 -> v56 [label="tile_duplication_tabs"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v62 [label="ch_versions"];
+
+v51 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_SORTBAM"];
+v58 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SPATIAL_DUPLICATES:PICARD_MARKDUPLICATES"];
+v51 -> v58 [label="bams"];
+
+v58 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SPATIAL_DUPLICATES:PICARD_MARKDUPLICATES"];
+v63 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SPATIAL_DUPLICATES:BAM_DUPLICATES_TILEDENSITY"];
+v58 -> v63;
+
+v58 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SPATIAL_DUPLICATES:PICARD_MARKDUPLICATES"];
+v60 [shape=point];
+v58 -> v60;
+
+v58 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SPATIAL_DUPLICATES:PICARD_MARKDUPLICATES"];
+v59 [shape=point];
+v58 -> v59;
+
+v58 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SPATIAL_DUPLICATES:PICARD_MARKDUPLICATES"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v58 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v65 [label="ch_versions"];
+
+v63 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SPATIAL_DUPLICATES:BAM_DUPLICATES_TILEDENSITY"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 -> v66;
+
+v63 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SPATIAL_DUPLICATES:BAM_DUPLICATES_TILEDENSITY"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v71 [label="ch_versions"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v66 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v68 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SPATIAL_DUPLICATES:BAM_DUPLICATES_PLOT_TILEDENSITY"];
+v67 -> v68 [label="spatial_tabs"];
+
+v68 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SPATIAL_DUPLICATES:BAM_DUPLICATES_PLOT_TILEDENSITY"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v150 [label="spatial_lines_json"];
+
+v68 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SPATIAL_DUPLICATES:BAM_DUPLICATES_PLOT_TILEDENSITY"];
+v69 [shape=point];
+v68 -> v69 [label="spatial_html"];
+
+v68 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SPATIAL_DUPLICATES:BAM_DUPLICATES_PLOT_TILEDENSITY"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v68 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v71 -> v72 [label="versions"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v79 [label="ch_versions"];
+
+v74 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:ADD_UMI_TO_BAM"];
+v76 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_UMIAWAREMARKDUPLICATESWITHMATECIGAR"];
+v74 -> v76;
+
+v74 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:ADD_UMI_TO_BAM"];
+v75 [shape=point];
+v74 -> v75;
+
+v76 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_UMIAWAREMARKDUPLICATESWITHMATECIGAR"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v84;
+
+v76 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_UMIAWAREMARKDUPLICATESWITHMATECIGAR"];
+v77 [shape=point];
+v76 -> v77;
+
+v76 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_UMIAWAREMARKDUPLICATESWITHMATECIGAR"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v93;
+
+v76 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_UMIAWAREMARKDUPLICATESWITHMATECIGAR"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v76 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v83 [label="ch_versions"];
+
+v80 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_MARKDUPLICATESWITHMATECIGAR"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v84;
+
+v80 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_MARKDUPLICATESWITHMATECIGAR"];
+v81 [shape=point];
+v80 -> v81;
+
+v80 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_MARKDUPLICATESWITHMATECIGAR"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v93;
+
+v80 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:PICARD_MARKDUPLICATESWITHMATECIGAR"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v80 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v83;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v87 [label="ch_versions"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SAMTOOLS_SORT"];
+v84 -> v85 [label="marked_bams"];
+
+v85 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SAMTOOLS_SORT"];
+v88 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SAMTOOLS_INDEX"];
+v85 -> v88 [label="bam"];
+
+v85 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SAMTOOLS_SORT"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v85 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v87 -> v94 [label="versions"];
+
+v88 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SAMTOOLS_INDEX"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 -> v92 [label="bai"];
+
+v88 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SAMTOOLS_INDEX"];
+v91 [shape=point];
+v88 -> v91;
+
+v88 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SAMTOOLS_INDEX"];
+v90 [shape=point];
+v88 -> v90;
+
+v88 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SAMTOOLS_INDEX"];
+v89 [shape=point];
+v88 -> v89;
+
+v85 [label="NFCORE_CONTROLDNA:CONTROLDNA:MAP_BWAMEM:SAMTOOLS_SORT"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v85 -> v92 [label="bam"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v98 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PICARD_COLLECTWGSMETRICS"];
+v92 -> v98 [label="bam_bai"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v93 -> v147 [label="dup_metrics"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v121 [label="ch_versions"];
+
+v96 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v100 [label="ch_versions"];
+
+v97 [shape=point,label="",fixedsize=true,width=0.1];
+v98 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PICARD_COLLECTWGSMETRICS"];
+v97 -> v98 [label="fasta"];
+
+v98 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PICARD_COLLECTWGSMETRICS"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v98 -> v151 [label="wgs"];
+
+v98 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PICARD_COLLECTWGSMETRICS"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v109 [label="ch_versions"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v92 -> v101 [label="bam_bai"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v105 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PICARD_COLLECTMULTIPLEMETRICS"];
+v101 -> v105 [label="bam"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v92 -> v102 [label="bam_bai"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v103 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:MOSDEPTH"];
+v102 -> v103 [label="m_bam_bai"];
+
+v103 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:MOSDEPTH"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v103 -> v163 [label="mosdepth_global"];
+
+v103 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:MOSDEPTH"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v103 -> v166 [label="mosdepth_summary"];
+
+v103 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:MOSDEPTH"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v103 -> v108;
+
+v104 [shape=point,label="",fixedsize=true,width=0.1];
+v105 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PICARD_COLLECTMULTIPLEMETRICS"];
+v104 -> v105 [label="fasta"];
+
+v105 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PICARD_COLLECTMULTIPLEMETRICS"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v105 -> v154 [label="multiple"];
+
+v105 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PICARD_COLLECTMULTIPLEMETRICS"];
+v106 [shape=point];
+v105 -> v106;
+
+v105 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PICARD_COLLECTMULTIPLEMETRICS"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v105 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v109;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v115 [label="ch_versions"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v110 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:SAMTOOLS_NOSUPPLEMENTARY"];
+v101 -> v110 [label="bam"];
+
+v110 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:SAMTOOLS_NOSUPPLEMENTARY"];
+v112 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PRESEQ_LCEXTRAP"];
+v110 -> v112;
+
+v110 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:SAMTOOLS_NOSUPPLEMENTARY"];
+v111 [shape=point];
+v110 -> v111;
+
+v112 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PRESEQ_LCEXTRAP"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v112 -> v157 [label="ccurve"];
+
+v112 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PRESEQ_LCEXTRAP"];
+v113 [shape=point];
+v112 -> v113;
+
+v112 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PRESEQ_LCEXTRAP"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v112 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v119 [label="ch_versions"];
+
+v110 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:SAMTOOLS_NOSUPPLEMENTARY"];
+v116 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PRESEQ_CCURVE"];
+v110 -> v116;
+
+v116 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PRESEQ_CCURVE"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v116 -> v160 [label="c_curve"];
+
+v116 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PRESEQ_CCURVE"];
+v117 [shape=point];
+v116 -> v117;
+
+v116 [label="NFCORE_CONTROLDNA:CONTROLDNA:BAM_DNA_QC:PRESEQ_CCURVE"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v116 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v119 -> v120 [label="versions"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v121 -> v122 [label="ch_versions"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v124 [label="NFCORE_CONTROLDNA:CONTROLDNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v123 -> v124;
+
+v124 [label="NFCORE_CONTROLDNA:CONTROLDNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v126 [shape=point];
+v124 -> v126;
+
+v124 [label="NFCORE_CONTROLDNA:CONTROLDNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v124 -> v136;
+
+v124 [label="NFCORE_CONTROLDNA:CONTROLDNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v125 [shape=point];
+v124 -> v125;
+
+v127 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v129 [label="ch_multiqc_files"];
+
+v128 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 -> v132 [label="ch_multiqc_files"];
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v132;
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v135 [label="ch_multiqc_files"];
+
+v133 [shape=point,label="",fixedsize=true,width=0.1];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v133 -> v134 [label="ch_workflow_summary"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v137 [label="ch_multiqc_files"];
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v137;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v140 [label="ch_multiqc_files"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v143 [label="ch_multiqc_files"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v141 -> v142;
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v143;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v146 [label="ch_multiqc_files"];
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v144 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 -> v149 [label="ch_multiqc_files"];
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v147 -> v148;
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 -> v149;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v150 [label="ch_multiqc_files"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 -> v153 [label="ch_multiqc_files"];
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v151 -> v152;
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v156 [label="ch_multiqc_files"];
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v154 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 -> v159 [label="ch_multiqc_files"];
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v157 -> v158;
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 -> v159;
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 -> v162 [label="ch_multiqc_files"];
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v160 -> v161;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v162;
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v165 [label="ch_multiqc_files"];
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v163 -> v164;
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v165;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 -> v168 [label="ch_multiqc_files"];
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v166 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v168;
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v168 -> v169 [label="ch_multiqc_files"];
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v171 [label="NFCORE_CONTROLDNA:CONTROLDNA:SUBDIR"];
+v169 -> v171;
+
+v170 [shape=point,label="",fixedsize=true,width=0.1];
+v171 [label="NFCORE_CONTROLDNA:CONTROLDNA:SUBDIR"];
+v170 -> v171 [label="subdir"];
+
+v171 [label="NFCORE_CONTROLDNA:CONTROLDNA:SUBDIR"];
+v172 [shape=point];
+v171 -> v172 [label="subdir"];
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v168 -> v173 [label="ch_multiqc_files"];
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v174 [label="NFCORE_CONTROLDNA:CONTROLDNA:MULTIQC"];
+v173 -> v174;
+
+v174 [label="NFCORE_CONTROLDNA:CONTROLDNA:MULTIQC"];
+v177 [shape=point];
+v174 -> v177 [label="ch_multiqc_report"];
+
+v174 [label="NFCORE_CONTROLDNA:CONTROLDNA:MULTIQC"];
+v176 [shape=point];
+v174 -> v176;
+
+v174 [label="NFCORE_CONTROLDNA:CONTROLDNA:MULTIQC"];
+v175 [shape=point];
+v174 -> v175;
+
+v174 [label="NFCORE_CONTROLDNA:CONTROLDNA:MULTIQC"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 -> v178;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v178 [label="ch_versions"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 [shape=point];
+v178 -> v179 [label="ch_versions"];
+
+}

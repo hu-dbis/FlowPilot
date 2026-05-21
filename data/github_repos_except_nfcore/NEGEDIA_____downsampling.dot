@@ -1,0 +1,26 @@
+digraph "NEGEDIA_____downsampling" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v2 -> v3 [label="input_ch"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v4 [shape=point];
+v3 -> v4;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [label="PREPROCESS:DOWNSAMPLING"];
+v2 -> v5 [label="input_ch"];
+
+v5 [label="PREPROCESS:DOWNSAMPLING"];
+v6 [shape=point];
+v5 -> v6 [label="fq"];
+
+}

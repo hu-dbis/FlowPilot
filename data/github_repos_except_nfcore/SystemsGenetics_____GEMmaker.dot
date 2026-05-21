@@ -1,0 +1,598 @@
+digraph "SystemsGenetics_____GEMmaker" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1 [label="CH_SOFTWARE_VERSIONS"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6 [label="CH_SOFTWARE_VERSIONS"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 [label="GEMmaker:get_software_versions"];
+v7 -> v8;
+
+v8 [label="GEMmaker:get_software_versions"];
+v10 [shape=point];
+v8 -> v10;
+
+v8 [label="GEMmaker:get_software_versions"];
+v9 [shape=point];
+v8 -> v9;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12 [label="LOCAL_SAMPLES"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v18 [label="LOCAL_SAMPLES_LIST"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="GEMmaker:retrieve_sra_metadata"];
+v13 -> v14 [label="sras"];
+
+v14 [label="GEMmaker:retrieve_sra_metadata"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v14 -> v15;
+
+v14 [label="GEMmaker:retrieve_sra_metadata"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v83;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v18 [label="REMOTE_SAMPLES_LIST"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v19 -> v20;
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.watchPath"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="until"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="until"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 -> v25;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v27 [label="GEMmaker:download_runs"];
+v24 -> v27 [label="REMOTE_SAMPLES"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v12 -> v25 [label="LOCAL_SAMPLES_LIST"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v34 [label="LOCAL_FASTQ_FILES"];
+
+v27 [label="GEMmaker:download_runs"];
+v28 [label="GEMmaker:fastq_dump"];
+v27 -> v28 [label="SRA_FILES"];
+
+v27 [label="GEMmaker:download_runs"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v31;
+
+v27 [label="GEMmaker:download_runs"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v81;
+
+v28 [label="GEMmaker:fastq_dump"];
+v29 [label="GEMmaker:fastq_merge"];
+v28 -> v29 [label="DOWNLOADED_FASTQ_FILES"];
+
+v28 [label="GEMmaker:fastq_dump"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 -> v32;
+
+v28 [label="GEMmaker:fastq_dump"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 -> v82;
+
+v28 [label="GEMmaker:fastq_dump"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v91;
+
+v29 [label="GEMmaker:fastq_merge"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v34 [label="MERGED_FASTQ_FILES"];
+
+v29 [label="GEMmaker:fastq_merge"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v95;
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v33;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v33;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v59 [label="FAILED_SAMPLES"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 [label="GEMmaker:fastqc_1"];
+v34 -> v35 [label="FASTQ_FILES"];
+
+v35 [label="GEMmaker:fastqc_1"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v35 -> v51;
+
+v35 [label="GEMmaker:fastqc_1"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v99;
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 [label="GEMmaker:hisat2"];
+v37 -> v44 [label="HISAT2_INDEXES"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 [label="GEMmaker:trimmomatic"];
+v39 -> v42 [label="FASTA_ADAPTER"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v48 [label="GEMmaker:stringtie"];
+v41 -> v48 [label="GTF_FILE"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 [label="GEMmaker:trimmomatic"];
+v34 -> v42 [label="FASTQ_FILES"];
+
+v42 [label="GEMmaker:trimmomatic"];
+v43 [label="GEMmaker:fastqc_2"];
+v42 -> v43 [label="TRIMMED_FASTQ_FILES"];
+
+v42 [label="GEMmaker:trimmomatic"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 -> v52;
+
+v42 [label="GEMmaker:trimmomatic"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v99 [label="MERGED_FASTQ_DONE"];
+
+v43 [label="GEMmaker:fastqc_2"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v43 -> v53;
+
+v43 [label="GEMmaker:fastqc_2"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v103;
+
+v42 [label="GEMmaker:trimmomatic"];
+v44 [label="GEMmaker:hisat2"];
+v42 -> v44 [label="TRIMMED_FASTQ_FILES"];
+
+v44 [label="GEMmaker:hisat2"];
+v45 [label="GEMmaker:samtools_sort"];
+v44 -> v45 [label="SAM_FILES"];
+
+v44 [label="GEMmaker:hisat2"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 -> v54;
+
+v44 [label="GEMmaker:hisat2"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v103;
+
+v45 [label="GEMmaker:samtools_sort"];
+v46 [label="GEMmaker:samtools_index"];
+v45 -> v46 [label="BAM_FILES"];
+
+v45 [label="GEMmaker:samtools_sort"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v107;
+
+v46 [label="GEMmaker:samtools_index"];
+v48 [label="GEMmaker:stringtie"];
+v46 -> v48 [label="INDEXED_BAM_FILES"];
+
+v46 [label="GEMmaker:samtools_index"];
+v47 [shape=point];
+v46 -> v47;
+
+v46 [label="GEMmaker:samtools_index"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 -> v55;
+
+v48 [label="GEMmaker:stringtie"];
+v49 [label="GEMmaker:stringtie_fpkm_tpm"];
+v48 -> v49 [label="STRINGTIE_FILES"];
+
+v48 [label="GEMmaker:stringtie"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v111;
+
+v49 [label="GEMmaker:stringtie_fpkm_tpm"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v75 [label="FPKM_FILES"];
+
+v49 [label="GEMmaker:stringtie_fpkm_tpm"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v75 [label="TPM_FILES"];
+
+v49 [label="GEMmaker:stringtie_fpkm_tpm"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v75 [label="RAW_FILES"];
+
+v49 [label="GEMmaker:stringtie_fpkm_tpm"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v49 -> v58 [label="COMPLETED_SAMPLES"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v56;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v56;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v56;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v56;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v56;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v56 -> v69 [label="MULTIQC_FILES"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v59;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [label="GEMmaker:next_sample"];
+v59 -> v60 [label="SAMPLE_DONE_SIGNAL"];
+
+v60 [label="GEMmaker:next_sample"];
+v61 [shape=point];
+v60 -> v61;
+
+v62 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v63 [label="BOOTSTRAP_SIGNAL"];
+
+v49 [label="GEMmaker:stringtie_fpkm_tpm"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v63 [label="COMPLETED_SAMPLES"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 -> v66 [label="MULTIQC_RUN"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 -> v67 [label="MULTIQC_CONFIG"];
+
+v65 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v65 -> v68 [label="MULTIQC_CUSTOM_LOGO"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v70 [label="GEMmaker:multiqc"];
+v66 -> v70;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v70 [label="GEMmaker:multiqc"];
+v67 -> v70;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v70 [label="GEMmaker:multiqc"];
+v68 -> v70;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v70 [label="GEMmaker:multiqc"];
+v69 -> v70;
+
+v70 [label="GEMmaker:multiqc"];
+v72 [shape=point];
+v70 -> v72;
+
+v70 [label="GEMmaker:multiqc"];
+v71 [shape=point];
+v70 -> v71;
+
+v62 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v73 [label="BOOTSTRAP_SIGNAL"];
+
+v49 [label="GEMmaker:stringtie_fpkm_tpm"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v73 [label="COMPLETED_SAMPLES"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v73 -> v76 [label="CREATE_GEM_RUN"];
+
+v74 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v75 -> v77 [label="CREATE_GEM_FILES"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v78 [label="GEMmaker:create_gem"];
+v76 -> v78;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v78 [label="GEMmaker:create_gem"];
+v77 -> v78;
+
+v78 [label="GEMmaker:create_gem"];
+v79 [shape=point];
+v78 -> v79;
+
+v80 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v83;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v83;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v83;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v83 -> v85 [label="FAILED_RUNS"];
+
+v84 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v84 -> v86 [label="FAILED_RUN_TEMPLATE"];
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v87 [label="GEMmaker:failed_run_report"];
+v85 -> v87;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v87 [label="GEMmaker:failed_run_report"];
+v86 -> v87;
+
+v87 [label="GEMmaker:failed_run_report"];
+v88 [shape=point];
+v87 -> v88;
+
+v89 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v94 [label="CLEAN_WORK_FILES"];
+
+v90 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v121 [label="GEMmaker:clean_work_dirs"];
+v90 -> v121 [label="CLEAN_WORK_DIRS"];
+
+v27 [label="GEMmaker:download_runs"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v91 [label="SRA_FILES"];
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v94 [label="CLEAN_SRA_FILES"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v98 [label="CLEAN_WORK_FILES"];
+
+v28 [label="GEMmaker:fastq_dump"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v95 [label="DOWNLOADED_FASTQ_FILES"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v95 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v98 [label="CLEAN_DOWNLOADED_FASTQ_FILES"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v102 [label="CLEAN_WORK_FILES"];
+
+v29 [label="GEMmaker:fastq_merge"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v99 [label="MERGED_FASTQ_FILES"];
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v102 [label="CLEAN_MERGED_FASTQ_FILES"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v106 [label="CLEAN_WORK_FILES"];
+
+v42 [label="GEMmaker:trimmomatic"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v103 [label="TRIMMED_FASTQ_FILES"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v106 [label="CLEAN_TRIMMED_FASTQ_FILES"];
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v110 [label="CLEAN_WORK_FILES"];
+
+v44 [label="GEMmaker:hisat2"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v107 [label="SAM_FILES"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v110 [label="CLEAN_SAM_FILES"];
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v114 [label="CLEAN_WORK_FILES"];
+
+v45 [label="GEMmaker:samtools_sort"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v111 [label="BAM_FILES"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v111 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v114 [label="CLEAN_BAM_FILES"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v118 [label="CLEAN_WORK_FILES"];
+
+v49 [label="GEMmaker:stringtie_fpkm_tpm"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v115 [label="COMPLETED_SAMPLES"];
+
+v48 [label="GEMmaker:stringtie"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v115 [label="STRINGTIE_FILES"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v115 -> v116;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v116 -> v117;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v118 [label="CLEAN_STRINGTIE_FILES"];
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 [label="GEMmaker:clean_work_files"];
+v118 -> v119 [label="CLEAN_WORK_FILES"];
+
+v119 [label="GEMmaker:clean_work_files"];
+v120 [shape=point];
+v119 -> v120;
+
+v121 [label="GEMmaker:clean_work_dirs"];
+v122 [shape=point];
+v121 -> v122;
+
+}

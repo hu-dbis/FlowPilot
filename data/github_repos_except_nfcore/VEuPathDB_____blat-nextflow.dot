@@ -1,0 +1,22 @@
+digraph "VEuPathDB_____blatnextflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v3 [label="blat:runBlat"];
+v1 -> v3 [label="seqs"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="blat:runBlat"];
+v2 -> v3 [label="queryFasta"];
+
+v3 [label="blat:runBlat"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v5 [shape=point];
+v4 -> v5;
+
+}

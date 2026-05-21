@@ -1,0 +1,34 @@
+digraph "digitalproteomes_____NFPrepareProteinDB" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="remote:generateDbName"];
+v0 -> v1 [label="up_id"];
+
+v1 [label="remote:generateDbName"];
+v3 [label="remote:uniprotDownload"];
+v1 -> v3 [label="db_name"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="remote:uniprotDownload"];
+v2 -> v3 [label="up_id"];
+
+v3 [label="remote:uniprotDownload"];
+v4 [label="remote:formatForTpp"];
+v3 -> v4;
+
+v4 [label="remote:formatForTpp"];
+v6 [label="remote:generateDecoys"];
+v4 -> v6 [label="database"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="remote:generateDecoys"];
+v5 -> v6 [label="decoy_prefix"];
+
+v1 [label="remote:generateDbName"];
+v6 [label="remote:generateDecoys"];
+v1 -> v6 [label="db_name"];
+
+v6 [label="remote:generateDecoys"];
+v7 [label="remote:symLinkDb"];
+v6 -> v7;
+
+}

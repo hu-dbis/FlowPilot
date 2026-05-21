@@ -1,0 +1,18 @@
+digraph "davepallot_____nf_parallel" {
+v0 [label="generate"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v0 -> v1 [label="num_parallel"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v2 [label="parallel_process"];
+v1 -> v2;
+
+v2 [label="parallel_process"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v3 [label="process_num"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 [label="parallel_process_collect"];
+v3 -> v4;
+
+}

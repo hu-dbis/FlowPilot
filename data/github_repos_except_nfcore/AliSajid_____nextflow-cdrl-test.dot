@@ -1,0 +1,38 @@
+digraph "AliSajid_____nextflowcdrltest" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v3 [label="rnaseqFlow:quantification"];
+v0 -> v3 [label="read_files"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="rnaseqFlow:index"];
+v1 -> v2 [label="transcriptome"];
+
+v2 [label="rnaseqFlow:index"];
+v3 [label="rnaseqFlow:quantification"];
+v2 -> v3;
+
+v3 [label="rnaseqFlow:quantification"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v5 [label="pair_id"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v4 [label="rnaseqFlow:fastqc"];
+v0 -> v4 [label="read_files"];
+
+v4 [label="rnaseqFlow:fastqc"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 [label="rnaseqFlow:multiqc"];
+v6 -> v7;
+
+v7 [label="rnaseqFlow:multiqc"];
+v8 [shape=point];
+v7 -> v8;
+
+}

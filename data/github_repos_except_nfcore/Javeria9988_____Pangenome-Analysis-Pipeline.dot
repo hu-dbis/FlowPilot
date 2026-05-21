@@ -1,0 +1,58 @@
+digraph "Javeria9988_____PangenomeAnalysisPipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [label="annotate"];
+v0 -> v1 [label="sequence_ch"];
+
+v1 [label="annotate"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v3;
+
+v1 [label="annotate"];
+v2 [shape=point];
+v1 -> v2;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 [label="panaroo"];
+v3 -> v4 [label="gff_files_ch"];
+
+v4 [label="panaroo"];
+v7 [label="snippy"];
+v4 -> v7;
+
+v4 [label="panaroo"];
+v11 [label="genedescription"];
+v4 -> v11;
+
+v4 [label="panaroo"];
+v5 [shape=point];
+v4 -> v5;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [label="dwgsim"];
+v0 -> v6 [label="sequence_ch"];
+
+v6 [label="dwgsim"];
+v7 [label="snippy"];
+v6 -> v7;
+
+v7 [label="snippy"];
+v10 [label="detectStopCodons"];
+v7 -> v10;
+
+v7 [label="snippy"];
+v9 [shape=point];
+v7 -> v9;
+
+v7 [label="snippy"];
+v8 [shape=point];
+v7 -> v8;
+
+v10 [label="detectStopCodons"];
+v11 [label="genedescription"];
+v10 -> v11;
+
+v11 [label="genedescription"];
+v12 [shape=point];
+v11 -> v12;
+
+}

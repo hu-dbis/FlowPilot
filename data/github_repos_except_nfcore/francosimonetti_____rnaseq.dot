@@ -1,0 +1,242 @@
+digraph "francosimonetti_____rnaseq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v32 [label="hs2_indices"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [label="align_reads:fastq_dump_reads"];
+v5 -> v28 [label="raw_sra_run"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v26 [label="gtf_file"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v38 [label="gtf_file"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v39 [label="ch_biotypes_header"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 -> v46 [label="gtf_file"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v15 [shape=point];
+v14 -> v15 [label="tx_fasta_ch"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v18 [shape=point];
+v17 -> v18 [label="txrevise_gff_ch"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v21 [shape=point];
+v20 -> v21 [label="genome_fasta_ch"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v55 [label="mbv_vcf_ch"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 -> v56 [label="mbv_vcf_index_ch"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 [label="align_reads:makeHisatSplicesites"];
+v26 -> v27;
+
+v27 [label="align_reads:makeHisatSplicesites"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 -> v33;
+
+v28 [label="align_reads:fastq_dump_reads"];
+v29 [label="align_reads:trim_galore"];
+v28 -> v29;
+
+v29 [label="align_reads:trim_galore"];
+v34 [label="align_reads:hisat2Align"];
+v29 -> v34 [label="trimmed_reads"];
+
+v29 [label="align_reads:trim_galore"];
+v31 [shape=point];
+v29 -> v31;
+
+v29 [label="align_reads:trim_galore"];
+v30 [shape=point];
+v29 -> v30;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 [label="align_reads:hisat2Align"];
+v32 -> v34;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 [label="align_reads:hisat2Align"];
+v33 -> v34;
+
+v34 [label="align_reads:hisat2Align"];
+v36 [label="align_reads:hisat2_sortOutput"];
+v34 -> v36;
+
+v34 [label="align_reads:hisat2Align"];
+v35 [shape=point];
+v34 -> v35;
+
+v36 [label="align_reads:hisat2_sortOutput"];
+v37 [label="align_reads:sort_by_name_BAM"];
+v36 -> v37 [label="bam_sorted_indexed"];
+
+v37 [label="align_reads:sort_by_name_BAM"];
+v40 [label="count_features:featureCounts"];
+v37 -> v40 [label="bam_sorted_by_name"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 [label="count_features:featureCounts"];
+v38 -> v40;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 [label="count_features:featureCounts"];
+v39 -> v40;
+
+v40 [label="count_features:featureCounts"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v40 -> v43 [label="gene_feature_counts"];
+
+v40 [label="count_features:featureCounts"];
+v42 [shape=point];
+v40 -> v42;
+
+v40 [label="count_features:featureCounts"];
+v41 [shape=point];
+v40 -> v41;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v44 [label="count_features:merge_featureCounts"];
+v43 -> v44;
+
+v44 [label="count_features:merge_featureCounts"];
+v45 [shape=point];
+v44 -> v45;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 [label="quant_exons:makeDexSeqExonGFF"];
+v46 -> v47;
+
+v47 [label="quant_exons:makeDexSeqExonGFF"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 [label="quant_exons:count_exons"];
+v48 -> v49;
+
+v37 [label="align_reads:sort_by_name_BAM"];
+v49 [label="quant_exons:count_exons"];
+v37 -> v49 [label="bam_sorted_by_name"];
+
+v49 [label="quant_exons:count_exons"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v51 [label="quant_exons:exon_count_merge"];
+v50 -> v51;
+
+v51 [label="quant_exons:exon_count_merge"];
+v52 [shape=point];
+v51 -> v52;
+
+v36 [label="align_reads:hisat2_sortOutput"];
+v53 [label="createBigWig"];
+v36 -> v53 [label="bam_sorted_indexed"];
+
+v53 [label="createBigWig"];
+v54 [shape=point];
+v53 -> v54;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 [label="generate_mbv:run_mbv"];
+v55 -> v57;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 [label="generate_mbv:run_mbv"];
+v56 -> v57;
+
+v36 [label="align_reads:hisat2_sortOutput"];
+v57 [label="generate_mbv:run_mbv"];
+v36 -> v57 [label="bam_sorted_indexed"];
+
+v57 [label="generate_mbv:run_mbv"];
+v58 [shape=point];
+v57 -> v58;
+
+v40 [label="count_features:featureCounts"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v59 [label="gene_feature_counts"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 [label="sample_correlation"];
+v59 -> v62;
+
+v60 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v62 [label="sample_correlation"];
+v60 -> v62;
+
+v61 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v62 [label="sample_correlation"];
+v61 -> v62;
+
+v62 [label="sample_correlation"];
+v63 [shape=point];
+v62 -> v63;
+
+}

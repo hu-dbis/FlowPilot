@@ -1,0 +1,518 @@
+digraph "trevf_____SRAtac" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="SRAtac:ParseDesign:ParseDesign"];
+v0 -> v1 [label="design"];
+
+v1 [label="SRAtac:ParseDesign:ParseDesign"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v6 [label="SRAtac:FastpTrimReads:Fastp"];
+v4 -> v6 [label="readsRaw"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v5 [label="SRAtac:ParseDesign:SamtoolsIndex"];
+v4 -> v5;
+
+v5 [label="SRAtac:ParseDesign:SamtoolsIndex"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v31 [label="ch_bamIndexedGenome"];
+
+v6 [label="SRAtac:FastpTrimReads:Fastp"];
+v10 [label="SRAtac:ReadsQC:TrimFastQC"];
+v6 -> v10 [label="reads"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v7 [label="SRAtac:ReadsQC:RawFastQC"];
+v4 -> v7 [label="readsRaw"];
+
+v7 [label="SRAtac:ReadsQC:RawFastQC"];
+v9 [shape=point];
+v7 -> v9;
+
+v7 [label="SRAtac:ReadsQC:RawFastQC"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v7 -> v14 [label="ch_readsRawFQC"];
+
+v7 [label="SRAtac:ReadsQC:RawFastQC"];
+v8 [shape=point];
+v7 -> v8 [label="toolIDs"];
+
+v10 [label="SRAtac:ReadsQC:TrimFastQC"];
+v12 [shape=point];
+v10 -> v12;
+
+v10 [label="SRAtac:ReadsQC:TrimFastQC"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v10 -> v15 [label="ch_readsTrimmedFQC"];
+
+v10 [label="SRAtac:ReadsQC:TrimFastQC"];
+v11 [shape=point];
+v10 -> v11 [label="toolIDs"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 [label="SRAtac:ReadsQC:ReadsMultiQC"];
+v16 -> v18 [label="ch_allFastQCZip"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v18 [label="SRAtac:ReadsQC:ReadsMultiQC"];
+v17 -> v18 [label="outName"];
+
+v18 [label="SRAtac:ReadsQC:ReadsMultiQC"];
+v19 [shape=point];
+v18 -> v19;
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=point];
+v20 -> v21 [label="ch_samGenome"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="SRAtac:Bowtie2Genome:Bowtie2Build"];
+v22 -> v24 [label="reference"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="SRAtac:Bowtie2Genome:Bowtie2Build"];
+v23 -> v24 [label="refName"];
+
+v24 [label="SRAtac:Bowtie2Genome:Bowtie2Build"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 [label="SRAtac:Bowtie2Genome:Bowtie2Align"];
+v25 -> v27 [label="bowtie2Indexes"];
+
+v6 [label="SRAtac:FastpTrimReads:Fastp"];
+v27 [label="SRAtac:Bowtie2Genome:Bowtie2Align"];
+v6 -> v27 [label="reads"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="SRAtac:Bowtie2Genome:Bowtie2Align"];
+v26 -> v27 [label="refName"];
+
+v27 [label="SRAtac:Bowtie2Genome:Bowtie2Align"];
+v28 [label="SRAtac:PostprocessSam:Samblaster"];
+v27 -> v28 [label="sam"];
+
+v28 [label="SRAtac:PostprocessSam:Samblaster"];
+v29 [label="SRAtac:PostprocessSam:SamtoolsCompressSort"];
+v28 -> v29;
+
+v29 [label="SRAtac:PostprocessSam:SamtoolsCompressSort"];
+v30 [label="SRAtac:PostprocessSam:SamtoolsIndex"];
+v29 -> v30;
+
+v30 [label="SRAtac:PostprocessSam:SamtoolsIndex"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31 [label="bamIndexed"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [label="SRAtac:AlignmentStatsQC:SamtoolsStatsIdxstats"];
+v31 -> v32 [label="ch_alignments"];
+
+v32 [label="SRAtac:AlignmentStatsQC:SamtoolsStatsIdxstats"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v33 [label="ch_alignGenomeStats"];
+
+v32 [label="SRAtac:AlignmentStatsQC:SamtoolsStatsIdxstats"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v34 [label="ch_alignGenomeIdxstats"];
+
+v32 [label="SRAtac:AlignmentStatsQC:SamtoolsStatsIdxstats"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v32 -> v98 [label="ch_alignGenomeStatsIS"];
+
+v32 [label="SRAtac:AlignmentStatsQC:SamtoolsStatsIdxstats"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v32 -> v99 [label="ch_alignGenomePctDup"];
+
+v32 [label="SRAtac:AlignmentStatsQC:SamtoolsStatsIdxstats"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v32 -> v35 [label="toolIDs"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="SRAtac:AlignmentStatsQC:AlignmentStatsMultiQC"];
+v33 -> v37;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="SRAtac:AlignmentStatsQC:AlignmentStatsMultiQC"];
+v34 -> v37;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v37 [label="SRAtac:AlignmentStatsQC:AlignmentStatsMultiQC"];
+v35 -> v37;
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="SRAtac:AlignmentStatsQC:AlignmentStatsMultiQC"];
+v36 -> v37 [label="outName"];
+
+v37 [label="SRAtac:AlignmentStatsQC:AlignmentStatsMultiQC"];
+v38 [shape=point];
+v37 -> v38;
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v40 [shape=point];
+v39 -> v40 [label="ch_samContaminant"];
+
+v6 [label="SRAtac:FastpTrimReads:Fastp"];
+v41 [label="SRAtac:SeqtkSample"];
+v6 -> v41 [label="reads"];
+
+v41 [label="SRAtac:SeqtkSample"];
+v47 [label="SRAtac:Bowtie2Contaminant:Bowtie2Align"];
+v41 -> v47 [label="reads"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="SRAtac:Bowtie2Contaminant:Bowtie2Build"];
+v42 -> v44 [label="reference"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="SRAtac:Bowtie2Contaminant:Bowtie2Build"];
+v43 -> v44 [label="refName"];
+
+v44 [label="SRAtac:Bowtie2Contaminant:Bowtie2Build"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 [label="SRAtac:Bowtie2Contaminant:Bowtie2Align"];
+v45 -> v47 [label="bowtie2Indexes"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="SRAtac:Bowtie2Contaminant:Bowtie2Align"];
+v46 -> v47 [label="refName"];
+
+v47 [label="SRAtac:Bowtie2Contaminant:Bowtie2Align"];
+v48 [label="SRAtac:ContaminantStatsQC:SamtoolsFlagstat"];
+v47 -> v48 [label="sam"];
+
+v48 [label="SRAtac:ContaminantStatsQC:SamtoolsFlagstat"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v48 -> v49 [label="ch_contaminantFlagstat"];
+
+v48 [label="SRAtac:ContaminantStatsQC:SamtoolsFlagstat"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v48 -> v50 [label="toolIDs"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v52 [label="SRAtac:ContaminantStatsQC:ContaminantStatsQC"];
+v49 -> v52;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v52 [label="SRAtac:ContaminantStatsQC:ContaminantStatsQC"];
+v50 -> v52;
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="SRAtac:ContaminantStatsQC:ContaminantStatsQC"];
+v51 -> v52 [label="outName"];
+
+v52 [label="SRAtac:ContaminantStatsQC:ContaminantStatsQC"];
+v53 [shape=point];
+v52 -> v53;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [label="SRAtac:Preseq:PreseqLcExtrap"];
+v31 -> v54 [label="ch_alignments"];
+
+v54 [label="SRAtac:Preseq:PreseqLcExtrap"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v54 -> v101 [label="ch_preseqLcExtrap"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v31 -> v55 [label="ch_alignments"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 -> v58;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 -> v57;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v56 [shape=point];
+v55 -> v56;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 [label="SRAtac:DeepToolsMultiBam:DeepToolsMultiBamSummary"];
+v57 -> v60 [label="bams"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 [label="SRAtac:DeepToolsMultiBam:DeepToolsMultiBamSummary"];
+v58 -> v60 [label="bais"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1];
+v60 [label="SRAtac:DeepToolsMultiBam:DeepToolsMultiBamSummary"];
+v59 -> v60 [label="outName"];
+
+v60 [label="SRAtac:DeepToolsMultiBam:DeepToolsMultiBamSummary"];
+v61 [shape=point];
+v60 -> v61;
+
+v60 [label="SRAtac:DeepToolsMultiBam:DeepToolsMultiBamSummary"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v60 -> v105 [label="ch_corMatrix"];
+
+v60 [label="SRAtac:DeepToolsMultiBam:DeepToolsMultiBamSummary"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v60 -> v106 [label="ch_PCAMatrix"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 [label="SRAtac:SambambaFilterBam"];
+v31 -> v64 [label="ch_alignments"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [label="SRAtac:SambambaFilterBam"];
+v62 -> v64 [label="mapQThreshold"];
+
+v63 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [label="SRAtac:SambambaFilterBam"];
+v63 -> v64 [label="mitoChr"];
+
+v64 [label="SRAtac:SambambaFilterBam"];
+v67 [label="SRAtac:BamCoverage"];
+v64 -> v67 [label="bamIndexed"];
+
+v65 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [label="SRAtac:BamCoverage"];
+v65 -> v67 [label="binSize"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [label="SRAtac:BamCoverage"];
+v66 -> v67 [label="normMethod"];
+
+v67 [label="SRAtac:BamCoverage"];
+v68 [shape=point];
+v67 -> v68;
+
+v64 [label="SRAtac:SambambaFilterBam"];
+v69 [label="SRAtac:CallPeaksMacs2:BamToBed"];
+v64 -> v69 [label="bamIndexed"];
+
+v69 [label="SRAtac:CallPeaksMacs2:BamToBed"];
+v71 [label="SRAtac:CallPeaksMacs2:Macs2CallPeaks"];
+v69 -> v71;
+
+v70 [shape=point,label="",fixedsize=true,width=0.1];
+v71 [label="SRAtac:CallPeaksMacs2:Macs2CallPeaks"];
+v70 -> v71 [label="effectiveGenomeSize"];
+
+v71 [label="SRAtac:CallPeaksMacs2:Macs2CallPeaks"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v71 -> v73 [label="ch_peaksNarrowPeak"];
+
+v71 [label="SRAtac:CallPeaksMacs2:Macs2CallPeaks"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v71 -> v102 [label="ch_peaksXls"];
+
+v71 [label="SRAtac:CallPeaksMacs2:Macs2CallPeaks"];
+v72 [shape=point];
+v71 -> v72;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v73 -> v75;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 [label="SRAtac:MergePeaksHomer"];
+v74 -> v81 [label="ch_peaksCollectPeaks"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v81 [label="SRAtac:MergePeaksHomer"];
+v75 -> v81 [label="ch_peaksCollectToolIDs"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v73 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v76 -> v77;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v73 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v78 [shape=point];
+v77 -> v78;
+
+v79 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="SRAtac:MergePeaksHomer"];
+v79 -> v81 [label="inName"];
+
+v80 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="SRAtac:MergePeaksHomer"];
+v80 -> v81 [label="effectiveGenomeSize"];
+
+v81 [label="SRAtac:MergePeaksHomer"];
+v86 [label="SRAtac:ConvertMergedPeaks"];
+v81 -> v86 [label="ch_mergePeaks"];
+
+v81 [label="SRAtac:MergePeaksHomer"];
+v83 [shape=point];
+v81 -> v83;
+
+v81 [label="SRAtac:MergePeaksHomer"];
+v82 [shape=point];
+v81 -> v82;
+
+v84 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [label="SRAtac:ConvertMergedPeaks"];
+v84 -> v86 [label="inName"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [label="SRAtac:ConvertMergedPeaks"];
+v85 -> v86 [label="tool"];
+
+v86 [label="SRAtac:ConvertMergedPeaks"];
+v91 [label="SRAtac:FeatureCounts:FeatureCounts"];
+v86 -> v91 [label="mergedPeaks"];
+
+v64 [label="SRAtac:SambambaFilterBam"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v64 -> v87 [label="bamIndexed"];
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v90 [shape=point];
+v87 -> v90;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v89 [shape=point];
+v87 -> v89;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v88 [shape=point];
+v87 -> v88;
+
+v64 [label="SRAtac:SambambaFilterBam"];
+v91 [label="SRAtac:FeatureCounts:FeatureCounts"];
+v64 -> v91 [label="bamIndexed"];
+
+v91 [label="SRAtac:FeatureCounts:FeatureCounts"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 -> v103 [label="ch_countsFeatureCounts"];
+
+v91 [label="SRAtac:FeatureCounts:FeatureCounts"];
+v92 [shape=point];
+v91 -> v92 [label="ch_summaryFeatureCounts"];
+
+v93 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v93 -> v94;
+
+v7 [label="SRAtac:ReadsQC:RawFastQC"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v7 -> v94 [label="ch_readsRawFQC"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v94 -> v95;
+
+v10 [label="SRAtac:ReadsQC:TrimFastQC"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v10 -> v95 [label="ch_readsTrimmedFQC"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v95 -> v96;
+
+v32 [label="SRAtac:AlignmentStatsQC:SamtoolsStatsIdxstats"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v32 -> v96 [label="ch_alignGenomeStats"];
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v96 -> v97;
+
+v32 [label="SRAtac:AlignmentStatsQC:SamtoolsStatsIdxstats"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v32 -> v97 [label="ch_alignGenomeIdxstats"];
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v97 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v99 -> v100;
+
+v48 [label="SRAtac:ContaminantStatsQC:SamtoolsFlagstat"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v48 -> v100 [label="ch_contaminantFlagstat"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v102 -> v104;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v105 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v106 -> v107 [label="ch_fullMultiQC"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v110 [label="SRAtac:FullMultiQC"];
+v107 -> v110;
+
+v108 [shape=point,label="",fixedsize=true,width=0.1];
+v110 [label="SRAtac:FullMultiQC"];
+v108 -> v110 [label="runName"];
+
+v109 [shape=point,label="",fixedsize=true,width=0.1];
+v110 [label="SRAtac:FullMultiQC"];
+v109 -> v110 [label="config"];
+
+v110 [label="SRAtac:FullMultiQC"];
+v111 [shape=point];
+v110 -> v111;
+
+}

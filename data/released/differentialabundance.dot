@@ -1,0 +1,842 @@
+digraph "differentialabundance" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v0 -> v18 [label="ch_input"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v1 -> v18 [label="ch_matrices_for_validation"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v3 -> v31 [label="ch_transcript_lengths"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v70 [label="ch_gene_sets"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v7 [shape=point];
+v6 -> v7 [label="versions"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v12 [label="ch_versions"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v19 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR"];
+v9 -> v19 [label="ch_contrasts_file"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GUNZIP_GTF"];
+v10 -> v11;
+
+v11 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GUNZIP_GTF"];
+v14 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GTF_TO_TABLE"];
+v11 -> v14 [label="file_gtf"];
+
+v11 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GUNZIP_GTF"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v17 [label="ch_versions"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GTF_TO_TABLE"];
+v13 -> v14;
+
+v14 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GTF_TO_TABLE"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v16;
+
+v14 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GTF_TO_TABLE"];
+v15 [shape=point];
+v14 -> v15;
+
+v14 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GTF_TO_TABLE"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v17;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR"];
+v16 -> v19 [label="ch_features"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v49 [label="ch_versions"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR"];
+v18 -> v19;
+
+v19 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR"];
+v23 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:CUSTOM_MATRIXFILTER"];
+v19 -> v23;
+
+v19 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v64;
+
+v19 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR"];
+v23 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:CUSTOM_MATRIXFILTER"];
+v19 -> v23 [label="ch_matrix_for_differential"];
+
+v19 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v20;
+
+v19 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v120;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v22 -> v29 [label="ch_contrasts"];
+
+v23 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:CUSTOM_MATRIXFILTER"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 -> v27;
+
+v23 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:CUSTOM_MATRIXFILTER"];
+v26 [shape=point];
+v23 -> v26;
+
+v23 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:CUSTOM_MATRIXFILTER"];
+v25 [shape=point];
+v23 -> v25;
+
+v23 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:CUSTOM_MATRIXFILTER"];
+v24 [shape=point];
+v23 -> v24;
+
+v19 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v28 -> v31 [label="ch_samples_and_matrix"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v29 -> v31;
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v30 -> v31;
+
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v39 [shape=point];
+v31 -> v39;
+
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v38 [shape=point];
+v31 -> v38;
+
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v37 [shape=point];
+v31 -> v37;
+
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v36 [shape=point];
+v31 -> v36;
+
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 -> v50 [label="ch_processed_matrices"];
+
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v35 [shape=point];
+v31 -> v35;
+
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 -> v50;
+
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v34 [shape=point];
+v31 -> v34;
+
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v33 [shape=point];
+v31 -> v33;
+
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v32 [shape=point];
+v31 -> v32;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v22 -> v41 [label="ch_contrasts"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v28 -> v41 [label="ch_samples_and_matrix"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v40 -> v41;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v3 -> v41 [label="ch_transcript_lengths"];
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v54 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:FILTER_DIFFTABLE"];
+v41 -> v54 [label="ch_differential"];
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v48 [shape=point];
+v41 -> v48;
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v47 [shape=point];
+v41 -> v47;
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v46 [shape=point];
+v41 -> v46;
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v45 [shape=point];
+v41 -> v45;
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v44 [shape=point];
+v41 -> v44;
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v43 [shape=point];
+v41 -> v43;
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 -> v145 [label="ch_model"];
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v42 [shape=point];
+v41 -> v42;
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v94 [label="ch_versions"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 -> v51 [label="ch_processed_matrices"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v51 -> v98 [label="ch_processed_matrices"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:FILTER_DIFFTABLE"];
+v52 -> v54 [label="ch_logfc"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:FILTER_DIFFTABLE"];
+v53 -> v54 [label="ch_padj"];
+
+v54 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:FILTER_DIFFTABLE"];
+v56 [shape=point];
+v54 -> v56;
+
+v54 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:FILTER_DIFFTABLE"];
+v55 [shape=point];
+v54 -> v55;
+
+v31 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_NORM"];
+v57 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:CUSTOM_TABULARTOGSEAGCT"];
+v31 -> v57 [label="ch_processed_matrices"];
+
+v57 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:CUSTOM_TABULARTOGSEAGCT"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 -> v67;
+
+v57 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:CUSTOM_TABULARTOGSEAGCT"];
+v58 [shape=point];
+v57 -> v58;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v59 [label="ch_contrasts"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v59 -> v61;
+
+v19 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v62 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:CUSTOM_TABULARTOGSEACLS"];
+v61 -> v62 [label="ch_contrasts_and_samples"];
+
+v62 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:CUSTOM_TABULARTOGSEACLS"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v62 -> v68;
+
+v62 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:CUSTOM_TABULARTOGSEACLS"];
+v63 [shape=point];
+v62 -> v63;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:TABULAR_TO_GSEA_CHIP"];
+v64 -> v66;
+
+v65 [shape=point,label="",fixedsize=true,width=0.1];
+v66 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:TABULAR_TO_GSEA_CHIP"];
+v65 -> v66;
+
+v66 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:TABULAR_TO_GSEA_CHIP"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v66 -> v72;
+
+v66 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:TABULAR_TO_GSEA_CHIP"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v94;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 -> v71 [label="ch_gsea_inputs"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v71 -> v73;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v72 -> v73;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v70 -> v73 [label="ch_gsea_inputs"];
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v92 [shape=point];
+v73 -> v92;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v91 [shape=point];
+v73 -> v91;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v90 [shape=point];
+v73 -> v90;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v73 -> v93;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v89 [shape=point];
+v73 -> v89;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v73 -> v93;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v88 [shape=point];
+v73 -> v88;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v87 [shape=point];
+v73 -> v87;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v86 [shape=point];
+v73 -> v86;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v85 [shape=point];
+v73 -> v85;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v84 [shape=point];
+v73 -> v84;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v83 [shape=point];
+v73 -> v83;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v82 [shape=point];
+v73 -> v82;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v81 [shape=point];
+v73 -> v81;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v80 [shape=point];
+v73 -> v80;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v79 [shape=point];
+v73 -> v79;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v78 [shape=point];
+v73 -> v78;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v77 [shape=point];
+v73 -> v77;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v76 [shape=point];
+v73 -> v76;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v75 [shape=point];
+v73 -> v75;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v74 [shape=point];
+v73 -> v74;
+
+v73 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:GSEA_GSEA"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v95;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 -> v148 [label="ch_gsea_results"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v120 [label="ch_versions"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v96 [label="ch_contrasts"];
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v97 -> v104 [label="ch_contrast_variables"];
+
+v19 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 -> v98 [label="ch_matrix_for_differential"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v98 -> v100 [label="ch_mat"];
+
+v19 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 -> v99;
+
+v19 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 -> v103 [label="ch_all_matrices"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v105 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_EXPLORATORY"];
+v104 -> v105;
+
+v105 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_EXPLORATORY"];
+v116 [shape=point];
+v105 -> v116;
+
+v105 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_EXPLORATORY"];
+v115 [shape=point];
+v105 -> v115;
+
+v105 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_EXPLORATORY"];
+v114 [shape=point];
+v105 -> v114;
+
+v105 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_EXPLORATORY"];
+v113 [shape=point];
+v105 -> v113;
+
+v105 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_EXPLORATORY"];
+v112 [shape=point];
+v105 -> v112;
+
+v105 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_EXPLORATORY"];
+v111 [shape=point];
+v105 -> v111;
+
+v105 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_EXPLORATORY"];
+v110 [shape=point];
+v105 -> v110;
+
+v105 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_EXPLORATORY"];
+v109 [shape=point];
+v105 -> v109;
+
+v105 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_EXPLORATORY"];
+v108 [shape=point];
+v105 -> v108;
+
+v105 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_EXPLORATORY"];
+v107 [shape=point];
+v105 -> v107;
+
+v105 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_EXPLORATORY"];
+v106 [shape=point];
+v105 -> v106;
+
+v105 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_EXPLORATORY"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v121;
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v117 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_DIFFERENTIAL"];
+v41 -> v117 [label="ch_differential"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v117 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_DIFFERENTIAL"];
+v102 -> v117 [label="ch_all_matrices"];
+
+v117 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_DIFFERENTIAL"];
+v119 [shape=point];
+v117 -> v119;
+
+v117 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_DIFFERENTIAL"];
+v118 [shape=point];
+v117 -> v118;
+
+v117 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:PLOT_DIFFERENTIAL"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v122;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v122;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v122 -> v123 [label="ch_versions"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v124 -> v125;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v127;
+
+v126 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v128 -> v138 [label="ch_collated_versions"];
+
+v129 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v168 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:RMARKDOWNNOTEBOOK"];
+v130 -> v168 [label="ch_report_file"];
+
+v131 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v131 -> v139 [label="ch_logo_file"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v132 -> v140 [label="ch_css_file"];
+
+v133 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v133 -> v141 [label="ch_citations_file"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 -> v134 [label="ch_all_matrices"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v134 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v135 -> v137;
+
+v19 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:VALIDATOR"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v136;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v136 -> v137;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v137 -> v138;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v141 -> v144;
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 -> v142 [label="ch_differential"];
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v142 -> v143;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v143 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v144 -> v147;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v145 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v147 -> v151 [label="ch_report_input_files"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v148 -> v149;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v149 -> v150;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v150 -> v151;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v151 -> v167 [label="ch_report_input_files"];
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v41 -> v152 [label="ch_differential"];
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v153 -> v155;
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 -> v154 [label="ch_differential"];
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v154 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v155 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v156 -> v157;
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v157 -> v161;
+
+v41 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:DESEQ2_DIFFERENTIAL"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 -> v158 [label="ch_differential"];
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v158 -> v159;
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v159 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v160 -> v161;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v163 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:SHINYNGS_APP"];
+v161 -> v163 [label="ch_app_differential"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v163 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:SHINYNGS_APP"];
+v102 -> v163 [label="ch_all_matrices"];
+
+v162 [shape=point,label="",fixedsize=true,width=0.1];
+v163 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:SHINYNGS_APP"];
+v162 -> v163 [label="contrast_stats_assay"];
+
+v163 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:SHINYNGS_APP"];
+v164 [shape=point];
+v163 -> v164;
+
+v163 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:SHINYNGS_APP"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v165;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v165 [label="ch_versions"];
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 [shape=point];
+v165 -> v166 [label="ch_versions"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v168 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:RMARKDOWNNOTEBOOK"];
+v167 -> v168 [label="ch_report_params"];
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v168 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:RMARKDOWNNOTEBOOK"];
+v151 -> v168 [label="ch_report_input_files"];
+
+v168 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:RMARKDOWNNOTEBOOK"];
+v172 [shape=point];
+v168 -> v172;
+
+v168 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:RMARKDOWNNOTEBOOK"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v168 -> v173;
+
+v168 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:RMARKDOWNNOTEBOOK"];
+v171 [shape=point];
+v168 -> v171;
+
+v168 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:RMARKDOWNNOTEBOOK"];
+v170 [shape=point];
+v168 -> v170;
+
+v168 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:RMARKDOWNNOTEBOOK"];
+v169 [shape=point];
+v168 -> v169;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v151 -> v173 [label="ch_report_input_files"];
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v173 -> v174;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v175 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:MAKE_REPORT_BUNDLE"];
+v174 -> v175;
+
+v175 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:MAKE_REPORT_BUNDLE"];
+v177 [shape=point];
+v175 -> v177;
+
+v175 [label="NFCORE_DIFFERENTIALABUNDANCE:DIFFERENTIALABUNDANCE:MAKE_REPORT_BUNDLE"];
+v176 [shape=point];
+v175 -> v176;
+
+}

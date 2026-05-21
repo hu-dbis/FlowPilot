@@ -1,0 +1,150 @@
+digraph "TRONBioinformatics_____tronflowbampreprocessing" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [label="PREPARE_BAM"];
+v2 -> v4 [label="input_files"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="PREPARE_BAM"];
+v3 -> v4 [label="reference"];
+
+v4 [label="PREPARE_BAM"];
+v6 [label="MARK_DUPLICATES"];
+v4 -> v6;
+
+v4 [label="PREPARE_BAM"];
+v5 [shape=point];
+v4 -> v5;
+
+v6 [label="MARK_DUPLICATES"];
+v8 [label="HS_METRICS"];
+v6 -> v8 [label="deduplicated_bams"];
+
+v6 [label="MARK_DUPLICATES"];
+v7 [shape=point];
+v6 -> v7;
+
+v8 [label="HS_METRICS"];
+v12 [shape=point];
+v8 -> v12;
+
+v8 [label="HS_METRICS"];
+v11 [shape=point];
+v8 -> v11;
+
+v8 [label="HS_METRICS"];
+v10 [shape=point];
+v8 -> v10;
+
+v8 [label="HS_METRICS"];
+v9 [shape=point];
+v8 -> v9;
+
+v6 [label="MARK_DUPLICATES"];
+v13 [label="METRICS"];
+v6 -> v13 [label="deduplicated_bams"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="METRICS"];
+v3 -> v13 [label="reference"];
+
+v13 [label="METRICS"];
+v16 [shape=point];
+v13 -> v16;
+
+v13 [label="METRICS"];
+v15 [shape=point];
+v13 -> v15;
+
+v13 [label="METRICS"];
+v14 [shape=point];
+v13 -> v14;
+
+v6 [label="MARK_DUPLICATES"];
+v17 [label="COVERAGE_ANALYSIS"];
+v6 -> v17 [label="deduplicated_bams"];
+
+v17 [label="COVERAGE_ANALYSIS"];
+v20 [shape=point];
+v17 -> v20;
+
+v17 [label="COVERAGE_ANALYSIS"];
+v19 [shape=point];
+v17 -> v19;
+
+v17 [label="COVERAGE_ANALYSIS"];
+v18 [shape=point];
+v17 -> v18;
+
+v6 [label="MARK_DUPLICATES"];
+v21 [label="FLAGSTAT"];
+v6 -> v21 [label="deduplicated_bams"];
+
+v21 [label="FLAGSTAT"];
+v23 [shape=point];
+v21 -> v23;
+
+v21 [label="FLAGSTAT"];
+v22 [shape=point];
+v21 -> v22;
+
+v6 [label="MARK_DUPLICATES"];
+v24 [label="REALIGNMENT_AROUND_INDELS"];
+v6 -> v24 [label="deduplicated_bams"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="REALIGNMENT_AROUND_INDELS"];
+v3 -> v24 [label="reference"];
+
+v24 [label="REALIGNMENT_AROUND_INDELS"];
+v27 [label="BQSR"];
+v24 -> v27 [label="realigned_bams"];
+
+v24 [label="REALIGNMENT_AROUND_INDELS"];
+v26 [shape=point];
+v24 -> v26;
+
+v24 [label="REALIGNMENT_AROUND_INDELS"];
+v25 [shape=point];
+v24 -> v25;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="BQSR"];
+v3 -> v27 [label="reference"];
+
+v27 [label="BQSR"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v32 [label="preprocessed_bams"];
+
+v27 [label="BQSR"];
+v31 [shape=point];
+v27 -> v31;
+
+v27 [label="BQSR"];
+v30 [shape=point];
+v27 -> v30;
+
+v27 [label="BQSR"];
+v29 [shape=point];
+v27 -> v29;
+
+v27 [label="BQSR"];
+v28 [shape=point];
+v27 -> v28;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v34 [shape=point];
+v33 -> v34;
+
+}

@@ -1,0 +1,54 @@
+digraph "WannesLamberts_____MassivekbPipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v4 [label="DOWNLOAD_MZTAB"];
+v3 -> v4 [label="unique_ids"];
+
+v4 [label="DOWNLOAD_MZTAB"];
+v5 [label="EXTRACT_MZTAB"];
+v4 -> v5;
+
+v5 [label="EXTRACT_MZTAB"];
+v6 [label="GET_PSM"];
+v5 -> v6;
+
+v6 [label="GET_PSM"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v6 -> v10 [label="psms"];
+
+v6 [label="GET_PSM"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8 [label="massive_paths"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [label="DOWNLOAD_MZML_MZXML"];
+v8 -> v9 [label="massive_paths"];
+
+v9 [label="DOWNLOAD_MZML_MZXML"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 -> v11;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v10 -> v11 [label="psm_rows"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v12 [shape=point];
+v11 -> v12 [label="psm_rows_joined"];
+
+}

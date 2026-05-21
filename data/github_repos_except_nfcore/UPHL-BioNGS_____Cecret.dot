@@ -1,0 +1,1182 @@
+digraph "UPHLBioNGS_____Cecret" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v108 [label="ch_for_version"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v41 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v29 [label="ch_paired_reads"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v29 [label="ch_single_reads"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v88 [label="CECRET:CONSENSUS:ARTIC_FILTER"];
+v4 -> v88 [label="ch_nanopore"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v6 [shape=point];
+v5 -> v6 [label="ch_fastas"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v44 [label="ch_multifasta"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v35 [label="INITIALIZE:TEST:DOWNLOAD_FASTQ"];
+v8 -> v35 [label="ch_sra_accessions"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v10 [shape=point];
+v9 -> v10 [label="ch_genome_accessions"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v11 -> v12 [label="ch_reference_genome"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v13 [shape=point];
+v12 -> v13;
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=point];
+v14 -> v15 [label="ch_gff_file"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v18 -> v19 [label="ch_primer_bed"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v20 [shape=point];
+v19 -> v20;
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=point];
+v21 -> v22 [label="ch_amplicon_bed"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v212 [label="CECRET:SARSCOV2:AGGREGATE"];
+v24 -> v212 [label="ch_script"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v26 [shape=point];
+v25 -> v26 [label="ch_kraken2_db"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v28 [shape=point];
+v27 -> v28 [label="ch_input_dataset"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v39 [label="ch_reads"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v40 [label="ch_prepped_fastas"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v38 [label="ch_reads"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v40 [label="fastas"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v41 [label="versions"];
+
+v35 [label="INITIALIZE:TEST:DOWNLOAD_FASTQ"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v36;
+
+v35 [label="INITIALIZE:TEST:DOWNLOAD_FASTQ"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38 [label="ch_downloaded_reads"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v39 [label="reads"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [label="CECRET:CONSENSUS:SEQYCLEAN"];
+v39 -> v48 [label="ch_raw_reads"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v44 [label="ch_wo_mltifna"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v106 [label="ch_versions"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v109 [label="ch_for_multiqc"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v170 [label="ch_for_summary"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v107 [label="ch_consensus"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v55 [label="ch_multiqc"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v54 [label="ch_sum_ver"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v58 [label="ch_versions"];
+
+v48 [label="CECRET:CONSENSUS:SEQYCLEAN"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v48 -> v59 [label="ch_clean_reads"];
+
+v48 [label="CECRET:CONSENSUS:SEQYCLEAN"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v48 -> v50;
+
+v48 [label="CECRET:CONSENSUS:SEQYCLEAN"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v48 -> v52;
+
+v48 [label="CECRET:CONSENSUS:SEQYCLEAN"];
+v49 [shape=point];
+v48 -> v49;
+
+v48 [label="CECRET:CONSENSUS:SEQYCLEAN"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v54;
+
+v48 [label="CECRET:CONSENSUS:SEQYCLEAN"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v48 -> v57;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v51 [shape=point];
+v50 -> v51 [label="seqyclean_file1"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v53 [shape=point];
+v52 -> v53 [label="seqyclean_file2"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v62 [label="ch_sum_ver"];
+
+v48 [label="CECRET:CONSENSUS:SEQYCLEAN"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v56;
+
+v48 [label="CECRET:CONSENSUS:SEQYCLEAN"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v75 [label="ch_multiqc"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v64 [label="ch_versions"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v59 [label="ch_reference_genome"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v60 [label="CECRET:CONSENSUS:BWA"];
+v59 -> v60;
+
+v60 [label="CECRET:CONSENSUS:BWA"];
+v65 [label="CECRET:CONSENSUS:SORT"];
+v60 -> v65 [label="ch_sam"];
+
+v60 [label="CECRET:CONSENSUS:BWA"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v62;
+
+v60 [label="CECRET:CONSENSUS:BWA"];
+v61 [shape=point];
+v60 -> v61;
+
+v60 [label="CECRET:CONSENSUS:BWA"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v60 -> v63;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v74 [label="ch_sum_ver"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v77 [label="ch_versions"];
+
+v65 [label="CECRET:CONSENSUS:SORT"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v65 -> v68 [label="ch_initial_bam"];
+
+v65 [label="CECRET:CONSENSUS:SORT"];
+v67 [shape=point];
+v65 -> v67;
+
+v65 [label="CECRET:CONSENSUS:SORT"];
+v66 [shape=point];
+v65 -> v66;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v69 -> v70;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v70 [label="ch_primer_bed"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v71 [label="CECRET:CONSENSUS:IVAR_TRIM"];
+v70 -> v71;
+
+v71 [label="CECRET:CONSENSUS:IVAR_TRIM"];
+v73 [shape=point];
+v71 -> v73;
+
+v71 [label="CECRET:CONSENSUS:IVAR_TRIM"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v71 -> v78 [label="ch_trim_bam"];
+
+v71 [label="CECRET:CONSENSUS:IVAR_TRIM"];
+v72 [shape=point];
+v71 -> v72;
+
+v71 [label="CECRET:CONSENSUS:IVAR_TRIM"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v75;
+
+v71 [label="CECRET:CONSENSUS:IVAR_TRIM"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v74;
+
+v71 [label="CECRET:CONSENSUS:IVAR_TRIM"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v71 -> v76;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v87 [label="ch_sum_ver"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v109 [label="for_multiqc"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v86 [label="ch_versions"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v78 -> v79;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v79 [label="ch_reference_genome"];
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v80 [label="CECRET:CONSENSUS:IVAR"];
+v79 -> v80;
+
+v80 [label="CECRET:CONSENSUS:IVAR"];
+v84 [shape=point];
+v80 -> v84 [label="meta"];
+
+v80 [label="CECRET:CONSENSUS:IVAR"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v102;
+
+v80 [label="CECRET:CONSENSUS:IVAR"];
+v83 [shape=point];
+v80 -> v83;
+
+v80 [label="CECRET:CONSENSUS:IVAR"];
+v82 [shape=point];
+v80 -> v82;
+
+v80 [label="CECRET:CONSENSUS:IVAR"];
+v81 [shape=point];
+v80 -> v81;
+
+v80 [label="CECRET:CONSENSUS:IVAR"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v87;
+
+v80 [label="CECRET:CONSENSUS:IVAR"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v80 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v91 [label="ch_versions"];
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v97 [label="ch_sum_ver"];
+
+v88 [label="CECRET:CONSENSUS:ARTIC_FILTER"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v88 -> v92;
+
+v88 [label="CECRET:CONSENSUS:ARTIC_FILTER"];
+v89 [shape=point];
+v88 -> v89;
+
+v88 [label="CECRET:CONSENSUS:ARTIC_FILTER"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v88 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v99 [label="ch_versions"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v92 [label="ch_reference_genome"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v92 -> v93;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v93 [label="ch_primer_bed"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v94 [label="CECRET:CONSENSUS:ARTIC"];
+v93 -> v94;
+
+v94 [label="CECRET:CONSENSUS:ARTIC"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v103;
+
+v94 [label="CECRET:CONSENSUS:ARTIC"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v102;
+
+v94 [label="CECRET:CONSENSUS:ARTIC"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v97;
+
+v94 [label="CECRET:CONSENSUS:ARTIC"];
+v96 [shape=point];
+v94 -> v96;
+
+v94 [label="CECRET:CONSENSUS:ARTIC"];
+v95 [shape=point];
+v94 -> v95;
+
+v94 [label="CECRET:CONSENSUS:ARTIC"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v94 -> v98;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v97 -> v104 [label="ch_sum_ver"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v106 [label="versions"];
+
+v100 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v101 [shape=point];
+v100 -> v101 [label="filtered_reads"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v107 [label="consensus"];
+
+v71 [label="CECRET:CONSENSUS:IVAR_TRIM"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v103 [label="ch_trim_bam"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v103 -> v134 [label="bam"];
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v108 [label="for_version"];
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v171 [label="ch_versions"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v107 -> v175 [label="consensus"];
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v108 -> v241 [label="ch_for_version"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v169 [label="ch_for_multiqc"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v110 [label="ch_wo_mltifna"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v110 [label="consensus"];
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v236 [label="ch_wo_mltifna"];
+
+v111 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v122 [label="ch_for_multiqc"];
+
+v112 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v119 [label="ch_summary"];
+
+v113 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v121 [label="ch_versions"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [label="CECRET:QC:FASTQC"];
+v39 -> v114 [label="ch_raw_reads"];
+
+v114 [label="CECRET:QC:FASTQC"];
+v117 [shape=point];
+v114 -> v117 [label="meta"];
+
+v114 [label="CECRET:QC:FASTQC"];
+v116 [shape=point];
+v114 -> v116;
+
+v114 [label="CECRET:QC:FASTQC"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v122;
+
+v114 [label="CECRET:QC:FASTQC"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v114 -> v118;
+
+v114 [label="CECRET:QC:FASTQC"];
+v115 [shape=point];
+v114 -> v115;
+
+v114 [label="CECRET:QC:FASTQC"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v114 -> v120;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v143 [label="ch_summary"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v132 [label="ch_versions"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v133 [label="ch_for_multiqc"];
+
+v65 [label="CECRET:CONSENSUS:SORT"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 -> v123 [label="ch_initial_bam"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v124 [label="CECRET:QC:INITIAL_QC"];
+v123 -> v124;
+
+v124 [label="CECRET:QC:INITIAL_QC"];
+v130 [shape=point];
+v124 -> v130 [label="meta"];
+
+v124 [label="CECRET:QC:INITIAL_QC"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v133;
+
+v124 [label="CECRET:QC:INITIAL_QC"];
+v129 [shape=point];
+v124 -> v129;
+
+v124 [label="CECRET:QC:INITIAL_QC"];
+v128 [shape=point];
+v124 -> v128;
+
+v124 [label="CECRET:QC:INITIAL_QC"];
+v127 [shape=point];
+v124 -> v127;
+
+v124 [label="CECRET:QC:INITIAL_QC"];
+v126 [shape=point];
+v124 -> v126;
+
+v124 [label="CECRET:QC:INITIAL_QC"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v124 -> v131;
+
+v124 [label="CECRET:QC:INITIAL_QC"];
+v125 [shape=point];
+v124 -> v125;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v132;
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v140 [label="ch_versions"];
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v141 [label="ch_for_multiqc"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v135 [label="CECRET:QC:FINAL_QC"];
+v134 -> v135;
+
+v135 [label="CECRET:QC:FINAL_QC"];
+v138 [shape=point];
+v135 -> v138 [label="meta"];
+
+v135 [label="CECRET:QC:FINAL_QC"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v143;
+
+v135 [label="CECRET:QC:FINAL_QC"];
+v137 [shape=point];
+v135 -> v137;
+
+v135 [label="CECRET:QC:FINAL_QC"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v135 -> v142;
+
+v135 [label="CECRET:QC:FINAL_QC"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v141;
+
+v135 [label="CECRET:QC:FINAL_QC"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v146;
+
+v135 [label="CECRET:QC:FINAL_QC"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v135 -> v139;
+
+v135 [label="CECRET:QC:FINAL_QC"];
+v136 [shape=point];
+v135 -> v136;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v153 [label="ch_versions"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v169 [label="for_multiqc"];
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v145 [label="samtools_coverage_file"];
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v144 [label="ch_summary"];
+
+v135 [label="CECRET:QC:FINAL_QC"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v145 [label="ch_summary"];
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v146 [label="ch_summary"];
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 -> v154 [label="ch_summary"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v103 -> v147 [label="bam"];
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v147 -> v148;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v148 [label="ch_reference_genome"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v149 [label="CECRET:QC:BCFTOOLS"];
+v148 -> v149;
+
+v149 [label="CECRET:QC:BCFTOOLS"];
+v151 [shape=point];
+v149 -> v151;
+
+v149 [label="CECRET:QC:BCFTOOLS"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v154;
+
+v149 [label="CECRET:QC:BCFTOOLS"];
+v150 [shape=point];
+v149 -> v150;
+
+v149 [label="CECRET:QC:BCFTOOLS"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v149 -> v152;
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v160 [label="ch_versions"];
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 -> v162 [label="ch_summary"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v103 -> v155 [label="bam"];
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v155 -> v156;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v156 [label="ch_primer_bed"];
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v157 [label="CECRET:QC:AMPLICONSTATS"];
+v156 -> v157;
+
+v157 [label="CECRET:QC:AMPLICONSTATS"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v157 -> v161;
+
+v157 [label="CECRET:QC:AMPLICONSTATS"];
+v158 [shape=point];
+v157 -> v158;
+
+v157 [label="CECRET:QC:AMPLICONSTATS"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v157 -> v159;
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v168 [label="ch_versions"];
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v162;
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v170 [label="for_summary"];
+
+v157 [label="CECRET:QC:AMPLICONSTATS"];
+v163 [label="CECRET:QC:PLOT_AMPLICONSTATS"];
+v157 -> v163;
+
+v163 [label="CECRET:QC:PLOT_AMPLICONSTATS"];
+v166 [shape=point];
+v163 -> v166 [label="meta"];
+
+v163 [label="CECRET:QC:PLOT_AMPLICONSTATS"];
+v165 [shape=point];
+v163 -> v165;
+
+v163 [label="CECRET:QC:PLOT_AMPLICONSTATS"];
+v164 [shape=point];
+v163 -> v164;
+
+v163 [label="CECRET:QC:PLOT_AMPLICONSTATS"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v163 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v168;
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v171 [label="versions"];
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v218 [label="ch_for_multiqc"];
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 -> v219 [label="ch_for_summary"];
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 -> v220 [label="ch_versions"];
+
+v172 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 -> v179 [label="ch_versions"];
+
+v173 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v173 -> v187 [label="ch_multiqc"];
+
+v174 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 -> v180 [label="ch_summary"];
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v176 [label="CECRET:SARSCOV2:VADR"];
+v175 -> v176;
+
+v176 [label="CECRET:SARSCOV2:VADR"];
+v178 [shape=point];
+v176 -> v178;
+
+v176 [label="CECRET:SARSCOV2:VADR"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 -> v180;
+
+v176 [label="CECRET:SARSCOV2:VADR"];
+v177 [shape=point];
+v176 -> v177;
+
+v176 [label="CECRET:SARSCOV2:VADR"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v185 [label="ch_versions"];
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 -> v186 [label="ch_summary"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v107 -> v181 [label="consensus"];
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v182 [label="CECRET:SARSCOV2:PANGOLIN"];
+v181 -> v182;
+
+v182 [label="CECRET:SARSCOV2:PANGOLIN"];
+v184 [shape=point];
+v182 -> v184;
+
+v182 [label="CECRET:SARSCOV2:PANGOLIN"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v186;
+
+v182 [label="CECRET:SARSCOV2:PANGOLIN"];
+v183 [shape=point];
+v182 -> v183;
+
+v182 [label="CECRET:SARSCOV2:PANGOLIN"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v190 [label="ch_versions"];
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 -> v191 [label="ch_summary"];
+
+v182 [label="CECRET:SARSCOV2:PANGOLIN"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v187;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 -> v202 [label="ch_multiqc"];
+
+v182 [label="CECRET:SARSCOV2:PANGOLIN"];
+v188 [label="CECRET:SARSCOV2:PANGO_ALIASOR"];
+v182 -> v188 [label="file"];
+
+v188 [label="CECRET:SARSCOV2:PANGO_ALIASOR"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 -> v191;
+
+v188 [label="CECRET:SARSCOV2:PANGO_ALIASOR"];
+v189 [shape=point];
+v188 -> v189;
+
+v188 [label="CECRET:SARSCOV2:PANGO_ALIASOR"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v194 [label="ch_versions"];
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 -> v201 [label="ch_summary"];
+
+v192 [label="CECRET:SARSCOV2:DATASET"];
+v196 [label="CECRET:SARSCOV2:NEXTCLADE"];
+v192 -> v196 [label="ch_dataset"];
+
+v192 [label="CECRET:SARSCOV2:DATASET"];
+v193 [shape=point];
+v192 -> v193;
+
+v192 [label="CECRET:SARSCOV2:DATASET"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v192 -> v194;
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v200 [label="ch_versions"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v107 -> v195 [label="consensus"];
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v196 [label="CECRET:SARSCOV2:NEXTCLADE"];
+v195 -> v196;
+
+v196 [label="CECRET:SARSCOV2:NEXTCLADE"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v201;
+
+v196 [label="CECRET:SARSCOV2:NEXTCLADE"];
+v199 [shape=point];
+v196 -> v199;
+
+v196 [label="CECRET:SARSCOV2:NEXTCLADE"];
+v198 [shape=point];
+v196 -> v198;
+
+v196 [label="CECRET:SARSCOV2:NEXTCLADE"];
+v197 [shape=point];
+v196 -> v197;
+
+v196 [label="CECRET:SARSCOV2:NEXTCLADE"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v200;
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 -> v210 [label="ch_versions"];
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 -> v217 [label="ch_summary"];
+
+v196 [label="CECRET:SARSCOV2:NEXTCLADE"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v202;
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 -> v216 [label="ch_multiqc"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v103 -> v203 [label="bam"];
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v203 -> v204;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v204 [label="ch_reference_genome"];
+
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v205 [label="CECRET:SARSCOV2:FREYJA"];
+v204 -> v205;
+
+v205 [label="CECRET:SARSCOV2:FREYJA"];
+v208 [shape=point];
+v205 -> v208;
+
+v205 [label="CECRET:SARSCOV2:FREYJA"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v205 -> v211;
+
+v205 [label="CECRET:SARSCOV2:FREYJA"];
+v207 [shape=point];
+v205 -> v207;
+
+v205 [label="CECRET:SARSCOV2:FREYJA"];
+v206 [shape=point];
+v205 -> v206;
+
+v205 [label="CECRET:SARSCOV2:FREYJA"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v205 -> v209;
+
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 -> v210;
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 -> v215 [label="ch_versions"];
+
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v212 [label="CECRET:SARSCOV2:AGGREGATE"];
+v211 -> v212;
+
+v212 [label="CECRET:SARSCOV2:AGGREGATE"];
+v214 [shape=point];
+v212 -> v214;
+
+v212 [label="CECRET:SARSCOV2:AGGREGATE"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v212 -> v217;
+
+v212 [label="CECRET:SARSCOV2:AGGREGATE"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v212 -> v216;
+
+v212 [label="CECRET:SARSCOV2:AGGREGATE"];
+v213 [shape=point];
+v212 -> v213;
+
+v212 [label="CECRET:SARSCOV2:AGGREGATE"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v212 -> v215;
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v215 -> v220 [label="versions"];
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 -> v218 [label="for_multiqc"];
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v217 -> v219 [label="for_summary"];
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 -> v228 [label="ch_for_multiqc"];
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 -> v236 [label="ch_for_summary"];
+
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v220 -> v227 [label="ch_versions"];
+
+v221 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v222 [shape=point];
+v221 -> v222 [label="tree"];
+
+v223 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v224 [shape=point];
+v223 -> v224 [label="alignment"];
+
+v225 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v226 [shape=point];
+v225 -> v226 [label="matrix"];
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 -> v228 [label="ch_collated_versions"];
+
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v228 -> v229;
+
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v230 [label="CECRET:MULTIQC"];
+v229 -> v230;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v230 [label="CECRET:MULTIQC"];
+v24 -> v230 [label="ch_script"];
+
+v230 [label="CECRET:MULTIQC"];
+v233 [shape=point];
+v230 -> v233;
+
+v230 [label="CECRET:MULTIQC"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v230 -> v244;
+
+v230 [label="CECRET:MULTIQC"];
+v232 [shape=point];
+v230 -> v232;
+
+v230 [label="CECRET:MULTIQC"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v230 -> v234;
+
+v230 [label="CECRET:MULTIQC"];
+v231 [shape=point];
+v230 -> v231;
+
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 -> v234 [label="ch_versions"];
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v235 [shape=point];
+v234 -> v235 [label="ch_versions"];
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v236 -> v237;
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v237 -> v238;
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v238 -> v240;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v239 [label="ch_script"];
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v239 -> v240;
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v240 -> v243;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v241 -> v242;
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v242 -> v243;
+
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v243 -> v246;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v244 -> v245;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v245 -> v246;
+
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v247 [label="CECRET:SUMMARY"];
+v246 -> v247;
+
+v247 [label="CECRET:SUMMARY"];
+v248 [shape=point];
+v247 -> v248;
+
+}

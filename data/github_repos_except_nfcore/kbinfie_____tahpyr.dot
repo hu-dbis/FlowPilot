@@ -1,0 +1,46 @@
+digraph "kbinfie_____tahpyr" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v6 [label="TALLY_WF:RADINITIO_TALLY"];
+v2 -> v6 [label="vars"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="TALLY_WF:RADINITIO_TALLY"];
+v3 -> v6 [label="genome"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="TALLY_WF:RADINITIO_TALLY"];
+v4 -> v6 [label="chromosomes"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="TALLY_WF:RADINITIO_TALLY"];
+v5 -> v6 [label="out_dir"];
+
+v6 [label="TALLY_WF:RADINITIO_TALLY"];
+v8 [shape=point];
+v6 -> v8;
+
+v6 [label="TALLY_WF:RADINITIO_TALLY"];
+v7 [shape=point];
+v6 -> v7;
+
+v6 [label="TALLY_WF:RADINITIO_TALLY"];
+v9 [label="TALLY_WF:COUNT_LOCI"];
+v6 -> v9 [label="stats"];
+
+v9 [label="TALLY_WF:COUNT_LOCI"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v11 [shape=point];
+v10 -> v11;
+
+}

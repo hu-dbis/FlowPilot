@@ -1,0 +1,766 @@
+digraph "phageannotator" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v15 [label="ch_versions"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v13 [label="ch_multiqc_files"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3 [label="versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v9 [label="samplesheet"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [label="FASTQC"];
+v9 -> v10;
+
+v10 [label="FASTQC"];
+v11 [shape=point];
+v10 -> v11;
+
+v10 [label="FASTQC"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v12;
+
+v10 [label="FASTQC"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v10 -> v14;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v154 [label="ch_multiqc_files"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=point];
+v15 -> v16 [label="ch_versions"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v17 [label="samplesheet"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v90 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BOWTIE2_ALIGN"];
+v17 -> v90 [label="ch_reads"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v18 [label="samplesheet"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:SEQKIT_SEQ"];
+v18 -> v22 [label="fasta_gz"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v23 [label="ch_versions"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=point];
+v20 -> v21 [label="virus_enrichment_tsv"];
+
+v22 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:SEQKIT_SEQ"];
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v22 -> v28 [label="fasta_gz"];
+
+v22 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:SEQKIT_SEQ"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v44 [label="ch_versions"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v27 [label="ch_versions"];
+
+v25 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_DOWNLOAD"];
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v25 -> v28 [label="ch_genomad_db_dir"];
+
+v25 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_DOWNLOAD"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v42 [label="ch_versions"];
+
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v40 [shape=point];
+v28 -> v40;
+
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v39 [shape=point];
+v28 -> v39;
+
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v38 [shape=point];
+v28 -> v38;
+
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v37 [shape=point];
+v28 -> v37;
+
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v36 [shape=point];
+v28 -> v36;
+
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v35 [shape=point];
+v28 -> v35;
+
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v34 [shape=point];
+v28 -> v34;
+
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v33 [shape=point];
+v28 -> v33;
+
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v32 [shape=point];
+v28 -> v32;
+
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v51 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_QUALITY_CHECKV:CHECKV_ENDTOEND"];
+v28 -> v51 [label="virus_fasta_gz"];
+
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v31 [shape=point];
+v28 -> v31;
+
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v30 [shape=point];
+v28 -> v30;
+
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v29 [shape=point];
+v28 -> v29 [label="virus_classification_tsv"];
+
+v28 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_CLASSIFICATION_GENOMAD:GENOMAD_ENDTOEND"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v28 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v42 -> v43 [label="versions"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v58 [label="ch_versions"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v46 [shape=point];
+v45 -> v46 [label="ch_virus_extension_summary_tsv"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v49 [label="ch_versions"];
+
+v48 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_QUALITY_CHECKV:CHECKV_DOWNLOADDATABASE"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v48 -> v50 [label="ch_checkv_db"];
+
+v48 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_QUALITY_CHECKV:CHECKV_DOWNLOADDATABASE"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v56 [label="ch_versions"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_QUALITY_CHECKV:CHECKV_ENDTOEND"];
+v50 -> v51;
+
+v51 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_QUALITY_CHECKV:CHECKV_ENDTOEND"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 -> v60 [label="virus_quality_tsv"];
+
+v51 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_QUALITY_CHECKV:CHECKV_ENDTOEND"];
+v54 [shape=point];
+v51 -> v54;
+
+v51 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_QUALITY_CHECKV:CHECKV_ENDTOEND"];
+v53 [shape=point];
+v51 -> v53;
+
+v51 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_QUALITY_CHECKV:CHECKV_ENDTOEND"];
+v52 [shape=point];
+v51 -> v52;
+
+v51 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_QUALITY_CHECKV:CHECKV_ENDTOEND"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 -> v59 [label="proviruses_fna_gz"];
+
+v51 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_QUALITY_CHECKV:CHECKV_ENDTOEND"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 -> v59 [label="viruses_fna_gz"];
+
+v51 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_VIRUS_QUALITY_CHECKV:CHECKV_ENDTOEND"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v51 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v56 -> v57 [label="versions"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v63 [label="ch_versions"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v59 -> v60 [label="ch_quality_filter_viruses_input1"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v61 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:QUALITYFILTERVIRUSES"];
+v60 -> v61 [label="ch_quality_filter_viruses_input2"];
+
+v61 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:QUALITYFILTERVIRUSES"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v64 [label="filtered_viruses_fna_gz"];
+
+v61 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:QUALITYFILTERVIRUSES"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v74 [label="ch_versions"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v66 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:CAT_VIRUSES"];
+v65 -> v66 [label="ch_cat_viruses_input"];
+
+v66 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:CAT_VIRUSES"];
+v69 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_ALL_V_ALL_BLAST:BLAST_MAKEBLASTDB"];
+v66 -> v69 [label="fasta_gz"];
+
+v66 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:CAT_VIRUSES"];
+v67 [shape=point];
+v66 -> v67;
+
+v68 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v70 [label="ch_versions"];
+
+v69 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_ALL_V_ALL_BLAST:BLAST_MAKEBLASTDB"];
+v71 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_ALL_V_ALL_BLAST:BLAST_BLASTN"];
+v69 -> v71 [label="ch_blast_db"];
+
+v69 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_ALL_V_ALL_BLAST:BLAST_MAKEBLASTDB"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v73 [label="ch_versions"];
+
+v66 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:CAT_VIRUSES"];
+v71 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_ALL_V_ALL_BLAST:BLAST_BLASTN"];
+v66 -> v71 [label="fasta_gz"];
+
+v71 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_ALL_V_ALL_BLAST:BLAST_BLASTN"];
+v75 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:ANICLUSTER_ANICALC"];
+v71 -> v75 [label="ch_blast_txt"];
+
+v71 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_ALL_V_ALL_BLAST:BLAST_BLASTN"];
+v72 [shape=point];
+v71 -> v72;
+
+v69 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTA_ALL_V_ALL_BLAST:BLAST_MAKEBLASTDB"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v74 [label="versions"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v76 [label="ch_versions"];
+
+v75 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:ANICLUSTER_ANICALC"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v75 -> v77 [label="ch_ani_tsv"];
+
+v75 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:ANICLUSTER_ANICALC"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v79 [label="ch_versions"];
+
+v66 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:CAT_VIRUSES"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v66 -> v77 [label="fasta_gz"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v78 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:ANICLUSTER_ANICLUST"];
+v77 -> v78 [label="ch_aniclust_input"];
+
+v78 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:ANICLUSTER_ANICLUST"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v78 -> v80 [label="ch_clusters_tsv"];
+
+v78 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:ANICLUSTER_ANICLUST"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v82 [label="ch_versions"];
+
+v66 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:CAT_VIRUSES"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v66 -> v80 [label="fasta_gz"];
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v81 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:ANICLUSTER_EXTRACTREPS"];
+v80 -> v81 [label="ch_extractreps_input"];
+
+v81 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:ANICLUSTER_EXTRACTREPS"];
+v83 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:BOWTIE2_BUILD"];
+v81 -> v83 [label="anicluster_reps_fna_gz"];
+
+v81 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:ANICLUSTER_EXTRACTREPS"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v85 [label="ch_versions"];
+
+v83 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:BOWTIE2_BUILD"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v83 -> v84;
+
+v83 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:BOWTIE2_BUILD"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v85;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v90 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BOWTIE2_ALIGN"];
+v84 -> v90 [label="ch_index"];
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v124 [label="ch_versions"];
+
+v81 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:ANICLUSTER_EXTRACTREPS"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v81 -> v86 [label="anicluster_reps_fna_gz"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v90 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BOWTIE2_ALIGN"];
+v86 -> v90 [label="ch_fasta"];
+
+v87 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v97 [label="ch_versions"];
+
+v88 [shape=point,label="",fixedsize=true,width=0.1];
+v90 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BOWTIE2_ALIGN"];
+v88 -> v90 [label="save_unaligned"];
+
+v89 [shape=point,label="",fixedsize=true,width=0.1];
+v90 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BOWTIE2_ALIGN"];
+v89 -> v90 [label="sort_bam"];
+
+v90 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BOWTIE2_ALIGN"];
+v96 [shape=point];
+v90 -> v96;
+
+v90 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BOWTIE2_ALIGN"];
+v99 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v90 -> v99 [label="bam_orig"];
+
+v90 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BOWTIE2_ALIGN"];
+v95 [shape=point];
+v90 -> v95;
+
+v90 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BOWTIE2_ALIGN"];
+v94 [shape=point];
+v90 -> v94;
+
+v90 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BOWTIE2_ALIGN"];
+v93 [shape=point];
+v90 -> v93;
+
+v90 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BOWTIE2_ALIGN"];
+v92 [shape=point];
+v90 -> v92 [label="log_out"];
+
+v90 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BOWTIE2_ALIGN"];
+v91 [shape=point];
+v90 -> v91 [label="fastq"];
+
+v90 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BOWTIE2_ALIGN"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v123 [label="ch_versions"];
+
+v98 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v104 [label="ch_versions"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v99 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v86 -> v99 [label="ch_fasta"];
+
+v99 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v105 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v99 -> v105 [label="ch_cluster_rep_alignment_bam"];
+
+v99 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v102 [shape=point];
+v99 -> v102;
+
+v99 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v101 [shape=point];
+v99 -> v101;
+
+v99 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v100 [shape=point];
+v99 -> v100;
+
+v99 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v99 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v108 [label="ch_versions"];
+
+v105 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 -> v109 [label="bai"];
+
+v105 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 -> v110 [label="csi"];
+
+v105 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v106 [shape=point];
+v105 -> v106;
+
+v105 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v105 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v122 [label="ch_versions"];
+
+v99 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v99 -> v109 [label="ch_cluster_rep_alignment_bam"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v110 -> v111;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v113 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v111 -> v113 [label="ch_bam_bai"];
+
+v112 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v115 [label="ch_versions"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v113 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v86 -> v113 [label="ch_fasta"];
+
+v113 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v114 [shape=point];
+v113 -> v114 [label="stats"];
+
+v113 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v118 [label="ch_versions"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v116 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v111 -> v116 [label="ch_bam_bai"];
+
+v116 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v117 [shape=point];
+v116 -> v117 [label="flagstat"];
+
+v116 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v121 [label="ch_versions"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v119 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v111 -> v119 [label="ch_bam_bai"];
+
+v119 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v120 [shape=point];
+v119 -> v120 [label="idxstats"];
+
+v119 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v122 [label="versions"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v123 [label="versions"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v124 [label="versions"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v129 [label="ch_versions"];
+
+v99 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:FASTQ_ALIGN_BOWTIE2:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v99 -> v125 [label="ch_cluster_rep_alignment_bam"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v125 -> v126;
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v127 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:COVERM_CONTIG"];
+v126 -> v127 [label="ch_combined_bams"];
+
+v127 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:COVERM_CONTIG"];
+v128 [shape=point];
+v127 -> v128 [label="ch_alignment_results_tsv"];
+
+v127 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:COVERM_CONTIG"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 -> v134 [label="ch_versions"];
+
+v130 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v131 [shape=point];
+v130 -> v131 [label="marker_taxonomy_tsv"];
+
+v81 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:ANICLUSTER_EXTRACTREPS"];
+v132 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:GUNZIP_CLUSTER_REPS"];
+v81 -> v132 [label="anicluster_reps_fna_gz"];
+
+v132 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:GUNZIP_CLUSTER_REPS"];
+v133 [shape=point];
+v132 -> v133 [label="ch_anicluster_reps_fasta"];
+
+v132 [label="NFCORE_PHAGEANNOTATOR:PHAGEANNOTATOR:GUNZIP_CLUSTER_REPS"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v134;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v134 -> v143 [label="versions"];
+
+v135 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v136 [shape=point];
+v135 -> v136 [label="host_predictions_tsv"];
+
+v137 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v138 [shape=point];
+v137 -> v138 [label="ch_bacphlip_lifestyle_tsv"];
+
+v139 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v140 [shape=point];
+v139 -> v140 [label="pharokka_output_tsv"];
+
+v141 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v142 [shape=point];
+v141 -> v142 [label="instrain_gene_info"];
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v143 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v144 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v147;
+
+v146 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v147 -> v148;
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 -> v155 [label="ch_collated_versions"];
+
+v149 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v149 -> v160 [label="ch_multiqc_config"];
+
+v150 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v150 -> v161 [label="ch_multiqc_custom_config"];
+
+v151 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v151 -> v162 [label="ch_multiqc_logo"];
+
+v152 [shape=point,label="",fixedsize=true,width=0.1];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v152 -> v153 [label="ch_workflow_summary"];
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v154;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 -> v155 [label="ch_multiqc_files"];
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v158 [label="ch_multiqc_files"];
+
+v156 [shape=point,label="",fixedsize=true,width=0.1];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v156 -> v157 [label="ch_methods_description"];
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 -> v158;
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v158 -> v159 [label="ch_multiqc_files"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v163 [label="MULTIQC"];
+v159 -> v163;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v163 [label="MULTIQC"];
+v160 -> v163;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v163 [label="MULTIQC"];
+v161 -> v163;
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v163 [label="MULTIQC"];
+v162 -> v163;
+
+v163 [label="MULTIQC"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v163 -> v167;
+
+v163 [label="MULTIQC"];
+v166 [shape=point];
+v163 -> v166;
+
+v163 [label="MULTIQC"];
+v165 [shape=point];
+v163 -> v165;
+
+v163 [label="MULTIQC"];
+v164 [shape=point];
+v163 -> v164;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v168 [shape=point];
+v167 -> v168 [label="multiqc_report"];
+
+}

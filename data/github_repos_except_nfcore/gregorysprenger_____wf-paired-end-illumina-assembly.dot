@@ -1,0 +1,950 @@
+digraph "gregorysprenger_____wfpairedendilluminaassembly" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 [label="ASSEMBLY:REMOVE_PHIX_BBDUK"];
+v2 -> v46 [label="ch_phix_reference"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v56 [label="ASSEMBLY:TRIM_READS_TRIMMOMATIC"];
+v5 -> v56 [label="ch_adapter_reference"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v7 [shape=point];
+v6 -> v7 [label="ch_gtdbtk_db_file"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=point];
+v8 -> v9 [label="ch_busco_db_file"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v22 [label="ch_versions"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v17 [label="ch_versions"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v17 [label="versions"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16 [label="ch_input_rows"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [label="ASSEMBLY:INFILE_HANDLING_UNIX"];
+v16 -> v23 [label="raw_reads"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v22 [label="versions"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v18 [label="ch_input_rows"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [shape=point];
+v20 -> v21;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v25 [label="ch_versions"];
+
+v23 [label="ASSEMBLY:INFILE_HANDLING_UNIX"];
+v24 [shape=point];
+v23 -> v24;
+
+v23 [label="ASSEMBLY:INFILE_HANDLING_UNIX"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v25;
+
+v23 [label="ASSEMBLY:INFILE_HANDLING_UNIX"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 -> v27;
+
+v23 [label="ASSEMBLY:INFILE_HANDLING_UNIX"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v26;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v45 [label="ch_versions"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 -> v29 [label="ch_infile_handling"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 [label="ASSEMBLY:DOWNSAMPLE:ESTIMATE_GENOME_SIZE_KMC"];
+v29 -> v31 [label="ch_raw_reads"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v33 [label="ch_versions"];
+
+v31 [label="ASSEMBLY:DOWNSAMPLE:ESTIMATE_GENOME_SIZE_KMC"];
+v32 [shape=point];
+v31 -> v32;
+
+v31 [label="ASSEMBLY:DOWNSAMPLE:ESTIMATE_GENOME_SIZE_KMC"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v33;
+
+v31 [label="ASSEMBLY:DOWNSAMPLE:ESTIMATE_GENOME_SIZE_KMC"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 -> v37;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v36 [label="ch_versions"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [label="ASSEMBLY:DOWNSAMPLE:COUNT_TOTAL_BP_INPUT_READS_SEQTK"];
+v29 -> v34 [label="ch_raw_reads"];
+
+v34 [label="ASSEMBLY:DOWNSAMPLE:COUNT_TOTAL_BP_INPUT_READS_SEQTK"];
+v35 [shape=point];
+v34 -> v35;
+
+v34 [label="ASSEMBLY:DOWNSAMPLE:COUNT_TOTAL_BP_INPUT_READS_SEQTK"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v36;
+
+v34 [label="ASSEMBLY:DOWNSAMPLE:COUNT_TOTAL_BP_INPUT_READS_SEQTK"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v37;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v40 [label="ch_versions"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v38 [label="ASSEMBLY:DOWNSAMPLE:ESTIMATE_ORIGINAL_INPUT_DEPTH_UNIX"];
+v37 -> v38;
+
+v38 [label="ASSEMBLY:DOWNSAMPLE:ESTIMATE_ORIGINAL_INPUT_DEPTH_UNIX"];
+v39 [shape=point];
+v38 -> v39;
+
+v38 [label="ASSEMBLY:DOWNSAMPLE:ESTIMATE_ORIGINAL_INPUT_DEPTH_UNIX"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v40;
+
+v38 [label="ASSEMBLY:DOWNSAMPLE:ESTIMATE_ORIGINAL_INPUT_DEPTH_UNIX"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v38 -> v41;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v44 [label="ch_versions"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 -> v41 [label="ch_raw_reads"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 [label="ASSEMBLY:DOWNSAMPLE:SUBSAMPLE_READS_TO_DEPTH_SEQTK"];
+v41 -> v42;
+
+v42 [label="ASSEMBLY:DOWNSAMPLE:SUBSAMPLE_READS_TO_DEPTH_SEQTK"];
+v43 [shape=point];
+v42 -> v43;
+
+v42 [label="ASSEMBLY:DOWNSAMPLE:SUBSAMPLE_READS_TO_DEPTH_SEQTK"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v44;
+
+v42 [label="ASSEMBLY:DOWNSAMPLE:SUBSAMPLE_READS_TO_DEPTH_SEQTK"];
+v46 [label="ASSEMBLY:REMOVE_PHIX_BBDUK"];
+v42 -> v46 [label="reads"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v45 [label="versions"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v48 [label="ch_versions"];
+
+v46 [label="ASSEMBLY:REMOVE_PHIX_BBDUK"];
+v47 [shape=point];
+v46 -> v47;
+
+v46 [label="ASSEMBLY:REMOVE_PHIX_BBDUK"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v48;
+
+v46 [label="ASSEMBLY:REMOVE_PHIX_BBDUK"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v53;
+
+v46 [label="ASSEMBLY:REMOVE_PHIX_BBDUK"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 -> v49;
+
+v46 [label="ASSEMBLY:REMOVE_PHIX_BBDUK"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v46 -> v50;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v60 [label="ch_versions"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [label="ASSEMBLY:TRIM_READS_TRIMMOMATIC"];
+v51 -> v56 [label="ch_removed_phix"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v53 [label="ch_phix_removal_summary"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v55 [shape=point];
+v54 -> v55 [label="ch_phix_removal_summary"];
+
+v56 [label="ASSEMBLY:TRIM_READS_TRIMMOMATIC"];
+v59 [shape=point];
+v56 -> v59;
+
+v56 [label="ASSEMBLY:TRIM_READS_TRIMMOMATIC"];
+v58 [shape=point];
+v56 -> v58;
+
+v56 [label="ASSEMBLY:TRIM_READS_TRIMMOMATIC"];
+v57 [shape=point];
+v56 -> v57;
+
+v56 [label="ASSEMBLY:TRIM_READS_TRIMMOMATIC"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v60;
+
+v56 [label="ASSEMBLY:TRIM_READS_TRIMMOMATIC"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 -> v61;
+
+v56 [label="ASSEMBLY:TRIM_READS_TRIMMOMATIC"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v62;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v67 [label="ch_versions"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [label="ASSEMBLY:OVERLAP_PAIRED_READS_FLASH"];
+v63 -> v64 [label="ch_trim_reads_trimmomatic"];
+
+v64 [label="ASSEMBLY:OVERLAP_PAIRED_READS_FLASH"];
+v66 [shape=point];
+v64 -> v66;
+
+v64 [label="ASSEMBLY:OVERLAP_PAIRED_READS_FLASH"];
+v65 [shape=point];
+v64 -> v65;
+
+v64 [label="ASSEMBLY:OVERLAP_PAIRED_READS_FLASH"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v67;
+
+v64 [label="ASSEMBLY:OVERLAP_PAIRED_READS_FLASH"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 -> v68;
+
+v64 [label="ASSEMBLY:OVERLAP_PAIRED_READS_FLASH"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v64 -> v69;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v96 [label="ch_versions"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 [label="ASSEMBLY:ASSEMBLE_CONTIGS:ASSEMBLE_CONTIGS_SPADES"];
+v70 -> v73 [label="ch_cleaned_reads"];
+
+v71 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v76 [label="ch_versions"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v94 [label="ch_qc_filechecks"];
+
+v73 [label="ASSEMBLY:ASSEMBLE_CONTIGS:ASSEMBLE_CONTIGS_SPADES"];
+v75 [shape=point];
+v73 -> v75;
+
+v73 [label="ASSEMBLY:ASSEMBLE_CONTIGS:ASSEMBLE_CONTIGS_SPADES"];
+v74 [shape=point];
+v73 -> v74;
+
+v73 [label="ASSEMBLY:ASSEMBLE_CONTIGS:ASSEMBLE_CONTIGS_SPADES"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v76;
+
+v73 [label="ASSEMBLY:ASSEMBLE_CONTIGS:ASSEMBLE_CONTIGS_SPADES"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 -> v77;
+
+v73 [label="ASSEMBLY:ASSEMBLE_CONTIGS:ASSEMBLE_CONTIGS_SPADES"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v73 -> v78;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v82 [label="ch_versions"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v77 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v80 [label="ASSEMBLY:ASSEMBLE_CONTIGS:FILTER_CONTIGS_BIOPYTHON"];
+v79 -> v80 [label="ch_contigs"];
+
+v80 [label="ASSEMBLY:ASSEMBLE_CONTIGS:FILTER_CONTIGS_BIOPYTHON"];
+v81 [shape=point];
+v80 -> v81;
+
+v80 [label="ASSEMBLY:ASSEMBLE_CONTIGS:FILTER_CONTIGS_BIOPYTHON"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v82;
+
+v80 [label="ASSEMBLY:ASSEMBLE_CONTIGS:FILTER_CONTIGS_BIOPYTHON"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v80 -> v83;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v87 [label="ch_versions"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v70 -> v83 [label="ch_cleaned_reads"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v84 [label="ASSEMBLY:ASSEMBLE_CONTIGS:POLISH_ASSEMBLY_BWA_PILON"];
+v83 -> v84;
+
+v84 [label="ASSEMBLY:ASSEMBLE_CONTIGS:POLISH_ASSEMBLY_BWA_PILON"];
+v86 [shape=point];
+v84 -> v86;
+
+v84 [label="ASSEMBLY:ASSEMBLE_CONTIGS:POLISH_ASSEMBLY_BWA_PILON"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v87;
+
+v84 [label="ASSEMBLY:ASSEMBLE_CONTIGS:POLISH_ASSEMBLY_BWA_PILON"];
+v85 [shape=point];
+v84 -> v85;
+
+v84 [label="ASSEMBLY:ASSEMBLE_CONTIGS:POLISH_ASSEMBLY_BWA_PILON"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v84 -> v92;
+
+v84 [label="ASSEMBLY:ASSEMBLE_CONTIGS:POLISH_ASSEMBLY_BWA_PILON"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v84 -> v88;
+
+v84 [label="ASSEMBLY:ASSEMBLE_CONTIGS:POLISH_ASSEMBLY_BWA_PILON"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v84 -> v89;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v96 [label="versions"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v97 [label="ASSEMBLY:EXTRACT_READ_ALIGNMENT_DEPTHS_BEDTOOLS"];
+v90 -> v97 [label="bam_files"];
+
+v84 [label="ASSEMBLY:ASSEMBLE_CONTIGS:POLISH_ASSEMBLY_BWA_PILON"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v84 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v105 [label="ASSEMBLY:MLST_MLST"];
+v93 -> v105 [label="assembly_file"];
+
+v73 [label="ASSEMBLY:ASSEMBLE_CONTIGS:ASSEMBLE_CONTIGS_SPADES"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v95;
+
+v84 [label="ASSEMBLY:ASSEMBLE_CONTIGS:POLISH_ASSEMBLY_BWA_PILON"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v95 -> v183 [label="qc_filecheck"];
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v99 [label="ch_versions"];
+
+v97 [label="ASSEMBLY:EXTRACT_READ_ALIGNMENT_DEPTHS_BEDTOOLS"];
+v98 [shape=point];
+v97 -> v98;
+
+v97 [label="ASSEMBLY:EXTRACT_READ_ALIGNMENT_DEPTHS_BEDTOOLS"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v99;
+
+v97 [label="ASSEMBLY:EXTRACT_READ_ALIGNMENT_DEPTHS_BEDTOOLS"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v101;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v107 [label="ch_versions"];
+
+v100 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v101 [label="ch_alignment_stats_summary"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v104 [shape=point];
+v103 -> v104 [label="ch_alignment_stats_summary"];
+
+v105 [label="ASSEMBLY:MLST_MLST"];
+v106 [shape=point];
+v105 -> v106;
+
+v105 [label="ASSEMBLY:MLST_MLST"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v107;
+
+v105 [label="ASSEMBLY:MLST_MLST"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v109;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v115 [label="ch_versions"];
+
+v108 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v109 [label="ch_mlst_summary"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v111 [shape=point];
+v110 -> v111 [label="ch_mlst_summary"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v112 [label="ASSEMBLY:ANNOTATE_PROKKA"];
+v93 -> v112 [label="assembly_file"];
+
+v112 [label="ASSEMBLY:ANNOTATE_PROKKA"];
+v114 [shape=point];
+v112 -> v114;
+
+v112 [label="ASSEMBLY:ANNOTATE_PROKKA"];
+v113 [shape=point];
+v112 -> v113;
+
+v112 [label="ASSEMBLY:ANNOTATE_PROKKA"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v115;
+
+v112 [label="ASSEMBLY:ANNOTATE_PROKKA"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v112 -> v116;
+
+v112 [label="ASSEMBLY:ANNOTATE_PROKKA"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v112 -> v117;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v122 [label="ch_versions"];
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v116 -> v117;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v117 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v118 -> v119 [label="ch_genbank"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v119 [label="assembly_file"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v120 [label="ASSEMBLY:EXTRACT_16S_BIOPYTHON"];
+v119 -> v120;
+
+v120 [label="ASSEMBLY:EXTRACT_16S_BIOPYTHON"];
+v121 [shape=point];
+v120 -> v121;
+
+v120 [label="ASSEMBLY:EXTRACT_16S_BIOPYTHON"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v122;
+
+v120 [label="ASSEMBLY:EXTRACT_16S_BIOPYTHON"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v120 -> v124;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v127 [label="ch_versions"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v123 [label="assembly_file"];
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v118 -> v123 [label="ch_genbank"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v125 [label="ASSEMBLY:EXTRACT_16S_BARRNAP"];
+v124 -> v125;
+
+v125 [label="ASSEMBLY:EXTRACT_16S_BARRNAP"];
+v126 [shape=point];
+v125 -> v126;
+
+v125 [label="ASSEMBLY:EXTRACT_16S_BARRNAP"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v127;
+
+v125 [label="ASSEMBLY:EXTRACT_16S_BARRNAP"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v125 -> v128;
+
+v125 [label="ASSEMBLY:EXTRACT_16S_BARRNAP"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v125 -> v129;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v134 [label="ch_versions"];
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v128 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 -> v135 [label="ch_extracted_rna"];
+
+v131 [shape=point,label="",fixedsize=true,width=0.1];
+v132 [label="ASSEMBLY:BLAST_DB_PREPARATION_UNIX"];
+v131 -> v132 [label="database"];
+
+v132 [label="ASSEMBLY:BLAST_DB_PREPARATION_UNIX"];
+v133 [shape=point];
+v132 -> v133;
+
+v132 [label="ASSEMBLY:BLAST_DB_PREPARATION_UNIX"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v134;
+
+v132 [label="ASSEMBLY:BLAST_DB_PREPARATION_UNIX"];
+v136 [label="ASSEMBLY:ALIGN_16S_BLAST"];
+v132 -> v136 [label="ch_db_for_blast"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v138 [label="ch_versions"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v135 [label="assembly_file"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v136 [label="ASSEMBLY:ALIGN_16S_BLAST"];
+v135 -> v136;
+
+v136 [label="ASSEMBLY:ALIGN_16S_BLAST"];
+v137 [shape=point];
+v136 -> v137;
+
+v136 [label="ASSEMBLY:ALIGN_16S_BLAST"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v138;
+
+v136 [label="ASSEMBLY:ALIGN_16S_BLAST"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v136 -> v139;
+
+v136 [label="ASSEMBLY:ALIGN_16S_BLAST"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v136 -> v140;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v146 [label="ch_versions"];
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v141 -> v142 [label="ch_blast_output"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v142 [label="assembly_file"];
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v143 [label="ASSEMBLY:BEST_16S_BLASTN_BITSCORE_TAXON_PYTHON"];
+v142 -> v143;
+
+v143 [label="ASSEMBLY:BEST_16S_BLASTN_BITSCORE_TAXON_PYTHON"];
+v145 [shape=point];
+v143 -> v145;
+
+v143 [label="ASSEMBLY:BEST_16S_BLASTN_BITSCORE_TAXON_PYTHON"];
+v144 [shape=point];
+v143 -> v144;
+
+v143 [label="ASSEMBLY:BEST_16S_BLASTN_BITSCORE_TAXON_PYTHON"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v146;
+
+v143 [label="ASSEMBLY:BEST_16S_BLASTN_BITSCORE_TAXON_PYTHON"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v143 -> v151;
+
+v143 [label="ASSEMBLY:BEST_16S_BLASTN_BITSCORE_TAXON_PYTHON"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v143 -> v148;
+
+v143 [label="ASSEMBLY:BEST_16S_BLASTN_BITSCORE_TAXON_PYTHON"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v143 -> v147;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 -> v162 [label="ch_versions"];
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v147 -> v148;
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v148 -> v149;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v149 -> v156 [label="ch_top_blast"];
+
+v143 [label="ASSEMBLY:BEST_16S_BLASTN_BITSCORE_TAXON_PYTHON"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v143 -> v150;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v150 -> v151;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v151 -> v152;
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 -> v153 [label="ch_blast_summary"];
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v153 -> v154;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v155 [shape=point];
+v154 -> v155;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v156 -> v157;
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v158 [shape=point];
+v157 -> v158;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v70 -> v159 [label="ch_cleaned_reads"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v159 [label="assembly_file"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v160 [label="ASSEMBLY:QA_ASSEMBLY_QUAST"];
+v159 -> v160;
+
+v160 [label="ASSEMBLY:QA_ASSEMBLY_QUAST"];
+v161 [shape=point];
+v160 -> v161;
+
+v160 [label="ASSEMBLY:QA_ASSEMBLY_QUAST"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v162;
+
+v160 [label="ASSEMBLY:QA_ASSEMBLY_QUAST"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v164;
+
+v160 [label="ASSEMBLY:QA_ASSEMBLY_QUAST"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v168;
+
+v160 [label="ASSEMBLY:QA_ASSEMBLY_QUAST"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v160 -> v171;
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v174 [label="ch_versions"];
+
+v163 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v164 [label="ch_assembly_summary"];
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v164 -> v165;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v166 [shape=point];
+v165 -> v166 [label="ch_assembly_summary"];
+
+v167 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v168 [label="ch_cleaned_summary"];
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v168 -> v169;
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v170 [shape=point];
+v169 -> v170 [label="ch_cleaned_summary"];
+
+v97 [label="ASSEMBLY:EXTRACT_READ_ALIGNMENT_DEPTHS_BEDTOOLS"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v97 -> v171;
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v172 [label="ASSEMBLY:CALCULATE_COVERAGE_UNIX"];
+v171 -> v172;
+
+v172 [label="ASSEMBLY:CALCULATE_COVERAGE_UNIX"];
+v173 [shape=point];
+v172 -> v173;
+
+v172 [label="ASSEMBLY:CALCULATE_COVERAGE_UNIX"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 -> v174;
+
+v172 [label="ASSEMBLY:CALCULATE_COVERAGE_UNIX"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 -> v176;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v174 -> v179 [label="ch_versions"];
+
+v175 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 -> v176 [label="ch_genome_cov_summary"];
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v176 -> v177;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v178 [shape=point];
+v177 -> v178 [label="ch_genome_cov_summary"];
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v179 -> v180;
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v181 [shape=point];
+v180 -> v181;
+
+v182 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v182 -> v183 [label="ch_qc_filecheck"];
+
+v56 [label="ASSEMBLY:TRIM_READS_TRIMMOMATIC"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v56 -> v183;
+
+v64 [label="ASSEMBLY:OVERLAP_PAIRED_READS_FLASH"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v64 -> v183;
+
+v125 [label="ASSEMBLY:EXTRACT_16S_BARRNAP"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v125 -> v183;
+
+v46 [label="ASSEMBLY:REMOVE_PHIX_BBDUK"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v46 -> v183;
+
+v136 [label="ASSEMBLY:ALIGN_16S_BLAST"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v136 -> v183;
+
+v112 [label="ASSEMBLY:ANNOTATE_PROKKA"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v112 -> v183;
+
+v143 [label="ASSEMBLY:BEST_16S_BLASTN_BITSCORE_TAXON_PYTHON"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v143 -> v183;
+
+v23 [label="ASSEMBLY:INFILE_HANDLING_UNIX"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v23 -> v183;
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v183 -> v184;
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v184 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v185 -> v186;
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v186 -> v187;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v188 [shape=point];
+v187 -> v188 [label="ch_qc_filecheck"];
+
+}

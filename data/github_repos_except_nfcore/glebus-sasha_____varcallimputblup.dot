@@ -1,0 +1,254 @@
+digraph "glebussasha_____varcallimputblup" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 [label="ALIGN_VARCALL:BWA_MEM"];
+v1 -> v24 [label="reference"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v18 [label="QC_TRIM:FASTQC_BEFORE"];
+v2 -> v18 [label="input_fastqs"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 [label="ALIGN_VARCALL:BWA_MEM"];
+v4 -> v24 [label="bwaidx"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 [label="ALIGN_VARCALL:BCFTOOLS_MPILEUP"];
+v6 -> v28 [label="faidx"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v8 -> v11 [label="ref_panel"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v10 -> v11 [label="ref_panel_index"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 [label="IMPUTE:GLIMPSE2_CHUNK"];
+v11 -> v34 [label="ref_panel_with_index"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v13 -> v16 [label="bam"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 -> v16 [label="bamindex"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 [shape=point];
+v16 -> v17 [label="align"];
+
+v18 [label="QC_TRIM:FASTQC_BEFORE"];
+v19 [shape=point];
+v18 -> v19;
+
+v18 [label="QC_TRIM:FASTQC_BEFORE"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 -> v48 [label="fastqc_before"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v20 [label="QC_TRIM:FASTP"];
+v2 -> v20 [label="input_fastqs"];
+
+v20 [label="QC_TRIM:FASTP"];
+v22 [label="QC_TRIM:FASTQC_AFTER"];
+v20 -> v22 [label="trimmed_reads"];
+
+v20 [label="QC_TRIM:FASTP"];
+v21 [shape=point];
+v20 -> v21;
+
+v20 [label="QC_TRIM:FASTP"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 -> v47 [label="fastp"];
+
+v22 [label="QC_TRIM:FASTQC_AFTER"];
+v23 [shape=point];
+v22 -> v23;
+
+v22 [label="QC_TRIM:FASTQC_AFTER"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 -> v49 [label="fastqc_after"];
+
+v20 [label="QC_TRIM:FASTP"];
+v24 [label="ALIGN_VARCALL:BWA_MEM"];
+v20 -> v24 [label="trimmed_reads"];
+
+v24 [label="ALIGN_VARCALL:BWA_MEM"];
+v25 [label="ALIGN_VARCALL:SAMTOOLS_FLAGSTAT"];
+v24 -> v25;
+
+v25 [label="ALIGN_VARCALL:SAMTOOLS_FLAGSTAT"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 -> v50 [label="flagstat"];
+
+v24 [label="ALIGN_VARCALL:BWA_MEM"];
+v26 [label="ALIGN_VARCALL:SAMTOOLS_INDEX"];
+v24 -> v26;
+
+v26 [label="ALIGN_VARCALL:SAMTOOLS_INDEX"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 -> v27;
+
+v24 [label="ALIGN_VARCALL:BWA_MEM"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 [label="ALIGN_VARCALL:BCFTOOLS_MPILEUP"];
+v27 -> v28;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 [label="ALIGN_VARCALL:BCFTOOLS_MPILEUP"];
+v1 -> v28 [label="reference"];
+
+v28 [label="ALIGN_VARCALL:BCFTOOLS_MPILEUP"];
+v29 [label="ALIGN_VARCALL:BCFTOOLS_INDEX"];
+v28 -> v29;
+
+v29 [label="ALIGN_VARCALL:BCFTOOLS_INDEX"];
+v30 [shape=point];
+v29 -> v30;
+
+v28 [label="ALIGN_VARCALL:BCFTOOLS_MPILEUP"];
+v32 [label="ALIGN_VARCALL:BCFTOOLS_STATS1"];
+v28 -> v32;
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="ALIGN_VARCALL:BCFTOOLS_STATS1"];
+v31 -> v32 [label="tag"];
+
+v32 [label="ALIGN_VARCALL:BCFTOOLS_STATS1"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v51 [label="bcfstats1"];
+
+v24 [label="ALIGN_VARCALL:BWA_MEM"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 -> v33;
+
+v26 [label="ALIGN_VARCALL:SAMTOOLS_INDEX"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v33 -> v40 [label="align"];
+
+v34 [label="IMPUTE:GLIMPSE2_CHUNK"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v36 -> v37 [label="IRG_ORG"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v37 [label="ref_panel_with_index"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v38 [label="IMPUTE:GLIMPSE2_SPLITREFERENCE"];
+v37 -> v38;
+
+v38 [label="IMPUTE:GLIMPSE2_SPLITREFERENCE"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v40 -> v41;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v41 [label="ref_panel_index"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v42 [label="IMPUTE:GLIMPSE2_PHASE"];
+v41 -> v42;
+
+v42 [label="IMPUTE:GLIMPSE2_PHASE"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v44 [label="IMPUTE:GLIMPSE2_LIGATE"];
+v43 -> v44;
+
+v44 [label="IMPUTE:GLIMPSE2_LIGATE"];
+v46 [label="IMPUTE:BCFTOOLS_STATS2"];
+v44 -> v46 [label="imputed_bcf"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v46 [label="IMPUTE:BCFTOOLS_STATS2"];
+v45 -> v46 [label="tag"];
+
+v46 [label="IMPUTE:BCFTOOLS_STATS2"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 -> v52 [label="bcfstats2"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v53 [label="MULTIQC"];
+v47 -> v53;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v53 [label="MULTIQC"];
+v48 -> v53;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v53 [label="MULTIQC"];
+v49 -> v53;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v53 [label="MULTIQC"];
+v50 -> v53;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v53 [label="MULTIQC"];
+v51 -> v53;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v53 [label="MULTIQC"];
+v52 -> v53;
+
+v53 [label="MULTIQC"];
+v54 [shape=point];
+v53 -> v54;
+
+}

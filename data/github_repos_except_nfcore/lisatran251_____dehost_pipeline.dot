@@ -1,0 +1,50 @@
+digraph "lisatran251_____dehost_pipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v4 [label="retrieve_sra"];
+v3 -> v4 [label="accessions"];
+
+v4 [label="retrieve_sra"];
+v5 [label="receive_samples"];
+v4 -> v5;
+
+v5 [label="receive_samples"];
+v6 [shape=point];
+v5 -> v6;
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="receive_host"];
+v7 -> v8 [label="host_file"];
+
+v8 [label="receive_host"];
+v9 [label="prepare_host_genome"];
+v8 -> v9;
+
+v9 [label="prepare_host_genome"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v9 -> v10;
+
+v4 [label="retrieve_sra"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 [label="dehost"];
+v10 -> v11;
+
+v11 [label="dehost"];
+v12 [shape=point];
+v11 -> v12;
+
+}

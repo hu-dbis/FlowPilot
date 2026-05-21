@@ -1,0 +1,622 @@
+digraph "sangertol_____ear" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v48 [label="ch_versions"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v2 [shape=point];
+v1 -> v2 [label="ch_align_bam"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v3 -> v40 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v7 [label="sample_id"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v5 -> v83 [label="reads_type"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v7 [label="longread_dir"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:GrabFiles"];
+v8 -> v88 [label="pacbio_tuple"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v9 -> v12 [label="reference_1"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v44 [label="reference_hap2"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v11 -> v42 [label="reference_haplotigs"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v12 [label="sample_id"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [label="SANGERTOL_EAR:EAR:GFASTATS"];
+v13 -> v56 [label="reference_tuple"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v15 [shape=point];
+v14 -> v15 [label="cpretext_aligner"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 -> v18 [label="cpretext_telomere_motif_raw"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 -> v21 [label="cpretext_hic_dir_raw"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v18 [label="sample_id"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 [shape=point];
+v19 -> v20 [label="cpretext_telomere_motif"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v21 [label="sample_id"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [shape=point];
+v22 -> v23 [label="cpretext_hic_dir"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v24 -> v60 [label="fastk_hist"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v25 -> v61 [label="fastk_ktab"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v26 -> v124 [label="btk_nt_database"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v28 [shape=point];
+v27 -> v28 [label="btk_nt_database_prefix"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v30 [shape=point];
+v29 -> v30 [label="btk_nt_diamond_database"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v31 -> v124 [label="btk_un_diamond_database"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v32 -> v124 [label="btk_ncbi_taxonomy_path"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v34 [shape=point];
+v33 -> v34 [label="btk_ncbi_lineage_path"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v35 -> v124 [label="btk_taxid"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v37 [shape=point];
+v36 -> v37 [label="btk_gca_accession"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v38 -> v124 [label="busco_lineages"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v39 -> v124 [label="btk_config"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v41 [shape=point];
+v40 -> v41 [label="versions"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v43 [shape=point];
+v42 -> v43;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v44 [label="sample_id"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v44 -> v45;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v45 [label="reference_haplotigs"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 [label="SANGERTOL_EAR:EAR:CAT_CAT"];
+v46 -> v47 [label="cat_cat_input"];
+
+v47 [label="SANGERTOL_EAR:EAR:CAT_CAT"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v47 -> v59 [label="ch_haplotype_fasta"];
+
+v47 [label="SANGERTOL_EAR:EAR:CAT_CAT"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v58 [label="ch_versions"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="SANGERTOL_EAR:EAR:GFASTATS"];
+v49 -> v56 [label="out_fmt"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="SANGERTOL_EAR:EAR:GFASTATS"];
+v50 -> v56 [label="genome_size"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="SANGERTOL_EAR:EAR:GFASTATS"];
+v51 -> v56 [label="target"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="SANGERTOL_EAR:EAR:GFASTATS"];
+v52 -> v56 [label="agpfile"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="SANGERTOL_EAR:EAR:GFASTATS"];
+v53 -> v56 [label="include_bed"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="SANGERTOL_EAR:EAR:GFASTATS"];
+v54 -> v56 [label="exclude_bed"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="SANGERTOL_EAR:EAR:GFASTATS"];
+v55 -> v56 [label="instructions"];
+
+v56 [label="SANGERTOL_EAR:EAR:GFASTATS"];
+v57 [shape=point];
+v56 -> v57;
+
+v56 [label="SANGERTOL_EAR:EAR:GFASTATS"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v80 [label="ch_versions"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 -> v59 [label="reference_tuple"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v62 -> v63 [label="merquryfk_input"];
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v79 [shape=point];
+v63 -> v79;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v78 [shape=point];
+v63 -> v78;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v77 [shape=point];
+v63 -> v77;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v76 [shape=point];
+v63 -> v76;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v75 [shape=point];
+v63 -> v75;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v74 [shape=point];
+v63 -> v74;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v73 [shape=point];
+v63 -> v73;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v72 [shape=point];
+v63 -> v72;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v71 [shape=point];
+v63 -> v71;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v70 [shape=point];
+v63 -> v70;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v69 [shape=point];
+v63 -> v69;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v68 [shape=point];
+v63 -> v68;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v67 [shape=point];
+v63 -> v67;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v66 [shape=point];
+v63 -> v66;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v65 [shape=point];
+v63 -> v65;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v64 [shape=point];
+v63 -> v64;
+
+v63 [label="SANGERTOL_EAR:EAR:MERQURYFK_MERQURYFK"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v120 [label="ch_versions"];
+
+v81 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v111 [label="ch_align_bam"];
+
+v82 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v110 [label="ch_versions"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v84 [shape=point];
+v83 -> v84;
+
+v85 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v108 [label="ch_versions"];
+
+v86 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v87 [shape=point];
+v86 -> v87 [label="ch_align_bams"];
+
+v88 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:GrabFiles"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v90 -> v91 [label="ch_reads_path"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 -> v91 [label="reference_tuple"];
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v91 -> v92;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v92 [label="reads_type"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v93 -> v94 [label="minimap_se_input"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v96 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:MINIMAP2_ALIGN_SE"];
+v94 -> v96;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v96 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:MINIMAP2_ALIGN_SE"];
+v94 -> v96;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v96 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:MINIMAP2_ALIGN_SE"];
+v94 -> v96;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v96 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:MINIMAP2_ALIGN_SE"];
+v94 -> v96;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v96 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:MINIMAP2_ALIGN_SE"];
+v94 -> v96;
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:MINIMAP2_ALIGN_SE"];
+v95 -> v96 [label="bam_index_extension"];
+
+v96 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:MINIMAP2_ALIGN_SE"];
+v99 [shape=point];
+v96 -> v99;
+
+v96 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:MINIMAP2_ALIGN_SE"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v96 -> v100 [label="ch_bams"];
+
+v96 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:MINIMAP2_ALIGN_SE"];
+v98 [shape=point];
+v96 -> v98;
+
+v96 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:MINIMAP2_ALIGN_SE"];
+v97 [shape=point];
+v96 -> v97;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:SAMTOOLS_MERGE"];
+v102 -> v104 [label="collected_files_for_merge"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:SAMTOOLS_MERGE"];
+v13 -> v104 [label="reference_tuple"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1];
+v104 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:SAMTOOLS_MERGE"];
+v103 -> v104;
+
+v104 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:SAMTOOLS_MERGE"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v111 [label="mapped_bam"];
+
+v104 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:SAMTOOLS_MERGE"];
+v107 [shape=point];
+v104 -> v107;
+
+v104 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:SAMTOOLS_MERGE"];
+v106 [shape=point];
+v104 -> v106;
+
+v104 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:SAMTOOLS_MERGE"];
+v105 [shape=point];
+v104 -> v105;
+
+v104 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SE_MAPPING:SAMTOOLS_MERGE"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v108 -> v109 [label="ch_versions"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v110 [label="versions"];
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v117 [label="ch_versions"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SAMTOOLS_SORT"];
+v111 -> v112 [label="merged_bam"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v112 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SAMTOOLS_SORT"];
+v13 -> v112 [label="reference_tuple"];
+
+v112 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SAMTOOLS_SORT"];
+v116 [shape=point];
+v112 -> v116;
+
+v112 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SAMTOOLS_SORT"];
+v115 [shape=point];
+v112 -> v115;
+
+v112 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SAMTOOLS_SORT"];
+v114 [shape=point];
+v112 -> v114;
+
+v112 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SAMTOOLS_SORT"];
+v113 [shape=point];
+v112 -> v113;
+
+v112 [label="SANGERTOL_EAR:EAR:MAIN_MAPPING:SAMTOOLS_SORT"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v117;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v120 [label="versions"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v111 -> v118 [label="merged_bam"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v118 [label="sample_id"];
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v121 [label="SANGERTOL_EAR:EAR:GENERATE_SAMPLESHEET"];
+v119 -> v121 [label="ch_mapped_bam"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v122 [label="ch_versions"];
+
+v121 [label="SANGERTOL_EAR:EAR:GENERATE_SAMPLESHEET"];
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v121 -> v124;
+
+v121 [label="SANGERTOL_EAR:EAR:GENERATE_SAMPLESHEET"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v122;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v131 [label="ch_versions"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v13 -> v124 [label="reference_tuple"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v119 -> v124 [label="ch_mapped_bam"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v31 -> v124 [label="btk_un_diamond_database"];
+
+v123 [shape=point,label="",fixedsize=true,width=0.1];
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v123 -> v124 [label="gca_accession"];
+
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v130 [shape=point];
+v124 -> v130;
+
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v129 [shape=point];
+v124 -> v129;
+
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v128 [shape=point];
+v124 -> v128;
+
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v127 [shape=point];
+v124 -> v127;
+
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v126 [shape=point];
+v124 -> v126;
+
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v125 [shape=point];
+v124 -> v125;
+
+v124 [label="SANGERTOL_EAR:EAR:SANGER_TOL_BTK"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v138 [label="ch_versions"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v136 [label="SANGERTOL_EAR:EAR:SANGER_TOL_CPRETEXT"];
+v132 -> v136 [label="reference"];
+
+v133 [shape=point,label="",fixedsize=true,width=0.1];
+v136 [label="SANGERTOL_EAR:EAR:SANGER_TOL_CPRETEXT"];
+v133 -> v136 [label="longread_dir"];
+
+v134 [shape=point,label="",fixedsize=true,width=0.1];
+v136 [label="SANGERTOL_EAR:EAR:SANGER_TOL_CPRETEXT"];
+v134 -> v136 [label="cram_dir"];
+
+v135 [shape=point,label="",fixedsize=true,width=0.1];
+v136 [label="SANGERTOL_EAR:EAR:SANGER_TOL_CPRETEXT"];
+v135 -> v136 [label="config_file"];
+
+v136 [label="SANGERTOL_EAR:EAR:SANGER_TOL_CPRETEXT"];
+v137 [shape=point];
+v136 -> v137;
+
+v136 [label="SANGERTOL_EAR:EAR:SANGER_TOL_CPRETEXT"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v138;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v138 -> v139 [label="versions"];
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v143;
+
+v142 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v143;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v143 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v145 [shape=point];
+v144 -> v145 [label="ch_collated_versions"];
+
+}

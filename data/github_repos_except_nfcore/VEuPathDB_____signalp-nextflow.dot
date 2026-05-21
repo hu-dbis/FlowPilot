@@ -1,0 +1,78 @@
+digraph "VEuPathDB_____signalpnextflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v2 [label="signalp5"];
+v1 -> v2 [label="seqs"];
+
+v2 [label="signalp5"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v2 -> v3;
+
+v2 [label="signalp5"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v10;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v5 [label="filterInputFastaByResults"];
+v3 -> v5;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="filterInputFastaByResults"];
+v4 -> v5 [label="fasta"];
+
+v5 [label="filterInputFastaByResults"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v5 -> v6;
+
+v5 [label="filterInputFastaByResults"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v5 -> v8 [label="recordCount"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v7 [label="signalp4"];
+v6 -> v7 [label="filteredSeq"];
+
+v7 [label="signalp4"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v10;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v9 [label="signalp6"];
+v8 -> v9;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v9 [label="signalp6"];
+v6 -> v9 [label="filteredSeq"];
+
+v9 [label="signalp6"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v11;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v14 [label="indexResults"];
+v12 -> v14 [label="collectedGff"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="indexResults"];
+v13 -> v14 [label="outputFileName"];
+
+v14 [label="indexResults"];
+v16 [shape=point];
+v14 -> v16;
+
+v14 [label="indexResults"];
+v15 [shape=point];
+v14 -> v15;
+
+}

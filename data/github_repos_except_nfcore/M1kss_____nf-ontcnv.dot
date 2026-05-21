@@ -1,0 +1,34 @@
+digraph "M1kss_____nfontcnv" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="split_region"];
+v2 -> v3 [label="input"];
+
+v3 [label="split_region"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v5 [label="mpileup"];
+v4 -> v5;
+
+v5 [label="mpileup"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v5 -> v6 [label="count_list"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v7 [label="sort"];
+v6 -> v7;
+
+v7 [label="sort"];
+v8 [shape=point];
+v7 -> v8 [label="result_bed"];
+
+}

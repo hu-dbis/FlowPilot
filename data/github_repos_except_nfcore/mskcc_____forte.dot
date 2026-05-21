@@ -1,0 +1,2498 @@
+digraph "mskcc_____forte" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v548 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v548 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v550 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v550 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v552 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v552 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v404 [label="ch_multiqc_config"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v12 [label="ch_versions"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v385 [label="baits"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [label="MSKCC_FORTE:FORTE:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v8 -> v9 [label="samplesheet"];
+
+v9 [label="MSKCC_FORTE:FORTE:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v9 -> v10;
+
+v9 [label="MSKCC_FORTE:FORTE:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v12 [label="versions"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v67 [label="reads"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v65 [label="ch_versions"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v17 [label="ch_versions"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:STAR_GENOMEGENERATE"];
+v14 -> v16 [label="fasta"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:STAR_GENOMEGENERATE"];
+v15 -> v16 [label="gtf"];
+
+v16 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:STAR_GENOMEGENERATE"];
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v16 -> v99 [label="star_index"];
+
+v16 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:STAR_GENOMEGENERATE"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v21 [label="ch_versions"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:UCSC_GTFTOGENEPRED"];
+v19 -> v20;
+
+v20 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:UCSC_GTFTOGENEPRED"];
+v22 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:UCSC_GENEPREDTOBED"];
+v20 -> v22;
+
+v20 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:UCSC_GTFTOGENEPRED"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 -> v24;
+
+v20 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:UCSC_GTFTOGENEPRED"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v23 [label="ch_versions"];
+
+v22 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:UCSC_GENEPREDTOBED"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v63;
+
+v22 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:UCSC_GENEPREDTOBED"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v30 [label="ch_versions"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v27 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:PREPARE_RRNA"];
+v25 -> v27 [label="refflat"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:PREPARE_RRNA"];
+v26 -> v27 [label="gtf"];
+
+v27 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:PREPARE_RRNA"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v31 [label="rrna_bed"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:GATK4_CREATESEQUENCEDICTIONARY"];
+v28 -> v29 [label="fasta"];
+
+v29 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:GATK4_CREATESEQUENCEDICTIONARY"];
+v32 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:GATK4_BEDTOINTERVALLIST"];
+v29 -> v32 [label="dict"];
+
+v29 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:GATK4_CREATESEQUENCEDICTIONARY"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v33 [label="ch_versions"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:GATK4_BEDTOINTERVALLIST"];
+v31 -> v32;
+
+v32 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:GATK4_BEDTOINTERVALLIST"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 -> v61;
+
+v32 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:GATK4_BEDTOINTERVALLIST"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v57 [label="ch_versions"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v35 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:SAMTOOLS_FAIDX"];
+v34 -> v35;
+
+v35 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:SAMTOOLS_FAIDX"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 -> v299 [label="fai"];
+
+v35 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:SAMTOOLS_FAIDX"];
+v37 [shape=point];
+v35 -> v37;
+
+v35 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:SAMTOOLS_FAIDX"];
+v36 [shape=point];
+v35 -> v36;
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v52 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:METAFUSION_GENEINFO"];
+v38 -> v52 [label="starfusion_ref"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v52 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:METAFUSION_GENEINFO"];
+v39 -> v52 [label="fusioncatcher_ref"];
+
+v40 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:ARRIBA_DOWNLOAD"];
+v44 [shape=point];
+v40 -> v44 [label="arriba_blacklist"];
+
+v40 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:ARRIBA_DOWNLOAD"];
+v43 [shape=point];
+v40 -> v43 [label="arriba_protein_domains"];
+
+v40 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:ARRIBA_DOWNLOAD"];
+v42 [shape=point];
+v40 -> v42 [label="arriba_known_fusions"];
+
+v40 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:ARRIBA_DOWNLOAD"];
+v41 [shape=point];
+v40 -> v41;
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:AGAT_SPADDINTRONS"];
+v45 -> v47;
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:AGAT_SPADDINTRONS"];
+v46 -> v47 [label="config"];
+
+v47 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:AGAT_SPADDINTRONS"];
+v49 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:METAFUSION_GENEBED"];
+v47 -> v49;
+
+v47 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:AGAT_SPADDINTRONS"];
+v48 [shape=point];
+v47 -> v48;
+
+v49 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:METAFUSION_GENEBED"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v49 -> v248 [label="gene_bed"];
+
+v49 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:METAFUSION_GENEBED"];
+v50 [shape=point];
+v49 -> v50;
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:METAFUSION_GENEINFO"];
+v51 -> v52;
+
+v52 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:METAFUSION_GENEINFO"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v250 [label="gene_info"];
+
+v52 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:METAFUSION_GENEINFO"];
+v53 [shape=point];
+v52 -> v53;
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:AGFUSION_DOWNLOAD"];
+v54 -> v56 [label="ensembl_release"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:AGFUSION_DOWNLOAD"];
+v55 -> v56 [label="genome"];
+
+v56 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:AGFUSION_DOWNLOAD"];
+v264 [label="MSKCC_FORTE:FORTE:FUSION:AGFUSION_BATCH"];
+v56 -> v264 [label="agfusion_db"];
+
+v56 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:AGFUSION_DOWNLOAD"];
+v264 [label="MSKCC_FORTE:FORTE:FUSION:AGFUSION_BATCH"];
+v56 -> v264 [label="pyensembl_cache"];
+
+v56 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:AGFUSION_DOWNLOAD"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v60 [label="ch_versions"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:KALLISTO_INDEX"];
+v58 -> v59 [label="fasta"];
+
+v59 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:KALLISTO_INDEX"];
+v163 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:KALLISTO_QUANT"];
+v59 -> v163 [label="kallisto_idx"];
+
+v59 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:KALLISTO_INDEX"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v65 [label="ch_versions"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v379 [label="MSKCC_FORTE:FORTE:QC_DEDUP:PICARD_COLLECTRNASEQMETRICS"];
+v62 -> v379 [label="rrna_intervals"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v343 [label="MSKCC_FORTE:FORTE:QC_DEDUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v64 -> v343 [label="ch_bed"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v93 [label="ch_versions"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v72 [label="ch_versions"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v67 -> v68 [label="reads"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v69 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:UMITOOLS_EXTRACT"];
+v68 -> v69;
+
+v69 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:UMITOOLS_EXTRACT"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v74;
+
+v69 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:UMITOOLS_EXTRACT"];
+v70 [shape=point];
+v69 -> v70;
+
+v69 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:UMITOOLS_EXTRACT"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v69 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v84 [label="ch_versions"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v67 -> v73 [label="reads"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:FASTP"];
+v74 -> v78;
+
+v75 [shape=point,label="",fixedsize=true,width=0.1];
+v78 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:FASTP"];
+v75 -> v78 [label="adapter_fasta"];
+
+v76 [shape=point,label="",fixedsize=true,width=0.1];
+v78 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:FASTP"];
+v76 -> v78 [label="save_trimmed_fail"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1];
+v78 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:FASTP"];
+v77 -> v78 [label="save_merged"];
+
+v78 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:FASTP"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 -> v90 [label="ungrouped_reads"];
+
+v78 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:FASTP"];
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v426 [label="fastp_json"];
+
+v78 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:FASTP"];
+v82 [shape=point];
+v78 -> v82;
+
+v78 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:FASTP"];
+v81 [shape=point];
+v78 -> v81;
+
+v78 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:FASTP"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v78 -> v83;
+
+v78 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:FASTP"];
+v80 [shape=point];
+v78 -> v80;
+
+v78 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:FASTP"];
+v79 [shape=point];
+v78 -> v79;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v93 [label="ch_versions"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v67 -> v85 [label="reads"];
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v86;
+
+v69 [label="MSKCC_FORTE:FORTE:PREPROCESS_READS:UMITOOLS_EXTRACT"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v86 -> v87 [label="ungrouped_reads"];
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v87 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v228 [label="MSKCC_FORTE:FORTE:FUSION:FUSIONCATCHER_DETECT"];
+v89 -> v228 [label="reads_untrimmed"];
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v92 -> v99 [label="reads"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v140 [label="ch_versions"];
+
+v94 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v114 [label="ch_versions"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v95 -> v99 [label="gtf"];
+
+v96 [shape=point,label="",fixedsize=true,width=0.1];
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v96 -> v99 [label="star_ignore_sjdbgtf"];
+
+v97 [shape=point,label="",fixedsize=true,width=0.1];
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v97 -> v99 [label="seq_platform"];
+
+v98 [shape=point,label="",fixedsize=true,width=0.1];
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v98 -> v99 [label="seq_center"];
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v99 -> v115 [label="star_log_final"];
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v112 [shape=point];
+v99 -> v112;
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v111 [shape=point];
+v99 -> v111;
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v99 -> v113;
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v117 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX"];
+v99 -> v117 [label="bam"];
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v110 [shape=point];
+v99 -> v110;
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v109 [shape=point];
+v99 -> v109;
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v108 [shape=point];
+v99 -> v108;
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v107 [shape=point];
+v99 -> v107;
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v106 [shape=point];
+v99 -> v106;
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v105 [shape=point];
+v99 -> v105;
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v104 [shape=point];
+v99 -> v104;
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v103 [shape=point];
+v99 -> v103;
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v102 [shape=point];
+v99 -> v102;
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v101 [shape=point];
+v99 -> v101;
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v100 [shape=point];
+v99 -> v100;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v121 [label="ch_versions"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v116 [shape=point];
+v115 -> v116 [label="star_log_final"];
+
+v117 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v117 -> v123 [label="bai"];
+
+v117 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX"];
+v119 [shape=point];
+v117 -> v119;
+
+v117 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX"];
+v118 [shape=point];
+v117 -> v118;
+
+v117 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v117 -> v120;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v130 [label="ch_versions"];
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v99 -> v122 [label="bam"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v125 [label="MSKCC_FORTE:FORTE:ALIGN_READS:UMITOOLS_DEDUP"];
+v123 -> v125;
+
+v124 [shape=point,label="",fixedsize=true,width=0.1];
+v125 [label="MSKCC_FORTE:FORTE:ALIGN_READS:UMITOOLS_DEDUP"];
+v124 -> v125 [label="get_output_stats"];
+
+v125 [label="MSKCC_FORTE:FORTE:ALIGN_READS:UMITOOLS_DEDUP"];
+v131 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX_DEDUP"];
+v125 -> v131 [label="bam"];
+
+v125 [label="MSKCC_FORTE:FORTE:ALIGN_READS:UMITOOLS_DEDUP"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v323 [label="umitools_dedup_log"];
+
+v125 [label="MSKCC_FORTE:FORTE:ALIGN_READS:UMITOOLS_DEDUP"];
+v128 [shape=point];
+v125 -> v128;
+
+v125 [label="MSKCC_FORTE:FORTE:ALIGN_READS:UMITOOLS_DEDUP"];
+v127 [shape=point];
+v125 -> v127;
+
+v125 [label="MSKCC_FORTE:FORTE:ALIGN_READS:UMITOOLS_DEDUP"];
+v126 [shape=point];
+v125 -> v126;
+
+v125 [label="MSKCC_FORTE:FORTE:ALIGN_READS:UMITOOLS_DEDUP"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v125 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v135 [label="ch_versions"];
+
+v131 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX_DEDUP"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v139 [label="bai"];
+
+v131 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX_DEDUP"];
+v133 [shape=point];
+v131 -> v133;
+
+v131 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX_DEDUP"];
+v132 [shape=point];
+v131 -> v132;
+
+v131 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX_DEDUP"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v131 -> v134;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v140 [label="ch_versions"];
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v99 -> v136 [label="bam"];
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v137;
+
+v125 [label="MSKCC_FORTE:FORTE:ALIGN_READS:UMITOOLS_DEDUP"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v137 [label="bam"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v137 -> v141 [label="bam"];
+
+v117 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v117 -> v138 [label="bai"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v139 -> v152 [label="bai"];
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v148 [label="ch_versions"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v144 [label="MSKCC_FORTE:FORTE:EXTRACT_DEDUP_FQ:SAMTOOLS_BAM2FQ"];
+v141 -> v144 [label="bam"];
+
+v142 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v146 [label="ch_versions"];
+
+v143 [shape=point,label="",fixedsize=true,width=0.1];
+v144 [label="MSKCC_FORTE:FORTE:EXTRACT_DEDUP_FQ:SAMTOOLS_BAM2FQ"];
+v143 -> v144 [label="split"];
+
+v144 [label="MSKCC_FORTE:FORTE:EXTRACT_DEDUP_FQ:SAMTOOLS_BAM2FQ"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v144 -> v147;
+
+v144 [label="MSKCC_FORTE:FORTE:EXTRACT_DEDUP_FQ:SAMTOOLS_BAM2FQ"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v144 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 -> v148 [label="ch_versions"];
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v150 [label="dedup_reads"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 -> v169 [label="ch_versions"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v92 -> v149 [label="reads"];
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v150;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:KALLISTO_QUANT"];
+v150 -> v163 [label="reads"];
+
+v151 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 -> v156 [label="ch_versions"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v137 -> v152 [label="bam"];
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v153 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:HTSEQ_COUNT"];
+v152 -> v153;
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v153 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:HTSEQ_COUNT"];
+v95 -> v153 [label="gtf"];
+
+v153 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:HTSEQ_COUNT"];
+v155 [shape=point];
+v153 -> v155 [label="htseq_counts"];
+
+v153 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:HTSEQ_COUNT"];
+v154 [shape=point];
+v153 -> v154 [label="htseq_summary"];
+
+v153 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:HTSEQ_COUNT"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 -> v160 [label="ch_versions"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:FEATURECOUNTS_GENE"];
+v137 -> v157 [label="bam"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v157 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:FEATURECOUNTS_GENE"];
+v95 -> v157 [label="gtf"];
+
+v157 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:FEATURECOUNTS_GENE"];
+v159 [shape=point];
+v157 -> v159 [label="featurecounts_gene_counts"];
+
+v157 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:FEATURECOUNTS_GENE"];
+v158 [shape=point];
+v157 -> v158 [label="featurecounts_gene_summary"];
+
+v157 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:FEATURECOUNTS_GENE"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v166 [label="ch_versions"];
+
+v161 [shape=point,label="",fixedsize=true,width=0.1];
+v163 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:KALLISTO_QUANT"];
+v161 -> v163 [label="gtf"];
+
+v162 [shape=point,label="",fixedsize=true,width=0.1];
+v163 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:KALLISTO_QUANT"];
+v162 -> v163 [label="chromosomes"];
+
+v163 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:KALLISTO_QUANT"];
+v167 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:COUNT_FEATURES"];
+v163 -> v167;
+
+v163 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:KALLISTO_QUANT"];
+v165 [shape=point];
+v163 -> v165;
+
+v163 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:KALLISTO_QUANT"];
+v164 [shape=point];
+v163 -> v164;
+
+v163 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:KALLISTO_QUANT"];
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v321 [label="kallisto_log"];
+
+v163 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:KALLISTO_QUANT"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v166;
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v169 [label="ch_versions"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v167 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:COUNT_FEATURES"];
+v95 -> v167 [label="gtf"];
+
+v167 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:COUNT_FEATURES"];
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v321 [label="kallisto_count_feature"];
+
+v167 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:COUNT_FEATURES"];
+v168 [shape=point];
+v167 -> v168;
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v285 [label="ch_versions"];
+
+v170 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 -> v190 [label="ch_versions"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v92 -> v174 [label="reads"];
+
+v16 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:STAR_GENOMEGENERATE"];
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v16 -> v174 [label="star_index"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v95 -> v174 [label="gtf"];
+
+v171 [shape=point,label="",fixedsize=true,width=0.1];
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v171 -> v174 [label="star_ignore_sjdbgtf"];
+
+v172 [shape=point,label="",fixedsize=true,width=0.1];
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v172 -> v174 [label="seq_platform"];
+
+v173 [shape=point,label="",fixedsize=true,width=0.1];
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v173 -> v174 [label="seq_center"];
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v188 [shape=point];
+v174 -> v188;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v187 [shape=point];
+v174 -> v187;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v186 [shape=point];
+v174 -> v186;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v174 -> v189;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v197 [label="MSKCC_FORTE:FORTE:FUSION:ARRIBA"];
+v174 -> v197;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v185 [shape=point];
+v174 -> v185;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v184 [shape=point];
+v174 -> v184;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v183 [shape=point];
+v174 -> v183;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v182 [shape=point];
+v174 -> v182;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v181 [shape=point];
+v174 -> v181;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v180 [shape=point];
+v174 -> v180;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v179 [shape=point];
+v174 -> v179;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v178 [shape=point];
+v174 -> v178;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v177 [shape=point];
+v174 -> v177;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v176 [shape=point];
+v174 -> v176;
+
+v174 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_ARRIBA"];
+v175 [shape=point];
+v174 -> v175;
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v200 [label="ch_versions"];
+
+v191 [shape=point,label="",fixedsize=true,width=0.1];
+v197 [label="MSKCC_FORTE:FORTE:FUSION:ARRIBA"];
+v191 -> v197 [label="fasta"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v197 [label="MSKCC_FORTE:FORTE:FUSION:ARRIBA"];
+v95 -> v197 [label="gtf"];
+
+v192 [shape=point,label="",fixedsize=true,width=0.1];
+v197 [label="MSKCC_FORTE:FORTE:FUSION:ARRIBA"];
+v192 -> v197 [label="blacklist"];
+
+v193 [shape=point,label="",fixedsize=true,width=0.1];
+v197 [label="MSKCC_FORTE:FORTE:FUSION:ARRIBA"];
+v193 -> v197 [label="known_fusions"];
+
+v194 [shape=point,label="",fixedsize=true,width=0.1];
+v197 [label="MSKCC_FORTE:FORTE:FUSION:ARRIBA"];
+v194 -> v197 [label="structural_variants"];
+
+v195 [shape=point,label="",fixedsize=true,width=0.1];
+v197 [label="MSKCC_FORTE:FORTE:FUSION:ARRIBA"];
+v195 -> v197 [label="tags"];
+
+v196 [shape=point,label="",fixedsize=true,width=0.1];
+v197 [label="MSKCC_FORTE:FORTE:FUSION:ARRIBA"];
+v196 -> v197 [label="protein_domains"];
+
+v197 [label="MSKCC_FORTE:FORTE:FUSION:ARRIBA"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v197 -> v234;
+
+v197 [label="MSKCC_FORTE:FORTE:FUSION:ARRIBA"];
+v198 [shape=point];
+v197 -> v198;
+
+v197 [label="MSKCC_FORTE:FORTE:FUSION:ARRIBA"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v197 -> v199;
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v199 -> v200;
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 -> v221 [label="ch_versions"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 -> v201 [label="starfusion_ref"];
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v201 -> v205;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v92 -> v205 [label="reads"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v95 -> v205 [label="gtf"];
+
+v202 [shape=point,label="",fixedsize=true,width=0.1];
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v202 -> v205 [label="star_ignore_sjdbgtf"];
+
+v203 [shape=point,label="",fixedsize=true,width=0.1];
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v203 -> v205 [label="seq_platform"];
+
+v204 [shape=point,label="",fixedsize=true,width=0.1];
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v204 -> v205 [label="seq_center"];
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v219 [shape=point];
+v205 -> v219;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v218 [shape=point];
+v205 -> v218;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v217 [shape=point];
+v205 -> v217;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v205 -> v220;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v216 [shape=point];
+v205 -> v216;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v215 [shape=point];
+v205 -> v215;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v214 [shape=point];
+v205 -> v214;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v213 [shape=point];
+v205 -> v213;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v212 [shape=point];
+v205 -> v212;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v211 [shape=point];
+v205 -> v211;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v210 [shape=point];
+v205 -> v210;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v209 [shape=point];
+v205 -> v209;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v205 -> v222;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v208 [shape=point];
+v205 -> v208;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v207 [shape=point];
+v205 -> v207;
+
+v205 [label="MSKCC_FORTE:FORTE:FUSION:STAR_FOR_STARFUSION"];
+v206 [shape=point];
+v205 -> v206;
+
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 -> v221;
+
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v221 -> v227 [label="ch_versions"];
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v223 [label="MSKCC_FORTE:FORTE:FUSION:STARFUSION"];
+v222 -> v223;
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v223 [label="MSKCC_FORTE:FORTE:FUSION:STARFUSION"];
+v38 -> v223 [label="starfusion_ref"];
+
+v223 [label="MSKCC_FORTE:FORTE:FUSION:STARFUSION"];
+v225 [shape=point];
+v223 -> v225;
+
+v223 [label="MSKCC_FORTE:FORTE:FUSION:STARFUSION"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v223 -> v238;
+
+v223 [label="MSKCC_FORTE:FORTE:FUSION:STARFUSION"];
+v224 [shape=point];
+v223 -> v224;
+
+v223 [label="MSKCC_FORTE:FORTE:FUSION:STARFUSION"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v223 -> v226;
+
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v226 -> v227;
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 -> v233 [label="ch_versions"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v228 [label="MSKCC_FORTE:FORTE:FUSION:FUSIONCATCHER_DETECT"];
+v39 -> v228 [label="fusioncatcher_ref"];
+
+v228 [label="MSKCC_FORTE:FORTE:FUSION:FUSIONCATCHER_DETECT"];
+v231 [shape=point];
+v228 -> v231;
+
+v228 [label="MSKCC_FORTE:FORTE:FUSION:FUSIONCATCHER_DETECT"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v228 -> v236 [label="fc_fusions"];
+
+v228 [label="MSKCC_FORTE:FORTE:FUSION:FUSIONCATCHER_DETECT"];
+v230 [shape=point];
+v228 -> v230;
+
+v228 [label="MSKCC_FORTE:FORTE:FUSION:FUSIONCATCHER_DETECT"];
+v229 [shape=point];
+v228 -> v229;
+
+v228 [label="MSKCC_FORTE:FORTE:FUSION:FUSIONCATCHER_DETECT"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v228 -> v232;
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 -> v233;
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v263 [label="ch_versions"];
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v235 [label="MSKCC_FORTE:FORTE:FUSION:ARRIBA_TO_CFF"];
+v234 -> v235;
+
+v235 [label="MSKCC_FORTE:FORTE:FUSION:ARRIBA_TO_CFF"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v235 -> v240;
+
+v235 [label="MSKCC_FORTE:FORTE:FUSION:ARRIBA_TO_CFF"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v235 -> v279;
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v237 [label="MSKCC_FORTE:FORTE:FUSION:FUSIONCATCHER_TO_CFF"];
+v236 -> v237;
+
+v237 [label="MSKCC_FORTE:FORTE:FUSION:FUSIONCATCHER_TO_CFF"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v237 -> v241;
+
+v237 [label="MSKCC_FORTE:FORTE:FUSION:FUSIONCATCHER_TO_CFF"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v237 -> v281;
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v239 [label="MSKCC_FORTE:FORTE:FUSION:STARFUSION_TO_CFF"];
+v238 -> v239;
+
+v239 [label="MSKCC_FORTE:FORTE:FUSION:STARFUSION_TO_CFF"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v239 -> v243;
+
+v239 [label="MSKCC_FORTE:FORTE:FUSION:STARFUSION_TO_CFF"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v239 -> v283;
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v240 -> v242;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v241 -> v242;
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v242 -> v244;
+
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v243 -> v244;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v244 -> v245;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v246 [label="MSKCC_FORTE:FORTE:FUSION:MERGE_CFF"];
+v245 -> v246;
+
+v246 [label="MSKCC_FORTE:FORTE:FUSION:MERGE_CFF"];
+v254 [label="MSKCC_FORTE:FORTE:FUSION:METAFUSION_RUN"];
+v246 -> v254;
+
+v246 [label="MSKCC_FORTE:FORTE:FUSION:MERGE_CFF"];
+v247 [shape=point];
+v246 -> v247;
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v248 -> v249;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v254 [label="MSKCC_FORTE:FORTE:FUSION:METAFUSION_RUN"];
+v249 -> v254;
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v250 -> v251;
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v254 [label="MSKCC_FORTE:FORTE:FUSION:METAFUSION_RUN"];
+v251 -> v254;
+
+v252 [shape=point,label="",fixedsize=true,width=0.1];
+v254 [label="MSKCC_FORTE:FORTE:FUSION:METAFUSION_RUN"];
+v252 -> v254 [label="fasta"];
+
+v253 [shape=point,label="",fixedsize=true,width=0.1];
+v254 [label="MSKCC_FORTE:FORTE:FUSION:METAFUSION_RUN"];
+v253 -> v254 [label="blocklist"];
+
+v254 [label="MSKCC_FORTE:FORTE:FUSION:METAFUSION_RUN"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v254 -> v255;
+
+v254 [label="MSKCC_FORTE:FORTE:FUSION:METAFUSION_RUN"];
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v254 -> v256;
+
+v254 [label="MSKCC_FORTE:FORTE:FUSION:METAFUSION_RUN"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v254 -> v255;
+
+v254 [label="MSKCC_FORTE:FORTE:FUSION:METAFUSION_RUN"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v254 -> v257;
+
+v254 [label="MSKCC_FORTE:FORTE:FUSION:METAFUSION_RUN"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v254 -> v258;
+
+v254 [label="MSKCC_FORTE:FORTE:FUSION:METAFUSION_RUN"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v254 -> v277;
+
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v255 -> v256;
+
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v256 -> v257;
+
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v257 -> v258;
+
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v259 [label="MSKCC_FORTE:FORTE:FUSION:ADD_FLAG"];
+v258 -> v259;
+
+v259 [label="MSKCC_FORTE:FORTE:FUSION:ADD_FLAG"];
+v260 [label="MSKCC_FORTE:FORTE:FUSION:ONCOKB_FUSIONANNOTATOR"];
+v259 -> v260;
+
+v259 [label="MSKCC_FORTE:FORTE:FUSION:ADD_FLAG"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v259 -> v275;
+
+v260 [label="MSKCC_FORTE:FORTE:FUSION:ONCOKB_FUSIONANNOTATOR"];
+v261 [shape=point];
+v260 -> v261;
+
+v260 [label="MSKCC_FORTE:FORTE:FUSION:ONCOKB_FUSIONANNOTATOR"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v260 -> v262;
+
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v262 -> v263;
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v263 -> v268 [label="ch_versions"];
+
+v259 [label="MSKCC_FORTE:FORTE:FUSION:ADD_FLAG"];
+v264 [label="MSKCC_FORTE:FORTE:FUSION:AGFUSION_BATCH"];
+v259 -> v264;
+
+v264 [label="MSKCC_FORTE:FORTE:FUSION:AGFUSION_BATCH"];
+v266 [shape=point];
+v264 -> v266;
+
+v264 [label="MSKCC_FORTE:FORTE:FUSION:AGFUSION_BATCH"];
+v265 [shape=point];
+v264 -> v265;
+
+v264 [label="MSKCC_FORTE:FORTE:FUSION:AGFUSION_BATCH"];
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v264 -> v269;
+
+v264 [label="MSKCC_FORTE:FORTE:FUSION:AGFUSION_BATCH"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v264 -> v267;
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v267 -> v268;
+
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v268 -> v276 [label="ch_versions"];
+
+v259 [label="MSKCC_FORTE:FORTE:FUSION:ADD_FLAG"];
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v259 -> v269;
+
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v269 -> v270;
+
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v271 [label="MSKCC_FORTE:FORTE:FUSION:CFF_FINALIZE"];
+v270 -> v271;
+
+v271 [label="MSKCC_FORTE:FORTE:FUSION:CFF_FINALIZE"];
+v274 [shape=point];
+v271 -> v274;
+
+v271 [label="MSKCC_FORTE:FORTE:FUSION:CFF_FINALIZE"];
+v273 [shape=point];
+v271 -> v273;
+
+v271 [label="MSKCC_FORTE:FORTE:FUSION:CFF_FINALIZE"];
+v272 [shape=point];
+v271 -> v272;
+
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 -> v276;
+
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v276 -> v278 [label="ch_versions"];
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v277 -> v278;
+
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v278 -> v280 [label="ch_versions"];
+
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v279 -> v280;
+
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 -> v282 [label="ch_versions"];
+
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v281 -> v282;
+
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v282 -> v284 [label="ch_versions"];
+
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v283 -> v284;
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v284 -> v285 [label="ch_versions"];
+
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v285 -> v320 [label="ch_versions"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v286 [label="reads"];
+
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v286 -> v287;
+
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v287 -> v294 [label="all_samples"];
+
+v288 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v289 [label="MSKCC_FORTE:FORTE:MAF_INPUT_CHECK:MAF_SAMPLESHEET_CHECK"];
+v288 -> v289 [label="input"];
+
+v289 [label="MSKCC_FORTE:FORTE:MAF_INPUT_CHECK:MAF_SAMPLESHEET_CHECK"];
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v289 -> v291;
+
+v289 [label="MSKCC_FORTE:FORTE:MAF_INPUT_CHECK:MAF_SAMPLESHEET_CHECK"];
+v290 [shape=point];
+v289 -> v290 [label="versions"];
+
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v291 -> v292;
+
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v292 -> v293 [label="maf"];
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v293 -> v295;
+
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v294 -> v295;
+
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v295 -> v296;
+
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v296 -> v297;
+
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v298 [shape=point];
+v297 -> v298;
+
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v299 -> v300;
+
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v312 [label="MSKCC_FORTE:FORTE:FILLOUT:GBCMS"];
+v300 -> v312 [label="fai"];
+
+v301 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v307 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v301 -> v307 [label="ch_versions"];
+
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v292 -> v302 [label="maf"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v137 -> v302 [label="bam"];
+
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v302 -> v303;
+
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v303 -> v304;
+
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v305 [label="MSKCC_FORTE:FORTE:FILLOUT:MAF_REFORMAT"];
+v304 -> v305 [label="maf_ch"];
+
+v305 [label="MSKCC_FORTE:FORTE:FILLOUT:MAF_REFORMAT"];
+v309 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v305 -> v309;
+
+v305 [label="MSKCC_FORTE:FORTE:FILLOUT:MAF_REFORMAT"];
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v305 -> v306;
+
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v307 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v306 -> v307;
+
+v307 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v307 -> v314 [label="ch_versions"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v308 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v137 -> v308 [label="bam"];
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v308 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v139 -> v308 [label="bai"];
+
+v308 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v309 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v308 -> v309;
+
+v309 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v309 -> v310;
+
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v312 [label="MSKCC_FORTE:FORTE:FILLOUT:GBCMS"];
+v310 -> v312;
+
+v311 [shape=point,label="",fixedsize=true,width=0.1];
+v312 [label="MSKCC_FORTE:FORTE:FILLOUT:GBCMS"];
+v311 -> v312 [label="fasta"];
+
+v312 [label="MSKCC_FORTE:FORTE:FILLOUT:GBCMS"];
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v312 -> v315;
+
+v312 [label="MSKCC_FORTE:FORTE:FILLOUT:GBCMS"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v312 -> v313;
+
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v313 -> v314;
+
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v314 -> v319 [label="ch_versions"];
+
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v304 -> v315 [label="maf_ch"];
+
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v316 [label="MSKCC_FORTE:FORTE:FILLOUT:COMBINE_FILLOUTS"];
+v315 -> v316;
+
+v316 [label="MSKCC_FORTE:FORTE:FILLOUT:COMBINE_FILLOUTS"];
+v317 [shape=point];
+v316 -> v317 [label="combined_fillout_maf"];
+
+v316 [label="MSKCC_FORTE:FORTE:FILLOUT:COMBINE_FILLOUTS"];
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v316 -> v318;
+
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v318 -> v319;
+
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v319 -> v320 [label="ch_versions"];
+
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v320 -> v425 [label="ch_versions"];
+
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v321 -> v322;
+
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v322 -> v323;
+
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v323 -> v392 [label="multiqc_files"];
+
+v324 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v324 -> v377 [label="ch_versions"];
+
+v131 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX_DEDUP"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v131 -> v325 [label="bai"];
+
+v125 [label="MSKCC_FORTE:FORTE:ALIGN_READS:UMITOOLS_DEDUP"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v125 -> v325 [label="bam"];
+
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v325 -> v327 [label="ch_bam_bai"];
+
+v326 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v326 -> v332 [label="ch_versions"];
+
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v330 [label="MSKCC_FORTE:FORTE:QC_DEDUP:BAM_RSEQC:RSEQC_BAMSTAT"];
+v327 -> v330 [label="ch_bam"];
+
+v328 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v329 [shape=point];
+v328 -> v329 [label="bamstat_txt"];
+
+v330 [label="MSKCC_FORTE:FORTE:QC_DEDUP:BAM_RSEQC:RSEQC_BAMSTAT"];
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v330 -> v394 [label="bamstat_txt"];
+
+v330 [label="MSKCC_FORTE:FORTE:QC_DEDUP:BAM_RSEQC:RSEQC_BAMSTAT"];
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v330 -> v331;
+
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v331 -> v332;
+
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v332 -> v349 [label="ch_versions"];
+
+v333 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v334 [shape=point];
+v333 -> v334 [label="innerdistance_distance"];
+
+v335 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v336 [shape=point];
+v335 -> v336 [label="innerdistance_freq"];
+
+v337 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v338 [shape=point];
+v337 -> v338 [label="innerdistance_mean"];
+
+v339 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v340 [shape=point];
+v339 -> v340 [label="innerdistance_pdf"];
+
+v341 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v342 [shape=point];
+v341 -> v342 [label="innerdistance_rscript"];
+
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v343 [label="MSKCC_FORTE:FORTE:QC_DEDUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v327 -> v343 [label="ch_bam"];
+
+v343 [label="MSKCC_FORTE:FORTE:QC_DEDUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v347 [shape=point];
+v343 -> v347 [label="innerdistance_distance"];
+
+v343 [label="MSKCC_FORTE:FORTE:QC_DEDUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v395 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v343 -> v395 [label="innerdistance_freq"];
+
+v343 [label="MSKCC_FORTE:FORTE:QC_DEDUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v346 [shape=point];
+v343 -> v346 [label="innerdistance_mean"];
+
+v343 [label="MSKCC_FORTE:FORTE:QC_DEDUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v345 [shape=point];
+v343 -> v345 [label="innerdistance_pdf"];
+
+v343 [label="MSKCC_FORTE:FORTE:QC_DEDUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v344 [shape=point];
+v343 -> v344 [label="innerdistance_rscript"];
+
+v343 [label="MSKCC_FORTE:FORTE:QC_DEDUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v343 -> v348;
+
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v348 -> v349;
+
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v349 -> v376 [label="versions"];
+
+v350 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v350 -> v396 [label="inferexperiment_txt"];
+
+v351 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v352 [shape=point];
+v351 -> v352 [label="junctionannotation_bed"];
+
+v353 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v354 [shape=point];
+v353 -> v354 [label="junctionannotation_interact_bed"];
+
+v355 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v356 [shape=point];
+v355 -> v356 [label="junctionannotation_xls"];
+
+v357 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v358 [shape=point];
+v357 -> v358 [label="junctionannotation_pdf"];
+
+v359 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v360 [shape=point];
+v359 -> v360 [label="junctionannotation_events_pdf"];
+
+v361 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v362 [shape=point];
+v361 -> v362 [label="junctionannotation_rscript"];
+
+v363 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v363 -> v397 [label="junctionannotation_log"];
+
+v364 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v365 [shape=point];
+v364 -> v365 [label="junctionsaturation_pdf"];
+
+v366 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v366 -> v398 [label="junctionsaturation_rscript"];
+
+v367 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v367 -> v399 [label="readdistribution_txt"];
+
+v368 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v369 [shape=point];
+v368 -> v369 [label="readduplication_seq_xls"];
+
+v370 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v370 -> v400 [label="readduplication_pos_xls"];
+
+v371 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v372 [shape=point];
+v371 -> v372 [label="readduplication_pdf"];
+
+v373 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v374 [shape=point];
+v373 -> v374 [label="readduplication_rscript"];
+
+v375 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v401 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v375 -> v401 [label="tin_txt"];
+
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v376 -> v377;
+
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v377 -> v382 [label="ch_versions"];
+
+v125 [label="MSKCC_FORTE:FORTE:ALIGN_READS:UMITOOLS_DEDUP"];
+v379 [label="MSKCC_FORTE:FORTE:QC_DEDUP:PICARD_COLLECTRNASEQMETRICS"];
+v125 -> v379 [label="bam"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v379 [label="MSKCC_FORTE:FORTE:QC_DEDUP:PICARD_COLLECTRNASEQMETRICS"];
+v25 -> v379 [label="refflat"];
+
+v378 [shape=point,label="",fixedsize=true,width=0.1];
+v379 [label="MSKCC_FORTE:FORTE:QC_DEDUP:PICARD_COLLECTRNASEQMETRICS"];
+v378 -> v379 [label="fasta"];
+
+v379 [label="MSKCC_FORTE:FORTE:QC_DEDUP:PICARD_COLLECTRNASEQMETRICS"];
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v379 -> v392;
+
+v379 [label="MSKCC_FORTE:FORTE:QC_DEDUP:PICARD_COLLECTRNASEQMETRICS"];
+v380 [shape=point];
+v379 -> v380;
+
+v379 [label="MSKCC_FORTE:FORTE:QC_DEDUP:PICARD_COLLECTRNASEQMETRICS"];
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v379 -> v381;
+
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v381 -> v382;
+
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v382 -> v425 [label="ch_versions"];
+
+v125 [label="MSKCC_FORTE:FORTE:ALIGN_READS:UMITOOLS_DEDUP"];
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v125 -> v383 [label="bam"];
+
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v383 -> v384;
+
+v131 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX_DEDUP"];
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v131 -> v384 [label="bai"];
+
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v384 -> v385;
+
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v386 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v385 -> v386;
+
+v386 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v386 -> v387;
+
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v390 [label="MSKCC_FORTE:FORTE:QC_DEDUP:PICARD_COLLECTHSMETRICS"];
+v387 -> v390;
+
+v29 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:GATK4_CREATESEQUENCEDICTIONARY"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v388 [label="dict"];
+
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v390 [label="MSKCC_FORTE:FORTE:QC_DEDUP:PICARD_COLLECTHSMETRICS"];
+v388 -> v390;
+
+v389 [shape=point,label="",fixedsize=true,width=0.1];
+v390 [label="MSKCC_FORTE:FORTE:QC_DEDUP:PICARD_COLLECTHSMETRICS"];
+v389 -> v390;
+
+v35 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:SAMTOOLS_FAIDX"];
+v390 [label="MSKCC_FORTE:FORTE:QC_DEDUP:PICARD_COLLECTHSMETRICS"];
+v35 -> v390 [label="fai"];
+
+v390 [label="MSKCC_FORTE:FORTE:QC_DEDUP:PICARD_COLLECTHSMETRICS"];
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v390 -> v393;
+
+v390 [label="MSKCC_FORTE:FORTE:QC_DEDUP:PICARD_COLLECTHSMETRICS"];
+v391 [shape=point];
+v390 -> v391;
+
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v392 -> v393;
+
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v393 -> v394;
+
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v395 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v394 -> v395;
+
+v395 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v395 -> v396;
+
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v396 -> v397;
+
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v397 -> v398;
+
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v398 -> v399;
+
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v399 -> v400;
+
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v401 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v400 -> v401;
+
+v401 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v401 -> v402;
+
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v402 -> v403 [label="multiqc_files"];
+
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v408 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC"];
+v403 -> v408;
+
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v404 -> v405;
+
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v408 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC"];
+v405 -> v408;
+
+v406 [shape=point,label="",fixedsize=true,width=0.1];
+v408 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC"];
+v406 -> v408 [label="extra_multiqc_config"];
+
+v407 [shape=point,label="",fixedsize=true,width=0.1];
+v408 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC"];
+v407 -> v408 [label="multiqc_logo"];
+
+v408 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC"];
+v412 [shape=point];
+v408 -> v412;
+
+v408 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC"];
+v411 [shape=point];
+v408 -> v411;
+
+v408 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC"];
+v410 [shape=point];
+v408 -> v410;
+
+v408 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC"];
+v409 [shape=point];
+v408 -> v409;
+
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v413 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v402 -> v413 [label="multiqc_files"];
+
+v413 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v414 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v413 -> v414;
+
+v414 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v414 -> v415;
+
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v420 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC_COLLECT"];
+v415 -> v420;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v416 [label="ch_multiqc_config"];
+
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v416 -> v417;
+
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v420 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC_COLLECT"];
+v417 -> v420;
+
+v418 [shape=point,label="",fixedsize=true,width=0.1];
+v420 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC_COLLECT"];
+v418 -> v420 [label="extra_multiqc_config"];
+
+v419 [shape=point,label="",fixedsize=true,width=0.1];
+v420 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC_COLLECT"];
+v419 -> v420 [label="multiqc_logo"];
+
+v420 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC_COLLECT"];
+v424 [shape=point];
+v420 -> v424;
+
+v420 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC_COLLECT"];
+v423 [shape=point];
+v420 -> v423;
+
+v420 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC_COLLECT"];
+v422 [shape=point];
+v420 -> v422;
+
+v420 [label="MSKCC_FORTE:FORTE:QC_DEDUP:MULTIQC_COLLECT"];
+v421 [shape=point];
+v420 -> v421;
+
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v532 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v425 -> v532 [label="ch_versions"];
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v426 [label="star_log_final"];
+
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v426 -> v429;
+
+v163 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:KALLISTO_QUANT"];
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v427 [label="kallisto_log"];
+
+v167 [label="MSKCC_FORTE:FORTE:QUANTIFICATION:COUNT_FEATURES"];
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v427 [label="kallisto_count_feature"];
+
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v427 -> v428;
+
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v428 -> v429;
+
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v429 -> v499 [label="multiqc_files"];
+
+v430 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v483 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v430 -> v483 [label="ch_versions"];
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v431 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v99 -> v431 [label="bam"];
+
+v117 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX"];
+v431 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v117 -> v431 [label="bai"];
+
+v431 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v431 -> v433 [label="ch_bam_bai"];
+
+v432 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v432 -> v438 [label="ch_versions"];
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v436 [label="MSKCC_FORTE:FORTE:QC_DUP:BAM_RSEQC:RSEQC_BAMSTAT"];
+v433 -> v436 [label="ch_bam"];
+
+v434 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v435 [shape=point];
+v434 -> v435 [label="bamstat_txt"];
+
+v436 [label="MSKCC_FORTE:FORTE:QC_DUP:BAM_RSEQC:RSEQC_BAMSTAT"];
+v501 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v436 -> v501 [label="bamstat_txt"];
+
+v436 [label="MSKCC_FORTE:FORTE:QC_DUP:BAM_RSEQC:RSEQC_BAMSTAT"];
+v437 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v436 -> v437;
+
+v437 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v437 -> v438;
+
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v438 -> v455 [label="ch_versions"];
+
+v439 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v440 [shape=point];
+v439 -> v440 [label="innerdistance_distance"];
+
+v441 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v442 [shape=point];
+v441 -> v442 [label="innerdistance_freq"];
+
+v443 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v444 [shape=point];
+v443 -> v444 [label="innerdistance_mean"];
+
+v445 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v446 [shape=point];
+v445 -> v446 [label="innerdistance_pdf"];
+
+v447 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v448 [shape=point];
+v447 -> v448 [label="innerdistance_rscript"];
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v449 [label="MSKCC_FORTE:FORTE:QC_DUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v433 -> v449 [label="ch_bam"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v449 [label="MSKCC_FORTE:FORTE:QC_DUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v64 -> v449 [label="ch_bed"];
+
+v449 [label="MSKCC_FORTE:FORTE:QC_DUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v453 [shape=point];
+v449 -> v453 [label="innerdistance_distance"];
+
+v449 [label="MSKCC_FORTE:FORTE:QC_DUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v502 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v449 -> v502 [label="innerdistance_freq"];
+
+v449 [label="MSKCC_FORTE:FORTE:QC_DUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v452 [shape=point];
+v449 -> v452 [label="innerdistance_mean"];
+
+v449 [label="MSKCC_FORTE:FORTE:QC_DUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v451 [shape=point];
+v449 -> v451 [label="innerdistance_pdf"];
+
+v449 [label="MSKCC_FORTE:FORTE:QC_DUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v450 [shape=point];
+v449 -> v450 [label="innerdistance_rscript"];
+
+v449 [label="MSKCC_FORTE:FORTE:QC_DUP:BAM_RSEQC:RSEQC_INNERDISTANCE"];
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v449 -> v454;
+
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v454 -> v455;
+
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v455 -> v482 [label="versions"];
+
+v456 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v503 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v456 -> v503 [label="inferexperiment_txt"];
+
+v457 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v458 [shape=point];
+v457 -> v458 [label="junctionannotation_bed"];
+
+v459 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v460 [shape=point];
+v459 -> v460 [label="junctionannotation_interact_bed"];
+
+v461 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v462 [shape=point];
+v461 -> v462 [label="junctionannotation_xls"];
+
+v463 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v464 [shape=point];
+v463 -> v464 [label="junctionannotation_pdf"];
+
+v465 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v466 [shape=point];
+v465 -> v466 [label="junctionannotation_events_pdf"];
+
+v467 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v468 [shape=point];
+v467 -> v468 [label="junctionannotation_rscript"];
+
+v469 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v504 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v469 -> v504 [label="junctionannotation_log"];
+
+v470 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v471 [shape=point];
+v470 -> v471 [label="junctionsaturation_pdf"];
+
+v472 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v472 -> v505 [label="junctionsaturation_rscript"];
+
+v473 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v473 -> v506 [label="readdistribution_txt"];
+
+v474 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v475 [shape=point];
+v474 -> v475 [label="readduplication_seq_xls"];
+
+v476 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v507 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v476 -> v507 [label="readduplication_pos_xls"];
+
+v477 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v478 [shape=point];
+v477 -> v478 [label="readduplication_pdf"];
+
+v479 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v480 [shape=point];
+v479 -> v480 [label="readduplication_rscript"];
+
+v481 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v508 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v481 -> v508 [label="tin_txt"];
+
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v483 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v482 -> v483;
+
+v483 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v488 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v483 -> v488 [label="ch_versions"];
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v485 [label="MSKCC_FORTE:FORTE:QC_DUP:PICARD_COLLECTRNASEQMETRICS"];
+v99 -> v485 [label="bam"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v485 [label="MSKCC_FORTE:FORTE:QC_DUP:PICARD_COLLECTRNASEQMETRICS"];
+v25 -> v485 [label="refflat"];
+
+v484 [shape=point,label="",fixedsize=true,width=0.1];
+v485 [label="MSKCC_FORTE:FORTE:QC_DUP:PICARD_COLLECTRNASEQMETRICS"];
+v484 -> v485 [label="fasta"];
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v485 [label="MSKCC_FORTE:FORTE:QC_DUP:PICARD_COLLECTRNASEQMETRICS"];
+v62 -> v485 [label="rrna_intervals"];
+
+v485 [label="MSKCC_FORTE:FORTE:QC_DUP:PICARD_COLLECTRNASEQMETRICS"];
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v485 -> v499;
+
+v485 [label="MSKCC_FORTE:FORTE:QC_DUP:PICARD_COLLECTRNASEQMETRICS"];
+v486 [shape=point];
+v485 -> v486;
+
+v485 [label="MSKCC_FORTE:FORTE:QC_DUP:PICARD_COLLECTRNASEQMETRICS"];
+v487 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v485 -> v487;
+
+v487 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v488 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v487 -> v488;
+
+v488 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v489 [shape=point];
+v488 -> v489 [label="ch_versions"];
+
+v99 [label="MSKCC_FORTE:FORTE:ALIGN_READS:STAR_ALIGN"];
+v490 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v99 -> v490 [label="bam"];
+
+v490 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v491 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v490 -> v491;
+
+v117 [label="MSKCC_FORTE:FORTE:ALIGN_READS:SAMTOOLS_INDEX"];
+v491 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v117 -> v491 [label="bai"];
+
+v491 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v491 -> v492;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v492 [label="baits"];
+
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v493 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v492 -> v493;
+
+v493 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v494 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v493 -> v494;
+
+v494 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v497 [label="MSKCC_FORTE:FORTE:QC_DUP:PICARD_COLLECTHSMETRICS"];
+v494 -> v497;
+
+v29 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:GATK4_CREATESEQUENCEDICTIONARY"];
+v495 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v495 [label="dict"];
+
+v495 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v497 [label="MSKCC_FORTE:FORTE:QC_DUP:PICARD_COLLECTHSMETRICS"];
+v495 -> v497;
+
+v496 [shape=point,label="",fixedsize=true,width=0.1];
+v497 [label="MSKCC_FORTE:FORTE:QC_DUP:PICARD_COLLECTHSMETRICS"];
+v496 -> v497;
+
+v35 [label="MSKCC_FORTE:FORTE:PREPARE_REFERENCES:SAMTOOLS_FAIDX"];
+v497 [label="MSKCC_FORTE:FORTE:QC_DUP:PICARD_COLLECTHSMETRICS"];
+v35 -> v497 [label="fai"];
+
+v497 [label="MSKCC_FORTE:FORTE:QC_DUP:PICARD_COLLECTHSMETRICS"];
+v500 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v497 -> v500;
+
+v497 [label="MSKCC_FORTE:FORTE:QC_DUP:PICARD_COLLECTHSMETRICS"];
+v498 [shape=point];
+v497 -> v498;
+
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v500 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v499 -> v500;
+
+v500 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v501 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v500 -> v501;
+
+v501 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v502 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v501 -> v502;
+
+v502 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v503 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v502 -> v503;
+
+v503 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v504 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v503 -> v504;
+
+v504 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v504 -> v505;
+
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v505 -> v506;
+
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v507 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v506 -> v507;
+
+v507 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v508 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v507 -> v508;
+
+v508 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v509 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v508 -> v509;
+
+v509 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v510 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v509 -> v510 [label="multiqc_files"];
+
+v510 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v515 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC"];
+v510 -> v515;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v511 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v511 [label="ch_multiqc_config"];
+
+v511 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v512 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v511 -> v512;
+
+v512 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v515 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC"];
+v512 -> v515;
+
+v513 [shape=point,label="",fixedsize=true,width=0.1];
+v515 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC"];
+v513 -> v515 [label="extra_multiqc_config"];
+
+v514 [shape=point,label="",fixedsize=true,width=0.1];
+v515 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC"];
+v514 -> v515 [label="multiqc_logo"];
+
+v515 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC"];
+v519 [shape=point];
+v515 -> v519;
+
+v515 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC"];
+v518 [shape=point];
+v515 -> v518;
+
+v515 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC"];
+v517 [shape=point];
+v515 -> v517;
+
+v515 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC"];
+v516 [shape=point];
+v515 -> v516;
+
+v509 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v520 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v509 -> v520 [label="multiqc_files"];
+
+v520 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v521 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v520 -> v521;
+
+v521 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v522 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v521 -> v522;
+
+v522 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v527 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC_COLLECT"];
+v522 -> v527;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v523 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v523 [label="ch_multiqc_config"];
+
+v523 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v524 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v523 -> v524;
+
+v524 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v527 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC_COLLECT"];
+v524 -> v527;
+
+v525 [shape=point,label="",fixedsize=true,width=0.1];
+v527 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC_COLLECT"];
+v525 -> v527 [label="extra_multiqc_config"];
+
+v526 [shape=point,label="",fixedsize=true,width=0.1];
+v527 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC_COLLECT"];
+v526 -> v527 [label="multiqc_logo"];
+
+v527 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC_COLLECT"];
+v531 [shape=point];
+v527 -> v531;
+
+v527 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC_COLLECT"];
+v530 [shape=point];
+v527 -> v530;
+
+v527 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC_COLLECT"];
+v529 [shape=point];
+v527 -> v529;
+
+v527 [label="MSKCC_FORTE:FORTE:QC_DUP:MULTIQC_COLLECT"];
+v528 [shape=point];
+v527 -> v528;
+
+v532 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v533 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v532 -> v533;
+
+v533 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v534 [label="MSKCC_FORTE:FORTE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v533 -> v534;
+
+v534 [label="MSKCC_FORTE:FORTE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v536 [shape=point];
+v534 -> v536;
+
+v534 [label="MSKCC_FORTE:FORTE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v544 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v534 -> v544;
+
+v534 [label="MSKCC_FORTE:FORTE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v535 [shape=point];
+v534 -> v535;
+
+v537 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v540 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v537 -> v540 [label="ch_multiqc_files"];
+
+v538 [shape=point,label="",fixedsize=true,width=0.1];
+v539 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v538 -> v539 [label="ch_workflow_summary"];
+
+v539 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v540 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v539 -> v540;
+
+v540 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v543 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v540 -> v543 [label="ch_multiqc_files"];
+
+v541 [shape=point,label="",fixedsize=true,width=0.1];
+v542 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v541 -> v542 [label="ch_methods_description"];
+
+v542 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v543 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v542 -> v543;
+
+v543 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v545 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v543 -> v545 [label="ch_multiqc_files"];
+
+v544 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v545 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v544 -> v545;
+
+v545 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v546 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v545 -> v546 [label="ch_multiqc_files"];
+
+v546 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v547 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v546 -> v547;
+
+v547 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v554 [label="MSKCC_FORTE:FORTE:MULTIQC"];
+v547 -> v554 [label="ch_multiqc_files"];
+
+v548 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v549 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v548 -> v549;
+
+v549 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v554 [label="MSKCC_FORTE:FORTE:MULTIQC"];
+v549 -> v554;
+
+v550 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v551 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v550 -> v551;
+
+v551 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v554 [label="MSKCC_FORTE:FORTE:MULTIQC"];
+v551 -> v554;
+
+v552 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v553 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v552 -> v553;
+
+v553 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v554 [label="MSKCC_FORTE:FORTE:MULTIQC"];
+v553 -> v554;
+
+v554 [label="MSKCC_FORTE:FORTE:MULTIQC"];
+v557 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v554 -> v557;
+
+v554 [label="MSKCC_FORTE:FORTE:MULTIQC"];
+v556 [shape=point];
+v554 -> v556;
+
+v554 [label="MSKCC_FORTE:FORTE:MULTIQC"];
+v555 [shape=point];
+v554 -> v555;
+
+v554 [label="MSKCC_FORTE:FORTE:MULTIQC"];
+v559 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v554 -> v559;
+
+v557 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v558 [shape=point];
+v557 -> v558;
+
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v559 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v425 -> v559 [label="ch_versions"];
+
+v559 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v560 [shape=point];
+v559 -> v560 [label="ch_versions"];
+
+}

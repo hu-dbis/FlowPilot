@@ -1,0 +1,670 @@
+digraph "dalmolingroup_____euryale" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v143 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v144 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v145 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v9 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v41 [label="ch_multiqc_files"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="EURYALE:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v5 -> v6 [label="samplesheet"];
+
+v6 [label="EURYALE:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v6 -> v7;
+
+v6 [label="EURYALE:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v9 [label="versions"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [label="EURYALE:PREPROCESS:FASTQC_RAW"];
+v8 -> v12 [label="reads"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v39 [label="ch_versions"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v15 [label="ch_versions"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v18 [label="ch_multiqc_files"];
+
+v12 [label="EURYALE:PREPROCESS:FASTQC_RAW"];
+v13 [shape=point];
+v12 -> v13;
+
+v12 [label="EURYALE:PREPROCESS:FASTQC_RAW"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 -> v16;
+
+v12 [label="EURYALE:PREPROCESS:FASTQC_RAW"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v12 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v27 [label="ch_versions"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v30 [label="ch_multiqc_files"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [label="EURYALE:PREPROCESS:FASTP"];
+v8 -> v22 [label="reads"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [label="EURYALE:PREPROCESS:FASTP"];
+v19 -> v22 [label="adapter_fasta"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [label="EURYALE:PREPROCESS:FASTP"];
+v20 -> v22 [label="save_trimmed_fail"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [label="EURYALE:PREPROCESS:FASTP"];
+v21 -> v22 [label="save_merged"];
+
+v22 [label="EURYALE:PREPROCESS:FASTP"];
+v49 [label="EURYALE:HOST_REMOVAL:BOWTIE2_ALIGN"];
+v22 -> v49 [label="reads"];
+
+v22 [label="EURYALE:PREPROCESS:FASTP"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 -> v28;
+
+v22 [label="EURYALE:PREPROCESS:FASTP"];
+v25 [shape=point];
+v22 -> v25;
+
+v22 [label="EURYALE:PREPROCESS:FASTP"];
+v24 [shape=point];
+v22 -> v24;
+
+v22 [label="EURYALE:PREPROCESS:FASTP"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v22 -> v26;
+
+v22 [label="EURYALE:PREPROCESS:FASTP"];
+v23 [shape=point];
+v22 -> v23;
+
+v22 [label="EURYALE:PREPROCESS:FASTP"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v31;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v35 [label="ch_versions"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v38 [label="ch_multiqc_files"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 [label="EURYALE:PREPROCESS:FASTQC_TRIMMED"];
+v31 -> v32 [label="merged_reads"];
+
+v32 [label="EURYALE:PREPROCESS:FASTQC_TRIMMED"];
+v33 [shape=point];
+v32 -> v33;
+
+v32 [label="EURYALE:PREPROCESS:FASTQC_TRIMMED"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v36;
+
+v32 [label="EURYALE:PREPROCESS:FASTQC_TRIMMED"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v32 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v39 [label="versions"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 -> v40 [label="multiqc_files"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v83 [label="ch_versions"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v86 [label="ch_multiqc_files"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v45 [label="ch_versions"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="EURYALE:HOST_REMOVAL:BOWTIE2_BUILD"];
+v43 -> v44 [label="host_genome"];
+
+v44 [label="EURYALE:HOST_REMOVAL:BOWTIE2_BUILD"];
+v49 [label="EURYALE:HOST_REMOVAL:BOWTIE2_ALIGN"];
+v44 -> v49 [label="bowtie2_db"];
+
+v44 [label="EURYALE:HOST_REMOVAL:BOWTIE2_BUILD"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=point];
+v45 -> v46 [label="versions"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v49 [label="EURYALE:HOST_REMOVAL:BOWTIE2_ALIGN"];
+v47 -> v49 [label="save_unaligned"];
+
+v48 [shape=point,label="",fixedsize=true,width=0.1];
+v49 [label="EURYALE:HOST_REMOVAL:BOWTIE2_ALIGN"];
+v48 -> v49 [label="sort_bam"];
+
+v49 [label="EURYALE:HOST_REMOVAL:BOWTIE2_ALIGN"];
+v53 [label="EURYALE:HOST_REMOVAL:SAMTOOLS_UNMAPPED_PAIRS"];
+v49 -> v53;
+
+v49 [label="EURYALE:HOST_REMOVAL:BOWTIE2_ALIGN"];
+v52 [shape=point];
+v49 -> v52;
+
+v49 [label="EURYALE:HOST_REMOVAL:BOWTIE2_ALIGN"];
+v51 [shape=point];
+v49 -> v51;
+
+v49 [label="EURYALE:HOST_REMOVAL:BOWTIE2_ALIGN"];
+v50 [shape=point];
+v49 -> v50;
+
+v53 [label="EURYALE:HOST_REMOVAL:SAMTOOLS_UNMAPPED_PAIRS"];
+v54 [label="EURYALE:HOST_REMOVAL:SAMTOOLS_SORT"];
+v53 -> v54;
+
+v54 [label="EURYALE:HOST_REMOVAL:SAMTOOLS_SORT"];
+v58 [label="EURYALE:HOST_REMOVAL:SAMTOOLS_BAM2FQ"];
+v54 -> v58;
+
+v54 [label="EURYALE:HOST_REMOVAL:SAMTOOLS_SORT"];
+v56 [shape=point];
+v54 -> v56;
+
+v54 [label="EURYALE:HOST_REMOVAL:SAMTOOLS_SORT"];
+v55 [shape=point];
+v54 -> v55;
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v58 [label="EURYALE:HOST_REMOVAL:SAMTOOLS_BAM2FQ"];
+v57 -> v58 [label="split"];
+
+v58 [label="EURYALE:HOST_REMOVAL:SAMTOOLS_BAM2FQ"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 -> v60;
+
+v58 [label="EURYALE:HOST_REMOVAL:SAMTOOLS_BAM2FQ"];
+v59 [shape=point];
+v58 -> v59;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [label="EURYALE:GUNZIP"];
+v60 -> v61 [label="clean_reads"];
+
+v61 [label="EURYALE:GUNZIP"];
+v63 [label="EURYALE:FASTX_COLLAPSER"];
+v61 -> v63 [label="decompressed_reads"];
+
+v61 [label="EURYALE:GUNZIP"];
+v62 [shape=point];
+v61 -> v62;
+
+v63 [label="EURYALE:FASTX_COLLAPSER"];
+v72 [label="EURYALE:ALIGNMENT:DIAMOND_BLASTX"];
+v63 -> v72 [label="reads"];
+
+v63 [label="EURYALE:FASTX_COLLAPSER"];
+v64 [shape=point];
+v63 -> v64;
+
+v65 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v69 [label="ch_versions"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v82 [label="ch_multiqc_files"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1];
+v68 [label="EURYALE:ALIGNMENT:DIAMOND_MAKEDB"];
+v67 -> v68 [label="fasta"];
+
+v68 [label="EURYALE:ALIGNMENT:DIAMOND_MAKEDB"];
+v72 [label="EURYALE:ALIGNMENT:DIAMOND_BLASTX"];
+v68 -> v72 [label="diamond_db"];
+
+v68 [label="EURYALE:ALIGNMENT:DIAMOND_MAKEDB"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v79 [label="ch_versions"];
+
+v70 [shape=point,label="",fixedsize=true,width=0.1];
+v72 [label="EURYALE:ALIGNMENT:DIAMOND_BLASTX"];
+v70 -> v72 [label="out_ext"];
+
+v71 [shape=point,label="",fixedsize=true,width=0.1];
+v72 [label="EURYALE:ALIGNMENT:DIAMOND_BLASTX"];
+v71 -> v72 [label="blast_columns"];
+
+v72 [label="EURYALE:ALIGNMENT:DIAMOND_BLASTX"];
+v78 [shape=point];
+v72 -> v78;
+
+v72 [label="EURYALE:ALIGNMENT:DIAMOND_BLASTX"];
+v77 [shape=point];
+v72 -> v77;
+
+v72 [label="EURYALE:ALIGNMENT:DIAMOND_BLASTX"];
+v127 [label="EURYALE:FUNCTIONAL:ANNOTATE"];
+v72 -> v127 [label="alignments"];
+
+v72 [label="EURYALE:ALIGNMENT:DIAMOND_BLASTX"];
+v76 [shape=point];
+v72 -> v76;
+
+v72 [label="EURYALE:ALIGNMENT:DIAMOND_BLASTX"];
+v75 [shape=point];
+v72 -> v75;
+
+v72 [label="EURYALE:ALIGNMENT:DIAMOND_BLASTX"];
+v74 [shape=point];
+v72 -> v74;
+
+v72 [label="EURYALE:ALIGNMENT:DIAMOND_BLASTX"];
+v73 [shape=point];
+v72 -> v73;
+
+v72 [label="EURYALE:ALIGNMENT:DIAMOND_BLASTX"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 -> v80;
+
+v72 [label="EURYALE:ALIGNMENT:DIAMOND_BLASTX"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v83 [label="versions"];
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v80 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v82 -> v84 [label="multiqc_files"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v111 [label="ch_versions"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v114 [label="ch_multiqc_files"];
+
+v87 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v99 [label="tax_report"];
+
+v88 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v101 [label="krona_input"];
+
+v89 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v92 [label="ch_versions"];
+
+v90 [shape=point,label="",fixedsize=true,width=0.1];
+v91 [label="EURYALE:TAXONOMY:UNTAR"];
+v90 -> v91 [label="kaiju_db"];
+
+v91 [label="EURYALE:TAXONOMY:UNTAR"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 -> v93;
+
+v91 [label="EURYALE:TAXONOMY:UNTAR"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v95 [label="ch_versions"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v94 [label="EURYALE:TAXONOMY:KAIJU_KAIJU"];
+v93 -> v94 [label="kaiju_db_files"];
+
+v63 [label="EURYALE:FASTX_COLLAPSER"];
+v94 [label="EURYALE:TAXONOMY:KAIJU_KAIJU"];
+v63 -> v94 [label="reads"];
+
+v94 [label="EURYALE:TAXONOMY:KAIJU_KAIJU"];
+v97 [label="EURYALE:TAXONOMY:KAIJU_KAIJU2TABLE"];
+v94 -> v97 [label="kaiju_out"];
+
+v94 [label="EURYALE:TAXONOMY:KAIJU_KAIJU"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v102 [label="ch_versions"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v97 [label="EURYALE:TAXONOMY:KAIJU_KAIJU2TABLE"];
+v93 -> v97 [label="kaiju_db_files"];
+
+v96 [shape=point,label="",fixedsize=true,width=0.1];
+v97 [label="EURYALE:TAXONOMY:KAIJU_KAIJU2TABLE"];
+v96 -> v97 [label="taxon_rank"];
+
+v97 [label="EURYALE:TAXONOMY:KAIJU_KAIJU2TABLE"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v99;
+
+v97 [label="EURYALE:TAXONOMY:KAIJU_KAIJU2TABLE"];
+v98 [shape=point];
+v97 -> v98;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v99 -> v103 [label="tax_report"];
+
+v94 [label="EURYALE:TAXONOMY:KAIJU_KAIJU"];
+v100 [label="EURYALE:TAXONOMY:KAIJU_KAIJU2KRONA"];
+v94 -> v100 [label="kaiju_out"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v100 [label="EURYALE:TAXONOMY:KAIJU_KAIJU2KRONA"];
+v93 -> v100 [label="kaiju_db_files"];
+
+v100 [label="EURYALE:TAXONOMY:KAIJU_KAIJU2KRONA"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v101;
+
+v100 [label="EURYALE:TAXONOMY:KAIJU_KAIJU2KRONA"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v102;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 [label="EURYALE:TAXONOMY:KRONA_KTIMPORTTEXT"];
+v101 -> v108 [label="krona_input"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v107 [label="ch_versions"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v104 [label="EURYALE:TAXONOMY:MICROVIEW"];
+v103 -> v104;
+
+v104 [label="EURYALE:TAXONOMY:MICROVIEW"];
+v106 [shape=point];
+v104 -> v106;
+
+v104 [label="EURYALE:TAXONOMY:MICROVIEW"];
+v105 [shape=point];
+v104 -> v105;
+
+v104 [label="EURYALE:TAXONOMY:MICROVIEW"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v110 [label="ch_versions"];
+
+v108 [label="EURYALE:TAXONOMY:KRONA_KTIMPORTTEXT"];
+v109 [shape=point];
+v108 -> v109 [label="krona_report"];
+
+v108 [label="EURYALE:TAXONOMY:KRONA_KTIMPORTTEXT"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v111 [label="versions"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v111 -> v129 [label="ch_versions"];
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v99 -> v112 [label="tax_report"];
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v136 [label="ch_multiqc_files"];
+
+v115 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v116 [shape=point];
+v115 -> v116 [label="versions"];
+
+v117 [shape=point,label="",fixedsize=true,width=0.1];
+v118 [label="EURYALE:FUNCTIONAL:GUNZIP"];
+v117 -> v118 [label="ch_mapping_file"];
+
+v118 [label="EURYALE:FUNCTIONAL:GUNZIP"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 -> v120;
+
+v118 [label="EURYALE:FUNCTIONAL:GUNZIP"];
+v119 [shape=point];
+v118 -> v119;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v121 [label="EURYALE:FUNCTIONAL:CREATE_DICTIONARY"];
+v120 -> v121 [label="decompressed_mapping"];
+
+v121 [label="EURYALE:FUNCTIONAL:CREATE_DICTIONARY"];
+v122 [label="EURYALE:FUNCTIONAL:CREATE_DB"];
+v121 -> v122;
+
+v122 [label="EURYALE:FUNCTIONAL:CREATE_DB"];
+v127 [label="EURYALE:FUNCTIONAL:ANNOTATE"];
+v122 -> v127;
+
+v123 [shape=point,label="",fixedsize=true,width=0.1];
+v127 [label="EURYALE:FUNCTIONAL:ANNOTATE"];
+v123 -> v127 [label="minimum_pident"];
+
+v124 [shape=point,label="",fixedsize=true,width=0.1];
+v127 [label="EURYALE:FUNCTIONAL:ANNOTATE"];
+v124 -> v127 [label="minimum_alen"];
+
+v125 [shape=point,label="",fixedsize=true,width=0.1];
+v127 [label="EURYALE:FUNCTIONAL:ANNOTATE"];
+v125 -> v127 [label="minimum_bitscore"];
+
+v126 [shape=point,label="",fixedsize=true,width=0.1];
+v127 [label="EURYALE:FUNCTIONAL:ANNOTATE"];
+v126 -> v127 [label="maximum_evalue"];
+
+v127 [label="EURYALE:FUNCTIONAL:ANNOTATE"];
+v128 [shape=point];
+v127 -> v128 [label="annotated"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v131 [label="EURYALE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v130 -> v131;
+
+v131 [label="EURYALE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v133 [shape=point];
+v131 -> v133;
+
+v131 [label="EURYALE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v131 -> v140;
+
+v131 [label="EURYALE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v132 [shape=point];
+v131 -> v132;
+
+v134 [shape=point,label="",fixedsize=true,width=0.1];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v134 -> v135 [label="ch_workflow_summary"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v136;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v139 [label="ch_multiqc_files"];
+
+v137 [shape=point,label="",fixedsize=true,width=0.1];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v137 -> v138 [label="ch_methods_description"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v141 [label="ch_multiqc_files"];
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v141 -> v142 [label="ch_multiqc_files"];
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v146 [label="EURYALE:MULTIQC"];
+v142 -> v146;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v146 [label="EURYALE:MULTIQC"];
+v143 -> v146;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v146 [label="EURYALE:MULTIQC"];
+v144 -> v146;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v146 [label="EURYALE:MULTIQC"];
+v145 -> v146;
+
+v146 [label="EURYALE:MULTIQC"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v146 -> v150;
+
+v146 [label="EURYALE:MULTIQC"];
+v149 [shape=point];
+v146 -> v149;
+
+v146 [label="EURYALE:MULTIQC"];
+v148 [shape=point];
+v146 -> v148;
+
+v146 [label="EURYALE:MULTIQC"];
+v147 [shape=point];
+v146 -> v147;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v151 [shape=point];
+v150 -> v151;
+
+}

@@ -1,0 +1,1998 @@
+digraph "nfcmgg_____germline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5 [label="ch_samplesheet_all"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v5 -> v39 [label="ch_samplesheet"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v38 [label="ch_versions"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v249 [label="ch_reports"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v417 [label="ch_multiqc_files"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:SAMTOOLS_MERGE"];
+v11 -> v55 [label="ch_fasta"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:SAMTOOLS_MERGE"];
+v14 -> v55 [label="ch_fasta_fai"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:GATK4_HAPLOTYPECALLER"];
+v17 -> v126 [label="ch_dict"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 [shape=point];
+v20 -> v21 [label="ch_strtablefile"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="NFCMGG_GERMLINE:GERMLINE:UNTAR"];
+v24 -> v37 [label="ch_sdf"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v276 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_EXTRACT"];
+v26 -> v276 [label="ch_somalier_sites"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [shape=point];
+v28 -> v29 [label="ch_vcfanno_config"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 [shape=point];
+v31 -> v32 [label="ch_vcfanno_resources"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v34 [shape=point];
+v33 -> v34 [label="ch_fai_ready"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v36 [shape=point];
+v35 -> v36 [label="ch_dict_ready"];
+
+v37 [label="NFCMGG_GERMLINE:GERMLINE:UNTAR"];
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 -> v333 [label="ch_sdf_ready"];
+
+v37 [label="NFCMGG_GERMLINE:GERMLINE:UNTAR"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v44 [label="ch_versions"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v39 -> v47;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v39 -> v40;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v311;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v39 -> v48;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v42 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_GVCF"];
+v41 -> v42;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v46;
+
+v42 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_GVCF"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 -> v45;
+
+v42 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_GVCF"];
+v43 [shape=point];
+v42 -> v43;
+
+v42 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_GVCF"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v103 [label="ch_versions"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v41 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 -> v160 [label="ch_gvcfs"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 -> v52 [label="ch_crams"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v70 [label="ch_roi"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v60 [label="ch_versions"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v51 [shape=point];
+v50 -> v51 [label="reports"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v61;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v55 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:SAMTOOLS_MERGE"];
+v54 -> v55;
+
+v55 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:SAMTOOLS_MERGE"];
+v58 [shape=point];
+v55 -> v58;
+
+v55 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:SAMTOOLS_MERGE"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v61;
+
+v55 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:SAMTOOLS_MERGE"];
+v57 [shape=point];
+v55 -> v57;
+
+v55 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:SAMTOOLS_MERGE"];
+v56 [shape=point];
+v55 -> v56;
+
+v55 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:SAMTOOLS_MERGE"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v55 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v67 [label="ch_versions"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v63 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:SAMTOOLS_INDEX"];
+v62 -> v63;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v69;
+
+v63 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:SAMTOOLS_INDEX"];
+v65 [shape=point];
+v63 -> v65;
+
+v63 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:SAMTOOLS_INDEX"];
+v64 [shape=point];
+v63 -> v64;
+
+v63 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:SAMTOOLS_INDEX"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v63 -> v68;
+
+v63 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:SAMTOOLS_INDEX"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v63 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v75 [label="ch_versions"];
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v62 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v79 [label="ch_inputs"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v73 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MERGE_ROI_SAMPLE"];
+v72 -> v73;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v78 [label="ch_missing_rois"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v73 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MERGE_ROI_SAMPLE"];
+v14 -> v73 [label="ch_fasta_fai"];
+
+v73 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MERGE_ROI_SAMPLE"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v78;
+
+v73 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MERGE_ROI_SAMPLE"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v93 [label="ch_versions"];
+
+v76 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v77 [shape=point];
+v76 -> v77 [label="ch_missing_rois"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v78 -> v79 [label="ch_ready_rois"];
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v79 -> v80 [label="ch_mosdepth_input"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v11 -> v80 [label="ch_fasta"];
+
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v91 [shape=point];
+v80 -> v91;
+
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v90 [shape=point];
+v80 -> v90;
+
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v89 [shape=point];
+v80 -> v89;
+
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v88 [shape=point];
+v80 -> v88;
+
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v87 [shape=point];
+v80 -> v87;
+
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v86 [shape=point];
+v80 -> v86;
+
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v85 [shape=point];
+v80 -> v85;
+
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v84 [shape=point];
+v80 -> v84;
+
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v80 -> v94;
+
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v83 [shape=point];
+v80 -> v83;
+
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v82 [shape=point];
+v80 -> v82;
+
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v81 [shape=point];
+v80 -> v81;
+
+v80 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:MOSDEPTH"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v80 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v97 [label="ch_versions"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v78 -> v94 [label="ch_ready_rois"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v94 -> v95 [label="ch_beds_to_filter"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v96 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:FILTER_BEDS"];
+v95 -> v96;
+
+v96 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:FILTER_BEDS"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 -> v98;
+
+v96 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:FILTER_BEDS"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v101 [label="ch_versions"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v94 -> v98 [label="ch_beds_to_filter"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v102;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v100 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:BEDTOOLS_INTERSECT"];
+v99 -> v100;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v100 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:BEDTOOLS_INTERSECT"];
+v14 -> v100 [label="ch_fasta_fai"];
+
+v100 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:BEDTOOLS_INTERSECT"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v102;
+
+v100 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_PREPARE_SAMTOOLS_BEDTOOLS:BEDTOOLS_INTERSECT"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v103 [label="versions"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 -> v104 [label="ready_beds"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v113 [label="ch_versions"];
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v106 [label="NFCMGG_GERMLINE:GERMLINE:INPUT_SPLIT_BEDTOOLS:BEDTOOLS_SPLIT"];
+v104 -> v106 [label="ch_beds"];
+
+v105 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v108 [label="ch_versions"];
+
+v106 [label="NFCMGG_GERMLINE:GERMLINE:INPUT_SPLIT_BEDTOOLS:BEDTOOLS_SPLIT"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v106 -> v109;
+
+v106 [label="NFCMGG_GERMLINE:GERMLINE:INPUT_SPLIT_BEDTOOLS:BEDTOOLS_SPLIT"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v113 [label="versions"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v109 [label="ch_inputs"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v110 -> v111;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v111 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v112 -> v115 [label="split"];
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v248 [label="ch_versions"];
+
+v114 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v250 [label="ch_calls"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v115 -> v123 [label="ch_input"];
+
+v116 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v158 [label="ch_versions"];
+
+v117 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v118 [shape=point];
+v117 -> v118 [label="ch_vcfs"];
+
+v119 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v159 [label="ch_reports"];
+
+v120 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v129 [label="ch_versions"];
+
+v121 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v122 [shape=point];
+v121 -> v122 [label="ch_cram_models"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:GATK4_HAPLOTYPECALLER"];
+v123 -> v126 [label="ch_cram_models"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:GATK4_HAPLOTYPECALLER"];
+v11 -> v126 [label="ch_fasta"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:GATK4_HAPLOTYPECALLER"];
+v14 -> v126 [label="ch_fasta_fai"];
+
+v124 [shape=point,label="",fixedsize=true,width=0.1];
+v126 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:GATK4_HAPLOTYPECALLER"];
+v124 -> v126;
+
+v125 [shape=point,label="",fixedsize=true,width=0.1];
+v126 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:GATK4_HAPLOTYPECALLER"];
+v125 -> v126;
+
+v126 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:GATK4_HAPLOTYPECALLER"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v126 -> v130;
+
+v126 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:GATK4_HAPLOTYPECALLER"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v126 -> v130;
+
+v126 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:GATK4_HAPLOTYPECALLER"];
+v127 [shape=point];
+v126 -> v127;
+
+v126 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:GATK4_HAPLOTYPECALLER"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v126 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 -> v148 [label="ch_versions"];
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v131 -> v133 [label="ch_vcfs"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v139 [label="ch_versions"];
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v133 -> v134;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v135 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:VCF_CONCAT_BCFTOOLS:BCFTOOLS_CONCAT"];
+v134 -> v135 [label="ch_concat_input"];
+
+v135 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:VCF_CONCAT_BCFTOOLS:BCFTOOLS_CONCAT"];
+v142 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:VCF_CONCAT_BCFTOOLS:TABIX_TABIX"];
+v135 -> v142;
+
+v135 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:VCF_CONCAT_BCFTOOLS:BCFTOOLS_CONCAT"];
+v137 [shape=point];
+v135 -> v137;
+
+v135 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:VCF_CONCAT_BCFTOOLS:BCFTOOLS_CONCAT"];
+v136 [shape=point];
+v135 -> v136;
+
+v135 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:VCF_CONCAT_BCFTOOLS:BCFTOOLS_CONCAT"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v135 -> v138;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v145 [label="ch_versions"];
+
+v140 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v141 [shape=point];
+v140 -> v141 [label="ch_vcf_tbi"];
+
+v142 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:VCF_CONCAT_BCFTOOLS:TABIX_TABIX"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v142 -> v146;
+
+v142 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:VCF_CONCAT_BCFTOOLS:TABIX_TABIX"];
+v143 [shape=point];
+v142 -> v143;
+
+v142 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:VCF_CONCAT_BCFTOOLS:TABIX_TABIX"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v142 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v148 [label="versions"];
+
+v135 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:VCF_CONCAT_BCFTOOLS:BCFTOOLS_CONCAT"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v135 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:BCFTOOLS_STATS_SINGLE"];
+v147 -> v154 [label="gvcfs"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 -> v156 [label="ch_versions"];
+
+v149 [shape=point,label="",fixedsize=true,width=0.1];
+v154 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:BCFTOOLS_STATS_SINGLE"];
+v149 -> v154;
+
+v150 [shape=point,label="",fixedsize=true,width=0.1];
+v154 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:BCFTOOLS_STATS_SINGLE"];
+v150 -> v154;
+
+v151 [shape=point,label="",fixedsize=true,width=0.1];
+v154 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:BCFTOOLS_STATS_SINGLE"];
+v151 -> v154;
+
+v152 [shape=point,label="",fixedsize=true,width=0.1];
+v154 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:BCFTOOLS_STATS_SINGLE"];
+v152 -> v154;
+
+v153 [shape=point,label="",fixedsize=true,width=0.1];
+v154 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:BCFTOOLS_STATS_SINGLE"];
+v153 -> v154;
+
+v154 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:BCFTOOLS_STATS_SINGLE"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v154 -> v157;
+
+v154 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:CRAM_CALL_GATK4:BCFTOOLS_STATS_SINGLE"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v154 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 -> v158 [label="versions"];
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 -> v159 [label="reports"];
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 -> v227 [label="ch_versions"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 -> v249 [label="reports"];
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v161;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v161 [label="gvcfs"];
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v161 -> v168 [label="ch_gvcfs"];
+
+v162 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v167 [label="ch_versions"];
+
+v163 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v164 [shape=point];
+v163 -> v164 [label="ch_vcfs"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v166 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GAWK"];
+v14 -> v166 [label="ch_fasta_fai"];
+
+v165 [shape=point,label="",fixedsize=true,width=0.1];
+v166 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GAWK"];
+v165 -> v166 [label="program_file"];
+
+v166 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GAWK"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v166 -> v170;
+
+v166 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GAWK"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v180 [label="ch_versions"];
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v168 -> v169;
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v169 -> v171;
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v170 -> v171;
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v171 -> v172;
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v176 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOMICSDBIMPORT"];
+v172 -> v176 [label="ch_genomicsdbimport_input"];
+
+v173 [shape=point,label="",fixedsize=true,width=0.1];
+v176 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOMICSDBIMPORT"];
+v173 -> v176 [label="run_intlist"];
+
+v174 [shape=point,label="",fixedsize=true,width=0.1];
+v176 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOMICSDBIMPORT"];
+v174 -> v176 [label="run_updatewspace"];
+
+v175 [shape=point,label="",fixedsize=true,width=0.1];
+v176 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOMICSDBIMPORT"];
+v175 -> v176 [label="input_map"];
+
+v176 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOMICSDBIMPORT"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v176 -> v193;
+
+v176 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOMICSDBIMPORT"];
+v178 [shape=point];
+v176 -> v178;
+
+v176 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOMICSDBIMPORT"];
+v177 [shape=point];
+v176 -> v177;
+
+v176 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOMICSDBIMPORT"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v176 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v180;
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 -> v186 [label="ch_versions"];
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:BCFTOOLS_QUERY"];
+v161 -> v184 [label="ch_gvcfs"];
+
+v181 [shape=point,label="",fixedsize=true,width=0.1];
+v184 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:BCFTOOLS_QUERY"];
+v181 -> v184 [label="regions"];
+
+v182 [shape=point,label="",fixedsize=true,width=0.1];
+v184 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:BCFTOOLS_QUERY"];
+v182 -> v184 [label="targets"];
+
+v183 [shape=point,label="",fixedsize=true,width=0.1];
+v184 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:BCFTOOLS_QUERY"];
+v183 -> v184 [label="samples"];
+
+v184 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:BCFTOOLS_QUERY"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v184 -> v187;
+
+v184 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:BCFTOOLS_QUERY"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v184 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v186;
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 -> v191 [label="ch_versions"];
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v187 -> v188;
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v189 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:MERGE_BEDS"];
+v188 -> v189 [label="ch_merge_beds_input"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v189 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:MERGE_BEDS"];
+v14 -> v189 [label="ch_fasta_fai"];
+
+v189 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:MERGE_BEDS"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v189 -> v192;
+
+v189 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:MERGE_BEDS"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v189 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v191;
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 -> v202 [label="ch_versions"];
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v195 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:INPUT_SPLIT_BEDTOOLS:BEDTOOLS_SPLIT"];
+v192 -> v195 [label="ch_beds"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v193 -> v198 [label="ch_inputs"];
+
+v194 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v197 [label="ch_versions"];
+
+v195 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:INPUT_SPLIT_BEDTOOLS:BEDTOOLS_SPLIT"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v195 -> v198;
+
+v195 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:INPUT_SPLIT_BEDTOOLS:BEDTOOLS_SPLIT"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v195 -> v196;
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v197;
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 -> v202 [label="versions"];
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v198 -> v199;
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v199 -> v200;
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v200 -> v201;
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v201 -> v203 [label="split"];
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 -> v208 [label="ch_versions"];
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v206 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOTYPEGVCFS"];
+v203 -> v206 [label="ch_genotypegvcfs_input"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v206 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOTYPEGVCFS"];
+v11 -> v206 [label="ch_fasta"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v206 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOTYPEGVCFS"];
+v14 -> v206 [label="ch_fasta_fai"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v206 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOTYPEGVCFS"];
+v17 -> v206 [label="ch_dict"];
+
+v204 [shape=point,label="",fixedsize=true,width=0.1];
+v206 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOTYPEGVCFS"];
+v204 -> v206;
+
+v205 [shape=point,label="",fixedsize=true,width=0.1];
+v206 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOTYPEGVCFS"];
+v205 -> v206;
+
+v206 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOTYPEGVCFS"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v206 -> v209;
+
+v206 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOTYPEGVCFS"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v206 -> v209;
+
+v206 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:GATK4_GENOTYPEGVCFS"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v206 -> v207;
+
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 -> v208;
+
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 -> v226 [label="ch_versions"];
+
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v209 -> v211 [label="ch_vcfs"];
+
+v210 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 -> v217 [label="ch_versions"];
+
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v211 -> v212;
+
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v213 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:VCF_CONCAT_BCFTOOLS:BCFTOOLS_CONCAT"];
+v212 -> v213 [label="ch_concat_input"];
+
+v213 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:VCF_CONCAT_BCFTOOLS:BCFTOOLS_CONCAT"];
+v220 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:VCF_CONCAT_BCFTOOLS:TABIX_TABIX"];
+v213 -> v220;
+
+v213 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:VCF_CONCAT_BCFTOOLS:BCFTOOLS_CONCAT"];
+v215 [shape=point];
+v213 -> v215;
+
+v213 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:VCF_CONCAT_BCFTOOLS:BCFTOOLS_CONCAT"];
+v214 [shape=point];
+v213 -> v214;
+
+v213 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:VCF_CONCAT_BCFTOOLS:BCFTOOLS_CONCAT"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v213 -> v216;
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 -> v217;
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v217 -> v223 [label="ch_versions"];
+
+v218 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v219 [shape=point];
+v218 -> v219 [label="ch_vcf_tbi"];
+
+v220 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:VCF_CONCAT_BCFTOOLS:TABIX_TABIX"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v220 -> v224;
+
+v220 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:VCF_CONCAT_BCFTOOLS:TABIX_TABIX"];
+v221 [shape=point];
+v220 -> v221;
+
+v220 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:VCF_CONCAT_BCFTOOLS:TABIX_TABIX"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v220 -> v222;
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v222 -> v223;
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 -> v226 [label="versions"];
+
+v213 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:GVCF_JOINT_GENOTYPE_GATK4:VCF_CONCAT_BCFTOOLS:BCFTOOLS_CONCAT"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v213 -> v224;
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v224 -> v225;
+
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v225 -> v229 [label="ch_vcfs"];
+
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v226 -> v227 [label="versions"];
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 -> v247 [label="ch_versions"];
+
+v228 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 -> v234 [label="ch_versions"];
+
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v230 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:FILTER_1"];
+v229 -> v230;
+
+v230 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:FILTER_1"];
+v235 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:FILTER_2"];
+v230 -> v235;
+
+v230 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:FILTER_1"];
+v232 [shape=point];
+v230 -> v232;
+
+v230 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:FILTER_1"];
+v231 [shape=point];
+v230 -> v231;
+
+v230 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:FILTER_1"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v230 -> v233;
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v234;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v234 -> v239 [label="ch_versions"];
+
+v235 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:FILTER_2"];
+v242 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:TABIX_TABIX"];
+v235 -> v242;
+
+v235 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:FILTER_2"];
+v237 [shape=point];
+v235 -> v237;
+
+v235 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:FILTER_2"];
+v236 [shape=point];
+v235 -> v236;
+
+v235 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:FILTER_2"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v235 -> v238;
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v238 -> v239;
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v239 -> v245 [label="ch_versions"];
+
+v240 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v241 [shape=point];
+v240 -> v241 [label="ch_filter_vcfs"];
+
+v242 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:TABIX_TABIX"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v242 -> v246;
+
+v242 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:TABIX_TABIX"];
+v243 [shape=point];
+v242 -> v243;
+
+v242 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:TABIX_TABIX"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v242 -> v244;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v244 -> v245;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 -> v247 [label="versions"];
+
+v235 [label="NFCMGG_GERMLINE:GERMLINE:CRAM_CALL_GENOTYPE_GATK4:VCF_FILTER_BCFTOOLS:FILTER_2"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v235 -> v246;
+
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v246 -> v250 [label="vcfs"];
+
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 -> v248 [label="versions"];
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v248 -> v259 [label="ch_versions"];
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v249 -> v261 [label="ch_reports"];
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v250 -> v251 [label="ch_calls"];
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v257 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_STATS"];
+v251 -> v257 [label="ch_called_variants"];
+
+v252 [shape=point,label="",fixedsize=true,width=0.1];
+v257 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_STATS"];
+v252 -> v257;
+
+v253 [shape=point,label="",fixedsize=true,width=0.1];
+v257 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_STATS"];
+v253 -> v257;
+
+v254 [shape=point,label="",fixedsize=true,width=0.1];
+v257 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_STATS"];
+v254 -> v257;
+
+v255 [shape=point,label="",fixedsize=true,width=0.1];
+v257 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_STATS"];
+v255 -> v257;
+
+v256 [shape=point,label="",fixedsize=true,width=0.1];
+v257 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_STATS"];
+v256 -> v257;
+
+v257 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_STATS"];
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v257 -> v260;
+
+v257 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_STATS"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v257 -> v258;
+
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v258 -> v259;
+
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 -> v268 [label="ch_versions"];
+
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v260 -> v261;
+
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v422 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v261 -> v422 [label="ch_reports"];
+
+v262 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v263 [shape=point];
+v262 -> v263 [label="ch_normalized_variants"];
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v264 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_NORM"];
+v251 -> v264 [label="ch_called_variants"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v264 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_NORM"];
+v11 -> v264 [label="ch_fasta"];
+
+v264 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_NORM"];
+v269 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_NORMALIZE"];
+v264 -> v269;
+
+v264 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_NORM"];
+v266 [shape=point];
+v264 -> v266;
+
+v264 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_NORM"];
+v265 [shape=point];
+v264 -> v265;
+
+v264 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_NORM"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v264 -> v267;
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v267 -> v268;
+
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v268 -> v272 [label="ch_versions"];
+
+v269 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_NORMALIZE"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v269 -> v273;
+
+v269 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_NORMALIZE"];
+v270 [shape=point];
+v269 -> v270;
+
+v269 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_NORMALIZE"];
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v269 -> v271;
+
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v271 -> v272;
+
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v272 -> v289 [label="ch_versions"];
+
+v264 [label="NFCMGG_GERMLINE:GERMLINE:BCFTOOLS_NORM"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v264 -> v273;
+
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v273 -> v274 [label="ch_vcfs"];
+
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v274 -> v279 [label="ch_peds"];
+
+v275 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 -> v278 [label="ch_versions"];
+
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v276 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_EXTRACT"];
+v273 -> v276 [label="ch_vcfs"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v276 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_EXTRACT"];
+v11 -> v276 [label="ch_fasta"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v276 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_EXTRACT"];
+v14 -> v276 [label="ch_fasta_fai"];
+
+v276 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_EXTRACT"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v276 -> v279 [label="extract"];
+
+v276 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_EXTRACT"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v276 -> v277;
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v277 -> v278;
+
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v278 -> v288 [label="ch_versions"];
+
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v279 -> v280;
+
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v282 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_RELATE"];
+v280 -> v282 [label="ch_somalierrelate_input"];
+
+v281 [shape=point,label="",fixedsize=true,width=0.1];
+v282 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_RELATE"];
+v281 -> v282 [label="sample_groups"];
+
+v282 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_RELATE"];
+v286 [shape=point];
+v282 -> v286 [label="html"];
+
+v282 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_RELATE"];
+v285 [shape=point];
+v282 -> v285 [label="pairs_tsv"];
+
+v282 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_RELATE"];
+v284 [shape=point];
+v282 -> v284 [label="samples_tsv"];
+
+v282 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_RELATE"];
+v293 [label="NFCMGG_GERMLINE:GERMLINE:VCF_PED_RTGTOOLS:RTGTOOLS_PEDFILTER"];
+v282 -> v293 [label="ch_peds"];
+
+v282 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_RELATE"];
+v283 [shape=point];
+v282 -> v283;
+
+v276 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_EXTRACT"];
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v276 -> v287;
+
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v287 -> v288;
+
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v288 -> v289 [label="versions"];
+
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v289 -> v303 [label="ch_versions"];
+
+v290 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v291 [shape=point];
+v290 -> v291 [label="ch_ped_vcfs"];
+
+v292 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v292 -> v295 [label="ch_versions"];
+
+v293 [label="NFCMGG_GERMLINE:GERMLINE:VCF_PED_RTGTOOLS:RTGTOOLS_PEDFILTER"];
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v293 -> v296;
+
+v293 [label="NFCMGG_GERMLINE:GERMLINE:VCF_PED_RTGTOOLS:RTGTOOLS_PEDFILTER"];
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v293 -> v294;
+
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v294 -> v295;
+
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v295 -> v302 [label="ch_versions"];
+
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v273 -> v296 [label="ch_vcfs"];
+
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v296 -> v297;
+
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v298 [label="NFCMGG_GERMLINE:GERMLINE:VCF_PED_RTGTOOLS:BCFTOOLS_ANNOTATE"];
+v297 -> v298 [label="ch_annotate_input"];
+
+v298 [label="NFCMGG_GERMLINE:GERMLINE:VCF_PED_RTGTOOLS:BCFTOOLS_ANNOTATE"];
+v306 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_FINAL"];
+v298 -> v306 [label="ch_annotation_output"];
+
+v298 [label="NFCMGG_GERMLINE:GERMLINE:VCF_PED_RTGTOOLS:BCFTOOLS_ANNOTATE"];
+v300 [shape=point];
+v298 -> v300;
+
+v298 [label="NFCMGG_GERMLINE:GERMLINE:VCF_PED_RTGTOOLS:BCFTOOLS_ANNOTATE"];
+v299 [shape=point];
+v298 -> v299;
+
+v298 [label="NFCMGG_GERMLINE:GERMLINE:VCF_PED_RTGTOOLS:BCFTOOLS_ANNOTATE"];
+v301 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v298 -> v301;
+
+v301 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v301 -> v302;
+
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v302 -> v303 [label="versions"];
+
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v309 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v303 -> v309 [label="ch_versions"];
+
+v304 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v305 [shape=point];
+v304 -> v305 [label="ch_annotation_output"];
+
+v306 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_FINAL"];
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v306 -> v310;
+
+v306 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_FINAL"];
+v307 [shape=point];
+v306 -> v307;
+
+v306 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_FINAL"];
+v308 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v306 -> v308;
+
+v308 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v309 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v308 -> v309;
+
+v309 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v309 -> v319 [label="ch_versions"];
+
+v298 [label="NFCMGG_GERMLINE:GERMLINE:VCF_PED_RTGTOOLS:BCFTOOLS_ANNOTATE"];
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v298 -> v310 [label="ch_annotation_output"];
+
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v310 -> v327 [label="ch_vcfs"];
+
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v311 -> v312;
+
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v312 -> v313;
+
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v313 -> v314;
+
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v314 -> v323;
+
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v314 -> v322;
+
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v314 -> v315;
+
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v316 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_TRUTH"];
+v315 -> v316;
+
+v316 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_TRUTH"];
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v316 -> v320;
+
+v316 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_TRUTH"];
+v317 [shape=point];
+v316 -> v317;
+
+v316 [label="NFCMGG_GERMLINE:GERMLINE:TABIX_TRUTH"];
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v316 -> v318;
+
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v318 -> v319;
+
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v319 -> v364 [label="ch_versions"];
+
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v314 -> v320;
+
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v320 -> v321;
+
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v321 -> v322;
+
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v322 -> v323;
+
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v323 -> v325;
+
+v324 [shape=point,label="",fixedsize=true,width=0.1];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v324 -> v325;
+
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v325 -> v326;
+
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v326 -> v330 [label="ch_truths"];
+
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v328 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v327 -> v328;
+
+v328 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v328 -> v329;
+
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v329 -> v330;
+
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v330 -> v331;
+
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v331 -> v332;
+
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v332 -> v335 [label="ch_vcf"];
+
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v332 -> v335 [label="ch_beds"];
+
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v333 -> v336 [label="ch_vcfeval_sdf"];
+
+v334 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v334 -> v348 [label="ch_versions"];
+
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v335 -> v336 [label="ch_input"];
+
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v346 [shape=point];
+v336 -> v346 [label="vcfeval_true_positive_vcf"];
+
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v345 [shape=point];
+v336 -> v345 [label="vcfeval_true_positive_vcf_tbi"];
+
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v344 [shape=point];
+v336 -> v344 [label="vcfeval_false_negative_vcf"];
+
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v343 [shape=point];
+v336 -> v343 [label="vcfeval_false_negative_vcf_tbi"];
+
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v342 [shape=point];
+v336 -> v342 [label="vcfeval_false_positive_vcf"];
+
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v341 [shape=point];
+v336 -> v341 [label="vcfeval_false_positive_vcf_tbi"];
+
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v340 [shape=point];
+v336 -> v340 [label="vcfeval_true_positive_baseline_vcf"];
+
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v339 [shape=point];
+v336 -> v339 [label="vcfeval_true_positive_baseline_vcf_tbi"];
+
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v336 -> v349 [label="vcfeval_snp_roc"];
+
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v336 -> v350 [label="vcfeval_non_snp_roc"];
+
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v336 -> v351 [label="vcfeval_weighted_roc"];
+
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v338 [shape=point];
+v336 -> v338 [label="vcfeval_summary"];
+
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v337 [shape=point];
+v336 -> v337 [label="vcfeval_phasing"];
+
+v336 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_VCFEVAL"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v336 -> v347;
+
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v347 -> v348;
+
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v348 -> v355 [label="ch_versions"];
+
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v349 -> v352;
+
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v350 -> v352;
+
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v351 -> v352;
+
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v353 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_ROCPLOT"];
+v352 -> v353 [label="ch_rocplot_input"];
+
+v353 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_ROCPLOT"];
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v353 -> v356;
+
+v353 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_ROCPLOT"];
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v353 -> v360;
+
+v353 [label="NFCMGG_GERMLINE:GERMLINE:VCF_VALIDATE_SMALL_VARIANTS:RTGTOOLS_ROCPLOT"];
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v353 -> v354;
+
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v354 -> v355;
+
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v355 -> v364 [label="versions"];
+
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v359 [shape=point];
+v356 -> v359 [label="rtgtools_weighted_png_rocplot"];
+
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v358 [shape=point];
+v356 -> v358 [label="rtgtools_snp_png_rocplot"];
+
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v357 [shape=point];
+v356 -> v357 [label="rtgtools_non_snp_png_rocplot"];
+
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v363 [shape=point];
+v360 -> v363 [label="rtgtools_weighted_svg_rocplot"];
+
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v362 [shape=point];
+v360 -> v362 [label="rtgtools_non_snp_svg_rocplot"];
+
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v361 [shape=point];
+v360 -> v361 [label="rtgtools_snp_svg_rocplot"];
+
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v364 -> v373 [label="ch_versions"];
+
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v365 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v310 -> v365 [label="ch_vcfs"];
+
+v365 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v365 -> v366;
+
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v366 -> v368;
+
+v282 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_RELATE"];
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v282 -> v367 [label="ch_peds"];
+
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v367 -> v368;
+
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v368 -> v369;
+
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v370 [label="NFCMGG_GERMLINE:GERMLINE:VCF2DB"];
+v369 -> v370 [label="ch_vcf2db_input"];
+
+v370 [label="NFCMGG_GERMLINE:GERMLINE:VCF2DB"];
+v371 [shape=point];
+v370 -> v371;
+
+v370 [label="NFCMGG_GERMLINE:GERMLINE:VCF2DB"];
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v370 -> v372;
+
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v372 -> v373;
+
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v390 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v373 -> v390 [label="ch_versions"];
+
+v374 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v374 -> v388 [label="ch_versions"];
+
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v310 -> v375 [label="ch_vcfs"];
+
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v375 -> v377 [label="ch_trio_vcfs"];
+
+v282 [label="NFCMGG_GERMLINE:GERMLINE:VCF_EXTRACT_RELATE_SOMALIER:SOMALIER_RELATE"];
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v282 -> v376 [label="ch_peds"];
+
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v376 -> v378 [label="ch_trio_peds"];
+
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v377 -> v379;
+
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v378 -> v379;
+
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v379 -> v380;
+
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v380 -> v381;
+
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v381 -> v382;
+
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v382 -> v383;
+
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v385 [label="NFCMGG_GERMLINE:GERMLINE:VCF_UPD_UPDIO:UPDIO"];
+v383 -> v385 [label="ch_trio_vcfs_family"];
+
+v384 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="NFCMGG_GERMLINE:GERMLINE:VCF_UPD_UPDIO:UPDIO"];
+v384 -> v385;
+
+v385 [label="NFCMGG_GERMLINE:GERMLINE:VCF_UPD_UPDIO:UPDIO"];
+v386 [shape=point];
+v385 -> v386 [label="updio"];
+
+v385 [label="NFCMGG_GERMLINE:GERMLINE:VCF_UPD_UPDIO:UPDIO"];
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v385 -> v387;
+
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v387 -> v388;
+
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v388 -> v389 [label="versions"];
+
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v390 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v389 -> v390;
+
+v390 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v390 -> v405 [label="ch_versions"];
+
+v391 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v391 -> v396 [label="ch_versions"];
+
+v392 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v393 [shape=point];
+v392 -> v393 [label="ch_valid_repeats"];
+
+v394 [shape=point,label="",fixedsize=true,width=0.1];
+v395 [label="NFCMGG_GERMLINE:GERMLINE:VCF_ROH_AUTOMAP:AUTOMAP_REPEATS"];
+v394 -> v395;
+
+v395 [label="NFCMGG_GERMLINE:GERMLINE:VCF_ROH_AUTOMAP:AUTOMAP_REPEATS"];
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v395 -> v397;
+
+v395 [label="NFCMGG_GERMLINE:GERMLINE:VCF_ROH_AUTOMAP:AUTOMAP_REPEATS"];
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v395 -> v396;
+
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v396 -> v403 [label="ch_versions"];
+
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v400 [label="NFCMGG_GERMLINE:GERMLINE:VCF_ROH_AUTOMAP:AUTOMAP_AUTOMAP"];
+v397 -> v400 [label="ch_valid_repeats"];
+
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v400 [label="NFCMGG_GERMLINE:GERMLINE:VCF_ROH_AUTOMAP:AUTOMAP_AUTOMAP"];
+v310 -> v400 [label="ch_vcfs"];
+
+v398 [shape=point,label="",fixedsize=true,width=0.1];
+v400 [label="NFCMGG_GERMLINE:GERMLINE:VCF_ROH_AUTOMAP:AUTOMAP_AUTOMAP"];
+v398 -> v400;
+
+v399 [shape=point,label="",fixedsize=true,width=0.1];
+v400 [label="NFCMGG_GERMLINE:GERMLINE:VCF_ROH_AUTOMAP:AUTOMAP_AUTOMAP"];
+v399 -> v400 [label="genome"];
+
+v400 [label="NFCMGG_GERMLINE:GERMLINE:VCF_ROH_AUTOMAP:AUTOMAP_AUTOMAP"];
+v401 [shape=point];
+v400 -> v401 [label="automap"];
+
+v400 [label="NFCMGG_GERMLINE:GERMLINE:VCF_ROH_AUTOMAP:AUTOMAP_AUTOMAP"];
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v400 -> v402;
+
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v402 -> v403;
+
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v403 -> v404 [label="versions"];
+
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v404 -> v405;
+
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v406 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v405 -> v406 [label="versions"];
+
+v406 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v407 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v406 -> v407;
+
+v407 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v408 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v407 -> v408;
+
+v408 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v408 -> v410;
+
+v409 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v409 -> v410;
+
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v410 -> v411;
+
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v411 -> v418 [label="ch_collated_versions"];
+
+v412 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v412 -> v424 [label="ch_multiqc_config"];
+
+v413 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v413 -> v425 [label="ch_multiqc_custom_config"];
+
+v414 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v414 -> v426 [label="ch_multiqc_logo"];
+
+v415 [shape=point,label="",fixedsize=true,width=0.1];
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v415 -> v416 [label="ch_workflow_summary"];
+
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v416 -> v417;
+
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v417 -> v418 [label="ch_multiqc_files"];
+
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v421 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v418 -> v421 [label="ch_multiqc_files"];
+
+v419 [shape=point,label="",fixedsize=true,width=0.1];
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v419 -> v420 [label="ch_methods_description"];
+
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v421 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v420 -> v421;
+
+v421 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v422 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v421 -> v422 [label="ch_multiqc_files"];
+
+v422 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v423 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v422 -> v423 [label="ch_multiqc_files"];
+
+v423 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v429 [label="NFCMGG_GERMLINE:GERMLINE:MULTIQC"];
+v423 -> v429;
+
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v429 [label="NFCMGG_GERMLINE:GERMLINE:MULTIQC"];
+v424 -> v429;
+
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v429 [label="NFCMGG_GERMLINE:GERMLINE:MULTIQC"];
+v425 -> v429;
+
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v429 [label="NFCMGG_GERMLINE:GERMLINE:MULTIQC"];
+v426 -> v429;
+
+v427 [shape=point,label="",fixedsize=true,width=0.1];
+v429 [label="NFCMGG_GERMLINE:GERMLINE:MULTIQC"];
+v427 -> v429 [label="replace_names"];
+
+v428 [shape=point,label="",fixedsize=true,width=0.1];
+v429 [label="NFCMGG_GERMLINE:GERMLINE:MULTIQC"];
+v428 -> v429 [label="sample_names"];
+
+v429 [label="NFCMGG_GERMLINE:GERMLINE:MULTIQC"];
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v429 -> v433;
+
+v429 [label="NFCMGG_GERMLINE:GERMLINE:MULTIQC"];
+v432 [shape=point];
+v429 -> v432;
+
+v429 [label="NFCMGG_GERMLINE:GERMLINE:MULTIQC"];
+v431 [shape=point];
+v429 -> v431;
+
+v429 [label="NFCMGG_GERMLINE:GERMLINE:MULTIQC"];
+v430 [shape=point];
+v429 -> v430;
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v434 [shape=point];
+v433 -> v434 [label="multiqc_report"];
+
+}

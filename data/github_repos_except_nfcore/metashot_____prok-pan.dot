@@ -1,0 +1,58 @@
+digraph "metashot_____prokpan" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="prokka"];
+v1 -> v3 [label="genomes_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="prokka"];
+v2 -> v3 [label="proteins"];
+
+v3 [label="prokka"];
+v4 [shape=point];
+v3 -> v4;
+
+v3 [label="prokka"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v5 [label="gff_ch"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 [label="roary"];
+v6 -> v7 [label="gff_collection_ch"];
+
+v7 [label="roary"];
+v9 [shape=point];
+v7 -> v9;
+
+v7 [label="roary"];
+v10 [label="raxml"];
+v7 -> v10;
+
+v7 [label="roary"];
+v12 [label="roary_plots"];
+v7 -> v12;
+
+v7 [label="roary"];
+v8 [shape=point];
+v7 -> v8;
+
+v10 [label="raxml"];
+v11 [shape=point];
+v10 -> v11;
+
+v10 [label="raxml"];
+v12 [label="roary_plots"];
+v10 -> v12 [label="tree_ch"];
+
+v12 [label="roary_plots"];
+v13 [shape=point];
+v12 -> v13;
+
+}

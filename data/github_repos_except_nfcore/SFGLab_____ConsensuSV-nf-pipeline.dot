@@ -1,0 +1,150 @@
+digraph "SFGLab_____ConsensuSVnfpipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [label="UNCRAM"];
+v1 -> v2 [label="files"];
+
+v2 [label="UNCRAM"];
+v3 [label="INDEX"];
+v2 -> v3;
+
+v2 [label="UNCRAM"];
+v4 [label="DELLY"];
+v2 -> v4;
+
+v3 [label="INDEX"];
+v4 [label="DELLY"];
+v3 -> v4;
+
+v2 [label="UNCRAM"];
+v4 [label="DELLY"];
+v2 -> v4 [label="bam"];
+
+v4 [label="DELLY"];
+v12 [label="ConsensuSV"];
+v4 -> v12;
+
+v2 [label="UNCRAM"];
+v5 [label="BreakDancer"];
+v2 -> v5 [label="bam"];
+
+v2 [label="UNCRAM"];
+v5 [label="BreakDancer"];
+v2 -> v5 [label="sample"];
+
+v3 [label="INDEX"];
+v5 [label="BreakDancer"];
+v3 -> v5 [label="bai"];
+
+v5 [label="BreakDancer"];
+v12 [label="ConsensuSV"];
+v5 -> v12;
+
+v2 [label="UNCRAM"];
+v6 [label="TARDIS"];
+v2 -> v6 [label="bam"];
+
+v2 [label="UNCRAM"];
+v6 [label="TARDIS"];
+v2 -> v6 [label="sample"];
+
+v3 [label="INDEX"];
+v6 [label="TARDIS"];
+v3 -> v6 [label="bai"];
+
+v6 [label="TARDIS"];
+v12 [label="ConsensuSV"];
+v6 -> v12;
+
+v2 [label="UNCRAM"];
+v7 [label="CNVNator"];
+v2 -> v7 [label="bam"];
+
+v2 [label="UNCRAM"];
+v7 [label="CNVNator"];
+v2 -> v7 [label="sample"];
+
+v3 [label="INDEX"];
+v7 [label="CNVNator"];
+v3 -> v7 [label="bai"];
+
+v7 [label="CNVNator"];
+v12 [label="ConsensuSV"];
+v7 -> v12;
+
+v2 [label="UNCRAM"];
+v8 [label="BreakSeq"];
+v2 -> v8 [label="bam"];
+
+v2 [label="UNCRAM"];
+v8 [label="BreakSeq"];
+v2 -> v8 [label="sample"];
+
+v3 [label="INDEX"];
+v8 [label="BreakSeq"];
+v3 -> v8 [label="bai"];
+
+v8 [label="BreakSeq"];
+v12 [label="ConsensuSV"];
+v8 -> v12;
+
+v2 [label="UNCRAM"];
+v9 [label="Manta"];
+v2 -> v9 [label="bam"];
+
+v2 [label="UNCRAM"];
+v9 [label="Manta"];
+v2 -> v9 [label="sample"];
+
+v3 [label="INDEX"];
+v9 [label="Manta"];
+v3 -> v9 [label="bai"];
+
+v9 [label="Manta"];
+v12 [label="ConsensuSV"];
+v9 -> v12;
+
+v2 [label="UNCRAM"];
+v10 [label="Lumpy"];
+v2 -> v10 [label="bam"];
+
+v2 [label="UNCRAM"];
+v10 [label="Lumpy"];
+v2 -> v10 [label="sample"];
+
+v3 [label="INDEX"];
+v10 [label="Lumpy"];
+v3 -> v10 [label="bai"];
+
+v10 [label="Lumpy"];
+v12 [label="ConsensuSV"];
+v10 -> v12;
+
+v2 [label="UNCRAM"];
+v11 [label="Whamg"];
+v2 -> v11 [label="bam"];
+
+v2 [label="UNCRAM"];
+v11 [label="Whamg"];
+v2 -> v11 [label="sample"];
+
+v3 [label="INDEX"];
+v11 [label="Whamg"];
+v3 -> v11 [label="bai"];
+
+v11 [label="Whamg"];
+v12 [label="ConsensuSV"];
+v11 -> v12;
+
+v2 [label="UNCRAM"];
+v12 [label="ConsensuSV"];
+v2 -> v12 [label="sample"];
+
+v12 [label="ConsensuSV"];
+v13 [shape=point];
+v12 -> v13;
+
+}

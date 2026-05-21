@@ -1,0 +1,1582 @@
+digraph "tfactivity" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v36 [label="ch_peaks"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v120 [label="ch_samplesheet_bam"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v5 -> v32 [label="counts_design"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v33 [label="ch_versions"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v86 [label="ch_input_motifs"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v21 [label="ch_versions"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v10 [label="fasta"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v10 -> v13 [label="ch_fasta"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12 [label="gtf"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v12 -> v14 [label="ch_gtf"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v16;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v15 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:GUNZIP_FASTA"];
+v13 -> v15;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v19;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v18 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:GUNZIP_GTF"];
+v14 -> v18;
+
+v15 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:GUNZIP_FASTA"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v16;
+
+v15 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:GUNZIP_FASTA"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v21;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v27 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v17 -> v27 [label="fasta"];
+
+v18 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:GUNZIP_GTF"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19;
+
+v18 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:GUNZIP_GTF"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v21;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v23 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:EXTRACT_ID_SYMBOL_MAP"];
+v20 -> v23 [label="ch_gtf"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v30 [label="ch_versions"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v23 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:EXTRACT_ID_SYMBOL_MAP"];
+v22 -> v23;
+
+v23 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:EXTRACT_ID_SYMBOL_MAP"];
+v48 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:COMBINE_COUNTS"];
+v23 -> v48 [label="gene_map"];
+
+v23 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:EXTRACT_ID_SYMBOL_MAP"];
+v24 [shape=point];
+v23 -> v24;
+
+v23 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:EXTRACT_ID_SYMBOL_MAP"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v30;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v25 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:GTFTOOLS_LENGTH"];
+v20 -> v25 [label="ch_gtf"];
+
+v25 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:GTFTOOLS_LENGTH"];
+v50 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:CALCULATE_TPM"];
+v25 -> v50 [label="ch_gene_lengths"];
+
+v25 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:GTFTOOLS_LENGTH"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v30;
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v26 -> v27;
+
+v27 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v29 [shape=point];
+v27 -> v29;
+
+v27 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 -> v31;
+
+v27 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v28 [shape=point];
+v27 -> v28;
+
+v27 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v33 [label="versions"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v136 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:BINARIZE_BAMS"];
+v31 -> v136 [label="chrom_sizes"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 -> v45 [label="ch_extra_counts"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v299 [label="ch_versions"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:PREPARE_DESIGN"];
+v35 -> v62 [label="ch_counts_design"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v39 -> v40 [label="ch_conditions"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v41 -> v64 [label="contrasts"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v81 [label="versions"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 -> v44 [label="ch_counts"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:COMBINE_COUNTS"];
+v44 -> v48;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v48 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:COMBINE_COUNTS"];
+v46 -> v48;
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:COMBINE_COUNTS"];
+v47 -> v48 [label="agg_method"];
+
+v48 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:COMBINE_COUNTS"];
+v50 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:CALCULATE_TPM"];
+v48 -> v50;
+
+v48 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:COMBINE_COUNTS"];
+v49 [shape=point];
+v48 -> v49;
+
+v48 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:COMBINE_COUNTS"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v81;
+
+v23 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:EXTRACT_ID_SYMBOL_MAP"];
+v50 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:CALCULATE_TPM"];
+v23 -> v50 [label="gene_map"];
+
+v50 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:CALCULATE_TPM"];
+v53 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_GENES"];
+v50 -> v53 [label="tpms"];
+
+v50 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:CALCULATE_TPM"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v81;
+
+v48 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:COMBINE_COUNTS"];
+v53 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_GENES"];
+v48 -> v53;
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v53 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_GENES"];
+v51 -> v53 [label="min_count"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1];
+v53 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_GENES"];
+v52 -> v53 [label="min_tpm"];
+
+v53 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_GENES"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v53 -> v67 [label="raw_counts"];
+
+v53 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_GENES"];
+v55 [shape=point];
+v53 -> v55;
+
+v53 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_GENES"];
+v54 [shape=point];
+v53 -> v54 [label="genes"];
+
+v53 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_GENES"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v81;
+
+v48 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:COMBINE_COUNTS"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_TFS"];
+v56 -> v59;
+
+v50 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:CALCULATE_TPM"];
+v59 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_TFS"];
+v50 -> v59 [label="tpms"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_TFS"];
+v57 -> v59 [label="min_count"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_TFS"];
+v58 -> v59 [label="min_tpm"];
+
+v59 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_TFS"];
+v61 [shape=point];
+v59 -> v61;
+
+v59 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_TFS"];
+v60 [shape=point];
+v59 -> v60;
+
+v59 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_TFS"];
+v91 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:FILTER_MOTIFS"];
+v59 -> v91 [label="ch_tfs"];
+
+v59 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:FILTER_TFS"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v81;
+
+v62 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:PREPARE_DESIGN"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 -> v66;
+
+v62 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:PREPARE_DESIGN"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v81;
+
+v63 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v65 -> v72;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v66 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v69 -> v72;
+
+v70 [shape=point,label="",fixedsize=true,width=0.1];
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v70 -> v72;
+
+v71 [shape=point,label="",fixedsize=true,width=0.1];
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v71 -> v72;
+
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v72 -> v224 [label="ch_differential"];
+
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v80 [shape=point];
+v72 -> v80;
+
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v79 [shape=point];
+v72 -> v79;
+
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v78 [shape=point];
+v72 -> v78;
+
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v77 [shape=point];
+v72 -> v77 [label="normalized"];
+
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v76 [shape=point];
+v72 -> v76;
+
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v75 [shape=point];
+v72 -> v75;
+
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v74 [shape=point];
+v72 -> v74;
+
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v73 [shape=point];
+v72 -> v73;
+
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=point];
+v81 -> v82 [label="versions"];
+
+v83 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v93 [label="ch_versions"];
+
+v84 [shape=point,label="",fixedsize=true,width=0.1];
+v85 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:FETCH_JASPAR"];
+v84 -> v85 [label="ch_taxon_id"];
+
+v85 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:FETCH_JASPAR"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v86;
+
+v85 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:FETCH_JASPAR"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v93;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 -> v88 [label="ch_motifs"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v90 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:CONVERT_TO_UNIVERSAL"];
+v88 -> v90;
+
+v89 [shape=point,label="",fixedsize=true,width=0.1];
+v90 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:CONVERT_TO_UNIVERSAL"];
+v89 -> v90 [label="out_type"];
+
+v90 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:CONVERT_TO_UNIVERSAL"];
+v91 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:FILTER_MOTIFS"];
+v90 -> v91;
+
+v90 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:CONVERT_TO_UNIVERSAL"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v94;
+
+v91 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:FILTER_MOTIFS"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 -> v92;
+
+v91 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:FILTER_MOTIFS"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v95;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v97 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:CONVERT_TO_MEME"];
+v92 -> v97 [label="ch_filtered"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v94 [label="ch_versions"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v95 [label="ch_versions"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v101 [label="ch_versions"];
+
+v96 [shape=point,label="",fixedsize=true,width=0.1];
+v97 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:CONVERT_TO_MEME"];
+v96 -> v97 [label="out_type"];
+
+v97 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:CONVERT_TO_MEME"];
+v269 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:FILTER_MOTIFS"];
+v97 -> v269 [label="motifs_meme"];
+
+v97 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:CONVERT_TO_MEME"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v101;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v99 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:CONVERT_TO_TRANSFAC"];
+v92 -> v99 [label="ch_filtered"];
+
+v98 [shape=point,label="",fixedsize=true,width=0.1];
+v99 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:CONVERT_TO_TRANSFAC"];
+v98 -> v99 [label="out_type"];
+
+v99 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:CONVERT_TO_TRANSFAC"];
+v100 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:TRANSFAC_TO_PSEM"];
+v99 -> v100;
+
+v99 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:CONVERT_TO_TRANSFAC"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v102;
+
+v100 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:TRANSFAC_TO_PSEM"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v100 -> v197 [label="pwms"];
+
+v100 [label="NFCORE_TFACTIVITY:TFACTIVITY:MOTIFS:TRANSFAC_TO_PSEM"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v103;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v102 [label="ch_versions"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v103 [label="ch_versions"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v299 [label="versions"];
+
+v104 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v115 [label="ch_versions"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v106 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CLEAN_BED"];
+v3 -> v106 [label="ch_peaks"];
+
+v105 [shape=point,label="",fixedsize=true,width=0.1];
+v106 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CLEAN_BED"];
+v105 -> v106 [label="program_file"];
+
+v106 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CLEAN_BED"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v106 -> v108 [label="ch_peaks"];
+
+v106 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CLEAN_BED"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v115;
+
+v107 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v113 [label="ch_versions"];
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v114;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v109 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:FOOTPRINTING:BEDTOOLS_MERGE"];
+v108 -> v109;
+
+v109 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:FOOTPRINTING:BEDTOOLS_MERGE"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v109 -> v110;
+
+v109 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:FOOTPRINTING:BEDTOOLS_MERGE"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v113;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v114;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v110 -> v111;
+
+v106 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CLEAN_BED"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v106 -> v111 [label="ch_peaks"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v112 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:FOOTPRINTING:BEDTOOLS_SUBTRACT"];
+v111 -> v112 [label="ch_subtract_pairs"];
+
+v112 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:FOOTPRINTING:BEDTOOLS_SUBTRACT"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v114;
+
+v112 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:FOOTPRINTING:BEDTOOLS_SUBTRACT"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v115 [label="versions"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:SORT_PEAKS"];
+v114 -> v117 [label="ch_peaks"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v118 [label="ch_versions"];
+
+v116 [shape=point,label="",fixedsize=true,width=0.1];
+v117 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:SORT_PEAKS"];
+v116 -> v117 [label="genome_file"];
+
+v117 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:SORT_PEAKS"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v195 [label="ch_peaks"];
+
+v117 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:SORT_PEAKS"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v193 [label="ch_versions"];
+
+v119 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v155 [label="ch_versions"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v121 -> v122;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v123 -> v124;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v123 -> v125;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v124 -> v126 [label="ch_signal"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v125 -> v126 [label="ch_control"];
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 -> v128 [label="ch_joined"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v127 [label="ch_signal"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v127 [label="ch_control"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v127 -> v132 [label="ch_mixed"];
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v128 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v136 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:BINARIZE_BAMS"];
+v131 -> v136 [label="ch_table"];
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v132 -> v133;
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v133 -> v134;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v134 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v136 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:BINARIZE_BAMS"];
+v135 -> v136;
+
+v136 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:BINARIZE_BAMS"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v136 -> v137;
+
+v136 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:BINARIZE_BAMS"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v155;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v137 -> v138;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v142 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:LEARN_MODEL"];
+v140 -> v142;
+
+v141 [shape=point,label="",fixedsize=true,width=0.1];
+v142 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:LEARN_MODEL"];
+v141 -> v142 [label="states"];
+
+v142 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:LEARN_MODEL"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v142 -> v143;
+
+v142 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:LEARN_MODEL"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v155;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v143 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v147 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:GET_ENHANCER_RESULTS"];
+v144 -> v147;
+
+v145 [shape=point,label="",fixedsize=true,width=0.1];
+v147 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:GET_ENHANCER_RESULTS"];
+v145 -> v147 [label="threshold"];
+
+v146 [shape=point,label="",fixedsize=true,width=0.1];
+v147 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:GET_ENHANCER_RESULTS"];
+v146 -> v147 [label="marks"];
+
+v147 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:GET_ENHANCER_RESULTS"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v147 -> v153;
+
+v147 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:GET_ENHANCER_RESULTS"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v155;
+
+v142 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:LEARN_MODEL"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v142 -> v148;
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v148 -> v149;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:GET_PROMOTER_RESULTS"];
+v149 -> v152;
+
+v150 [shape=point,label="",fixedsize=true,width=0.1];
+v152 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:GET_PROMOTER_RESULTS"];
+v150 -> v152 [label="threshold"];
+
+v151 [shape=point,label="",fixedsize=true,width=0.1];
+v152 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:GET_PROMOTER_RESULTS"];
+v151 -> v152 [label="marks"];
+
+v152 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:GET_PROMOTER_RESULTS"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 -> v154;
+
+v152 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:CHROMHMM:GET_PROMOTER_RESULTS"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v155;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v156 [label="enhancers"];
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 -> v156 [label="promoters"];
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v193 [label="versions"];
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v156 -> v165 [label="ch_bed"];
+
+v157 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 -> v192 [label="ch_versions"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v159 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:FILTER_CONVERT_GTF"];
+v20 -> v159 [label="ch_gtf"];
+
+v158 [shape=point,label="",fixedsize=true,width=0.1];
+v159 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:FILTER_CONVERT_GTF"];
+v158 -> v159 [label="program_file"];
+
+v159 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:FILTER_CONVERT_GTF"];
+v160 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:SORT_BED"];
+v159 -> v160;
+
+v159 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:FILTER_CONVERT_GTF"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 -> v192;
+
+v160 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:SORT_BED"];
+v162 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:CONSTRUCT_TSS"];
+v160 -> v162;
+
+v160 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:SORT_BED"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v192;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v161 [label="chrom_sizes"];
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v162 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:CONSTRUCT_TSS"];
+v161 -> v162;
+
+v162 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:CONSTRUCT_TSS"];
+v164 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:INVERT_TSS"];
+v162 -> v164;
+
+v162 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:CONSTRUCT_TSS"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v192;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v163 [label="chrom_sizes"];
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v164 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:INVERT_TSS"];
+v163 -> v164;
+
+v164 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:INVERT_TSS"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v164 -> v168;
+
+v164 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:INVERT_TSS"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v192;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v165 -> v167;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v165 -> v168;
+
+v166 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v169;
+
+v162 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:CONSTRUCT_TSS"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v162 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v169;
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v169;
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v169 -> v170;
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v171 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:FILTER_PREDICTIONS"];
+v170 -> v171 [label="ch_filter_predictions"];
+
+v171 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:FILTER_PREDICTIONS"];
+v172 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:STITCHING"];
+v171 -> v172;
+
+v171 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:FILTER_PREDICTIONS"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 -> v192;
+
+v172 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:STITCHING"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v172 -> v173;
+
+v172 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:STITCHING"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 -> v192;
+
+v162 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:CONSTRUCT_TSS"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v162 -> v173;
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v173 -> v174;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v176 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:TSS_OVERLAP"];
+v174 -> v176 [label="ch_tss_overlap"];
+
+v175 [shape=point,label="",fixedsize=true,width=0.1];
+v176 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:TSS_OVERLAP"];
+v175 -> v176;
+
+v176 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:TSS_OVERLAP"];
+v178 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:FILTER_OVERLAPS"];
+v176 -> v178;
+
+v176 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:TSS_OVERLAP"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 -> v192;
+
+v177 [shape=point,label="",fixedsize=true,width=0.1];
+v178 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:FILTER_OVERLAPS"];
+v177 -> v178 [label="program_file"];
+
+v178 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:FILTER_OVERLAPS"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v178 -> v179;
+
+v178 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:FILTER_OVERLAPS"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 -> v192;
+
+v172 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:STITCHING"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v172 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v179 -> v180;
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v180 -> v181;
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v182 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:SUBTRACT_OVERLAPS"];
+v181 -> v182 [label="ch_subtract_overlaps"];
+
+v182 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:SUBTRACT_OVERLAPS"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v182 -> v188;
+
+v182 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:SUBTRACT_OVERLAPS"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v192;
+
+v178 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:FILTER_OVERLAPS"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v178 -> v183;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v156 -> v183 [label="ch_bed"];
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v183 -> v184;
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v184 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v187 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:UNSTITCHED_REGIONS"];
+v185 -> v187 [label="ch_unstitched_regions"];
+
+v186 [shape=point,label="",fixedsize=true,width=0.1];
+v187 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:UNSTITCHED_REGIONS"];
+v186 -> v187;
+
+v187 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:UNSTITCHED_REGIONS"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v187 -> v188;
+
+v187 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:UNSTITCHED_REGIONS"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 -> v192;
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v188 -> v189;
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v189 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v191 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:CONCAT_AND_SORT"];
+v190 -> v191 [label="ch_concat_and_sort"];
+
+v191 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:CONCAT_AND_SORT"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 -> v195 [label="stitched"];
+
+v191 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:ROSE:CONCAT_AND_SORT"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 -> v192;
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v192 -> v194 [label="versions"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v193 -> v194 [label="ch_versions"];
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v207 [label="ch_versions"];
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v195 -> v196;
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v201 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:STARE"];
+v196 -> v201 [label="candidate_regions"];
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v201 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:STARE"];
+v197 -> v201;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v201 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:STARE"];
+v17 -> v201 [label="fasta"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v201 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:STARE"];
+v20 -> v201 [label="ch_gtf"];
+
+v198 [shape=point,label="",fixedsize=true,width=0.1];
+v201 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:STARE"];
+v198 -> v201 [label="blacklist"];
+
+v199 [shape=point,label="",fixedsize=true,width=0.1];
+v201 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:STARE"];
+v199 -> v201 [label="window_size"];
+
+v200 [shape=point,label="",fixedsize=true,width=0.1];
+v201 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:STARE"];
+v200 -> v201 [label="decay"];
+
+v201 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:STARE"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v201 -> v202 [label="ch_affinities"];
+
+v201 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:STARE"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 -> v222;
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v202 -> v203;
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v203 -> v204;
+
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v206 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AFFINITY_MEAN"];
+v204 -> v206;
+
+v205 [shape=point,label="",fixedsize=true,width=0.1];
+v206 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AFFINITY_MEAN"];
+v205 -> v206 [label="method"];
+
+v206 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AFFINITY_MEAN"];
+v209 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AGGREGATE_SYNONYMS"];
+v206 -> v209 [label="ch_affinities"];
+
+v206 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AFFINITY_MEAN"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 -> v207;
+
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 -> v222 [label="ch_versions"];
+
+v23 [label="NFCORE_TFACTIVITY:PREPARE_GENOME:EXTRACT_ID_SYMBOL_MAP"];
+v209 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AGGREGATE_SYNONYMS"];
+v23 -> v209 [label="gene_map"];
+
+v208 [shape=point,label="",fixedsize=true,width=0.1];
+v209 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AGGREGATE_SYNONYMS"];
+v208 -> v209 [label="agg_method"];
+
+v209 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AGGREGATE_SYNONYMS"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v209 -> v210;
+
+v209 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AGGREGATE_SYNONYMS"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 -> v222;
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v210 -> v212 [label="ch_affinities_spread"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 -> v211 [label="contrasts"];
+
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v211 -> v212;
+
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v212 -> v213;
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v213 -> v214;
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v210 -> v214 [label="ch_affinities_spread"];
+
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v214 -> v215;
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v215 -> v216;
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v216 -> v217;
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v219 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AFFINITY_RATIO"];
+v217 -> v219 [label="ch_contrast_affinities"];
+
+v218 [shape=point,label="",fixedsize=true,width=0.1];
+v219 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AFFINITY_RATIO"];
+v218 -> v219 [label="method"];
+
+v219 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AFFINITY_RATIO"];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v219 -> v225 [label="ch_affinity_ratio"];
+
+v219 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AFFINITY_RATIO"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 -> v222;
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v221 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AFFINITY_SUM"];
+v217 -> v221 [label="ch_contrast_affinities"];
+
+v220 [shape=point,label="",fixedsize=true,width=0.1];
+v221 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AFFINITY_SUM"];
+v220 -> v221 [label="method"];
+
+v221 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AFFINITY_SUM"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v221 -> v239 [label="ch_affinities"];
+
+v221 [label="NFCORE_TFACTIVITY:TFACTIVITY:PEAKS:AFFINITY_SUM"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v221 -> v222;
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v222 -> v299 [label="versions"];
+
+v223 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 -> v236 [label="ch_versions"];
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v224 -> v226;
+
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v225 -> v226;
+
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v226 -> v227;
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v228 [label="NFCORE_TFACTIVITY:TFACTIVITY:DYNAMITE:PREPROCESS"];
+v227 -> v228 [label="ch_combined"];
+
+v228 [label="NFCORE_TFACTIVITY:TFACTIVITY:DYNAMITE:PREPROCESS"];
+v233 [label="NFCORE_TFACTIVITY:TFACTIVITY:DYNAMITE:RUN_DYNAMITE"];
+v228 -> v233;
+
+v228 [label="NFCORE_TFACTIVITY:TFACTIVITY:DYNAMITE:PREPROCESS"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 -> v236;
+
+v229 [shape=point,label="",fixedsize=true,width=0.1];
+v233 [label="NFCORE_TFACTIVITY:TFACTIVITY:DYNAMITE:RUN_DYNAMITE"];
+v229 -> v233 [label="ofolds"];
+
+v230 [shape=point,label="",fixedsize=true,width=0.1];
+v233 [label="NFCORE_TFACTIVITY:TFACTIVITY:DYNAMITE:RUN_DYNAMITE"];
+v230 -> v233 [label="ifolds"];
+
+v231 [shape=point,label="",fixedsize=true,width=0.1];
+v233 [label="NFCORE_TFACTIVITY:TFACTIVITY:DYNAMITE:RUN_DYNAMITE"];
+v231 -> v233 [label="alpha"];
+
+v232 [shape=point,label="",fixedsize=true,width=0.1];
+v233 [label="NFCORE_TFACTIVITY:TFACTIVITY:DYNAMITE:RUN_DYNAMITE"];
+v232 -> v233 [label="randomize"];
+
+v233 [label="NFCORE_TFACTIVITY:TFACTIVITY:DYNAMITE:RUN_DYNAMITE"];
+v235 [label="NFCORE_TFACTIVITY:TFACTIVITY:DYNAMITE:FILTER"];
+v233 -> v235;
+
+v234 [shape=point,label="",fixedsize=true,width=0.1];
+v235 [label="NFCORE_TFACTIVITY:TFACTIVITY:DYNAMITE:FILTER"];
+v234 -> v235 [label="program_file"];
+
+v235 [label="NFCORE_TFACTIVITY:TFACTIVITY:DYNAMITE:FILTER"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v235 -> v242 [label="ch_regression_coefficients"];
+
+v235 [label="NFCORE_TFACTIVITY:TFACTIVITY:DYNAMITE:FILTER"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v235 -> v236;
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 -> v299 [label="versions"];
+
+v237 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v237 -> v267 [label="ch_versions"];
+
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v72 -> v238 [label="ch_differential"];
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v238 -> v240;
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v239 -> v240;
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v240 -> v241;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v241 -> v243;
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v242 -> v243;
+
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v243 -> v244;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v245 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:TF_TG_SCORE"];
+v244 -> v245 [label="ch_combined"];
+
+v245 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:TF_TG_SCORE"];
+v247 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:CREATE_RANKING"];
+v245 -> v247;
+
+v245 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:TF_TG_SCORE"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 -> v267;
+
+v246 [shape=point,label="",fixedsize=true,width=0.1];
+v247 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:CREATE_RANKING"];
+v246 -> v247 [label="alpha"];
+
+v247 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:CREATE_RANKING"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v247 -> v248;
+
+v247 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:CREATE_RANKING"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v247 -> v257;
+
+v247 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:CREATE_RANKING"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 -> v267;
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v248 -> v249;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v251 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TFS_PER_ASSAY"];
+v249 -> v251;
+
+v250 [shape=point,label="",fixedsize=true,width=0.1];
+v251 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TFS_PER_ASSAY"];
+v250 -> v251 [label="method"];
+
+v251 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TFS_PER_ASSAY"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v251 -> v252 [label="ch_tf_ranking"];
+
+v251 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TFS_PER_ASSAY"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v251 -> v267;
+
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v252 -> v253;
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v253 -> v254;
+
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v256 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TFS_ACROSS_ASSAYS"];
+v254 -> v256;
+
+v255 [shape=point,label="",fixedsize=true,width=0.1];
+v256 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TFS_ACROSS_ASSAYS"];
+v255 -> v256 [label="method"];
+
+v256 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TFS_ACROSS_ASSAYS"];
+v269 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:FILTER_MOTIFS"];
+v256 -> v269 [label="tf_ranking"];
+
+v256 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TFS_ACROSS_ASSAYS"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v256 -> v267;
+
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v257 -> v258;
+
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v260 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TGS_PER_ASSAY"];
+v258 -> v260;
+
+v259 [shape=point,label="",fixedsize=true,width=0.1];
+v260 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TGS_PER_ASSAY"];
+v259 -> v260 [label="method"];
+
+v260 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TGS_PER_ASSAY"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v260 -> v261 [label="ch_tg_ranking"];
+
+v260 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TGS_PER_ASSAY"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v260 -> v267;
+
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v261 -> v262;
+
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v262 -> v263;
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v265 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TGS_ACROSS_ASSAYS"];
+v263 -> v265;
+
+v264 [shape=point,label="",fixedsize=true,width=0.1];
+v265 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TGS_ACROSS_ASSAYS"];
+v264 -> v265 [label="method"];
+
+v265 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TGS_ACROSS_ASSAYS"];
+v266 [shape=point];
+v265 -> v266;
+
+v265 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TGS_ACROSS_ASSAYS"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v265 -> v267;
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v267 -> v299 [label="versions"];
+
+v268 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v268 -> v283 [label="ch_versions"];
+
+v269 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:FILTER_MOTIFS"];
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v269 -> v272;
+
+v269 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:FILTER_MOTIFS"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v269 -> v283;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v270 [label="fasta"];
+
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v271 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:EXTRACT_SEQUENCE"];
+v270 -> v271;
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v271 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:EXTRACT_SEQUENCE"];
+v196 -> v271 [label="candidate_regions"];
+
+v271 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:EXTRACT_SEQUENCE"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v271 -> v275;
+
+v271 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:EXTRACT_SEQUENCE"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v271 -> v283;
+
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v272 -> v273;
+
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v273 -> v274;
+
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v274 -> v275 [label="ch_filtered_motifs"];
+
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v275 -> v276;
+
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v277 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:RUN_FIMO"];
+v276 -> v277 [label="ch_fimo"];
+
+v277 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:RUN_FIMO"];
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v277 -> v278;
+
+v277 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:RUN_FIMO"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v277 -> v283;
+
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v278 -> v279;
+
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v280 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:COMBINE_RESULTS"];
+v279 -> v280 [label="ch_combine_results"];
+
+v280 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:COMBINE_RESULTS"];
+v282 [shape=point];
+v280 -> v282 [label="tsv"];
+
+v280 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:COMBINE_RESULTS"];
+v281 [shape=point];
+v280 -> v281 [label="gff"];
+
+v280 [label="NFCORE_TFACTIVITY:TFACTIVITY:FIMO:COMBINE_RESULTS"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 -> v283;
+
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v283 -> v299 [label="versions"];
+
+v284 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v284 -> v298 [label="ch_versions"];
+
+v251 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TFS_PER_ASSAY"];
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v251 -> v285 [label="ch_tf_ranking"];
+
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v285 -> v286;
+
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v286 -> v287;
+
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v296 [label="NFCORE_TFACTIVITY:TFACTIVITY:REPORT:CREATE"];
+v287 -> v296;
+
+v260 [label="NFCORE_TFACTIVITY:TFACTIVITY:RANKING:COMBINE_TGS_PER_ASSAY"];
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v260 -> v288 [label="ch_tg_ranking"];
+
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v288 -> v289;
+
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v289 -> v290;
+
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v296 [label="NFCORE_TFACTIVITY:TFACTIVITY:REPORT:CREATE"];
+v290 -> v296;
+
+v72 [label="NFCORE_TFACTIVITY:TFACTIVITY:COUNTS:DESEQ2_DIFFERENTIAL"];
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v72 -> v291 [label="ch_differential"];
+
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v291 -> v292;
+
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v292 -> v293;
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v296 [label="NFCORE_TFACTIVITY:TFACTIVITY:REPORT:CREATE"];
+v293 -> v296;
+
+v294 [shape=point,label="",fixedsize=true,width=0.1];
+v296 [label="NFCORE_TFACTIVITY:TFACTIVITY:REPORT:CREATE"];
+v294 -> v296 [label="params"];
+
+v295 [shape=point,label="",fixedsize=true,width=0.1];
+v296 [label="NFCORE_TFACTIVITY:TFACTIVITY:REPORT:CREATE"];
+v295 -> v296 [label="schema"];
+
+v296 [label="NFCORE_TFACTIVITY:TFACTIVITY:REPORT:CREATE"];
+v297 [shape=point];
+v296 -> v297;
+
+v296 [label="NFCORE_TFACTIVITY:TFACTIVITY:REPORT:CREATE"];
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v296 -> v298;
+
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v298 -> v299 [label="versions"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v299 [label="versions"];
+
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v299 -> v300 [label="versions"];
+
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v301 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v300 -> v301;
+
+v301 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v301 -> v302;
+
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v302 -> v304;
+
+v303 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v303 -> v304;
+
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v304 -> v305;
+
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v306 [shape=point];
+v305 -> v306 [label="ch_collated_versions"];
+
+v307 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v308 [shape=point];
+v307 -> v308 [label="multiqc_report"];
+
+}

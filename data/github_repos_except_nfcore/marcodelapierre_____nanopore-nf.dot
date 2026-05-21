@@ -1,0 +1,70 @@
+digraph "marcodelapierre_____nanoporenf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [label="basecall"];
+v1 -> v4 [label="read_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v5 [label="basefile_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v14 [label="seqfile"];
+v3 -> v14 [label="seqid_ch"];
+
+v4 [label="basecall"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 [label="chop"];
+v5 -> v6;
+
+v6 [label="chop"];
+v7 [label="assemble"];
+v6 -> v7;
+
+v7 [label="assemble"];
+v8 [label="blast"];
+v7 -> v8;
+
+v8 [label="blast"];
+v10 [shape=point];
+v8 -> v10;
+
+v8 [label="blast"];
+v9 [shape=point];
+v8 -> v9;
+
+v7 [label="assemble"];
+v11 [label="diamond"];
+v7 -> v11;
+
+v11 [label="diamond"];
+v13 [shape=point];
+v11 -> v13;
+
+v11 [label="diamond"];
+v12 [shape=point];
+v11 -> v12;
+
+v14 [label="seqfile"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v15;
+
+v6 [label="chop"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 [label="align"];
+v15 -> v16;
+
+v16 [label="align"];
+v17 [shape=point];
+v16 -> v17;
+
+}

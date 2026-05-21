@@ -1,0 +1,250 @@
+digraph "GalKeshet_____EpiTyping" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v0 -> v1 [label="read_files"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v2 [shape=point];
+v1 -> v2;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v4 [label="EPITYPING:TRIM_FASTQ"];
+v0 -> v4 [label="read_files"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="EPITYPING:TRIM_FASTQ"];
+v3 -> v4 [label="adapters"];
+
+v4 [label="EPITYPING:TRIM_FASTQ"];
+v7 [label="EPITYPING:ALIGNMENT_AND_MOUSE_REMOVAL"];
+v4 -> v7;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="EPITYPING:ALIGNMENT_AND_MOUSE_REMOVAL"];
+v5 -> v7 [label="index_human"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="EPITYPING:ALIGNMENT_AND_MOUSE_REMOVAL"];
+v6 -> v7 [label="index_mouse"];
+
+v7 [label="EPITYPING:ALIGNMENT_AND_MOUSE_REMOVAL"];
+v8 [label="EPITYPING:XENOFILTER"];
+v7 -> v8;
+
+v8 [label="EPITYPING:XENOFILTER"];
+v10 [label="EPITYPING:FEATURE_COUNT"];
+v8 -> v10;
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="EPITYPING:FEATURE_COUNT"];
+v9 -> v10 [label="gtf"];
+
+v10 [label="EPITYPING:FEATURE_COUNT"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v50;
+
+v8 [label="EPITYPING:XENOFILTER"];
+v11 [label="EPITYPING:ADD_READ_GROUPS"];
+v8 -> v11;
+
+v11 [label="EPITYPING:ADD_READ_GROUPS"];
+v12 [label="EPITYPING:MARK_DUPLICATES"];
+v11 -> v12;
+
+v12 [label="EPITYPING:MARK_DUPLICATES"];
+v16 [label="EPITYPING:SPLIT_N_CIGAR"];
+v12 -> v16;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="EPITYPING:SPLIT_N_CIGAR"];
+v13 -> v16 [label="genome"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="EPITYPING:SPLIT_N_CIGAR"];
+v14 -> v16 [label="index"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="EPITYPING:SPLIT_N_CIGAR"];
+v15 -> v16 [label="dict"];
+
+v16 [label="EPITYPING:SPLIT_N_CIGAR"];
+v24 [label="EPITYPING:BASE_RECALIBRATION"];
+v16 -> v24;
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="EPITYPING:BASE_RECALIBRATION"];
+v17 -> v24 [label="genome"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="EPITYPING:BASE_RECALIBRATION"];
+v18 -> v24 [label="index"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="EPITYPING:BASE_RECALIBRATION"];
+v19 -> v24 [label="dict"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="EPITYPING:BASE_RECALIBRATION"];
+v20 -> v24 [label="annotation_intervals"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="EPITYPING:BASE_RECALIBRATION"];
+v21 -> v24 [label="annotation_intervals_index"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="EPITYPING:BASE_RECALIBRATION"];
+v22 -> v24 [label="dbsnp"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="EPITYPING:BASE_RECALIBRATION"];
+v23 -> v24 [label="dbsnp_index"];
+
+v24 [label="EPITYPING:BASE_RECALIBRATION"];
+v30 [label="EPITYPING:HAPLOTYPE_CALLER"];
+v24 -> v30;
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="EPITYPING:HAPLOTYPE_CALLER"];
+v25 -> v30 [label="genome"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="EPITYPING:HAPLOTYPE_CALLER"];
+v26 -> v30 [label="index"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="EPITYPING:HAPLOTYPE_CALLER"];
+v27 -> v30 [label="dict"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="EPITYPING:HAPLOTYPE_CALLER"];
+v28 -> v30 [label="annotation_intervals"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="EPITYPING:HAPLOTYPE_CALLER"];
+v29 -> v30 [label="annotation_intervals_index"];
+
+v30 [label="EPITYPING:HAPLOTYPE_CALLER"];
+v36 [label="EPITYPING:VARIANT_FILTRATION"];
+v30 -> v36;
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="EPITYPING:VARIANT_FILTRATION"];
+v31 -> v36 [label="genome"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="EPITYPING:VARIANT_FILTRATION"];
+v32 -> v36 [label="index"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="EPITYPING:VARIANT_FILTRATION"];
+v33 -> v36 [label="dict"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="EPITYPING:VARIANT_FILTRATION"];
+v34 -> v36 [label="annotation_intervals"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="EPITYPING:VARIANT_FILTRATION"];
+v35 -> v36 [label="annotation_intervals_index"];
+
+v36 [label="EPITYPING:VARIANT_FILTRATION"];
+v40 [label="EPITYPING:ADD_GENE_NAMES"];
+v36 -> v40;
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="EPITYPING:ADD_GENE_NAMES"];
+v37 -> v40 [label="annotation_intervals"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="EPITYPING:ADD_GENE_NAMES"];
+v38 -> v40 [label="annotation_intervals_index"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="EPITYPING:ADD_GENE_NAMES"];
+v39 -> v40 [label="headers"];
+
+v40 [label="EPITYPING:ADD_GENE_NAMES"];
+v43 [label="EPITYPING:ADD_dbSNP_ID"];
+v40 -> v43;
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="EPITYPING:ADD_dbSNP_ID"];
+v41 -> v43 [label="dbSNP"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="EPITYPING:ADD_dbSNP_ID"];
+v42 -> v43 [label="dbSNP_index"];
+
+v43 [label="EPITYPING:ADD_dbSNP_ID"];
+v44 [label="EPITYPING:KEEP_ANNOTATED_SNPS"];
+v43 -> v44;
+
+v44 [label="EPITYPING:KEEP_ANNOTATED_SNPS"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v53 [label="EPITYPING:OUTPUT_XCI_TABLE"];
+v46 -> v53 [label="merged_vcf_paths_ch"];
+
+v44 [label="EPITYPING:KEEP_ANNOTATED_SNPS"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 [shape=point];
+v48 -> v49 [label="merged_vcf_index_paths_ch"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 [label="EPITYPING:LOI_MATRIX"];
+v50 -> v59 [label="counts_files_ch"];
+
+v44 [label="EPITYPING:KEEP_ANNOTATED_SNPS"];
+v52 [label="EPITYPING:OUTPUT_LOI_TABLE"];
+v44 -> v52 [label="vcf_file"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="EPITYPING:OUTPUT_LOI_TABLE"];
+v51 -> v52 [label="imprinted_intervals"];
+
+v52 [label="EPITYPING:OUTPUT_LOI_TABLE"];
+v59 [label="EPITYPING:LOI_MATRIX"];
+v52 -> v59;
+
+v53 [label="EPITYPING:OUTPUT_XCI_TABLE"];
+v56 [label="EPITYPING:XCI_MATRIX"];
+v53 -> v56;
+
+v10 [label="EPITYPING:FEATURE_COUNT"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v56 [label="EPITYPING:XCI_MATRIX"];
+v54 -> v56;
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="EPITYPING:XCI_MATRIX"];
+v55 -> v56 [label="x_escape"];
+
+v56 [label="EPITYPING:XCI_MATRIX"];
+v57 [shape=point];
+v56 -> v57;
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="EPITYPING:LOI_MATRIX"];
+v58 -> v59 [label="imprinted_genes_file"];
+
+v59 [label="EPITYPING:LOI_MATRIX"];
+v60 [shape=point];
+v59 -> v60;
+
+}

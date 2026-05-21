@@ -1,0 +1,142 @@
+digraph "QuackenbushLab_____tcgadatanf" {
+v0 [label="saveConfig:copyMotd"];
+v2 [label="saveConfig:copyConfigFiles"];
+v0 -> v2;
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v2 [label="saveConfig:copyConfigFiles"];
+v1 -> v2 [label="cf"];
+
+v2 [label="saveConfig:copyConfigFiles"];
+v3 [shape=point];
+v2 -> v3 [label="out_conf"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitJson"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitJson"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v14 [label="expression_recount3"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitJson"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitJson"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v20 [label="mutation_tcgabiolinks"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitJson"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitJson"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v38 [label="clinical_tcgabiolinks"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitJson"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitJson"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v32 [label="methylation_gdc"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitJson"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitJson"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v26 [label="cnv_tcgabiolinks"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [label="downloadWf:downloadRecount3Wf:downloadRecount"];
+v14 -> v15 [label="channelRecount"];
+
+v15 [label="downloadWf:downloadRecount3Wf:downloadRecount"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 [label="downloadWf:downloadRecount3Wf:mergeRecountMetadata"];
+v17 -> v18;
+
+v18 [label="downloadWf:downloadRecount3Wf:mergeRecountMetadata"];
+v19 [shape=point];
+v18 -> v19;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [label="downloadWf:downloadMutationsWf:downloadMutations"];
+v20 -> v21 [label="channelMutation"];
+
+v21 [label="downloadWf:downloadMutationsWf:downloadMutations"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 [label="downloadWf:downloadMutationsWf:mergeMutationsMetadata"];
+v23 -> v24;
+
+v24 [label="downloadWf:downloadMutationsWf:mergeMutationsMetadata"];
+v25 [shape=point];
+v24 -> v25;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [label="downloadWf:downloadCNVWf:downloadCNV"];
+v26 -> v27 [label="channelCNV"];
+
+v27 [label="downloadWf:downloadCNVWf:downloadCNV"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 [label="downloadWf:downloadCNVWf:mergeCNVMetadata"];
+v29 -> v30;
+
+v30 [label="downloadWf:downloadCNVWf:mergeCNVMetadata"];
+v31 [shape=point];
+v30 -> v31;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [label="downloadWf:downloadMethylationWf:downloadMethylation"];
+v32 -> v33 [label="channelMethylation"];
+
+v33 [label="downloadWf:downloadMethylationWf:downloadMethylation"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v36 [label="downloadWf:downloadMethylationWf:mergeMethylationMetadata"];
+v35 -> v36;
+
+v36 [label="downloadWf:downloadMethylationWf:mergeMethylationMetadata"];
+v37 [shape=point];
+v36 -> v37;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [label="downloadWf:downloadClinicalWf:downloadClinical"];
+v38 -> v39 [label="channelClinical"];
+
+v39 [label="downloadWf:downloadClinicalWf:downloadClinical"];
+v40 [shape=point];
+v39 -> v40;
+
+}

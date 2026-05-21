@@ -1,0 +1,62 @@
+digraph "erccompact_____asgard" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v10 [label="get_metadata_and_create_dada_file_list"];
+v0 -> v10 [label="bridge_number"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="create_delay_file"];
+v1 -> v5 [label="source_name"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="create_delay_file"];
+v2 -> v5 [label="delay_validity_time_interval"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="create_delay_file"];
+v3 -> v5 [label="bvruse_metadata"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="create_delay_file"];
+v4 -> v5 [label="config_file"];
+
+v5 [label="create_delay_file"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [label="get_metadata_and_create_dada_file_list"];
+v6 -> v10 [label="delay_file_path"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="get_metadata_and_create_dada_file_list"];
+v7 -> v10 [label="source_name"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="get_metadata_and_create_dada_file_list"];
+v8 -> v10 [label="bvruse_metadata"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="get_metadata_and_create_dada_file_list"];
+v9 -> v10 [label="beamformer_input_root_dir"];
+
+v10 [label="get_metadata_and_create_dada_file_list"];
+v13 [label="create_skyweavercpp_config"];
+v10 -> v13;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="create_skyweavercpp_config"];
+v11 -> v13 [label="skyweaverpy_yaml_config"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="create_skyweavercpp_config"];
+v12 -> v13 [label="output_skyweaver_cpp_config"];
+
+v13 [label="create_skyweavercpp_config"];
+v14 [label="beamformer"];
+v13 -> v14;
+
+v14 [label="beamformer"];
+v15 [shape=point];
+v14 -> v15 [label="-"];
+
+}

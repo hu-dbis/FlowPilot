@@ -1,0 +1,42 @@
+digraph "ggrimes_____nanosv" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v5 [label="MOSDEPTH"];
+v1 -> v5 [label="bam_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [label="SNIFFLES"];
+v2 -> v7 [label="ref_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [label="SNIFFLES"];
+v3 -> v7 [label="tr_ch"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [label="ANNOTSV"];
+v4 -> v9 [label="annotDir_ch"];
+
+v5 [label="MOSDEPTH"];
+v6 [shape=point];
+v5 -> v6;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v7 [label="SNIFFLES"];
+v1 -> v7 [label="bam_ch"];
+
+v7 [label="SNIFFLES"];
+v8 [label="FILTER_SV"];
+v7 -> v8;
+
+v8 [label="FILTER_SV"];
+v9 [label="ANNOTSV"];
+v8 -> v9;
+
+v9 [label="ANNOTSV"];
+v10 [shape=point];
+v9 -> v10;
+
+}

@@ -1,0 +1,158 @@
+digraph "BCCDCPHL_____routineassembly" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="pipeline_provenance"];
+v0 -> v1 [label="ch_workflow_metadata"];
+
+v1 [label="pipeline_provenance"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v1 -> v25;
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v17 [label="ch_assembly_mode"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v8 [label="ch_short_reads"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v7 [shape=point];
+v6 -> v7 [label="ch_long_reads"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 -> v25 [label="ch_provenance"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v9 -> v10;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v10 [label="ch_short_reads"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 [label="hash_files"];
+v10 -> v11;
+
+v11 [label="hash_files"];
+v12 [shape=point];
+v11 -> v12;
+
+v11 [label="hash_files"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v11 -> v27;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v13 [label="fastp"];
+v5 -> v13 [label="ch_short_reads"];
+
+v13 [label="fastp"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v16;
+
+v13 [label="fastp"];
+v14 [label="fastp_json_to_csv"];
+v13 -> v14;
+
+v13 [label="fastp"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v13 -> v29;
+
+v14 [label="fastp_json_to_csv"];
+v15 [shape=point];
+v14 -> v15;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 [label="unicycler"];
+v17 -> v18;
+
+v18 [label="unicycler"];
+v20 [label="quast"];
+v18 -> v20;
+
+v18 [label="unicycler"];
+v21 [label="bandage"];
+v18 -> v21;
+
+v18 [label="unicycler"];
+v19 [shape=point];
+v18 -> v19;
+
+v18 [label="unicycler"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v31;
+
+v20 [label="quast"];
+v23 [label="parse_quast_report"];
+v20 -> v23;
+
+v20 [label="quast"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v20 -> v33;
+
+v21 [label="bandage"];
+v22 [shape=point];
+v21 -> v22;
+
+v23 [label="parse_quast_report"];
+v24 [shape=point];
+v23 -> v24;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 -> v27 [label="ch_provenance"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 -> v29 [label="ch_provenance"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 -> v31 [label="ch_provenance"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 -> v33 [label="ch_provenance"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [label="collect_provenance"];
+v34 -> v35 [label="ch_provenance"];
+
+v35 [label="collect_provenance"];
+v36 [shape=point];
+v35 -> v36;
+
+}

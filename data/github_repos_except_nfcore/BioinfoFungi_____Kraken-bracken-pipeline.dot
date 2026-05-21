@@ -1,0 +1,50 @@
+digraph "BioinfoFungi_____Krakenbrackenpipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v5 [label="kraken2"];
+v1 -> v5 [label="read_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v5 [label="kraken2"];
+v4 -> v5 [label="brackendb_ch"];
+
+v5 [label="kraken2"];
+v6 [shape=point];
+v5 -> v6;
+
+v5 [label="kraken2"];
+v7 [label="bracken"];
+v5 -> v7;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v7 [label="bracken"];
+v4 -> v7 [label="brackendb_ch"];
+
+v7 [label="bracken"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 [label="counts_parse"];
+v8 -> v9;
+
+v9 [label="counts_parse"];
+v11 [shape=point];
+v9 -> v11;
+
+v9 [label="counts_parse"];
+v10 [shape=point];
+v9 -> v10;
+
+}

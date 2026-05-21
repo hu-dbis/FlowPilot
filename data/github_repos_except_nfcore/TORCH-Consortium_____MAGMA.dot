@@ -1,0 +1,1786 @@
+digraph "TORCHConsortium_____MAGMA" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="SAMPLESHEET_VALIDATION"];
+v0 -> v1 [label="samplesheet"];
+
+v1 [label="SAMPLESHEET_VALIDATION"];
+v5 [label="VALIDATE_FASTQS_WF:FASTQ_VALIDATOR"];
+v1 -> v5 [label="ready"];
+
+v1 [label="SAMPLESHEET_VALIDATION"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitJson"];
+v1 -> v2 [label="samplesheet_json"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitJson"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v5 [label="VALIDATE_FASTQS_WF:FASTQ_VALIDATOR"];
+v4 -> v5 [label="fastqs_ch"];
+
+v5 [label="VALIDATE_FASTQS_WF:FASTQ_VALIDATOR"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 -> v7;
+
+v5 [label="VALIDATE_FASTQS_WF:FASTQ_VALIDATOR"];
+v6 [shape=point];
+v5 -> v6;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 [label="VALIDATE_FASTQS_WF:UTILS_FASTQ_COHORT_VALIDATION"];
+v7 -> v8;
+
+v1 [label="SAMPLESHEET_VALIDATION"];
+v8 [label="VALIDATE_FASTQS_WF:UTILS_FASTQ_COHORT_VALIDATION"];
+v1 -> v8 [label="samplesheet_json"];
+
+v8 [label="VALIDATE_FASTQS_WF:UTILS_FASTQ_COHORT_VALIDATION"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitJson"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitJson"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [label="QUALITY_CHECK_WF:FASTQC"];
+v11 -> v12 [label="validated_reads_ch"];
+
+v12 [label="QUALITY_CHECK_WF:FASTQC"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 -> v19;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [label="QUALITY_CHECK_WF:NTMPROFILER_PROFILE"];
+v11 -> v13 [label="validated_reads_ch"];
+
+v13 [label="QUALITY_CHECK_WF:NTMPROFILER_PROFILE"];
+v14 [shape=point];
+v13 -> v14;
+
+v13 [label="QUALITY_CHECK_WF:NTMPROFILER_PROFILE"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 [label="QUALITY_CHECK_WF:NTMPROFILER_COLLATE"];
+v15 -> v17;
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="QUALITY_CHECK_WF:NTMPROFILER_COLLATE"];
+v16 -> v17 [label="joint_name"];
+
+v17 [label="QUALITY_CHECK_WF:NTMPROFILER_COLLATE"];
+v18 [shape=point];
+v17 -> v18;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v359 [label="REPORTS_WF:MULTIQC"];
+v19 -> v359 [label="reports_fastqc_ch"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [label="MAP_WF:BWA_MEM"];
+v11 -> v22 [label="validated_reads_ch"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [label="MAP_WF:BWA_MEM"];
+v20 -> v22 [label="reference"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [label="MAP_WF:BWA_MEM"];
+v21 -> v22 [label="*"];
+
+v22 [label="MAP_WF:BWA_MEM"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v23 [label="bam_sorted_reads_ch"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v25 [label="CALL_WF:SAMTOOLS_MERGE"];
+v24 -> v25 [label="normalize_libraries_ch"];
+
+v25 [label="CALL_WF:SAMTOOLS_MERGE"];
+v26 [label="CALL_WF:GATK_MARK_DUPLICATES"];
+v25 -> v26;
+
+v26 [label="CALL_WF:GATK_MARK_DUPLICATES"];
+v28 [label="CALL_WF:SAMTOOLS_INDEX"];
+v26 -> v28 [label="recalibrated_bam_ch"];
+
+v26 [label="CALL_WF:GATK_MARK_DUPLICATES"];
+v27 [shape=point];
+v26 -> v27;
+
+v28 [label="CALL_WF:SAMTOOLS_INDEX"];
+v31 [label="CALL_WF:GATK_HAPLOTYPE_CALLER"];
+v28 -> v31;
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [label="CALL_WF:GATK_HAPLOTYPE_CALLER"];
+v29 -> v31 [label="ref_fasta"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [label="CALL_WF:GATK_HAPLOTYPE_CALLER"];
+v30 -> v31 [label="*"];
+
+v31 [label="CALL_WF:GATK_HAPLOTYPE_CALLER"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v63;
+
+v31 [label="CALL_WF:GATK_HAPLOTYPE_CALLER"];
+v32 [shape=point];
+v31 -> v32;
+
+v28 [label="CALL_WF:SAMTOOLS_INDEX"];
+v35 [label="CALL_WF:LOFREQ_CALL__NTM"];
+v28 -> v35;
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v35 [label="CALL_WF:LOFREQ_CALL__NTM"];
+v33 -> v35 [label="reference"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v35 [label="CALL_WF:LOFREQ_CALL__NTM"];
+v34 -> v35 [label="*"];
+
+v35 [label="CALL_WF:LOFREQ_CALL__NTM"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v35 -> v59;
+
+v26 [label="CALL_WF:GATK_MARK_DUPLICATES"];
+v37 [label="CALL_WF:LOFREQ_INDELQUAL"];
+v26 -> v37 [label="recalibrated_bam_ch"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="CALL_WF:LOFREQ_INDELQUAL"];
+v36 -> v37 [label="ref_fasta"];
+
+v37 [label="CALL_WF:LOFREQ_INDELQUAL"];
+v38 [label="CALL_WF:SAMTOOLS_INDEX__LOFREQ"];
+v37 -> v38;
+
+v38 [label="CALL_WF:SAMTOOLS_INDEX__LOFREQ"];
+v41 [label="CALL_WF:LOFREQ_CALL"];
+v38 -> v41;
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="CALL_WF:LOFREQ_CALL"];
+v39 -> v41 [label="ref_fasta"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="CALL_WF:LOFREQ_CALL"];
+v40 -> v41 [label="*"];
+
+v41 [label="CALL_WF:LOFREQ_CALL"];
+v43 [label="CALL_WF:LOFREQ_FILTER"];
+v41 -> v43;
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="CALL_WF:LOFREQ_FILTER"];
+v42 -> v43 [label="ref_fasta"];
+
+v43 [label="CALL_WF:LOFREQ_FILTER"];
+v44 [shape=point];
+v43 -> v44;
+
+v41 [label="CALL_WF:LOFREQ_CALL"];
+v45 [label="CALL_WF:UTILS_REFORMAT_LOFREQ"];
+v41 -> v45;
+
+v45 [label="CALL_WF:UTILS_REFORMAT_LOFREQ"];
+v46 [label="CALL_WF:BGZIP__LOFREQ"];
+v45 -> v46;
+
+v46 [label="CALL_WF:BGZIP__LOFREQ"];
+v48 [label="CALL_WF:GATK_INDEX_FEATURE_FILE__LOFREQ"];
+v46 -> v48;
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [label="CALL_WF:GATK_INDEX_FEATURE_FILE__LOFREQ"];
+v47 -> v48 [label="outputPrefix"];
+
+v48 [label="CALL_WF:GATK_INDEX_FEATURE_FILE__LOFREQ"];
+v49 [shape=point];
+v48 -> v49;
+
+v48 [label="CALL_WF:GATK_INDEX_FEATURE_FILE__LOFREQ"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v48 -> v64;
+
+v26 [label="CALL_WF:GATK_MARK_DUPLICATES"];
+v51 [label="CALL_WF:SAMTOOLS_STATS"];
+v26 -> v51 [label="recalibrated_bam_ch"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="CALL_WF:SAMTOOLS_STATS"];
+v50 -> v51 [label="reference"];
+
+v51 [label="CALL_WF:SAMTOOLS_STATS"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 -> v57;
+
+v26 [label="CALL_WF:GATK_MARK_DUPLICATES"];
+v53 [label="CALL_WF:GATK_COLLECT_WGS_METRICS"];
+v26 -> v53 [label="recalibrated_bam_ch"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1];
+v53 [label="CALL_WF:GATK_COLLECT_WGS_METRICS"];
+v52 -> v53 [label="reference"];
+
+v53 [label="CALL_WF:GATK_COLLECT_WGS_METRICS"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v53 -> v57;
+
+v26 [label="CALL_WF:GATK_MARK_DUPLICATES"];
+v56 [label="CALL_WF:GATK_FLAG_STAT"];
+v26 -> v56 [label="recalibrated_bam_ch"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="CALL_WF:GATK_FLAG_STAT"];
+v54 -> v56 [label="ref_fasta"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="CALL_WF:GATK_FLAG_STAT"];
+v55 -> v56 [label="*"];
+
+v56 [label="CALL_WF:GATK_FLAG_STAT"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v58;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 [label="CALL_WF:UTILS_SAMPLE_STATS"];
+v59 -> v60 [label="sample_stats_ch"];
+
+v60 [label="CALL_WF:UTILS_SAMPLE_STATS"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 [label="CALL_WF:UTILS_COHORT_STATS"];
+v61 -> v62;
+
+v62 [label="CALL_WF:UTILS_COHORT_STATS"];
+v81 [label="UTILS_MERGE_COHORT_STATS"];
+v62 -> v81;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v63 -> v120 [label="gvcf_ch"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v64 -> v67 [label="reformatted_lofreq_vcf_ch"];
+
+v46 [label="CALL_WF:BGZIP__LOFREQ"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 [shape=point];
+v65 -> v66 [label="bgzip_ch"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v69 -> v70 [label="vcfs_string_ch"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v71 [label="MINOR_VARIANTS_ANALYSIS_WF:BCFTOOLS_MERGE__LOFREQ"];
+v70 -> v71 [label="vcfs_file"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v71 [label="MINOR_VARIANTS_ANALYSIS_WF:BCFTOOLS_MERGE__LOFREQ"];
+v64 -> v71 [label="reformatted_lofreq_vcf_ch"];
+
+v71 [label="MINOR_VARIANTS_ANALYSIS_WF:BCFTOOLS_MERGE__LOFREQ"];
+v73 [label="MINOR_VARIANTS_ANALYSIS_WF:TBPROFILER_VCF_PROFILE__LOFREQ"];
+v71 -> v73;
+
+v72 [shape=point,label="",fixedsize=true,width=0.1];
+v73 [label="MINOR_VARIANTS_ANALYSIS_WF:TBPROFILER_VCF_PROFILE__LOFREQ"];
+v72 -> v73 [label="resistanceDb"];
+
+v73 [label="MINOR_VARIANTS_ANALYSIS_WF:TBPROFILER_VCF_PROFILE__LOFREQ"];
+v74 [shape=point];
+v73 -> v74;
+
+v73 [label="MINOR_VARIANTS_ANALYSIS_WF:TBPROFILER_VCF_PROFILE__LOFREQ"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v73 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v78 [label="MINOR_VARIANTS_ANALYSIS_WF:TBPROFILER_COLLATE__LOFREQ"];
+v75 -> v78;
+
+v76 [shape=point,label="",fixedsize=true,width=0.1];
+v78 [label="MINOR_VARIANTS_ANALYSIS_WF:TBPROFILER_COLLATE__LOFREQ"];
+v76 -> v78 [label="joint_name"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1];
+v78 [label="MINOR_VARIANTS_ANALYSIS_WF:TBPROFILER_COLLATE__LOFREQ"];
+v77 -> v78 [label="resistanceDb"];
+
+v78 [label="MINOR_VARIANTS_ANALYSIS_WF:TBPROFILER_COLLATE__LOFREQ"];
+v79 [shape=point];
+v78 -> v79;
+
+v78 [label="MINOR_VARIANTS_ANALYSIS_WF:TBPROFILER_COLLATE__LOFREQ"];
+v80 [label="MINOR_VARIANTS_ANALYSIS_WF:UTILS_MULTIPLE_INFECTION_FILTER"];
+v78 -> v80 [label="minor_variants_results_ch"];
+
+v80 [label="MINOR_VARIANTS_ANALYSIS_WF:UTILS_MULTIPLE_INFECTION_FILTER"];
+v81 [label="UTILS_MERGE_COHORT_STATS"];
+v80 -> v81 [label="approved_samples_ch"];
+
+v80 [label="MINOR_VARIANTS_ANALYSIS_WF:UTILS_MULTIPLE_INFECTION_FILTER"];
+v81 [label="UTILS_MERGE_COHORT_STATS"];
+v80 -> v81 [label="rejected_samples_ch"];
+
+v81 [label="UTILS_MERGE_COHORT_STATS"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v81 -> v82 [label="merged_cohort_stats_ch"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v82 -> v83;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v84 -> v90 [label="samples_ch"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:BWA_MEM__DELLY"];
+v11 -> v87 [label="validated_reads_ch"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v87 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:BWA_MEM__DELLY"];
+v85 -> v87 [label="reference"];
+
+v86 [shape=point,label="",fixedsize=true,width=0.1];
+v87 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:BWA_MEM__DELLY"];
+v86 -> v87 [label="*"];
+
+v87 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:BWA_MEM__DELLY"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v88 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v89 -> v90 [label="normalize_libraries_ch"];
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v91 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:SAMTOOLS_MERGE__DELLY"];
+v90 -> v91 [label="normalize_filtered_ch"];
+
+v91 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:SAMTOOLS_MERGE__DELLY"];
+v92 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:GATK_MARK_DUPLICATES__DELLY"];
+v91 -> v92;
+
+v92 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:GATK_MARK_DUPLICATES__DELLY"];
+v94 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:SAMTOOLS_INDEX__DELLY"];
+v92 -> v94 [label="recalibrated_bam_ch"];
+
+v92 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:GATK_MARK_DUPLICATES__DELLY"];
+v93 [shape=point];
+v92 -> v93;
+
+v94 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:SAMTOOLS_INDEX__DELLY"];
+v96 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:DELLY_CALL"];
+v94 -> v96;
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:DELLY_CALL"];
+v95 -> v96 [label="reference"];
+
+v96 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:DELLY_CALL"];
+v97 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:BCFTOOLS_VIEW__DELLY"];
+v96 -> v97;
+
+v97 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:BCFTOOLS_VIEW__DELLY"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v97 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v109 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:BCFTOOLS_MERGE__DELLY"];
+v102 -> v109 [label="vcfs_and_indexes_ch"];
+
+v97 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:BCFTOOLS_VIEW__DELLY"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v97 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v105 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 [shape=point];
+v107 -> v108 [label="delly_vcfs_string_ch"];
+
+v109 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:BCFTOOLS_MERGE__DELLY"];
+v111 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:TBPROFILER_VCF_PROFILE__DELLY"];
+v109 -> v111;
+
+v110 [shape=point,label="",fixedsize=true,width=0.1];
+v111 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:TBPROFILER_VCF_PROFILE__DELLY"];
+v110 -> v111 [label="resistanceDb"];
+
+v111 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:TBPROFILER_VCF_PROFILE__DELLY"];
+v114 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:TBPROFILER_COLLATE__DELLY"];
+v111 -> v114;
+
+v112 [shape=point,label="",fixedsize=true,width=0.1];
+v114 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:TBPROFILER_COLLATE__DELLY"];
+v112 -> v114 [label="joint_name"];
+
+v113 [shape=point,label="",fixedsize=true,width=0.1];
+v114 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:TBPROFILER_COLLATE__DELLY"];
+v113 -> v114 [label="resistanceDb"];
+
+v114 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:TBPROFILER_COLLATE__DELLY"];
+v115 [shape=point];
+v114 -> v115;
+
+v114 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:TBPROFILER_COLLATE__DELLY"];
+v361 [label="REPORTS_WF:UTILS_SUMMARIZE_RESISTANCE_RESULTS"];
+v114 -> v361 [label="structural_variants_results_ch"];
+
+v81 [label="UTILS_MERGE_COHORT_STATS"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v81 -> v116 [label="merged_cohort_stats_ch"];
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v116 -> v117;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v117 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v119 -> v122 [label="approved_samples_ch"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v121 -> v122 [label="collated_gvcfs_ch"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v123 -> v124 [label="selected_gvcfs_ch"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v124 -> v125;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v125 -> v126 [label="cohort_gvcfs_ch"];
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v126 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v128 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v135 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_COMBINE_GVCFS"];
+v129 -> v135 [label="gvcfs_string_ch"];
+
+v130 [shape=point,label="",fixedsize=true,width=0.1];
+v135 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_COMBINE_GVCFS"];
+v130 -> v135 [label="joint_name"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v135 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_COMBINE_GVCFS"];
+v125 -> v135 [label="cohort_gvcfs_ch"];
+
+v131 [shape=point,label="",fixedsize=true,width=0.1];
+v135 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_COMBINE_GVCFS"];
+v131 -> v135 [label="ref_fasta"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v135 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_COMBINE_GVCFS"];
+v132 -> v135 [label="ref_exit_rif_gvcf"];
+
+v133 [shape=point,label="",fixedsize=true,width=0.1];
+v135 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_COMBINE_GVCFS"];
+v133 -> v135 [label="ref_exit_rif_gvcf_tbi"];
+
+v134 [shape=point,label="",fixedsize=true,width=0.1];
+v135 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_COMBINE_GVCFS"];
+v134 -> v135 [label="*"];
+
+v135 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_COMBINE_GVCFS"];
+v138 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_GENOTYPE_GVCFS"];
+v135 -> v138;
+
+v136 [shape=point,label="",fixedsize=true,width=0.1];
+v138 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_GENOTYPE_GVCFS"];
+v136 -> v138 [label="ref_fasta"];
+
+v137 [shape=point,label="",fixedsize=true,width=0.1];
+v138 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_GENOTYPE_GVCFS"];
+v137 -> v138 [label="*"];
+
+v138 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_GENOTYPE_GVCFS"];
+v140 [label="MERGE_WF:PREPARE_COHORT_VCF:SNPEFF"];
+v138 -> v140;
+
+v139 [shape=point,label="",fixedsize=true,width=0.1];
+v140 [label="MERGE_WF:PREPARE_COHORT_VCF:SNPEFF"];
+v139 -> v140 [label="ref_fasta"];
+
+v140 [label="MERGE_WF:PREPARE_COHORT_VCF:SNPEFF"];
+v141 [label="MERGE_WF:PREPARE_COHORT_VCF:BGZIP"];
+v140 -> v141;
+
+v141 [label="MERGE_WF:PREPARE_COHORT_VCF:BGZIP"];
+v143 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_INDEX_FEATURE_FILE__COHORT"];
+v141 -> v143;
+
+v142 [shape=point,label="",fixedsize=true,width=0.1];
+v143 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_INDEX_FEATURE_FILE__COHORT"];
+v142 -> v143 [label="outputPrefix"];
+
+v143 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_INDEX_FEATURE_FILE__COHORT"];
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v143 -> v152 [label="cohort_vcf_and_index_ch"];
+
+v143 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_INDEX_FEATURE_FILE__COHORT"];
+v144 [shape=point];
+v143 -> v144;
+
+v145 [shape=point,label="",fixedsize=true,width=0.1];
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v145 -> v152 [label="variantType"];
+
+v146 [shape=point,label="",fixedsize=true,width=0.1];
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v146 -> v152 [label="prefix"];
+
+v147 [shape=point,label="",fixedsize=true,width=0.1];
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v147 -> v152 [label="resourceFilesArg"];
+
+v148 [shape=point,label="",fixedsize=true,width=0.1];
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v148 -> v152 [label="resourceFiles"];
+
+v149 [shape=point,label="",fixedsize=true,width=0.1];
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v149 -> v152 [label="resourceFileIndexes"];
+
+v150 [shape=point,label="",fixedsize=true,width=0.1];
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v150 -> v152 [label="reference"];
+
+v151 [shape=point,label="",fixedsize=true,width=0.1];
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v151 -> v152 [label="*"];
+
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v152 -> v172 [label="select_variants_vcftuple_ch"];
+
+v153 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v153 -> v154;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v155 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v156 -> v157 [label="arg_files_ch"];
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v157 -> v158;
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v158 -> v159;
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v159 -> v172 [label="args_ch"];
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v156 -> v160 [label="arg_files_ch"];
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v160 -> v161;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v161 -> v162;
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v162 -> v163;
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v163 -> v172 [label="resources_files_ch"];
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v156 -> v164 [label="arg_files_ch"];
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v164 -> v165;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v165 -> v166;
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v166 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v167 -> v172 [label="resources_file_indexes_ch"];
+
+v168 [shape=point,label="",fixedsize=true,width=0.1];
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v168 -> v172 [label="analysisMode"];
+
+v169 [shape=point,label="",fixedsize=true,width=0.1];
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v169 -> v172 [label="annotations"];
+
+v170 [shape=point,label="",fixedsize=true,width=0.1];
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v170 -> v172 [label="reference"];
+
+v171 [shape=point,label="",fixedsize=true,width=0.1];
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v171 -> v172 [label="*"];
+
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v172 -> v235;
+
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v172 -> v176;
+
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v175 [shape=point];
+v172 -> v175;
+
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v174 [shape=point];
+v172 -> v174;
+
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v173 [shape=point];
+v172 -> v173;
+
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v172 -> v176;
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v178 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN7"];
+v176 -> v178 [label="elim_ann7_ch"];
+
+v177 [shape=point,label="",fixedsize=true,width=0.1];
+v178 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN7"];
+v177 -> v178 [label="analysisType"];
+
+v178 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN7"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v178 -> v179;
+
+v178 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN7"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v178 -> v251;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v179 -> v183 [label="ann6_ch"];
+
+v180 [shape=point,label="",fixedsize=true,width=0.1];
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v180 -> v183 [label="analysisMode"];
+
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v152 -> v183 [label="select_variants_vcftuple_ch"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v159 -> v183 [label="args_ch"];
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v163 -> v183 [label="resources_files_ch"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v167 -> v183 [label="resources_file_indexes_ch"];
+
+v181 [shape=point,label="",fixedsize=true,width=0.1];
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v181 -> v183 [label="reference"];
+
+v182 [shape=point,label="",fixedsize=true,width=0.1];
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v182 -> v183 [label="*"];
+
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v183 -> v235;
+
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v183 -> v187;
+
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v186 [shape=point];
+v183 -> v186;
+
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v185 [shape=point];
+v183 -> v185;
+
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v184 [shape=point];
+v183 -> v184;
+
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v183 -> v187;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v189 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN6"];
+v187 -> v189 [label="elim_ann6_ch"];
+
+v188 [shape=point,label="",fixedsize=true,width=0.1];
+v189 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN6"];
+v188 -> v189 [label="analysisType"];
+
+v189 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN6"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v189 -> v190;
+
+v189 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN6"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v189 -> v251;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v190 -> v194 [label="ann5_ch"];
+
+v191 [shape=point,label="",fixedsize=true,width=0.1];
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v191 -> v194 [label="analysisMode"];
+
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v152 -> v194 [label="select_variants_vcftuple_ch"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v159 -> v194 [label="args_ch"];
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v163 -> v194 [label="resources_files_ch"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v167 -> v194 [label="resources_file_indexes_ch"];
+
+v192 [shape=point,label="",fixedsize=true,width=0.1];
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v192 -> v194 [label="reference"];
+
+v193 [shape=point,label="",fixedsize=true,width=0.1];
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v193 -> v194 [label="*"];
+
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v194 -> v236;
+
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v194 -> v198;
+
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v197 [shape=point];
+v194 -> v197;
+
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v196 [shape=point];
+v194 -> v196;
+
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v195 [shape=point];
+v194 -> v195;
+
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v194 -> v198;
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v200 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN5"];
+v198 -> v200 [label="elim_ann5_ch"];
+
+v199 [shape=point,label="",fixedsize=true,width=0.1];
+v200 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN5"];
+v199 -> v200 [label="analysisType"];
+
+v200 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN5"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v200 -> v201;
+
+v200 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN5"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v200 -> v252;
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v201 -> v205 [label="ann4_ch"];
+
+v202 [shape=point,label="",fixedsize=true,width=0.1];
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v202 -> v205 [label="analysisMode"];
+
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v152 -> v205 [label="select_variants_vcftuple_ch"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v159 -> v205 [label="args_ch"];
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v163 -> v205 [label="resources_files_ch"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v167 -> v205 [label="resources_file_indexes_ch"];
+
+v203 [shape=point,label="",fixedsize=true,width=0.1];
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v203 -> v205 [label="reference"];
+
+v204 [shape=point,label="",fixedsize=true,width=0.1];
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v204 -> v205 [label="*"];
+
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v205 -> v237;
+
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v205 -> v209;
+
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v208 [shape=point];
+v205 -> v208;
+
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v207 [shape=point];
+v205 -> v207;
+
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v206 [shape=point];
+v205 -> v206;
+
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v205 -> v209;
+
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v211 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN4"];
+v209 -> v211 [label="elim_ann4_ch"];
+
+v210 [shape=point,label="",fixedsize=true,width=0.1];
+v211 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN4"];
+v210 -> v211 [label="analysisType"];
+
+v211 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN4"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v211 -> v212;
+
+v211 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN4"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v211 -> v253;
+
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v212 -> v216 [label="ann3_ch"];
+
+v213 [shape=point,label="",fixedsize=true,width=0.1];
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v213 -> v216 [label="analysisMode"];
+
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v152 -> v216 [label="select_variants_vcftuple_ch"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v159 -> v216 [label="args_ch"];
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v163 -> v216 [label="resources_files_ch"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v167 -> v216 [label="resources_file_indexes_ch"];
+
+v214 [shape=point,label="",fixedsize=true,width=0.1];
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v214 -> v216 [label="reference"];
+
+v215 [shape=point,label="",fixedsize=true,width=0.1];
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v215 -> v216 [label="*"];
+
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v216 -> v238;
+
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v216 -> v220;
+
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v219 [shape=point];
+v216 -> v219;
+
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v218 [shape=point];
+v216 -> v218;
+
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v217 [shape=point];
+v216 -> v217;
+
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v216 -> v220;
+
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v222 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN3"];
+v220 -> v222 [label="elim_ann3_ch"];
+
+v221 [shape=point,label="",fixedsize=true,width=0.1];
+v222 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN3"];
+v221 -> v222 [label="analysisType"];
+
+v222 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN3"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v222 -> v223;
+
+v222 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN3"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v222 -> v254;
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v223 -> v227 [label="ann2_ch"];
+
+v224 [shape=point,label="",fixedsize=true,width=0.1];
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v224 -> v227 [label="analysisMode"];
+
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v152 -> v227 [label="select_variants_vcftuple_ch"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v159 -> v227 [label="args_ch"];
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v163 -> v227 [label="resources_files_ch"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v167 -> v227 [label="resources_file_indexes_ch"];
+
+v225 [shape=point,label="",fixedsize=true,width=0.1];
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v225 -> v227 [label="reference"];
+
+v226 [shape=point,label="",fixedsize=true,width=0.1];
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v226 -> v227 [label="*"];
+
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v227 -> v239;
+
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v227 -> v231;
+
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v230 [shape=point];
+v227 -> v230;
+
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v229 [shape=point];
+v227 -> v229;
+
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v228 [shape=point];
+v227 -> v228;
+
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v227 -> v231;
+
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v233 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN2"];
+v231 -> v233 [label="elim_ann2_ch"];
+
+v232 [shape=point,label="",fixedsize=true,width=0.1];
+v233 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN2"];
+v232 -> v233 [label="analysisType"];
+
+v233 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN2"];
+v234 [shape=point];
+v233 -> v234;
+
+v233 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_ELIMINATE_ANNOTATION__ANN2"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v233 -> v255;
+
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v235 -> v236;
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v236 -> v237;
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v237 -> v238;
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v238 -> v239;
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v239 -> v240;
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v240 -> v241;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v241 -> v242;
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v260 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_SELECT_BEST_ANNOTATIONS"];
+v242 -> v260 [label="recal_vcf_files_ch"];
+
+v172 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN7"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v172 -> v243;
+
+v183 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN6"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v183 -> v243;
+
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v243 -> v244;
+
+v194 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN5"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v194 -> v244;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v244 -> v245;
+
+v205 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN4"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v205 -> v245;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v245 -> v246;
+
+v216 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN3"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v216 -> v246;
+
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v246 -> v247;
+
+v227 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:GATK_VARIANT_RECALIBRATOR__ANN2"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v227 -> v247;
+
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v247 -> v248;
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v248 -> v249;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v249 -> v250;
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v260 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_SELECT_BEST_ANNOTATIONS"];
+v250 -> v260 [label="tranches_files_ch"];
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v251 -> v252;
+
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v252 -> v253;
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v253 -> v254;
+
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v254 -> v255;
+
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v255 -> v256;
+
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v256 -> v257;
+
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v257 -> v258;
+
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v260 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_SELECT_BEST_ANNOTATIONS"];
+v258 -> v260 [label="annotations_and_tranches_json_files_ch"];
+
+v259 [shape=point,label="",fixedsize=true,width=0.1];
+v260 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_SELECT_BEST_ANNOTATIONS"];
+v259 -> v260 [label="joint_name"];
+
+v260 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_SELECT_BEST_ANNOTATIONS"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v260 -> v262;
+
+v260 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_SELECT_BEST_ANNOTATIONS"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v260 -> v263;
+
+v260 [label="MERGE_WF:SNP_ANALYSIS:OPTIMIZE_VARIANT_RECALIBRATION:UTILS_SELECT_BEST_ANNOTATIONS"];
+v261 [shape=point];
+v260 -> v261;
+
+v152 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__SNP"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v152 -> v262 [label="select_variants_vcftuple_ch"];
+
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v262 -> v263;
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v267 [label="MERGE_WF:SNP_ANALYSIS:GATK_APPLY_VQSR__SNP"];
+v263 -> v267 [label="vqsr_ch"];
+
+v264 [shape=point,label="",fixedsize=true,width=0.1];
+v267 [label="MERGE_WF:SNP_ANALYSIS:GATK_APPLY_VQSR__SNP"];
+v264 -> v267 [label="analysisMode"];
+
+v265 [shape=point,label="",fixedsize=true,width=0.1];
+v267 [label="MERGE_WF:SNP_ANALYSIS:GATK_APPLY_VQSR__SNP"];
+v265 -> v267 [label="reference"];
+
+v266 [shape=point,label="",fixedsize=true,width=0.1];
+v267 [label="MERGE_WF:SNP_ANALYSIS:GATK_APPLY_VQSR__SNP"];
+v266 -> v267 [label="*"];
+
+v267 [label="MERGE_WF:SNP_ANALYSIS:GATK_APPLY_VQSR__SNP"];
+v272 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__EXCLUSION__SNP"];
+v267 -> v272 [label="snp_inc_vcf_ch"];
+
+v268 [shape=point,label="",fixedsize=true,width=0.1];
+v272 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__EXCLUSION__SNP"];
+v268 -> v272 [label="analysisMode"];
+
+v269 [shape=point,label="",fixedsize=true,width=0.1];
+v272 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__EXCLUSION__SNP"];
+v269 -> v272 [label="intervalFile"];
+
+v270 [shape=point,label="",fixedsize=true,width=0.1];
+v272 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__EXCLUSION__SNP"];
+v270 -> v272 [label="reference"];
+
+v271 [shape=point,label="",fixedsize=true,width=0.1];
+v272 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__EXCLUSION__SNP"];
+v271 -> v272 [label="*"];
+
+v272 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__EXCLUSION__SNP"];
+v304 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v272 -> v304 [label="vcf_ch"];
+
+v273 [shape=point,label="",fixedsize=true,width=0.1];
+v280 [label="MERGE_WF:INDEL_ANALYSIS:GATK_SELECT_VARIANTS__INDEL"];
+v273 -> v280 [label="variantType"];
+
+v274 [shape=point,label="",fixedsize=true,width=0.1];
+v280 [label="MERGE_WF:INDEL_ANALYSIS:GATK_SELECT_VARIANTS__INDEL"];
+v274 -> v280 [label="prefix"];
+
+v143 [label="MERGE_WF:PREPARE_COHORT_VCF:GATK_INDEX_FEATURE_FILE__COHORT"];
+v280 [label="MERGE_WF:INDEL_ANALYSIS:GATK_SELECT_VARIANTS__INDEL"];
+v143 -> v280 [label="cohort_vcf_and_index_ch"];
+
+v275 [shape=point,label="",fixedsize=true,width=0.1];
+v280 [label="MERGE_WF:INDEL_ANALYSIS:GATK_SELECT_VARIANTS__INDEL"];
+v275 -> v280 [label="resourceFilesArg"];
+
+v276 [shape=point,label="",fixedsize=true,width=0.1];
+v280 [label="MERGE_WF:INDEL_ANALYSIS:GATK_SELECT_VARIANTS__INDEL"];
+v276 -> v280 [label="resourceFiles"];
+
+v277 [shape=point,label="",fixedsize=true,width=0.1];
+v280 [label="MERGE_WF:INDEL_ANALYSIS:GATK_SELECT_VARIANTS__INDEL"];
+v277 -> v280 [label="resourceFileIndexes"];
+
+v278 [shape=point,label="",fixedsize=true,width=0.1];
+v280 [label="MERGE_WF:INDEL_ANALYSIS:GATK_SELECT_VARIANTS__INDEL"];
+v278 -> v280 [label="reference"];
+
+v279 [shape=point,label="",fixedsize=true,width=0.1];
+v280 [label="MERGE_WF:INDEL_ANALYSIS:GATK_SELECT_VARIANTS__INDEL"];
+v279 -> v280 [label="*"];
+
+v280 [label="MERGE_WF:INDEL_ANALYSIS:GATK_SELECT_VARIANTS__INDEL"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v280 -> v281 [label="indel_vcf_ch"];
+
+v267 [label="MERGE_WF:SNP_ANALYSIS:GATK_APPLY_VQSR__SNP"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v267 -> v281 [label="snp_inc_vcf_ch"];
+
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v282 [label="MERGE_WF:GATK_MERGE_VCFS__INC"];
+v281 -> v282 [label="merge_inc_vcf_ch"];
+
+v282 [label="MERGE_WF:GATK_MERGE_VCFS__INC"];
+v284 [label="MERGE_WF:MAJOR_VARIANT_ANALYSIS:TBPROFILER_VCF_PROFILE__COHORT"];
+v282 -> v284 [label="merged_vcf_ch"];
+
+v283 [shape=point,label="",fixedsize=true,width=0.1];
+v284 [label="MERGE_WF:MAJOR_VARIANT_ANALYSIS:TBPROFILER_VCF_PROFILE__COHORT"];
+v283 -> v284 [label="resistanceDb"];
+
+v284 [label="MERGE_WF:MAJOR_VARIANT_ANALYSIS:TBPROFILER_VCF_PROFILE__COHORT"];
+v287 [label="MERGE_WF:MAJOR_VARIANT_ANALYSIS:TBPROFILER_COLLATE__COHORT"];
+v284 -> v287;
+
+v285 [shape=point,label="",fixedsize=true,width=0.1];
+v287 [label="MERGE_WF:MAJOR_VARIANT_ANALYSIS:TBPROFILER_COLLATE__COHORT"];
+v285 -> v287 [label="joint_name"];
+
+v286 [shape=point,label="",fixedsize=true,width=0.1];
+v287 [label="MERGE_WF:MAJOR_VARIANT_ANALYSIS:TBPROFILER_COLLATE__COHORT"];
+v286 -> v287 [label="resistanceDb"];
+
+v287 [label="MERGE_WF:MAJOR_VARIANT_ANALYSIS:TBPROFILER_COLLATE__COHORT"];
+v288 [shape=point];
+v287 -> v288;
+
+v287 [label="MERGE_WF:MAJOR_VARIANT_ANALYSIS:TBPROFILER_COLLATE__COHORT"];
+v361 [label="REPORTS_WF:UTILS_SUMMARIZE_RESISTANCE_RESULTS"];
+v287 -> v361 [label="major_variants_results_ch"];
+
+v289 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v289 -> v290;
+
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v290 -> v291;
+
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v291 -> v293 [label="arg_files_ch"];
+
+v292 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v304 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v292 -> v304 [label="prefix"];
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v293 -> v294;
+
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v304 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v294 -> v304 [label="args_ch"];
+
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v291 -> v295 [label="arg_files_ch"];
+
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v295 -> v296;
+
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v296 -> v297;
+
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v304 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v297 -> v304 [label="resources_files_ch"];
+
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v291 -> v298 [label="arg_files_ch"];
+
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v298 -> v299;
+
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v299 -> v300;
+
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v304 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v300 -> v304 [label="resources_file_indexes_ch"];
+
+v301 [shape=point,label="",fixedsize=true,width=0.1];
+v304 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v301 -> v304 [label="variantType"];
+
+v302 [shape=point,label="",fixedsize=true,width=0.1];
+v304 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v302 -> v304 [label="reference"];
+
+v303 [shape=point,label="",fixedsize=true,width=0.1];
+v304 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v303 -> v304 [label="*"];
+
+v304 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v305 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:GATK_VARIANTS_TO_TABLE"];
+v304 -> v305;
+
+v292 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v305 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:GATK_VARIANTS_TO_TABLE"];
+v292 -> v305 [label="prefix"];
+
+v305 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:GATK_VARIANTS_TO_TABLE"];
+v306 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:SNPSITES"];
+v305 -> v306;
+
+v292 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v306 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:SNPSITES"];
+v292 -> v306 [label="prefix"];
+
+v306 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:SNPSITES"];
+v307 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:SNPDISTS"];
+v306 -> v307;
+
+v292 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v307 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:SNPDISTS"];
+v292 -> v307 [label="prefix"];
+
+v307 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:SNPDISTS"];
+v308 [shape=point];
+v307 -> v308;
+
+v292 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v309 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:IQTREE"];
+v292 -> v309 [label="prefix"];
+
+v306 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:SNPSITES"];
+v309 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:IQTREE"];
+v306 -> v309;
+
+v309 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:IQTREE"];
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v309 -> v317;
+
+v309 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:IQTREE"];
+v316 [shape=point];
+v309 -> v316;
+
+v309 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:IQTREE"];
+v315 [shape=point];
+v309 -> v315;
+
+v309 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:IQTREE"];
+v314 [shape=point];
+v309 -> v314;
+
+v309 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:IQTREE"];
+v313 [shape=point];
+v309 -> v313;
+
+v309 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:IQTREE"];
+v312 [shape=point];
+v309 -> v312;
+
+v309 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:IQTREE"];
+v311 [shape=point];
+v309 -> v311;
+
+v309 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:IQTREE"];
+v310 [shape=point];
+v309 -> v310;
+
+v306 [label="MERGE_WF:PHYLOGENY_ANALYSIS__EXCOMPLEX:SNPSITES"];
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v306 -> v317;
+
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v319 [label="MERGE_WF:CLUSTER_ANALYSIS__EXCOMPLEX:CLUSTERPICKER__5SNP"];
+v317 -> v319 [label="cluster_files_ch"];
+
+v318 [shape=point,label="",fixedsize=true,width=0.1];
+v319 [label="MERGE_WF:CLUSTER_ANALYSIS__EXCOMPLEX:CLUSTERPICKER__5SNP"];
+v318 -> v319 [label="snpCount"];
+
+v292 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v319 [label="MERGE_WF:CLUSTER_ANALYSIS__EXCOMPLEX:CLUSTERPICKER__5SNP"];
+v292 -> v319 [label="prefix"];
+
+v319 [label="MERGE_WF:CLUSTER_ANALYSIS__EXCOMPLEX:CLUSTERPICKER__5SNP"];
+v320 [shape=point];
+v319 -> v320;
+
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v322 [label="MERGE_WF:CLUSTER_ANALYSIS__EXCOMPLEX:CLUSTERPICKER__12SNP"];
+v317 -> v322 [label="cluster_files_ch"];
+
+v321 [shape=point,label="",fixedsize=true,width=0.1];
+v322 [label="MERGE_WF:CLUSTER_ANALYSIS__EXCOMPLEX:CLUSTERPICKER__12SNP"];
+v321 -> v322 [label="snpCount"];
+
+v292 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v322 [label="MERGE_WF:CLUSTER_ANALYSIS__EXCOMPLEX:CLUSTERPICKER__12SNP"];
+v292 -> v322 [label="prefix"];
+
+v322 [label="MERGE_WF:CLUSTER_ANALYSIS__EXCOMPLEX:CLUSTERPICKER__12SNP"];
+v323 [shape=point];
+v322 -> v323;
+
+v324 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v324 -> v325;
+
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v325 -> v326;
+
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v328 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v326 -> v328 [label="arg_files_ch"];
+
+v327 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v339 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v327 -> v339 [label="prefix"];
+
+v328 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v328 -> v329;
+
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v339 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v329 -> v339 [label="args_ch"];
+
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v326 -> v330 [label="arg_files_ch"];
+
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v330 -> v331;
+
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v331 -> v332;
+
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v339 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v332 -> v339 [label="resources_files_ch"];
+
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v326 -> v333 [label="arg_files_ch"];
+
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v333 -> v334;
+
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v334 -> v335;
+
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v339 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v335 -> v339 [label="resources_file_indexes_ch"];
+
+v336 [shape=point,label="",fixedsize=true,width=0.1];
+v339 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v336 -> v339 [label="variantType"];
+
+v272 [label="MERGE_WF:SNP_ANALYSIS:GATK_SELECT_VARIANTS__EXCLUSION__SNP"];
+v339 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v272 -> v339 [label="vcf_ch"];
+
+v337 [shape=point,label="",fixedsize=true,width=0.1];
+v339 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v337 -> v339 [label="reference"];
+
+v338 [shape=point,label="",fixedsize=true,width=0.1];
+v339 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v338 -> v339 [label="*"];
+
+v339 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:GATK_SELECT_VARIANTS__PHYLOGENY"];
+v340 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:GATK_VARIANTS_TO_TABLE"];
+v339 -> v340;
+
+v327 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v340 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:GATK_VARIANTS_TO_TABLE"];
+v327 -> v340 [label="prefix"];
+
+v340 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:GATK_VARIANTS_TO_TABLE"];
+v341 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:SNPSITES"];
+v340 -> v341;
+
+v327 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v341 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:SNPSITES"];
+v327 -> v341 [label="prefix"];
+
+v341 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:SNPSITES"];
+v342 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:SNPDISTS"];
+v341 -> v342;
+
+v327 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v342 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:SNPDISTS"];
+v327 -> v342 [label="prefix"];
+
+v342 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:SNPDISTS"];
+v343 [shape=point];
+v342 -> v343;
+
+v327 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v344 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:IQTREE"];
+v327 -> v344 [label="prefix"];
+
+v341 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:SNPSITES"];
+v344 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:IQTREE"];
+v341 -> v344;
+
+v344 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:IQTREE"];
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v344 -> v352;
+
+v344 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:IQTREE"];
+v351 [shape=point];
+v344 -> v351;
+
+v344 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:IQTREE"];
+v350 [shape=point];
+v344 -> v350;
+
+v344 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:IQTREE"];
+v349 [shape=point];
+v344 -> v349;
+
+v344 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:IQTREE"];
+v348 [shape=point];
+v344 -> v348;
+
+v344 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:IQTREE"];
+v347 [shape=point];
+v344 -> v347;
+
+v344 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:IQTREE"];
+v346 [shape=point];
+v344 -> v346;
+
+v344 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:IQTREE"];
+v345 [shape=point];
+v344 -> v345;
+
+v341 [label="MERGE_WF:PHYLOGENY_ANALYSIS__INCCOMPLEX:SNPSITES"];
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v341 -> v352;
+
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v354 [label="MERGE_WF:CLUSTER_ANALYSIS__INCCOMPLEX:CLUSTERPICKER__5SNP"];
+v352 -> v354 [label="cluster_files_ch"];
+
+v353 [shape=point,label="",fixedsize=true,width=0.1];
+v354 [label="MERGE_WF:CLUSTER_ANALYSIS__INCCOMPLEX:CLUSTERPICKER__5SNP"];
+v353 -> v354 [label="snpCount"];
+
+v327 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v354 [label="MERGE_WF:CLUSTER_ANALYSIS__INCCOMPLEX:CLUSTERPICKER__5SNP"];
+v327 -> v354 [label="prefix"];
+
+v354 [label="MERGE_WF:CLUSTER_ANALYSIS__INCCOMPLEX:CLUSTERPICKER__5SNP"];
+v355 [shape=point];
+v354 -> v355;
+
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v357 [label="MERGE_WF:CLUSTER_ANALYSIS__INCCOMPLEX:CLUSTERPICKER__12SNP"];
+v352 -> v357 [label="cluster_files_ch"];
+
+v356 [shape=point,label="",fixedsize=true,width=0.1];
+v357 [label="MERGE_WF:CLUSTER_ANALYSIS__INCCOMPLEX:CLUSTERPICKER__12SNP"];
+v356 -> v357 [label="snpCount"];
+
+v327 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v357 [label="MERGE_WF:CLUSTER_ANALYSIS__INCCOMPLEX:CLUSTERPICKER__12SNP"];
+v327 -> v357 [label="prefix"];
+
+v357 [label="MERGE_WF:CLUSTER_ANALYSIS__INCCOMPLEX:CLUSTERPICKER__12SNP"];
+v358 [shape=point];
+v357 -> v358;
+
+v359 [label="REPORTS_WF:MULTIQC"];
+v360 [shape=point];
+v359 -> v360;
+
+v81 [label="UTILS_MERGE_COHORT_STATS"];
+v361 [label="REPORTS_WF:UTILS_SUMMARIZE_RESISTANCE_RESULTS"];
+v81 -> v361 [label="merged_cohort_stats_ch"];
+
+v78 [label="MINOR_VARIANTS_ANALYSIS_WF:TBPROFILER_COLLATE__LOFREQ"];
+v361 [label="REPORTS_WF:UTILS_SUMMARIZE_RESISTANCE_RESULTS"];
+v78 -> v361 [label="minor_variants_results_ch"];
+
+v361 [label="REPORTS_WF:UTILS_SUMMARIZE_RESISTANCE_RESULTS"];
+v362 [shape=point];
+v361 -> v362;
+
+v81 [label="UTILS_MERGE_COHORT_STATS"];
+v363 [label="REPORTS_WF:UTILS_SUMMARIZE_RESISTANCE_RESULTS_MIXED_INFECTION"];
+v81 -> v363 [label="merged_cohort_stats_ch"];
+
+v78 [label="MINOR_VARIANTS_ANALYSIS_WF:TBPROFILER_COLLATE__LOFREQ"];
+v363 [label="REPORTS_WF:UTILS_SUMMARIZE_RESISTANCE_RESULTS_MIXED_INFECTION"];
+v78 -> v363 [label="minor_variants_results_ch"];
+
+v114 [label="STRUCTURAL_VARIANTS_ANALYSIS_WF:TBPROFILER_COLLATE__DELLY"];
+v363 [label="REPORTS_WF:UTILS_SUMMARIZE_RESISTANCE_RESULTS_MIXED_INFECTION"];
+v114 -> v363 [label="structural_variants_results_ch"];
+
+v363 [label="REPORTS_WF:UTILS_SUMMARIZE_RESISTANCE_RESULTS_MIXED_INFECTION"];
+v364 [shape=point];
+v363 -> v364;
+
+}

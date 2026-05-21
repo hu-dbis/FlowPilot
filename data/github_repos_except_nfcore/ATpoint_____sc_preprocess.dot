@@ -1,0 +1,318 @@
+digraph "ATpoint_____sc_preprocess" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="INDEXING:ParseExonIntronTx"];
+v0 -> v2 [label="genome"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="INDEXING:ParseExonIntronTx"];
+v1 -> v2 [label="gtf"];
+
+v2 [label="INDEXING:ParseExonIntronTx"];
+v6 [label="INDEXING:AlevinIndex"];
+v2 -> v6;
+
+v2 [label="INDEXING:ParseExonIntronTx"];
+v3 [shape=point];
+v2 -> v3;
+
+v2 [label="INDEXING:ParseExonIntronTx"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v29 [label="indexing_features"];
+
+v2 [label="INDEXING:ParseExonIntronTx"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v19 [label="indexing_tgmap"];
+
+v2 [label="INDEXING:ParseExonIntronTx"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v21 [label="indexing_mtgenes"];
+
+v2 [label="INDEXING:ParseExonIntronTx"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v20 [label="indexing_rrnagenes"];
+
+v2 [label="INDEXING:ParseExonIntronTx"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v30 [label="indexing_gene2type"];
+
+v2 [label="INDEXING:ParseExonIntronTx"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v2 -> v9;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="INDEXING:AlevinIndex"];
+v4 -> v6 [label="genome"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="INDEXING:AlevinIndex"];
+v5 -> v6 [label="idxname"];
+
+v6 [label="INDEXING:AlevinIndex"];
+v8 [shape=point];
+v6 -> v8;
+
+v6 [label="INDEXING:AlevinIndex"];
+v7 [shape=point];
+v6 -> v7;
+
+v6 [label="INDEXING:AlevinIndex"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v18 [label="indexing_idx"];
+
+v6 [label="INDEXING:AlevinIndex"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v6 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v9 -> v44 [label="indexing_versions"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="VALIDATE:ValidateSamplesheet"];
+v10 -> v11 [label="samplesheet"];
+
+v11 [label="VALIDATE:ValidateSamplesheet"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v11 -> v12;
+
+v11 [label="VALIDATE:ValidateSamplesheet"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v11 -> v44 [label="validate_versions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v15 [label="tuple_fastq"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [label="Quant"];
+v15 -> v22 [label="ch_geneExpression"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v16 [label="tuple_fastq"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=point];
+v16 -> v17 [label="ch_featureBarcode"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [label="Quant"];
+v18 -> v22;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [label="Quant"];
+v19 -> v22;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [label="Quant"];
+v20 -> v22;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [label="Quant"];
+v21 -> v22;
+
+v22 [label="Quant"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v22 -> v26;
+
+v22 [label="Quant"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v22 -> v44 [label="quant_versions"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v23 -> v44 [label="indexfb_versions"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v24 -> v26 [label="quant_fb_channel"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v25 -> v44 [label="quantfb_versions"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v32 [label="Mtx"];
+v28 -> v32 [label="ch_for_mtx"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 [label="Mtx"];
+v29 -> v32;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 [label="Mtx"];
+v30 -> v32;
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="Mtx"];
+v31 -> v32 [label="translate_table"];
+
+v32 [label="Mtx"];
+v35 [shape=point];
+v32 -> v35;
+
+v32 [label="Mtx"];
+v34 [shape=point];
+v32 -> v34;
+
+v32 [label="Mtx"];
+v33 [shape=point];
+v32 -> v33;
+
+v32 [label="Mtx"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v40;
+
+v32 [label="Mtx"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v32 -> v44 [label="mtx_versions"];
+
+v22 [label="Quant"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v22 -> v36;
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v24 -> v36 [label="quant_fb_channel"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [label="AlevinQC"];
+v37 -> v38 [label="ch_for_aqc"];
+
+v38 [label="AlevinQC"];
+v39 [shape=point];
+v38 -> v39;
+
+v38 [label="AlevinQC"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v38 -> v44 [label="alevinqc_versions"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 [label="WriteNcells"];
+v40 -> v41;
+
+v41 [label="WriteNcells"];
+v43 [shape=point];
+v41 -> v43;
+
+v41 [label="WriteNcells"];
+v42 [shape=point];
+v41 -> v42;
+
+v41 [label="WriteNcells"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v41 -> v44 [label="ncells_versions"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 [label="CommandLines"];
+v47 -> v57 [label="x_commands"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v9 -> v48 [label="indexing_versions"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v48 -> v53;
+
+v22 [label="Quant"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v22 -> v49 [label="quant_versions"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v49 -> v53;
+
+v38 [label="AlevinQC"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v38 -> v50 [label="alevinqc_versions"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v50 -> v53;
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v25 -> v51 [label="quantfb_versions"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v51 -> v53;
+
+v32 [label="Mtx"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v32 -> v52 [label="mtx_versions"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v52 -> v53;
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v23 -> v53 [label="indexfb_versions"];
+
+v41 [label="WriteNcells"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v41 -> v53 [label="ncells_versions"];
+
+v11 [label="VALIDATE:ValidateSamplesheet"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v11 -> v53 [label="validate_versions"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 [label="CommandLines"];
+v56 -> v57 [label="x_versions"];
+
+v57 [label="CommandLines"];
+v59 [shape=point];
+v57 -> v59;
+
+v57 [label="CommandLines"];
+v58 [shape=point];
+v57 -> v58;
+
+}

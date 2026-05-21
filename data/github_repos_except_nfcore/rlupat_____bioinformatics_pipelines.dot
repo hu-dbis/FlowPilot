@@ -1,0 +1,434 @@
+digraph "rlupat_____bioinformatics_pipelines" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v2 -> v74 [label="ch_gatk_intervals"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v30 [label="GETFASTQC_ADAPTERS"];
+v3 -> v30 [label="ch_adapter_file"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v30 [label="GETFASTQC_ADAPTERS"];
+v4 -> v30 [label="ch_contaminant_file"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v7 [shape=point];
+v6 -> v7 [label="ch_known_indels"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v10 [shape=point];
+v9 -> v10 [label="ch_mills_indels"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v42 [label="ALIGN_AND_SORT:BWAMEM"];
+v12 -> v42 [label="ch_reference"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v15 [shape=point];
+v14 -> v15 [label="ch_snps_1000gp"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v17 -> v75 [label="ch_snps_dbsnp"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v19 -> v20 [label="ch_fastqs"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v22 [label="FASTQC"];
+v21 -> v22;
+
+v22 [label="FASTQC"];
+v28 [shape=point];
+v22 -> v28;
+
+v22 [label="FASTQC"];
+v30 [label="GETFASTQC_ADAPTERS"];
+v22 -> v30;
+
+v22 [label="FASTQC"];
+v27 [shape=point];
+v22 -> v27;
+
+v22 [label="FASTQC"];
+v26 [shape=point];
+v22 -> v26;
+
+v22 [label="FASTQC"];
+v25 [shape=point];
+v22 -> v25;
+
+v22 [label="FASTQC"];
+v30 [label="GETFASTQC_ADAPTERS"];
+v22 -> v30;
+
+v22 [label="FASTQC"];
+v24 [shape=point];
+v22 -> v24;
+
+v22 [label="FASTQC"];
+v23 [shape=point];
+v22 -> v23;
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="GETFASTQC_ADAPTERS"];
+v29 -> v30 [label="code_file"];
+
+v30 [label="GETFASTQC_ADAPTERS"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v30 -> v33;
+
+v30 [label="GETFASTQC_ADAPTERS"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v30 -> v36;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v19 -> v31 [label="ch_fastqs"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v40 [label="ALIGN_AND_SORT:CUTADAPT"];
+v32 -> v40 [label="ch_fastq"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v40 [label="ALIGN_AND_SORT:CUTADAPT"];
+v35 -> v40 [label="ch_three_prime_adapter_read1"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v40 [label="ALIGN_AND_SORT:CUTADAPT"];
+v38 -> v40 [label="ch_three_prime_adapter_read2"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="ALIGN_AND_SORT:CUTADAPT"];
+v39 -> v40 [label="output_prefix"];
+
+v40 [label="ALIGN_AND_SORT:CUTADAPT"];
+v42 [label="ALIGN_AND_SORT:BWAMEM"];
+v40 -> v42;
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v42 [label="ALIGN_AND_SORT:BWAMEM"];
+v41 -> v42 [label="sample_name"];
+
+v42 [label="ALIGN_AND_SORT:BWAMEM"];
+v44 [label="ALIGN_AND_SORT:SORTSAM"];
+v42 -> v44;
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="ALIGN_AND_SORT:SORTSAM"];
+v43 -> v44 [label="tmp_dir"];
+
+v44 [label="ALIGN_AND_SORT:SORTSAM"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v44 -> v45 [label="out"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v46 -> v47 [label="ch_bams"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v50 [label="MERGE_AND_MARKDUPS:MERGE_SAM_FILES"];
+v48 -> v50;
+
+v49 [shape=point,label="",fixedsize=true,width=0.1];
+v50 [label="MERGE_AND_MARKDUPS:MERGE_SAM_FILES"];
+v49 -> v50 [label="sample_name"];
+
+v50 [label="MERGE_AND_MARKDUPS:MERGE_SAM_FILES"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v54 [label="MERGE_AND_MARKDUPS:MARK_DUPLICATES"];
+v52 -> v54;
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="MERGE_AND_MARKDUPS:MARK_DUPLICATES"];
+v53 -> v54 [label="output_prefix"];
+
+v54 [label="MERGE_AND_MARKDUPS:MARK_DUPLICATES"];
+v59 [label="PERFORMANCE_SUMMARY:GATK4COLLECTINSERTSIZEMETRICS"];
+v54 -> v59 [label="ch_bam"];
+
+v54 [label="MERGE_AND_MARKDUPS:MARK_DUPLICATES"];
+v55 [shape=point];
+v54 -> v55;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v56 [label="ch_reference"];
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 [label="CALCULATE_PERFORMANCESUMMARY_GENOMEFILE"];
+v56 -> v58;
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v58 [label="CALCULATE_PERFORMANCESUMMARY_GENOMEFILE"];
+v57 -> v58 [label="code_file"];
+
+v58 [label="CALCULATE_PERFORMANCESUMMARY_GENOMEFILE"];
+v66 [label="PERFORMANCE_SUMMARY:BEDTOOLSGENOMECOVERAGEBED"];
+v58 -> v66 [label="ch_genome_file"];
+
+v59 [label="PERFORMANCE_SUMMARY:GATK4COLLECTINSERTSIZEMETRICS"];
+v68 [label="PERFORMANCE_SUMMARY:PERFORMANCESUMMARY"];
+v59 -> v68;
+
+v59 [label="PERFORMANCE_SUMMARY:GATK4COLLECTINSERTSIZEMETRICS"];
+v60 [shape=point];
+v59 -> v60;
+
+v54 [label="MERGE_AND_MARKDUPS:MARK_DUPLICATES"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v61 [label="ch_bam"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [label="PERFORMANCE_SUMMARY:BAMFLAGSTAT"];
+v61 -> v62;
+
+v62 [label="PERFORMANCE_SUMMARY:BAMFLAGSTAT"];
+v68 [label="PERFORMANCE_SUMMARY:PERFORMANCESUMMARY"];
+v62 -> v68;
+
+v54 [label="MERGE_AND_MARKDUPS:MARK_DUPLICATES"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v63 [label="ch_bam"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [label="PERFORMANCE_SUMMARY:SAMTOOLSVIEW"];
+v63 -> v64;
+
+v64 [label="PERFORMANCE_SUMMARY:SAMTOOLSVIEW"];
+v65 [label="PERFORMANCE_SUMMARY:RMDUPBAMFLAGSTAT"];
+v64 -> v65;
+
+v65 [label="PERFORMANCE_SUMMARY:RMDUPBAMFLAGSTAT"];
+v68 [label="PERFORMANCE_SUMMARY:PERFORMANCESUMMARY"];
+v65 -> v68;
+
+v64 [label="PERFORMANCE_SUMMARY:SAMTOOLSVIEW"];
+v66 [label="PERFORMANCE_SUMMARY:BEDTOOLSGENOMECOVERAGEBED"];
+v64 -> v66 [label="input_bam"];
+
+v66 [label="PERFORMANCE_SUMMARY:BEDTOOLSGENOMECOVERAGEBED"];
+v68 [label="PERFORMANCE_SUMMARY:PERFORMANCESUMMARY"];
+v66 -> v68;
+
+v67 [shape=point,label="",fixedsize=true,width=0.1];
+v68 [label="PERFORMANCE_SUMMARY:PERFORMANCESUMMARY"];
+v67 -> v68 [label="output_prefix"];
+
+v68 [label="PERFORMANCE_SUMMARY:PERFORMANCESUMMARY"];
+v69 [shape=point];
+v68 -> v69 [label="performanceSummaryOut"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v70 [label="ch_reference"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v72 [label="GENERATE_GATK_INTERVALS"];
+v70 -> v72;
+
+v71 [shape=point,label="",fixedsize=true,width=0.1];
+v72 [label="GENERATE_GATK_INTERVALS"];
+v71 -> v72 [label="code_file"];
+
+v72 [label="GENERATE_GATK_INTERVALS"];
+v73 [shape=point];
+v72 -> v73;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v77 [label="BQSR:BASE_RECALIBRATOR"];
+v74 -> v77 [label="ch_intervals"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v77 [label="BQSR:BASE_RECALIBRATOR"];
+v76 -> v77;
+
+v54 [label="MERGE_AND_MARKDUPS:MARK_DUPLICATES"];
+v77 [label="BQSR:BASE_RECALIBRATOR"];
+v54 -> v77 [label="ch_bam"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v77 [label="BQSR:BASE_RECALIBRATOR"];
+v12 -> v77 [label="ch_reference"];
+
+v77 [label="BQSR:BASE_RECALIBRATOR"];
+v78 [label="BQSR:APPLY_BQSR"];
+v77 -> v78;
+
+v54 [label="MERGE_AND_MARKDUPS:MARK_DUPLICATES"];
+v78 [label="BQSR:APPLY_BQSR"];
+v54 -> v78 [label="ch_bam"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v78 [label="BQSR:APPLY_BQSR"];
+v12 -> v78 [label="ch_reference"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v78 [label="BQSR:APPLY_BQSR"];
+v74 -> v78 [label="ch_intervals"];
+
+v78 [label="BQSR:APPLY_BQSR"];
+v80 [label="VC_GATK:SPLIT_BAM"];
+v78 -> v80 [label="ch_bam"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v2 -> v79 [label="ch_gatk_intervals"];
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v80 [label="VC_GATK:SPLIT_BAM"];
+v79 -> v80 [label="ch_intervals"];
+
+v80 [label="VC_GATK:SPLIT_BAM"];
+v81 [label="VC_GATK:HAPLOTYPE_CALLER"];
+v80 -> v81;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v81 [label="VC_GATK:HAPLOTYPE_CALLER"];
+v12 -> v81 [label="ch_reference"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v81 [label="VC_GATK:HAPLOTYPE_CALLER"];
+v17 -> v81 [label="ch_snps_dbsnp"];
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v81 [label="VC_GATK:HAPLOTYPE_CALLER"];
+v79 -> v81 [label="ch_intervals"];
+
+v81 [label="VC_GATK:HAPLOTYPE_CALLER"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v81 -> v83 [label="variants"];
+
+v81 [label="VC_GATK:HAPLOTYPE_CALLER"];
+v82 [shape=point];
+v81 -> v82 [label="out_bam"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v84 [label="VC_GATK:UNCOMPRESSVCF"];
+v83 -> v84;
+
+v84 [label="VC_GATK:UNCOMPRESSVCF"];
+v85 [label="VC_GATK:SPLITNORMALISEVCF"];
+v84 -> v85;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v85 [label="VC_GATK:SPLITNORMALISEVCF"];
+v12 -> v85 [label="ch_reference"];
+
+v85 [label="VC_GATK:SPLITNORMALISEVCF"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v85 -> v86 [label="out"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v87 [label="VC_GATK_MERGE"];
+v86 -> v87;
+
+v87 [label="VC_GATK_MERGE"];
+v88 [label="VC_GATK_SORT_COMBINED"];
+v87 -> v88;
+
+v88 [label="VC_GATK_SORT_COMBINED"];
+v89 [label="VC_GATK_UNCOMPRESS"];
+v88 -> v89;
+
+v89 [label="VC_GATK_UNCOMPRESS"];
+v90 [label="VC_GATK_ADDBAMSTATS:SAMTOOLSMPILEUP"];
+v89 -> v90 [label="ch_vcf"];
+
+v54 [label="MERGE_AND_MARKDUPS:MARK_DUPLICATES"];
+v90 [label="VC_GATK_ADDBAMSTATS:SAMTOOLSMPILEUP"];
+v54 -> v90 [label="ch_bam"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v90 [label="VC_GATK_ADDBAMSTATS:SAMTOOLSMPILEUP"];
+v12 -> v90 [label="ch_reference"];
+
+v90 [label="VC_GATK_ADDBAMSTATS:SAMTOOLSMPILEUP"];
+v91 [label="VC_GATK_ADDBAMSTATS:ADDBAMSTATS"];
+v90 -> v91;
+
+v89 [label="VC_GATK_UNCOMPRESS"];
+v91 [label="VC_GATK_ADDBAMSTATS:ADDBAMSTATS"];
+v89 -> v91 [label="ch_vcf"];
+
+v91 [label="VC_GATK_ADDBAMSTATS:ADDBAMSTATS"];
+v92 [shape=point];
+v91 -> v92 [label="out"];
+
+}

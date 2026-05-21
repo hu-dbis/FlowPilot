@@ -1,0 +1,98 @@
+digraph "mauryaanand_____nfvarcall" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="DATA_QC"];
+v2 -> v3 [label="sample_ch"];
+
+v3 [label="DATA_QC"];
+v4 [shape=point];
+v3 -> v4;
+
+v3 [label="DATA_QC"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v17;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [label="PBMM2"];
+v2 -> v5 [label="sample_ch"];
+
+v5 [label="PBMM2"];
+v7 [label="ALIGNMENT_SUMMARY"];
+v5 -> v7;
+
+v5 [label="PBMM2"];
+v6 [shape=point];
+v5 -> v6;
+
+v7 [label="ALIGNMENT_SUMMARY"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v7 -> v18;
+
+v5 [label="PBMM2"];
+v8 [label="DEEPVARIANT"];
+v5 -> v8;
+
+v8 [label="DEEPVARIANT"];
+v10 [label="FILTER_VARIANTS"];
+v8 -> v10;
+
+v8 [label="DEEPVARIANT"];
+v9 [shape=point];
+v8 -> v9;
+
+v10 [label="FILTER_VARIANTS"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11;
+
+v10 [label="FILTER_VARIANTS"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v13;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 [label="MERGE_VCF"];
+v12 -> v14 [label="vcf_list_ch"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 [label="REPORT"];
+v13 -> v20 [label="var_counts_ch"];
+
+v14 [label="MERGE_VCF"];
+v15 [label="VEP"];
+v14 -> v15;
+
+v15 [label="VEP"];
+v20 [label="REPORT"];
+v15 -> v20;
+
+v15 [label="VEP"];
+v16 [shape=point];
+v15 -> v16;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 [label="REPORT"];
+v17 -> v20 [label="qc_stats_ch"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 [label="REPORT"];
+v19 -> v20 [label="aln_cov_ch"];
+
+v20 [label="REPORT"];
+v21 [shape=point];
+v20 -> v21;
+
+}

@@ -1,0 +1,110 @@
+digraph "integrativebioinformatics_____scpipegen" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v2 [label="Cellranger"];
+v0 -> v2 [label="dataDir_ch"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v2 [label="Cellranger"];
+v1 -> v2 [label="ref_data_ch"];
+
+v2 [label="Cellranger"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v4;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v5;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [label="SoupX_scDblFinder"];
+v6 -> v7 [label="Demultiplex_ch"];
+
+v2 [label="Cellranger"];
+v7 [label="SoupX_scDblFinder"];
+v2 -> v7;
+
+v7 [label="SoupX_scDblFinder"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v10;
+
+v7 [label="SoupX_scDblFinder"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v12;
+
+v7 [label="SoupX_scDblFinder"];
+v8 [shape=point];
+v7 -> v8;
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v11 [label="Seurat_Object_creation"];
+v9 -> v11 [label="MetaDataFiles_ch"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 [label="Seurat_Object_creation"];
+v10 -> v11;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [label="Seurat_Object_creation"];
+v6 -> v11 [label="Demultiplex_ch"];
+
+v11 [label="Seurat_Object_creation"];
+v13 [label="Seurat_QC_integration"];
+v11 -> v13;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 [label="Seurat_QC_integration"];
+v12 -> v13;
+
+v13 [label="Seurat_QC_integration"];
+v18 [label="Seurat_Cell_Annotation"];
+v13 -> v18;
+
+v13 [label="Seurat_QC_integration"];
+v16 [shape=point];
+v13 -> v16;
+
+v13 [label="Seurat_QC_integration"];
+v15 [shape=point];
+v13 -> v15;
+
+v13 [label="Seurat_QC_integration"];
+v14 [shape=point];
+v13 -> v14;
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v18 [label="Seurat_Cell_Annotation"];
+v17 -> v18 [label="CellTypistData"];
+
+v18 [label="Seurat_Cell_Annotation"];
+v23 [label="CellChat"];
+v18 -> v23;
+
+v18 [label="Seurat_Cell_Annotation"];
+v22 [shape=point];
+v18 -> v22;
+
+v18 [label="Seurat_Cell_Annotation"];
+v21 [shape=point];
+v18 -> v21;
+
+v18 [label="Seurat_Cell_Annotation"];
+v20 [shape=point];
+v18 -> v20;
+
+v18 [label="Seurat_Cell_Annotation"];
+v19 [shape=point];
+v18 -> v19;
+
+v23 [label="CellChat"];
+v24 [shape=point];
+v23 -> v24;
+
+}

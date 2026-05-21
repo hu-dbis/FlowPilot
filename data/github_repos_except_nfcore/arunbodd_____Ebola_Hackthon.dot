@@ -1,0 +1,590 @@
+digraph "arunbodd_____Ebola_Hackthon" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v136 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v137 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v138 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v8 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="SCICOMP_EBOLA:EBOLA:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v4 -> v5 [label="samplesheet"];
+
+v5 [label="SCICOMP_EBOLA:EBOLA:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 -> v6;
+
+v5 [label="SCICOMP_EBOLA:EBOLA:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v8 [label="versions"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [label="SCICOMP_EBOLA:EBOLA:FASTQC_RAW"];
+v7 -> v9 [label="reads"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v12 [label="ch_versions"];
+
+v9 [label="SCICOMP_EBOLA:EBOLA:FASTQC_RAW"];
+v10 [shape=point];
+v9 -> v10;
+
+v9 [label="SCICOMP_EBOLA:EBOLA:FASTQC_RAW"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v132;
+
+v9 [label="SCICOMP_EBOLA:EBOLA:FASTQC_RAW"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v9 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v12 -> v118 [label="ch_versions"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [label="SCICOMP_EBOLA:EBOLA:FASTP"];
+v7 -> v16 [label="reads"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="SCICOMP_EBOLA:EBOLA:FASTP"];
+v13 -> v16 [label="adapter_fasta"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="SCICOMP_EBOLA:EBOLA:FASTP"];
+v14 -> v16 [label="save_trimmed_fail"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="SCICOMP_EBOLA:EBOLA:FASTP"];
+v15 -> v16 [label="save_merged"];
+
+v16 [label="SCICOMP_EBOLA:EBOLA:FASTP"];
+v23 [label="SCICOMP_EBOLA:EBOLA:FASTQC_TRIM"];
+v16 -> v23;
+
+v16 [label="SCICOMP_EBOLA:EBOLA:FASTP"];
+v22 [shape=point];
+v16 -> v22;
+
+v16 [label="SCICOMP_EBOLA:EBOLA:FASTP"];
+v21 [shape=point];
+v16 -> v21;
+
+v16 [label="SCICOMP_EBOLA:EBOLA:FASTP"];
+v20 [shape=point];
+v16 -> v20;
+
+v16 [label="SCICOMP_EBOLA:EBOLA:FASTP"];
+v19 [shape=point];
+v16 -> v19;
+
+v16 [label="SCICOMP_EBOLA:EBOLA:FASTP"];
+v18 [shape=point];
+v16 -> v18;
+
+v16 [label="SCICOMP_EBOLA:EBOLA:FASTP"];
+v17 [shape=point];
+v16 -> v17;
+
+v23 [label="SCICOMP_EBOLA:EBOLA:FASTQC_TRIM"];
+v26 [shape=point];
+v23 -> v26;
+
+v23 [label="SCICOMP_EBOLA:EBOLA:FASTQC_TRIM"];
+v25 [shape=point];
+v23 -> v25;
+
+v23 [label="SCICOMP_EBOLA:EBOLA:FASTQC_TRIM"];
+v24 [shape=point];
+v23 -> v24;
+
+v16 [label="SCICOMP_EBOLA:EBOLA:FASTP"];
+v30 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_HUMAN"];
+v16 -> v30;
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_HUMAN"];
+v27 -> v30 [label="db"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_HUMAN"];
+v28 -> v30 [label="save_output_fastqs"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_HUMAN"];
+v29 -> v30 [label="save_reads_assignment"];
+
+v30 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_HUMAN"];
+v34 [shape=point];
+v30 -> v34;
+
+v30 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_HUMAN"];
+v38 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_STD"];
+v30 -> v38;
+
+v30 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_HUMAN"];
+v33 [shape=point];
+v30 -> v33;
+
+v30 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_HUMAN"];
+v32 [shape=point];
+v30 -> v32;
+
+v30 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_HUMAN"];
+v31 [shape=point];
+v30 -> v31;
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v38 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_STD"];
+v35 -> v38 [label="db"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v38 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_STD"];
+v36 -> v38 [label="save_output_fastqs"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v38 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_STD"];
+v37 -> v38 [label="save_reads_assignment"];
+
+v38 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_STD"];
+v47 [label="SCICOMP_EBOLA:EBOLA:MINIMAP2_ALIGN"];
+v38 -> v47;
+
+v38 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_STD"];
+v42 [shape=point];
+v38 -> v42;
+
+v38 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_STD"];
+v41 [shape=point];
+v38 -> v41;
+
+v38 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_STD"];
+v40 [shape=point];
+v38 -> v40;
+
+v38 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_STD"];
+v39 [shape=point];
+v38 -> v39;
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="SCICOMP_EBOLA:EBOLA:MINIMAP2_ALIGN"];
+v43 -> v47 [label="reference"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="SCICOMP_EBOLA:EBOLA:MINIMAP2_ALIGN"];
+v44 -> v47 [label="bam_format"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="SCICOMP_EBOLA:EBOLA:MINIMAP2_ALIGN"];
+v45 -> v47 [label="cigar_paf_format"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="SCICOMP_EBOLA:EBOLA:MINIMAP2_ALIGN"];
+v46 -> v47 [label="cigar_bam"];
+
+v47 [label="SCICOMP_EBOLA:EBOLA:MINIMAP2_ALIGN"];
+v49 [shape=point];
+v47 -> v49;
+
+v47 [label="SCICOMP_EBOLA:EBOLA:MINIMAP2_ALIGN"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 -> v50;
+
+v47 [label="SCICOMP_EBOLA:EBOLA:MINIMAP2_ALIGN"];
+v48 [shape=point];
+v47 -> v48;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 [label="SCICOMP_EBOLA:EBOLA:SAMTOOLS_STATS"];
+v50 -> v52;
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="SCICOMP_EBOLA:EBOLA:SAMTOOLS_STATS"];
+v51 -> v52;
+
+v52 [label="SCICOMP_EBOLA:EBOLA:SAMTOOLS_STATS"];
+v54 [shape=point];
+v52 -> v54;
+
+v52 [label="SCICOMP_EBOLA:EBOLA:SAMTOOLS_STATS"];
+v53 [shape=point];
+v52 -> v53;
+
+v47 [label="SCICOMP_EBOLA:EBOLA:MINIMAP2_ALIGN"];
+v56 [label="SCICOMP_EBOLA:EBOLA:SAMTOOLS_FASTA"];
+v47 -> v56;
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="SCICOMP_EBOLA:EBOLA:SAMTOOLS_FASTA"];
+v55 -> v56 [label="interleave"];
+
+v56 [label="SCICOMP_EBOLA:EBOLA:SAMTOOLS_FASTA"];
+v61 [shape=point];
+v56 -> v61;
+
+v56 [label="SCICOMP_EBOLA:EBOLA:SAMTOOLS_FASTA"];
+v60 [shape=point];
+v56 -> v60;
+
+v56 [label="SCICOMP_EBOLA:EBOLA:SAMTOOLS_FASTA"];
+v59 [shape=point];
+v56 -> v59;
+
+v56 [label="SCICOMP_EBOLA:EBOLA:SAMTOOLS_FASTA"];
+v58 [shape=point];
+v56 -> v58;
+
+v56 [label="SCICOMP_EBOLA:EBOLA:SAMTOOLS_FASTA"];
+v57 [shape=point];
+v56 -> v57;
+
+v47 [label="SCICOMP_EBOLA:EBOLA:MINIMAP2_ALIGN"];
+v66 [label="SCICOMP_EBOLA:EBOLA:IVAR_VARIANTS"];
+v47 -> v66;
+
+v62 [shape=point,label="",fixedsize=true,width=0.1];
+v66 [label="SCICOMP_EBOLA:EBOLA:IVAR_VARIANTS"];
+v62 -> v66 [label="fasta"];
+
+v63 [shape=point,label="",fixedsize=true,width=0.1];
+v66 [label="SCICOMP_EBOLA:EBOLA:IVAR_VARIANTS"];
+v63 -> v66 [label="fai"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1];
+v66 [label="SCICOMP_EBOLA:EBOLA:IVAR_VARIANTS"];
+v64 -> v66 [label="gff"];
+
+v65 [shape=point,label="",fixedsize=true,width=0.1];
+v66 [label="SCICOMP_EBOLA:EBOLA:IVAR_VARIANTS"];
+v65 -> v66 [label="save_mpileup"];
+
+v66 [label="SCICOMP_EBOLA:EBOLA:IVAR_VARIANTS"];
+v69 [shape=point];
+v66 -> v69;
+
+v66 [label="SCICOMP_EBOLA:EBOLA:IVAR_VARIANTS"];
+v68 [shape=point];
+v66 -> v68;
+
+v66 [label="SCICOMP_EBOLA:EBOLA:IVAR_VARIANTS"];
+v67 [shape=point];
+v66 -> v67;
+
+v38 [label="SCICOMP_EBOLA:EBOLA:KRAKEN2_STD"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 [label="SCICOMP_EBOLA:EBOLA:SPADES"];
+v70 -> v73;
+
+v71 [shape=point,label="",fixedsize=true,width=0.1];
+v73 [label="SCICOMP_EBOLA:EBOLA:SPADES"];
+v71 -> v73 [label="yml"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1];
+v73 [label="SCICOMP_EBOLA:EBOLA:SPADES"];
+v72 -> v73 [label="hmm"];
+
+v73 [label="SCICOMP_EBOLA:EBOLA:SPADES"];
+v81 [label="SCICOMP_EBOLA:EBOLA:QUAST"];
+v73 -> v81;
+
+v73 [label="SCICOMP_EBOLA:EBOLA:SPADES"];
+v88 [label="SCICOMP_EBOLA:EBOLA:UNZIP"];
+v73 -> v88;
+
+v73 [label="SCICOMP_EBOLA:EBOLA:SPADES"];
+v78 [shape=point];
+v73 -> v78;
+
+v73 [label="SCICOMP_EBOLA:EBOLA:SPADES"];
+v77 [shape=point];
+v73 -> v77;
+
+v73 [label="SCICOMP_EBOLA:EBOLA:SPADES"];
+v76 [shape=point];
+v73 -> v76;
+
+v73 [label="SCICOMP_EBOLA:EBOLA:SPADES"];
+v75 [shape=point];
+v73 -> v75;
+
+v73 [label="SCICOMP_EBOLA:EBOLA:SPADES"];
+v74 [shape=point];
+v73 -> v74;
+
+v79 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="SCICOMP_EBOLA:EBOLA:QUAST"];
+v79 -> v81;
+
+v80 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="SCICOMP_EBOLA:EBOLA:QUAST"];
+v80 -> v81;
+
+v81 [label="SCICOMP_EBOLA:EBOLA:QUAST"];
+v87 [shape=point];
+v81 -> v87;
+
+v81 [label="SCICOMP_EBOLA:EBOLA:QUAST"];
+v86 [shape=point];
+v81 -> v86;
+
+v81 [label="SCICOMP_EBOLA:EBOLA:QUAST"];
+v85 [shape=point];
+v81 -> v85;
+
+v81 [label="SCICOMP_EBOLA:EBOLA:QUAST"];
+v84 [shape=point];
+v81 -> v84;
+
+v81 [label="SCICOMP_EBOLA:EBOLA:QUAST"];
+v83 [shape=point];
+v81 -> v83;
+
+v81 [label="SCICOMP_EBOLA:EBOLA:QUAST"];
+v82 [shape=point];
+v81 -> v82;
+
+v88 [label="SCICOMP_EBOLA:EBOLA:UNZIP"];
+v92 [label="SCICOMP_EBOLA:EBOLA:BLAST_BLASTN"];
+v88 -> v92;
+
+v89 [shape=point,label="",fixedsize=true,width=0.1];
+v90 [label="SCICOMP_EBOLA:EBOLA:BLAST_MAKEBLASTDB"];
+v89 -> v90 [label="fasta"];
+
+v90 [label="SCICOMP_EBOLA:EBOLA:BLAST_MAKEBLASTDB"];
+v92 [label="SCICOMP_EBOLA:EBOLA:BLAST_BLASTN"];
+v90 -> v92;
+
+v90 [label="SCICOMP_EBOLA:EBOLA:BLAST_MAKEBLASTDB"];
+v91 [shape=point];
+v90 -> v91;
+
+v92 [label="SCICOMP_EBOLA:EBOLA:BLAST_BLASTN"];
+v94 [label="SCICOMP_EBOLA:EBOLA:CONTIG_TO_FILE"];
+v92 -> v94 [label="blat_ch"];
+
+v92 [label="SCICOMP_EBOLA:EBOLA:BLAST_BLASTN"];
+v93 [shape=point];
+v92 -> v93;
+
+v88 [label="SCICOMP_EBOLA:EBOLA:UNZIP"];
+v94 [label="SCICOMP_EBOLA:EBOLA:CONTIG_TO_FILE"];
+v88 -> v94;
+
+v94 [label="SCICOMP_EBOLA:EBOLA:CONTIG_TO_FILE"];
+v95 [label="SCICOMP_EBOLA:EBOLA:CONTIGS_TO_LIST"];
+v94 -> v95;
+
+v95 [label="SCICOMP_EBOLA:EBOLA:CONTIGS_TO_LIST"];
+v97 [label="SCICOMP_EBOLA:EBOLA:MERGE_LISTS"];
+v95 -> v97;
+
+v96 [shape=point,label="",fixedsize=true,width=0.1];
+v97 [label="SCICOMP_EBOLA:EBOLA:MERGE_LISTS"];
+v96 -> v97 [label="genomes"];
+
+v97 [label="SCICOMP_EBOLA:EBOLA:MERGE_LISTS"];
+v98 [label="SCICOMP_EBOLA:EBOLA:FASTANI"];
+v97 -> v98;
+
+v98 [label="SCICOMP_EBOLA:EBOLA:FASTANI"];
+v101 [shape=point];
+v98 -> v101;
+
+v98 [label="SCICOMP_EBOLA:EBOLA:FASTANI"];
+v100 [shape=point];
+v98 -> v100;
+
+v98 [label="SCICOMP_EBOLA:EBOLA:FASTANI"];
+v99 [shape=point];
+v98 -> v99;
+
+v88 [label="SCICOMP_EBOLA:EBOLA:UNZIP"];
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v88 -> v104;
+
+v102 [shape=point,label="",fixedsize=true,width=0.1];
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v102 -> v104 [label="proteins"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1];
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v103 -> v104 [label="prodigal_tf"];
+
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v117 [shape=point];
+v104 -> v117;
+
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v116 [shape=point];
+v104 -> v116;
+
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v115 [shape=point];
+v104 -> v115;
+
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v114 [shape=point];
+v104 -> v114;
+
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v113 [shape=point];
+v104 -> v113;
+
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v112 [shape=point];
+v104 -> v112;
+
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v111 [shape=point];
+v104 -> v111;
+
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v110 [shape=point];
+v104 -> v110;
+
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v109 [shape=point];
+v104 -> v109;
+
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v108 [shape=point];
+v104 -> v108;
+
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v107 [shape=point];
+v104 -> v107;
+
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v106 [shape=point];
+v104 -> v106;
+
+v104 [label="SCICOMP_EBOLA:EBOLA:PROKKA"];
+v105 [shape=point];
+v104 -> v105;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v120 [label="SCICOMP_EBOLA:EBOLA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v119 -> v120;
+
+v120 [label="SCICOMP_EBOLA:EBOLA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v122 [shape=point];
+v120 -> v122;
+
+v120 [label="SCICOMP_EBOLA:EBOLA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v120 -> v130;
+
+v120 [label="SCICOMP_EBOLA:EBOLA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v121 [shape=point];
+v120 -> v121;
+
+v123 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v126 [label="ch_multiqc_files"];
+
+v124 [shape=point,label="",fixedsize=true,width=0.1];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v124 -> v125 [label="ch_workflow_summary"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v126;
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v129 [label="ch_multiqc_files"];
+
+v127 [shape=point,label="",fixedsize=true,width=0.1];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v127 -> v128 [label="ch_methods_description"];
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 -> v131 [label="ch_multiqc_files"];
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v134 [label="ch_multiqc_files"];
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v132 -> v133;
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v134;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v134 -> v135 [label="ch_multiqc_files"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v139 [label="SCICOMP_EBOLA:EBOLA:MULTIQC"];
+v135 -> v139;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v139 [label="SCICOMP_EBOLA:EBOLA:MULTIQC"];
+v136 -> v139;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v139 [label="SCICOMP_EBOLA:EBOLA:MULTIQC"];
+v137 -> v139;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v139 [label="SCICOMP_EBOLA:EBOLA:MULTIQC"];
+v138 -> v139;
+
+v139 [label="SCICOMP_EBOLA:EBOLA:MULTIQC"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v139 -> v143;
+
+v139 [label="SCICOMP_EBOLA:EBOLA:MULTIQC"];
+v142 [shape=point];
+v139 -> v142;
+
+v139 [label="SCICOMP_EBOLA:EBOLA:MULTIQC"];
+v141 [shape=point];
+v139 -> v141;
+
+v139 [label="SCICOMP_EBOLA:EBOLA:MULTIQC"];
+v140 [shape=point];
+v139 -> v140;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v144 [shape=point];
+v143 -> v144;
+
+}

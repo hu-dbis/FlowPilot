@@ -1,0 +1,102 @@
+digraph "adamd3_____StrainQuant" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="CHECK_META_FILE"];
+v0 -> v1 [label="metadata"];
+
+v1 [label="CHECK_META_FILE"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v1 -> v2 [label="ch_metadata"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [label="TRIMGALORE"];
+v3 -> v7 [label="ch_raw_reads_trimgalore"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="SUBSET_GENES"];
+v4 -> v6 [label="gpa_file"];
+
+v1 [label="CHECK_META_FILE"];
+v6 [label="SUBSET_GENES"];
+v1 -> v6 [label="ch_metadata"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="SUBSET_GENES"];
+v5 -> v6 [label="perc"];
+
+v6 [label="SUBSET_GENES"];
+v17 [label="DESEQ_NORMALISE_COUNTS"];
+v6 -> v17 [label="ch_gene_subset"];
+
+v7 [label="TRIMGALORE"];
+v13 [label="KALLISTO_QUANT"];
+v7 -> v13 [label="ch_trimmed_reads"];
+
+v7 [label="TRIMGALORE"];
+v10 [shape=point];
+v7 -> v10 [label="ch_trimgalore_results_mqc"];
+
+v7 [label="TRIMGALORE"];
+v9 [shape=point];
+v7 -> v9 [label="ch_trimgalore_fastqc_reports_mqc"];
+
+v7 [label="TRIMGALORE"];
+v8 [shape=point];
+v7 -> v8;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="KALLISTO_QUANT"];
+v11 -> v13 [label="gpa"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="KALLISTO_QUANT"];
+v12 -> v13 [label="strandedness"];
+
+v13 [label="KALLISTO_QUANT"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 [label="MERGE_COUNTS_AND_LENS"];
+v14 -> v16 [label="ch_kallisto_out_dirs"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="MERGE_COUNTS_AND_LENS"];
+v15 -> v16 [label="gpa_file"];
+
+v1 [label="CHECK_META_FILE"];
+v16 [label="MERGE_COUNTS_AND_LENS"];
+v1 -> v16 [label="ch_metadata"];
+
+v16 [label="MERGE_COUNTS_AND_LENS"];
+v17 [label="DESEQ_NORMALISE_COUNTS"];
+v16 -> v17 [label="ch_kallisto_merged_out"];
+
+v17 [label="DESEQ_NORMALISE_COUNTS"];
+v21 [label="UMAP_SAMPLES"];
+v17 -> v21 [label="ch_norm_counts"];
+
+v17 [label="DESEQ_NORMALISE_COUNTS"];
+v19 [shape=point];
+v17 -> v19;
+
+v17 [label="DESEQ_NORMALISE_COUNTS"];
+v18 [shape=point];
+v17 -> v18 [label="ch_scaled_counts"];
+
+v1 [label="CHECK_META_FILE"];
+v21 [label="UMAP_SAMPLES"];
+v1 -> v21 [label="ch_metadata"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="UMAP_SAMPLES"];
+v20 -> v21 [label="group"];
+
+v21 [label="UMAP_SAMPLES"];
+v22 [shape=point];
+v21 -> v22 [label="ch_umap_out"];
+
+}

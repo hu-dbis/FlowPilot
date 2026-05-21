@@ -1,0 +1,2358 @@
+digraph "circrna" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v464 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v2 [shape=point];
+v1 -> v2 [label="ch_multiqc_custom_config"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v4 [shape=point];
+v3 -> v4 [label="ch_multiqc_logo"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v6 [shape=point];
+v5 -> v6 [label="versions"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v11 -> v17 [label="ch_samplesheet"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v20 [label="ch_versions"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v184 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:INGEST_DATABASE_NAMES"];
+v13 -> v184 [label="ch_annotation"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=point];
+v14 -> v15 [label="ch_mirna"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v74 [label="ch_multiqc_files"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v18 [label="NFCORE_CIRCRNA:CIRCRNA:CAT_FASTQ"];
+v17 -> v18;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v19;
+
+v18 [label="NFCORE_CIRCRNA:CIRCRNA:CAT_FASTQ"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19;
+
+v18 [label="NFCORE_CIRCRNA:CIRCRNA:CAT_FASTQ"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v20;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:FASTQC"];
+v19 -> v53 [label="trim_reads"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v47 [label="ch_versions"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v39 [label="ch_versions"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:GTFFILTER"];
+v23 -> v24 [label="ch_gtf"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:GTFFILTER"];
+v22 -> v24 [label="ch_fasta"];
+
+v24 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:GTFFILTER"];
+v32 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_EXTRACTSPLICESITES"];
+v24 -> v32 [label="ch_gtf"];
+
+v24 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:GTFFILTER"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v39;
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v25 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:SEQKIT_SPLIT"];
+v22 -> v25 [label="ch_fasta"];
+
+v25 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:SEQKIT_SPLIT"];
+v26 [shape=point];
+v25 -> v26 [label="chromosomes"];
+
+v25 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:SEQKIT_SPLIT"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v39;
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v27 [label="ch_fasta"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BOWTIE_BUILD"];
+v27 -> v28;
+
+v28 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BOWTIE_BUILD"];
+v29 [shape=point];
+v28 -> v29 [label="bowtie_index"];
+
+v28 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BOWTIE_BUILD"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v39;
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BOWTIE2_BUILD"];
+v22 -> v30 [label="ch_fasta"];
+
+v30 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BOWTIE2_BUILD"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 -> v40;
+
+v30 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BOWTIE2_BUILD"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v39;
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BWA_INDEX"];
+v22 -> v31 [label="ch_fasta"];
+
+v31 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BWA_INDEX"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v42;
+
+v31 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BWA_INDEX"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v39;
+
+v32 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_EXTRACTSPLICESITES"];
+v33 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_BUILD"];
+v32 -> v33;
+
+v32 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_EXTRACTSPLICESITES"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v39;
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_BUILD"];
+v22 -> v33 [label="ch_fasta"];
+
+v24 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:GTFFILTER"];
+v33 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_BUILD"];
+v24 -> v33 [label="ch_gtf"];
+
+v33 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_BUILD"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v43;
+
+v33 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_BUILD"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v39;
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v34 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v22 -> v34 [label="ch_fasta"];
+
+v24 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:GTFFILTER"];
+v34 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v24 -> v34 [label="ch_gtf"];
+
+v34 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 -> v44;
+
+v34 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v39;
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v22 -> v36 [label="ch_fasta"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v35 -> v36;
+
+v36 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v38 [shape=point];
+v36 -> v38;
+
+v36 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v297 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:RUN_PSIRC_QUANT"];
+v36 -> v297 [label="ch_faidx"];
+
+v36 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v37 [shape=point];
+v36 -> v37;
+
+v36 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v47 [label="versions"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 [shape=point];
+v40 -> v41 [label="bowtie2_index"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v351 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:MAIN"];
+v42 -> v351 [label="bwa_index"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v351 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:MAIN"];
+v43 -> v351 [label="hisat2_index"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v44 -> v87 [label="star_index"];
+
+v32 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_EXTRACTSPLICESITES"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 [shape=point];
+v45 -> v46 [label="splice_sites"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v71 [label="ch_versions"];
+
+v48 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v57 [label="ch_versions"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v50 [shape=point];
+v49 -> v50 [label="fastqc_html"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v52 [shape=point];
+v51 -> v52 [label="fastqc_zip"];
+
+v53 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:FASTQC"];
+v55 [shape=point];
+v53 -> v55 [label="fastqc_html"];
+
+v53 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:FASTQC"];
+v54 [shape=point];
+v53 -> v54 [label="fastqc_zip"];
+
+v53 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:FASTQC"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v53 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v70 [label="ch_versions"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v59 [shape=point];
+v58 -> v59 [label="trim_html"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v61 [shape=point];
+v60 -> v61 [label="trim_zip"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v63 [shape=point];
+v62 -> v63 [label="trim_log"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v65 [shape=point];
+v64 -> v65 [label="trimgalore_versions"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v19 -> v66 [label="trim_reads"];
+
+v66 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v66 -> v87 [label="reads"];
+
+v66 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 -> v75 [label="trim_log"];
+
+v66 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v68 [shape=point];
+v66 -> v68;
+
+v66 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v67 [shape=point];
+v66 -> v67 [label="trim_html"];
+
+v66 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 -> v72 [label="trim_zip"];
+
+v66 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v66 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v71 [label="versions"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v265 [label="ch_versions"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v77 [label="ch_multiqc_files"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v264 [label="ch_multiqc_files"];
+
+v78 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v128 [label="ch_versions"];
+
+v79 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v141 [label="ch_bsj_bed_per_sample_tool"];
+
+v80 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v264 [label="multiqc_files"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v81 [label="ch_fasta"];
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v132 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:ANNOTATE"];
+v81 -> v132 [label="fasta"];
+
+v24 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:GTFFILTER"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v82 [label="ch_gtf"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v130 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:REFERENCE"];
+v82 -> v130 [label="gtf"];
+
+v83 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v125 [label="ch_versions"];
+
+v24 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:GTFFILTER"];
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v24 -> v87 [label="ch_gtf"];
+
+v84 [shape=point,label="",fixedsize=true,width=0.1];
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v84 -> v87 [label="star_ignore_sjdbgtf"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v85 -> v87 [label="seq_platform"];
+
+v86 [shape=point,label="",fixedsize=true,width=0.1];
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v86 -> v87 [label="seq_center"];
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v101 [shape=point];
+v87 -> v101;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v100 [shape=point];
+v87 -> v100;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v99 [shape=point];
+v87 -> v99;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v125;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v98 [shape=point];
+v87 -> v98;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v97 [shape=point];
+v87 -> v97;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v96 [shape=point];
+v87 -> v96;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v95 [shape=point];
+v87 -> v95;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v94 [shape=point];
+v87 -> v94;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 -> v102;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v93 [shape=point];
+v87 -> v93;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v92 [shape=point];
+v87 -> v92;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v91 [shape=point];
+v87 -> v91;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v90 [shape=point];
+v87 -> v90;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v89 [shape=point];
+v87 -> v89;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_1"];
+v88 [shape=point];
+v87 -> v88;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v106 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:SJDB"];
+v104 -> v106 [label="sjdb"];
+
+v105 [shape=point,label="",fixedsize=true,width=0.1];
+v106 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:SJDB"];
+v105 -> v106 [label="bsj_reads"];
+
+v106 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:SJDB"];
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v106 -> v110;
+
+v106 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:SJDB"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v126;
+
+v66 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v66 -> v110 [label="reads"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v44 -> v110 [label="star_index"];
+
+v107 [shape=point,label="",fixedsize=true,width=0.1];
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v107 -> v110 [label="star_ignore_sjdbgtf"];
+
+v108 [shape=point,label="",fixedsize=true,width=0.1];
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v108 -> v110 [label="seq_platform"];
+
+v109 [shape=point,label="",fixedsize=true,width=0.1];
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v109 -> v110 [label="seq_center"];
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v124 [shape=point];
+v110 -> v124;
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v123 [shape=point];
+v110 -> v123;
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v122 [shape=point];
+v110 -> v122;
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v127;
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v121 [shape=point];
+v110 -> v121;
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v120 [shape=point];
+v110 -> v120;
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v119 [shape=point];
+v110 -> v119;
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v118 [shape=point];
+v110 -> v118;
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v117 [shape=point];
+v110 -> v117;
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v116 [shape=point];
+v110 -> v116 [label="tab"];
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v115 [shape=point];
+v110 -> v115;
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v114 [shape=point];
+v110 -> v114;
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v131 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:PARSE"];
+v110 -> v131 [label="star_junctions"];
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v113 [shape=point];
+v110 -> v113 [label="sam"];
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v112 [shape=point];
+v110 -> v112;
+
+v110 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:STAR2PASS:PASS_2"];
+v111 [shape=point];
+v110 -> v111;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v126 [label="ch_versions"];
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v127 [label="ch_versions"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v128 [label="versions"];
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v140 [label="ch_versions"];
+
+v129 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 -> v136 [label="ch_versions"];
+
+v130 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:REFERENCE"];
+v132 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:ANNOTATE"];
+v130 -> v132;
+
+v130 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:REFERENCE"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v136;
+
+v131 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:PARSE"];
+v132 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:ANNOTATE"];
+v131 -> v132;
+
+v131 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:PARSE"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v137;
+
+v132 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:ANNOTATE"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v132 -> v133;
+
+v132 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:ANNOTATE"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v138;
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v135 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:UNIFY"];
+v133 -> v135;
+
+v134 [shape=point,label="",fixedsize=true,width=0.1];
+v135 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:UNIFY"];
+v134 -> v135 [label="program_file"];
+
+v135 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:UNIFY"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v141 [label="bed"];
+
+v135 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:CIRCEXPLORER2:UNIFY"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v139;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v137 [label="ch_versions"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v138 [label="ch_versions"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v139 [label="ch_versions"];
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v140 [label="versions"];
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v144 [label="ch_versions"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:EXTRACT_COUNTS"];
+v141 -> v143 [label="regions"];
+
+v142 [shape=point,label="",fixedsize=true,width=0.1];
+v143 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:EXTRACT_COUNTS"];
+v142 -> v143 [label="program_file"];
+
+v143 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:EXTRACT_COUNTS"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v143 -> v145;
+
+v143 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:EXTRACT_COUNTS"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v149 [label="ch_versions"];
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v145 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v147 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_COUNTS_PER_TOOL"];
+v146 -> v147;
+
+v147 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_COUNTS_PER_TOOL"];
+v148 [shape=point];
+v147 -> v148;
+
+v147 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_COUNTS_PER_TOOL"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v149;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v152 [label="ch_versions"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FILTER_BSJS"];
+v141 -> v151 [label="regions"];
+
+v150 [shape=point,label="",fixedsize=true,width=0.1];
+v151 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FILTER_BSJS"];
+v150 -> v151 [label="program_file"];
+
+v151 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FILTER_BSJS"];
+v154 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:BED_ADD_SAMPLE_TOOL"];
+v151 -> v154 [label="ch_bsj_bed_per_sample_tool_filtered"];
+
+v151 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FILTER_BSJS"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 -> v152;
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v155 [label="ch_versions"];
+
+v153 [shape=point,label="",fixedsize=true,width=0.1];
+v154 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:BED_ADD_SAMPLE_TOOL"];
+v153 -> v154 [label="program_file"];
+
+v154 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:BED_ADD_SAMPLE_TOOL"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 -> v156 [label="ch_bsj_bed_per_sample_tool_meta"];
+
+v154 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:BED_ADD_SAMPLE_TOOL"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v164 [label="ch_versions"];
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v156 -> v157;
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v161 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_TOOLS_PER_SAMPLE"];
+v157 -> v161;
+
+v158 [shape=point,label="",fixedsize=true,width=0.1];
+v161 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_TOOLS_PER_SAMPLE"];
+v158 -> v161 [label="max_shift"];
+
+v159 [shape=point,label="",fixedsize=true,width=0.1];
+v161 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_TOOLS_PER_SAMPLE"];
+v159 -> v161 [label="min_tools"];
+
+v160 [shape=point,label="",fixedsize=true,width=0.1];
+v161 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_TOOLS_PER_SAMPLE"];
+v160 -> v161 [label="min_samples"];
+
+v161 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_TOOLS_PER_SAMPLE"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v161 -> v165;
+
+v161 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_TOOLS_PER_SAMPLE"];
+v163 [shape=point];
+v161 -> v163;
+
+v161 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_TOOLS_PER_SAMPLE"];
+v162 [shape=point];
+v161 -> v162;
+
+v161 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_TOOLS_PER_SAMPLE"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v164;
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v174 [label="ch_versions"];
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v165 -> v203 [label="regions"];
+
+v154 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:BED_ADD_SAMPLE_TOOL"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 -> v166 [label="ch_bsj_bed_per_sample_tool_meta"];
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v166 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v171 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_SAMPLES"];
+v167 -> v171;
+
+v168 [shape=point,label="",fixedsize=true,width=0.1];
+v171 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_SAMPLES"];
+v168 -> v171 [label="max_shift"];
+
+v169 [shape=point,label="",fixedsize=true,width=0.1];
+v171 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_SAMPLES"];
+v169 -> v171 [label="min_tools"];
+
+v170 [shape=point,label="",fixedsize=true,width=0.1];
+v171 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_SAMPLES"];
+v170 -> v171 [label="min_samples"];
+
+v171 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_SAMPLES"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v171 -> v175;
+
+v171 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_SAMPLES"];
+v173 [shape=point];
+v171 -> v173;
+
+v171 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_SAMPLES"];
+v172 [shape=point];
+v171 -> v172;
+
+v171 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:COMBINE_SAMPLES"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 -> v174;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 -> v198 [label="ch_versions"];
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v175 -> v176;
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v176 -> v179 [label="bed"];
+
+v177 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v182 [label="ch_versions"];
+
+v24 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:GTFFILTER"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v178 [label="ch_gtf"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v178 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v181 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:INTERSECT_GTF"];
+v179 -> v181;
+
+v180 [shape=point,label="",fixedsize=true,width=0.1];
+v181 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:INTERSECT_GTF"];
+v180 -> v181;
+
+v181 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:INTERSECT_GTF"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v181 -> v193;
+
+v181 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:INTERSECT_GTF"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 -> v182;
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v185 [label="ch_versions"];
+
+v183 [shape=point,label="",fixedsize=true,width=0.1];
+v184 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:INGEST_DATABASE_NAMES"];
+v183 -> v184 [label="program_file"];
+
+v184 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:INGEST_DATABASE_NAMES"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v184 -> v186;
+
+v184 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:INGEST_DATABASE_NAMES"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v190 [label="ch_versions"];
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v176 -> v186 [label="bed"];
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v186 -> v187;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v189 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:INTERSECT_DATABASE"];
+v187 -> v189;
+
+v188 [shape=point,label="",fixedsize=true,width=0.1];
+v189 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:INTERSECT_DATABASE"];
+v188 -> v189;
+
+v189 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:INTERSECT_DATABASE"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v189 -> v191;
+
+v189 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:INTERSECT_DATABASE"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v197 [label="ch_versions"];
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v191 -> v192;
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v192 -> v193;
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v193 -> v194;
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v196 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:ANNOTATE"];
+v194 -> v196;
+
+v195 [shape=point,label="",fixedsize=true,width=0.1];
+v196 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:ANNOTATE"];
+v195 -> v196 [label="exon_boundary"];
+
+v196 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:ANNOTATE"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v196 -> v199 [label="bed"];
+
+v196 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:ANNOTATE"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v196 -> v200 [label="gtf"];
+
+v196 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_COMBINED:ANNOTATE"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v197;
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 -> v198 [label="versions"];
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 -> v223 [label="ch_versions"];
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v199 -> v255 [label="circrna_bed12"];
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 -> v267 [label="circ_annotation_gtf"];
+
+v201 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 -> v206 [label="ch_versions"];
+
+v24 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:GTFFILTER"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v202 [label="ch_gtf"];
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v202 -> v203;
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v205 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:INTERSECT_GTF"];
+v203 -> v205;
+
+v204 [shape=point,label="",fixedsize=true,width=0.1];
+v205 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:INTERSECT_GTF"];
+v204 -> v205;
+
+v205 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:INTERSECT_GTF"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v205 -> v217;
+
+v205 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:INTERSECT_GTF"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v205 -> v206;
+
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 -> v209 [label="ch_versions"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v208 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:INGEST_DATABASE_NAMES"];
+v13 -> v208 [label="ch_annotation"];
+
+v207 [shape=point,label="",fixedsize=true,width=0.1];
+v208 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:INGEST_DATABASE_NAMES"];
+v207 -> v208 [label="program_file"];
+
+v208 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:INGEST_DATABASE_NAMES"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v208 -> v210;
+
+v208 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:INGEST_DATABASE_NAMES"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 -> v209;
+
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 -> v214 [label="ch_versions"];
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v165 -> v210 [label="regions"];
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v210 -> v211;
+
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v213 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:INTERSECT_DATABASE"];
+v211 -> v213;
+
+v212 [shape=point,label="",fixedsize=true,width=0.1];
+v213 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:INTERSECT_DATABASE"];
+v212 -> v213;
+
+v213 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:INTERSECT_DATABASE"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v213 -> v215;
+
+v213 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:INTERSECT_DATABASE"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v213 -> v214;
+
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v214 -> v222 [label="ch_versions"];
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v215 -> v216;
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v216 -> v217;
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v217 -> v218;
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v220 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:ANNOTATE"];
+v218 -> v220;
+
+v219 [shape=point,label="",fixedsize=true,width=0.1];
+v220 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:ANNOTATE"];
+v219 -> v220 [label="exon_boundary"];
+
+v220 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:ANNOTATE"];
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 -> v256 [label="ch_bsj_bed12_per_sample"];
+
+v220 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:ANNOTATE"];
+v221 [shape=point];
+v220 -> v221 [label="ch_bsj_gtf_per_sample"];
+
+v220 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE:ANNOTATE"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 -> v222;
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v222 -> v223 [label="versions"];
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 -> v246 [label="ch_versions"];
+
+v224 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v224 -> v229 [label="ch_versions"];
+
+v24 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:GTFFILTER"];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v225 [label="ch_gtf"];
+
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v225 -> v226;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v141 -> v226 [label="regions"];
+
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v228 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:INTERSECT_GTF"];
+v226 -> v228;
+
+v227 [shape=point,label="",fixedsize=true,width=0.1];
+v228 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:INTERSECT_GTF"];
+v227 -> v228;
+
+v228 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:INTERSECT_GTF"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v228 -> v240;
+
+v228 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:INTERSECT_GTF"];
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 -> v229;
+
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v229 -> v232 [label="ch_versions"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v231 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:INGEST_DATABASE_NAMES"];
+v13 -> v231 [label="ch_annotation"];
+
+v230 [shape=point,label="",fixedsize=true,width=0.1];
+v231 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:INGEST_DATABASE_NAMES"];
+v230 -> v231 [label="program_file"];
+
+v231 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:INGEST_DATABASE_NAMES"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v231 -> v233;
+
+v231 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:INGEST_DATABASE_NAMES"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v231 -> v232;
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 -> v237 [label="ch_versions"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v141 -> v233 [label="regions"];
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v233 -> v234;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v236 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:INTERSECT_DATABASE"];
+v234 -> v236;
+
+v235 [shape=point,label="",fixedsize=true,width=0.1];
+v236 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:INTERSECT_DATABASE"];
+v235 -> v236;
+
+v236 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:INTERSECT_DATABASE"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v236 -> v238;
+
+v236 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:INTERSECT_DATABASE"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 -> v237;
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v237 -> v245 [label="ch_versions"];
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v238 -> v239;
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v239 -> v240;
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v240 -> v241;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v243 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:ANNOTATE"];
+v241 -> v243;
+
+v242 [shape=point,label="",fixedsize=true,width=0.1];
+v243 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:ANNOTATE"];
+v242 -> v243 [label="exon_boundary"];
+
+v243 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:ANNOTATE"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v243 -> v257 [label="ch_bsj_bed12_per_sample_tool"];
+
+v243 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:ANNOTATE"];
+v244 [shape=point];
+v243 -> v244 [label="ch_bsj_gtf_per_sample_tool"];
+
+v243 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:ANNOTATE_PER_SAMPLE_TOOL:ANNOTATE"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v243 -> v245;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 -> v246 [label="versions"];
+
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v246 -> v248 [label="ch_versions"];
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v247 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FASTA_COMBINED"];
+v176 -> v247 [label="bed"];
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v247 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FASTA_COMBINED"];
+v81 -> v247 [label="fasta"];
+
+v247 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FASTA_COMBINED"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 -> v258 [label="fasta"];
+
+v247 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FASTA_COMBINED"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 -> v248;
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v248 -> v250 [label="ch_versions"];
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v249 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FASTA_PER_SAMPLE"];
+v165 -> v249 [label="regions"];
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v249 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FASTA_PER_SAMPLE"];
+v81 -> v249 [label="fasta"];
+
+v249 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FASTA_PER_SAMPLE"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v249 -> v259 [label="ch_bsj_fasta_per_sample"];
+
+v249 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FASTA_PER_SAMPLE"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v249 -> v250;
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v250 -> v252 [label="ch_versions"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v251 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FASTA_PER_SAMPLE_TOOL"];
+v141 -> v251 [label="regions"];
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v251 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FASTA_PER_SAMPLE_TOOL"];
+v81 -> v251 [label="fasta"];
+
+v251 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FASTA_PER_SAMPLE_TOOL"];
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v251 -> v260 [label="ch_bsj_fasta_per_sample_tool"];
+
+v251 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FASTA_PER_SAMPLE_TOOL"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v251 -> v252;
+
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v252 -> v265 [label="versions"];
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v176 -> v253 [label="bed"];
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v263 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FAIL_ON_EMPTY"];
+v253 -> v263;
+
+v254 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v254 -> v255;
+
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v255 -> v256;
+
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v256 -> v257;
+
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v257 -> v258;
+
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v258 -> v259;
+
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 -> v260;
+
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v260 -> v261;
+
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v261 -> v262;
+
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v263 [label="NFCORE_CIRCRNA:CIRCRNA:BSJ_DETECTION:FAIL_ON_EMPTY"];
+v262 -> v263;
+
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v264 -> v461 [label="ch_multiqc_files"];
+
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v265 -> v283 [label="ch_versions"];
+
+v266 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v266 -> v272 [label="ch_versions"];
+
+v24 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:GTFFILTER"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v267 [label="ch_gtf"];
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v267 -> v268;
+
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v268 -> v269;
+
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v269 -> v270;
+
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v271 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:COMBINE_TRANSCRIPTOME_GTFS"];
+v270 -> v271;
+
+v271 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:COMBINE_TRANSCRIPTOME_GTFS"];
+v274 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:EXCLUDE_OVERLONG_TRANSCRIPTS"];
+v271 -> v274;
+
+v271 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:COMBINE_TRANSCRIPTOME_GTFS"];
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v271 -> v272;
+
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v272 -> v275 [label="ch_versions"];
+
+v273 [shape=point,label="",fixedsize=true,width=0.1];
+v274 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:EXCLUDE_OVERLONG_TRANSCRIPTS"];
+v273 -> v274 [label="program_file"];
+
+v274 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:EXCLUDE_OVERLONG_TRANSCRIPTS"];
+v277 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:TRANSCRIPTOME"];
+v274 -> v277 [label="ch_transcriptome_gtf"];
+
+v274 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:EXCLUDE_OVERLONG_TRANSCRIPTS"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v274 -> v275;
+
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 -> v280 [label="ch_versions"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v276 [label="ch_fasta"];
+
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v277 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:TRANSCRIPTOME"];
+v276 -> v277;
+
+v277 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:TRANSCRIPTOME"];
+v279 [shape=point];
+v277 -> v279;
+
+v277 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:TRANSCRIPTOME"];
+v278 [shape=point];
+v277 -> v278;
+
+v277 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:TRANSCRIPTOME"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v277 -> v281 [label="transcriptome_fasta"];
+
+v277 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:TRANSCRIPTOME"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v277 -> v280;
+
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 -> v283 [label="versions"];
+
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v282 [shape=point];
+v281 -> v282;
+
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v283 -> v371 [label="ch_versions"];
+
+v284 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v284 -> v347 [label="ch_versions"];
+
+v285 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v285 -> v344 [label="ch_gene_counts"];
+
+v286 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v286 -> v346 [label="ch_circ_counts"];
+
+v287 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v287 -> v369 [label="ch_ciriquant"];
+
+v288 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v288 -> v370 [label="ch_stringtie"];
+
+v289 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v289 -> v348 [label="ch_rds"];
+
+v290 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v290 -> v293 [label="ch_versions"];
+
+v277 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:TRANSCRIPTOME"];
+v292 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:MARK_CIRCULAR"];
+v277 -> v292 [label="transcriptome_fasta"];
+
+v291 [shape=point,label="",fixedsize=true,width=0.1];
+v292 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:MARK_CIRCULAR"];
+v291 -> v292 [label="program_file"];
+
+v292 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:MARK_CIRCULAR"];
+v294 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:PSIRC_INDEX"];
+v292 -> v294;
+
+v292 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:MARK_CIRCULAR"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v292 -> v293;
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v293 -> v313 [label="ch_versions"];
+
+v294 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:PSIRC_INDEX"];
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v294 -> v295;
+
+v294 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:PSIRC_INDEX"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v294 -> v313;
+
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v297 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:RUN_PSIRC_QUANT"];
+v295 -> v297;
+
+v66 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v297 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:RUN_PSIRC_QUANT"];
+v66 -> v297 [label="reads"];
+
+v292 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:MARK_CIRCULAR"];
+v297 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:RUN_PSIRC_QUANT"];
+v292 -> v297;
+
+v296 [shape=point,label="",fixedsize=true,width=0.1];
+v297 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:RUN_PSIRC_QUANT"];
+v296 -> v297 [label="bootstrap_samples"];
+
+v297 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:RUN_PSIRC_QUANT"];
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v297 -> v298;
+
+v297 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:RUN_PSIRC_QUANT"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v297 -> v313;
+
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v298 -> v299;
+
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v299 -> v300;
+
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v304 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:CUSTOM_TX2GENE"];
+v300 -> v304;
+
+v274 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:EXCLUDE_OVERLONG_TRANSCRIPTS"];
+v304 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:CUSTOM_TX2GENE"];
+v274 -> v304 [label="ch_transcriptome_gtf"];
+
+v301 [shape=point,label="",fixedsize=true,width=0.1];
+v304 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:CUSTOM_TX2GENE"];
+v301 -> v304 [label="quant_type"];
+
+v302 [shape=point,label="",fixedsize=true,width=0.1];
+v304 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:CUSTOM_TX2GENE"];
+v302 -> v304 [label="id"];
+
+v303 [shape=point,label="",fixedsize=true,width=0.1];
+v304 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:CUSTOM_TX2GENE"];
+v303 -> v304 [label="extra"];
+
+v304 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:CUSTOM_TX2GENE"];
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMPORT"];
+v304 -> v308;
+
+v304 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:CUSTOM_TX2GENE"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v304 -> v313;
+
+v297 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:RUN_PSIRC_QUANT"];
+v306 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMETA"];
+v297 -> v306;
+
+v305 [shape=point,label="",fixedsize=true,width=0.1];
+v306 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMETA"];
+v305 -> v306 [label="quant_type"];
+
+v306 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMETA"];
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v306 -> v336;
+
+v306 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMETA"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v306 -> v313;
+
+v297 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:RUN_PSIRC_QUANT"];
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMPORT"];
+v297 -> v308;
+
+v307 [shape=point,label="",fixedsize=true,width=0.1];
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMPORT"];
+v307 -> v308 [label="quant_type"];
+
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMPORT"];
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v308 -> v318;
+
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMPORT"];
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v308 -> v314;
+
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMPORT"];
+v312 [shape=point];
+v308 -> v312;
+
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMPORT"];
+v311 [shape=point];
+v308 -> v311;
+
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMPORT"];
+v310 [shape=point];
+v308 -> v310;
+
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMPORT"];
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v308 -> v327;
+
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMPORT"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v308 -> v323;
+
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMPORT"];
+v309 [shape=point];
+v308 -> v309;
+
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:TXIMETA_TXIMPORT"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v308 -> v313;
+
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v313 -> v342 [label="ch_versions"];
+
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v314 -> v315;
+
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v315 -> v316;
+
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v317 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:JOIN_GENE_COUNTS"];
+v316 -> v317;
+
+v317 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:JOIN_GENE_COUNTS"];
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v317 -> v343 [label="gene_counts"];
+
+v317 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:JOIN_GENE_COUNTS"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v317 -> v342;
+
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v318 -> v319;
+
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v319 -> v320;
+
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v321 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:JOIN_GENE_TPM"];
+v320 -> v321;
+
+v321 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:JOIN_GENE_TPM"];
+v322 [shape=point];
+v321 -> v322 [label="gene_tpm"];
+
+v321 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:JOIN_GENE_TPM"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v321 -> v342;
+
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v323 -> v324;
+
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v324 -> v325;
+
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v326 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:JOIN_TX_COUNTS"];
+v325 -> v326;
+
+v326 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:JOIN_TX_COUNTS"];
+v331 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:SPLIT_TYPES_COUNTS"];
+v326 -> v331 [label="tx_counts"];
+
+v326 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:JOIN_TX_COUNTS"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v326 -> v342;
+
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v328 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v327 -> v328;
+
+v328 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v328 -> v329;
+
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v330 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:JOIN_TX_TPM"];
+v329 -> v330;
+
+v330 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:JOIN_TX_TPM"];
+v333 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:SPLIT_TYPES_TPM"];
+v330 -> v333 [label="tx_tpm"];
+
+v330 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:JOIN_TX_TPM"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v330 -> v342;
+
+v331 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:SPLIT_TYPES_COUNTS"];
+v332 [shape=point];
+v331 -> v332 [label="linear_tx_counts"];
+
+v331 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:SPLIT_TYPES_COUNTS"];
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v331 -> v345 [label="circular_tx_counts"];
+
+v331 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:SPLIT_TYPES_COUNTS"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v331 -> v342;
+
+v333 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:SPLIT_TYPES_TPM"];
+v335 [shape=point];
+v333 -> v335 [label="linear_tx_tpm"];
+
+v333 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:SPLIT_TYPES_TPM"];
+v334 [shape=point];
+v333 -> v334 [label="circular_tx_tpm"];
+
+v333 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:SPLIT_TYPES_TPM"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v333 -> v342;
+
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v336 -> v337;
+
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v338 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v337 -> v338;
+
+v338 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v341 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:MERGE_EXPERIMENTS"];
+v338 -> v341;
+
+v339 [shape=point,label="",fixedsize=true,width=0.1];
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v339 -> v340 [label="ch_phenotype"];
+
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v341 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:MERGE_EXPERIMENTS"];
+v340 -> v341;
+
+v274 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:EXCLUDE_OVERLONG_TRANSCRIPTS"];
+v341 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:MERGE_EXPERIMENTS"];
+v274 -> v341 [label="ch_transcriptome_gtf"];
+
+v330 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:JOIN_TX_TPM"];
+v341 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:MERGE_EXPERIMENTS"];
+v330 -> v341 [label="tx_tpm"];
+
+v341 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:MERGE_EXPERIMENTS"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v341 -> v348 [label="rds"];
+
+v341 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:PSIRC_QUANT:MERGE_EXPERIMENTS"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v341 -> v342;
+
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v342 -> v347 [label="versions"];
+
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v343 -> v344;
+
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v344 -> v367 [label="ch_gene_counts"];
+
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v345 -> v346;
+
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v346 -> v368 [label="ch_circ_counts"];
+
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v347 -> v366 [label="ch_versions"];
+
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v349 [shape=point];
+v348 -> v349 [label="quantification_rds"];
+
+v350 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v350 -> v352 [label="ch_versions"];
+
+v66 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v351 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:MAIN"];
+v66 -> v351 [label="reads"];
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v351 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:MAIN"];
+v199 -> v351 [label="circrna_bed12"];
+
+v24 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:GTFFILTER"];
+v351 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:MAIN"];
+v24 -> v351 [label="ch_gtf"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v351 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:MAIN"];
+v22 -> v351 [label="ch_fasta"];
+
+v351 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:MAIN"];
+v353 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:EXTRACT_CIRC"];
+v351 -> v353 [label="raw"];
+
+v351 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:MAIN"];
+v356 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:EXTRACT_GENES"];
+v351 -> v356;
+
+v351 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:MAIN"];
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v351 -> v370 [label="stringtie"];
+
+v351 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:MAIN"];
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v351 -> v352;
+
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v352 -> v354 [label="ch_versions"];
+
+v353 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:EXTRACT_CIRC"];
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v353 -> v362;
+
+v353 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:EXTRACT_CIRC"];
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v353 -> v354;
+
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v354 -> v357 [label="ch_versions"];
+
+v355 [shape=point,label="",fixedsize=true,width=0.1];
+v356 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:EXTRACT_GENES"];
+v355 -> v356 [label="program_file"];
+
+v356 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:EXTRACT_GENES"];
+v358 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v356 -> v358;
+
+v356 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:EXTRACT_GENES"];
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v356 -> v357;
+
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v357 -> v361 [label="ch_versions"];
+
+v358 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v359 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v358 -> v359;
+
+v359 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v360 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:JOIN_GENE"];
+v359 -> v360;
+
+v360 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:JOIN_GENE"];
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v360 -> v367 [label="gene_tpm"];
+
+v360 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:JOIN_GENE"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v360 -> v361;
+
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v365 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v361 -> v365 [label="ch_versions"];
+
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v362 -> v363;
+
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v364 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:JOIN_CIRC"];
+v363 -> v364;
+
+v364 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:JOIN_CIRC"];
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v364 -> v368 [label="circ_cpm"];
+
+v364 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:JOIN_CIRC"];
+v365 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v364 -> v365;
+
+v365 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v365 -> v366 [label="versions"];
+
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v366 -> v371 [label="versions"];
+
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v414 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v367 -> v414 [label="ch_gene_counts"];
+
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v414 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v368 -> v414 [label="ch_circ_counts"];
+
+v351 [label="NFCORE_CIRCRNA:CIRCRNA:QUANTIFICATION:CIRIQUANT:MAIN"];
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v351 -> v369 [label="raw"];
+
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v369 -> v424 [label="ch_ciriquant"];
+
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v370 -> v426 [label="ch_stringtie"];
+
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v371 -> v412 [label="ch_versions"];
+
+v372 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v372 -> v411 [label="ch_versions"];
+
+v373 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v373 -> v376 [label="ch_versions"];
+
+v374 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v374 -> v391 [label="ch_predictions"];
+
+v277 [label="NFCORE_CIRCRNA:CIRCRNA:COMBINE_TRANSCRIPTOMES:TRANSCRIPTOME"];
+v375 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:ADD_BACKSPLICE"];
+v277 -> v375 [label="transcriptome_fasta"];
+
+v375 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:ADD_BACKSPLICE"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v375 -> v377;
+
+v375 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:ADD_BACKSPLICE"];
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v375 -> v376;
+
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v376 -> v389 [label="ch_versions"];
+
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v377 -> v378;
+
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v386 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:TARGETSCAN"];
+v378 -> v386 [label="ch_transcriptome_batches"];
+
+v379 [shape=point,label="",fixedsize=true,width=0.1];
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v379 -> v380 [label="mirna_fasta"];
+
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v380 -> v381;
+
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v381 -> v382;
+
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v382 -> v383;
+
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v383 -> v384;
+
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v384 -> v385;
+
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v386 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:TARGETSCAN"];
+v385 -> v386;
+
+v386 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:TARGETSCAN"];
+v388 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:UNIFY_TARGETSCAN"];
+v386 -> v388;
+
+v386 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:TARGETSCAN"];
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v386 -> v389;
+
+v387 [shape=point,label="",fixedsize=true,width=0.1];
+v388 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:UNIFY_TARGETSCAN"];
+v387 -> v388 [label="program_file"];
+
+v388 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:UNIFY_TARGETSCAN"];
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v388 -> v391;
+
+v388 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:UNIFY_TARGETSCAN"];
+v390 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v388 -> v390;
+
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v390 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v389 -> v390 [label="ch_versions"];
+
+v390 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v390 -> v397 [label="ch_versions"];
+
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v391 -> v399 [label="ch_predictions"];
+
+v379 [shape=point,label="",fixedsize=true,width=0.1];
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v379 -> v392 [label="mirna_fasta"];
+
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v392 -> v393;
+
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v394 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:MIRANDA"];
+v393 -> v394;
+
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v394 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:MIRANDA"];
+v378 -> v394 [label="ch_transcriptome_batches"];
+
+v394 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:MIRANDA"];
+v396 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:UNIFY_MIRANDA"];
+v394 -> v396;
+
+v394 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:MIRANDA"];
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v394 -> v397;
+
+v395 [shape=point,label="",fixedsize=true,width=0.1];
+v396 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:UNIFY_MIRANDA"];
+v395 -> v396 [label="program_file"];
+
+v396 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:UNIFY_MIRANDA"];
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v396 -> v399;
+
+v396 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:UNIFY_MIRANDA"];
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v396 -> v398;
+
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v397 -> v398 [label="ch_versions"];
+
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v398 -> v403 [label="ch_versions"];
+
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v399 -> v404 [label="ch_predictions"];
+
+v386 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:TARGETSCAN"];
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v386 -> v400;
+
+v394 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:MIRANDA"];
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v394 -> v400;
+
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v401 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:MIRNA_TARGETS"];
+v400 -> v401 [label="consolidate_targets"];
+
+v401 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:MIRNA_TARGETS"];
+v402 [shape=point];
+v401 -> v402;
+
+v401 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:MIRNA_TARGETS"];
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v401 -> v403;
+
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v403 -> v410 [label="ch_versions"];
+
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v404 -> v405;
+
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v406 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v405 -> v406;
+
+v406 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v407 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:MAJORITY_VOTE"];
+v406 -> v407;
+
+v407 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:MAJORITY_VOTE"];
+v409 [shape=point];
+v407 -> v409;
+
+v407 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:MAJORITY_VOTE"];
+v408 [shape=point];
+v407 -> v408 [label="binding_sites"];
+
+v407 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_BINDINGSITES:MAJORITY_VOTE"];
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v407 -> v410;
+
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v410 -> v411 [label="versions"];
+
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v411 -> v412 [label="versions"];
+
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v412 -> v450 [label="ch_versions"];
+
+v413 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v413 -> v416 [label="ch_versions"];
+
+v414 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v415 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRCTEST_PREPARE"];
+v414 -> v415 [label="ch_counts"];
+
+v415 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRCTEST_PREPARE"];
+v417 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRCTEST_CIRCTEST"];
+v415 -> v417;
+
+v415 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRCTEST_PREPARE"];
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v415 -> v416;
+
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v416 -> v420 [label="ch_versions"];
+
+v339 [shape=point,label="",fixedsize=true,width=0.1];
+v417 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRCTEST_CIRCTEST"];
+v339 -> v417 [label="ch_phenotype"];
+
+v417 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRCTEST_CIRCTEST"];
+v419 [shape=point];
+v417 -> v419;
+
+v417 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRCTEST_CIRCTEST"];
+v418 [shape=point];
+v417 -> v418;
+
+v417 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRCTEST_CIRCTEST"];
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v417 -> v420;
+
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v420 -> v439 [label="ch_versions"];
+
+v339 [shape=point,label="",fixedsize=true,width=0.1];
+v421 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v339 -> v421 [label="ch_phenotype"];
+
+v421 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v422 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v421 -> v422;
+
+v422 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v423 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v422 -> v423 [label="ch_phenotype_annotations"];
+
+v423 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v423 -> v425;
+
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v424 -> v425;
+
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v425 -> v427;
+
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v426 -> v427;
+
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v427 -> v428;
+
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v428 -> v429;
+
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v429 -> v430;
+
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v431 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v430 -> v431;
+
+v431 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v432 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v431 -> v432 [label="ch_condition_samples"];
+
+v432 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v432 -> v433;
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v434 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v433 -> v434;
+
+v434 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v435 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v434 -> v435 [label="ch_condition_pairs"];
+
+v435 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v436 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRIQUANT_PREPDE"];
+v435 -> v436;
+
+v436 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRIQUANT_PREPDE"];
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v436 -> v444;
+
+v436 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRIQUANT_PREPDE"];
+v438 [shape=point];
+v436 -> v438;
+
+v436 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRIQUANT_PREPDE"];
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v436 -> v444;
+
+v436 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRIQUANT_PREPDE"];
+v437 [shape=point];
+v436 -> v437;
+
+v436 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRIQUANT_PREPDE"];
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v436 -> v439;
+
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v443 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v439 -> v443 [label="ch_versions"];
+
+v434 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v434 -> v440 [label="ch_condition_pairs"];
+
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v441 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:STRINGTIE_PREPDE"];
+v440 -> v441;
+
+v441 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:STRINGTIE_PREPDE"];
+v442 [shape=point];
+v441 -> v442;
+
+v441 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:STRINGTIE_PREPDE"];
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v441 -> v445;
+
+v441 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:STRINGTIE_PREPDE"];
+v443 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v441 -> v443;
+
+v443 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v443 -> v449 [label="ch_versions"];
+
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v444 -> v445;
+
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v446 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRIQUANT_DE"];
+v445 -> v446;
+
+v446 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRIQUANT_DE"];
+v448 [shape=point];
+v446 -> v448;
+
+v446 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRIQUANT_DE"];
+v447 [shape=point];
+v446 -> v447;
+
+v446 [label="NFCORE_CIRCRNA:CIRCRNA:STATISTICAL_TESTS:CIRIQUANT_DE"];
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v446 -> v449;
+
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v449 -> v450 [label="versions"];
+
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v450 -> v451 [label="versions"];
+
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v451 -> v452;
+
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v453 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v452 -> v453;
+
+v453 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v453 -> v455;
+
+v454 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v454 -> v455;
+
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v456 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v455 -> v456;
+
+v456 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v456 -> v462 [label="ch_collated_versions"];
+
+v457 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v457 -> v465 [label="ch_multiqc_custom_config"];
+
+v458 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v458 -> v466 [label="ch_multiqc_logo"];
+
+v459 [shape=point,label="",fixedsize=true,width=0.1];
+v460 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v459 -> v460 [label="ch_workflow_summary"];
+
+v460 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v460 -> v461;
+
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v461 -> v462 [label="ch_multiqc_files"];
+
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v463 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v462 -> v463 [label="ch_multiqc_files"];
+
+v463 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v469 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v463 -> v469;
+
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v469 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v464 -> v469;
+
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v469 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v465 -> v469;
+
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v469 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v466 -> v469;
+
+v467 [shape=point,label="",fixedsize=true,width=0.1];
+v469 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v467 -> v469 [label="replace_names"];
+
+v468 [shape=point,label="",fixedsize=true,width=0.1];
+v469 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v468 -> v469 [label="sample_names"];
+
+v469 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v473 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v469 -> v473;
+
+v469 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v472 [shape=point];
+v469 -> v472;
+
+v469 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v471 [shape=point];
+v469 -> v471;
+
+v469 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v470 [shape=point];
+v469 -> v470;
+
+v473 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v474 [shape=point];
+v473 -> v474 [label="multiqc_report"];
+
+}

@@ -1,0 +1,1850 @@
+digraph "jianhong_____nfcorehicar" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="anchors"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v8 [label="ch_multiqc_custom_config"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v148 [label="cool_bin"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v15 [label="ch_versions"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v7 [label="ch_multiqc_files"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v10 [label="ch_multiqc_files"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v61 [label="ch_multiqc_files"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [label="NFCORE_HICAR:HICAR:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v11 -> v12 [label="samplesheet"];
+
+v12 [label="NFCORE_HICAR:HICAR:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v12 -> v13;
+
+v12 [label="NFCORE_HICAR:HICAR:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v15 [label="versions"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [label="NFCORE_HICAR:HICAR:CHECKSUMS"];
+v14 -> v16 [label="ch_reads"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v19 [label="ch_versions"];
+
+v16 [label="NFCORE_HICAR:HICAR:CHECKSUMS"];
+v17 [shape=point];
+v16 -> v17;
+
+v16 [label="NFCORE_HICAR:HICAR:CHECKSUMS"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v16 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v53 [label="ch_versions"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:GUNZIP_FASTA"];
+v20 -> v21;
+
+v21 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:GUNZIP_FASTA"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v23;
+
+v21 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:GUNZIP_FASTA"];
+v22 [shape=point];
+v21 -> v22;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v23 -> v37 [label="fasta"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v36 [label="ch_version"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v26 [shape=point];
+v25 -> v26 [label="ch_gtf"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:GUNZIP_GTF"];
+v27 -> v28;
+
+v28 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:GUNZIP_GTF"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 -> v30;
+
+v28 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:GUNZIP_GTF"];
+v29 [shape=point];
+v28 -> v29;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:GTF2BED"];
+v30 -> v33 [label="gtf"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v32 [shape=point];
+v31 -> v32 [label="ch_gene_bed"];
+
+v33 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:GTF2BED"];
+v34 [shape=point];
+v33 -> v34 [label="gene_bed"];
+
+v33 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:GTF2BED"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v33 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v45 [label="ch_version"];
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v42 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:GENOME_FILTER"];
+v37 -> v42 [label="chromsize"];
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v39 [shape=point];
+v37 -> v39;
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v38 [shape=point];
+v37 -> v38;
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v40 -> v41 [label="ch_blacklist"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v42 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:GENOME_FILTER"];
+v41 -> v42 [label="blacklist"];
+
+v42 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:GENOME_FILTER"];
+v43 [shape=point];
+v42 -> v43 [label="bed"];
+
+v42 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:GENOME_FILTER"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v42 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v49 [label="ch_version"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:COOLER_DIGEST"];
+v23 -> v47 [label="fasta"];
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v47 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:COOLER_DIGEST"];
+v37 -> v47 [label="chromsize"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:COOLER_DIGEST"];
+v46 -> v47 [label="enzyme"];
+
+v47 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:COOLER_DIGEST"];
+v108 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_RESTRICT"];
+v47 -> v108 [label="frag"];
+
+v47 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:COOLER_DIGEST"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v49 -> v52 [label="versions"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:BWA_INDEX"];
+v23 -> v50 [label="fasta"];
+
+v50 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:BWA_INDEX"];
+v69 [label="NFCORE_HICAR:HICAR:BWA_MEM"];
+v50 -> v69 [label="bwa_index"];
+
+v50 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:BWA_INDEX"];
+v51 [shape=point];
+v50 -> v51;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v58 [label="ch_versions"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [label="NFCORE_HICAR:HICAR:FASTQC"];
+v14 -> v54 [label="ch_reads"];
+
+v54 [label="NFCORE_HICAR:HICAR:FASTQC"];
+v55 [shape=point];
+v54 -> v55;
+
+v54 [label="NFCORE_HICAR:HICAR:FASTQC"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 -> v59;
+
+v54 [label="NFCORE_HICAR:HICAR:FASTQC"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v54 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v64 [label="ch_versions"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v67 [label="ch_multiqc_files"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [label="NFCORE_HICAR:HICAR:CUTADAPT"];
+v14 -> v62 [label="ch_reads"];
+
+v62 [label="NFCORE_HICAR:HICAR:CUTADAPT"];
+v69 [label="NFCORE_HICAR:HICAR:BWA_MEM"];
+v62 -> v69 [label="reads4mapping"];
+
+v62 [label="NFCORE_HICAR:HICAR:CUTADAPT"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 -> v65;
+
+v62 [label="NFCORE_HICAR:HICAR:CUTADAPT"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v71 [label="ch_versions"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v97 [label="ch_multiqc_files"];
+
+v68 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="NFCORE_HICAR:HICAR:BWA_MEM"];
+v68 -> v69 [label="sort_bam"];
+
+v69 [label="NFCORE_HICAR:HICAR:BWA_MEM"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 -> v72;
+
+v69 [label="NFCORE_HICAR:HICAR:BWA_MEM"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v79 [label="ch_versions"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 [label="NFCORE_HICAR:HICAR:SAMTOOLS_MERGE"];
+v74 -> v76 [label="mapped_bam"];
+
+v75 [shape=point,label="",fixedsize=true,width=0.1];
+v76 [label="NFCORE_HICAR:HICAR:SAMTOOLS_MERGE"];
+v75 -> v76 [label="fasta"];
+
+v76 [label="NFCORE_HICAR:HICAR:SAMTOOLS_MERGE"];
+v80 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_SORT"];
+v76 -> v80 [label="ch_bam"];
+
+v76 [label="NFCORE_HICAR:HICAR:SAMTOOLS_MERGE"];
+v77 [shape=point];
+v76 -> v77;
+
+v76 [label="NFCORE_HICAR:HICAR:SAMTOOLS_MERGE"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v76 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v94 [label="ch_versions"];
+
+v80 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_SORT"];
+v81 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_INDEX"];
+v80 -> v81;
+
+v80 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_SORT"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v80 -> v93 [label="versions"];
+
+v81 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_INDEX"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v81 -> v85;
+
+v81 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_INDEX"];
+v84 [shape=point];
+v81 -> v84;
+
+v81 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_INDEX"];
+v83 [shape=point];
+v81 -> v83;
+
+v81 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_INDEX"];
+v82 [shape=point];
+v81 -> v82;
+
+v80 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_SORT"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v80 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v87 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_STATS"];
+v85 -> v87 [label="ch_bam_bai"];
+
+v86 [shape=point,label="",fixedsize=true,width=0.1];
+v87 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_STATS"];
+v86 -> v87 [label="fasta"];
+
+v87 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_STATS"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v87 -> v95 [label="stats"];
+
+v87 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_STATS"];
+v88 [shape=point];
+v87 -> v88;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v89 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_FLAGSTAT"];
+v85 -> v89 [label="ch_bam_bai"];
+
+v89 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_FLAGSTAT"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v89 -> v98 [label="flagstat"];
+
+v89 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_FLAGSTAT"];
+v90 [shape=point];
+v89 -> v90;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v91 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_IDXSTATS"];
+v85 -> v91 [label="ch_bam_bai"];
+
+v91 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_IDXSTATS"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v91 -> v101 [label="idxstats"];
+
+v91 [label="NFCORE_HICAR:HICAR:BAM_STAT:SAMTOOLS_IDXSTATS"];
+v92 [shape=point];
+v91 -> v92;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v144 [label="ch_versions"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v95 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v100 [label="ch_multiqc_files"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v103 [label="ch_multiqc_files"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v147 [label="ch_multiqc_files"];
+
+v76 [label="NFCORE_HICAR:HICAR:SAMTOOLS_MERGE"];
+v104 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_PARSE"];
+v76 -> v104 [label="ch_bam"];
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v104 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_PARSE"];
+v37 -> v104 [label="chromsize"];
+
+v104 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_PARSE"];
+v105 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_SELECT"];
+v104 -> v105 [label="raw"];
+
+v104 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_PARSE"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 -> v124;
+
+v104 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_PARSE"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v104 -> v143 [label="versions"];
+
+v105 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_SELECT"];
+v108 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_RESTRICT"];
+v105 -> v108 [label="validpair"];
+
+v105 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_SELECT"];
+v107 [shape=point];
+v105 -> v107;
+
+v105 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_SELECT"];
+v106 [shape=point];
+v105 -> v106;
+
+v108 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_RESTRICT"];
+v110 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_SELECT_LONG"];
+v108 -> v110;
+
+v108 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_RESTRICT"];
+v109 [shape=point];
+v108 -> v109;
+
+v110 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_SELECT_LONG"];
+v112 [shape=point];
+v110 -> v112;
+
+v110 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_SELECT_LONG"];
+v113 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:BIOC_PAIRS2HDF5"];
+v110 -> v113 [label="distalpair"];
+
+v110 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_SELECT_LONG"];
+v111 [shape=point];
+v110 -> v111;
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v113 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:BIOC_PAIRS2HDF5"];
+v37 -> v113 [label="chromsize"];
+
+v113 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:BIOC_PAIRS2HDF5"];
+v115 [shape=point];
+v113 -> v115 [label="hdf5"];
+
+v113 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:BIOC_PAIRS2HDF5"];
+v114 [shape=point];
+v113 -> v114;
+
+v110 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_SELECT_LONG"];
+v116 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_FLIP"];
+v110 -> v116 [label="distalpair"];
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v116 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_FLIP"];
+v37 -> v116 [label="chromsize"];
+
+v116 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_FLIP"];
+v118 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_SORT"];
+v116 -> v118;
+
+v116 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_FLIP"];
+v117 [shape=point];
+v116 -> v117;
+
+v118 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_SORT"];
+v120 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_DEDUP"];
+v118 -> v120;
+
+v118 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_SORT"];
+v119 [shape=point];
+v118 -> v119;
+
+v120 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_DEDUP"];
+v122 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRIX"];
+v120 -> v122;
+
+v120 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_DEDUP"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v120 -> v125;
+
+v120 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_DEDUP"];
+v121 [shape=point];
+v120 -> v121;
+
+v122 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRIX"];
+v130 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRSQC"];
+v122 -> v130 [label="pair"];
+
+v122 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRIX"];
+v123 [shape=point];
+v122 -> v123;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v124 -> v126;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v125 -> v126;
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v128 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:READS_STAT"];
+v127 -> v128 [label="reads_stat"];
+
+v128 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:READS_STAT"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v128 -> v135;
+
+v128 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:READS_STAT"];
+v129 [shape=point];
+v128 -> v129;
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v130 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRSQC"];
+v37 -> v130 [label="chromsize"];
+
+v130 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRSQC"];
+v132 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRSPLOT"];
+v130 -> v132 [label="qc"];
+
+v130 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRSQC"];
+v131 [shape=point];
+v130 -> v131;
+
+v132 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRSPLOT"];
+v134 [shape=point];
+v132 -> v134;
+
+v132 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRSPLOT"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v132 -> v136;
+
+v132 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRSPLOT"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v132 -> v138;
+
+v132 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRSPLOT"];
+v133 [shape=point];
+v132 -> v133;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v137;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v137;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v139;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v141 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:READS_SUMMARY"];
+v140 -> v141;
+
+v141 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:READS_SUMMARY"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v141 -> v145 [label="stat"];
+
+v141 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:READS_SUMMARY"];
+v142 [shape=point];
+v141 -> v142;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v179 [label="ch_versions"];
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v145 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v232 [label="ch_multiqc_files"];
+
+v122 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRIX"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v122 -> v148 [label="pair"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v148 -> v149;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v149 -> v150 [label="valid_pairs"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_CLOAD"];
+v150 -> v152;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v149 -> v151 [label="valid_pairs"];
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_CLOAD"];
+v151 -> v152;
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v152 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_CLOAD"];
+v37 -> v152 [label="chromsize"];
+
+v152 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_CLOAD"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 -> v153;
+
+v152 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_CLOAD"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v169 [label="ch_version"];
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v153 -> v154;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v156 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_MERGE"];
+v155 -> v156 [label="ch_cooler"];
+
+v156 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_MERGE"];
+v158 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_ZOOMIFY"];
+v156 -> v158;
+
+v156 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_MERGE"];
+v157 [shape=point];
+v156 -> v157;
+
+v158 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_ZOOMIFY"];
+v160 [shape=point];
+v158 -> v160 [label="mcool"];
+
+v158 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_ZOOMIFY"];
+v159 [shape=point];
+v158 -> v159;
+
+v156 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_MERGE"];
+v162 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_DUMP_PER_GROUP"];
+v156 -> v162;
+
+v161 [shape=point,label="",fixedsize=true,width=0.1];
+v162 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_DUMP_PER_GROUP"];
+v161 -> v162 [label="resolution"];
+
+v162 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_DUMP_PER_GROUP"];
+v164 [label="NFCORE_HICAR:HICAR:COOLER:DUMPINTRAREADS_PER_GROUP"];
+v162 -> v164 [label="groupbedpe"];
+
+v162 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_DUMP_PER_GROUP"];
+v163 [shape=point];
+v162 -> v163;
+
+v164 [label="NFCORE_HICAR:HICAR:COOLER:DUMPINTRAREADS_PER_GROUP"];
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v164 -> v265 [label="bedpe"];
+
+v164 [label="NFCORE_HICAR:HICAR:COOLER:DUMPINTRAREADS_PER_GROUP"];
+v167 [label="NFCORE_HICAR:HICAR:COOLER:JUICER"];
+v164 -> v167;
+
+v164 [label="NFCORE_HICAR:HICAR:COOLER:DUMPINTRAREADS_PER_GROUP"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v177;
+
+v165 [shape=point,label="",fixedsize=true,width=0.1];
+v167 [label="NFCORE_HICAR:HICAR:COOLER:JUICER"];
+v165 -> v167 [label="juicer_tools_jar"];
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v167 [label="NFCORE_HICAR:HICAR:COOLER:JUICER"];
+v37 -> v167 [label="chromsize"];
+
+v166 [shape=point,label="",fixedsize=true,width=0.1];
+v167 [label="NFCORE_HICAR:HICAR:COOLER:JUICER"];
+v166 -> v167 [label="juicer_jvm_params"];
+
+v167 [label="NFCORE_HICAR:HICAR:COOLER:JUICER"];
+v168 [shape=point];
+v167 -> v168;
+
+v167 [label="NFCORE_HICAR:HICAR:COOLER:JUICER"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v169;
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v177 [label="ch_version"];
+
+v152 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_CLOAD"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 -> v170;
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v172 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_DUMP_PER_SAMPLE"];
+v170 -> v172;
+
+v171 [shape=point,label="",fixedsize=true,width=0.1];
+v172 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_DUMP_PER_SAMPLE"];
+v171 -> v172 [label="resolution"];
+
+v172 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_DUMP_PER_SAMPLE"];
+v174 [label="NFCORE_HICAR:HICAR:COOLER:DUMPINTRAREADS_PER_SAMPLE"];
+v172 -> v174;
+
+v172 [label="NFCORE_HICAR:HICAR:COOLER:COOLER_DUMP_PER_SAMPLE"];
+v173 [shape=point];
+v172 -> v173;
+
+v174 [label="NFCORE_HICAR:HICAR:COOLER:DUMPINTRAREADS_PER_SAMPLE"];
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v174 -> v337 [label="samplebedpe"];
+
+v174 [label="NFCORE_HICAR:HICAR:COOLER:DUMPINTRAREADS_PER_SAMPLE"];
+v176 [shape=point];
+v174 -> v176;
+
+v174 [label="NFCORE_HICAR:HICAR:COOLER:DUMPINTRAREADS_PER_SAMPLE"];
+v175 [shape=point];
+v174 -> v175;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v177 -> v178 [label="versions"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v229 [label="ch_versions"];
+
+v105 [label="NFCORE_HICAR:HICAR:PAIRTOOLS_PAIRE:PAIRTOOLS_SELECT"];
+v180 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:PAIRTOOLS_SELECT_SHORT"];
+v105 -> v180 [label="validpair"];
+
+v180 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:PAIRTOOLS_SELECT_SHORT"];
+v181 [shape=point];
+v180 -> v181;
+
+v180 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:PAIRTOOLS_SELECT_SHORT"];
+v183 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:SHIFT_READS"];
+v180 -> v183;
+
+v180 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:PAIRTOOLS_SELECT_SHORT"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 -> v184 [label="ch_version"];
+
+v182 [shape=point,label="",fixedsize=true,width=0.1];
+v183 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:SHIFT_READS"];
+v182 -> v183 [label="do_shift"];
+
+v183 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:SHIFT_READS"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v183 -> v185;
+
+v183 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:SHIFT_READS"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 -> v184;
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 -> v189 [label="ch_version"];
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v185 -> v186;
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v186 -> v187;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v188 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MERGE_READS"];
+v187 -> v188 [label="read4merge"];
+
+v188 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MERGE_READS"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v188 -> v190;
+
+v188 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MERGE_READS"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 -> v189;
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 -> v196 [label="ch_version"];
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v192 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MACS2_CALLPEAK"];
+v190 -> v192;
+
+v191 [shape=point,label="",fixedsize=true,width=0.1];
+v192 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MACS2_CALLPEAK"];
+v191 -> v192 [label="macs_gsize"];
+
+v192 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MACS2_CALLPEAK"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v192 -> v198 [label="peak"];
+
+v192 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MACS2_CALLPEAK"];
+v195 [shape=point];
+v192 -> v195;
+
+v192 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MACS2_CALLPEAK"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v192 -> v196;
+
+v192 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MACS2_CALLPEAK"];
+v194 [shape=point];
+v192 -> v194;
+
+v192 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MACS2_CALLPEAK"];
+v193 [shape=point];
+v192 -> v193;
+
+v192 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MACS2_CALLPEAK"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v192 -> v197;
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v205 [label="ch_version"];
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v208 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:BEDFILES_SORT_PER_GROUP"];
+v197 -> v208 [label="ch_group_bdg"];
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v198 -> v199;
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v200 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MERGE_PEAK"];
+v199 -> v200 [label="anchor_peaks"];
+
+v200 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MERGE_PEAK"];
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v200 -> v264 [label="mergedpeak"];
+
+v200 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MERGE_PEAK"];
+v201 [shape=point];
+v200 -> v201;
+
+v188 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MERGE_READS"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v188 -> v202;
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v202 -> v203;
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v204 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:ATACQC"];
+v203 -> v204;
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v204 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:ATACQC"];
+v199 -> v204 [label="anchor_peaks"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v204 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:ATACQC"];
+v30 -> v204 [label="gtf"];
+
+v204 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:ATACQC"];
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v204 -> v230 [label="stats"];
+
+v204 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:ATACQC"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v204 -> v205;
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v205 -> v217 [label="ch_version"];
+
+v188 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:MERGE_READS"];
+v206 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:DUMP_READS"];
+v188 -> v206;
+
+v206 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:DUMP_READS"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v206 -> v263 [label="samplereads"];
+
+v206 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:DUMP_READS"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 -> v217;
+
+v207 [shape=point,label="",fixedsize=true,width=0.1];
+v208 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:BEDFILES_SORT_PER_GROUP"];
+v207 -> v208 [label="extension"];
+
+v208 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:BEDFILES_SORT_PER_GROUP"];
+v210 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:UCSC_BEDCLIP"];
+v208 -> v210;
+
+v208 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:BEDFILES_SORT_PER_GROUP"];
+v209 [shape=point];
+v208 -> v209;
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v210 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:UCSC_BEDCLIP"];
+v37 -> v210 [label="chromsize"];
+
+v210 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:UCSC_BEDCLIP"];
+v212 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:UCSC_BEDGRAPHTOBIGWIG_PER_GROUP"];
+v210 -> v212;
+
+v210 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:UCSC_BEDCLIP"];
+v211 [shape=point];
+v210 -> v211;
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v212 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:UCSC_BEDGRAPHTOBIGWIG_PER_GROUP"];
+v37 -> v212 [label="chromsize"];
+
+v212 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:UCSC_BEDGRAPHTOBIGWIG_PER_GROUP"];
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v212 -> v315 [label="bws"];
+
+v212 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:UCSC_BEDGRAPHTOBIGWIG_PER_GROUP"];
+v213 [shape=point];
+v212 -> v213;
+
+v183 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:SHIFT_READS"];
+v214 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:DUMP_READS_PER_SAMPLE"];
+v183 -> v214;
+
+v214 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:DUMP_READS_PER_SAMPLE"];
+v216 [shape=point];
+v214 -> v216;
+
+v214 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:DUMP_READS_PER_SAMPLE"];
+v215 [shape=point];
+v214 -> v215;
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v217 -> v224 [label="ch_version"];
+
+v183 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:SHIFT_READS"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v183 -> v218;
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v220 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:BEDTOOLS_GENOMECOV_PER_SAMPLE"];
+v218 -> v220;
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v220 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:BEDTOOLS_GENOMECOV_PER_SAMPLE"];
+v37 -> v220 [label="chromsize"];
+
+v219 [shape=point,label="",fixedsize=true,width=0.1];
+v220 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:BEDTOOLS_GENOMECOV_PER_SAMPLE"];
+v219 -> v220 [label="extension"];
+
+v220 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:BEDTOOLS_GENOMECOV_PER_SAMPLE"];
+v222 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:BEDFILES_SORT_PER_SAMPLE"];
+v220 -> v222;
+
+v220 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:BEDTOOLS_GENOMECOV_PER_SAMPLE"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 -> v224;
+
+v221 [shape=point,label="",fixedsize=true,width=0.1];
+v222 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:BEDFILES_SORT_PER_SAMPLE"];
+v221 -> v222 [label="extension"];
+
+v222 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:BEDFILES_SORT_PER_SAMPLE"];
+v225 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:UCSC_BEDGRAPHTOBIGWIG_PER_SAMPLE"];
+v222 -> v225;
+
+v222 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:BEDFILES_SORT_PER_SAMPLE"];
+v223 [shape=point];
+v222 -> v223;
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v224 -> v227 [label="ch_version"];
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v225 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:UCSC_BEDGRAPHTOBIGWIG_PER_SAMPLE"];
+v37 -> v225 [label="chromsize"];
+
+v225 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:UCSC_BEDGRAPHTOBIGWIG_PER_SAMPLE"];
+v226 [shape=point];
+v225 -> v226;
+
+v225 [label="NFCORE_HICAR:HICAR:ATAC_PEAK:UCSC_BEDGRAPHTOBIGWIG_PER_SAMPLE"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v225 -> v227;
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v227 -> v228 [label="versions"];
+
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 -> v229;
+
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v229 -> v262 [label="ch_versions"];
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v230 -> v231;
+
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v231 -> v232;
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 -> v300 [label="ch_multiqc_files"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v233 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_CUT"];
+v23 -> v233 [label="fasta"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v233 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_CUT"];
+v3 -> v233 [label="cool_bin"];
+
+v233 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_CUT"];
+v234 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_FEND"];
+v233 -> v234 [label="ch_digest"];
+
+v233 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_CUT"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v247 [label="ch_version"];
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v234 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_FEND"];
+v37 -> v234 [label="chromsize"];
+
+v234 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_FEND"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v234 -> v237;
+
+v234 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_FEND"];
+v235 [shape=point];
+v234 -> v235;
+
+v236 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v236 -> v244 [label="mappability"];
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v237 -> v238;
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v238 -> v239;
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v240 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:SEQLEVELS_STYLE"];
+v239 -> v240;
+
+v240 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:SEQLEVELS_STYLE"];
+v242 [shape=point];
+v240 -> v242 [label="seqlevelsstyle"];
+
+v240 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:SEQLEVELS_STYLE"];
+v241 [shape=point];
+v240 -> v241;
+
+v234 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_FEND"];
+v243 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:ENSEMBL_UCSC_CONVERT"];
+v234 -> v243;
+
+v243 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:ENSEMBL_UCSC_CONVERT"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v243 -> v248;
+
+v243 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:ENSEMBL_UCSC_CONVERT"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v243 -> v247;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v244 [label="cool_bin"];
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v245 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:ENSEMBL_UCSC_CONVERT2"];
+v244 -> v245;
+
+v245 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:ENSEMBL_UCSC_CONVERT2"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v245 -> v249;
+
+v245 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:ENSEMBL_UCSC_CONVERT2"];
+v246 [shape=point];
+v245 -> v246;
+
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 -> v251 [label="ch_version"];
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v250 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:UCSC_BIGWIGAVERAGEOVERBED"];
+v248 -> v250;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v250 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:UCSC_BIGWIGAVERAGEOVERBED"];
+v249 -> v250;
+
+v250 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:UCSC_BIGWIGAVERAGEOVERBED"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v250 -> v252;
+
+v250 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:UCSC_BIGWIGAVERAGEOVERBED"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v250 -> v251;
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v251 -> v261 [label="versions"];
+
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v252 -> v253;
+
+v233 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_CUT"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v233 -> v253 [label="ch_digest"];
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v253 -> v254;
+
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v256 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_MERGE"];
+v254 -> v256;
+
+v255 [shape=point,label="",fixedsize=true,width=0.1];
+v256 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_MERGE"];
+v255 -> v256 [label="merge_map_py_source"];
+
+v256 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_MERGE"];
+v259 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_FEATURE"];
+v256 -> v259;
+
+v256 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_MERGE"];
+v257 [shape=point];
+v256 -> v257;
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v259 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_FEATURE"];
+v37 -> v259 [label="chromsize"];
+
+v258 [shape=point,label="",fixedsize=true,width=0.1];
+v259 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_FEATURE"];
+v258 -> v259 [label="feature_frag2bin_source"];
+
+v259 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_FEATURE"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v259 -> v268 [label="background"];
+
+v259 [label="NFCORE_HICAR:HICAR:MAPS_MULTIENZYME:MAPS_FEATURE"];
+v260 [shape=point];
+v259 -> v260;
+
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v261 -> v262;
+
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v262 -> v297 [label="ch_versions"];
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v263 -> v264;
+
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v264 -> v266;
+
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v265 -> v266;
+
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v266 -> v267;
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v267 -> v268 [label="reads_peak"];
+
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v268 -> v269;
+
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v271 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_MAPS"];
+v269 -> v271 [label="reads"];
+
+v270 [shape=point,label="",fixedsize=true,width=0.1];
+v271 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_MAPS"];
+v270 -> v271 [label="make_maps_runfile_source"];
+
+v271 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_MAPS"];
+v272 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_CALLPEAK"];
+v271 -> v272;
+
+v271 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_MAPS"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v271 -> v273 [label="ch_version"];
+
+v272 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_CALLPEAK"];
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v272 -> v292;
+
+v272 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_CALLPEAK"];
+v290 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_REFORMAT"];
+v272 -> v290 [label="peak"];
+
+v272 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_CALLPEAK"];
+v274 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_RAW2BG2"];
+v272 -> v274;
+
+v272 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_CALLPEAK"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v272 -> v273;
+
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v273 -> v275 [label="ch_version"];
+
+v274 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_RAW2BG2"];
+v276 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:COOLER_LOAD"];
+v274 -> v276;
+
+v274 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_RAW2BG2"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v274 -> v284;
+
+v274 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_RAW2BG2"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v274 -> v275;
+
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 -> v277 [label="ch_version"];
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v276 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:COOLER_LOAD"];
+v37 -> v276 [label="chromsize"];
+
+v276 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:COOLER_LOAD"];
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v276 -> v278;
+
+v276 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:COOLER_LOAD"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v276 -> v277;
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v277 -> v289 [label="ch_version"];
+
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v279 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:COOLER_MERGE"];
+v278 -> v279 [label="ch_cooler"];
+
+v279 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:COOLER_MERGE"];
+v281 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:COOLER_ZOOMIFY_MAPS"];
+v279 -> v281;
+
+v279 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:COOLER_MERGE"];
+v280 [shape=point];
+v279 -> v280;
+
+v281 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:COOLER_ZOOMIFY_MAPS"];
+v283 [shape=point];
+v281 -> v283;
+
+v281 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:COOLER_ZOOMIFY_MAPS"];
+v282 [shape=point];
+v281 -> v282;
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v287 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:JUICER_MAPS"];
+v284 -> v287;
+
+v285 [shape=point,label="",fixedsize=true,width=0.1];
+v287 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:JUICER_MAPS"];
+v285 -> v287 [label="juicer_tools_jar"];
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v287 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:JUICER_MAPS"];
+v37 -> v287 [label="chromsize"];
+
+v286 [shape=point,label="",fixedsize=true,width=0.1];
+v287 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:JUICER_MAPS"];
+v286 -> v287 [label="juicer_jvm_params"];
+
+v287 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:JUICER_MAPS"];
+v288 [shape=point];
+v287 -> v288;
+
+v287 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:JUICER_MAPS"];
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v287 -> v289;
+
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v289 -> v291 [label="ch_version"];
+
+v290 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_REFORMAT"];
+v301 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v290 -> v301 [label="peak"];
+
+v290 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_REFORMAT"];
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v290 -> v291;
+
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v291 -> v296 [label="versions"];
+
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v292 -> v293;
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v294 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_STATS"];
+v293 -> v294;
+
+v294 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_STATS"];
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v294 -> v298 [label="stats"];
+
+v294 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_STATS"];
+v295 [shape=point];
+v294 -> v295;
+
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v296 -> v297;
+
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v297 -> v313 [label="ch_versions"];
+
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v298 -> v299;
+
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v299 -> v300;
+
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v300 -> v334 [label="ch_multiqc_files"];
+
+v301 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v301 -> v303 [label="bedpe"];
+
+v302 [shape=point,label="",fixedsize=true,width=0.1];
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v302 -> v303 [label="ucscname"];
+
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v303 -> v304;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v30 -> v304 [label="gtf"];
+
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v304 -> v305;
+
+v37 [label="NFCORE_HICAR:HICAR:PREPARE_GENOME:CHROMSIZES"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v37 -> v305 [label="chromsize"];
+
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v306 [label="NFCORE_HICAR:HICAR:MAPS_CIRCOS:CIRCOS_PREPARE"];
+v305 -> v306;
+
+v306 [label="NFCORE_HICAR:HICAR:MAPS_CIRCOS:CIRCOS_PREPARE"];
+v309 [label="NFCORE_HICAR:HICAR:MAPS_CIRCOS:CIRCOS"];
+v306 -> v309;
+
+v306 [label="NFCORE_HICAR:HICAR:MAPS_CIRCOS:CIRCOS_PREPARE"];
+v307 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v306 -> v307;
+
+v307 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v307 -> v311 [label="ch_version"];
+
+v308 [shape=point,label="",fixedsize=true,width=0.1];
+v309 [label="NFCORE_HICAR:HICAR:MAPS_CIRCOS:CIRCOS"];
+v308 -> v309 [label="configfile"];
+
+v309 [label="NFCORE_HICAR:HICAR:MAPS_CIRCOS:CIRCOS"];
+v310 [shape=point];
+v309 -> v310 [label="circos"];
+
+v309 [label="NFCORE_HICAR:HICAR:MAPS_CIRCOS:CIRCOS"];
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v309 -> v311;
+
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v311 -> v312 [label="versions"];
+
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v312 -> v313;
+
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v313 -> v331 [label="ch_versions"];
+
+v290 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_REFORMAT"];
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v290 -> v314 [label="peak"];
+
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v314 -> v316;
+
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v315 -> v316;
+
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v316 -> v317 [label="ch_trackfiles"];
+
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v317 -> v318;
+
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v318 -> v319;
+
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v321 [label="NFCORE_HICAR:HICAR:IGV"];
+v319 -> v321 [label="igv_track_files"];
+
+v302 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="NFCORE_HICAR:HICAR:IGV"];
+v302 -> v321 [label="ucscname"];
+
+v320 [shape=point,label="",fixedsize=true,width=0.1];
+v321 [label="NFCORE_HICAR:HICAR:IGV"];
+v320 -> v321 [label="outdir"];
+
+v321 [label="NFCORE_HICAR:HICAR:IGV"];
+v323 [shape=point];
+v321 -> v323;
+
+v321 [label="NFCORE_HICAR:HICAR:IGV"];
+v322 [shape=point];
+v321 -> v322;
+
+v290 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_REFORMAT"];
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v290 -> v324 [label="peak"];
+
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v324 -> v325;
+
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v325 -> v326;
+
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v327 [label="NFCORE_HICAR:HICAR:BIOC_CHIPPEAKANNO_MAPS"];
+v326 -> v327 [label="ch_maps_anno"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v327 [label="NFCORE_HICAR:HICAR:BIOC_CHIPPEAKANNO_MAPS"];
+v30 -> v327 [label="gtf"];
+
+v327 [label="NFCORE_HICAR:HICAR:BIOC_CHIPPEAKANNO_MAPS"];
+v329 [shape=point];
+v327 -> v329;
+
+v327 [label="NFCORE_HICAR:HICAR:BIOC_CHIPPEAKANNO_MAPS"];
+v328 [shape=point];
+v327 -> v328;
+
+v327 [label="NFCORE_HICAR:HICAR:BIOC_CHIPPEAKANNO_MAPS"];
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v327 -> v332;
+
+v327 [label="NFCORE_HICAR:HICAR:BIOC_CHIPPEAKANNO_MAPS"];
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v327 -> v330;
+
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v330 -> v331;
+
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v331 -> v346 [label="ch_versions"];
+
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v332 -> v333;
+
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v333 -> v334;
+
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v334 -> v349 [label="ch_multiqc_files"];
+
+v290 [label="NFCORE_HICAR:HICAR:MAPS_PEAK:MAPS_REFORMAT"];
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v290 -> v335 [label="peak"];
+
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v335 -> v336;
+
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v339 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v336 -> v339;
+
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v338 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v337 -> v338;
+
+v338 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v339 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v338 -> v339;
+
+v339 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v339 -> v340;
+
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v340 -> v341;
+
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v341 -> v342;
+
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v342 -> v343;
+
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v344 [label="NFCORE_HICAR:HICAR:DIFFHICAR"];
+v343 -> v344 [label="ch_diffhicar"];
+
+v344 [label="NFCORE_HICAR:HICAR:DIFFHICAR"];
+v350 [label="NFCORE_HICAR:HICAR:BIOC_CHIPPEAKANNO"];
+v344 -> v350;
+
+v344 [label="NFCORE_HICAR:HICAR:DIFFHICAR"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v344 -> v347;
+
+v344 [label="NFCORE_HICAR:HICAR:DIFFHICAR"];
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v344 -> v345;
+
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v345 -> v346;
+
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v346 -> v355 [label="ch_versions"];
+
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v347 -> v348;
+
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v348 -> v349;
+
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v349 -> v362 [label="ch_multiqc_files"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v350 [label="NFCORE_HICAR:HICAR:BIOC_CHIPPEAKANNO"];
+v30 -> v350 [label="gtf"];
+
+v350 [label="NFCORE_HICAR:HICAR:BIOC_CHIPPEAKANNO"];
+v353 [shape=point];
+v350 -> v353;
+
+v350 [label="NFCORE_HICAR:HICAR:BIOC_CHIPPEAKANNO"];
+v352 [shape=point];
+v350 -> v352;
+
+v350 [label="NFCORE_HICAR:HICAR:BIOC_CHIPPEAKANNO"];
+v351 [shape=point];
+v350 -> v351;
+
+v350 [label="NFCORE_HICAR:HICAR:BIOC_CHIPPEAKANNO"];
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v350 -> v354;
+
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v354 -> v355;
+
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v355 -> v356 [label="ch_versions"];
+
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v356 -> v357;
+
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v358 [label="NFCORE_HICAR:HICAR:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v357 -> v358;
+
+v358 [label="NFCORE_HICAR:HICAR:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v358 -> v363;
+
+v358 [label="NFCORE_HICAR:HICAR:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v358 -> v360;
+
+v358 [label="NFCORE_HICAR:HICAR:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v359 [shape=point];
+v358 -> v359;
+
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v360 -> v361;
+
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v361 -> v362;
+
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v365 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v362 -> v365 [label="ch_multiqc_files"];
+
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v363 -> v364;
+
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v365 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v364 -> v365;
+
+v365 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v365 -> v368 [label="ch_multiqc_files"];
+
+v366 [shape=point,label="",fixedsize=true,width=0.1];
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v366 -> v367 [label="ch_workflow_summary"];
+
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v367 -> v368;
+
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v368 -> v369 [label="ch_multiqc_files"];
+
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v369 -> v370;
+
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v370 -> v371;
+
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v371 -> v372;
+
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v372 -> v373;
+
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v374 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v373 -> v374;
+
+v374 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v374 -> v375 [label="ch_multiqc_files"];
+
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v376 [label="NFCORE_HICAR:HICAR:MULTIQC"];
+v375 -> v376;
+
+v376 [label="NFCORE_HICAR:HICAR:MULTIQC"];
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v376 -> v379;
+
+v376 [label="NFCORE_HICAR:HICAR:MULTIQC"];
+v378 [shape=point];
+v376 -> v378;
+
+v376 [label="NFCORE_HICAR:HICAR:MULTIQC"];
+v377 [shape=point];
+v376 -> v377;
+
+v376 [label="NFCORE_HICAR:HICAR:MULTIQC"];
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v376 -> v381;
+
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v380 [shape=point];
+v379 -> v380;
+
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v381 -> v382;
+
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v355 -> v382 [label="ch_versions"];
+
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v383 [shape=point];
+v382 -> v383 [label="ch_versions"];
+
+}

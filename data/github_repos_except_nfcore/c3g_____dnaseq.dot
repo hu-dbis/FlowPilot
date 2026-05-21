@@ -1,0 +1,630 @@
+digraph "c3g_____dnaseq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v119 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v7 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="DNA:INPUT_CHECK:READSETS_CHECK"];
+v2 -> v3 [label="readsets"];
+
+v3 [label="DNA:INPUT_CHECK:READSETS_CHECK"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 -> v4;
+
+v3 [label="DNA:INPUT_CHECK:READSETS_CHECK"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v7 [label="versions"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v6 [shape=point];
+v5 -> v6;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v45 [label="DNA:FASTP"];
+v5 -> v45 [label="reads"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v51 [label="ch_versions"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v17 [label="ch_versions"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v10 [shape=point];
+v9 -> v10 [label="ch_bwa_index"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=point];
+v11 -> v12 [label="ch_dict_index"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [label="DNA:PREPARE_GENOME:PICARD_CREATESEQUENCEDICTIONARY"];
+v14 -> v15;
+
+v15 [label="DNA:PREPARE_GENOME:PICARD_CREATESEQUENCEDICTIONARY"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16;
+
+v15 [label="DNA:PREPARE_GENOME:PICARD_CREATESEQUENCEDICTIONARY"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v17;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v16 -> v40 [label="ch_dict_index"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v24 [label="ch_versions"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v19 [shape=point];
+v18 -> v19 [label="ch_fai_index"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [label="DNA:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v21 -> v22;
+
+v22 [label="DNA:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v23;
+
+v22 [label="DNA:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v24;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v23 -> v39 [label="ch_fai_index"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v33 [label="ch_versions"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v26 [shape=point];
+v25 -> v26 [label="ch_interval_list"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 -> v29;
+
+v22 [label="DNA:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v22 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 -> v30;
+
+v15 [label="DNA:PREPARE_GENOME:PICARD_CREATESEQUENCEDICTIONARY"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 [label="DNA:PREPARE_GENOME:PICARD_SCATTERINTERVALSBYNS"];
+v30 -> v31;
+
+v31 [label="DNA:PREPARE_GENOME:PICARD_SCATTERINTERVALSBYNS"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v32;
+
+v31 [label="DNA:PREPARE_GENOME:PICARD_SCATTERINTERVALSBYNS"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v33;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v32 -> v34 [label="interval_list"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v33 -> v41 [label="ch_versions"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 [label="DNA:PREPARE_GENOME:GATK4_CONCAT_INTERVALLIST"];
+v35 -> v36;
+
+v36 [label="DNA:PREPARE_GENOME:GATK4_CONCAT_INTERVALLIST"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 -> v38;
+
+v36 [label="DNA:PREPARE_GENOME:GATK4_CONCAT_INTERVALLIST"];
+v37 [shape=point];
+v36 -> v37;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v38 -> v80 [label="interval_list_concat"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v86 [label="DNA:GATK4_BASERECALIBRATOR"];
+v39 -> v86 [label="fai"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v86 [label="DNA:GATK4_BASERECALIBRATOR"];
+v40 -> v86 [label="dict"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v42 [shape=point];
+v41 -> v42 [label="versions"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="DNA:FASTP"];
+v43 -> v45 [label="save_trimmed_fail"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="DNA:FASTP"];
+v44 -> v45 [label="save_merged"];
+
+v45 [label="DNA:FASTP"];
+v54 [label="DNA:BWA_MEM"];
+v45 -> v54;
+
+v45 [label="DNA:FASTP"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 -> v127;
+
+v45 [label="DNA:FASTP"];
+v49 [shape=point];
+v45 -> v49;
+
+v45 [label="DNA:FASTP"];
+v48 [shape=point];
+v45 -> v48;
+
+v45 [label="DNA:FASTP"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v45 -> v50;
+
+v45 [label="DNA:FASTP"];
+v47 [shape=point];
+v45 -> v47;
+
+v45 [label="DNA:FASTP"];
+v46 [shape=point];
+v45 -> v46;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v59 [label="ch_versions"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="DNA:BWA_MEM"];
+v52 -> v54 [label="index"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="DNA:BWA_MEM"];
+v53 -> v54 [label="sort_bam"];
+
+v54 [label="DNA:BWA_MEM"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v55;
+
+v54 [label="DNA:BWA_MEM"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v54 -> v58;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v57 [label="DNA:PICARD_MERGESAMFILES"];
+v56 -> v57;
+
+v57 [label="DNA:PICARD_MERGESAMFILES"];
+v63 [label="DNA:PICARD_SORT_BEFORE_DEDUP"];
+v57 -> v63;
+
+v57 [label="DNA:PICARD_MERGESAMFILES"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v57 -> v60;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v61 [label="ch_versions"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v70 [label="ch_versions"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1];
+v63 [label="DNA:PICARD_SORT_BEFORE_DEDUP"];
+v62 -> v63 [label="sort_order"];
+
+v63 [label="DNA:PICARD_SORT_BEFORE_DEDUP"];
+v64 [label="DNA:PICARD_MARKDUPLICATES"];
+v63 -> v64;
+
+v63 [label="DNA:PICARD_SORT_BEFORE_DEDUP"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v63 -> v69;
+
+v64 [label="DNA:PICARD_MARKDUPLICATES"];
+v67 [label="DNA:PICARD_SORT_AFTER_DEDUP"];
+v64 -> v67;
+
+v64 [label="DNA:PICARD_MARKDUPLICATES"];
+v65 [shape=point];
+v64 -> v65;
+
+v64 [label="DNA:PICARD_MARKDUPLICATES"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v64 -> v129;
+
+v64 [label="DNA:PICARD_MARKDUPLICATES"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v64 -> v71;
+
+v66 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [label="DNA:PICARD_SORT_AFTER_DEDUP"];
+v66 -> v67 [label="sort_order"];
+
+v67 [label="DNA:PICARD_SORT_AFTER_DEDUP"];
+v73 [label="DNA:SAMTOOLS_INDEX"];
+v67 -> v73;
+
+v67 [label="DNA:PICARD_SORT_AFTER_DEDUP"];
+v68 [shape=point];
+v67 -> v68;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v72 [label="ch_versions"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v72 -> v111 [label="ch_versions"];
+
+v73 [label="DNA:SAMTOOLS_INDEX"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v73 -> v79;
+
+v73 [label="DNA:SAMTOOLS_INDEX"];
+v76 [shape=point];
+v73 -> v76;
+
+v73 [label="DNA:SAMTOOLS_INDEX"];
+v75 [shape=point];
+v73 -> v75;
+
+v73 [label="DNA:SAMTOOLS_INDEX"];
+v74 [shape=point];
+v73 -> v74;
+
+v77 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v78 [shape=point];
+v77 -> v78 [label="ch_recal_intervals"];
+
+v67 [label="DNA:PICARD_SORT_AFTER_DEDUP"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v67 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v79 -> v80 [label="ch_bam_bai"];
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v86 [label="DNA:GATK4_BASERECALIBRATOR"];
+v80 -> v86 [label="ch_bam_bai_intervals"];
+
+v81 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v86 [label="DNA:GATK4_BASERECALIBRATOR"];
+v82 -> v86 [label="ch_recalibration_vcfs"];
+
+v83 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v86 [label="DNA:GATK4_BASERECALIBRATOR"];
+v84 -> v86 [label="ch_recalibration_tbis"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [label="DNA:GATK4_BASERECALIBRATOR"];
+v85 -> v86 [label="fasta"];
+
+v86 [label="DNA:GATK4_BASERECALIBRATOR"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v86 -> v88;
+
+v86 [label="DNA:GATK4_BASERECALIBRATOR"];
+v87 [shape=point];
+v86 -> v87;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v79 -> v88 [label="ch_bam_bai"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v88 -> v89 [label="ch_bam_bai_recal"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v38 -> v89 [label="interval_list_concat"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v90 [label="DNA:GATK4_APPLYBQSR"];
+v89 -> v90 [label="ch_bam_bai_recal_intervals"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v90 [label="DNA:GATK4_APPLYBQSR"];
+v85 -> v90 [label="fasta"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v90 [label="DNA:GATK4_APPLYBQSR"];
+v39 -> v90 [label="fai"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v90 [label="DNA:GATK4_APPLYBQSR"];
+v40 -> v90 [label="dict"];
+
+v90 [label="DNA:GATK4_APPLYBQSR"];
+v93 [label="DNA:SAMTOOLS_INDEX_FOR_HAPLOTYPING"];
+v90 -> v93 [label="ch_bam_for_haplotypecaller"];
+
+v90 [label="DNA:GATK4_APPLYBQSR"];
+v92 [shape=point];
+v90 -> v92;
+
+v90 [label="DNA:GATK4_APPLYBQSR"];
+v91 [shape=point];
+v90 -> v91;
+
+v93 [label="DNA:SAMTOOLS_INDEX_FOR_HAPLOTYPING"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v97;
+
+v93 [label="DNA:SAMTOOLS_INDEX_FOR_HAPLOTYPING"];
+v96 [shape=point];
+v93 -> v96;
+
+v93 [label="DNA:SAMTOOLS_INDEX_FOR_HAPLOTYPING"];
+v95 [shape=point];
+v93 -> v95;
+
+v93 [label="DNA:SAMTOOLS_INDEX_FOR_HAPLOTYPING"];
+v94 [shape=point];
+v93 -> v94;
+
+v90 [label="DNA:GATK4_APPLYBQSR"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v90 -> v97 [label="ch_bam_for_haplotypecaller"];
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v97 -> v98;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v32 -> v98 [label="interval_list"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v105 [label="DNA:GATK4_HAPLOTYPECALLER"];
+v98 -> v105 [label="ch_haplotypecaller_inputs"];
+
+v99 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v105 [label="DNA:GATK4_HAPLOTYPECALLER"];
+v101 -> v105 [label="ch_dbsnp_vcfs"];
+
+v102 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v105 [label="DNA:GATK4_HAPLOTYPECALLER"];
+v104 -> v105 [label="ch_dbsnp_tbis"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v105 [label="DNA:GATK4_HAPLOTYPECALLER"];
+v85 -> v105 [label="fasta"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v105 [label="DNA:GATK4_HAPLOTYPECALLER"];
+v39 -> v105 [label="fai"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v105 [label="DNA:GATK4_HAPLOTYPECALLER"];
+v40 -> v105 [label="dict"];
+
+v105 [label="DNA:GATK4_HAPLOTYPECALLER"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 -> v107;
+
+v105 [label="DNA:GATK4_HAPLOTYPECALLER"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 -> v107;
+
+v105 [label="DNA:GATK4_HAPLOTYPECALLER"];
+v106 [shape=point];
+v105 -> v106;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v110 [shape=point];
+v109 -> v110;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v111 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v113 [label="DNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v112 -> v113;
+
+v113 [label="DNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v115 [shape=point];
+v113 -> v115;
+
+v113 [label="DNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v113 -> v125;
+
+v113 [label="DNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v114 [shape=point];
+v113 -> v114;
+
+v116 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v118 [label="ch_multiqc_files"];
+
+v117 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v121 [label="ch_multiqc_files"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v119 -> v120;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v124 [label="ch_multiqc_files"];
+
+v122 [shape=point,label="",fixedsize=true,width=0.1];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v122 -> v123 [label="ch_workflow_summary"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v126 [label="ch_multiqc_files"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v126;
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v128 [label="ch_multiqc_files"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v130 [label="ch_multiqc_files"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v130 -> v131 [label="ch_multiqc_files"];
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v132 [label="DNA:MULTIQC"];
+v131 -> v132;
+
+v132 [label="DNA:MULTIQC"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v132 -> v135;
+
+v132 [label="DNA:MULTIQC"];
+v134 [shape=point];
+v132 -> v134;
+
+v132 [label="DNA:MULTIQC"];
+v133 [shape=point];
+v132 -> v133;
+
+v132 [label="DNA:MULTIQC"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v137;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v136 [shape=point];
+v135 -> v136;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v137 [label="ch_versions"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 [shape=point];
+v137 -> v138 [label="ch_versions"];
+
+}

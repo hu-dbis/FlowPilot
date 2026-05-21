@@ -1,0 +1,318 @@
+digraph "amchakra_____tosca" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v19 [label="transcript_fa"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v67 [label="transcript_fai"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v61 [label="genome_fai"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v45 [label="transcript_gtf"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 -> v48 [label="regions_gtf"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v6 [shape=point];
+v5 -> v6 [label="ch_star_genome"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v68 [label="goi"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=point];
+v8 -> v9 [label="ch_multiqc_config"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [label="CUTADAPT"];
+v12 -> v13 [label="data"];
+
+v13 [label="CUTADAPT"];
+v15 [label="GET_HYBRIDS:SPLIT_FASTQ"];
+v13 -> v15 [label="reads"];
+
+v13 [label="CUTADAPT"];
+v14 [shape=point];
+v13 -> v14;
+
+v15 [label="GET_HYBRIDS:SPLIT_FASTQ"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [label="GET_HYBRIDS:FASTQ_TO_FASTA"];
+v17 -> v18 [label="ch_split_fastq"];
+
+v18 [label="GET_HYBRIDS:FASTQ_TO_FASTA"];
+v20 [label="GET_HYBRIDS:BLAT"];
+v18 -> v20;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 [label="GET_HYBRIDS:BLAT"];
+v19 -> v20;
+
+v20 [label="GET_HYBRIDS:BLAT"];
+v21 [label="GET_HYBRIDS:FILTER_BLAT"];
+v20 -> v21;
+
+v21 [label="GET_HYBRIDS:FILTER_BLAT"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 -> v22;
+
+v18 [label="GET_HYBRIDS:FASTQ_TO_FASTA"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 [label="GET_HYBRIDS:IDENTIFY_HYBRIDS"];
+v22 -> v23;
+
+v23 [label="GET_HYBRIDS:IDENTIFY_HYBRIDS"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v27 [label="GET_HYBRIDS:MERGE_HYBRIDS"];
+v25 -> v27 [label="ch_merge_hybrids"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="GET_HYBRIDS:MERGE_HYBRIDS"];
+v26 -> v27 [label="type"];
+
+v27 [label="GET_HYBRIDS:MERGE_HYBRIDS"];
+v28 [label="GET_HYBRIDS:DEDUPLICATE"];
+v27 -> v28 [label="raw_hybrids"];
+
+v28 [label="GET_HYBRIDS:DEDUPLICATE"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 -> v30 [label="hybrids"];
+
+v28 [label="GET_HYBRIDS:DEDUPLICATE"];
+v29 [shape=point];
+v28 -> v29 [label="logs"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v12 -> v30 [label="data"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 [label="GET_NON_HYBRIDS"];
+v30 -> v31;
+
+v31 [label="GET_NON_HYBRIDS"];
+v32 [shape=point];
+v31 -> v32;
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v34 [label="PROCESS_HYBRIDS:CLUSTER_HYBRIDS:CHUNK_HYBRIDS"];
+v33 -> v34 [label="type"];
+
+v28 [label="GET_HYBRIDS:DEDUPLICATE"];
+v34 [label="PROCESS_HYBRIDS:CLUSTER_HYBRIDS:CHUNK_HYBRIDS"];
+v28 -> v34 [label="hybrids"];
+
+v34 [label="PROCESS_HYBRIDS:CLUSTER_HYBRIDS:CHUNK_HYBRIDS"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v39;
+
+v34 [label="PROCESS_HYBRIDS:CLUSTER_HYBRIDS:CHUNK_HYBRIDS"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [label="PROCESS_HYBRIDS:CLUSTER_HYBRIDS:IDENTIFY_CLUSTERS"];
+v36 -> v38;
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v38 [label="PROCESS_HYBRIDS:CLUSTER_HYBRIDS:IDENTIFY_CLUSTERS"];
+v37 -> v38 [label="type"];
+
+v38 [label="PROCESS_HYBRIDS:CLUSTER_HYBRIDS:IDENTIFY_CLUSTERS"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 -> v40;
+
+v28 [label="GET_HYBRIDS:DEDUPLICATE"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 -> v39 [label="hybrids"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 -> v42;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v44 [label="PROCESS_HYBRIDS:CLUSTER_HYBRIDS:MERGE_CLUSTERS"];
+v42 -> v44;
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="PROCESS_HYBRIDS:CLUSTER_HYBRIDS:MERGE_CLUSTERS"];
+v43 -> v44 [label="type"];
+
+v44 [label="PROCESS_HYBRIDS:CLUSTER_HYBRIDS:MERGE_CLUSTERS"];
+v47 [label="PROCESS_HYBRIDS:CONVERT_HYBRID_COORDINATES"];
+v44 -> v47 [label="hybrids"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 [label="PROCESS_HYBRIDS:CONVERT_HYBRID_COORDINATES"];
+v45 -> v47;
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="PROCESS_HYBRIDS:CONVERT_HYBRID_COORDINATES"];
+v46 -> v47 [label="type"];
+
+v47 [label="PROCESS_HYBRIDS:CONVERT_HYBRID_COORDINATES"];
+v50 [label="PROCESS_HYBRIDS:ANNOTATE_HYBRIDS"];
+v47 -> v50;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v50 [label="PROCESS_HYBRIDS:ANNOTATE_HYBRIDS"];
+v48 -> v50;
+
+v49 [shape=point,label="",fixedsize=true,width=0.1];
+v50 [label="PROCESS_HYBRIDS:ANNOTATE_HYBRIDS"];
+v49 -> v50 [label="type"];
+
+v50 [label="PROCESS_HYBRIDS:ANNOTATE_HYBRIDS"];
+v60 [label="GET_VISUALISATIONS:EXPORT_HYBRID_GENOMIC_BED"];
+v50 -> v60 [label="hybrids"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="PROCESS_HYBRIDS:COLLAPSE_CLUSTERS"];
+v51 -> v52 [label="type"];
+
+v44 [label="PROCESS_HYBRIDS:CLUSTER_HYBRIDS:MERGE_CLUSTERS"];
+v52 [label="PROCESS_HYBRIDS:COLLAPSE_CLUSTERS"];
+v44 -> v52 [label="hybrids"];
+
+v52 [label="PROCESS_HYBRIDS:COLLAPSE_CLUSTERS"];
+v55 [label="PROCESS_HYBRIDS:CONVERT_CLUSTER_COORDINATES"];
+v52 -> v55;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v53 [label="transcript_gtf"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 [label="PROCESS_HYBRIDS:CONVERT_CLUSTER_COORDINATES"];
+v53 -> v55;
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v55 [label="PROCESS_HYBRIDS:CONVERT_CLUSTER_COORDINATES"];
+v54 -> v55 [label="type"];
+
+v55 [label="PROCESS_HYBRIDS:CONVERT_CLUSTER_COORDINATES"];
+v58 [label="PROCESS_HYBRIDS:ANNOTATE_CLUSTERS"];
+v55 -> v58;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 -> v56 [label="regions_gtf"];
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v58 [label="PROCESS_HYBRIDS:ANNOTATE_CLUSTERS"];
+v56 -> v58;
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v58 [label="PROCESS_HYBRIDS:ANNOTATE_CLUSTERS"];
+v57 -> v58 [label="type"];
+
+v58 [label="PROCESS_HYBRIDS:ANNOTATE_CLUSTERS"];
+v65 [label="GET_VISUALISATIONS:EXPORT_CLUSTERS_GENOMIC_BED"];
+v58 -> v65 [label="clusters"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1];
+v60 [label="GET_VISUALISATIONS:EXPORT_HYBRID_GENOMIC_BED"];
+v59 -> v60 [label="type"];
+
+v60 [label="GET_VISUALISATIONS:EXPORT_HYBRID_GENOMIC_BED"];
+v62 [label="GET_VISUALISATIONS:EXPORT_GENOMIC_BAM"];
+v60 -> v62;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 [label="GET_VISUALISATIONS:EXPORT_GENOMIC_BAM"];
+v61 -> v62;
+
+v62 [label="GET_VISUALISATIONS:EXPORT_GENOMIC_BAM"];
+v63 [shape=point];
+v62 -> v63;
+
+v64 [shape=point,label="",fixedsize=true,width=0.1];
+v65 [label="GET_VISUALISATIONS:EXPORT_CLUSTERS_GENOMIC_BED"];
+v64 -> v65 [label="type"];
+
+v65 [label="GET_VISUALISATIONS:EXPORT_CLUSTERS_GENOMIC_BED"];
+v66 [shape=point];
+v65 -> v66;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 [label="GET_VISUALISATIONS:GET_CONTACT_MAPS"];
+v67 -> v69;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 [label="GET_VISUALISATIONS:GET_CONTACT_MAPS"];
+v68 -> v69;
+
+v50 [label="PROCESS_HYBRIDS:ANNOTATE_HYBRIDS"];
+v69 [label="GET_VISUALISATIONS:GET_CONTACT_MAPS"];
+v50 -> v69 [label="hybrids"];
+
+v69 [label="GET_VISUALISATIONS:GET_CONTACT_MAPS"];
+v71 [shape=point];
+v69 -> v71;
+
+v69 [label="GET_VISUALISATIONS:GET_CONTACT_MAPS"];
+v70 [shape=point];
+v69 -> v70;
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v72 [label="goi"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v73 [label="GET_VISUALISATIONS:GET_ARCS"];
+v72 -> v73;
+
+v58 [label="PROCESS_HYBRIDS:ANNOTATE_CLUSTERS"];
+v73 [label="GET_VISUALISATIONS:GET_ARCS"];
+v58 -> v73 [label="clusters"];
+
+v73 [label="GET_VISUALISATIONS:GET_ARCS"];
+v74 [shape=point];
+v73 -> v74;
+
+}

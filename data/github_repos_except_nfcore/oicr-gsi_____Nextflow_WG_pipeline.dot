@@ -1,0 +1,370 @@
+digraph "oicrgsi_____Nextflow_WG_pipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v1 [label="BCL2FASTQ"];
+v0 -> v1 [label="bcl2fastq_input"];
+
+v1 [label="BCL2FASTQ"];
+v9 [shape=point];
+v1 -> v9;
+
+v1 [label="BCL2FASTQ"];
+v8 [shape=point];
+v1 -> v8;
+
+v1 [label="BCL2FASTQ"];
+v7 [shape=point];
+v1 -> v7;
+
+v1 [label="BCL2FASTQ"];
+v6 [shape=point];
+v1 -> v6;
+
+v1 [label="BCL2FASTQ"];
+v5 [shape=point];
+v1 -> v5;
+
+v1 [label="BCL2FASTQ"];
+v4 [shape=point];
+v1 -> v4;
+
+v1 [label="BCL2FASTQ"];
+v3 [shape=point];
+v1 -> v3;
+
+v1 [label="BCL2FASTQ"];
+v2 [shape=point];
+v1 -> v2;
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13 [label="fastq_input"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [label="bwaMem:BWA_MEM"];
+v13 -> v21 [label="bwamem_reads"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v21 [label="bwaMem:BWA_MEM"];
+v14 -> v21 [label="readGroups"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v19 [label="reference"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v21 [label="bwaMem:BWA_MEM"];
+v16 -> v21 [label="sort_bam"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v21 [label="bwaMem:BWA_MEM"];
+v17 -> v21 [label="threads"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v21 [label="bwaMem:BWA_MEM"];
+v18 -> v21 [label="addParem"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [label="bwaMem:BWA_MEM"];
+v19 -> v21 [label="bwaMemRef"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v20 [label="reference"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [label="bwaMem:BWA_MEM"];
+v20 -> v21 [label="modules"];
+
+v21 [label="bwaMem:BWA_MEM"];
+v27 [shape=point];
+v21 -> v27 [label="bam"];
+
+v21 [label="bwaMem:BWA_MEM"];
+v26 [shape=point];
+v21 -> v26 [label="bai"];
+
+v21 [label="bwaMem:BWA_MEM"];
+v25 [shape=point];
+v21 -> v25;
+
+v21 [label="bwaMem:BWA_MEM"];
+v24 [shape=point];
+v21 -> v24;
+
+v21 [label="bwaMem:BWA_MEM"];
+v23 [shape=point];
+v21 -> v23;
+
+v21 [label="bwaMem:BWA_MEM"];
+v22 [shape=point];
+v21 -> v22;
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v28 -> v32 [label="tumor_bam_files"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v29 -> v33 [label="tumor_bam_index_files"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v30 -> v32 [label="normal_bam_files"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v31 -> v33 [label="normal_bam_index_files"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v47 [label="mutect2:GATK4_MUTECT2"];
+v32 -> v47 [label="input_bam"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v47 [label="mutect2:GATK4_MUTECT2"];
+v33 -> v47 [label="input_index"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v47 [label="mutect2:GATK4_MUTECT2"];
+v34 -> v47 [label="intervalFile"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 -> v36 [label="reference"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=point];
+v36 -> v37 [label="mutect2_params"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="mutect2:GATK4_MUTECT2"];
+v38 -> v47 [label="tumor_meta"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="mutect2:GATK4_MUTECT2"];
+v39 -> v47 [label="ref_fasta"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="mutect2:GATK4_MUTECT2"];
+v40 -> v47 [label="ref_fai"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="mutect2:GATK4_MUTECT2"];
+v41 -> v47 [label="ref_dict"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="mutect2:GATK4_MUTECT2"];
+v42 -> v47 [label="germline_resource"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="mutect2:GATK4_MUTECT2"];
+v43 -> v47 [label="germline_resource_tbi"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="mutect2:GATK4_MUTECT2"];
+v44 -> v47 [label="pon"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="mutect2:GATK4_MUTECT2"];
+v45 -> v47 [label="ponIdx"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="mutect2:GATK4_MUTECT2"];
+v46 -> v47 [label="gatk"];
+
+v47 [label="mutect2:GATK4_MUTECT2"];
+v52 [shape=point];
+v47 -> v52 [label="vcf"];
+
+v47 [label="mutect2:GATK4_MUTECT2"];
+v51 [shape=point];
+v47 -> v51 [label="tbi"];
+
+v47 [label="mutect2:GATK4_MUTECT2"];
+v50 [shape=point];
+v47 -> v50 [label="stats"];
+
+v47 [label="mutect2:GATK4_MUTECT2"];
+v49 [shape=point];
+v47 -> v49;
+
+v47 [label="mutect2:GATK4_MUTECT2"];
+v48 [shape=point];
+v47 -> v48;
+
+v53 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v64 [label="vep:ENSEMBLVEP_VEP"];
+v53 -> v64 [label="vcf"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v55 [label="reference"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [shape=point];
+v55 -> v56 [label="vep_params"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [label="vep:ENSEMBLVEP_VEP"];
+v57 -> v64 [label="tumorName"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [label="vep:ENSEMBLVEP_VEP"];
+v58 -> v64 [label="fasta"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [label="vep:ENSEMBLVEP_VEP"];
+v59 -> v64 [label="cacheDir"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [label="vep:ENSEMBLVEP_VEP"];
+v60 -> v64 [label="genome"];
+
+v61 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [label="vep:ENSEMBLVEP_VEP"];
+v61 -> v64 [label="species"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [label="vep:ENSEMBLVEP_VEP"];
+v62 -> v64 [label="vep_modules"];
+
+v63 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [label="vep:ENSEMBLVEP_VEP"];
+v63 -> v64 [label="customTranscriptFile"];
+
+v64 [label="vep:ENSEMBLVEP_VEP"];
+v69 [shape=point];
+v64 -> v69;
+
+v64 [label="vep:ENSEMBLVEP_VEP"];
+v68 [shape=point];
+v64 -> v68;
+
+v64 [label="vep:ENSEMBLVEP_VEP"];
+v67 [shape=point];
+v64 -> v67;
+
+v64 [label="vep:ENSEMBLVEP_VEP"];
+v66 [shape=point];
+v64 -> v66;
+
+v64 [label="vep:ENSEMBLVEP_VEP"];
+v65 [shape=point];
+v64 -> v65;
+
+v70 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v70 -> v74 [label="tumor_bam_files"];
+
+v71 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v71 -> v75 [label="tumor_bam_index_files"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v72 -> v74 [label="normal_bam_files"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v73 -> v75 [label="normal_bam_index_files"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v74 -> v76 [label="inputBams"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v83 [label="delly:RUN_DELLY"];
+v75 -> v83 [label="inputBais"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 [label="delly:RUN_DELLY"];
+v77 -> v83;
+
+v78 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v83 [label="delly:RUN_DELLY"];
+v78 -> v83;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v83 [label="delly:RUN_DELLY"];
+v74 -> v83 [label="inputBams"];
+
+v79 [shape=point,label="",fixedsize=true,width=0.1];
+v83 [label="delly:RUN_DELLY"];
+v79 -> v83 [label="sampleName"];
+
+v80 [shape=point,label="",fixedsize=true,width=0.1];
+v83 [label="delly:RUN_DELLY"];
+v80 -> v83 [label="rundelly_module"];
+
+v81 [shape=point,label="",fixedsize=true,width=0.1];
+v83 [label="delly:RUN_DELLY"];
+v81 -> v83 [label="rundelly_fasta"];
+
+v82 [shape=point,label="",fixedsize=true,width=0.1];
+v83 [label="delly:RUN_DELLY"];
+v82 -> v83 [label="rundelly_exclude_list"];
+
+v83 [label="delly:RUN_DELLY"];
+v90 [label="delly:mergeAndZipALL"];
+v83 -> v90;
+
+v83 [label="delly:RUN_DELLY"];
+v90 [label="delly:mergeAndZipALL"];
+v83 -> v90;
+
+v83 [label="delly:RUN_DELLY"];
+v85 [shape=point];
+v83 -> v85;
+
+v83 [label="delly:RUN_DELLY"];
+v84 [shape=point];
+v83 -> v84;
+
+v86 [shape=point,label="",fixedsize=true,width=0.1];
+v90 [label="delly:mergeAndZipALL"];
+v86 -> v90 [label="sampleName"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v90 [label="delly:mergeAndZipALL"];
+v77 -> v90 [label="callType"];
+
+v87 [shape=point,label="",fixedsize=true,width=0.1];
+v90 [label="delly:mergeAndZipALL"];
+v87 -> v90 [label="modules"];
+
+v88 [shape=point,label="",fixedsize=true,width=0.1];
+v90 [label="delly:mergeAndZipALL"];
+v88 -> v90 [label="prefix"];
+
+v89 [shape=point,label="",fixedsize=true,width=0.1];
+v90 [label="delly:mergeAndZipALL"];
+v89 -> v90 [label="variantSupport"];
+
+v90 [label="delly:mergeAndZipALL"];
+v94 [shape=point];
+v90 -> v94 [label="mergedVcf"];
+
+v90 [label="delly:mergeAndZipALL"];
+v93 [shape=point];
+v90 -> v93 [label="mergedIndex"];
+
+v90 [label="delly:mergeAndZipALL"];
+v92 [shape=point];
+v90 -> v92;
+
+v90 [label="delly:mergeAndZipALL"];
+v91 [shape=point];
+v90 -> v91;
+
+}

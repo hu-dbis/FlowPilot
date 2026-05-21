@@ -1,0 +1,82 @@
+digraph "yagoubali_____varainats_calling_annotations" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [label="runFastQC"];
+v0 -> v1 [label="read_pair"];
+
+v1 [label="runFastQC"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 [label="multiqc"];
+v2 -> v3;
+
+v3 [label="multiqc"];
+v4 [shape=point];
+v3 -> v4;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v12 [label="run_bwa"];
+v5 -> v12 [label="read_pair2"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v6 [label="genomeSize_heterozygosity"];
+v0 -> v6 [label="read_pair"];
+
+v6 [label="genomeSize_heterozygosity"];
+v11 [shape=point];
+v6 -> v11;
+
+v6 [label="genomeSize_heterozygosity"];
+v10 [shape=point];
+v6 -> v10;
+
+v6 [label="genomeSize_heterozygosity"];
+v9 [shape=point];
+v6 -> v9;
+
+v6 [label="genomeSize_heterozygosity"];
+v8 [shape=point];
+v6 -> v8;
+
+v6 [label="genomeSize_heterozygosity"];
+v7 [shape=point];
+v6 -> v7;
+
+v12 [label="run_bwa"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [label="run_markDuplicatesSpark"];
+v13 -> v14 [label="sorted_bam_ch"];
+
+v14 [label="run_markDuplicatesSpark"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [label="run_BaseRecalibrator_ApplyBQSR"];
+v15 -> v16 [label="BaseRecalibrator_ApplyBQSR_ch"];
+
+v16 [label="run_BaseRecalibrator_ApplyBQSR"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 [label="run_prepareVCF"];
+v17 -> v18;
+
+v18 [label="run_prepareVCF"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 [label="run_snpEFF"];
+v19 -> v20;
+
+v20 [label="run_snpEFF"];
+v21 [shape=point];
+v20 -> v21;
+
+}

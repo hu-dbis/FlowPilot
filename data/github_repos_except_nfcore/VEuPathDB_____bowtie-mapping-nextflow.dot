@@ -1,0 +1,46 @@
+digraph "VEuPathDB_____bowtiemappingnextflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [label="bowtieMapping:local:bowtieFromLocalPaired"];
+v0 -> v6 [label="file"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="bowtieMapping:local:bowtieFromLocalPaired"];
+v1 -> v6 [label="indexfiles"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="bowtieMapping:local:bowtieFromLocalPaired"];
+v2 -> v6 [label="mateB"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="bowtieMapping:local:bowtieFromLocalPaired"];
+v3 -> v6 [label="indexFileBasename"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="bowtieMapping:local:bowtieFromLocalPaired"];
+v4 -> v6 [label="hasPairedReads"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="bowtieMapping:local:bowtieFromLocalPaired"];
+v5 -> v6 [label="extraBowtieParams"];
+
+v6 [label="bowtieMapping:local:bowtieFromLocalPaired"];
+v10 [label="bowtieMapping:local:PCRDuplicates"];
+v6 -> v10;
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="bowtieMapping:local:PCRDuplicates"];
+v7 -> v10 [label="removePCRDuplicates"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="bowtieMapping:local:PCRDuplicates"];
+v8 -> v10 [label="writeBedFile"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="bowtieMapping:local:PCRDuplicates"];
+v9 -> v10 [label="sampleName"];
+
+v10 [label="bowtieMapping:local:PCRDuplicates"];
+v11 [shape=point];
+v10 -> v11;
+
+}

@@ -1,0 +1,342 @@
+digraph "nrminor_____MHCIIallelediscovery" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [label="CONVERT_BAM_TO_FASTQ"];
+v2 -> v4 [label="ch_sample_manifest"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v24 [label="PARSE_IPD_GENBANK"];
+v3 -> v24 [label="ch_ipd_ref"];
+
+v4 [label="CONVERT_BAM_TO_FASTQ"];
+v5 [label="ORIENT_FASTQ"];
+v4 -> v5;
+
+v5 [label="ORIENT_FASTQ"];
+v6 [label="TRIM_FASTQ"];
+v5 -> v6;
+
+v6 [label="TRIM_FASTQ"];
+v7 [label="RUN_PBAA"];
+v6 -> v7;
+
+v6 [label="TRIM_FASTQ"];
+v7 [label="RUN_PBAA"];
+v6 -> v7;
+
+v7 [label="RUN_PBAA"];
+v8 [label="CLUSTER_PER_SAMPLE"];
+v7 -> v8;
+
+v8 [label="CLUSTER_PER_SAMPLE"];
+v9 [label="RENAME_CLUSTERS"];
+v8 -> v9;
+
+v9 [label="RENAME_CLUSTERS"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 [label="MERGE_PER_MAMU_CLUSTERS"];
+v12 -> v13;
+
+v13 [label="MERGE_PER_MAMU_CLUSTERS"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v18;
+
+v9 [label="RENAME_CLUSTERS"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v9 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 [label="MERGE_PER_MAFA_CLUSTERS"];
+v16 -> v17;
+
+v17 [label="MERGE_PER_MAFA_CLUSTERS"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [label="SHARED_ANIMALS"];
+v18 -> v19;
+
+v19 [label="SHARED_ANIMALS"];
+v22 [shape=point];
+v19 -> v22;
+
+v19 [label="SHARED_ANIMALS"];
+v21 [shape=point];
+v19 -> v21;
+
+v19 [label="SHARED_ANIMALS"];
+v20 [shape=point];
+v19 -> v20;
+
+v19 [label="SHARED_ANIMALS"];
+v23 [label="RENAME_PUTATIVE_ALLELE_CLUSTERS"];
+v19 -> v23;
+
+v23 [label="RENAME_PUTATIVE_ALLELE_CLUSTERS"];
+v25 [label="MAP_SHARED_CLUSTERS_TO_FULL_LENGTH_GDNA"];
+v23 -> v25;
+
+v24 [label="PARSE_IPD_GENBANK"];
+v25 [label="MAP_SHARED_CLUSTERS_TO_FULL_LENGTH_GDNA"];
+v24 -> v25;
+
+v24 [label="PARSE_IPD_GENBANK"];
+v29 [label="MAP_SHARED_CLUSTERS_TO_CDNA_WITH_MUSCLE"];
+v24 -> v29;
+
+v25 [label="MAP_SHARED_CLUSTERS_TO_FULL_LENGTH_GDNA"];
+v27 [label="FILTER_EXACT_GDNA_MATCHES"];
+v25 -> v27;
+
+v23 [label="RENAME_PUTATIVE_ALLELE_CLUSTERS"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [label="FILTER_EXACT_GDNA_MATCHES"];
+v26 -> v27;
+
+v24 [label="PARSE_IPD_GENBANK"];
+v27 [label="FILTER_EXACT_GDNA_MATCHES"];
+v24 -> v27;
+
+v27 [label="FILTER_EXACT_GDNA_MATCHES"];
+v28 [shape=point];
+v27 -> v28;
+
+v27 [label="FILTER_EXACT_GDNA_MATCHES"];
+v29 [label="MAP_SHARED_CLUSTERS_TO_CDNA_WITH_MUSCLE"];
+v27 -> v29;
+
+v29 [label="MAP_SHARED_CLUSTERS_TO_CDNA_WITH_MUSCLE"];
+v31 [label="FIND_MUSCLE_CDNA_GDNA_MATCHES"];
+v29 -> v31;
+
+v29 [label="MAP_SHARED_CLUSTERS_TO_CDNA_WITH_MUSCLE"];
+v30 [shape=point];
+v29 -> v30;
+
+v31 [label="FIND_MUSCLE_CDNA_GDNA_MATCHES"];
+v33 [label="RENAME_MUSCLE_CDNA_MATCHES_FASTA"];
+v31 -> v33;
+
+v27 [label="FILTER_EXACT_GDNA_MATCHES"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [label="RENAME_MUSCLE_CDNA_MATCHES_FASTA"];
+v32 -> v33;
+
+v33 [label="RENAME_MUSCLE_CDNA_MATCHES_FASTA"];
+v35 [label="EXTRACT_NOVEL_SEQUENCES"];
+v33 -> v35;
+
+v27 [label="FILTER_EXACT_GDNA_MATCHES"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [label="EXTRACT_NOVEL_SEQUENCES"];
+v34 -> v35;
+
+v35 [label="EXTRACT_NOVEL_SEQUENCES"];
+v37 [label="MERGE_READS"];
+v35 -> v37;
+
+v33 [label="RENAME_MUSCLE_CDNA_MATCHES_FASTA"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [label="MERGE_READS"];
+v36 -> v37;
+
+v24 [label="PARSE_IPD_GENBANK"];
+v37 [label="MERGE_READS"];
+v24 -> v37;
+
+v37 [label="MERGE_READS"];
+v39 [label="CLUSTAL_ALIGN"];
+v37 -> v39;
+
+v35 [label="EXTRACT_NOVEL_SEQUENCES"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [label="CLUSTAL_ALIGN"];
+v38 -> v39;
+
+v39 [label="CLUSTAL_ALIGN"];
+v40 [shape=point];
+v39 -> v40;
+
+v39 [label="CLUSTAL_ALIGN"];
+v43 [label="PARSE_DISTANCES"];
+v39 -> v43;
+
+v35 [label="EXTRACT_NOVEL_SEQUENCES"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 [label="PARSE_DISTANCES"];
+v41 -> v43;
+
+v27 [label="FILTER_EXACT_GDNA_MATCHES"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 [label="PARSE_DISTANCES"];
+v42 -> v43;
+
+v43 [label="PARSE_DISTANCES"];
+v47 [label="CREATE_GENOTYPING_FASTA"];
+v43 -> v47;
+
+v43 [label="PARSE_DISTANCES"];
+v44 [shape=point];
+v43 -> v44;
+
+v23 [label="RENAME_PUTATIVE_ALLELE_CLUSTERS"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 [label="CREATE_GENOTYPING_FASTA"];
+v45 -> v47;
+
+v31 [label="FIND_MUSCLE_CDNA_GDNA_MATCHES"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 [label="CREATE_GENOTYPING_FASTA"];
+v46 -> v47;
+
+v24 [label="PARSE_IPD_GENBANK"];
+v47 [label="CREATE_GENOTYPING_FASTA"];
+v24 -> v47;
+
+v47 [label="CREATE_GENOTYPING_FASTA"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v47 -> v48;
+
+v47 [label="CREATE_GENOTYPING_FASTA"];
+v63 [label="PRELIMINARY_EXONERATE_PUTATIVE"];
+v47 -> v63;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 [label="GENOTYPE_MAMU_CSS"];
+v49 -> v50;
+
+v4 [label="CONVERT_BAM_TO_FASTQ"];
+v50 [label="GENOTYPE_MAMU_CSS"];
+v4 -> v50;
+
+v50 [label="GENOTYPE_MAMU_CSS"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 -> v54;
+
+v47 [label="CREATE_GENOTYPING_FASTA"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v47 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 [label="GENOTYPE_MAFA_CSS"];
+v52 -> v53;
+
+v4 [label="CONVERT_BAM_TO_FASTQ"];
+v53 [label="GENOTYPE_MAFA_CSS"];
+v4 -> v53;
+
+v53 [label="GENOTYPE_MAFA_CSS"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 -> v57;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v56 [label="CREATE_MAMU_GENOTYPING_CSV"];
+v55 -> v56;
+
+v56 [label="CREATE_MAMU_GENOTYPING_CSV"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v60;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 [label="CREATE_MAFA_GENOTYPING_CSV"];
+v58 -> v59;
+
+v59 [label="CREATE_MAFA_GENOTYPING_CSV"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [label="CREATE_GENOTYPING_PIVOT"];
+v60 -> v61;
+
+v61 [label="CREATE_GENOTYPING_PIVOT"];
+v62 [shape=point];
+v61 -> v62;
+
+v63 [label="PRELIMINARY_EXONERATE_PUTATIVE"];
+v65 [label="PRELIMINARY_EXONERATE_PROCESS_GFF_PUTATIVE"];
+v63 -> v65;
+
+v63 [label="PRELIMINARY_EXONERATE_PUTATIVE"];
+v64 [shape=point];
+v63 -> v64;
+
+v65 [label="PRELIMINARY_EXONERATE_PROCESS_GFF_PUTATIVE"];
+v66 [label="PRELIMINARY_EXONERATE_MERGE_CDS_PUTATIVE"];
+v65 -> v66;
+
+v66 [label="PRELIMINARY_EXONERATE_MERGE_CDS_PUTATIVE"];
+v67 [shape=point];
+v66 -> v67;
+
+}

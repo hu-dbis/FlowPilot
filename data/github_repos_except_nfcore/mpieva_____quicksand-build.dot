@@ -1,0 +1,94 @@
+digraph "mpieva_____quicksandbuild" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v1 [label="KRAKEN_TAXONOMY"];
+v0 -> v1 [label="kmer"];
+
+v1 [label="KRAKEN_TAXONOMY"];
+v16 [label="KRAKEN_BUILD"];
+v1 -> v16 [label="ch_database"];
+
+v1 [label="KRAKEN_TAXONOMY"];
+v2 [label="PARSE_NAMES"];
+v1 -> v2 [label="ch_nodes"];
+
+v2 [label="PARSE_NAMES"];
+v5 [label="EXTRACT_FASTA"];
+v2 -> v5 [label="ch_orders"];
+
+v2 [label="PARSE_NAMES"];
+v5 [label="EXTRACT_FASTA"];
+v2 -> v5 [label="ch_families"];
+
+v3 [label="DOWNLOAD_NCBI"];
+v5 [label="EXTRACT_FASTA"];
+v3 -> v5 [label="ch_gbff"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="EXTRACT_FASTA"];
+v4 -> v5;
+
+v5 [label="EXTRACT_FASTA"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v5 -> v6;
+
+v5 [label="EXTRACT_FASTA"];
+v19 [label="MAKE_FILEMAP"];
+v5 -> v19 [label="ch_convert"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7 [label="ch_fasta"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [label="WRITE_FASTA"];
+v7 -> v8 [label="ch_extracted_fasta"];
+
+v8 [label="WRITE_FASTA"];
+v9 [label="INDEX_FASTA"];
+v8 -> v9 [label="ch_raw_fasta"];
+
+v9 [label="INDEX_FASTA"];
+v10 [shape=point];
+v9 -> v10;
+
+v8 [label="WRITE_FASTA"];
+v11 [label="RUN_DUSTMASKER"];
+v8 -> v11 [label="ch_raw_fasta"];
+
+v11 [label="RUN_DUSTMASKER"];
+v12 [label="WRITE_BEDFILES"];
+v11 -> v12 [label="ch_acclist"];
+
+v12 [label="WRITE_BEDFILES"];
+v13 [shape=point];
+v12 -> v13;
+
+v8 [label="WRITE_FASTA"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v14 [label="ch_raw_fasta"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v16 [label="KRAKEN_BUILD"];
+v15 -> v16 [label="ch_forkraken"];
+
+v16 [label="KRAKEN_BUILD"];
+v17 [shape=point];
+v16 -> v17;
+
+v16 [label="KRAKEN_BUILD"];
+v18 [label="PREPARE_TAXONOMY"];
+v16 -> v18 [label="ch_taxonomy"];
+
+v18 [label="PREPARE_TAXONOMY"];
+v19 [label="MAKE_FILEMAP"];
+v18 -> v19 [label="ch_json"];
+
+v19 [label="MAKE_FILEMAP"];
+v20 [shape=point];
+v19 -> v20;
+
+}

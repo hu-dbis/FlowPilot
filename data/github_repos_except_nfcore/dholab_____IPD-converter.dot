@@ -1,0 +1,62 @@
+digraph "dholab_____IPDconverter" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [label="FIX_GENBANK_DEFLINES"];
+v0 -> v3 [label="ch_gbk"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [label="FIX_FASTA_DEFLINES"];
+v1 -> v4 [label="ch_fasta"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v11 [label="ch_curated_embl"];
+
+v3 [label="FIX_GENBANK_DEFLINES"];
+v6 [label="CONVERT_GENBANK_TO_EMBL"];
+v3 -> v6;
+
+v4 [label="FIX_FASTA_DEFLINES"];
+v5 [shape=point];
+v4 -> v5;
+
+v6 [label="CONVERT_GENBANK_TO_EMBL"];
+v7 [label="ADJUST_TEXT"];
+v6 -> v7;
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [label="ADJUST_TEXT"];
+v1 -> v7 [label="ch_fasta"];
+
+v7 [label="ADJUST_TEXT"];
+v9 [label="REMOVE_OC_FEATURES"];
+v7 -> v9;
+
+v7 [label="ADJUST_TEXT"];
+v8 [shape=point];
+v7 -> v8;
+
+v9 [label="REMOVE_OC_FEATURES"];
+v10 [label="OBSCURE_ID"];
+v9 -> v10;
+
+v10 [label="OBSCURE_ID"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 [label="SPLIT_EMBL_FILE"];
+v11 -> v12;
+
+v12 [label="SPLIT_EMBL_FILE"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 [label="TAR_EMBL_FILES"];
+v13 -> v14;
+
+v14 [label="TAR_EMBL_FILES"];
+v15 [shape=point];
+v14 -> v15;
+
+}

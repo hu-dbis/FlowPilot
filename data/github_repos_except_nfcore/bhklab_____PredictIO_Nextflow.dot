@@ -1,0 +1,82 @@
+digraph "bhklab_____PredictIO_Nextflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1 [label="icb_rda_files"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [label="LoadAndExtractData"];
+v1 -> v2;
+
+v2 [label="LoadAndExtractData"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [label="GeneAssociationOS"];
+v3 -> v4 [label="extracted_data_with_info"];
+
+v4 [label="GeneAssociationOS"];
+v5 [shape=point];
+v4 -> v5;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [label="GeneAssociationPFS"];
+v3 -> v6 [label="extracted_data_with_info"];
+
+v6 [label="GeneAssociationPFS"];
+v7 [shape=point];
+v6 -> v7;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [label="GeneAssociationResponse"];
+v3 -> v8 [label="extracted_data_with_info"];
+
+v8 [label="GeneAssociationResponse"];
+v9 [shape=point];
+v8 -> v9;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v10 [label="icb_rda_files"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [shape=point];
+v10 -> v11 [label="query_ch"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v12 [label="icb_rda_files"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [label="GeneSigScore"];
+v12 -> v13;
+
+v13 [label="GeneSigScore"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [label="GeneSig_AssociationOS"];
+v14 -> v15 [label="signature_analysis_with_info"];
+
+v15 [label="GeneSig_AssociationOS"];
+v16 [shape=point];
+v15 -> v16;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [label="GeneSig_AssociationPFS"];
+v14 -> v17 [label="signature_analysis_with_info"];
+
+v17 [label="GeneSig_AssociationPFS"];
+v18 [shape=point];
+v17 -> v18;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [label="GeneSig_AssociationResponse"];
+v14 -> v19 [label="signature_analysis_with_info"];
+
+v19 [label="GeneSig_AssociationResponse"];
+v20 [shape=point];
+v19 -> v20;
+
+}

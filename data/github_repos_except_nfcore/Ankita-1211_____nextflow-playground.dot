@@ -1,0 +1,26 @@
+digraph "Ankita1211_____nextflowplayground" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [label="FASTP"];
+v0 -> v1 [label="reads_ch"];
+
+v1 [label="FASTP"];
+v3 [shape=point];
+v1 -> v3;
+
+v1 [label="FASTP"];
+v2 [shape=point];
+v1 -> v2;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v4 [label="FASTQC"];
+v0 -> v4 [label="reads_ch"];
+
+v4 [label="FASTQC"];
+v5 [label="MULTIQC"];
+v4 -> v5;
+
+v5 [label="MULTIQC"];
+v6 [shape=point];
+v5 -> v6;
+
+}

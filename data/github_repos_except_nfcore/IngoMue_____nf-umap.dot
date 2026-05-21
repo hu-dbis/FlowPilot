@@ -1,0 +1,230 @@
+digraph "IngoMue_____nfumap" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v10 [label="faidx_ref"];
+v1 -> v10 [label="refseq_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v15 [label="read_prs"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v9 -> v26 [label="mrg_reads"];
+
+v10 [label="faidx_ref"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v14;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v11 [label="mem2_index_ref"];
+v1 -> v11 [label="refseq_ch"];
+
+v11 [label="mem2_index_ref"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v12;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v1 -> v12 [label="refseq_ch"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v15 [label="refindex"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16 [label="read_PRS_idx"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 -> v17;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v17 [label="read_PRS_idx"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 [label="bwa_mem2_PRS"];
+v17 -> v18 [label="mapping_input_PRS"];
+
+v18 [label="bwa_mem2_PRS"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v22 [label="quickcheck_PRS_sams"];
+v21 -> v22;
+
+v22 [label="quickcheck_PRS_sams"];
+v23 [shape=point];
+v22 -> v23;
+
+v18 [label="bwa_mem2_PRS"];
+v24 [label="samtools_bam_srt_idx_PRS"];
+v18 -> v24;
+
+v24 [label="samtools_bam_srt_idx_PRS"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v37;
+
+v24 [label="samtools_bam_srt_idx_PRS"];
+v25 [shape=point];
+v24 -> v25;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v26 [label="refindex"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v27 [label="MRG_reads_idx"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v27 -> v28;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 -> v28 [label="MRG_reads_idx"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v29 [label="bwa_mem2_MRG"];
+v28 -> v29 [label="mapping_input_MRG"];
+
+v29 [label="bwa_mem2_MRG"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v33 [label="quickcheck_MRG_sams"];
+v32 -> v33;
+
+v33 [label="quickcheck_MRG_sams"];
+v34 [shape=point];
+v33 -> v34;
+
+v29 [label="bwa_mem2_MRG"];
+v35 [label="samtools_bam_srt_idx_MRG"];
+v29 -> v35;
+
+v35 [label="samtools_bam_srt_idx_MRG"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v37;
+
+v35 [label="samtools_bam_srt_idx_MRG"];
+v36 [shape=point];
+v35 -> v36;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v40 [label="samtools_merge"];
+v39 -> v40;
+
+v40 [label="samtools_merge"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v40 -> v42;
+
+v40 [label="samtools_merge"];
+v41 [shape=point];
+v40 -> v41;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v45 [label="quickcheck_bams"];
+v44 -> v45;
+
+v45 [label="quickcheck_bams"];
+v46 [shape=point];
+v45 -> v46;
+
+v40 [label="samtools_merge"];
+v47 [label="qualimap_bamqc"];
+v40 -> v47;
+
+v47 [label="qualimap_bamqc"];
+v48 [shape=point];
+v47 -> v48;
+
+v40 [label="samtools_merge"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v40 -> v49;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v49 [label="refindex"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v50 [label="dmgprof"];
+v49 -> v50;
+
+v50 [label="dmgprof"];
+v51 [shape=point];
+v50 -> v51;
+
+}

@@ -1,0 +1,286 @@
+digraph "microgenlab_____porefile" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v9 [label="fqs"];
+
+v2 [label="GetVersions"];
+v3 [shape=point];
+v2 -> v3;
+
+v4 [label="SetSilva:downloadSilvaFasta"];
+v5 [label="SetSilva:reduceSilva"];
+v4 -> v5;
+
+v5 [label="SetSilva:reduceSilva"];
+v24 [label="MakeDB"];
+v5 -> v24 [label="silva_fasta_ch"];
+
+v6 [label="SetSilva:downloadSilvaTaxNcbiSp"];
+v8 [label="SetSilva:generateSynonyms"];
+v6 -> v8;
+
+v7 [label="SetSilva:downloadSilvaTaxmap"];
+v8 [label="SetSilva:generateSynonyms"];
+v7 -> v8;
+
+v8 [label="SetSilva:generateSynonyms"];
+v26 [label="MeganLca"];
+v8 -> v26 [label="silva_acctax_ch"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 [label="Demultiplex:Concatenate"];
+v9 -> v10;
+
+v10 [label="Demultiplex:Concatenate"];
+v11 [label="Demultiplex:Porechop"];
+v10 -> v11;
+
+v11 [label="Demultiplex:Porechop"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [label="QFilt:NanoFilt"];
+v13 -> v14 [label="barcode_ch"];
+
+v14 [label="QFilt:NanoFilt"];
+v17 [label="QCheck:NanoPlotFilt"];
+v14 -> v17 [label="filtered_ch"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [label="QCheck:NanoPlotRaw"];
+v13 -> v15 [label="barcode_ch"];
+
+v15 [label="QCheck:NanoPlotRaw"];
+v16 [shape=point];
+v15 -> v16;
+
+v15 [label="QCheck:NanoPlotRaw"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v19;
+
+v17 [label="QCheck:NanoPlotFilt"];
+v18 [shape=point];
+v17 -> v18;
+
+v17 [label="QCheck:NanoPlotFilt"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v20 [label="counts_ch"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 [label="QCheck:SummaryTable"];
+v20 -> v21;
+
+v21 [label="QCheck:SummaryTable"];
+v22 [shape=point];
+v21 -> v22;
+
+v14 [label="QFilt:NanoFilt"];
+v23 [label="Fastq2Fasta"];
+v14 -> v23 [label="filtered_ch"];
+
+v23 [label="Fastq2Fasta"];
+v25 [label="Minimap2"];
+v23 -> v25 [label="filtered_ch"];
+
+v24 [label="MakeDB"];
+v25 [label="Minimap2"];
+v24 -> v25;
+
+v25 [label="Minimap2"];
+v26 [label="MeganLca"];
+v25 -> v26;
+
+v26 [label="MeganLca"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v28 [shape=point];
+v27 -> v28;
+
+v26 [label="MeganLca"];
+v29 [label="GetReadInfo"];
+v26 -> v29;
+
+v29 [label="GetReadInfo"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v29 -> v30 [label="base_read_assingments_ch"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v31 [shape=point];
+v30 -> v31;
+
+v29 [label="GetReadInfo"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v32 [label="base_read_assingments_ch"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v35 [label="ComputeAbundances"];
+v33 -> v35 [label="all_read_assignments"];
+
+v8 [label="SetSilva:generateSynonyms"];
+v35 [label="ComputeAbundances"];
+v8 -> v35 [label="silva_acctax_ch"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v35 [label="ComputeAbundances"];
+v34 -> v35 [label="polish"];
+
+v35 [label="ComputeAbundances"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v35 -> v36;
+
+v35 [label="ComputeAbundances"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v35 -> v38;
+
+v35 [label="ComputeAbundances"];
+v40 [label="Polish:SubsetSilva"];
+v35 -> v40 [label="silva_ids"];
+
+v35 [label="ComputeAbundances"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v35 -> v42 [label="read_ids"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v37 [shape=point];
+v36 -> v37;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v39 [shape=point];
+v38 -> v39;
+
+v5 [label="SetSilva:reduceSilva"];
+v40 [label="Polish:SubsetSilva"];
+v5 -> v40 [label="silva_fasta_ch"];
+
+v40 [label="Polish:SubsetSilva"];
+v41 [label="Polish:MakeDB"];
+v40 -> v41;
+
+v41 [label="Polish:MakeDB"];
+v46 [label="Polish:Minimap2"];
+v41 -> v46;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v43 -> v44 [label="low_ch"];
+
+v23 [label="Fastq2Fasta"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 -> v44 [label="filtered_ch"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v45 [label="Polish:SubsetReads"];
+v44 -> v45 [label="low_abundance_ch"];
+
+v45 [label="Polish:SubsetReads"];
+v46 [label="Polish:Minimap2"];
+v45 -> v46;
+
+v46 [label="Polish:Minimap2"];
+v47 [label="Polish:MeganLca"];
+v46 -> v47;
+
+v8 [label="SetSilva:generateSynonyms"];
+v47 [label="Polish:MeganLca"];
+v8 -> v47 [label="silva_acctax_ch"];
+
+v47 [label="Polish:MeganLca"];
+v48 [label="Polish:GetReadInfo"];
+v47 -> v48;
+
+v48 [label="Polish:GetReadInfo"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v48 -> v49;
+
+v29 [label="GetReadInfo"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 -> v49 [label="base_read_assingments_ch"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v50 [label="Polish:CorrectAssignment"];
+v49 -> v50 [label="to_correct_ch"];
+
+v50 [label="Polish:CorrectAssignment"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v51;
+
+v29 [label="GetReadInfo"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v51 [label="base_read_assingments_ch"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v53 -> v54 [label="final_assignments_ch"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 [label="Polish:ComputeAbundances"];
+v55 -> v57 [label="all_polished_assignments"];
+
+v8 [label="SetSilva:generateSynonyms"];
+v57 [label="Polish:ComputeAbundances"];
+v8 -> v57 [label="silva_acctax_ch"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="Polish:ComputeAbundances"];
+v56 -> v57 [label="polish"];
+
+v57 [label="Polish:ComputeAbundances"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v57 -> v60 [label="counts"];
+
+v57 [label="Polish:ComputeAbundances"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v57 -> v62 [label="taxcla"];
+
+v57 [label="Polish:ComputeAbundances"];
+v59 [shape=point];
+v57 -> v59;
+
+v57 [label="Polish:ComputeAbundances"];
+v58 [shape=point];
+v57 -> v58;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v61 [shape=point];
+v60 -> v61;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v63 [shape=point];
+v62 -> v63;
+
+}

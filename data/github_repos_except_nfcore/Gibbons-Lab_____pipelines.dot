@@ -1,0 +1,26 @@
+digraph "GibbonsLab_____pipelines" {
+v0 [label="quality_control"];
+v1 [label="trim"];
+v0 -> v1;
+
+v1 [label="trim"];
+v2 [label="denoise"];
+v1 -> v2;
+
+v2 [label="denoise"];
+v3 [label="tables"];
+v2 -> v3;
+
+v3 [label="tables"];
+v4 [shape=point];
+v3 -> v4;
+
+v2 [label="denoise"];
+v5 [label="tree"];
+v2 -> v5;
+
+v5 [label="tree"];
+v6 [shape=point];
+v5 -> v6;
+
+}

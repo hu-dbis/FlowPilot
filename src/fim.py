@@ -1,18 +1,22 @@
-from mlxtend.preprocessing import TransactionEncoder
-import pandas as pd
-from mlxtend.frequent_patterns import apriori, association_rules
-import numpy as np
-from tqdm import tqdm
+import argparse
 import glob
-from src.classes.mygraph import my_graph
 import itertools
+import os
+
+import pandas as pd
+from tqdm import tqdm
+from mlxtend.preprocessing import TransactionEncoder
+from mlxtend.frequent_patterns import apriori, association_rules
 from sklearn.model_selection import train_test_split
 
-released_source_path = '../../datasets/dags/dot/released/'
-under_development_source_path = '../../datasets/dags/dot/under_development_dags/'
-github_repos_source_path = '../../datasets/dags/dot/github_repos/'
-github_repos_except_nfcore_source_path = '../../datasets/dags/dot/github_repos_except_nfcore/'
-snakemake_source_path = '../../datasets/dags/dot/snakemake_dags/'
+from src.classes.mygraph import my_graph
+
+# Bundled DAG corpora, anchored to the repository root. See the README for how
+# to extract the .dot files from data/*.zip.
+_DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
+released_source_path = f'{_DATA_DIR}/released/'
+under_development_source_path = f'{_DATA_DIR}/under_development_dags/'
+git_source_path = f'{_DATA_DIR}/github_repos_except_nfcore/'
 nf_ops_list = [x.upper() for x in list(
             {'branch', 'channel', 'collect', 'combine', 'emit', 'flatten', 'join', 'merge', 'output', 'scatter',
              'split', 'zip', 'map', 'filter', 'group', 'set', 'setval', 'mix', 'buffer', 'collate', 'collectFile',
@@ -50,57 +54,70 @@ def create_knowledgebase(corpus_path):
     df_ar = association_rules(df, metric="confidence", min_threshold=0.5, num_itemsets=len(df))
     return df_ar, test_paths
 
-repeat = 10
-precision_sum = 0
+def main():
+    corpora = {
+        'released': released_source_path,
+        'under_development': under_development_source_path,
+        'github': git_source_path,
+    }
+    parser = argparse.ArgumentParser(
+        description='Run the Frequent Item set Mining (FIM) baseline (paper, Sec. 8.2).')
+    parser.add_argument('--query', choices=corpora, default='released',
+                        help='Corpus to mine association rules from.')
+    parser.add_argument('--repeat', type=int, default=10,
+                        help='Number of random train/test splits to average over.')
+    parser.add_argument('--top-n', type=int, default=1,
+                        help='Number of suggestions considered correct (recall@n).')
+    args = parser.parse_args()
 
-top_n = 1
-SOURCE_CORPUS = released_source_path
-print('AR Original')
-print(SOURCE_CORPUS)
-print(top_n)
+    source_corpus = corpora[args.query]
+    repeat = args.repeat
+    top_n = args.top_n
+    precision_sum = 0
+    print('AR Original')
+    print(source_corpus)
+    print(top_n)
 
-for i in tqdm(range(repeat)):
-    KB, test_paths = create_knowledgebase(SOURCE_CORPUS)
-    case_counter = 0
-    my_solution_counter = 0
-    my_certain_solution_counter = 0
-    my_non_certain_solution_counter = 0
-    nextflow_operators_case_counter = 0
-    complex_operators_case_counter = 0
-    nextflow_operators_correct_case_counter = 0
-    complex_operators_correct_case_counter = 0
-    certain_case_counter = 0
-    uncertainty_threshold = 0.5
-    user_label_counter = 0
+    for i in tqdm(range(repeat)):
+        KB, test_paths = create_knowledgebase(source_corpus)
+        case_counter = 0
+        my_solution_counter = 0
+        nextflow_operators_case_counter = 0
+        complex_operators_case_counter = 0
+        nextflow_operators_correct_case_counter = 0
+        complex_operators_correct_case_counter = 0
 
-    for query_ngram in test_paths:
-        while query_ngram[-1] == '':
-            query_ngram.pop()
-            query_ngram.pop()
-        if len(query_ngram) < 2:
-            continue
+        for query_ngram in test_paths:
+            while query_ngram[-1] == '':
+                query_ngram.pop()
+                query_ngram.pop()
+            if len(query_ngram) < 2:
+                continue
 
-        incomplete_ngram = query_ngram[:-1]
-        missing_element = query_ngram[-1]
+            incomplete_ngram = query_ngram[:-1]
+            missing_element = query_ngram[-1]
 
-        ar_results = list(KB[KB['antecedents'] == set(incomplete_ngram)]['consequents'])
-        ar_results = [item for sublist in ar_results for item in sublist]
+            ar_results = list(KB[KB['antecedents'] == set(incomplete_ngram)]['consequents'])
+            ar_results = [item for sublist in ar_results for item in sublist]
 
-        case_counter += 1
-
-
-        if missing_element in nf_ops_list:
-            nextflow_operators_case_counter += 1
-        else:
-            complex_operators_case_counter += 1
-
-        if missing_element in ar_results[-top_n:]:
-            my_solution_counter += 1
+            case_counter += 1
 
             if missing_element in nf_ops_list:
-                nextflow_operators_correct_case_counter += 1
+                nextflow_operators_case_counter += 1
             else:
-                complex_operators_correct_case_counter += 1
-    precision_sum += my_solution_counter / case_counter
-print(f'--------------------------------')
-print(f'MY E2E Recall: ({precision_sum/repeat})')
+                complex_operators_case_counter += 1
+
+            if missing_element in ar_results[-top_n:]:
+                my_solution_counter += 1
+
+                if missing_element in nf_ops_list:
+                    nextflow_operators_correct_case_counter += 1
+                else:
+                    complex_operators_correct_case_counter += 1
+        precision_sum += my_solution_counter / case_counter
+    print(f'--------------------------------')
+    print(f'MY E2E Recall: ({precision_sum / repeat})')
+
+
+if __name__ == '__main__':
+    main()

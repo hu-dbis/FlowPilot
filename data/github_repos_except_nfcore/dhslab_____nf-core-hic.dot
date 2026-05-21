@@ -1,0 +1,198 @@
+digraph "dhslab_____nfcorehic" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v5 [label="ch_versions"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:INPUT_CHECK:samplesheet_check"];
+v1 -> v2 [label="samplesheet"];
+
+v2 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:INPUT_CHECK:samplesheet_check"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 -> v3;
+
+v2 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:INPUT_CHECK:samplesheet_check"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v5 [label="versions"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v6 [label="reads"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v19 [label="ch_versions"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v7 -> v10 [label="ch_read_1"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v8 [label="reads"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 -> v10 [label="ch_read_2"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v11 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:combine_lanes"];
+v10 -> v11 [label="ch_fastq"];
+
+v11 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:combine_lanes"];
+v15 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:fastq2pairs"];
+v11 -> v15;
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:fastq2pairs"];
+v12 -> v15 [label="bwa_index_files"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:fastq2pairs"];
+v13 -> v15 [label="reference_fasta"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:fastq2pairs"];
+v14 -> v15 [label="chromsizes"];
+
+v15 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:fastq2pairs"];
+v18 [shape=point];
+v15 -> v18;
+
+v15 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:fastq2pairs"];
+v17 [shape=point];
+v15 -> v17;
+
+v15 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:fastq2pairs"];
+v21 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:sort_bam"];
+v15 -> v21 [label="aligned_bam"];
+
+v15 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:fastq2pairs"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v26 [label="pairs"];
+
+v15 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:fastq2pairs"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v24 [label="pairs_cram"];
+
+v15 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:fastq2pairs"];
+v16 [shape=point];
+v15 -> v16 [label="dedup_stats"];
+
+v15 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:fastq2pairs"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v23 [label="ch_versions"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:sort_bam"];
+v20 -> v21 [label="reference_fasta"];
+
+v21 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:sort_bam"];
+v22 [shape=point];
+v21 -> v22;
+
+v21 [label="HIC:MAKE_MCOOL:MAKE_PAIRS:sort_bam"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v31 [label="ch_versions"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v29 [label="HIC:MAKE_MCOOL:merge_crams"];
+v25 -> v29 [label="ch_cram_per_sample"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v32 [label="HIC:MAKE_MCOOL:merge_pairs"];
+v27 -> v32 [label="ch_pairs_per_sample"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="HIC:MAKE_MCOOL:merge_crams"];
+v28 -> v29 [label="reference_fasta"];
+
+v29 [label="HIC:MAKE_MCOOL:merge_crams"];
+v30 [shape=point];
+v29 -> v30 [label="ch_merged_cram"];
+
+v29 [label="HIC:MAKE_MCOOL:merge_crams"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v33 [label="ch_versions"];
+
+v32 [label="HIC:MAKE_MCOOL:merge_pairs"];
+v35 [label="HIC:MAKE_MCOOL:pairs2mcool"];
+v32 -> v35;
+
+v32 [label="HIC:MAKE_MCOOL:merge_pairs"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v37 [label="ch_versions"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v35 [label="HIC:MAKE_MCOOL:pairs2mcool"];
+v34 -> v35 [label="chromsizes"];
+
+v35 [label="HIC:MAKE_MCOOL:pairs2mcool"];
+v36 [shape=point];
+v35 -> v36;
+
+v35 [label="HIC:MAKE_MCOOL:pairs2mcool"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v37 -> v38 [label="ch_versions"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v40 [label="HIC:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v39 -> v40;
+
+v40 [label="HIC:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v43 [shape=point];
+v40 -> v43;
+
+v40 [label="HIC:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v42 [shape=point];
+v40 -> v42;
+
+v40 [label="HIC:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v41 [shape=point];
+v40 -> v41;
+
+}

@@ -1,0 +1,386 @@
+digraph "jianhong_____16S_pipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v5 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v16 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v4 [label="ch_multiqc_files"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v7 [label="ch_multiqc_files"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v19 [label="ch_multiqc_files"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v8 -> v9 [label="bcl_undetermined"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v13 [label="NFCORE_MICROBIOME:MICROBIOME:FASTQC"];
+v12 -> v13 [label="ch_reads"];
+
+v13 [label="NFCORE_MICROBIOME:MICROBIOME:FASTQC"];
+v14 [shape=point];
+v13 -> v14;
+
+v13 [label="NFCORE_MICROBIOME:MICROBIOME:FASTQC"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 -> v17;
+
+v13 [label="NFCORE_MICROBIOME:MICROBIOME:FASTQC"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v13 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v23 [label="ch_versions"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v26 [label="ch_multiqc_files"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v21 [label="NFCORE_MICROBIOME:MICROBIOME:REMOVE_PRIMERS"];
+v12 -> v21 [label="ch_reads"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="NFCORE_MICROBIOME:MICROBIOME:REMOVE_PRIMERS"];
+v20 -> v21 [label="single_end"];
+
+v21 [label="NFCORE_MICROBIOME:MICROBIOME:REMOVE_PRIMERS"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 -> v30;
+
+v21 [label="NFCORE_MICROBIOME:MICROBIOME:REMOVE_PRIMERS"];
+v22 [shape=point];
+v21 -> v22;
+
+v21 [label="NFCORE_MICROBIOME:MICROBIOME:REMOVE_PRIMERS"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 -> v24;
+
+v21 [label="NFCORE_MICROBIOME:MICROBIOME:REMOVE_PRIMERS"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v32 [label="ch_versions"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v49 [label="ch_multiqc_files"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v8 -> v27 [label="bcl_undetermined"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 [label="NFCORE_MICROBIOME:MICROBIOME:SYNC_BARCODES"];
+v30 -> v31 [label="ch_reads2"];
+
+v31 [label="NFCORE_MICROBIOME:MICROBIOME:SYNC_BARCODES"];
+v34 [label="NFCORE_MICROBIOME:MICROBIOME:QIIME_DEMULTIPLEX:QIIME_IMPORT"];
+v31 -> v34 [label="reads"];
+
+v31 [label="NFCORE_MICROBIOME:MICROBIOME:SYNC_BARCODES"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v43 [label="ch_versions"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v34 [label="NFCORE_MICROBIOME:MICROBIOME:QIIME_DEMULTIPLEX:QIIME_IMPORT"];
+v33 -> v34 [label="single_end"];
+
+v34 [label="NFCORE_MICROBIOME:MICROBIOME:QIIME_DEMULTIPLEX:QIIME_IMPORT"];
+v37 [label="NFCORE_MICROBIOME:MICROBIOME:QIIME_DEMULTIPLEX:QIIME_DEMUX"];
+v34 -> v37;
+
+v34 [label="NFCORE_MICROBIOME:MICROBIOME:QIIME_DEMULTIPLEX:QIIME_IMPORT"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v43 [label="versions"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="NFCORE_MICROBIOME:MICROBIOME:QIIME_DEMULTIPLEX:QIIME_DEMUX"];
+v35 -> v37 [label="barcodes"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="NFCORE_MICROBIOME:MICROBIOME:QIIME_DEMULTIPLEX:QIIME_DEMUX"];
+v36 -> v37 [label="single_end"];
+
+v37 [label="NFCORE_MICROBIOME:MICROBIOME:QIIME_DEMULTIPLEX:QIIME_DEMUX"];
+v41 [label="NFCORE_MICROBIOME:MICROBIOME:QIIME_DEMULTIPLEX:QIIME_EXPORT"];
+v37 -> v41;
+
+v37 [label="NFCORE_MICROBIOME:MICROBIOME:QIIME_DEMULTIPLEX:QIIME_DEMUX"];
+v40 [shape=point];
+v37 -> v40;
+
+v37 [label="NFCORE_MICROBIOME:MICROBIOME:QIIME_DEMULTIPLEX:QIIME_DEMUX"];
+v39 [shape=point];
+v37 -> v39;
+
+v37 [label="NFCORE_MICROBIOME:MICROBIOME:QIIME_DEMULTIPLEX:QIIME_DEMUX"];
+v38 [shape=point];
+v37 -> v38;
+
+v41 [label="NFCORE_MICROBIOME:MICROBIOME:QIIME_DEMULTIPLEX:QIIME_EXPORT"];
+v45 [label="NFCORE_MICROBIOME:MICROBIOME:FILTERING"];
+v41 -> v45 [label="ch_reads4"];
+
+v41 [label="NFCORE_MICROBIOME:MICROBIOME:QIIME_DEMULTIPLEX:QIIME_EXPORT"];
+v42 [shape=point];
+v41 -> v42;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v46 [label="ch_versions"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="NFCORE_MICROBIOME:MICROBIOME:FILTERING"];
+v44 -> v45 [label="single_end"];
+
+v45 [label="NFCORE_MICROBIOME:MICROBIOME:FILTERING"];
+v52 [label="NFCORE_MICROBIOME:MICROBIOME:DADA2"];
+v45 -> v52;
+
+v45 [label="NFCORE_MICROBIOME:MICROBIOME:FILTERING"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 -> v47;
+
+v45 [label="NFCORE_MICROBIOME:MICROBIOME:FILTERING"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v54 [label="ch_versions"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v57 [label="ch_multiqc_files"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="NFCORE_MICROBIOME:MICROBIOME:DADA2"];
+v50 -> v52 [label="train_set"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="NFCORE_MICROBIOME:MICROBIOME:DADA2"];
+v51 -> v52 [label="species_assignment"];
+
+v52 [label="NFCORE_MICROBIOME:MICROBIOME:DADA2"];
+v59 [label="NFCORE_MICROBIOME:MICROBIOME:PHYLOSEQ"];
+v52 -> v59;
+
+v52 [label="NFCORE_MICROBIOME:MICROBIOME:DADA2"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v52 -> v55;
+
+v52 [label="NFCORE_MICROBIOME:MICROBIOME:DADA2"];
+v53 [shape=point];
+v52 -> v53;
+
+v52 [label="NFCORE_MICROBIOME:MICROBIOME:DADA2"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v62 [label="ch_versions"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v73 [label="ch_multiqc_files"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="NFCORE_MICROBIOME:MICROBIOME:PHYLOSEQ"];
+v58 -> v59 [label="metadata"];
+
+v59 [label="NFCORE_MICROBIOME:MICROBIOME:PHYLOSEQ"];
+v61 [shape=point];
+v59 -> v61;
+
+v59 [label="NFCORE_MICROBIOME:MICROBIOME:PHYLOSEQ"];
+v63 [label="NFCORE_MICROBIOME:MICROBIOME:KRONA"];
+v59 -> v63;
+
+v59 [label="NFCORE_MICROBIOME:MICROBIOME:PHYLOSEQ"];
+v60 [shape=point];
+v59 -> v60;
+
+v59 [label="NFCORE_MICROBIOME:MICROBIOME:PHYLOSEQ"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v65 [label="ch_versions"];
+
+v63 [label="NFCORE_MICROBIOME:MICROBIOME:KRONA"];
+v64 [shape=point];
+v63 -> v64;
+
+v63 [label="NFCORE_MICROBIOME:MICROBIOME:KRONA"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v65 -> v66 [label="ch_versions"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v66 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v68 [label="NFCORE_MICROBIOME:MICROBIOME:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v67 -> v68;
+
+v68 [label="NFCORE_MICROBIOME:MICROBIOME:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v70 [shape=point];
+v68 -> v70;
+
+v68 [label="NFCORE_MICROBIOME:MICROBIOME:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v68 -> v74;
+
+v68 [label="NFCORE_MICROBIOME:MICROBIOME:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v69 [shape=point];
+v68 -> v69;
+
+v71 [shape=point,label="",fixedsize=true,width=0.1];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v71 -> v72 [label="ch_workflow_summary"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v75 [label="ch_multiqc_files"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v75 -> v76 [label="ch_multiqc_files"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 [label="NFCORE_MICROBIOME:MICROBIOME:MULTIQC"];
+v76 -> v77;
+
+v77 [label="NFCORE_MICROBIOME:MICROBIOME:MULTIQC"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v77 -> v80;
+
+v77 [label="NFCORE_MICROBIOME:MICROBIOME:MULTIQC"];
+v79 [shape=point];
+v77 -> v79;
+
+v77 [label="NFCORE_MICROBIOME:MICROBIOME:MULTIQC"];
+v78 [shape=point];
+v77 -> v78;
+
+v77 [label="NFCORE_MICROBIOME:MICROBIOME:MULTIQC"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v82;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v81 [shape=point];
+v80 -> v81;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v82 [label="ch_versions"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 [shape=point];
+v82 -> v83 [label="ch_versions"];
+
+}

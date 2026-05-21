@@ -1,0 +1,238 @@
+digraph "VEuPathDB_____longreadrnaseqnextflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFastq"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFastq"];
+v3 [label="longRna:minimapMapping"];
+v1 -> v3 [label="sample_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="longRna:minimapMapping"];
+v2 -> v3 [label="reference"];
+
+v3 [label="longRna:minimapMapping"];
+v4 [label="longRna:sortSam"];
+v3 -> v4;
+
+v4 [label="longRna:sortSam"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v6 [label="longRna:mergeSams"];
+v5 -> v6 [label="samSet"];
+
+v6 [label="longRna:mergeSams"];
+v10 [label="longRna:transcriptClean"];
+v6 -> v10;
+
+v6 [label="longRna:mergeSams"];
+v10 [label="longRna:transcriptClean"];
+v6 -> v10 [label="sampleID"];
+
+v6 [label="longRna:mergeSams"];
+v8 [shape=point];
+v6 -> v8;
+
+v6 [label="longRna:mergeSams"];
+v7 [shape=point];
+v6 -> v7;
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="longRna:transcriptClean"];
+v9 -> v10 [label="reference"];
+
+v10 [label="longRna:transcriptClean"];
+v17 [label="longRna:talonLabelReads"];
+v10 -> v17;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="longRna:initiateDatabase"];
+v11 -> v14 [label="annotation"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="longRna:initiateDatabase"];
+v12 -> v14 [label="annotationName"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="longRna:initiateDatabase"];
+v13 -> v14 [label="build"];
+
+v14 [label="longRna:initiateDatabase"];
+v15 [shape=point];
+v14 -> v15;
+
+v14 [label="longRna:initiateDatabase"];
+v26 [label="longRna:annotator"];
+v14 -> v26 [label="annotationName"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="longRna:talonLabelReads"];
+v16 -> v17 [label="reference"];
+
+v6 [label="longRna:mergeSams"];
+v17 [label="longRna:talonLabelReads"];
+v6 -> v17 [label="sample_base"];
+
+v17 [label="longRna:talonLabelReads"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 -> v18;
+
+v17 [label="longRna:talonLabelReads"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 -> v19;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [label="longRna:generateConfig"];
+v18 -> v22 [label="samfiles"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [label="longRna:generateConfig"];
+v19 -> v22 [label="samplesNames"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [label="longRna:generateConfig"];
+v20 -> v22 [label="build"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [label="longRna:generateConfig"];
+v21 -> v22 [label="seqPlatform"];
+
+v22 [label="longRna:generateConfig"];
+v26 [label="longRna:annotator"];
+v22 -> v26;
+
+v22 [label="longRna:generateConfig"];
+v23 [shape=point];
+v22 -> v23;
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [label="longRna:annotator"];
+v24 -> v26 [label="database"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [label="longRna:annotator"];
+v25 -> v26 [label="build"];
+
+v26 [label="longRna:annotator"];
+v28 [label="longRna:sampleList"];
+v26 -> v28;
+
+v26 [label="longRna:annotator"];
+v27 [shape=point];
+v26 -> v27;
+
+v28 [label="longRna:sampleList"];
+v37 [label="longRna:talonFilterTranscripts"];
+v28 -> v37;
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="longRna:talonSummarize"];
+v29 -> v30 [label="database"];
+
+v26 [label="longRna:annotator"];
+v30 [label="longRna:talonSummarize"];
+v26 -> v30 [label="results"];
+
+v30 [label="longRna:talonSummarize"];
+v31 [shape=point];
+v30 -> v31;
+
+v32 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="longRna:talonFilterTranscripts"];
+v32 -> v37 [label="database"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="longRna:talonFilterTranscripts"];
+v33 -> v37 [label="annotationName"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="longRna:talonFilterTranscripts"];
+v34 -> v37 [label="maxFracA"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="longRna:talonFilterTranscripts"];
+v35 -> v37 [label="minCount"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="longRna:talonFilterTranscripts"];
+v36 -> v37 [label="minDatasets"];
+
+v37 [label="longRna:talonFilterTranscripts"];
+v45 [label="longRna:transcriptAbundance"];
+v37 -> v45;
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="longRna:transcriptAbundanceNoFilter"];
+v38 -> v41 [label="database"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="longRna:transcriptAbundanceNoFilter"];
+v39 -> v41 [label="annotationName"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="longRna:transcriptAbundanceNoFilter"];
+v40 -> v41 [label="build"];
+
+v26 [label="longRna:annotator"];
+v41 [label="longRna:transcriptAbundanceNoFilter"];
+v26 -> v41 [label="results*"];
+
+v41 [label="longRna:transcriptAbundanceNoFilter"];
+v50 [label="longRna:extractBysample"];
+v41 -> v50;
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="longRna:transcriptAbundance"];
+v42 -> v45 [label="database"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="longRna:transcriptAbundance"];
+v43 -> v45 [label="annotationName"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="longRna:transcriptAbundance"];
+v44 -> v45 [label="build"];
+
+v26 [label="longRna:annotator"];
+v45 [label="longRna:transcriptAbundance"];
+v26 -> v45 [label="results*"];
+
+v45 [label="longRna:transcriptAbundance"];
+v50 [label="longRna:extractBysample"];
+v45 -> v50;
+
+v26 [label="longRna:annotator"];
+v49 [label="longRna:createGtf"];
+v26 -> v49 [label="annotOut"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v49 [label="longRna:createGtf"];
+v46 -> v49 [label="database"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v49 [label="longRna:createGtf"];
+v47 -> v49 [label="annotationName"];
+
+v48 [shape=point,label="",fixedsize=true,width=0.1];
+v49 [label="longRna:createGtf"];
+v48 -> v49 [label="build"];
+
+v49 [label="longRna:createGtf"];
+v52 [label="longRna:convertGtfToGff"];
+v49 -> v52;
+
+v50 [label="longRna:extractBysample"];
+v51 [shape=point];
+v50 -> v51;
+
+v52 [label="longRna:convertGtfToGff"];
+v53 [label="longRna:indexGff"];
+v52 -> v53;
+
+v53 [label="longRna:indexGff"];
+v54 [shape=point];
+v53 -> v54;
+
+}

@@ -1,0 +1,42 @@
+digraph "SimonLoriereLab_____MPXV_apo" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [label="rename"];
+v0 -> v3 [label="fa"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="cutReference"];
+v1 -> v2 [label="ref"];
+
+v2 [label="cutReference"];
+v9 [label="countMutations"];
+v2 -> v9;
+
+v3 [label="rename"];
+v5 [label="minimap"];
+v3 -> v5;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="minimap"];
+v4 -> v5 [label="reference"];
+
+v5 [label="minimap"];
+v6 [label="toFasta"];
+v5 -> v6;
+
+v6 [label="toFasta"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v8 [label="cleanseq"];
+v7 -> v8 [label="alfaall"];
+
+v8 [label="cleanseq"];
+v9 [label="countMutations"];
+v8 -> v9;
+
+v9 [label="countMutations"];
+v10 [shape=point];
+v9 -> v10;
+
+}

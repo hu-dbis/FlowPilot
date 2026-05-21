@@ -1,0 +1,262 @@
+digraph "wardahjassiem_____enhancerAssociatedInsertions" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v28 [label="chrpath"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v6 [label="ID_insertions:align_ungapped"];
+v2 -> v6 [label="trt_fq"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v46 [label="peak_calling:align_fq"];
+v4 -> v46 [label="trt_ctl_fq"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="ID_insertions:align_ungapped"];
+v5 -> v6 [label="bowtie1Ind"];
+
+v6 [label="ID_insertions:align_ungapped"];
+v7 [shape=point];
+v6 -> v7;
+
+v6 [label="ID_insertions:align_ungapped"];
+v9 [label="ID_insertions:align_gapped"];
+v6 -> v9;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [label="ID_insertions:align_gapped"];
+v8 -> v9 [label="bowtie2Ind"];
+
+v9 [label="ID_insertions:align_gapped"];
+v10 [label="ID_insertions:samtobam"];
+v9 -> v10;
+
+v10 [label="ID_insertions:samtobam"];
+v11 [label="ID_insertions:sort_index"];
+v10 -> v11;
+
+v11 [label="ID_insertions:sort_index"];
+v13 [shape=point];
+v11 -> v13;
+
+v11 [label="ID_insertions:sort_index"];
+v12 [shape=point];
+v11 -> v12;
+
+v9 [label="ID_insertions:align_gapped"];
+v14 [label="ID_insertions:extract_insertions"];
+v9 -> v14 [label="mapped"];
+
+v14 [label="ID_insertions:extract_insertions"];
+v16 [label="ID_insertions:header_to_insertion"];
+v14 -> v16;
+
+v9 [label="ID_insertions:align_gapped"];
+v15 [label="ID_insertions:retrieve_headers"];
+v9 -> v15 [label="bwt_reads"];
+
+v15 [label="ID_insertions:retrieve_headers"];
+v16 [label="ID_insertions:header_to_insertion"];
+v15 -> v16;
+
+v16 [label="ID_insertions:header_to_insertion"];
+v17 [label="ID_insertions:samtobam_1"];
+v16 -> v17;
+
+v17 [label="ID_insertions:samtobam_1"];
+v18 [label="ID_insertions:sort_index_1"];
+v17 -> v18;
+
+v18 [label="ID_insertions:sort_index_1"];
+v24 [label="ID_insertions:identify_ncinsertions"];
+v18 -> v24;
+
+v18 [label="ID_insertions:sort_index_1"];
+v19 [shape=point];
+v18 -> v19;
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="ID_insertions:codingDNA"];
+v20 -> v21 [label="DNA"];
+
+v21 [label="ID_insertions:codingDNA"];
+v22 [shape=point];
+v21 -> v22;
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="ID_insertions:identify_ncinsertions"];
+v23 -> v24 [label="exons"];
+
+v24 [label="ID_insertions:identify_ncinsertions"];
+v25 [label="ID_insertions:bamtosam"];
+v24 -> v25;
+
+v25 [label="ID_insertions:bamtosam"];
+v26 [label="ID_insertions:insertions_fastq"];
+v25 -> v26;
+
+v26 [label="ID_insertions:insertions_fastq"];
+v32 [label="ID_insertions:convert_fastqto2col"];
+v26 -> v32;
+
+v25 [label="ID_insertions:bamtosam"];
+v27 [label="ID_insertions:insertions_fasta"];
+v25 -> v27 [label="sam"];
+
+v27 [label="ID_insertions:insertions_fasta"];
+v29 [label="ID_insertions:pblat"];
+v27 -> v29;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [label="ID_insertions:pblat"];
+v28 -> v29;
+
+v29 [label="ID_insertions:pblat"];
+v30 [label="ID_insertions:compile_insertions"];
+v29 -> v30;
+
+v30 [label="ID_insertions:compile_insertions"];
+v31 [label="ID_insertions:filter_insertions"];
+v30 -> v31;
+
+v31 [label="ID_insertions:filter_insertions"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 -> v33;
+
+v32 [label="ID_insertions:convert_fastqto2col"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 [label="ID_insertions:vlookup"];
+v33 -> v34;
+
+v34 [label="ID_insertions:vlookup"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v35;
+
+v32 [label="ID_insertions:convert_fastqto2col"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 [label="ID_insertions:vlookup_2"];
+v35 -> v36;
+
+v36 [label="ID_insertions:vlookup_2"];
+v37 [label="ID_insertions:filter_sam_by_column"];
+v36 -> v37;
+
+v37 [label="ID_insertions:filter_sam_by_column"];
+v38 [label="ID_insertions:filter_sam_by_string"];
+v37 -> v38;
+
+v38 [label="ID_insertions:filter_sam_by_string"];
+v39 [label="ID_insertions:header_to_insertion_1"];
+v38 -> v39;
+
+v15 [label="ID_insertions:retrieve_headers"];
+v39 [label="ID_insertions:header_to_insertion_1"];
+v15 -> v39 [label="headers"];
+
+v39 [label="ID_insertions:header_to_insertion_1"];
+v40 [label="ID_insertions:samtobam_2"];
+v39 -> v40;
+
+v40 [label="ID_insertions:samtobam_2"];
+v41 [label="ID_insertions:sort_index_2"];
+v40 -> v41;
+
+v41 [label="ID_insertions:sort_index_2"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 -> v43;
+
+v41 [label="ID_insertions:sort_index_2"];
+v42 [shape=point];
+v41 -> v42;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v44 -> v54 [label="bam"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v46 [label="peak_calling:align_fq"];
+v45 -> v46 [label="bowtie2Ind"];
+
+v46 [label="peak_calling:align_fq"];
+v47 [label="peak_calling:sam2bam"];
+v46 -> v47;
+
+v47 [label="peak_calling:sam2bam"];
+v48 [label="peak_calling:sort_index_macs"];
+v47 -> v48;
+
+v48 [label="peak_calling:sort_index_macs"];
+v49 [label="peak_calling:unique_reads"];
+v48 -> v49;
+
+v49 [label="peak_calling:unique_reads"];
+v50 [label="peak_calling:macs"];
+v49 -> v50;
+
+v50 [label="peak_calling:macs"];
+v51 [shape=point];
+v50 -> v51;
+
+v50 [label="peak_calling:macs"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v53 -> v54 [label="bed"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v55 [label="enhancers:identify_enhancers"];
+v54 -> v55;
+
+v55 [label="enhancers:identify_enhancers"];
+v56 [label="enhancers:bamtosam"];
+v55 -> v56;
+
+v56 [label="enhancers:bamtosam"];
+v57 [label="enhancers:sam2bed"];
+v56 -> v57;
+
+v57 [label="enhancers:sam2bed"];
+v58 [label="enhancers:adjust_zero_length_features"];
+v57 -> v58;
+
+v58 [label="enhancers:adjust_zero_length_features"];
+v59 [label="enhancers:sort_bed"];
+v58 -> v59;
+
+v59 [label="enhancers:sort_bed"];
+v61 [label="enhancers:closest_features"];
+v59 -> v61;
+
+v60 [shape=point,label="",fixedsize=true,width=0.1];
+v61 [label="enhancers:closest_features"];
+v60 -> v61 [label="genes"];
+
+v61 [label="enhancers:closest_features"];
+v62 [shape=point];
+v61 -> v62;
+
+}

@@ -1,16 +1,20 @@
+import glob
+import os
+
 import torch
+from torch.optim import AdamW
 from torch.utils.data import Dataset, DataLoader
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
-from torch.optim import AdamW
-from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from tqdm import tqdm
-import os
-import glob
-from collections import Counter # Import Counter for counting class frequencies
+
+from src.classes.mygraph import my_graph
+
+# Bundled DAG corpora, anchored to the repository root. See the README for how
+# to extract the .dot files from data/*.zip.
+_DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
 
 raw_ngrams_UD = []
-from src.classes.mygraph import my_graph
 
 nf_ops_list = [x.upper() for x in list(
     {'branch', 'channel', 'collect', 'combine', 'emit', 'flatten', 'join', 'merge', 'output', 'scatter',
@@ -25,18 +29,14 @@ nf_ops_list = [x.upper() for x in list(
      'transpose', 'unique', 'until', 'view', ''})]
 
 
-for graphpath in tqdm(glob.glob(f'../../datasets/dags/dot/under_development_dags/*.dot'), desc="Loading Graphs"):
+for graphpath in tqdm(glob.glob(f'{_DATA_DIR}/under_development_dags/*.dot'), desc="Loading Graphs"):
     swf_name = graphpath.split('/')[-1].replace('.dot', '')
     try:
         query_graph = my_graph(graphpath)
     except Exception as e:
-        print(f'Error in reading the graph {graphpath}: {e}')
-        if os.path.exists(graphpath):
-            os.remove(graphpath)
+        print(f'Skipping unreadable graph {graphpath}: {e}')
         continue
     if len(query_graph.nodes) < 3:
-        if os.path.exists(graphpath):
-            os.remove(graphpath)
         continue
 
     query_ngrams = query_graph.get_all_paths_with_edges_for_given_nodes(min_length=6,
@@ -55,33 +55,15 @@ for graphpath in tqdm(glob.glob(f'../../datasets/dags/dot/under_development_dags
 
 
 raw_ngrams_RELEASED = []
-from src.classes.mygraph import my_graph
 
-nf_ops_list = [x.upper() for x in list(
-    {'branch', 'channel', 'collect', 'combine', 'emit', 'flatten', 'join', 'merge', 'output', 'scatter',
-     'split', 'zip', 'map', 'filter', 'group', 'set', 'setval', 'mix', 'buffer', 'collate', 'collectFile',
-     'concat', 'count', 'cross', 'distinct', 'emit', 'expand', 'filter', 'flatten', 'fold', 'group', 'head',
-     'join', 'map', 'max', 'min', 'mix', 'output', 'pair', 'pick', 'reduce', 'reverse', 'sample', 'set',
-     'setval', 'size', 'skip', 'sort', 'split', 'tail', 'take', 'toFile', 'toPath', 'toSet', 'toTuple',
-     'unique', 'unzip', 'zip', 'countfasta', 'countFastq', 'countJson', 'countLines', 'cross', 'distinct',
-     'dump', 'filter', 'first', 'flatmap', 'flatten', 'grouptuple', 'ifEmpty', 'join', 'last', 'merge', 'map',
-     'max', 'min', 'mix', 'multiMap', 'randomSample', 'reduce', 'set', 'splitCsv', 'splitFasta', 'splitFastq',
-     'splitJson', 'splitText', 'subscribe', 'sum', 'take', 'tap', 'toInteger', 'toList', 'toSortedList',
-     'transpose', 'unique', 'until', 'view', ''})]
-
-
-for graphpath in tqdm(glob.glob(f'../../datasets/dags/dot/released/*.dot'), desc="Loading Graphs"):
+for graphpath in tqdm(glob.glob(f'{_DATA_DIR}/released/*.dot'), desc="Loading Graphs"):
     swf_name = graphpath.split('/')[-1].replace('.dot', '')
     try:
         query_graph = my_graph(graphpath)
     except Exception as e:
-        print(f'Error in reading the graph {graphpath}: {e}')
-        if os.path.exists(graphpath):
-            os.remove(graphpath)
+        print(f'Skipping unreadable graph {graphpath}: {e}')
         continue
     if len(query_graph.nodes) < 3:
-        if os.path.exists(graphpath):
-            os.remove(graphpath)
         continue
 
     query_ngrams = query_graph.get_all_paths_with_edges_for_given_nodes(min_length=6,

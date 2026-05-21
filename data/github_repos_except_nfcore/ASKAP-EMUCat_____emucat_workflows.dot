@@ -1,0 +1,246 @@
+digraph "ASKAPEMUCat_____emucat_workflows" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="emucat_ser:setup"];
+v0 -> v1 [label="ser"];
+
+v1 [label="emucat_ser:setup"];
+v2 [label="emucat_ser:get_sched_blocks"];
+v1 -> v2 [label="ser"];
+
+v2 [label="emucat_ser:get_sched_blocks"];
+v3 [label="emucat_ser:casda_download"];
+v2 -> v3 [label="-"];
+
+v3 [label="emucat_ser:casda_download"];
+v5 [label="emucat_ser:generate_linmos_conf"];
+v3 -> v5;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="emucat_ser:generate_linmos_conf"];
+v4 -> v5 [label="ser"];
+
+v5 [label="emucat_ser:generate_linmos_conf"];
+v7 [label="emucat_ser:run_linmos"];
+v5 -> v7;
+
+v5 [label="emucat_ser:generate_linmos_conf"];
+v7 [label="emucat_ser:run_linmos"];
+v5 -> v7;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="emucat_ser:run_linmos"];
+v6 -> v7 [label="ser"];
+
+v7 [label="emucat_ser:run_linmos"];
+v9 [label="emucat_ser:generate_selavy_conf"];
+v7 -> v9;
+
+v7 [label="emucat_ser:run_linmos"];
+v9 [label="emucat_ser:generate_selavy_conf"];
+v7 -> v9;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [label="emucat_ser:generate_selavy_conf"];
+v8 -> v9 [label="ser"];
+
+v9 [label="emucat_ser:generate_selavy_conf"];
+v11 [label="emucat_ser:run_selavy"];
+v9 -> v11;
+
+v9 [label="emucat_ser:generate_selavy_conf"];
+v11 [label="emucat_ser:run_selavy"];
+v9 -> v11;
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="emucat_ser:run_selavy"];
+v10 -> v11 [label="ser"];
+
+v11 [label="emucat_ser:run_selavy"];
+v13 [label="emucat_ser:remove_mosaic_from_emucat"];
+v11 -> v13;
+
+v11 [label="emucat_ser:run_selavy"];
+v13 [label="emucat_ser:remove_mosaic_from_emucat"];
+v11 -> v13;
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="emucat_ser:remove_mosaic_from_emucat"];
+v12 -> v13 [label="ser"];
+
+v13 [label="emucat_ser:remove_mosaic_from_emucat"];
+v16 [label="emucat_ser:insert_selavy_components_into_emucat"];
+v13 -> v16 [label="cat_input"];
+
+v13 [label="emucat_ser:remove_mosaic_from_emucat"];
+v17 [label="emucat_ser:insert_selavy_islands_into_emucat"];
+v13 -> v17 [label="island_input"];
+
+v13 [label="emucat_ser:remove_mosaic_from_emucat"];
+v14 [shape=point];
+v13 -> v14 [label="ser"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="emucat_ser:insert_selavy_components_into_emucat"];
+v15 -> v16 [label="ser"];
+
+v16 [label="emucat_ser:insert_selavy_components_into_emucat"];
+v17 [label="emucat_ser:insert_selavy_islands_into_emucat"];
+v16 -> v17 [label="ser"];
+
+v17 [label="emucat_ser:insert_selavy_islands_into_emucat"];
+v33 [label="emucat_ser:get_island_sources"];
+v17 -> v33 [label="ser"];
+
+v16 [label="emucat_ser:insert_selavy_components_into_emucat"];
+v18 [label="emucat_ser:match_nearest_neighbour_with_allwise"];
+v16 -> v18 [label="ser"];
+
+v18 [label="emucat_ser:match_nearest_neighbour_with_allwise"];
+v20 [label="emucat_ser:generate_lhr_conf"];
+v18 -> v20 [label="ser"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [label="emucat_ser:generate_lhr_conf"];
+v19 -> v20 [label="output_dir"];
+
+v20 [label="emucat_ser:generate_lhr_conf"];
+v25 [label="emucat_ser:run_lhr_components"];
+v20 -> v25;
+
+v21 [shape=point,label="",fixedsize=true,width=0.1];
+v23 [label="emucat_ser:get_lhr_allwise_sources"];
+v21 -> v23 [label="output"];
+
+v7 [label="emucat_ser:run_linmos"];
+v23 [label="emucat_ser:get_lhr_allwise_sources"];
+v7 -> v23 [label="mosaic"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v23 [label="emucat_ser:get_lhr_allwise_sources"];
+v22 -> v23 [label="ser"];
+
+v23 [label="emucat_ser:get_lhr_allwise_sources"];
+v25 [label="emucat_ser:run_lhr_components"];
+v23 -> v25;
+
+v16 [label="emucat_ser:insert_selavy_components_into_emucat"];
+v24 [label="emucat_ser:get_component_sources"];
+v16 -> v24 [label="ser"];
+
+v24 [label="emucat_ser:get_component_sources"];
+v25 [label="emucat_ser:run_lhr_components"];
+v24 -> v25;
+
+v25 [label="emucat_ser:run_lhr_components"];
+v27 [label="emucat_ser:insert_lhr_into_emucat"];
+v25 -> v27;
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="emucat_ser:insert_lhr_into_emucat"];
+v26 -> v27 [label="ser"];
+
+v27 [label="emucat_ser:insert_lhr_into_emucat"];
+v38 [label="emucat_ser:get_extended_double_components"];
+v27 -> v38 [label="ser"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="emucat_ser:generate_lhr_island_conf"];
+v28 -> v29 [label="output_dir"];
+
+v18 [label="emucat_ser:match_nearest_neighbour_with_allwise"];
+v29 [label="emucat_ser:generate_lhr_island_conf"];
+v18 -> v29 [label="ser"];
+
+v29 [label="emucat_ser:generate_lhr_island_conf"];
+v34 [label="emucat_ser:run_lhr_islands"];
+v29 -> v34;
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="emucat_ser:get_lhr_island_allwise_sources"];
+v30 -> v32 [label="output"];
+
+v7 [label="emucat_ser:run_linmos"];
+v32 [label="emucat_ser:get_lhr_island_allwise_sources"];
+v7 -> v32 [label="mosaic"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="emucat_ser:get_lhr_island_allwise_sources"];
+v31 -> v32 [label="ser"];
+
+v32 [label="emucat_ser:get_lhr_island_allwise_sources"];
+v34 [label="emucat_ser:run_lhr_islands"];
+v32 -> v34;
+
+v33 [label="emucat_ser:get_island_sources"];
+v34 [label="emucat_ser:run_lhr_islands"];
+v33 -> v34;
+
+v34 [label="emucat_ser:run_lhr_islands"];
+v36 [label="emucat_ser:insert_lhr_islands_into_emucat"];
+v34 -> v36;
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="emucat_ser:insert_lhr_islands_into_emucat"];
+v35 -> v36 [label="ser"];
+
+v36 [label="emucat_ser:insert_lhr_islands_into_emucat"];
+v37 [shape=point];
+v36 -> v37 [label="ser"];
+
+v38 [label="emucat_ser:get_extended_double_components"];
+v39 [label="emucat_ser:generate_extended_double_conf"];
+v38 -> v39 [label="ser"];
+
+v38 [label="emucat_ser:get_extended_double_components"];
+v40 [label="emucat_ser:run_extended_doubles"];
+v38 -> v40;
+
+v39 [label="emucat_ser:generate_extended_double_conf"];
+v40 [label="emucat_ser:run_extended_doubles"];
+v39 -> v40;
+
+v38 [label="emucat_ser:get_extended_double_components"];
+v40 [label="emucat_ser:run_extended_doubles"];
+v38 -> v40 [label="ser"];
+
+v40 [label="emucat_ser:run_extended_doubles"];
+v41 [label="emucat_ser:insert_extended_doubles_into_emucat"];
+v40 -> v41 [label="ser"];
+
+v40 [label="emucat_ser:run_extended_doubles"];
+v41 [label="emucat_ser:insert_extended_doubles_into_emucat"];
+v40 -> v41;
+
+v41 [label="emucat_ser:insert_extended_doubles_into_emucat"];
+v42 [label="emucat_ser:insert_properties_into_emucat"];
+v41 -> v42 [label="ser"];
+
+v42 [label="emucat_ser:insert_properties_into_emucat"];
+v43 [shape=point];
+v42 -> v43 [label="ser"];
+
+v27 [label="emucat_ser:insert_lhr_into_emucat"];
+v44 [label="emucat_ser:import_des_dr1_from_lhr"];
+v27 -> v44 [label="ser"];
+
+v44 [label="emucat_ser:import_des_dr1_from_lhr"];
+v45 [shape=point];
+v44 -> v45 [label="ser"];
+
+v27 [label="emucat_ser:insert_lhr_into_emucat"];
+v46 [label="emucat_ser:import_des_dr2_from_lhr"];
+v27 -> v46 [label="ser"];
+
+v46 [label="emucat_ser:import_des_dr2_from_lhr"];
+v47 [shape=point];
+v46 -> v47 [label="ser"];
+
+v27 [label="emucat_ser:insert_lhr_into_emucat"];
+v48 [label="emucat_ser:import_vhs_from_lhr"];
+v27 -> v48 [label="ser"];
+
+v48 [label="emucat_ser:import_vhs_from_lhr"];
+v49 [shape=point];
+v48 -> v49 [label="ser"];
+
+}

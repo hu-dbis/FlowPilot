@@ -1,0 +1,118 @@
+digraph "BCCDCPHL_____fluflo" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v0 -> v5 [label="seq_ch"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v1 -> v5 [label="ref_anno_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v11 [label="meta_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 [label="export"];
+v4 -> v20 [label="config_ch"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 [label="align"];
+v5 -> v6;
+
+v6 [label="align"];
+v7 [label="tree"];
+v6 -> v7;
+
+v7 [label="tree"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v7 -> v8;
+
+v7 [label="tree"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v9 -> v10 [label="tree_ch"];
+
+v6 [label="align"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 [label="refine"];
+v11 -> v12;
+
+v12 [label="refine"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 -> v13;
+
+v6 [label="align"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 [label="ancestral"];
+v13 -> v14;
+
+v14 [label="ancestral"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v15;
+
+v12 [label="refine"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v16;
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v1 -> v16 [label="ref_anno_ch"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 [label="translate"];
+v16 -> v17;
+
+v17 [label="translate"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 -> v19;
+
+v12 [label="refine"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 -> v18;
+
+v14 [label="ancestral"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 [label="export"];
+v19 -> v20;
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v20 [label="export"];
+v2 -> v20 [label="meta_ch"];
+
+v20 [label="export"];
+v21 [shape=point];
+v20 -> v21;
+
+}

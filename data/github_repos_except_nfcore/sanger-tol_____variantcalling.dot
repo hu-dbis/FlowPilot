@@ -1,0 +1,1058 @@
+digraph "sangertol_____variantcalling" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v13 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v0 -> v13 [label="samplesheet"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v6 [label="fasta"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3 [label="ch_fai"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 -> v68 [label="interval"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v12 [label="ch_versions"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v9 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:SAMTOOLS_FAIDX"];
+v7 -> v9 [label="fasta"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:SAMTOOLS_FAIDX"];
+v8 -> v9;
+
+v9 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:SAMTOOLS_FAIDX"];
+v11 [shape=point];
+v9 -> v11;
+
+v9 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:SAMTOOLS_FAIDX"];
+v10 [shape=point];
+v9 -> v10;
+
+v9 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:SAMTOOLS_FAIDX"];
+v30 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_MERGE"];
+v9 -> v30 [label="fai"];
+
+v9 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:SAMTOOLS_FAIDX"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v16 [label="ch_versions"];
+
+v13 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v13 -> v14;
+
+v13 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v16 [label="versions"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v18 [label="reads"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v35 [label="ch_versions"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v24 [label="ch_versions"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v27 [label="grouped_reads_meta"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_SORT"];
+v15 -> v20 [label="reads"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v20 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_SORT"];
+v7 -> v20 [label="fasta"];
+
+v20 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_SORT"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 -> v25 [label="sorted_reads"];
+
+v20 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_SORT"];
+v23 [shape=point];
+v20 -> v23;
+
+v20 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_SORT"];
+v22 [shape=point];
+v20 -> v22;
+
+v20 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_SORT"];
+v21 [shape=point];
+v20 -> v21;
+
+v20 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_SORT"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v31 [label="ch_versions"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 -> v28 [label="grouped_reads"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_MERGE"];
+v29 -> v30 [label="grouped_reads_with_meta"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v30 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_MERGE"];
+v7 -> v30 [label="fasta"];
+
+v30 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_MERGE"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 -> v32;
+
+v30 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_MERGE"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 -> v33;
+
+v30 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_MERGE"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 -> v32;
+
+v30 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_MERGE"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 -> v33;
+
+v30 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_MERGE:SAMTOOLS_MERGE"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v35 [label="versions"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v32 -> v34;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v58 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_VIEW"];
+v34 -> v58 [label="reads"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v71 [label="ch_versions"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v43 [label="ch_versions"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v1 -> v37 [label="fasta"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 -> v40;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v39 -> v45 [label="ch_large_files"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:CAT_CAT"];
+v41 -> v42 [label="ch_samll_files"];
+
+v42 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:CAT_CAT"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v42 -> v45;
+
+v42 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:CAT_CAT"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v51 [label="ch_versions"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v47 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_FAIDX"];
+v45 -> v47 [label="split_fasta"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_FAIDX"];
+v46 -> v47;
+
+v47 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_FAIDX"];
+v49 [shape=point];
+v47 -> v49;
+
+v47 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_FAIDX"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 -> v53;
+
+v47 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_FAIDX"];
+v48 [shape=point];
+v47 -> v48;
+
+v47 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_FAIDX"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v47 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v66 [label="ch_versions"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 -> v52 [label="split_fasta"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 -> v54;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v54 -> v70 [label="fasta_fai"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v55 [label="fasta"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v58 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_VIEW"];
+v56 -> v58 [label="ch_fasta"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v58 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_VIEW"];
+v57 -> v58 [label="qname"];
+
+v58 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_VIEW"];
+v64 [shape=point];
+v58 -> v64;
+
+v58 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_VIEW"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 -> v67;
+
+v58 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_VIEW"];
+v63 [shape=point];
+v58 -> v63;
+
+v58 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_VIEW"];
+v62 [shape=point];
+v58 -> v62;
+
+v58 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_VIEW"];
+v61 [shape=point];
+v58 -> v61;
+
+v58 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_VIEW"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 -> v67;
+
+v58 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_VIEW"];
+v60 [shape=point];
+v58 -> v60;
+
+v58 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_VIEW"];
+v59 [shape=point];
+v58 -> v59;
+
+v58 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:INPUT_FILTER_SPLIT:SAMTOOLS_VIEW"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v58 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v71 [label="versions"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v67 -> v69;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 -> v73 [label="reads_fasta"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v100 [label="ch_versions"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v82 [label="ch_versions"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:DEEPVARIANT"];
+v73 -> v78 [label="cram_crai"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 -> v74 [label="reads_fasta"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:DEEPVARIANT"];
+v74 -> v78 [label="fasta"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 -> v75 [label="reads_fasta"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:DEEPVARIANT"];
+v75 -> v78 [label="fai"];
+
+v76 [shape=point,label="",fixedsize=true,width=0.1];
+v78 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:DEEPVARIANT"];
+v76 -> v78;
+
+v77 [shape=point,label="",fixedsize=true,width=0.1];
+v78 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:DEEPVARIANT"];
+v77 -> v78;
+
+v78 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:DEEPVARIANT"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 -> v83;
+
+v78 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:DEEPVARIANT"];
+v80 [shape=point];
+v78 -> v80;
+
+v78 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:DEEPVARIANT"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 -> v91;
+
+v78 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:DEEPVARIANT"];
+v79 [shape=point];
+v78 -> v79;
+
+v78 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:DEEPVARIANT"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v78 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v90 [label="ch_versions"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v86 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:BCFTOOLS_CONCAT_VCF"];
+v85 -> v86 [label="vcf"];
+
+v86 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:BCFTOOLS_CONCAT_VCF"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v86 -> v101 [label="vcf"];
+
+v86 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:BCFTOOLS_CONCAT_VCF"];
+v88 [shape=point];
+v86 -> v88;
+
+v86 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:BCFTOOLS_CONCAT_VCF"];
+v87 [shape=point];
+v86 -> v87;
+
+v86 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:BCFTOOLS_CONCAT_VCF"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v86 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v99 [label="ch_versions"];
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v94 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:BCFTOOLS_CONCAT_GVCF"];
+v93 -> v94 [label="g_vcf"];
+
+v94 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:BCFTOOLS_CONCAT_GVCF"];
+v97 [shape=point];
+v94 -> v97 [label="gvcf"];
+
+v94 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:BCFTOOLS_CONCAT_GVCF"];
+v96 [shape=point];
+v94 -> v96;
+
+v94 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:BCFTOOLS_CONCAT_GVCF"];
+v95 [shape=point];
+v94 -> v95;
+
+v94 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:DEEPVARIANT_CALLER:BCFTOOLS_CONCAT_GVCF"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v94 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v100 [label="versions"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v235 [label="ch_versions"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v101 -> v105 [label="vcf"];
+
+v102 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v168 [label="ch_versions"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1];
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v103 -> v105 [label="bed"];
+
+v104 [shape=point,label="",fixedsize=true,width=0.1];
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v104 -> v105 [label="diff_variant_file"];
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v167 [shape=point];
+v105 -> v167;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v166 [shape=point];
+v105 -> v166;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v165 [shape=point];
+v105 -> v165;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v164 [shape=point];
+v105 -> v164;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v163 [shape=point];
+v105 -> v163;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v162 [shape=point];
+v105 -> v162;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v161 [shape=point];
+v105 -> v161;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v160 [shape=point];
+v105 -> v160;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v159 [shape=point];
+v105 -> v159;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v158 [shape=point];
+v105 -> v158;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v157 [shape=point];
+v105 -> v157;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v156 [shape=point];
+v105 -> v156;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v155 [shape=point];
+v105 -> v155;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v154 [shape=point];
+v105 -> v154;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v153 [shape=point];
+v105 -> v153;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v152 [shape=point];
+v105 -> v152;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v151 [shape=point];
+v105 -> v151;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v150 [shape=point];
+v105 -> v150;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v149 [shape=point];
+v105 -> v149;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v148 [shape=point];
+v105 -> v148;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v147 [shape=point];
+v105 -> v147 [label="stite_pi"];
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v146 [shape=point];
+v105 -> v146;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v145 [shape=point];
+v105 -> v145;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v144 [shape=point];
+v105 -> v144;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v143 [shape=point];
+v105 -> v143;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v142 [shape=point];
+v105 -> v142;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v141 [shape=point];
+v105 -> v141;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v140 [shape=point];
+v105 -> v140;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v139 [shape=point];
+v105 -> v139;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v138 [shape=point];
+v105 -> v138;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v137 [shape=point];
+v105 -> v137;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v136 [shape=point];
+v105 -> v136;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v135 [shape=point];
+v105 -> v135;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v134 [shape=point];
+v105 -> v134;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v133 [shape=point];
+v105 -> v133;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v132 [shape=point];
+v105 -> v132;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v131 [shape=point];
+v105 -> v131;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v130 [shape=point];
+v105 -> v130;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v129 [shape=point];
+v105 -> v129;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v128 [shape=point];
+v105 -> v128;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v127 [shape=point];
+v105 -> v127;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v126 [shape=point];
+v105 -> v126;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v125 [shape=point];
+v105 -> v125;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v124 [shape=point];
+v105 -> v124;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v123 [shape=point];
+v105 -> v123;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v122 [shape=point];
+v105 -> v122;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v121 [shape=point];
+v105 -> v121;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v120 [shape=point];
+v105 -> v120;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v119 [shape=point];
+v105 -> v119;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v118 [shape=point];
+v105 -> v118;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v117 [shape=point];
+v105 -> v117;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v116 [shape=point];
+v105 -> v116;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v115 [shape=point];
+v105 -> v115;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v114 [shape=point];
+v105 -> v114;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v113 [shape=point];
+v105 -> v113;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v112 [shape=point];
+v105 -> v112;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v111 [shape=point];
+v105 -> v111;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v110 [shape=point];
+v105 -> v110;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v109 [shape=point];
+v105 -> v109;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v108 [shape=point];
+v105 -> v108;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v107 [shape=point];
+v105 -> v107;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v106 [shape=point];
+v105 -> v106;
+
+v105 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_SITE_PI"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v168;
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v234 [label="ch_versions"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v101 -> v171 [label="vcf"];
+
+v169 [shape=point,label="",fixedsize=true,width=0.1];
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v169 -> v171 [label="bed"];
+
+v170 [shape=point,label="",fixedsize=true,width=0.1];
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v170 -> v171 [label="diff_variant_file"];
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v233 [shape=point];
+v171 -> v233;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v232 [shape=point];
+v171 -> v232;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v231 [shape=point];
+v171 -> v231;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v230 [shape=point];
+v171 -> v230;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v229 [shape=point];
+v171 -> v229;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v228 [shape=point];
+v171 -> v228;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v227 [shape=point];
+v171 -> v227;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v226 [shape=point];
+v171 -> v226;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v225 [shape=point];
+v171 -> v225;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v224 [shape=point];
+v171 -> v224;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v223 [shape=point];
+v171 -> v223;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v222 [shape=point];
+v171 -> v222;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v221 [shape=point];
+v171 -> v221;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v220 [shape=point];
+v171 -> v220;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v219 [shape=point];
+v171 -> v219;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v218 [shape=point];
+v171 -> v218;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v217 [shape=point];
+v171 -> v217;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v216 [shape=point];
+v171 -> v216;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v215 [shape=point];
+v171 -> v215;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v214 [shape=point];
+v171 -> v214;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v213 [shape=point];
+v171 -> v213;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v212 [shape=point];
+v171 -> v212;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v211 [shape=point];
+v171 -> v211;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v210 [shape=point];
+v171 -> v210 [label="heterozygosity"];
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v209 [shape=point];
+v171 -> v209;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v208 [shape=point];
+v171 -> v208;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v207 [shape=point];
+v171 -> v207;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v206 [shape=point];
+v171 -> v206;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v205 [shape=point];
+v171 -> v205;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v204 [shape=point];
+v171 -> v204;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v203 [shape=point];
+v171 -> v203;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v202 [shape=point];
+v171 -> v202;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v201 [shape=point];
+v171 -> v201;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v200 [shape=point];
+v171 -> v200;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v199 [shape=point];
+v171 -> v199;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v198 [shape=point];
+v171 -> v198;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v197 [shape=point];
+v171 -> v197;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v196 [shape=point];
+v171 -> v196;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v195 [shape=point];
+v171 -> v195;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v194 [shape=point];
+v171 -> v194;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v193 [shape=point];
+v171 -> v193;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v192 [shape=point];
+v171 -> v192;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v191 [shape=point];
+v171 -> v191;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v190 [shape=point];
+v171 -> v190;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v189 [shape=point];
+v171 -> v189;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v188 [shape=point];
+v171 -> v188;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v187 [shape=point];
+v171 -> v187;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v186 [shape=point];
+v171 -> v186;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v185 [shape=point];
+v171 -> v185;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v184 [shape=point];
+v171 -> v184;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v183 [shape=point];
+v171 -> v183;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v182 [shape=point];
+v171 -> v182;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v181 [shape=point];
+v171 -> v181;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v180 [shape=point];
+v171 -> v180;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v179 [shape=point];
+v171 -> v179;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v178 [shape=point];
+v171 -> v178;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v177 [shape=point];
+v171 -> v177;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v176 [shape=point];
+v171 -> v176;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v175 [shape=point];
+v171 -> v175;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v174 [shape=point];
+v171 -> v174;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v173 [shape=point];
+v171 -> v173;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v172 [shape=point];
+v171 -> v172;
+
+v171 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:PROCESS_VCF:VCFTOOLS_HET"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 -> v234;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v234 -> v235 [label="versions"];
+
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v235 -> v236 [label="ch_versions"];
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v236 -> v237;
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v238 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v237 -> v238;
+
+v238 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v241 [shape=point];
+v238 -> v241;
+
+v238 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v240 [shape=point];
+v238 -> v240;
+
+v238 [label="SANGERTOL_VARIANTCALLING:VARIANTCALLING:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v239 [shape=point];
+v238 -> v239;
+
+}

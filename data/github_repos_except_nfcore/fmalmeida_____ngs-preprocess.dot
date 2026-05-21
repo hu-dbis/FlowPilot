@@ -1,0 +1,198 @@
+digraph "fmalmeida_____ngspreprocess" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v0 -> v1 [label="sra_ids_ch"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v2 [label="SRA_FETCH:GET_FASTQ"];
+v1 -> v2 [label="sra_ids"];
+
+v2 [label="SRA_FETCH:GET_FASTQ"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v5 [label="SRA_FETCH:GET_METADATA"];
+v3 -> v5;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="SRA_FETCH:GET_METADATA"];
+v4 -> v5 [label="headers"];
+
+v5 [label="SRA_FETCH:GET_METADATA"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v7 -> v10 [label="fastqs"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v8 -> v9 [label="nanopore_fastq"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v12;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11 [label="first_filter_ch"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v12 [label="result_ch"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 [label="NANOPORE:PORECHOP"];
+v12 -> v13 [label="reads"];
+
+v13 [label="NANOPORE:PORECHOP"];
+v14 [label="NANOPORE:FILTER"];
+v13 -> v14 [label="ch_nano"];
+
+v14 [label="NANOPORE:FILTER"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v41 [label="reads"];
+
+v13 [label="NANOPORE:PORECHOP"];
+v15 [label="NANOPORE:NANOPACK"];
+v13 -> v15 [label="ch_nano"];
+
+v15 [label="NANOPORE:NANOPACK"];
+v16 [shape=point];
+v15 -> v16;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v7 -> v17 [label="fastqs"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v18 [label="first_filter_ch"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v29 [label="sra_reads"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v22 [label="h5_bams"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v28 [label="reads"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v22 [label="subreads"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 [label="PACBIO:BAM2FASTQ"];
+v24 -> v26 [label="parsed_subreads"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [label="PACBIO:BAM2FASTQ"];
+v25 -> v26 [label="barcodes"];
+
+v26 [label="PACBIO:BAM2FASTQ"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v28;
+
+v26 [label="PACBIO:BAM2FASTQ"];
+v27 [shape=point];
+v26 -> v27;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v29 [label="reads"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 [label="PACBIO:NANOPACK"];
+v29 -> v30 [label="reads"];
+
+v30 [label="PACBIO:NANOPACK"];
+v31 [shape=point];
+v30 -> v31;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [label="PACBIO:FILTER"];
+v29 -> v32 [label="reads"];
+
+v32 [label="PACBIO:FILTER"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 -> v42 [label="reads"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v33 -> v34 [label="shortreads_ch"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v37;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v7 -> v35 [label="fastqs"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [label="ILLUMINA:FASTP"];
+v37 -> v38 [label="shortreads"];
+
+v38 [label="ILLUMINA:FASTP"];
+v39 [shape=point];
+v38 -> v39;
+
+v38 [label="ILLUMINA:FASTP"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 -> v40 [label="reads"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v40 -> v45;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v41 -> v45;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v42 -> v45;
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v43 -> v45 [label="ch_mpgap_samplesheet"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v47 [shape=point];
+v46 -> v47;
+
+}

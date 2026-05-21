@@ -1,0 +1,786 @@
+digraph "AusSRC_____POSSUM_workflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="download"];
+v0 -> v3 [label="sbid"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="download"];
+v1 -> v3 [label="project"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="download"];
+v2 -> v3 [label="manifest"];
+
+v3 [label="download"];
+v4 [label="parse_possum_manifest"];
+v3 -> v4;
+
+v4 [label="parse_possum_manifest"];
+v10 [label="conv_i:copy_beamlog"];
+v4 -> v10 [label="cube"];
+
+v4 [label="parse_possum_manifest"];
+v16 [label="conv_q:copy_beamlog"];
+v4 -> v16 [label="cube"];
+
+v4 [label="parse_possum_manifest"];
+v22 [label="conv_u:copy_beamlog"];
+v4 -> v22 [label="cube"];
+
+v4 [label="parse_possum_manifest"];
+v92 [label="tile_w:split_casa_tiling:split_cube"];
+v4 -> v92 [label="image_cube"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="get_evaluation_files:check"];
+v5 -> v6 [label="sbid"];
+
+v6 [label="get_evaluation_files:check"];
+v7 [label="get_evaluation_files:download"];
+v6 -> v7 [label="-"];
+
+v7 [label="get_evaluation_files:download"];
+v9 [label="conv_i:extract_beamlog"];
+v7 -> v9 [label="evaluation_files"];
+
+v8 [label="conv_i:pull_racstools_image"];
+v11 [label="conv_i:beamcon_3D"];
+v8 -> v11 [label="container"];
+
+v9 [label="conv_i:extract_beamlog"];
+v10 [label="conv_i:copy_beamlog"];
+v9 -> v10 [label="-"];
+
+v7 [label="get_evaluation_files:download"];
+v10 [label="conv_i:copy_beamlog"];
+v7 -> v10 [label="evaluation_files"];
+
+v10 [label="conv_i:copy_beamlog"];
+v11 [label="conv_i:beamcon_3D"];
+v10 -> v11 [label="beamlog"];
+
+v4 [label="parse_possum_manifest"];
+v11 [label="conv_i:beamcon_3D"];
+v4 -> v11 [label="cube"];
+
+v11 [label="conv_i:beamcon_3D"];
+v13 [label="conv_i:get_cube_conv"];
+v11 -> v13 [label="-"];
+
+v4 [label="parse_possum_manifest"];
+v13 [label="conv_i:get_cube_conv"];
+v4 -> v13 [label="cube"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="conv_i:get_cube_conv"];
+v12 -> v13 [label="suffix"];
+
+v13 [label="conv_i:get_cube_conv"];
+v31 [label="hpx_tile_map:check"];
+v13 -> v31 [label="image_cube"];
+
+v14 [label="conv_q:pull_racstools_image"];
+v17 [label="conv_q:beamcon_3D"];
+v14 -> v17 [label="container"];
+
+v7 [label="get_evaluation_files:download"];
+v15 [label="conv_q:extract_beamlog"];
+v7 -> v15 [label="evaluation_files"];
+
+v15 [label="conv_q:extract_beamlog"];
+v16 [label="conv_q:copy_beamlog"];
+v15 -> v16 [label="-"];
+
+v7 [label="get_evaluation_files:download"];
+v16 [label="conv_q:copy_beamlog"];
+v7 -> v16 [label="evaluation_files"];
+
+v16 [label="conv_q:copy_beamlog"];
+v17 [label="conv_q:beamcon_3D"];
+v16 -> v17 [label="beamlog"];
+
+v4 [label="parse_possum_manifest"];
+v17 [label="conv_q:beamcon_3D"];
+v4 -> v17 [label="cube"];
+
+v17 [label="conv_q:beamcon_3D"];
+v19 [label="conv_q:get_cube_conv"];
+v17 -> v19 [label="-"];
+
+v4 [label="parse_possum_manifest"];
+v19 [label="conv_q:get_cube_conv"];
+v4 -> v19 [label="cube"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1];
+v19 [label="conv_q:get_cube_conv"];
+v18 -> v19 [label="suffix"];
+
+v19 [label="conv_q:get_cube_conv"];
+v26 [label="ionospheric_correction:observation_start_time"];
+v19 -> v26 [label="q_cube"];
+
+v20 [label="conv_u:pull_racstools_image"];
+v23 [label="conv_u:beamcon_3D"];
+v20 -> v23 [label="container"];
+
+v7 [label="get_evaluation_files:download"];
+v21 [label="conv_u:extract_beamlog"];
+v7 -> v21 [label="evaluation_files"];
+
+v21 [label="conv_u:extract_beamlog"];
+v22 [label="conv_u:copy_beamlog"];
+v21 -> v22 [label="-"];
+
+v7 [label="get_evaluation_files:download"];
+v22 [label="conv_u:copy_beamlog"];
+v7 -> v22 [label="evaluation_files"];
+
+v22 [label="conv_u:copy_beamlog"];
+v23 [label="conv_u:beamcon_3D"];
+v22 -> v23 [label="beamlog"];
+
+v4 [label="parse_possum_manifest"];
+v23 [label="conv_u:beamcon_3D"];
+v4 -> v23 [label="cube"];
+
+v23 [label="conv_u:beamcon_3D"];
+v25 [label="conv_u:get_cube_conv"];
+v23 -> v25 [label="-"];
+
+v4 [label="parse_possum_manifest"];
+v25 [label="conv_u:get_cube_conv"];
+v4 -> v25 [label="cube"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v25 [label="conv_u:get_cube_conv"];
+v24 -> v25 [label="suffix"];
+
+v25 [label="conv_u:get_cube_conv"];
+v29 [label="ionospheric_correction:frion_correct"];
+v25 -> v29 [label="u_cube"];
+
+v26 [label="ionospheric_correction:observation_start_time"];
+v28 [label="ionospheric_correction:frion_predict"];
+v26 -> v28 [label="-"];
+
+v19 [label="conv_q:get_cube_conv"];
+v27 [label="ionospheric_correction:observation_end_time"];
+v19 -> v27 [label="q_cube"];
+
+v27 [label="ionospheric_correction:observation_end_time"];
+v28 [label="ionospheric_correction:frion_predict"];
+v27 -> v28 [label="-"];
+
+v19 [label="conv_q:get_cube_conv"];
+v28 [label="ionospheric_correction:frion_predict"];
+v19 -> v28 [label="q_cube"];
+
+v28 [label="ionospheric_correction:frion_predict"];
+v29 [label="ionospheric_correction:frion_correct"];
+v28 -> v29;
+
+v19 [label="conv_q:get_cube_conv"];
+v29 [label="ionospheric_correction:frion_correct"];
+v19 -> v29 [label="q_cube"];
+
+v29 [label="ionospheric_correction:frion_correct"];
+v56 [label="tile_q:split_casa_tiling:split_cube"];
+v29 -> v56 [label="image_cube"];
+
+v29 [label="ionospheric_correction:frion_correct"];
+v74 [label="tile_u:split_casa_tiling:split_cube"];
+v29 -> v74 [label="image_cube"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [label="hpx_tile_map:check"];
+v30 -> v31 [label="sbid"];
+
+v31 [label="hpx_tile_map:check"];
+v32 [shape=point];
+v31 -> v32 [label="-"];
+
+v7 [label="get_evaluation_files:download"];
+v33 [label="hpx_tile_map:get_footprint_file"];
+v7 -> v33 [label="evaluation_files"];
+
+v33 [label="hpx_tile_map:get_footprint_file"];
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v33 -> v34 [label="-"];
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v35 [label="hpx_tile_map:generate_tile_map"];
+v34 -> v35 [label="obs_id"];
+
+v33 [label="hpx_tile_map:get_footprint_file"];
+v35 [label="hpx_tile_map:generate_tile_map"];
+v33 -> v35 [label="footprint_file"];
+
+v35 [label="hpx_tile_map:generate_tile_map"];
+v36 [label="hpx_tile_map:get_tile_map"];
+v35 -> v36;
+
+v36 [label="hpx_tile_map:get_tile_map"];
+v44 [label="tile_i:split_casa_tiling:run_hpx_tiling"];
+v36 -> v44 [label="pixel_map"];
+
+v13 [label="conv_i:get_cube_conv"];
+v38 [label="tile_i:split_casa_tiling:split_cube"];
+v13 -> v38 [label="image_cube"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v38 [label="tile_i:split_casa_tiling:split_cube"];
+v37 -> v38 [label="stokes"];
+
+v38 [label="tile_i:split_casa_tiling:split_cube"];
+v40 [label="tile_i:split_casa_tiling:get_split_cubes"];
+v38 -> v40 [label="-"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="tile_i:split_casa_tiling:get_split_cubes"];
+v39 -> v40 [label="stokes"];
+
+v40 [label="tile_i:split_casa_tiling:get_split_cubes"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v40 -> v41 [label="subcubes"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v44 [label="tile_i:split_casa_tiling:run_hpx_tiling"];
+v41 -> v44;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v44 [label="tile_i:split_casa_tiling:run_hpx_tiling"];
+v34 -> v44 [label="obs_id"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="tile_i:split_casa_tiling:run_hpx_tiling"];
+v42 -> v44 [label="stokes"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="tile_i:split_casa_tiling:run_hpx_tiling"];
+v43 -> v44 [label="type"];
+
+v44 [label="tile_i:split_casa_tiling:run_hpx_tiling"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 -> v45 [label="image_cube"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 [label="tile_i:split_casa_tiling:get_unique_pixel_ids"];
+v45 -> v47;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v47 [label="tile_i:split_casa_tiling:get_unique_pixel_ids"];
+v34 -> v47 [label="obs_id"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="tile_i:split_casa_tiling:get_unique_pixel_ids"];
+v46 -> v47 [label="stokes"];
+
+v47 [label="tile_i:split_casa_tiling:get_unique_pixel_ids"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v47 -> v48 [label="pixel_id"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v50 [label="tile_i:split_casa_tiling:join_split_hpx_tiles"];
+v48 -> v50;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v50 [label="tile_i:split_casa_tiling:join_split_hpx_tiles"];
+v34 -> v50 [label="obs_id"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1];
+v50 [label="tile_i:split_casa_tiling:join_split_hpx_tiles"];
+v49 -> v50 [label="stokes"];
+
+v50 [label="tile_i:split_casa_tiling:join_split_hpx_tiles"];
+v51 [shape=point];
+v50 -> v51 [label="hpx_tile"];
+
+v50 [label="tile_i:split_casa_tiling:join_split_hpx_tiles"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v50 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 [label="tile_i:split_casa_tiling:repair_tiles"];
+v52 -> v54;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v54 [label="tile_i:split_casa_tiling:repair_tiles"];
+v34 -> v54 [label="obs_id"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="tile_i:split_casa_tiling:repair_tiles"];
+v53 -> v54 [label="stokes"];
+
+v54 [label="tile_i:split_casa_tiling:repair_tiles"];
+v111 [label="provenance_i:get_component_files"];
+v54 -> v111 [label="ready"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="tile_q:split_casa_tiling:split_cube"];
+v55 -> v56 [label="stokes"];
+
+v56 [label="tile_q:split_casa_tiling:split_cube"];
+v58 [label="tile_q:split_casa_tiling:get_split_cubes"];
+v56 -> v58 [label="-"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v58 [label="tile_q:split_casa_tiling:get_split_cubes"];
+v57 -> v58 [label="stokes"];
+
+v58 [label="tile_q:split_casa_tiling:get_split_cubes"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v58 -> v59 [label="subcubes"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v62 [label="tile_q:split_casa_tiling:run_hpx_tiling"];
+v59 -> v62;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v62 [label="tile_q:split_casa_tiling:run_hpx_tiling"];
+v34 -> v62 [label="obs_id"];
+
+v36 [label="hpx_tile_map:get_tile_map"];
+v62 [label="tile_q:split_casa_tiling:run_hpx_tiling"];
+v36 -> v62 [label="pixel_map"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1];
+v62 [label="tile_q:split_casa_tiling:run_hpx_tiling"];
+v60 -> v62 [label="stokes"];
+
+v61 [shape=point,label="",fixedsize=true,width=0.1];
+v62 [label="tile_q:split_casa_tiling:run_hpx_tiling"];
+v61 -> v62 [label="type"];
+
+v62 [label="tile_q:split_casa_tiling:run_hpx_tiling"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 -> v63 [label="image_cube"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v65 [label="tile_q:split_casa_tiling:get_unique_pixel_ids"];
+v63 -> v65;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v65 [label="tile_q:split_casa_tiling:get_unique_pixel_ids"];
+v34 -> v65 [label="obs_id"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1];
+v65 [label="tile_q:split_casa_tiling:get_unique_pixel_ids"];
+v64 -> v65 [label="stokes"];
+
+v65 [label="tile_q:split_casa_tiling:get_unique_pixel_ids"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v65 -> v66 [label="pixel_id"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v68 [label="tile_q:split_casa_tiling:join_split_hpx_tiles"];
+v66 -> v68;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v68 [label="tile_q:split_casa_tiling:join_split_hpx_tiles"];
+v34 -> v68 [label="obs_id"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1];
+v68 [label="tile_q:split_casa_tiling:join_split_hpx_tiles"];
+v67 -> v68 [label="stokes"];
+
+v68 [label="tile_q:split_casa_tiling:join_split_hpx_tiles"];
+v69 [shape=point];
+v68 -> v69 [label="hpx_tile"];
+
+v68 [label="tile_q:split_casa_tiling:join_split_hpx_tiles"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v68 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 [label="tile_q:split_casa_tiling:repair_tiles"];
+v70 -> v72;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v72 [label="tile_q:split_casa_tiling:repair_tiles"];
+v34 -> v72 [label="obs_id"];
+
+v71 [shape=point,label="",fixedsize=true,width=0.1];
+v72 [label="tile_q:split_casa_tiling:repair_tiles"];
+v71 -> v72 [label="stokes"];
+
+v72 [label="tile_q:split_casa_tiling:repair_tiles"];
+v118 [label="provenance_q:get_component_files"];
+v72 -> v118 [label="ready"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1];
+v74 [label="tile_u:split_casa_tiling:split_cube"];
+v73 -> v74 [label="stokes"];
+
+v74 [label="tile_u:split_casa_tiling:split_cube"];
+v76 [label="tile_u:split_casa_tiling:get_split_cubes"];
+v74 -> v76 [label="-"];
+
+v75 [shape=point,label="",fixedsize=true,width=0.1];
+v76 [label="tile_u:split_casa_tiling:get_split_cubes"];
+v75 -> v76 [label="stokes"];
+
+v76 [label="tile_u:split_casa_tiling:get_split_cubes"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v76 -> v77 [label="subcubes"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v80 [label="tile_u:split_casa_tiling:run_hpx_tiling"];
+v77 -> v80;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v80 [label="tile_u:split_casa_tiling:run_hpx_tiling"];
+v34 -> v80 [label="obs_id"];
+
+v36 [label="hpx_tile_map:get_tile_map"];
+v80 [label="tile_u:split_casa_tiling:run_hpx_tiling"];
+v36 -> v80 [label="pixel_map"];
+
+v78 [shape=point,label="",fixedsize=true,width=0.1];
+v80 [label="tile_u:split_casa_tiling:run_hpx_tiling"];
+v78 -> v80 [label="stokes"];
+
+v79 [shape=point,label="",fixedsize=true,width=0.1];
+v80 [label="tile_u:split_casa_tiling:run_hpx_tiling"];
+v79 -> v80 [label="type"];
+
+v80 [label="tile_u:split_casa_tiling:run_hpx_tiling"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v80 -> v81 [label="image_cube"];
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v83 [label="tile_u:split_casa_tiling:get_unique_pixel_ids"];
+v81 -> v83;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v83 [label="tile_u:split_casa_tiling:get_unique_pixel_ids"];
+v34 -> v83 [label="obs_id"];
+
+v82 [shape=point,label="",fixedsize=true,width=0.1];
+v83 [label="tile_u:split_casa_tiling:get_unique_pixel_ids"];
+v82 -> v83 [label="stokes"];
+
+v83 [label="tile_u:split_casa_tiling:get_unique_pixel_ids"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v83 -> v84 [label="pixel_id"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v86 [label="tile_u:split_casa_tiling:join_split_hpx_tiles"];
+v84 -> v86;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v86 [label="tile_u:split_casa_tiling:join_split_hpx_tiles"];
+v34 -> v86 [label="obs_id"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [label="tile_u:split_casa_tiling:join_split_hpx_tiles"];
+v85 -> v86 [label="stokes"];
+
+v86 [label="tile_u:split_casa_tiling:join_split_hpx_tiles"];
+v87 [shape=point];
+v86 -> v87 [label="hpx_tile"];
+
+v86 [label="tile_u:split_casa_tiling:join_split_hpx_tiles"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v86 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v90 [label="tile_u:split_casa_tiling:repair_tiles"];
+v88 -> v90;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v90 [label="tile_u:split_casa_tiling:repair_tiles"];
+v34 -> v90 [label="obs_id"];
+
+v89 [shape=point,label="",fixedsize=true,width=0.1];
+v90 [label="tile_u:split_casa_tiling:repair_tiles"];
+v89 -> v90 [label="stokes"];
+
+v90 [label="tile_u:split_casa_tiling:repair_tiles"];
+v125 [label="provenance_u:get_component_files"];
+v90 -> v125 [label="ready"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="tile_w:split_casa_tiling:split_cube"];
+v91 -> v92 [label="stokes"];
+
+v92 [label="tile_w:split_casa_tiling:split_cube"];
+v94 [label="tile_w:split_casa_tiling:get_split_cubes"];
+v92 -> v94 [label="-"];
+
+v93 [shape=point,label="",fixedsize=true,width=0.1];
+v94 [label="tile_w:split_casa_tiling:get_split_cubes"];
+v93 -> v94 [label="stokes"];
+
+v94 [label="tile_w:split_casa_tiling:get_split_cubes"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v94 -> v95 [label="subcubes"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v98 [label="tile_w:split_casa_tiling:run_hpx_tiling"];
+v95 -> v98;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v98 [label="tile_w:split_casa_tiling:run_hpx_tiling"];
+v34 -> v98 [label="obs_id"];
+
+v36 [label="hpx_tile_map:get_tile_map"];
+v98 [label="tile_w:split_casa_tiling:run_hpx_tiling"];
+v36 -> v98 [label="pixel_map"];
+
+v96 [shape=point,label="",fixedsize=true,width=0.1];
+v98 [label="tile_w:split_casa_tiling:run_hpx_tiling"];
+v96 -> v98 [label="stokes"];
+
+v97 [shape=point,label="",fixedsize=true,width=0.1];
+v98 [label="tile_w:split_casa_tiling:run_hpx_tiling"];
+v97 -> v98 [label="type"];
+
+v98 [label="tile_w:split_casa_tiling:run_hpx_tiling"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v98 -> v99 [label="image_cube"];
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v101 [label="tile_w:split_casa_tiling:get_unique_pixel_ids"];
+v99 -> v101;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v101 [label="tile_w:split_casa_tiling:get_unique_pixel_ids"];
+v34 -> v101 [label="obs_id"];
+
+v100 [shape=point,label="",fixedsize=true,width=0.1];
+v101 [label="tile_w:split_casa_tiling:get_unique_pixel_ids"];
+v100 -> v101 [label="stokes"];
+
+v101 [label="tile_w:split_casa_tiling:get_unique_pixel_ids"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v101 -> v102 [label="pixel_id"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v104 [label="tile_w:split_casa_tiling:join_split_hpx_tiles"];
+v102 -> v104;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v104 [label="tile_w:split_casa_tiling:join_split_hpx_tiles"];
+v34 -> v104 [label="obs_id"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1];
+v104 [label="tile_w:split_casa_tiling:join_split_hpx_tiles"];
+v103 -> v104 [label="stokes"];
+
+v104 [label="tile_w:split_casa_tiling:join_split_hpx_tiles"];
+v105 [shape=point];
+v104 -> v105 [label="hpx_tile"];
+
+v104 [label="tile_w:split_casa_tiling:join_split_hpx_tiles"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v104 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v108 [label="tile_w:split_casa_tiling:repair_tiles"];
+v106 -> v108;
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v108 [label="tile_w:split_casa_tiling:repair_tiles"];
+v34 -> v108 [label="obs_id"];
+
+v107 [shape=point,label="",fixedsize=true,width=0.1];
+v108 [label="tile_w:split_casa_tiling:repair_tiles"];
+v107 -> v108 [label="stokes"];
+
+v108 [label="tile_w:split_casa_tiling:repair_tiles"];
+v132 [label="provenance_w:get_component_files"];
+v108 -> v132 [label="ready"];
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v111 [label="provenance_i:get_component_files"];
+v34 -> v111 [label="obs_id"];
+
+v109 [shape=point,label="",fixedsize=true,width=0.1];
+v111 [label="provenance_i:get_component_files"];
+v109 -> v111 [label="subdir"];
+
+v110 [shape=point,label="",fixedsize=true,width=0.1];
+v111 [label="provenance_i:get_component_files"];
+v110 -> v111 [label="stokes"];
+
+v111 [label="provenance_i:get_component_files"];
+v115 [label="provenance_i:add_history_to_fits_header"];
+v111 -> v115 [label="files_str"];
+
+v112 [shape=point,label="",fixedsize=true,width=0.1];
+v115 [label="provenance_i:add_history_to_fits_header"];
+v112 -> v115 [label="sbid"];
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v115 [label="provenance_i:add_history_to_fits_header"];
+v34 -> v115 [label="obs_id"];
+
+v113 [shape=point,label="",fixedsize=true,width=0.1];
+v115 [label="provenance_i:add_history_to_fits_header"];
+v113 -> v115 [label="subdir"];
+
+v114 [shape=point,label="",fixedsize=true,width=0.1];
+v115 [label="provenance_i:add_history_to_fits_header"];
+v114 -> v115 [label="stokes"];
+
+v115 [label="provenance_i:add_history_to_fits_header"];
+v139 [label="upload_i"];
+v115 -> v139 [label="ready"];
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v118 [label="provenance_q:get_component_files"];
+v34 -> v118 [label="obs_id"];
+
+v116 [shape=point,label="",fixedsize=true,width=0.1];
+v118 [label="provenance_q:get_component_files"];
+v116 -> v118 [label="subdir"];
+
+v117 [shape=point,label="",fixedsize=true,width=0.1];
+v118 [label="provenance_q:get_component_files"];
+v117 -> v118 [label="stokes"];
+
+v118 [label="provenance_q:get_component_files"];
+v122 [label="provenance_q:add_history_to_fits_header"];
+v118 -> v122 [label="files_str"];
+
+v119 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="provenance_q:add_history_to_fits_header"];
+v119 -> v122 [label="sbid"];
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v122 [label="provenance_q:add_history_to_fits_header"];
+v34 -> v122 [label="obs_id"];
+
+v120 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="provenance_q:add_history_to_fits_header"];
+v120 -> v122 [label="subdir"];
+
+v121 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [label="provenance_q:add_history_to_fits_header"];
+v121 -> v122 [label="stokes"];
+
+v122 [label="provenance_q:add_history_to_fits_header"];
+v142 [label="upload_q"];
+v122 -> v142 [label="ready"];
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v125 [label="provenance_u:get_component_files"];
+v34 -> v125 [label="obs_id"];
+
+v123 [shape=point,label="",fixedsize=true,width=0.1];
+v125 [label="provenance_u:get_component_files"];
+v123 -> v125 [label="subdir"];
+
+v124 [shape=point,label="",fixedsize=true,width=0.1];
+v125 [label="provenance_u:get_component_files"];
+v124 -> v125 [label="stokes"];
+
+v125 [label="provenance_u:get_component_files"];
+v129 [label="provenance_u:add_history_to_fits_header"];
+v125 -> v129 [label="files_str"];
+
+v126 [shape=point,label="",fixedsize=true,width=0.1];
+v129 [label="provenance_u:add_history_to_fits_header"];
+v126 -> v129 [label="sbid"];
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v129 [label="provenance_u:add_history_to_fits_header"];
+v34 -> v129 [label="obs_id"];
+
+v127 [shape=point,label="",fixedsize=true,width=0.1];
+v129 [label="provenance_u:add_history_to_fits_header"];
+v127 -> v129 [label="subdir"];
+
+v128 [shape=point,label="",fixedsize=true,width=0.1];
+v129 [label="provenance_u:add_history_to_fits_header"];
+v128 -> v129 [label="stokes"];
+
+v129 [label="provenance_u:add_history_to_fits_header"];
+v145 [label="upload_u"];
+v129 -> v145 [label="ready"];
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v132 [label="provenance_w:get_component_files"];
+v34 -> v132 [label="obs_id"];
+
+v130 [shape=point,label="",fixedsize=true,width=0.1];
+v132 [label="provenance_w:get_component_files"];
+v130 -> v132 [label="subdir"];
+
+v131 [shape=point,label="",fixedsize=true,width=0.1];
+v132 [label="provenance_w:get_component_files"];
+v131 -> v132 [label="stokes"];
+
+v132 [label="provenance_w:get_component_files"];
+v136 [label="provenance_w:add_history_to_fits_header"];
+v132 -> v136 [label="files_str"];
+
+v133 [shape=point,label="",fixedsize=true,width=0.1];
+v136 [label="provenance_w:add_history_to_fits_header"];
+v133 -> v136 [label="sbid"];
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v136 [label="provenance_w:add_history_to_fits_header"];
+v34 -> v136 [label="obs_id"];
+
+v134 [shape=point,label="",fixedsize=true,width=0.1];
+v136 [label="provenance_w:add_history_to_fits_header"];
+v134 -> v136 [label="subdir"];
+
+v135 [shape=point,label="",fixedsize=true,width=0.1];
+v136 [label="provenance_w:add_history_to_fits_header"];
+v135 -> v136 [label="stokes"];
+
+v136 [label="provenance_w:add_history_to_fits_header"];
+v148 [label="upload_w"];
+v136 -> v148 [label="ready"];
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v139 [label="upload_i"];
+v34 -> v139 [label="obs_id"];
+
+v137 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="upload_i"];
+v137 -> v139 [label="subdir"];
+
+v138 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="upload_i"];
+v138 -> v139 [label="stokes"];
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v142 [label="upload_q"];
+v34 -> v142 [label="obs_id"];
+
+v140 [shape=point,label="",fixedsize=true,width=0.1];
+v142 [label="upload_q"];
+v140 -> v142 [label="subdir"];
+
+v141 [shape=point,label="",fixedsize=true,width=0.1];
+v142 [label="upload_q"];
+v141 -> v142 [label="stokes"];
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v145 [label="upload_u"];
+v34 -> v145 [label="obs_id"];
+
+v143 [shape=point,label="",fixedsize=true,width=0.1];
+v145 [label="upload_u"];
+v143 -> v145 [label="subdir"];
+
+v144 [shape=point,label="",fixedsize=true,width=0.1];
+v145 [label="upload_u"];
+v144 -> v145 [label="stokes"];
+
+v34 [label="hpx_tile_map:get_obs_id_from_footprint_file"];
+v148 [label="upload_w"];
+v34 -> v148 [label="obs_id"];
+
+v146 [shape=point,label="",fixedsize=true,width=0.1];
+v148 [label="upload_w"];
+v146 -> v148 [label="subdir"];
+
+v147 [shape=point,label="",fixedsize=true,width=0.1];
+v148 [label="upload_w"];
+v147 -> v148 [label="stokes"];
+
+}

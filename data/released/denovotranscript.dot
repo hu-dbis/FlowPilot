@@ -1,0 +1,674 @@
+digraph "denovotranscript" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="ch_ribo_db"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3 [label="versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTQC_RAW"];
+v8 -> v16 [label="ch_trim_reads"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v55 [label="ch_versions"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v52 [label="ch_multiqc_files"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v19 [label="ch_versions"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v13 [shape=point];
+v12 -> v13 [label="ch_fastqc_raw_html"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=point];
+v14 -> v15 [label="ch_fastqc_raw_zip"];
+
+v16 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTQC_RAW"];
+v17 [shape=point];
+v16 -> v17 [label="fastqc_raw_html"];
+
+v16 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTQC_RAW"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v51 [label="fastqc_raw_zip"];
+
+v16 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTQC_RAW"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v16 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v43 [label="ch_versions"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=point];
+v20 -> v21 [label="ch_trim_json"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v23 [shape=point];
+v22 -> v23 [label="ch_trim_html"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v25 [shape=point];
+v24 -> v25 [label="ch_trim_log"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v27 [shape=point];
+v26 -> v27 [label="ch_trim_reads_fail"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v29 [shape=point];
+v28 -> v29 [label="ch_trim_reads_merged"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v31 [shape=point];
+v30 -> v31 [label="ch_fastqc_trim_html"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v33 [shape=point];
+v32 -> v33 [label="ch_fastqc_trim_zip"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTP"];
+v8 -> v37 [label="ch_trim_reads"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTP"];
+v34 -> v37 [label="adapter_fasta"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTP"];
+v35 -> v37 [label="save_trimmed_fail"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTP"];
+v36 -> v37 [label="save_merged"];
+
+v37 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTP"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v37 -> v44 [label="ch_trim_reads"];
+
+v37 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTP"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v37 -> v44 [label="trim_json"];
+
+v37 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTP"];
+v41 [shape=point];
+v37 -> v41 [label="trim_html"];
+
+v37 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTP"];
+v40 [shape=point];
+v37 -> v40 [label="trim_log"];
+
+v37 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTP"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v37 -> v42;
+
+v37 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTP"];
+v39 [shape=point];
+v37 -> v39 [label="trim_reads_fail"];
+
+v37 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTP"];
+v38 [shape=point];
+v37 -> v38 [label="trim_reads_merged"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v49 [label="ch_versions"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTQC_TRIM"];
+v45 -> v46 [label="ch_filtered_reads"];
+
+v46 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTQC_TRIM"];
+v47 [shape=point];
+v46 -> v47 [label="fastqc_trim_html"];
+
+v46 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTQC_TRIM"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 -> v53 [label="fastqc_trim_zip"];
+
+v46 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:FASTQ_TRIM_FASTP_FASTQC:FASTQC_TRIM"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v46 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v49 -> v50 [label="ch_versions"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v55 [label="versions"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v54 [label="ch_multiqc_files"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v106 [label="ch_multiqc_files"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v59 [label="ch_versions"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 -> v56 [label="ch_filtered_reads"];
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:CAT_FASTQ"];
+v57 -> v58 [label="ch_pool"];
+
+v58 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:CAT_FASTQ"];
+v61 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TRINITY"];
+v58 -> v61;
+
+v58 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:CAT_FASTQ"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v63 [label="ch_versions"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v64 [label="ch_assemblies"];
+
+v61 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TRINITY"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v64;
+
+v61 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TRINITY"];
+v62 [shape=point];
+v61 -> v62;
+
+v61 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TRINITY"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v77 [label="ch_versions"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v78 [label="ch_assemblies"];
+
+v58 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:CAT_FASTQ"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SPADES"];
+v65 -> v68 [label="ch_spades"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1];
+v68 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SPADES"];
+v66 -> v68 [label="yml"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1];
+v68 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SPADES"];
+v67 -> v68 [label="hmm"];
+
+v68 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SPADES"];
+v76 [shape=point];
+v68 -> v76;
+
+v68 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SPADES"];
+v75 [shape=point];
+v68 -> v75;
+
+v68 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SPADES"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v78;
+
+v68 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SPADES"];
+v74 [shape=point];
+v68 -> v74;
+
+v68 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SPADES"];
+v73 [shape=point];
+v68 -> v73;
+
+v68 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SPADES"];
+v72 [shape=point];
+v68 -> v72;
+
+v68 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SPADES"];
+v71 [shape=point];
+v68 -> v71;
+
+v68 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SPADES"];
+v70 [shape=point];
+v68 -> v70;
+
+v68 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SPADES"];
+v69 [shape=point];
+v68 -> v69;
+
+v68 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SPADES"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v82 [label="ch_versions"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v78 -> v79 [label="ch_assemblies"];
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v81 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:CAT_CAT"];
+v80 -> v81 [label="ch_assemblies"];
+
+v81 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:CAT_CAT"];
+v83 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:EVIGENE_TR2AACDS"];
+v81 -> v83;
+
+v81 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:CAT_CAT"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v85 [label="ch_versions"];
+
+v83 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:EVIGENE_TR2AACDS"];
+v84 [shape=point];
+v83 -> v84;
+
+v83 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:EVIGENE_TR2AACDS"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 -> v86;
+
+v83 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:EVIGENE_TR2AACDS"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v91 [label="ch_versions"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v86 -> v96 [label="ch_transcripts"];
+
+v83 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:EVIGENE_TR2AACDS"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TX2GENE"];
+v87 -> v89 [label="ch_pubids"];
+
+v88 [shape=point,label="",fixedsize=true,width=0.1];
+v89 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TX2GENE"];
+v88 -> v89 [label="program_file"];
+
+v89 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TX2GENE"];
+v90 [shape=point];
+v89 -> v90;
+
+v89 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TX2GENE"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v107 [label="ch_versions"];
+
+v92 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v92 -> v96 [label="mode"];
+
+v93 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v93 -> v96 [label="lineage"];
+
+v94 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v94 -> v96 [label="busco_lineages_path"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v95 -> v96 [label="config_file"];
+
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v104 [shape=point];
+v96 -> v104;
+
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v96 -> v105;
+
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v103 [shape=point];
+v96 -> v103;
+
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v102 [shape=point];
+v96 -> v102;
+
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v101 [shape=point];
+v96 -> v101;
+
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v100 [shape=point];
+v96 -> v100;
+
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v99 [shape=point];
+v96 -> v99;
+
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v98 [shape=point];
+v96 -> v98;
+
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v97 [shape=point];
+v96 -> v97;
+
+v96 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:BUSCO_BUSCO"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v107;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v130 [label="ch_multiqc_files"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v115 [label="ch_versions"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:RNAQUAST"];
+v86 -> v108 [label="ch_transcripts"];
+
+v108 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:RNAQUAST"];
+v114 [shape=point];
+v108 -> v114;
+
+v108 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:RNAQUAST"];
+v113 [shape=point];
+v108 -> v113;
+
+v108 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:RNAQUAST"];
+v112 [shape=point];
+v108 -> v112;
+
+v108 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:RNAQUAST"];
+v111 [shape=point];
+v108 -> v111;
+
+v108 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:RNAQUAST"];
+v110 [shape=point];
+v108 -> v110;
+
+v108 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:RNAQUAST"];
+v109 [shape=point];
+v108 -> v109;
+
+v108 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:RNAQUAST"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v121 [label="ch_versions"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v117 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TRANSRATE"];
+v86 -> v117 [label="ch_transcripts"];
+
+v58 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:CAT_FASTQ"];
+v117 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TRANSRATE"];
+v58 -> v117;
+
+v116 [shape=point,label="",fixedsize=true,width=0.1];
+v117 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TRANSRATE"];
+v116 -> v117 [label="reference"];
+
+v117 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TRANSRATE"];
+v120 [shape=point];
+v117 -> v120;
+
+v117 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TRANSRATE"];
+v119 [shape=point];
+v117 -> v119;
+
+v117 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TRANSRATE"];
+v118 [shape=point];
+v117 -> v118;
+
+v117 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:TRANSRATE"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v124 [label="ch_versions"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v86 -> v122 [label="ch_transcripts"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v123 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SALMON_INDEX"];
+v122 -> v123 [label="ch_transcripts_fa"];
+
+v123 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SALMON_INDEX"];
+v126 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SALMON_QUANT"];
+v123 -> v126;
+
+v123 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SALMON_INDEX"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v131 [label="ch_versions"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SALMON_QUANT"];
+v45 -> v126 [label="ch_filtered_reads"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SALMON_QUANT"];
+v122 -> v126 [label="ch_transcripts_fa"];
+
+v125 [shape=point,label="",fixedsize=true,width=0.1];
+v126 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SALMON_QUANT"];
+v125 -> v126 [label="lib_type"];
+
+v126 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SALMON_QUANT"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 -> v129;
+
+v126 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SALMON_QUANT"];
+v128 [shape=point];
+v126 -> v128;
+
+v126 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SALMON_QUANT"];
+v127 [shape=point];
+v126 -> v127;
+
+v126 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:SALMON_QUANT"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v131;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v143 [label="ch_multiqc_files"];
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v131 -> v132 [label="versions"];
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v132 -> v133;
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v133 -> v134;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v136;
+
+v135 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v136;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v136 -> v137;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v144 [label="ch_collated_versions"];
+
+v138 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v138 -> v149 [label="ch_multiqc_config"];
+
+v139 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v139 -> v150 [label="ch_multiqc_custom_config"];
+
+v140 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v140 -> v151 [label="ch_multiqc_logo"];
+
+v141 [shape=point,label="",fixedsize=true,width=0.1];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v141 -> v142 [label="ch_workflow_summary"];
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v143;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v144 [label="ch_multiqc_files"];
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v147 [label="ch_multiqc_files"];
+
+v145 [shape=point,label="",fixedsize=true,width=0.1];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v145 -> v146 [label="ch_methods_description"];
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v147 -> v148 [label="ch_multiqc_files"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v152 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:MULTIQC"];
+v148 -> v152;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v152 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:MULTIQC"];
+v149 -> v152;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v152 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:MULTIQC"];
+v150 -> v152;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v152 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:MULTIQC"];
+v151 -> v152;
+
+v152 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:MULTIQC"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v152 -> v156;
+
+v152 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:MULTIQC"];
+v155 [shape=point];
+v152 -> v155;
+
+v152 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:MULTIQC"];
+v154 [shape=point];
+v152 -> v154;
+
+v152 [label="NFCORE_DENOVOTRANSCRIPT:DENOVOTRANSCRIPT:MULTIQC"];
+v153 [shape=point];
+v152 -> v153;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v157 [shape=point];
+v156 -> v157 [label="multiqc_report"];
+
+}

@@ -1,0 +1,202 @@
+digraph "hukai916_____demo_nfcore_obsolete" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v26 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v14 [label="ch_software_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v6 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:SRA_FASTQ_FTP"];
+v5 -> v6 [label="ch_sra_reads"];
+
+v6 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:SRA_FASTQ_FTP"];
+v8 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:FASTQC"];
+v6 -> v8;
+
+v6 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:SRA_FASTQ_FTP"];
+v7 [shape=point];
+v6 -> v7;
+
+v8 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:FASTQC"];
+v10 [shape=point];
+v8 -> v10;
+
+v8 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:FASTQC"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 -> v34;
+
+v8 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:FASTQC"];
+v9 [shape=point];
+v8 -> v9;
+
+v6 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:SRA_FASTQ_FTP"];
+v11 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:CUTADAPT"];
+v6 -> v11;
+
+v11 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:CUTADAPT"];
+v13 [shape=point];
+v11 -> v13;
+
+v11 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:CUTADAPT"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v37;
+
+v11 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:CUTADAPT"];
+v12 [shape=point];
+v11 -> v12;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v19 [label="ch_software_versions"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:GET_SOFTWARE_VERSIONS"];
+v20 -> v21;
+
+v21 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:GET_SOFTWARE_VERSIONS"];
+v22 [shape=point];
+v21 -> v22;
+
+v21 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:GET_SOFTWARE_VERSIONS"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 -> v32;
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v25 [label="ch_multiqc_files"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v28 [label="ch_multiqc_files"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v31 [label="ch_multiqc_files"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v29 -> v30 [label="ch_workflow_summary"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v33 [label="ch_multiqc_files"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v36 [label="ch_multiqc_files"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v39 [label="ch_multiqc_files"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 -> v40 [label="ch_multiqc_files"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:MULTIQC"];
+v40 -> v41;
+
+v41 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:MULTIQC"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v41 -> v44;
+
+v41 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:MULTIQC"];
+v43 [shape=point];
+v41 -> v43;
+
+v41 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:MULTIQC"];
+v42 [shape=point];
+v41 -> v42;
+
+v41 [label="NFCORE_GEOTOFASTQ:GEOTOFASTQ:MULTIQC"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v41 -> v46;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v45 [shape=point];
+v44 -> v45;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v47;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v47 [label="ch_software_versions"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=point];
+v47 -> v48 [label="ch_software_versions"];
+
+}

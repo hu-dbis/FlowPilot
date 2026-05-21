@@ -1,0 +1,302 @@
+digraph "datngu_____cscQTL" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v16 [label="CIRCALL_pipeline"];
+v0 -> v16 [label="read_pairs_ch"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v51 [label="RECOUNT_chrom_splitting"];
+v1 -> v51 [label="chrom_list_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v50 [label="RECOUNT_covariate_processing"];
+v2 -> v50 [label="peer_list_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="VCF_filtering"];
+v3 -> v5 [label="in.vcf.gz"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="VCF_filtering"];
+v4 -> v5 [label="meta.csv"];
+
+v5 [label="VCF_filtering"];
+v7 [label="PCA_genotype"];
+v5 -> v7;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="PCA_genotype"];
+v6 -> v7 [label="genotype_PCs"];
+
+v7 [label="PCA_genotype"];
+v50 [label="RECOUNT_covariate_processing"];
+v7 -> v50;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [label="CIRCALL_index_cdna"];
+v8 -> v9 [label="cdna.fa"];
+
+v9 [label="CIRCALL_index_cdna"];
+v16 [label="CIRCALL_pipeline"];
+v9 -> v16;
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="CIRCALL_index_bsj"];
+v10 -> v11 [label="bsj.fa"];
+
+v11 [label="CIRCALL_index_bsj"];
+v16 [label="CIRCALL_pipeline"];
+v11 -> v16;
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="CIRCALL_sqlite_ano"];
+v12 -> v13 [label="annotation.gtf"];
+
+v13 [label="CIRCALL_sqlite_ano"];
+v16 [label="CIRCALL_pipeline"];
+v13 -> v16;
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="CIRCALL_pipeline"];
+v14 -> v16 [label="genome.fa"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="CIRCALL_pipeline"];
+v15 -> v16 [label="cdna.fa"];
+
+v16 [label="CIRCALL_pipeline"];
+v30 [label="RENAME_circall"];
+v16 -> v30;
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v18 [label="BWA_index_genome"];
+v17 -> v18 [label="genome.fa"];
+
+v18 [label="BWA_index_genome"];
+v21 [label="CIRI2_pipeline"];
+v18 -> v21;
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="CIRI2_pipeline"];
+v19 -> v21 [label="genome.fa"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="CIRI2_pipeline"];
+v20 -> v21 [label="annotation.gtf"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v21 [label="CIRI2_pipeline"];
+v0 -> v21 [label="read_pairs_ch"];
+
+v21 [label="CIRI2_pipeline"];
+v31 [label="RENAME_ciri2"];
+v21 -> v31;
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="STAR_index_genome"];
+v22 -> v24 [label="genome.fa"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="STAR_index_genome"];
+v23 -> v24 [label="annotation.gtf"];
+
+v24 [label="STAR_index_genome"];
+v25 [label="STAR_mapping"];
+v24 -> v25;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v25 [label="STAR_mapping"];
+v0 -> v25 [label="read_pairs_ch"];
+
+v25 [label="STAR_mapping"];
+v29 [label="CIRCEXP2_pipeline"];
+v25 -> v29;
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="CIRCEXP2_generate_annotation"];
+v26 -> v27 [label="annotation.gtf"];
+
+v27 [label="CIRCEXP2_generate_annotation"];
+v29 [label="CIRCEXP2_pipeline"];
+v27 -> v29;
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="CIRCEXP2_pipeline"];
+v28 -> v29 [label="genome.fa"];
+
+v29 [label="CIRCEXP2_pipeline"];
+v32 [label="RENAME_circexp2"];
+v29 -> v32;
+
+v30 [label="RENAME_circall"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 -> v33;
+
+v31 [label="RENAME_ciri2"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v34;
+
+v32 [label="RENAME_circexp2"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v35;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="RECOUNT_get_consensus"];
+v33 -> v37;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="RECOUNT_get_consensus"];
+v34 -> v37;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="RECOUNT_get_consensus"];
+v35 -> v37;
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="RECOUNT_get_consensus"];
+v36 -> v37 [label="gtf"];
+
+v37 [label="RECOUNT_get_consensus"];
+v39 [label="RECOUNT_get_peseudo_seqs"];
+v37 -> v39;
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v39 [label="RECOUNT_get_peseudo_seqs"];
+v38 -> v39 [label="genome"];
+
+v39 [label="RECOUNT_get_peseudo_seqs"];
+v40 [label="RECOUNT_index_peseudo_seqs"];
+v39 -> v40;
+
+v40 [label="RECOUNT_index_peseudo_seqs"];
+v41 [label="RECOUNT_mapping"];
+v40 -> v41;
+
+v9 [label="CIRCALL_index_cdna"];
+v41 [label="RECOUNT_mapping"];
+v9 -> v41 [label="index_cdna"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v41 [label="RECOUNT_mapping"];
+v0 -> v41 [label="read_pairs_ch"];
+
+v41 [label="RECOUNT_mapping"];
+v42 [label="RECOUNT_count"];
+v41 -> v42;
+
+v42 [label="RECOUNT_count"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 [label="RECOUNT_merge_samples"];
+v43 -> v46;
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v46 [label="RECOUNT_merge_samples"];
+v44 -> v46 [label="bsj_filter"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v46 [label="RECOUNT_merge_samples"];
+v45 -> v46 [label="exp_prop"];
+
+v46 [label="RECOUNT_merge_samples"];
+v48 [label="RECOUNT_quantile_norm"];
+v46 -> v48;
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [label="RECOUNT_quantile_norm"];
+v47 -> v48 [label="meta.csv"];
+
+v48 [label="RECOUNT_quantile_norm"];
+v50 [label="RECOUNT_covariate_processing"];
+v48 -> v50;
+
+v49 [shape=point,label="",fixedsize=true,width=0.1];
+v50 [label="RECOUNT_covariate_processing"];
+v49 -> v50 [label="meta"];
+
+v50 [label="RECOUNT_covariate_processing"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v50 -> v52;
+
+v5 [label="VCF_filtering"];
+v51 [label="RECOUNT_chrom_splitting"];
+v5 -> v51;
+
+v48 [label="RECOUNT_quantile_norm"];
+v51 [label="RECOUNT_chrom_splitting"];
+v48 -> v51 [label="exp"];
+
+v51 [label="RECOUNT_chrom_splitting"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v54 [label="RECOUNT_qtl_mapping"];
+v52 -> v54 [label="RECOUNT_qtl_map_input_ch"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="RECOUNT_qtl_mapping"];
+v53 -> v54 [label="window_size"];
+
+v54 [label="RECOUNT_qtl_mapping"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v56 [label="RECOUNT_merge_qtl_results"];
+v55 -> v56;
+
+v56 [label="RECOUNT_merge_qtl_results"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 [label="RECOUNT_apply_qvalue"];
+v57 -> v59;
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="RECOUNT_apply_qvalue"];
+v58 -> v59 [label="fdr"];
+
+v59 [label="RECOUNT_apply_qvalue"];
+v62 [label="RECOUNT_export_optimal_peer_covariates"];
+v59 -> v62;
+
+v50 [label="RECOUNT_covariate_processing"];
+v60 [label="RECOUNT_export_all_peer_covariates"];
+v50 -> v60;
+
+v60 [label="RECOUNT_export_all_peer_covariates"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 [label="RECOUNT_export_optimal_peer_covariates"];
+v61 -> v62;
+
+v62 [label="RECOUNT_export_optimal_peer_covariates"];
+v64 [label="RECOUNT_qtl_mapping_nominal"];
+v62 -> v64;
+
+v51 [label="RECOUNT_chrom_splitting"];
+v64 [label="RECOUNT_qtl_mapping_nominal"];
+v51 -> v64;
+
+v63 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [label="RECOUNT_qtl_mapping_nominal"];
+v63 -> v64 [label="window_size"];
+
+v64 [label="RECOUNT_qtl_mapping_nominal"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 [label="RECOUNT_merge_qtl_results_nominal"];
+v65 -> v66;
+
+v66 [label="RECOUNT_merge_qtl_results_nominal"];
+v67 [shape=point];
+v66 -> v67;
+
+}

@@ -1,0 +1,282 @@
+digraph "nanostring" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v23 [label="NFCORE_NANOSTRING:NANOSTRING:COMPUTE_GENE_SCORES"];
+v0 -> v23 [label="ch_gene_score_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v27 [label="ch_heatmap_genes_to_filter"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3 [label="versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v8 [label="ch_samplesheet"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v10 [label="NFCORE_NANOSTRING:NANOSTRING:QUALITY_CONTROL:NACHO_QC"];
+v5 -> v10 [label="samplesheet"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v12 [label="ch_versions"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v14 [label="ch_multiqc_files"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 [label="NFCORE_NANOSTRING:NANOSTRING:QUALITY_CONTROL:NACHO_QC"];
+v9 -> v10 [label="counts"];
+
+v10 [label="NFCORE_NANOSTRING:NANOSTRING:QUALITY_CONTROL:NACHO_QC"];
+v11 [shape=point];
+v10 -> v11;
+
+v10 [label="NFCORE_NANOSTRING:NANOSTRING:QUALITY_CONTROL:NACHO_QC"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v13 [label="nacho_qc_multiqc_metrics"];
+
+v10 [label="NFCORE_NANOSTRING:NANOSTRING:QUALITY_CONTROL:NACHO_QC"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v12 [label="versions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v16 [label="ch_versions"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v22 [label="ch_multiqc_files"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 [label="NFCORE_NANOSTRING:NANOSTRING:NORMALIZE:NACHO_NORMALIZE"];
+v9 -> v15 [label="counts"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v15 [label="NFCORE_NANOSTRING:NANOSTRING:NORMALIZE:NACHO_NORMALIZE"];
+v5 -> v15 [label="samplesheet"];
+
+v15 [label="NFCORE_NANOSTRING:NANOSTRING:NORMALIZE:NACHO_NORMALIZE"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v17 [label="normalized_counts"];
+
+v15 [label="NFCORE_NANOSTRING:NANOSTRING:NORMALIZE:NACHO_NORMALIZE"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v17 [label="normalized_counts_wo_HK"];
+
+v15 [label="NFCORE_NANOSTRING:NANOSTRING:NORMALIZE:NACHO_NORMALIZE"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v16 [label="versions"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v20 [label="ch_versions"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 [label="NFCORE_NANOSTRING:NANOSTRING:CREATE_ANNOTATED_TABLES"];
+v17 -> v18;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v18 [label="NFCORE_NANOSTRING:NANOSTRING:CREATE_ANNOTATED_TABLES"];
+v5 -> v18 [label="samplesheet"];
+
+v18 [label="NFCORE_NANOSTRING:NANOSTRING:CREATE_ANNOTATED_TABLES"];
+v28 [label="NFCORE_NANOSTRING:NANOSTRING:CREATE_GENE_HEATMAP"];
+v18 -> v28;
+
+v18 [label="NFCORE_NANOSTRING:NANOSTRING:CREATE_ANNOTATED_TABLES"];
+v19 [shape=point];
+v18 -> v19;
+
+v18 [label="NFCORE_NANOSTRING:NANOSTRING:CREATE_ANNOTATED_TABLES"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 -> v21;
+
+v18 [label="NFCORE_NANOSTRING:NANOSTRING:CREATE_ANNOTATED_TABLES"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v24 [label="ch_versions"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v26 [label="ch_multiqc_files"];
+
+v15 [label="NFCORE_NANOSTRING:NANOSTRING:NORMALIZE:NACHO_NORMALIZE"];
+v23 [label="NFCORE_NANOSTRING:NANOSTRING:COMPUTE_GENE_SCORES"];
+v15 -> v23 [label="normalized_counts"];
+
+v23 [label="NFCORE_NANOSTRING:NANOSTRING:COMPUTE_GENE_SCORES"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v25;
+
+v23 [label="NFCORE_NANOSTRING:NANOSTRING:COMPUTE_GENE_SCORES"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v29 [label="ch_versions"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v31 [label="ch_multiqc_files"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v28 [label="NFCORE_NANOSTRING:NANOSTRING:CREATE_GENE_HEATMAP"];
+v27 -> v28;
+
+v15 [label="NFCORE_NANOSTRING:NANOSTRING:NORMALIZE:NACHO_NORMALIZE"];
+v28 [label="NFCORE_NANOSTRING:NANOSTRING:CREATE_GENE_HEATMAP"];
+v15 -> v28 [label="normalized_counts"];
+
+v28 [label="NFCORE_NANOSTRING:NANOSTRING:CREATE_GENE_HEATMAP"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 -> v30;
+
+v28 [label="NFCORE_NANOSTRING:NANOSTRING:CREATE_GENE_HEATMAP"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v29 -> v32 [label="versions"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v43 [label="ch_multiqc_files"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v36;
+
+v35 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v44 [label="ch_collated_versions"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v38 -> v49 [label="ch_multiqc_config"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v39 -> v50 [label="ch_multiqc_custom_config"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v40 -> v51 [label="ch_multiqc_logo"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v41 -> v42 [label="ch_workflow_summary"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v44 [label="ch_multiqc_files"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v47 [label="ch_multiqc_files"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v45 -> v46 [label="ch_methods_description"];
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 -> v48 [label="ch_multiqc_files"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 [label="NFCORE_NANOSTRING:NANOSTRING:MULTIQC"];
+v48 -> v54;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v54 [label="NFCORE_NANOSTRING:NANOSTRING:MULTIQC"];
+v49 -> v54;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v54 [label="NFCORE_NANOSTRING:NANOSTRING:MULTIQC"];
+v50 -> v54;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v54 [label="NFCORE_NANOSTRING:NANOSTRING:MULTIQC"];
+v51 -> v54;
+
+v52 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="NFCORE_NANOSTRING:NANOSTRING:MULTIQC"];
+v52 -> v54 [label="replace_names"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="NFCORE_NANOSTRING:NANOSTRING:MULTIQC"];
+v53 -> v54 [label="sample_names"];
+
+v54 [label="NFCORE_NANOSTRING:NANOSTRING:MULTIQC"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v54 -> v58;
+
+v54 [label="NFCORE_NANOSTRING:NANOSTRING:MULTIQC"];
+v57 [shape=point];
+v54 -> v57;
+
+v54 [label="NFCORE_NANOSTRING:NANOSTRING:MULTIQC"];
+v56 [shape=point];
+v54 -> v56;
+
+v54 [label="NFCORE_NANOSTRING:NANOSTRING:MULTIQC"];
+v55 [shape=point];
+v54 -> v55;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v59 [shape=point];
+v58 -> v59 [label="multiqc_report"];
+
+}

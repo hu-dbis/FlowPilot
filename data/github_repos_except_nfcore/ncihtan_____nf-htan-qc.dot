@@ -1,0 +1,34 @@
+digraph "ncihtan_____nfhtanqc" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="DownloadFromSynapse"];
+v0 -> v1 [label="synapse_id"];
+
+v1 [label="DownloadFromSynapse"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v4 [label="QC"];
+v3 -> v4 [label="fastq_files"];
+
+v4 [label="QC"];
+v6 [shape=point];
+v4 -> v6;
+
+v4 [label="QC"];
+v5 [shape=point];
+v4 -> v5;
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [label="MultiQC"];
+v7 -> v8 [label="multiqc_input"];
+
+v8 [label="MultiQC"];
+v9 [shape=point];
+v8 -> v9;
+
+}

@@ -1,0 +1,170 @@
+digraph "niccw_____geneditbioamplicon" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [label="FASTQC_RAW"];
+v2 -> v6 [label="ch_raw_short_reads"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [label="fastqScreen"];
+v5 -> v9 [label="undetermined_reads"];
+
+v6 [label="FASTQC_RAW"];
+v8 [shape=point];
+v6 -> v8;
+
+v6 [label="FASTQC_RAW"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v11;
+
+v6 [label="FASTQC_RAW"];
+v7 [shape=point];
+v6 -> v7;
+
+v9 [label="fastqScreen"];
+v10 [shape=point];
+v9 -> v10;
+
+v9 [label="fastqScreen"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v12;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 [label="MULTIQC_RAW"];
+v13 -> v14;
+
+v14 [label="MULTIQC_RAW"];
+v18 [shape=point];
+v14 -> v18;
+
+v14 [label="MULTIQC_RAW"];
+v17 [shape=point];
+v14 -> v17;
+
+v14 [label="MULTIQC_RAW"];
+v16 [shape=point];
+v14 -> v16;
+
+v14 [label="MULTIQC_RAW"];
+v15 [shape=point];
+v14 -> v15;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v2 -> v19 [label="ch_raw_short_reads"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v22 [label="FASTP"];
+v19 -> v22 [label="ch_raw_short_reads_work"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [label="FASTP"];
+v20 -> v22 [label="save_trimmed_fail"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [label="FASTP"];
+v21 -> v22 [label="save_merged"];
+
+v22 [label="FASTP"];
+v28 [label="FASTQC_TRIMMED"];
+v22 -> v28 [label="reads_ch"];
+
+v22 [label="FASTP"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v32;
+
+v22 [label="FASTP"];
+v27 [shape=point];
+v22 -> v27;
+
+v22 [label="FASTP"];
+v26 [shape=point];
+v22 -> v26;
+
+v22 [label="FASTP"];
+v25 [shape=point];
+v22 -> v25;
+
+v22 [label="FASTP"];
+v24 [shape=point];
+v22 -> v24;
+
+v22 [label="FASTP"];
+v23 [shape=point];
+v22 -> v23;
+
+v28 [label="FASTQC_TRIMMED"];
+v30 [shape=point];
+v28 -> v30;
+
+v28 [label="FASTQC_TRIMMED"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 -> v31;
+
+v28 [label="FASTQC_TRIMMED"];
+v29 [shape=point];
+v28 -> v29;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v33;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v35 [label="MULTIQC_TRIMMED"];
+v34 -> v35;
+
+v35 [label="MULTIQC_TRIMMED"];
+v39 [shape=point];
+v35 -> v39;
+
+v35 [label="MULTIQC_TRIMMED"];
+v38 [shape=point];
+v35 -> v38;
+
+v35 [label="MULTIQC_TRIMMED"];
+v37 [shape=point];
+v35 -> v37;
+
+v35 [label="MULTIQC_TRIMMED"];
+v36 [shape=point];
+v35 -> v36;
+
+v22 [label="FASTP"];
+v40 [label="crispresso"];
+v22 -> v40 [label="reads_ch"];
+
+v40 [label="crispresso"];
+v41 [shape=point];
+v40 -> v41;
+
+}

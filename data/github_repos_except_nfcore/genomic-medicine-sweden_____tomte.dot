@@ -1,0 +1,2870 @@
+digraph "genomicmedicinesweden_____tomte" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v6 [label="ch_original_input"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v9;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 -> v11 [label="ch_input_counts"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v20 [label="reads"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=point];
+v16 -> v17;
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v57 [label="ch_versions"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v206 [label="ch_multiqc_files"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v20 -> v21 [label="ch_samples"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v348 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_FILTER_RESULTS"];
+v22 -> v348 [label="ch_case_info"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v24 -> v226 [label="ch_platform"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v25 -> v39 [label="ch_vep_refs_download_unprocessed"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v53 [label="ch_versions"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:FASTA_DOWNLOAD"];
+v27 -> v30 [label="genome"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:FASTA_DOWNLOAD"];
+v28 -> v30 [label="genome_gencode_version"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:FASTA_DOWNLOAD"];
+v29 -> v30 [label="download"];
+
+v30 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:FASTA_DOWNLOAD"];
+v32 [shape=point];
+v30 -> v32 [label="fasta"];
+
+v30 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:FASTA_DOWNLOAD"];
+v31 [shape=point];
+v30 -> v31;
+
+v30 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:FASTA_DOWNLOAD"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v53;
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:GTF_DOWNLOAD"];
+v33 -> v36 [label="genome"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:GTF_DOWNLOAD"];
+v34 -> v36 [label="genome_gencode_version"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:GTF_DOWNLOAD"];
+v35 -> v36 [label="download"];
+
+v36 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:GTF_DOWNLOAD"];
+v38 [shape=point];
+v36 -> v38;
+
+v36 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:GTF_DOWNLOAD"];
+v37 [shape=point];
+v36 -> v37 [label="gtf"];
+
+v36 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:GTF_DOWNLOAD"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v54;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v40 -> v41 [label="ch_vep_refs_download"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v42 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:WGET_DOWNLOAD"];
+v41 -> v42;
+
+v42 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:WGET_DOWNLOAD"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 -> v46 [label="meta"];
+
+v42 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:WGET_DOWNLOAD"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v55;
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:VEP_GNOMAD_DOWNLOAD"];
+v43 -> v45 [label="genome"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:VEP_GNOMAD_DOWNLOAD"];
+v44 -> v45 [label="vep_cache_version"];
+
+v45 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:VEP_GNOMAD_DOWNLOAD"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v45 -> v47;
+
+v45 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:VEP_GNOMAD_DOWNLOAD"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v56;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:BUILD_VEP_CACHE"];
+v46 -> v49;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:BUILD_VEP_CACHE"];
+v48 -> v49;
+
+v49 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:BUILD_VEP_CACHE"];
+v52 [shape=point];
+v49 -> v52 [label="vep_cache"];
+
+v49 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:BUILD_VEP_CACHE"];
+v51 [shape=point];
+v49 -> v51 [label="vep_plugin"];
+
+v49 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:DOWNLOAD_REFERENCES:BUILD_VEP_CACHE"];
+v50 [shape=point];
+v49 -> v50;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v54 [label="ch_versions"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v55 [label="ch_versions"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v56 [label="ch_versions"];
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v57 [label="versions"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v202 [label="ch_versions"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v87 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GUNZIP_FASTA"];
+v60 -> v87 [label="ch_fasta"];
+
+v61 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v106 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GUNZIP_GTF"];
+v63 -> v106 [label="ch_gtf"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 -> v166 [label="ch_vep_cache_input"];
+
+v65 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v65 -> v82 [label="ch_vep_extra_files_unsplit"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v100 [label="ch_fai_input"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v68 -> v345 [label="ch_gene_panel_clinical_filter"];
+
+v69 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v70 -> v306 [label="ch_ref_drop_annot_file"];
+
+v71 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v72 -> v305 [label="ch_ref_drop_count_file"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v74 -> v315 [label="ch_ref_drop_splice_folder"];
+
+v75 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v75 -> v153 [label="ch_salmon_index_input"];
+
+v76 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v116 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:UNTAR_STAR_INDEX"];
+v76 -> v116 [label="ch_star_index_input"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v77 -> v138 [label="ch_transcript_fasta_input"];
+
+v78 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v103 [label="ch_sequence_dict_input"];
+
+v79 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v245 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_SUBSAMPLE_REGION"];
+v80 -> v245 [label="subsample_bed"];
+
+v81 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v522 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ESTIMATE_HB_PERC"];
+v81 -> v522 [label="ch_hb_genes"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v82 -> v83;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v472 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_VEP"];
+v85 -> v472 [label="ch_vep_extra_files"];
+
+v86 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v177 [label="ch_versions"];
+
+v87 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GUNZIP_FASTA"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v87 -> v94;
+
+v87 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GUNZIP_FASTA"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v177;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v60 -> v88 [label="ch_fasta"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v88 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 [shape=point];
+v90 -> v91;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v60 -> v92 [label="ch_fasta"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v93 [shape=point];
+v92 -> v93;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v95;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:SAMTOOLS_FAIDX_GENOME"];
+v95 -> v97 [label="ch_fasta_final"];
+
+v96 [shape=point,label="",fixedsize=true,width=0.1];
+v97 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:SAMTOOLS_FAIDX_GENOME"];
+v96 -> v97;
+
+v97 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:SAMTOOLS_FAIDX_GENOME"];
+v99 [shape=point];
+v97 -> v99;
+
+v97 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:SAMTOOLS_FAIDX_GENOME"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v100;
+
+v97 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:SAMTOOLS_FAIDX_GENOME"];
+v98 [shape=point];
+v97 -> v98;
+
+v97 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:SAMTOOLS_FAIDX_GENOME"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v178;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v105 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GET_CHROM_SIZES"];
+v101 -> v105 [label="ch_fai"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:BUILD_DICT"];
+v95 -> v102 [label="ch_fasta_final"];
+
+v102 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:BUILD_DICT"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v103;
+
+v102 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:BUILD_DICT"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v179;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v131 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:BEDTOINTERVALLIST"];
+v104 -> v131 [label="ch_dict"];
+
+v105 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GET_CHROM_SIZES"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v105 -> v192;
+
+v105 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GET_CHROM_SIZES"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v180;
+
+v106 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GUNZIP_GTF"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v106 -> v113;
+
+v106 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GUNZIP_GTF"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v181;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v63 -> v107 [label="ch_gtf"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v110 [shape=point];
+v109 -> v110;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v63 -> v111 [label="ch_gtf"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v112 [shape=point];
+v111 -> v112;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v114;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:BUILD_STAR_GENOME"];
+v114 -> v115 [label="ch_gtf_final"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:BUILD_STAR_GENOME"];
+v95 -> v115 [label="ch_fasta_final"];
+
+v115 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:BUILD_STAR_GENOME"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v115 -> v125;
+
+v115 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:BUILD_STAR_GENOME"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v184;
+
+v116 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:UNTAR_STAR_INDEX"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v116 -> v123;
+
+v116 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:UNTAR_STAR_INDEX"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v183;
+
+v76 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v76 -> v117 [label="ch_star_index_input"];
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v117 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v120 [shape=point];
+v119 -> v120;
+
+v76 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v76 -> v121 [label="ch_star_index_input"];
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v122 [shape=point];
+v121 -> v122;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v124;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v126 [label="ch_star_mixed"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v126;
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 -> v195 [label="ch_star_final"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GTF_TO_REFFLAT"];
+v114 -> v127 [label="ch_gtf_final"];
+
+v127 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GTF_TO_REFFLAT"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v127 -> v197;
+
+v127 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GTF_TO_REFFLAT"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v185;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GET_RRNA_TRANSCRIPTS"];
+v114 -> v128 [label="ch_gtf_final"];
+
+v128 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GET_RRNA_TRANSCRIPTS"];
+v129 [shape=point];
+v128 -> v129;
+
+v128 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GET_RRNA_TRANSCRIPTS"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v128 -> v130;
+
+v128 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GET_RRNA_TRANSCRIPTS"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v186;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v131 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:BEDTOINTERVALLIST"];
+v130 -> v131;
+
+v131 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:BEDTOINTERVALLIST"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v131 -> v132;
+
+v131 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:BEDTOINTERVALLIST"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v187;
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v132 -> v133;
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v291 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:BAM_QC:PICARD_COLLECTRNASEQMETRICS"];
+v133 -> v291 [label="ch_rrna_intervals"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v95 -> v134 [label="ch_fasta_final"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v101 -> v134 [label="ch_fai"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v134 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v136 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GFFREAD"];
+v135 -> v136 [label="ch_fasta_fai"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GFFREAD"];
+v114 -> v136 [label="ch_gtf_final"];
+
+v136 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GFFREAD"];
+v137 [shape=point];
+v136 -> v137;
+
+v136 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GFFREAD"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v136 -> v149;
+
+v136 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GFFREAD"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v188;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v139 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GUNZIP_TRFASTA"];
+v138 -> v139;
+
+v139 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GUNZIP_TRFASTA"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v139 -> v146;
+
+v139 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GUNZIP_TRFASTA"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v182;
+
+v77 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v77 -> v140 [label="ch_transcript_fasta_input"];
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v141 -> v142;
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v143 [shape=point];
+v142 -> v143;
+
+v77 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v77 -> v144 [label="ch_transcript_fasta_input"];
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v148;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v145 [shape=point];
+v144 -> v145;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v148;
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 -> v150 [label="ch_transcript_fasta_mixed"];
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v150;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:SALMON_INDEX"];
+v150 -> v152 [label="ch_transcript_fasta_final"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v95 -> v151 [label="ch_fasta_final"];
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:SALMON_INDEX"];
+v151 -> v152;
+
+v152 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:SALMON_INDEX"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v152 -> v164;
+
+v152 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:SALMON_INDEX"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v190;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:UNTAR_SALMON_INDEX"];
+v153 -> v154;
+
+v154 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:UNTAR_SALMON_INDEX"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 -> v161;
+
+v154 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:UNTAR_SALMON_INDEX"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 -> v189;
+
+v75 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v75 -> v155 [label="ch_salmon_index_input"];
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v155 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v156 -> v157;
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v158 [shape=point];
+v157 -> v158;
+
+v75 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v75 -> v159 [label="ch_salmon_index_input"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v160 [shape=point];
+v159 -> v160;
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 -> v163;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v161 -> v162;
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v163;
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v165 [label="ch_salmon_mixed"];
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v165;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v165 -> v196 [label="ch_salmon_final"];
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v167 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:UNTAR_VEP_CACHE"];
+v166 -> v167;
+
+v167 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:UNTAR_VEP_CACHE"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v167 -> v174;
+
+v167 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:UNTAR_VEP_CACHE"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v191;
+
+v64 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v64 -> v168 [label="ch_vep_cache_input"];
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v168 -> v169;
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v169 -> v170;
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v171 [shape=point];
+v170 -> v171;
+
+v64 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v64 -> v172 [label="ch_vep_cache_input"];
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v173 [shape=point];
+v172 -> v173;
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 -> v176;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v174 -> v175;
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 -> v176;
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v176 -> v200 [label="ch_final_vep"];
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v178 [label="ch_versions"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 -> v179 [label="ch_versions"];
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v180 [label="ch_versions"];
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 -> v181 [label="ch_versions"];
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 -> v182 [label="ch_versions"];
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v183 [label="ch_versions"];
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 -> v184 [label="ch_versions"];
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 -> v185 [label="ch_versions"];
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v186 [label="ch_versions"];
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 -> v187 [label="ch_versions"];
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 -> v188 [label="ch_versions"];
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 -> v189 [label="ch_versions"];
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 -> v190 [label="ch_versions"];
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v191 [label="ch_versions"];
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v191 -> v201 [label="versions"];
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v500 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:IGV_TRACKS:UCSC_WIGTOBIGWIG"];
+v192 -> v500 [label="chrom_sizes"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v95 -> v193 [label="ch_fasta_final"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v259 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_VIEW"];
+v193 -> v259 [label="ch_fasta"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v114 -> v194 [label="ch_gtf_final"];
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v194 -> v226 [label="ch_gtf"];
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v195 -> v226 [label="star_index"];
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v272 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SALMON_QUANT"];
+v196 -> v272 [label="salmon_index"];
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v291 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:BAM_QC:PICARD_COLLECTRNASEQMETRICS"];
+v197 -> v291 [label="ch_refflat"];
+
+v128 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PREPARE_REFERENCES:GET_RRNA_TRANSCRIPTS"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v128 -> v198;
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v199 [shape=point];
+v198 -> v199 [label="rrna_bed"];
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v472 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_VEP"];
+v200 -> v472 [label="ch_vep_cache"];
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 -> v202;
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 -> v208 [label="ch_versions"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v203 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:FASTQC"];
+v13 -> v203 [label="reads"];
+
+v203 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:FASTQC"];
+v204 [shape=point];
+v203 -> v204;
+
+v203 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:FASTQC"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v203 -> v205;
+
+v203 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:FASTQC"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v203 -> v207;
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v205 -> v206;
+
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v536 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 -> v536 [label="ch_multiqc_files"];
+
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 -> v208;
+
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 -> v288 [label="ch_versions"];
+
+v209 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 -> v250 [label="ch_versions"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v210 [label="reads"];
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v210 -> v211;
+
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v211 -> v212;
+
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v212 -> v214;
+
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v213 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:CAT_FASTQ"];
+v212 -> v213;
+
+v213 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:CAT_FASTQ"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v213 -> v214 [label="merged_reads"];
+
+v213 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:CAT_FASTQ"];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v213 -> v276;
+
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:FASTP"];
+v214 -> v219 [label="ch_cat_fastq"];
+
+v215 [shape=point,label="",fixedsize=true,width=0.1];
+v219 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:FASTP"];
+v215 -> v219 [label="adapter_fasta"];
+
+v216 [shape=point,label="",fixedsize=true,width=0.1];
+v219 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:FASTP"];
+v216 -> v219 [label="discard_trimmed_pass"];
+
+v217 [shape=point,label="",fixedsize=true,width=0.1];
+v219 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:FASTP"];
+v217 -> v219 [label="save_trimmed_fail"];
+
+v218 [shape=point,label="",fixedsize=true,width=0.1];
+v219 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:FASTP"];
+v218 -> v219 [label="save_merged"];
+
+v219 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:FASTP"];
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v219 -> v226;
+
+v219 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:FASTP"];
+v544 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v219 -> v544 [label="fastp_report"];
+
+v219 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:FASTP"];
+v223 [shape=point];
+v219 -> v223;
+
+v219 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:FASTP"];
+v222 [shape=point];
+v219 -> v222;
+
+v219 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:FASTP"];
+v221 [shape=point];
+v219 -> v221;
+
+v219 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:FASTP"];
+v220 [shape=point];
+v219 -> v220;
+
+v219 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:FASTP"];
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v219 -> v278;
+
+v224 [shape=point,label="",fixedsize=true,width=0.1];
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v224 -> v226 [label="star_ignore_sjdbgtf"];
+
+v225 [shape=point,label="",fixedsize=true,width=0.1];
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v225 -> v226 [label="seq_center"];
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v547 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v226 -> v547 [label="star_log_final"];
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v237 [shape=point];
+v226 -> v237;
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v236 [shape=point];
+v226 -> v236;
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v226 -> v280;
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v235 [shape=point];
+v226 -> v235;
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v234 [shape=point];
+v226 -> v234;
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v238 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_INDEX"];
+v226 -> v238 [label="ch_bam"];
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v233 [shape=point];
+v226 -> v233;
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v232 [shape=point];
+v226 -> v232;
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v231 [shape=point];
+v226 -> v231;
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v230 [shape=point];
+v226 -> v230;
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v504 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:IGV_TRACKS:JUNCTION_TRACK"];
+v226 -> v504 [label="spl_junc"];
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v522 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ESTIMATE_HB_PERC"];
+v226 -> v522 [label="gene_counts"];
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v229 [shape=point];
+v226 -> v229;
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v228 [shape=point];
+v226 -> v228;
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v226 -> v499 [label="wig"];
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v227 [shape=point];
+v226 -> v227;
+
+v238 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_INDEX"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v238 -> v257;
+
+v238 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_INDEX"];
+v240 [shape=point];
+v238 -> v240;
+
+v238 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_INDEX"];
+v239 [shape=point];
+v238 -> v239;
+
+v238 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_INDEX"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v238 -> v282;
+
+v241 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v241 -> v248 [label="ch_bam_bai"];
+
+v242 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v243 [shape=point];
+v242 -> v243 [label="ch_bam_bai_out"];
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v245 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_SUBSAMPLE_REGION"];
+v226 -> v245 [label="ch_bam"];
+
+v244 [shape=point,label="",fixedsize=true,width=0.1];
+v245 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_SUBSAMPLE_REGION"];
+v244 -> v245 [label="seed_frac"];
+
+v245 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_SUBSAMPLE_REGION"];
+v247 [shape=point];
+v245 -> v247;
+
+v245 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_SUBSAMPLE_REGION"];
+v246 [shape=point];
+v245 -> v246;
+
+v245 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_SUBSAMPLE_REGION"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 -> v248;
+
+v245 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_SUBSAMPLE_REGION"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v245 -> v249;
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v252 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_DOWNSAMPLE"];
+v248 -> v252 [label="ch_bam_bai"];
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v249 -> v250;
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v250 -> v256 [label="ch_versions"];
+
+v251 [shape=point,label="",fixedsize=true,width=0.1];
+v252 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_DOWNSAMPLE"];
+v251 -> v252 [label="num_reads"];
+
+v252 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_DOWNSAMPLE"];
+v254 [shape=point];
+v252 -> v254;
+
+v252 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_DOWNSAMPLE"];
+v253 [shape=point];
+v252 -> v253;
+
+v252 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_DOWNSAMPLE"];
+v301 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v252 -> v301 [label="ch_bam_ds_bai"];
+
+v252 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_DOWNSAMPLE"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v252 -> v255;
+
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v255 -> v256;
+
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v256 -> v277 [label="ch_versions"];
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v226 -> v257 [label="ch_bam"];
+
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v259 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_VIEW"];
+v257 -> v259;
+
+v258 [shape=point,label="",fixedsize=true,width=0.1];
+v259 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_VIEW"];
+v258 -> v259 [label="qname"];
+
+v259 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_VIEW"];
+v267 [shape=point];
+v259 -> v267;
+
+v259 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_VIEW"];
+v266 [shape=point];
+v259 -> v266;
+
+v259 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_VIEW"];
+v265 [shape=point];
+v259 -> v265;
+
+v259 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_VIEW"];
+v264 [shape=point];
+v259 -> v264;
+
+v259 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_VIEW"];
+v263 [shape=point];
+v259 -> v263;
+
+v259 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_VIEW"];
+v262 [shape=point];
+v259 -> v262;
+
+v259 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_VIEW"];
+v261 [shape=point];
+v259 -> v261;
+
+v259 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_VIEW"];
+v260 [shape=point];
+v259 -> v260;
+
+v259 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SAMTOOLS_VIEW"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v259 -> v284;
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v194 -> v268 [label="ch_gtf"];
+
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v272 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SALMON_QUANT"];
+v268 -> v272;
+
+v219 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:FASTP"];
+v272 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SALMON_QUANT"];
+v219 -> v272;
+
+v269 [shape=point,label="",fixedsize=true,width=0.1];
+v272 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SALMON_QUANT"];
+v269 -> v272 [label="transcript_fasta"];
+
+v270 [shape=point,label="",fixedsize=true,width=0.1];
+v272 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SALMON_QUANT"];
+v270 -> v272 [label="alignment_mode"];
+
+v271 [shape=point,label="",fixedsize=true,width=0.1];
+v272 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SALMON_QUANT"];
+v271 -> v272 [label="lib_type"];
+
+v272 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SALMON_QUANT"];
+v275 [shape=point];
+v272 -> v275 [label="salmon_result"];
+
+v272 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SALMON_QUANT"];
+v553 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v272 -> v553 [label="salmon_info"];
+
+v272 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SALMON_QUANT"];
+v274 [shape=point];
+v272 -> v274;
+
+v272 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SALMON_QUANT"];
+v273 [shape=point];
+v272 -> v273;
+
+v272 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:SALMON_QUANT"];
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v272 -> v286;
+
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v276 -> v277;
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v277 -> v279 [label="ch_versions"];
+
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v278 -> v279;
+
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v279 -> v281 [label="ch_versions"];
+
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 -> v281;
+
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v281 -> v283 [label="ch_versions"];
+
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v282 -> v283;
+
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v283 -> v285 [label="ch_versions"];
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v284 -> v285;
+
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v285 -> v287 [label="ch_versions"];
+
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v286 -> v287;
+
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v287 -> v288 [label="versions"];
+
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v288 -> v299 [label="ch_versions"];
+
+v289 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v289 -> v296 [label="ch_versions"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v193 -> v290 [label="ch_fasta"];
+
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v291 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:BAM_QC:PICARD_COLLECTRNASEQMETRICS"];
+v290 -> v291;
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v291 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:BAM_QC:PICARD_COLLECTRNASEQMETRICS"];
+v226 -> v291 [label="ch_bam"];
+
+v291 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:BAM_QC:PICARD_COLLECTRNASEQMETRICS"];
+v556 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v291 -> v556 [label="metrics_general_rna"];
+
+v291 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:BAM_QC:PICARD_COLLECTRNASEQMETRICS"];
+v292 [shape=point];
+v291 -> v292;
+
+v291 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:BAM_QC:PICARD_COLLECTRNASEQMETRICS"];
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v291 -> v295;
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v293 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:BAM_QC:PICARD_COLLECTINSERTSIZEMETRICS"];
+v226 -> v293 [label="ch_bam"];
+
+v293 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:BAM_QC:PICARD_COLLECTINSERTSIZEMETRICS"];
+v559 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v293 -> v559 [label="metrics_insert_size"];
+
+v293 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:BAM_QC:PICARD_COLLECTINSERTSIZEMETRICS"];
+v294 [shape=point];
+v293 -> v294;
+
+v293 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:BAM_QC:PICARD_COLLECTINSERTSIZEMETRICS"];
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v293 -> v297;
+
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v295 -> v296;
+
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v296 -> v298 [label="ch_versions"];
+
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v297 -> v298;
+
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v298 -> v299 [label="versions"];
+
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v374 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v299 -> v374 [label="ch_versions"];
+
+v300 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v300 -> v366 [label="ch_versions"];
+
+v301 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v301 -> v312 [label="ch_bam_files"];
+
+v252 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_DOWNSAMPLE"];
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v252 -> v302 [label="ch_bam_ds_bai"];
+
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v302 -> v303;
+
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v303 -> v304;
+
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v309 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_SAMPLE_ANNOT"];
+v304 -> v309 [label="ch_bam_files_annot"];
+
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v309 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_SAMPLE_ANNOT"];
+v305 -> v309;
+
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v309 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_SAMPLE_ANNOT"];
+v306 -> v309;
+
+v307 [shape=point,label="",fixedsize=true,width=0.1];
+v309 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_SAMPLE_ANNOT"];
+v307 -> v309 [label="drop_group_samples_ae"];
+
+v308 [shape=point,label="",fixedsize=true,width=0.1];
+v309 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_SAMPLE_ANNOT"];
+v308 -> v309 [label="drop_group_samples_as"];
+
+v309 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_SAMPLE_ANNOT"];
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v309 -> v322 [label="annotation_drop"];
+
+v309 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_SAMPLE_ANNOT"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v309 -> v366;
+
+v252 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:RNA_DOWNSAMPLE"];
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v252 -> v310 [label="ch_bam_ds_bai"];
+
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v310 -> v311;
+
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v311 -> v313 [label="ch_bai_files"];
+
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v312 -> v313;
+
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v313 -> v322 [label="ch_bam_bai_files"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v72 -> v314 [label="ch_ref_drop_count_file"];
+
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v314 -> v322;
+
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v315 -> v322;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v135 -> v322 [label="ch_fasta_fai"];
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v194 -> v322 [label="ch_gtf"];
+
+v316 [shape=point,label="",fixedsize=true,width=0.1];
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v316 -> v322 [label="genome"];
+
+v317 [shape=point,label="",fixedsize=true,width=0.1];
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v317 -> v322 [label="drop_group_samples_ae"];
+
+v318 [shape=point,label="",fixedsize=true,width=0.1];
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v318 -> v322 [label="drop_group_samples_as"];
+
+v319 [shape=point,label="",fixedsize=true,width=0.1];
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v319 -> v322 [label="drop_padjcutoff_ae"];
+
+v320 [shape=point,label="",fixedsize=true,width=0.1];
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v320 -> v322 [label="drop_zScoreCutoff"];
+
+v321 [shape=point,label="",fixedsize=true,width=0.1];
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v321 -> v322 [label="skip_export_counts_drop"];
+
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v324 [shape=point];
+v322 -> v324 [label="config_drop_ae"];
+
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v323 [shape=point];
+v322 -> v323 [label="drop_ae_out"];
+
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v322 -> v340;
+
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v322 -> v341;
+
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v322 -> v335;
+
+v322 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AE"];
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v322 -> v367;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v72 -> v325 [label="ch_ref_drop_count_file"];
+
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v325 -> v332;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v74 -> v326 [label="ch_ref_drop_splice_folder"];
+
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v326 -> v332;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v135 -> v332 [label="ch_fasta_fai"];
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v194 -> v332 [label="ch_gtf"];
+
+v309 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_SAMPLE_ANNOT"];
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v309 -> v332 [label="annotation_drop"];
+
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v313 -> v332 [label="ch_bam_bai_files"];
+
+v327 [shape=point,label="",fixedsize=true,width=0.1];
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v327 -> v332 [label="genome"];
+
+v328 [shape=point,label="",fixedsize=true,width=0.1];
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v328 -> v332 [label="drop_group_samples_as"];
+
+v329 [shape=point,label="",fixedsize=true,width=0.1];
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v329 -> v332 [label="drop_group_samples_ae"];
+
+v330 [shape=point,label="",fixedsize=true,width=0.1];
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v330 -> v332 [label="drop_padjcutoff_as"];
+
+v331 [shape=point,label="",fixedsize=true,width=0.1];
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v331 -> v332 [label="skip_export_counts_drop"];
+
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v334 [shape=point];
+v332 -> v334 [label="config_drop_as"];
+
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v333 [shape=point];
+v332 -> v333 [label="drop_as_out"];
+
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v332 -> v344;
+
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v332 -> v342;
+
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v332 -> v336;
+
+v332 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_CONFIG_RUN_AS"];
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v332 -> v368;
+
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v337 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_PUT_TOGETHER_EXPORTED_COUNTS"];
+v335 -> v337;
+
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v337 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_PUT_TOGETHER_EXPORTED_COUNTS"];
+v336 -> v337;
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v337 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_PUT_TOGETHER_EXPORTED_COUNTS"];
+v194 -> v337 [label="ch_gtf"];
+
+v337 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_PUT_TOGETHER_EXPORTED_COUNTS"];
+v339 [shape=point];
+v337 -> v339;
+
+v337 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_PUT_TOGETHER_EXPORTED_COUNTS"];
+v338 [shape=point];
+v337 -> v338;
+
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v340 -> v346 [label="ch_out_drop_ae_rds"];
+
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v348 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_FILTER_RESULTS"];
+v341 -> v348 [label="ch_out_drop_gene_name"];
+
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v343 [shape=point];
+v342 -> v343 [label="ch_out_drop_gene_name_as"];
+
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v344 -> v347 [label="ch_out_drop_as_tsv"];
+
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v348 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_FILTER_RESULTS"];
+v345 -> v348;
+
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v348 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_FILTER_RESULTS"];
+v346 -> v348;
+
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v348 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_FILTER_RESULTS"];
+v347 -> v348;
+
+v348 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_FILTER_RESULTS"];
+v352 [shape=point];
+v348 -> v352 [label="drop_ae_out_research"];
+
+v348 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_FILTER_RESULTS"];
+v351 [shape=point];
+v348 -> v351 [label="drop_ae_out_clinical"];
+
+v348 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_FILTER_RESULTS"];
+v350 [shape=point];
+v348 -> v350 [label="drop_as_out_research"];
+
+v348 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_FILTER_RESULTS"];
+v349 [shape=point];
+v348 -> v349 [label="drop_as_out_clinical"];
+
+v348 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:DROP_FILTER_RESULTS"];
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v348 -> v369;
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v353 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v248 -> v353 [label="ch_bam_bai"];
+
+v353 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v355 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:STRINGTIE_STRINGTIE"];
+v353 -> v355 [label="ch_bam"];
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v194 -> v354 [label="ch_gtf"];
+
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v355 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:STRINGTIE_STRINGTIE"];
+v354 -> v355;
+
+v355 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:STRINGTIE_STRINGTIE"];
+v359 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:GFFCOMPARE"];
+v355 -> v359 [label="transcript_gtf"];
+
+v355 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:STRINGTIE_STRINGTIE"];
+v358 [shape=point];
+v355 -> v358 [label="abundance"];
+
+v355 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:STRINGTIE_STRINGTIE"];
+v357 [shape=point];
+v355 -> v357 [label="coverage_gtf"];
+
+v355 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:STRINGTIE_STRINGTIE"];
+v356 [shape=point];
+v355 -> v356;
+
+v355 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:STRINGTIE_STRINGTIE"];
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v355 -> v370;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v359 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:GFFCOMPARE"];
+v135 -> v359 [label="ch_fasta_fai"];
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v359 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:GFFCOMPARE"];
+v194 -> v359 [label="ch_gtf"];
+
+v359 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:GFFCOMPARE"];
+v365 [shape=point];
+v359 -> v365 [label="annotated_gtf"];
+
+v359 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:GFFCOMPARE"];
+v364 [shape=point];
+v359 -> v364;
+
+v359 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:GFFCOMPARE"];
+v363 [shape=point];
+v359 -> v363;
+
+v359 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:GFFCOMPARE"];
+v362 [shape=point];
+v359 -> v362;
+
+v359 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:GFFCOMPARE"];
+v361 [shape=point];
+v359 -> v361;
+
+v359 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:GFFCOMPARE"];
+v562 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v359 -> v562 [label="stats_gtf"];
+
+v359 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:GFFCOMPARE"];
+v360 [shape=point];
+v359 -> v360;
+
+v359 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANALYSE_TRANSCRIPTS:GFFCOMPARE"];
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v359 -> v372;
+
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v366 -> v367 [label="ch_versions"];
+
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v367 -> v368 [label="ch_versions"];
+
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v368 -> v369 [label="ch_versions"];
+
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v369 -> v371 [label="ch_versions"];
+
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v370 -> v371;
+
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v371 -> v373 [label="ch_versions"];
+
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v372 -> v373;
+
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v374 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v373 -> v374 [label="versions"];
+
+v374 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v374 -> v405 [label="ch_versions"];
+
+v375 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v375 -> v387 [label="ch_versions"];
+
+v376 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v376 -> v383 [label="ch_vcf"];
+
+v377 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v377 -> v384 [label="ch_tbi"];
+
+v378 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v378 -> v385 [label="ch_stats"];
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v248 -> v379 [label="ch_bam_bai"];
+
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v381 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:BCFTOOLS_MPILEUP"];
+v379 -> v381;
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v381 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:BCFTOOLS_MPILEUP"];
+v193 -> v381 [label="ch_fasta"];
+
+v380 [shape=point,label="",fixedsize=true,width=0.1];
+v381 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:BCFTOOLS_MPILEUP"];
+v380 -> v381 [label="save_mpileup"];
+
+v381 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:BCFTOOLS_MPILEUP"];
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v381 -> v383;
+
+v381 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:BCFTOOLS_MPILEUP"];
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v381 -> v384;
+
+v381 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:BCFTOOLS_MPILEUP"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v381 -> v385;
+
+v381 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:BCFTOOLS_MPILEUP"];
+v382 [shape=point];
+v381 -> v382;
+
+v381 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:BCFTOOLS_MPILEUP"];
+v386 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v381 -> v386;
+
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v383 -> v388 [label="ch_vcf"];
+
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v384 -> v388 [label="ch_tbi"];
+
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v565 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v385 -> v565 [label="stats"];
+
+v386 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v386 -> v387;
+
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v387 -> v400 [label="ch_versions"];
+
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v389 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:SPLIT_MULTIALLELICS"];
+v388 -> v389 [label="ch_in_split_multi"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v389 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:SPLIT_MULTIALLELICS"];
+v193 -> v389 [label="ch_fasta"];
+
+v389 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:SPLIT_MULTIALLELICS"];
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v389 -> v391;
+
+v389 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:SPLIT_MULTIALLELICS"];
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v389 -> v391;
+
+v389 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:SPLIT_MULTIALLELICS"];
+v390 [shape=point];
+v389 -> v390;
+
+v389 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:SPLIT_MULTIALLELICS"];
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v389 -> v399;
+
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v392 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:REMOVE_DUPLICATES"];
+v391 -> v392 [label="ch_remove_dup_in"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v392 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:REMOVE_DUPLICATES"];
+v193 -> v392 [label="ch_fasta"];
+
+v392 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:REMOVE_DUPLICATES"];
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v392 -> v394;
+
+v392 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:REMOVE_DUPLICATES"];
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v392 -> v394;
+
+v392 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:REMOVE_DUPLICATES"];
+v393 [shape=point];
+v392 -> v393;
+
+v392 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:REMOVE_DUPLICATES"];
+v401 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v392 -> v401;
+
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v396 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:ADD_FOUND_IN_TAG"];
+v394 -> v396;
+
+v395 [shape=point,label="",fixedsize=true,width=0.1];
+v396 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:ADD_FOUND_IN_TAG"];
+v395 -> v396 [label="variant_caller"];
+
+v396 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:ADD_FOUND_IN_TAG"];
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v396 -> v398 [label="vcf"];
+
+v396 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:ADD_FOUND_IN_TAG"];
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v396 -> v398 [label="tbi"];
+
+v396 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:ADD_FOUND_IN_TAG"];
+v397 [shape=point];
+v396 -> v397;
+
+v396 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CALL_VARIANTS:ADD_FOUND_IN_TAG"];
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v396 -> v403;
+
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v407 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_NORM"];
+v398 -> v407 [label="ch_ind_vcf_tbi"];
+
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v399 -> v400;
+
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v400 -> v402 [label="ch_versions"];
+
+v401 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v401 -> v402;
+
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v402 -> v404 [label="ch_versions"];
+
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v403 -> v404;
+
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v404 -> v405 [label="versions"];
+
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v405 -> v466 [label="ch_versions"];
+
+v406 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v406 -> v447 [label="ch_versions"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v407 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_NORM"];
+v193 -> v407 [label="ch_fasta"];
+
+v407 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_NORM"];
+v409 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v407 -> v409;
+
+v407 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_NORM"];
+v409 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v407 -> v409;
+
+v407 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_NORM"];
+v408 [shape=point];
+v407 -> v408;
+
+v407 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_NORM"];
+v446 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v407 -> v446;
+
+v409 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v413 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_VIEW"];
+v409 -> v413;
+
+v410 [shape=point,label="",fixedsize=true,width=0.1];
+v413 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_VIEW"];
+v410 -> v413 [label="regions"];
+
+v411 [shape=point,label="",fixedsize=true,width=0.1];
+v413 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_VIEW"];
+v411 -> v413 [label="targets"];
+
+v412 [shape=point,label="",fixedsize=true,width=0.1];
+v413 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_VIEW"];
+v412 -> v413 [label="samples"];
+
+v413 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_VIEW"];
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v413 -> v415;
+
+v413 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_VIEW"];
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v413 -> v415;
+
+v413 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_VIEW"];
+v414 [shape=point];
+v413 -> v414;
+
+v413 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_VIEW"];
+v448 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v413 -> v448;
+
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v415 -> v416 [label="ch_vcf_tbi_sample"];
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v248 -> v416 [label="ch_bam_bai"];
+
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v418 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:GATK4_ASEREADCOUNTER"];
+v416 -> v418 [label="ch_bam_bai_vcf_tbi"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v418 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:GATK4_ASEREADCOUNTER"];
+v193 -> v418 [label="ch_fasta"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v418 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:GATK4_ASEREADCOUNTER"];
+v101 -> v418 [label="ch_fai"];
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v418 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:GATK4_ASEREADCOUNTER"];
+v104 -> v418 [label="ch_dict"];
+
+v417 [shape=point,label="",fixedsize=true,width=0.1];
+v418 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:GATK4_ASEREADCOUNTER"];
+v417 -> v418 [label="intervals"];
+
+v418 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:GATK4_ASEREADCOUNTER"];
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v418 -> v419;
+
+v418 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:GATK4_ASEREADCOUNTER"];
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v418 -> v450;
+
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v398 -> v419 [label="ch_ind_vcf_tbi"];
+
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v420 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BOOTSTRAPANN"];
+v419 -> v420;
+
+v420 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BOOTSTRAPANN"];
+v421 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:TABIX_BGZIPTABIX"];
+v420 -> v421;
+
+v420 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BOOTSTRAPANN"];
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v420 -> v452;
+
+v421 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:TABIX_BGZIPTABIX"];
+v423 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v421 -> v423;
+
+v421 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:TABIX_BGZIPTABIX"];
+v422 [shape=point];
+v421 -> v422;
+
+v421 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:TABIX_BGZIPTABIX"];
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v421 -> v454;
+
+v423 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v423 -> v424;
+
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v424 -> v425;
+
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v425 -> v429 [label="file_list_vcf"];
+
+v421 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:TABIX_BGZIPTABIX"];
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v421 -> v426;
+
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v426 -> v427;
+
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v427 -> v428;
+
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v428 -> v430 [label="file_list_tbi"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v22 -> v429 [label="ch_case_info"];
+
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v429 -> v430;
+
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v431 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v430 -> v431 [label="ch_vcf_tbi"];
+
+v431 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v435 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:RENAME_FILES"];
+v431 -> v435;
+
+v431 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v433 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_MERGE"];
+v431 -> v433;
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v433 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_MERGE"];
+v193 -> v433 [label="ch_fasta"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v433 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_MERGE"];
+v101 -> v433 [label="ch_fai"];
+
+v432 [shape=point,label="",fixedsize=true,width=0.1];
+v433 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_MERGE"];
+v432 -> v433;
+
+v433 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_MERGE"];
+v436 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v433 -> v436;
+
+v433 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_MERGE"];
+v434 [shape=point];
+v433 -> v434;
+
+v433 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:BCFTOOLS_MERGE"];
+v456 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v433 -> v456;
+
+v435 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:RENAME_FILES"];
+v436 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v435 -> v436;
+
+v435 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:RENAME_FILES"];
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v435 -> v458;
+
+v436 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v437 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:TABIX_TABIX"];
+v436 -> v437 [label="ch_vcf_merged"];
+
+v437 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:TABIX_TABIX"];
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v437 -> v439;
+
+v437 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:TABIX_TABIX"];
+v438 [shape=point];
+v437 -> v438;
+
+v437 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:TABIX_TABIX"];
+v460 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v437 -> v460;
+
+v436 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v436 -> v439 [label="ch_vcf_merged"];
+
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v440 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:SPLIT_MULTIALLELICS"];
+v439 -> v440 [label="ch_in_split_multi"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v440 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:SPLIT_MULTIALLELICS"];
+v193 -> v440 [label="ch_fasta"];
+
+v440 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:SPLIT_MULTIALLELICS"];
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v440 -> v442;
+
+v440 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:SPLIT_MULTIALLELICS"];
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v440 -> v442;
+
+v440 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:SPLIT_MULTIALLELICS"];
+v441 [shape=point];
+v440 -> v441;
+
+v440 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:SPLIT_MULTIALLELICS"];
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v440 -> v462;
+
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v443 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:REMOVE_DUPLICATES"];
+v442 -> v443 [label="ch_remove_dup_in"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v443 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:REMOVE_DUPLICATES"];
+v193 -> v443 [label="ch_fasta"];
+
+v443 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:REMOVE_DUPLICATES"];
+v468 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v443 -> v468 [label="vcf"];
+
+v443 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:REMOVE_DUPLICATES"];
+v445 [shape=point];
+v443 -> v445 [label="tbi"];
+
+v443 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:REMOVE_DUPLICATES"];
+v444 [shape=point];
+v443 -> v444;
+
+v443 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALLELE_SPECIFIC_CALLING:REMOVE_DUPLICATES"];
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v443 -> v464;
+
+v446 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v446 -> v447;
+
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v447 -> v449 [label="ch_versions"];
+
+v448 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v448 -> v449;
+
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v449 -> v451 [label="ch_versions"];
+
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v450 -> v451;
+
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v453 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v451 -> v453 [label="ch_versions"];
+
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v453 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v452 -> v453;
+
+v453 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v453 -> v455 [label="ch_versions"];
+
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v454 -> v455;
+
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v455 -> v457 [label="ch_versions"];
+
+v456 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v456 -> v457;
+
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v457 -> v459 [label="ch_versions"];
+
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v458 -> v459;
+
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v459 -> v461 [label="ch_versions"];
+
+v460 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v460 -> v461;
+
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v463 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v461 -> v463 [label="ch_versions"];
+
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v463 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v462 -> v463;
+
+v463 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v463 -> v465 [label="ch_versions"];
+
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v464 -> v465;
+
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v465 -> v466 [label="versions"];
+
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v497 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v466 -> v497 [label="ch_versions"];
+
+v467 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v491 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v467 -> v491 [label="ch_versions"];
+
+v468 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v472 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_VEP"];
+v468 -> v472;
+
+v469 [shape=point,label="",fixedsize=true,width=0.1];
+v472 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_VEP"];
+v469 -> v472 [label="genome"];
+
+v470 [shape=point,label="",fixedsize=true,width=0.1];
+v472 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_VEP"];
+v470 -> v472 [label="species"];
+
+v471 [shape=point,label="",fixedsize=true,width=0.1];
+v472 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_VEP"];
+v471 -> v472 [label="cache_version"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v472 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_VEP"];
+v193 -> v472 [label="ch_fasta"];
+
+v472 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_VEP"];
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v472 -> v475;
+
+v472 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_VEP"];
+v474 [shape=point];
+v472 -> v474 [label="tab_gz"];
+
+v472 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_VEP"];
+v473 [shape=point];
+v472 -> v473 [label="json_gz"];
+
+v472 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_VEP"];
+v568 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v472 -> v568 [label="report"];
+
+v472 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_VEP"];
+v490 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v472 -> v490;
+
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v486 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_FILTERVEP"];
+v475 -> v486;
+
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v476 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:RENAME_FILES"];
+v475 -> v476;
+
+v476 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:RENAME_FILES"];
+v477 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:TABIX_TABIX"];
+v476 -> v477;
+
+v476 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:RENAME_FILES"];
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v476 -> v492;
+
+v477 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:TABIX_TABIX"];
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v477 -> v479;
+
+v477 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:TABIX_TABIX"];
+v478 [shape=point];
+v477 -> v478;
+
+v477 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:TABIX_TABIX"];
+v496 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v477 -> v496;
+
+v476 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:RENAME_FILES"];
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v476 -> v479;
+
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v480 [shape=point];
+v479 -> v480 [label="ch_vcf_research"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 -> v481 [label="ch_gene_panel_clinical_filter"];
+
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v481 -> v482;
+
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v484 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:GAWK"];
+v482 -> v484;
+
+v483 [shape=point,label="",fixedsize=true,width=0.1];
+v484 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:GAWK"];
+v483 -> v484 [label="program_file"];
+
+v484 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:GAWK"];
+v485 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v484 -> v485;
+
+v484 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:GAWK"];
+v493 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v484 -> v493;
+
+v485 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v486 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_FILTERVEP"];
+v485 -> v486 [label="ch_hgnc_ids"];
+
+v486 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_FILTERVEP"];
+v487 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:TABIX_BGZIPTABIX"];
+v486 -> v487 [label="ch_filtervep_out"];
+
+v486 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:ENSEMBLVEP_FILTERVEP"];
+v494 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v486 -> v494;
+
+v487 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:TABIX_BGZIPTABIX"];
+v489 [shape=point];
+v487 -> v489 [label="ch_vcf_clin"];
+
+v487 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:TABIX_BGZIPTABIX"];
+v488 [shape=point];
+v487 -> v488;
+
+v487 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ANNOTATE_SNV:TABIX_BGZIPTABIX"];
+v495 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v487 -> v495;
+
+v490 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v491 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v490 -> v491;
+
+v491 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v491 -> v492 [label="ch_versions"];
+
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v493 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v492 -> v493 [label="ch_versions"];
+
+v493 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v494 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v493 -> v494 [label="ch_versions"];
+
+v494 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v495 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v494 -> v495 [label="ch_versions"];
+
+v495 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v496 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v495 -> v496 [label="ch_versions"];
+
+v496 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v497 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v496 -> v497 [label="versions"];
+
+v497 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v512 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v497 -> v512 [label="ch_versions"];
+
+v498 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v503 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v498 -> v503 [label="ch_versions"];
+
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v500 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:IGV_TRACKS:UCSC_WIGTOBIGWIG"];
+v499 -> v500 [label="ch_wig"];
+
+v500 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:IGV_TRACKS:UCSC_WIGTOBIGWIG"];
+v501 [shape=point];
+v500 -> v501 [label="bw"];
+
+v500 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:IGV_TRACKS:UCSC_WIGTOBIGWIG"];
+v502 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v500 -> v502;
+
+v502 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v503 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v502 -> v503;
+
+v503 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v503 -> v506 [label="ch_versions"];
+
+v504 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:IGV_TRACKS:JUNCTION_TRACK"];
+v507 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:IGV_TRACKS:TABIX_BGZIPTABIX"];
+v504 -> v507;
+
+v504 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:IGV_TRACKS:JUNCTION_TRACK"];
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v504 -> v505;
+
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v505 -> v506;
+
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v511 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v506 -> v511 [label="ch_versions"];
+
+v507 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:IGV_TRACKS:TABIX_BGZIPTABIX"];
+v509 [shape=point];
+v507 -> v509 [label="bed"];
+
+v507 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:IGV_TRACKS:TABIX_BGZIPTABIX"];
+v508 [shape=point];
+v507 -> v508;
+
+v507 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:IGV_TRACKS:TABIX_BGZIPTABIX"];
+v510 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v507 -> v510;
+
+v510 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v511 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v510 -> v511;
+
+v511 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v512 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v511 -> v512 [label="versions"];
+
+v512 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v515 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v512 -> v515 [label="ch_versions"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v513 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v20 -> v513 [label="ch_samples"];
+
+v513 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v514 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CREATE_PEDIGREE_FILE"];
+v513 -> v514;
+
+v514 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CREATE_PEDIGREE_FILE"];
+v516 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PEDDY"];
+v514 -> v516 [label="ch_pedfile"];
+
+v514 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:CREATE_PEDIGREE_FILE"];
+v515 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v514 -> v515;
+
+v515 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v521 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v515 -> v521 [label="ch_versions"];
+
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v516 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PEDDY"];
+v398 -> v516 [label="ch_ind_vcf_tbi"];
+
+v516 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PEDDY"];
+v520 [shape=point];
+v516 -> v520;
+
+v516 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PEDDY"];
+v519 [shape=point];
+v516 -> v519;
+
+v516 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PEDDY"];
+v518 [shape=point];
+v516 -> v518;
+
+v516 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PEDDY"];
+v517 [shape=point];
+v516 -> v517;
+
+v516 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:PEDDY"];
+v521 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v516 -> v521;
+
+v521 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v524 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v521 -> v524 [label="ch_versions"];
+
+v522 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ESTIMATE_HB_PERC"];
+v523 [shape=point];
+v522 -> v523;
+
+v522 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ESTIMATE_HB_PERC"];
+v524 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v522 -> v524;
+
+v524 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v525 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v524 -> v525 [label="versions"];
+
+v525 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v526 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v525 -> v526;
+
+v526 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v527 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v526 -> v527;
+
+v527 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v529 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v527 -> v529;
+
+v528 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v529 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v528 -> v529;
+
+v529 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v530 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v529 -> v530;
+
+v530 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v537 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v530 -> v537 [label="ch_collated_versions"];
+
+v531 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v572 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v531 -> v572 [label="ch_multiqc_config"];
+
+v532 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v573 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v532 -> v573 [label="ch_multiqc_custom_config"];
+
+v533 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v574 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v533 -> v574 [label="ch_multiqc_logo"];
+
+v534 [shape=point,label="",fixedsize=true,width=0.1];
+v535 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v534 -> v535 [label="ch_workflow_summary"];
+
+v535 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v536 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v535 -> v536;
+
+v536 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v537 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v536 -> v537 [label="ch_multiqc_files"];
+
+v537 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v540 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v537 -> v540 [label="ch_multiqc_files"];
+
+v538 [shape=point,label="",fixedsize=true,width=0.1];
+v539 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v538 -> v539 [label="ch_methods_description"];
+
+v539 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v540 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v539 -> v540;
+
+v540 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v543 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v540 -> v543 [label="ch_multiqc_files"];
+
+v203 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:FASTQC"];
+v541 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v203 -> v541;
+
+v541 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v542 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v541 -> v542;
+
+v542 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v543 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v542 -> v543;
+
+v543 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v546 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v543 -> v546 [label="ch_multiqc_files"];
+
+v544 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v545 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v544 -> v545;
+
+v545 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v546 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v545 -> v546;
+
+v546 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v549 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v546 -> v549 [label="ch_multiqc_files"];
+
+v547 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v548 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v547 -> v548;
+
+v548 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v549 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v548 -> v549;
+
+v549 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v552 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v549 -> v552 [label="ch_multiqc_files"];
+
+v226 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:ALIGNMENT:STAR_ALIGN"];
+v550 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v226 -> v550 [label="gene_counts"];
+
+v550 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v551 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v550 -> v551;
+
+v551 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v552 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v551 -> v552;
+
+v552 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v555 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v552 -> v555 [label="ch_multiqc_files"];
+
+v553 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v554 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v553 -> v554;
+
+v554 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v555 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v554 -> v555;
+
+v555 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v558 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v555 -> v558 [label="ch_multiqc_files"];
+
+v556 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v557 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v556 -> v557;
+
+v557 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v558 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v557 -> v558;
+
+v558 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v561 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v558 -> v561 [label="ch_multiqc_files"];
+
+v559 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v560 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v559 -> v560;
+
+v560 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v561 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v560 -> v561;
+
+v561 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v564 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v561 -> v564 [label="ch_multiqc_files"];
+
+v562 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v563 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v562 -> v563;
+
+v563 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v564 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v563 -> v564;
+
+v564 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v567 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v564 -> v567 [label="ch_multiqc_files"];
+
+v565 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v566 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v565 -> v566;
+
+v566 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v567 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v566 -> v567;
+
+v567 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v570 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v567 -> v570 [label="ch_multiqc_files"];
+
+v568 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v569 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v568 -> v569;
+
+v569 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v570 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v569 -> v570;
+
+v570 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v571 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v570 -> v571 [label="ch_multiqc_files"];
+
+v571 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v577 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:MULTIQC"];
+v571 -> v577;
+
+v572 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v577 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:MULTIQC"];
+v572 -> v577;
+
+v573 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v577 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:MULTIQC"];
+v573 -> v577;
+
+v574 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v577 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:MULTIQC"];
+v574 -> v577;
+
+v575 [shape=point,label="",fixedsize=true,width=0.1];
+v577 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:MULTIQC"];
+v575 -> v577 [label="replace_names"];
+
+v576 [shape=point,label="",fixedsize=true,width=0.1];
+v577 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:MULTIQC"];
+v576 -> v577 [label="sample_names"];
+
+v577 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:MULTIQC"];
+v581 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v577 -> v581;
+
+v577 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:MULTIQC"];
+v580 [shape=point];
+v577 -> v580;
+
+v577 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:MULTIQC"];
+v579 [shape=point];
+v577 -> v579;
+
+v577 [label="GENOMICMEDICINESWEDEN_TOMTE:TOMTE:MULTIQC"];
+v578 [shape=point];
+v577 -> v578;
+
+v581 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v582 [shape=point];
+v581 -> v582 [label="multiqc_report"];
+
+}

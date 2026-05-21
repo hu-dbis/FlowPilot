@@ -1,0 +1,270 @@
+digraph "jaumereig_____geneidBLASTxnf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="UncompressFASTA"];
+v0 -> v1 [label="ref_to_index"];
+
+v1 [label="UncompressFASTA"];
+v2 [label="compress_n_indexFASTA"];
+v1 -> v2 [label="ref_file"];
+
+v2 [label="compress_n_indexFASTA"];
+v5 [shape=point];
+v2 -> v5;
+
+v2 [label="compress_n_indexFASTA"];
+v4 [shape=point];
+v2 -> v4;
+
+v2 [label="compress_n_indexFASTA"];
+v3 [shape=point];
+v2 -> v3;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="build_protein_DB:UncompressFASTA"];
+v6 -> v7 [label="ref_to_index"];
+
+v7 [label="build_protein_DB:UncompressFASTA"];
+v8 [label="build_protein_DB:runDIAMOND_makedb"];
+v7 -> v8;
+
+v8 [label="build_protein_DB:runDIAMOND_makedb"];
+v9 [label="alignGenome_Proteins:runDIAMOND_getHSPs_GFF"];
+v8 -> v9 [label="prot_DB_file"];
+
+v1 [label="UncompressFASTA"];
+v9 [label="alignGenome_Proteins:runDIAMOND_getHSPs_GFF"];
+v1 -> v9 [label="ref_file"];
+
+v9 [label="alignGenome_Proteins:runDIAMOND_getHSPs_GFF"];
+v11 [label="matchAssessment:cds_workflow:mergeMatches"];
+v9 -> v11 [label="hsp_file"];
+
+v1 [label="UncompressFASTA"];
+v10 [label="matchAssessment:Index_fai"];
+v1 -> v10 [label="ref_file"];
+
+v10 [label="matchAssessment:Index_fai"];
+v14 [label="matchAssessment:cds_workflow:getFASTA"];
+v10 -> v14 [label="ref_file_ind"];
+
+v11 [label="matchAssessment:cds_workflow:mergeMatches"];
+v13 [label="matchAssessment:cds_workflow:filter_by_score"];
+v11 -> v13;
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="matchAssessment:cds_workflow:filter_by_score"];
+v12 -> v13 [label="score"];
+
+v13 [label="matchAssessment:cds_workflow:filter_by_score"];
+v14 [label="matchAssessment:cds_workflow:getFASTA"];
+v13 -> v14;
+
+v1 [label="UncompressFASTA"];
+v14 [label="matchAssessment:cds_workflow:getFASTA"];
+v1 -> v14 [label="ref_file"];
+
+v14 [label="matchAssessment:cds_workflow:getFASTA"];
+v16 [label="matchAssessment:cds_workflow:ORF_finder"];
+v14 -> v16;
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="matchAssessment:cds_workflow:ORF_finder"];
+v15 -> v16 [label="min_orf_len"];
+
+v16 [label="matchAssessment:cds_workflow:ORF_finder"];
+v17 [label="matchAssessment:cds_workflow:updateGFFcoords"];
+v16 -> v17;
+
+v11 [label="matchAssessment:cds_workflow:mergeMatches"];
+v17 [label="matchAssessment:cds_workflow:updateGFFcoords"];
+v11 -> v17 [label="original_gff3"];
+
+v17 [label="matchAssessment:cds_workflow:updateGFFcoords"];
+v18 [label="matchAssessment:cds_workflow:getFASTA2"];
+v17 -> v18;
+
+v1 [label="UncompressFASTA"];
+v18 [label="matchAssessment:cds_workflow:getFASTA2"];
+v1 -> v18 [label="ref_file"];
+
+v10 [label="matchAssessment:Index_fai"];
+v18 [label="matchAssessment:cds_workflow:getFASTA2"];
+v10 -> v18 [label="ref_file_ind"];
+
+v18 [label="matchAssessment:cds_workflow:getFASTA2"];
+v19 [label="matchAssessment:getCDS_matrices"];
+v18 -> v19;
+
+v19 [label="matchAssessment:getCDS_matrices"];
+v28 [label="matchAssessment:CombineIni"];
+v19 -> v28 [label="cds_mats_ini"];
+
+v19 [label="matchAssessment:getCDS_matrices"];
+v29 [label="matchAssessment:CombineTrans"];
+v19 -> v29 [label="cds_mats_trans"];
+
+v9 [label="alignGenome_Proteins:runDIAMOND_getHSPs_GFF"];
+v21 [label="matchAssessment:intron_workflow:summarizeMatches"];
+v9 -> v21 [label="hsp_file"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="matchAssessment:intron_workflow:summarizeMatches"];
+v20 -> v21 [label="exon_margin"];
+
+v21 [label="matchAssessment:intron_workflow:summarizeMatches"];
+v24 [label="matchAssessment:intron_workflow:pyComputeIntrons"];
+v21 -> v24;
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="matchAssessment:intron_workflow:pyComputeIntrons"];
+v22 -> v24 [label="min_intron_size"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="matchAssessment:intron_workflow:pyComputeIntrons"];
+v23 -> v24 [label="max_intron_size"];
+
+v24 [label="matchAssessment:intron_workflow:pyComputeIntrons"];
+v25 [label="matchAssessment:intron_workflow:removeProtOverlappingIntrons"];
+v24 -> v25;
+
+v9 [label="alignGenome_Proteins:runDIAMOND_getHSPs_GFF"];
+v25 [label="matchAssessment:intron_workflow:removeProtOverlappingIntrons"];
+v9 -> v25 [label="hsp_file"];
+
+v25 [label="matchAssessment:intron_workflow:removeProtOverlappingIntrons"];
+v26 [label="matchAssessment:intron_workflow:getFASTA"];
+v25 -> v26;
+
+v1 [label="UncompressFASTA"];
+v26 [label="matchAssessment:intron_workflow:getFASTA"];
+v1 -> v26 [label="ref_file"];
+
+v10 [label="matchAssessment:Index_fai"];
+v26 [label="matchAssessment:intron_workflow:getFASTA"];
+v10 -> v26 [label="ref_file_ind"];
+
+v26 [label="matchAssessment:intron_workflow:getFASTA"];
+v27 [label="matchAssessment:getIntron_matrices"];
+v26 -> v27;
+
+v27 [label="matchAssessment:getIntron_matrices"];
+v28 [label="matchAssessment:CombineIni"];
+v27 -> v28 [label="intron_mats_ini"];
+
+v27 [label="matchAssessment:getIntron_matrices"];
+v29 [label="matchAssessment:CombineTrans"];
+v27 -> v29 [label="intron_mats_trans"];
+
+v28 [label="matchAssessment:CombineIni"];
+v41 [label="creatingParamFile"];
+v28 -> v41;
+
+v29 [label="matchAssessment:CombineTrans"];
+v41 [label="creatingParamFile"];
+v29 -> v41;
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="creatingParamFile"];
+v30 -> v41 [label="no_score"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="creatingParamFile"];
+v31 -> v41 [label="site_factor"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="creatingParamFile"];
+v32 -> v41 [label="exon_factor"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="creatingParamFile"];
+v33 -> v41 [label="hsp_factor"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="creatingParamFile"];
+v34 -> v41 [label="exon_weight"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="creatingParamFile"];
+v35 -> v41 [label="min_intron_size"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="creatingParamFile"];
+v36 -> v41 [label="max_intron_size"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="creatingParamFile"];
+v37 -> v41 [label="start_pwm"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="creatingParamFile"];
+v38 -> v41 [label="acceptor_pwm"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="creatingParamFile"];
+v39 -> v41 [label="donor_pwm"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="creatingParamFile"];
+v40 -> v41 [label="stop_pwm"];
+
+v41 [label="creatingParamFile"];
+v45 [label="geneid_WORKFLOW:runGeneid_fetching"];
+v41 -> v45 [label="geneid_param"];
+
+v1 [label="UncompressFASTA"];
+v42 [label="geneid_WORKFLOW:Index_i"];
+v1 -> v42 [label="ref_file"];
+
+v42 [label="geneid_WORKFLOW:Index_i"];
+v45 [label="geneid_WORKFLOW:runGeneid_fetching"];
+v42 -> v45;
+
+v1 [label="UncompressFASTA"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v1 -> v43 [label="ref_file"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [label="geneid_WORKFLOW:runGeneid_fetching"];
+v44 -> v45 [label="ch"];
+
+v1 [label="UncompressFASTA"];
+v45 [label="geneid_WORKFLOW:runGeneid_fetching"];
+v1 -> v45 [label="ref_file"];
+
+v9 [label="alignGenome_Proteins:runDIAMOND_getHSPs_GFF"];
+v45 [label="geneid_WORKFLOW:runGeneid_fetching"];
+v9 -> v45 [label="hsp_file"];
+
+v45 [label="geneid_WORKFLOW:runGeneid_fetching"];
+v47 [label="concatenate_Outputs"];
+v45 -> v47;
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="concatenate_Outputs"];
+v46 -> v47 [label="output_file"];
+
+v47 [label="concatenate_Outputs"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="last"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="last"];
+v49 [label="gff34portal"];
+v48 -> v49;
+
+v49 [label="gff34portal"];
+v52 [shape=point];
+v49 -> v52;
+
+v49 [label="gff34portal"];
+v51 [shape=point];
+v49 -> v51;
+
+v49 [label="gff34portal"];
+v50 [shape=point];
+v49 -> v50;
+
+}

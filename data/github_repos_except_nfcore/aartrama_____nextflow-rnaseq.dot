@@ -1,0 +1,22 @@
+digraph "aartrama_____nextflowrnaseq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [label="ALIGNMENT_STEP"];
+v0 -> v1 [label="read_pairs_ch"];
+
+v1 [label="ALIGNMENT_STEP"];
+v3 [label="SORTED_BAM_STEP"];
+v1 -> v3;
+
+v1 [label="ALIGNMENT_STEP"];
+v2 [shape=point];
+v1 -> v2;
+
+v3 [label="SORTED_BAM_STEP"];
+v4 [label="COUNTS_STEP"];
+v3 -> v4;
+
+v4 [label="COUNTS_STEP"];
+v5 [shape=point];
+v4 -> v5;
+
+}

@@ -1,0 +1,322 @@
+digraph "seqeralabs_____nfdragen" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v54 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v6 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="NFCORE_DRAGEN:DRAGEN:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v2 -> v3 [label="samplesheet"];
+
+v3 [label="NFCORE_DRAGEN:DRAGEN:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 -> v4;
+
+v3 [label="NFCORE_DRAGEN:DRAGEN:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v6 [label="versions"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [label="NFCORE_DRAGEN:DRAGEN:FASTQC"];
+v5 -> v9 [label="reads"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v12 [label="ch_versions"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=point];
+v7 -> v8 [label="ch_multiqc_fastqc"];
+
+v9 [label="NFCORE_DRAGEN:DRAGEN:FASTQC"];
+v10 [shape=point];
+v9 -> v10;
+
+v9 [label="NFCORE_DRAGEN:DRAGEN:FASTQC"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v62 [label="ch_multiqc_fastqc"];
+
+v9 [label="NFCORE_DRAGEN:DRAGEN:FASTQC"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v9 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v15 [label="ch_versions"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_BUILDHASHTABLE_DNA"];
+v13 -> v14 [label="fasta"];
+
+v14 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_BUILDHASHTABLE_DNA"];
+v19 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_DNA"];
+v14 -> v19;
+
+v14 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_BUILDHASHTABLE_DNA"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v18 [label="ch_versions"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_BUILDHASHTABLE_RNA"];
+v16 -> v17 [label="fasta"];
+
+v17 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_BUILDHASHTABLE_RNA"];
+v37 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_RNA"];
+v17 -> v37;
+
+v17 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_BUILDHASHTABLE_RNA"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v27 [label="ch_versions"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_DNA"];
+v5 -> v19 [label="reads"];
+
+v19 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_DNA"];
+v25 [shape=point];
+v19 -> v25;
+
+v19 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_DNA"];
+v24 [shape=point];
+v19 -> v24;
+
+v19 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_DNA"];
+v23 [shape=point];
+v19 -> v23;
+
+v19 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_DNA"];
+v22 [shape=point];
+v19 -> v22;
+
+v19 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_DNA"];
+v21 [shape=point];
+v19 -> v21;
+
+v19 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_DNA"];
+v20 [shape=point];
+v19 -> v20;
+
+v19 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_DNA"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v19 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v36 [label="ch_versions"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_VCF_DNA"];
+v5 -> v28 [label="reads"];
+
+v14 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_BUILDHASHTABLE_DNA"];
+v28 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_VCF_DNA"];
+v14 -> v28 [label="index"];
+
+v28 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_VCF_DNA"];
+v34 [shape=point];
+v28 -> v34;
+
+v28 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_VCF_DNA"];
+v33 [shape=point];
+v28 -> v33;
+
+v28 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_VCF_DNA"];
+v32 [shape=point];
+v28 -> v32;
+
+v28 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_VCF_DNA"];
+v31 [shape=point];
+v28 -> v31;
+
+v28 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_VCF_DNA"];
+v30 [shape=point];
+v28 -> v30;
+
+v28 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_VCF_DNA"];
+v29 [shape=point];
+v28 -> v29;
+
+v28 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_VCF_DNA"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v28 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v45 [label="ch_versions"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_RNA"];
+v5 -> v37 [label="reads"];
+
+v37 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_RNA"];
+v43 [shape=point];
+v37 -> v43;
+
+v37 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_RNA"];
+v42 [shape=point];
+v37 -> v42;
+
+v37 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_RNA"];
+v41 [shape=point];
+v37 -> v41;
+
+v37 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_RNA"];
+v40 [shape=point];
+v37 -> v40;
+
+v37 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_RNA"];
+v39 [shape=point];
+v37 -> v39;
+
+v37 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_RNA"];
+v38 [shape=point];
+v37 -> v38;
+
+v37 [label="NFCORE_DRAGEN:DRAGEN:DRAGEN_FASTQ_TO_BAM_RNA"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v37 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v45 -> v46 [label="ch_versions"];
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v48 [label="NFCORE_DRAGEN:DRAGEN:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v47 -> v48;
+
+v48 [label="NFCORE_DRAGEN:DRAGEN:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v50 [shape=point];
+v48 -> v50;
+
+v48 [label="NFCORE_DRAGEN:DRAGEN:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v48 -> v60;
+
+v48 [label="NFCORE_DRAGEN:DRAGEN:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v49 [shape=point];
+v48 -> v49;
+
+v51 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v53 [label="ch_multiqc_files"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v56 [label="ch_multiqc_files"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v59 [label="ch_multiqc_files"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v57 -> v58 [label="ch_workflow_summary"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v61 [label="ch_multiqc_files"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v64 [label="ch_multiqc_files"];
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 -> v65 [label="ch_multiqc_files"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 [label="NFCORE_DRAGEN:DRAGEN:MULTIQC"];
+v65 -> v66;
+
+v66 [label="NFCORE_DRAGEN:DRAGEN:MULTIQC"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v66 -> v69;
+
+v66 [label="NFCORE_DRAGEN:DRAGEN:MULTIQC"];
+v68 [shape=point];
+v66 -> v68;
+
+v66 [label="NFCORE_DRAGEN:DRAGEN:MULTIQC"];
+v67 [shape=point];
+v66 -> v67;
+
+v66 [label="NFCORE_DRAGEN:DRAGEN:MULTIQC"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v71;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v70 [shape=point];
+v69 -> v70;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v71 [label="ch_versions"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [shape=point];
+v71 -> v72 [label="ch_versions"];
+
+}

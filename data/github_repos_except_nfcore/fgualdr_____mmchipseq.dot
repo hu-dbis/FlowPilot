@@ -1,0 +1,1726 @@
+digraph "fgualdr_____mmchipseq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v323 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v27 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v9 [label="ch_versions"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v4 [shape=point];
+v3 -> v4 [label="ch_fasta"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v5 -> v16 [label="ch_blacklist"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:GTF2BED"];
+v6 -> v7 [label="gtf"];
+
+v7 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:GTF2BED"];
+v8 [shape=point];
+v7 -> v8 [label="gene_bed"];
+
+v7 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:GTF2BED"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v13 [label="ch_versions"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v10 -> v11 [label="fasta"];
+
+v11 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v18 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v11 -> v18 [label="ch_chrom_sizes"];
+
+v11 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v12 [shape=point];
+v11 -> v12;
+
+v11 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v19 [label="ch_versions"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=point];
+v14 -> v15 [label="ch_genome_filtered_bed"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v18 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v16 -> v18;
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v18 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v17 -> v18 [label="keep_blacklist"];
+
+v18 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v18 -> v151 [label="filtered_bed"];
+
+v18 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v25 [label="ch_versions"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=point];
+v20 -> v21 [label="ch_star_index"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v22 -> v24 [label="fasta"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v23 -> v24 [label="gtf"];
+
+v24 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v81 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:STAR_ALIGN"];
+v24 -> v81 [label="index"];
+
+v24 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v25 -> v26 [label="ch_versions"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v27 [label="versions"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v32 [label="ch_versions"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="MMCHIPSEQ:CHIPSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v28 -> v29 [label="samplesheet"];
+
+v29 [label="MMCHIPSEQ:CHIPSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v29 -> v30;
+
+v29 [label="MMCHIPSEQ:CHIPSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v32 [label="versions"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 [label="MMCHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v31 -> v65 [label="trim_reads"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v79 [label="ch_versions"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v34 [shape=point];
+v33 -> v34 [label="ch_filtered_reads"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v36 [shape=point];
+v35 -> v36 [label="ch_fastqc_raw_multiqc"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v38 [shape=point];
+v37 -> v38 [label="ch_fastqc_trim_multiqc"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v40 [shape=point];
+v39 -> v40 [label="ch_trim_log_multiqc"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v42 [shape=point];
+v41 -> v42 [label="ch_trim_read_count"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v71 [label="ch_versions"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v45 [shape=point];
+v44 -> v45 [label="fastqc_raw_html"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v328 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 -> v328 [label="ch_fastqc_raw_multiqc"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v48 [shape=point];
+v47 -> v48 [label="trim_json"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v50 [shape=point];
+v49 -> v50 [label="trim_html"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v52 [shape=point];
+v51 -> v52 [label="trim_log"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v54 [shape=point];
+v53 -> v54 [label="trim_reads_fail"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v56 [shape=point];
+v55 -> v56 [label="trim_reads_merged"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v58 [shape=point];
+v57 -> v58 [label="fastqc_trim_html"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 -> v330 [label="ch_fastqc_trim_multiqc"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v61 [shape=point];
+v60 -> v61 [label="trim_read_count"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1];
+v65 [label="MMCHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v62 -> v65 [label="adapter_fasta"];
+
+v63 [shape=point,label="",fixedsize=true,width=0.1];
+v65 [label="MMCHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v63 -> v65 [label="save_trimmed_fail"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1];
+v65 [label="MMCHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v64 -> v65 [label="save_merged"];
+
+v65 [label="MMCHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v65 -> v72;
+
+v65 [label="MMCHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v65 -> v72 [label="ch_trim_log_multiqc"];
+
+v65 [label="MMCHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v69 [shape=point];
+v65 -> v69 [label="trim_html"];
+
+v65 [label="MMCHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v68 [shape=point];
+v65 -> v68 [label="trim_log"];
+
+v65 [label="MMCHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v65 -> v70;
+
+v65 [label="MMCHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v67 [shape=point];
+v65 -> v67 [label="trim_reads_fail"];
+
+v65 [label="MMCHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v66 [shape=point];
+v65 -> v66 [label="trim_reads_merged"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v71 -> v78 [label="ch_versions"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v73 -> v74 [label="ch_num_trimmed_reads"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v74 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v81 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:STAR_ALIGN"];
+v75 -> v81 [label="reads"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 -> v76 [label="ch_num_trimmed_reads"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v77 [shape=point];
+v76 -> v77 [label="ch_trim_read_count"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v79 [label="versions"];
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v116 [label="ch_versions"];
+
+v80 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v91 [label="ch_versions"];
+
+v81 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:STAR_ALIGN"];
+v93 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v81 -> v93 [label="orig_bam"];
+
+v81 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:STAR_ALIGN"];
+v89 [shape=point];
+v81 -> v89 [label="ch_star_multiqc"];
+
+v81 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:STAR_ALIGN"];
+v88 [shape=point];
+v81 -> v88 [label="log_out"];
+
+v81 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:STAR_ALIGN"];
+v87 [shape=point];
+v81 -> v87 [label="log_progress"];
+
+v81 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:STAR_ALIGN"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v81 -> v90;
+
+v81 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:STAR_ALIGN"];
+v86 [shape=point];
+v81 -> v86 [label="bam_sorted"];
+
+v81 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:STAR_ALIGN"];
+v85 [shape=point];
+v81 -> v85;
+
+v81 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:STAR_ALIGN"];
+v84 [shape=point];
+v81 -> v84;
+
+v81 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:STAR_ALIGN"];
+v83 [shape=point];
+v81 -> v83 [label="fastq"];
+
+v81 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:STAR_ALIGN"];
+v82 [shape=point];
+v81 -> v82 [label="tab"];
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v115 [label="ch_versions"];
+
+v92 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v96 [label="ch_versions"];
+
+v93 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v97 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v93 -> v97 [label="ch_genome_bam"];
+
+v93 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v94 [shape=point];
+v93 -> v94;
+
+v93 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v93 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v101 [label="ch_versions"];
+
+v97 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v97 -> v102 [label="ch_genome_bam_index"];
+
+v97 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v99 [shape=point];
+v97 -> v99;
+
+v97 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v98 [shape=point];
+v97 -> v98;
+
+v97 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v97 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v114 [label="ch_versions"];
+
+v93 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v102 [label="ch_genome_bam"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v102 -> v105 [label="ch_bam_bai"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v107 [label="ch_versions"];
+
+v104 [shape=point,label="",fixedsize=true,width=0.1];
+v105 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v104 -> v105 [label="fasta"];
+
+v105 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v105 -> v334 [label="ch_samtools_stats"];
+
+v105 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v105 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v110 [label="ch_versions"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v108 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v102 -> v108 [label="ch_bam_bai"];
+
+v108 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v108 -> v336 [label="ch_samtools_flagstat"];
+
+v108 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v113 [label="ch_versions"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v111 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v102 -> v111 [label="ch_bam_bai"];
+
+v111 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v338 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v111 -> v338 [label="ch_samtools_idxstats"];
+
+v111 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v111 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v114 [label="versions"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v115 [label="versions"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v116 [label="versions"];
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v125 [label="ch_versions"];
+
+v93 [label="MMCHIPSEQ:CHIPSEQ:ALIGN_STAR:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 -> v117 [label="ch_genome_bam"];
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v117 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v119 -> v120 [label="ch_sort_bam"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v121 [shape=point];
+v120 -> v121;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v122 [label="MMCHIPSEQ:CHIPSEQ:PICARD_MERGESAMFILES"];
+v119 -> v122 [label="ch_sort_bam"];
+
+v122 [label="MMCHIPSEQ:CHIPSEQ:PICARD_MERGESAMFILES"];
+v127 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v122 -> v127 [label="bam"];
+
+v122 [label="MMCHIPSEQ:CHIPSEQ:PICARD_MERGESAMFILES"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v125;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v149 [label="ch_versions"];
+
+v126 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v130 [label="ch_versions"];
+
+v127 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v131 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v127 -> v131 [label="bam"];
+
+v127 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v128 [shape=point];
+v127 -> v128;
+
+v127 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v127 -> v346 [label="metrics"];
+
+v127 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v127 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v135 [label="ch_versions"];
+
+v131 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v131 -> v136 [label="bai"];
+
+v131 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v133 [shape=point];
+v131 -> v133;
+
+v131 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v132 [shape=point];
+v131 -> v132;
+
+v131 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v131 -> v134;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v148 [label="ch_versions"];
+
+v127 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v127 -> v136 [label="bam"];
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v139 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v136 -> v139 [label="ch_bam_bai"];
+
+v137 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v141 [label="ch_versions"];
+
+v138 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v138 -> v139 [label="fasta"];
+
+v139 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v139 -> v340 [label="stats"];
+
+v139 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v144 [label="ch_versions"];
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v142 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v136 -> v142 [label="ch_bam_bai"];
+
+v142 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v142 -> v342 [label="flagstat"];
+
+v142 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v142 -> v143;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v147 [label="ch_versions"];
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v145 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v136 -> v145 [label="ch_bam_bai"];
+
+v145 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v145 -> v344 [label="idxstats"];
+
+v145 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v145 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v148 [label="versions"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 -> v149 [label="versions"];
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v195 [label="ch_versions"];
+
+v131 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v131 -> v150 [label="bai"];
+
+v127 [label="MMCHIPSEQ:CHIPSEQ:MARK_DUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v127 -> v150 [label="bam"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v153 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_FILTER"];
+v150 -> v153 [label="ch_bam_bai"];
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v153 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_FILTER"];
+v151 -> v153 [label="ch_bed"];
+
+v152 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v155 [label="ch_versions"];
+
+v153 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_FILTER"];
+v156 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_EM_PREP"];
+v153 -> v156;
+
+v153 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_FILTER"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v153 -> v154;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v159 [label="ch_versions"];
+
+v11 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v156 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_EM_PREP"];
+v11 -> v156 [label="ch_chrom_sizes"];
+
+v156 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_EM_PREP"];
+v160 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_EM"];
+v156 -> v160;
+
+v156 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_EM_PREP"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v156 -> v164;
+
+v156 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_EM_PREP"];
+v157 [shape=point];
+v156 -> v157;
+
+v156 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_EM_PREP"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v156 -> v158;
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 -> v159;
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 -> v163 [label="ch_versions"];
+
+v160 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_EM"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v160 -> v164;
+
+v160 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_EM"];
+v161 [shape=point];
+v160 -> v161;
+
+v160 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_EM"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v160 -> v162;
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v163;
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v167 [label="ch_versions"];
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v165 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_EM_OUT"];
+v164 -> v165 [label="ch_em_bam"];
+
+v11 [label="MMCHIPSEQ:CHIPSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v165 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_EM_OUT"];
+v11 -> v165 [label="ch_chrom_sizes"];
+
+v165 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_EM_OUT"];
+v169 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v165 -> v169 [label="ch_bam"];
+
+v165 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_EM_OUT"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v165 -> v166;
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v192 [label="ch_versions"];
+
+v168 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v172 [label="ch_versions"];
+
+v169 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v173 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v169 -> v173 [label="bam"];
+
+v169 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v170 [shape=point];
+v169 -> v170;
+
+v169 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v169 -> v171;
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 -> v172;
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 -> v177 [label="ch_versions"];
+
+v173 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v173 -> v178 [label="bai"];
+
+v173 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v175 [shape=point];
+v173 -> v175;
+
+v173 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v174 [shape=point];
+v173 -> v174;
+
+v173 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v173 -> v176;
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 -> v177;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v190 [label="ch_versions"];
+
+v169 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v169 -> v178 [label="bam"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v181 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v178 -> v181 [label="ch_bam_bai"];
+
+v179 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v183 [label="ch_versions"];
+
+v180 [shape=point,label="",fixedsize=true,width=0.1];
+v181 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v180 -> v181 [label="fasta"];
+
+v181 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v181 -> v348 [label="stats"];
+
+v181 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v181 -> v182;
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v183;
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 -> v186 [label="ch_versions"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v184 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v178 -> v184 [label="ch_bam_bai"];
+
+v184 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v184 -> v350 [label="flagstat"];
+
+v184 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v184 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v186;
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 -> v189 [label="ch_versions"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v187 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v178 -> v187 [label="ch_bam_bai"];
+
+v187 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v187 -> v352 [label="idxstats"];
+
+v187 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v187 -> v188;
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 -> v189;
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 -> v190 [label="versions"];
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v190 -> v191 [label="versions"];
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 -> v192;
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v192 -> v193 [label="versions"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v193 -> v194;
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v195;
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 -> v203 [label="ch_versions"];
+
+v196 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v197 [shape=point];
+v196 -> v197 [label="ch_picardcollectmultiplemetrics_multiqc"];
+
+v169 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v200 [label="MMCHIPSEQ:CHIPSEQ:PICARD_COLLECTMULTIPLEMETRICS"];
+v169 -> v200 [label="bam"];
+
+v198 [shape=point,label="",fixedsize=true,width=0.1];
+v200 [label="MMCHIPSEQ:CHIPSEQ:PICARD_COLLECTMULTIPLEMETRICS"];
+v198 -> v200 [label="ch_fasta"];
+
+v199 [shape=point,label="",fixedsize=true,width=0.1];
+v200 [label="MMCHIPSEQ:CHIPSEQ:PICARD_COLLECTMULTIPLEMETRICS"];
+v199 -> v200 [label="fai"];
+
+v200 [label="MMCHIPSEQ:CHIPSEQ:PICARD_COLLECTMULTIPLEMETRICS"];
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v200 -> v354 [label="ch_picardcollectmultiplemetrics_multiqc"];
+
+v200 [label="MMCHIPSEQ:CHIPSEQ:PICARD_COLLECTMULTIPLEMETRICS"];
+v201 [shape=point];
+v200 -> v201;
+
+v200 [label="MMCHIPSEQ:CHIPSEQ:PICARD_COLLECTMULTIPLEMETRICS"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v200 -> v202;
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 -> v203;
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v203 -> v207 [label="ch_versions"];
+
+v169 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v204 [label="MMCHIPSEQ:CHIPSEQ:PHANTOMPEAKQUALTOOLS"];
+v169 -> v204 [label="bam"];
+
+v204 [label="MMCHIPSEQ:CHIPSEQ:PHANTOMPEAKQUALTOOLS"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v204 -> v208;
+
+v204 [label="MMCHIPSEQ:CHIPSEQ:PHANTOMPEAKQUALTOOLS"];
+v205 [shape=point];
+v204 -> v205;
+
+v204 [label="MMCHIPSEQ:CHIPSEQ:PHANTOMPEAKQUALTOOLS"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v204 -> v208;
+
+v204 [label="MMCHIPSEQ:CHIPSEQ:PHANTOMPEAKQUALTOOLS"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v204 -> v206;
+
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 -> v207;
+
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 -> v241 [label="ch_versions"];
+
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v212 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PHANTOMPEAKQUALTOOLS"];
+v208 -> v212;
+
+v209 [shape=point,label="",fixedsize=true,width=0.1];
+v212 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PHANTOMPEAKQUALTOOLS"];
+v209 -> v212 [label="nsc_header"];
+
+v210 [shape=point,label="",fixedsize=true,width=0.1];
+v212 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PHANTOMPEAKQUALTOOLS"];
+v210 -> v212 [label="rsc_header"];
+
+v211 [shape=point,label="",fixedsize=true,width=0.1];
+v212 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PHANTOMPEAKQUALTOOLS"];
+v211 -> v212 [label="correlation_header"];
+
+v212 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PHANTOMPEAKQUALTOOLS"];
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v212 -> v362;
+
+v212 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PHANTOMPEAKQUALTOOLS"];
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v212 -> v364;
+
+v212 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PHANTOMPEAKQUALTOOLS"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v212 -> v366;
+
+v169 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v169 -> v213 [label="bam"];
+
+v173 [label="MMCHIPSEQ:CHIPSEQ:BAM_FILTER_EM:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v173 -> v213 [label="bai"];
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v213 -> v215 [label="ch_genome_bam_bai"];
+
+v214 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v358 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v214 -> v358 [label="ch_deeptoolsplotfingerprint_multiqc"];
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v215 -> v216 [label="ch_ip_control_bam"];
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v216 -> v217;
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v217 -> v218;
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v218 -> v219 [label="ch_antibody_bam"];
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v220 [shape=point];
+v219 -> v220;
+
+v221 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v222 [shape=point];
+v221 -> v222 [label="ch_macs_gsize"];
+
+v223 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v224 [shape=point];
+v223 -> v224 [label="ch_custompeaks_frip_multiqc"];
+
+v225 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v226 [shape=point];
+v225 -> v226 [label="ch_custompeaks_count_multiqc"];
+
+v227 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v227 -> v372 [label="ch_plothomerannotatepeaks_multiqc"];
+
+v228 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v229 [shape=point];
+v228 -> v229 [label="ch_subreadfeaturecounts_multiqc"];
+
+v198 [shape=point,label="",fixedsize=true,width=0.1];
+v231 [label="MMCHIPSEQ:CHIPSEQ:KHMER_UNIQUEKMERS"];
+v198 -> v231 [label="ch_fasta"];
+
+v230 [shape=point,label="",fixedsize=true,width=0.1];
+v231 [label="MMCHIPSEQ:CHIPSEQ:KHMER_UNIQUEKMERS"];
+v230 -> v231 [label="kmer_size"];
+
+v231 [label="MMCHIPSEQ:CHIPSEQ:KHMER_UNIQUEKMERS"];
+v233 [shape=point];
+v231 -> v233;
+
+v231 [label="MMCHIPSEQ:CHIPSEQ:KHMER_UNIQUEKMERS"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v231 -> v234;
+
+v231 [label="MMCHIPSEQ:CHIPSEQ:KHMER_UNIQUEKMERS"];
+v232 [shape=point];
+v231 -> v232;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v235 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_SINGLE"];
+v234 -> v235 [label="ch_macs_gsize"];
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v235 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_SINGLE"];
+v215 -> v235 [label="ch_ip_control_bam"];
+
+v235 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_SINGLE"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v235 -> v242;
+
+v235 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_SINGLE"];
+v239 [shape=point];
+v235 -> v239;
+
+v235 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_SINGLE"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v235 -> v240;
+
+v235 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_SINGLE"];
+v238 [shape=point];
+v235 -> v238;
+
+v235 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_SINGLE"];
+v237 [shape=point];
+v235 -> v237;
+
+v235 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_SINGLE"];
+v236 [shape=point];
+v235 -> v236;
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v240 -> v241;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v241 -> v254 [label="ch_versions"];
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v242 -> v250 [label="ch_macs2_peaks"];
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v243 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_MERGED"];
+v218 -> v243 [label="ch_antibody_bam"];
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v243 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_MERGED"];
+v234 -> v243 [label="ch_macs_gsize"];
+
+v243 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_MERGED"];
+v249 [shape=point];
+v243 -> v249;
+
+v243 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_MERGED"];
+v248 [shape=point];
+v243 -> v248;
+
+v243 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_MERGED"];
+v247 [shape=point];
+v243 -> v247;
+
+v243 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_MERGED"];
+v246 [shape=point];
+v243 -> v246;
+
+v243 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_MERGED"];
+v245 [shape=point];
+v243 -> v245;
+
+v243 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CALLPEAK_MERGED"];
+v244 [shape=point];
+v243 -> v244;
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v215 -> v250 [label="ch_ip_control_bam"];
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v250 -> v251;
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v252 [label="MMCHIPSEQ:CHIPSEQ:FRIP_SCORE"];
+v251 -> v252 [label="ch_ip_bam_peaks"];
+
+v252 [label="MMCHIPSEQ:CHIPSEQ:FRIP_SCORE"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v252 -> v255;
+
+v252 [label="MMCHIPSEQ:CHIPSEQ:FRIP_SCORE"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v252 -> v253;
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v253 -> v254;
+
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v254 -> v280 [label="ch_versions"];
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v251 -> v255 [label="ch_ip_bam_peaks"];
+
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v255 -> v256;
+
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v259 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PEAKS"];
+v256 -> v259 [label="ch_ip_peaks_frip"];
+
+v257 [shape=point,label="",fixedsize=true,width=0.1];
+v259 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PEAKS"];
+v257 -> v259 [label="peak_count_header"];
+
+v258 [shape=point,label="",fixedsize=true,width=0.1];
+v259 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PEAKS"];
+v258 -> v259 [label="frip_score_header"];
+
+v259 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PEAKS"];
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v259 -> v370 [label="ch_custompeaks_count_multiqc"];
+
+v259 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PEAKS"];
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v259 -> v368 [label="ch_custompeaks_frip_multiqc"];
+
+v260 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v261 [shape=point];
+v260 -> v261 [label="ch_macs2_consensus_bed_lib"];
+
+v262 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v263 [shape=point];
+v262 -> v263 [label="ch_macs2_consensus_txt_lib"];
+
+v264 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v265 [shape=point];
+v264 -> v265 [label="ch_deseq2_pca_multiqc"];
+
+v266 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v267 [shape=point];
+v266 -> v267 [label="ch_deseq2_clustering_multiqc"];
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v242 -> v268 [label="ch_macs2_peaks"];
+
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v268 -> v269;
+
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v269 -> v270;
+
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v270 -> v271;
+
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v271 -> v272 [label="ch_antibody_peaks"];
+
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v273 [shape=point];
+v272 -> v273;
+
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v274 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CONSENSUS"];
+v271 -> v274 [label="ch_antibody_peaks"];
+
+v274 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CONSENSUS"];
+v279 [shape=point];
+v274 -> v279 [label="ch_macs2_consensus_bed_lib"];
+
+v274 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CONSENSUS"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v274 -> v283;
+
+v274 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CONSENSUS"];
+v278 [shape=point];
+v274 -> v278;
+
+v274 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CONSENSUS"];
+v277 [shape=point];
+v274 -> v277 [label="ch_macs2_consensus_txt_lib"];
+
+v274 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CONSENSUS"];
+v276 [shape=point];
+v274 -> v276;
+
+v274 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CONSENSUS"];
+v275 [shape=point];
+v274 -> v275;
+
+v274 [label="MMCHIPSEQ:CHIPSEQ:MACS2_CONSENSUS"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v274 -> v280;
+
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 -> v288 [label="ch_versions"];
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v215 -> v281 [label="ch_ip_control_bam"];
+
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v281 -> v282;
+
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v282 -> v284 [label="ch_antibody_bams"];
+
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v283 -> v284;
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v284 -> v285;
+
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v286 [label="MMCHIPSEQ:CHIPSEQ:SUBREAD_FEATURECOUNTS"];
+v285 -> v286 [label="ch_saf_bams"];
+
+v286 [label="MMCHIPSEQ:CHIPSEQ:SUBREAD_FEATURECOUNTS"];
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v286 -> v291;
+
+v286 [label="MMCHIPSEQ:CHIPSEQ:SUBREAD_FEATURECOUNTS"];
+v374 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v286 -> v374 [label="ch_subreadfeaturecounts_multiqc"];
+
+v286 [label="MMCHIPSEQ:CHIPSEQ:SUBREAD_FEATURECOUNTS"];
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v286 -> v287;
+
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v287 -> v288;
+
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v288 -> v312 [label="ch_versions"];
+
+v289 [shape=point,label="",fixedsize=true,width=0.1];
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v289 -> v291 [label="deseq2_pca_header"];
+
+v290 [shape=point,label="",fixedsize=true,width=0.1];
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v290 -> v291 [label="deseq2_clustering_header"];
+
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v300 [shape=point];
+v291 -> v300;
+
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v301 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v291 -> v301;
+
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v299 [shape=point];
+v291 -> v299;
+
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v298 [shape=point];
+v291 -> v298;
+
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v297 [shape=point];
+v291 -> v297;
+
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v296 [shape=point];
+v291 -> v296;
+
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v291 -> v376 [label="ch_deseq2_pca_multiqc"];
+
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v295 [shape=point];
+v291 -> v295;
+
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v291 -> v378 [label="ch_deseq2_clustering_multiqc"];
+
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v294 [shape=point];
+v291 -> v294;
+
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v293 [shape=point];
+v291 -> v293;
+
+v291 [label="MMCHIPSEQ:CHIPSEQ:COUNT_NORM"];
+v292 [shape=point];
+v291 -> v292;
+
+v301 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v301 -> v302;
+
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v302 -> v303 [label="ch_size_factors"];
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v213 -> v303 [label="ch_genome_bam_bai"];
+
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v303 -> v304;
+
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v304 -> v305 [label="ch_bam_bai_scale"];
+
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v306 [shape=point];
+v305 -> v306;
+
+v307 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v307 -> v356 [label="ch_deeptoolsplotprofile_multiqc"];
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v308 [label="MMCHIPSEQ:CHIPSEQ:DEEPTOOLS_BIGWIG"];
+v213 -> v308 [label="ch_genome_bam_bai"];
+
+v308 [label="MMCHIPSEQ:CHIPSEQ:DEEPTOOLS_BIGWIG"];
+v310 [shape=point];
+v308 -> v310 [label="ch_big_wig"];
+
+v308 [label="MMCHIPSEQ:CHIPSEQ:DEEPTOOLS_BIGWIG"];
+v309 [shape=point];
+v308 -> v309;
+
+v308 [label="MMCHIPSEQ:CHIPSEQ:DEEPTOOLS_BIGWIG"];
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v308 -> v311;
+
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v311 -> v312;
+
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v312 -> v317 [label="ch_versions"];
+
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v313 [label="MMCHIPSEQ:CHIPSEQ:DEEPTOOLS_BIGWIG_NORM"];
+v304 -> v313 [label="ch_bam_bai_scale"];
+
+v313 [label="MMCHIPSEQ:CHIPSEQ:DEEPTOOLS_BIGWIG_NORM"];
+v315 [shape=point];
+v313 -> v315 [label="ch_big_wig"];
+
+v313 [label="MMCHIPSEQ:CHIPSEQ:DEEPTOOLS_BIGWIG_NORM"];
+v314 [shape=point];
+v313 -> v314;
+
+v313 [label="MMCHIPSEQ:CHIPSEQ:DEEPTOOLS_BIGWIG_NORM"];
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v313 -> v316;
+
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v316 -> v317;
+
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v317 -> v318 [label="ch_versions"];
+
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v318 -> v319;
+
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v320 [label="MMCHIPSEQ:CHIPSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v319 -> v320;
+
+v320 [label="MMCHIPSEQ:CHIPSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v322 [shape=point];
+v320 -> v322;
+
+v320 [label="MMCHIPSEQ:CHIPSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v320 -> v325;
+
+v320 [label="MMCHIPSEQ:CHIPSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v321 [shape=point];
+v320 -> v321;
+
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v323 -> v324;
+
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v324 -> v381;
+
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v325 -> v381;
+
+v326 [shape=point,label="",fixedsize=true,width=0.1];
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v326 -> v327 [label="ch_workflow_summary"];
+
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v327 -> v381;
+
+v328 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v328 -> v329;
+
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v329 -> v381;
+
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v330 -> v331;
+
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v331 -> v381;
+
+v65 [label="MMCHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v65 -> v332 [label="ch_trim_log_multiqc"];
+
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v332 -> v333;
+
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v333 -> v381;
+
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v334 -> v335;
+
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v335 -> v381;
+
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v336 -> v337;
+
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v337 -> v381;
+
+v338 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v339 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v338 -> v339;
+
+v339 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v339 -> v381;
+
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v340 -> v341;
+
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v341 -> v381;
+
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v342 -> v343;
+
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v343 -> v381;
+
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v344 -> v345;
+
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v345 -> v381;
+
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v346 -> v347;
+
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v347 -> v381;
+
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v348 -> v349;
+
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v349 -> v381;
+
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v350 -> v351;
+
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v351 -> v381;
+
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v353 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v352 -> v353;
+
+v353 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v353 -> v381;
+
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v354 -> v355;
+
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v355 -> v381;
+
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v356 -> v357;
+
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v357 -> v381;
+
+v358 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v359 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v358 -> v359;
+
+v359 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v359 -> v381;
+
+v204 [label="MMCHIPSEQ:CHIPSEQ:PHANTOMPEAKQUALTOOLS"];
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v204 -> v360;
+
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v360 -> v361;
+
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v361 -> v381;
+
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v362 -> v363;
+
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v363 -> v381;
+
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v365 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v364 -> v365;
+
+v365 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v365 -> v381;
+
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v366 -> v367;
+
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v367 -> v381;
+
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v368 -> v369;
+
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v369 -> v381;
+
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v370 -> v371;
+
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v371 -> v381;
+
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v372 -> v373;
+
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v373 -> v381;
+
+v374 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v374 -> v375;
+
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v375 -> v381;
+
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v376 -> v377;
+
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v377 -> v381;
+
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v378 -> v379;
+
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v379 -> v381;
+
+v380 [shape=point,label="",fixedsize=true,width=0.1];
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v380 -> v381 [label="multiqc_config"];
+
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v381 -> v385;
+
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v384 [shape=point];
+v381 -> v384;
+
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v383 [shape=point];
+v381 -> v383;
+
+v381 [label="MMCHIPSEQ:CHIPSEQ:MULTIQC"];
+v382 [shape=point];
+v381 -> v382;
+
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v386 [shape=point];
+v385 -> v386;
+
+}

@@ -1,0 +1,726 @@
+digraph "hawaiidatascience_____metaflowmics" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="pipeline_16S:DADA2:DADA2_FILTERANDTRIM"];
+v1 -> v3 [label="reads"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v29 [label="tracked_reads"];
+
+v3 [label="pipeline_16S:DADA2:DADA2_FILTERANDTRIM"];
+v6 [label="pipeline_16S:DADA2:DADA2_DEREPFASTQ"];
+v3 -> v6;
+
+v3 [label="pipeline_16S:DADA2:DADA2_FILTERANDTRIM"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v29;
+
+v3 [label="pipeline_16S:DADA2:DADA2_FILTERANDTRIM"];
+v5 [shape=point];
+v3 -> v5;
+
+v3 [label="pipeline_16S:DADA2:DADA2_FILTERANDTRIM"];
+v4 [shape=point];
+v3 -> v4;
+
+v6 [label="pipeline_16S:DADA2:DADA2_DEREPFASTQ"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v6 -> v10 [label="derep"];
+
+v6 [label="pipeline_16S:DADA2:DADA2_DEREPFASTQ"];
+v9 [shape=point];
+v6 -> v9;
+
+v6 [label="pipeline_16S:DADA2:DADA2_DEREPFASTQ"];
+v8 [shape=point];
+v6 -> v8;
+
+v6 [label="pipeline_16S:DADA2:DADA2_DEREPFASTQ"];
+v7 [shape=point];
+v6 -> v7;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v11;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 [label="pipeline_16S:DADA2:DADA2_LEARNERRORS"];
+v11 -> v12 [label="derep"];
+
+v12 [label="pipeline_16S:DADA2:DADA2_LEARNERRORS"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v12 -> v15;
+
+v12 [label="pipeline_16S:DADA2:DADA2_LEARNERRORS"];
+v14 [shape=point];
+v12 -> v14;
+
+v12 [label="pipeline_16S:DADA2:DADA2_LEARNERRORS"];
+v13 [shape=point];
+v12 -> v13;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v11 -> v15 [label="derep"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v16 [label="pipeline_16S:DADA2:DADA2_DADA"];
+v15 -> v16;
+
+v16 [label="pipeline_16S:DADA2:DADA2_DADA"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v20;
+
+v16 [label="pipeline_16S:DADA2:DADA2_DADA"];
+v18 [shape=point];
+v16 -> v18;
+
+v16 [label="pipeline_16S:DADA2:DADA2_DADA"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v30;
+
+v16 [label="pipeline_16S:DADA2:DADA2_DADA"];
+v17 [shape=point];
+v16 -> v17;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v19 [label="derep"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 [label="pipeline_16S:DADA2:DADA2_MERGEPAIRS"];
+v19 -> v21;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 [label="pipeline_16S:DADA2:DADA2_MERGEPAIRS"];
+v20 -> v21;
+
+v21 [label="pipeline_16S:DADA2:DADA2_MERGEPAIRS"];
+v25 [shape=point];
+v21 -> v25;
+
+v21 [label="pipeline_16S:DADA2:DADA2_MERGEPAIRS"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v26 [label="count_table"];
+
+v21 [label="pipeline_16S:DADA2:DADA2_MERGEPAIRS"];
+v33 [label="pipeline_16S:MOTHUR:MOTHUR_ALIGN_SEQS"];
+v21 -> v33 [label="fasta"];
+
+v21 [label="pipeline_16S:DADA2:DADA2_MERGEPAIRS"];
+v24 [shape=point];
+v21 -> v24 [label="fasta_dup"];
+
+v21 [label="pipeline_16S:DADA2:DADA2_MERGEPAIRS"];
+v23 [shape=point];
+v21 -> v23;
+
+v21 [label="pipeline_16S:DADA2:DADA2_MERGEPAIRS"];
+v22 [shape=point];
+v21 -> v22;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [label="pipeline_16S:DADA2:SUMMARIZE_TABLE"];
+v26 -> v27;
+
+v27 [label="pipeline_16S:DADA2:SUMMARIZE_TABLE"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v31 [label="merge_summary"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v112 [label="tracking"];
+
+v32 [label="pipeline_16S:MOTHUR:DOWNLOAD_SILVA_FOR_MOTHUR"];
+v42 [label="pipeline_16S:MOTHUR:MOTHUR_CLASSIFY_SEQS"];
+v32 -> v42;
+
+v32 [label="pipeline_16S:MOTHUR:DOWNLOAD_SILVA_FOR_MOTHUR"];
+v33 [label="pipeline_16S:MOTHUR:MOTHUR_ALIGN_SEQS"];
+v32 -> v33;
+
+v33 [label="pipeline_16S:MOTHUR:MOTHUR_ALIGN_SEQS"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v33 -> v35;
+
+v33 [label="pipeline_16S:MOTHUR:MOTHUR_ALIGN_SEQS"];
+v34 [shape=point];
+v33 -> v34;
+
+v21 [label="pipeline_16S:DADA2:DADA2_MERGEPAIRS"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 -> v35 [label="count_table"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 [label="pipeline_16S:MOTHUR:MOTHUR_SCREEN_SEQS"];
+v35 -> v36;
+
+v36 [label="pipeline_16S:MOTHUR:MOTHUR_SCREEN_SEQS"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 -> v38;
+
+v36 [label="pipeline_16S:MOTHUR:MOTHUR_SCREEN_SEQS"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 -> v38;
+
+v36 [label="pipeline_16S:MOTHUR:MOTHUR_SCREEN_SEQS"];
+v37 [shape=point];
+v36 -> v37;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 [label="pipeline_16S:MOTHUR:MOTHUR_CHIMERA"];
+v38 -> v39;
+
+v39 [label="pipeline_16S:MOTHUR:MOTHUR_CHIMERA"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 -> v41;
+
+v39 [label="pipeline_16S:MOTHUR:MOTHUR_CHIMERA"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 -> v41;
+
+v39 [label="pipeline_16S:MOTHUR:MOTHUR_CHIMERA"];
+v40 [shape=point];
+v39 -> v40;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 [label="pipeline_16S:MOTHUR:MOTHUR_CLASSIFY_SEQS"];
+v41 -> v42;
+
+v32 [label="pipeline_16S:MOTHUR:DOWNLOAD_SILVA_FOR_MOTHUR"];
+v42 [label="pipeline_16S:MOTHUR:MOTHUR_CLASSIFY_SEQS"];
+v32 -> v42 [label="db_aln"];
+
+v42 [label="pipeline_16S:MOTHUR:MOTHUR_CLASSIFY_SEQS"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 -> v45 [label="tax"];
+
+v42 [label="pipeline_16S:MOTHUR:MOTHUR_CLASSIFY_SEQS"];
+v43 [shape=point];
+v42 -> v43;
+
+v39 [label="pipeline_16S:MOTHUR:MOTHUR_CHIMERA"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 -> v44;
+
+v39 [label="pipeline_16S:MOTHUR:MOTHUR_CHIMERA"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 [label="pipeline_16S:MOTHUR:MOTHUR_CLUSTER"];
+v45 -> v47;
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="pipeline_16S:MOTHUR:MOTHUR_CLUSTER"];
+v46 -> v47;
+
+v47 [label="pipeline_16S:MOTHUR:MOTHUR_CLUSTER"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 -> v49 [label="list"];
+
+v47 [label="pipeline_16S:MOTHUR:MOTHUR_CLUSTER"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 -> v49 [label="shared"];
+
+v47 [label="pipeline_16S:MOTHUR:MOTHUR_CLUSTER"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 -> v50 [label="fasta"];
+
+v47 [label="pipeline_16S:MOTHUR:MOTHUR_CLUSTER"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 -> v51 [label="count_table"];
+
+v47 [label="pipeline_16S:MOTHUR:MOTHUR_CLUSTER"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 -> v52 [label="taxonomy"];
+
+v47 [label="pipeline_16S:MOTHUR:MOTHUR_CLUSTER"];
+v48 [shape=point];
+v47 -> v48;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v53 [label="pipeline_16S:MOTHUR:MOTHUR_CONSENSUS_RAW"];
+v52 -> v53;
+
+v53 [label="pipeline_16S:MOTHUR:MOTHUR_CONSENSUS_RAW"];
+v77 [label="pipeline_16S:MOTHUR:MOTHUR_DIST_SEQS"];
+v53 -> v77;
+
+v53 [label="pipeline_16S:MOTHUR:MOTHUR_CONSENSUS_RAW"];
+v56 [shape=point];
+v53 -> v56;
+
+v53 [label="pipeline_16S:MOTHUR:MOTHUR_CONSENSUS_RAW"];
+v55 [shape=point];
+v53 -> v55;
+
+v53 [label="pipeline_16S:MOTHUR:MOTHUR_CONSENSUS_RAW"];
+v54 [shape=point];
+v53 -> v54;
+
+v47 [label="pipeline_16S:MOTHUR:MOTHUR_CLUSTER"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 -> v57 [label="shared"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v63 [label="tracked"];
+
+v47 [label="pipeline_16S:MOTHUR:MOTHUR_CLUSTER"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 -> v58 [label="count_table"];
+
+v47 [label="pipeline_16S:MOTHUR:MOTHUR_CLUSTER"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 -> v58 [label="taxonomy"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 -> v59;
+
+v47 [label="pipeline_16S:MOTHUR:MOTHUR_CLUSTER"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 -> v59 [label="list"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 [label="pipeline_16S:MOTHUR:MOTHUR_REMOVE_LINEAGE"];
+v59 -> v60;
+
+v60 [label="pipeline_16S:MOTHUR:MOTHUR_REMOVE_LINEAGE"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 -> v64 [label="count_table"];
+
+v60 [label="pipeline_16S:MOTHUR:MOTHUR_REMOVE_LINEAGE"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 -> v91 [label="taxonomy"];
+
+v60 [label="pipeline_16S:MOTHUR:MOTHUR_REMOVE_LINEAGE"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 -> v64 [label="list"];
+
+v60 [label="pipeline_16S:MOTHUR:MOTHUR_REMOVE_LINEAGE"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 -> v62 [label="shared"];
+
+v60 [label="pipeline_16S:MOTHUR:MOTHUR_REMOVE_LINEAGE"];
+v61 [shape=point];
+v60 -> v61;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v68 [label="tracked"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v65 [label="pipeline_16S:MOTHUR:MOTHUR_REMOVE_RARE"];
+v64 -> v65;
+
+v65 [label="pipeline_16S:MOTHUR:MOTHUR_REMOVE_RARE"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v65 -> v72 [label="list"];
+
+v65 [label="pipeline_16S:MOTHUR:MOTHUR_REMOVE_RARE"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 -> v67 [label="shared"];
+
+v65 [label="pipeline_16S:MOTHUR:MOTHUR_REMOVE_RARE"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v65 -> v69 [label="count_table"];
+
+v65 [label="pipeline_16S:MOTHUR:MOTHUR_REMOVE_RARE"];
+v66 [shape=point];
+v65 -> v66;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v76 [label="tracked"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v71 [label="pipeline_16S:MOTHUR:GET_SUBSAMPLING_THRESHOLD"];
+v70 -> v71;
+
+v71 [label="pipeline_16S:MOTHUR:GET_SUBSAMPLING_THRESHOLD"];
+v73 [label="pipeline_16S:MOTHUR:MOTHUR_SUBSAMPLE"];
+v71 -> v73 [label="-"];
+
+v65 [label="pipeline_16S:MOTHUR:MOTHUR_REMOVE_RARE"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v65 -> v72 [label="count_table"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v73 [label="pipeline_16S:MOTHUR:MOTHUR_SUBSAMPLE"];
+v72 -> v73;
+
+v73 [label="pipeline_16S:MOTHUR:MOTHUR_SUBSAMPLE"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 -> v75 [label="shared"];
+
+v73 [label="pipeline_16S:MOTHUR:MOTHUR_SUBSAMPLE"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v73 -> v88 [label="list"];
+
+v73 [label="pipeline_16S:MOTHUR:MOTHUR_SUBSAMPLE"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v73 -> v90 [label="count_table"];
+
+v73 [label="pipeline_16S:MOTHUR:MOTHUR_SUBSAMPLE"];
+v74 [shape=point];
+v73 -> v74;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v87 [label="tracked"];
+
+v77 [label="pipeline_16S:MOTHUR:MOTHUR_DIST_SEQS"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v77 -> v79 [label="dists"];
+
+v77 [label="pipeline_16S:MOTHUR:MOTHUR_DIST_SEQS"];
+v78 [shape=point];
+v77 -> v78;
+
+v73 [label="pipeline_16S:MOTHUR:MOTHUR_SUBSAMPLE"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v73 -> v79 [label="shared"];
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v79 -> v80;
+
+v53 [label="pipeline_16S:MOTHUR:MOTHUR_CONSENSUS_RAW"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v53 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v81 [label="pipeline_16S:MOTHUR:LULU"];
+v80 -> v81;
+
+v81 [label="pipeline_16S:MOTHUR:LULU"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v81 -> v86 [label="shared"];
+
+v81 [label="pipeline_16S:MOTHUR:LULU"];
+v85 [shape=point];
+v81 -> v85 [label="repfasta"];
+
+v81 [label="pipeline_16S:MOTHUR:LULU"];
+v84 [shape=point];
+v81 -> v84 [label="discard"];
+
+v81 [label="pipeline_16S:MOTHUR:LULU"];
+v83 [shape=point];
+v81 -> v83 [label="summary"];
+
+v81 [label="pipeline_16S:MOTHUR:LULU"];
+v82 [shape=point];
+v81 -> v82;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 [label="pipeline_16S:MOTHUR:MOTHUR_SUMMARY_SINGLE"];
+v87 -> v105 [label="tracked"];
+
+v81 [label="pipeline_16S:MOTHUR:LULU"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v81 -> v88 [label="shared"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 -> v89;
+
+v47 [label="pipeline_16S:MOTHUR:MOTHUR_CLUSTER"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 -> v89 [label="fasta"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 [label="pipeline_16S:MOTHUR:MOTHUR_SYNC"];
+v91 -> v92;
+
+v92 [label="pipeline_16S:MOTHUR:MOTHUR_SYNC"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 -> v95;
+
+v92 [label="pipeline_16S:MOTHUR:MOTHUR_SYNC"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 -> v96;
+
+v92 [label="pipeline_16S:MOTHUR:MOTHUR_SYNC"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 -> v97;
+
+v92 [label="pipeline_16S:MOTHUR:MOTHUR_SYNC"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 -> v94;
+
+v92 [label="pipeline_16S:MOTHUR:MOTHUR_SYNC"];
+v93 [shape=point];
+v92 -> v93;
+
+v81 [label="pipeline_16S:MOTHUR:LULU"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v81 -> v94 [label="shared"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v95 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v98 [label="pipeline_16S:MOTHUR:MOTHUR_CONSENSUS"];
+v97 -> v98;
+
+v98 [label="pipeline_16S:MOTHUR:MOTHUR_CONSENSUS"];
+v130 [label="pipeline_16S:DIVERSITY:FASTTREE"];
+v98 -> v130 [label="repfasta"];
+
+v98 [label="pipeline_16S:MOTHUR:MOTHUR_CONSENSUS"];
+v100 [shape=point];
+v98 -> v100;
+
+v98 [label="pipeline_16S:MOTHUR:MOTHUR_CONSENSUS"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v98 -> v118 [label="constaxonomy"];
+
+v98 [label="pipeline_16S:MOTHUR:MOTHUR_CONSENSUS"];
+v99 [shape=point];
+v98 -> v99;
+
+v36 [label="pipeline_16S:MOTHUR:MOTHUR_SCREEN_SEQS"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v103;
+
+v39 [label="pipeline_16S:MOTHUR:MOTHUR_CHIMERA"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 [label="pipeline_16S:MOTHUR:SUMMARIZE_TABLE"];
+v103 -> v104;
+
+v104 [label="pipeline_16S:MOTHUR:SUMMARIZE_TABLE"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v107;
+
+v105 [label="pipeline_16S:MOTHUR:MOTHUR_SUMMARY_SINGLE"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v107 [label="tracking_shared"];
+
+v105 [label="pipeline_16S:MOTHUR:MOTHUR_SUMMARY_SINGLE"];
+v106 [shape=point];
+v105 -> v106;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v109 -> v114 [label="tracking"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v110 [label="reads"];
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v110 -> v111;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v113 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v114 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v116 [label="pipeline_16S:READ_TRACKING"];
+v115 -> v116;
+
+v116 [label="pipeline_16S:READ_TRACKING"];
+v117 [shape=point];
+v116 -> v117;
+
+v81 [label="pipeline_16S:MOTHUR:LULU"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v81 -> v118 [label="shared"];
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v119 [label="pipeline_16S:HOLOVIEWS:HOLOVIEWS_PREPARE"];
+v118 -> v119;
+
+v119 [label="pipeline_16S:HOLOVIEWS:HOLOVIEWS_PREPARE"];
+v120 [label="pipeline_16S:HOLOVIEWS:HOLOVIEWS_BARS"];
+v119 -> v120;
+
+v120 [label="pipeline_16S:HOLOVIEWS:HOLOVIEWS_BARS"];
+v121 [shape=point];
+v120 -> v121;
+
+v119 [label="pipeline_16S:HOLOVIEWS:HOLOVIEWS_PREPARE"];
+v122 [label="pipeline_16S:HOLOVIEWS:HOLOVIEWS_SCATTER"];
+v119 -> v122;
+
+v122 [label="pipeline_16S:HOLOVIEWS:HOLOVIEWS_SCATTER"];
+v123 [shape=point];
+v122 -> v123;
+
+v119 [label="pipeline_16S:HOLOVIEWS:HOLOVIEWS_PREPARE"];
+v124 [label="pipeline_16S:HOLOVIEWS:HOLOVIEWS_CLUSTERMAP"];
+v119 -> v124;
+
+v124 [label="pipeline_16S:HOLOVIEWS:HOLOVIEWS_CLUSTERMAP"];
+v125 [shape=point];
+v124 -> v125;
+
+v81 [label="pipeline_16S:MOTHUR:LULU"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v81 -> v126 [label="shared"];
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v127 [label="pipeline_16S:DIVERSITY:MOTHUR_SUMMARY_SINGLE"];
+v126 -> v127;
+
+v127 [label="pipeline_16S:DIVERSITY:MOTHUR_SUMMARY_SINGLE"];
+v129 [shape=point];
+v127 -> v129;
+
+v127 [label="pipeline_16S:DIVERSITY:MOTHUR_SUMMARY_SINGLE"];
+v128 [shape=point];
+v127 -> v128;
+
+v130 [label="pipeline_16S:DIVERSITY:FASTTREE"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 -> v132 [label="tree"];
+
+v130 [label="pipeline_16S:DIVERSITY:FASTTREE"];
+v131 [shape=point];
+v130 -> v131;
+
+v81 [label="pipeline_16S:MOTHUR:LULU"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v81 -> v132 [label="shared"];
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v133 [label="pipeline_16S:DIVERSITY:PHYLOSEQ_UNIFRAC_WEIGHTED"];
+v132 -> v133;
+
+v133 [label="pipeline_16S:DIVERSITY:PHYLOSEQ_UNIFRAC_WEIGHTED"];
+v135 [shape=point];
+v133 -> v135;
+
+v133 [label="pipeline_16S:DIVERSITY:PHYLOSEQ_UNIFRAC_WEIGHTED"];
+v134 [shape=point];
+v133 -> v134;
+
+v81 [label="pipeline_16S:MOTHUR:LULU"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v81 -> v136 [label="shared"];
+
+v130 [label="pipeline_16S:DIVERSITY:FASTTREE"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 -> v136 [label="tree"];
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v137 [label="pipeline_16S:DIVERSITY:PHYLOSEQ_UNIFRAC_UNWEIGHTED"];
+v136 -> v137;
+
+v137 [label="pipeline_16S:DIVERSITY:PHYLOSEQ_UNIFRAC_UNWEIGHTED"];
+v139 [shape=point];
+v137 -> v139;
+
+v137 [label="pipeline_16S:DIVERSITY:PHYLOSEQ_UNIFRAC_UNWEIGHTED"];
+v138 [shape=point];
+v137 -> v138;
+
+}

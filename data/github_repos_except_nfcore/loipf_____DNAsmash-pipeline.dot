@@ -1,0 +1,82 @@
+digraph "loipf_____DNAsmashpipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v5 [shape=point];
+v4 -> v5;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v9 [label="MAPPING_URMAP"];
+v4 -> v9;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 -> v11;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="URMAP_CREATE_INDEX"];
+v6 -> v7 [label="ensembl_release"];
+
+v7 [label="URMAP_CREATE_INDEX"];
+v9 [label="MAPPING_URMAP"];
+v7 -> v9;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [label="MAPPING_URMAP"];
+v8 -> v9 [label="num_threads"];
+
+v9 [label="MAPPING_URMAP"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 [label="RUN_SMASH"];
+v10 -> v14;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 [label="RUN_SMASH"];
+v11 -> v14;
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="RUN_SMASH"];
+v12 -> v14 [label="num_threads"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="RUN_SMASH"];
+v13 -> v14 [label="min_snp_read_depth"];
+
+v14 [label="RUN_SMASH"];
+v19 [shape=point];
+v14 -> v19;
+
+v14 [label="RUN_SMASH"];
+v18 [shape=point];
+v14 -> v18;
+
+v14 [label="RUN_SMASH"];
+v17 [shape=point];
+v14 -> v17;
+
+v14 [label="RUN_SMASH"];
+v16 [shape=point];
+v14 -> v16;
+
+v14 [label="RUN_SMASH"];
+v15 [shape=point];
+v14 -> v15;
+
+}

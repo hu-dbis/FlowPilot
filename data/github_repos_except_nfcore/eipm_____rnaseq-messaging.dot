@@ -1,0 +1,50 @@
+digraph "eipm_____rnaseqmessaging" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [label="PHASE1:STAR"];
+v2 -> v4 [label="reads"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="PHASE1:STAR"];
+v3 -> v4 [label="star_index"];
+
+v4 [label="PHASE1:STAR"];
+v5 [label="PHASE1:SORT_BAM"];
+v4 -> v5;
+
+v4 [label="PHASE1:STAR"];
+v11 [label="PHASE2:SALMON"];
+v4 -> v11 [label="transcriptome_bam"];
+
+v4 [label="PHASE1:STAR"];
+v8 [label="PHASE2:STAR_FUSION"];
+v4 -> v8 [label="junctions"];
+
+v5 [label="PHASE1:SORT_BAM"];
+v6 [shape=point];
+v5 -> v6 [label="genomic_bam"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="PHASE2:STAR_FUSION"];
+v7 -> v8 [label="ctat_lib"];
+
+v8 [label="PHASE2:STAR_FUSION"];
+v9 [shape=point];
+v8 -> v9;
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="PHASE2:SALMON"];
+v10 -> v11 [label="salmon_index"];
+
+v11 [label="PHASE2:SALMON"];
+v12 [shape=point];
+v11 -> v12;
+
+}

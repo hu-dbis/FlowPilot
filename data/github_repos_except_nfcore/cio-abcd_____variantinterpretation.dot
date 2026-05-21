@@ -1,0 +1,570 @@
+digraph "cioabcd_____variantinterpretation" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v113 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v114 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v115 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v19 [label="fasta"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v75 [label="datavzrd_config"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v76 [label="annotation_colinfo"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v14 [label="ch_versions"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v45 [label="ch_multiqc_reports"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v44 [label="ch_warnings"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v10 -> v11 [label="samplesheet"];
+
+v11 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v11 -> v12;
+
+v11 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v14 [label="versions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:BCFTOOLS_INDEX"];
+v13 -> v15 [label="variants"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v17 [label="ch_versions"];
+
+v15 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:BCFTOOLS_INDEX"];
+v16 [shape=point];
+v15 -> v16;
+
+v15 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:BCFTOOLS_INDEX"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 -> v18;
+
+v15 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:BCFTOOLS_INDEX"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v21 [label="ch_versions"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v13 -> v18 [label="variants"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:GATK4_VALIDATEVARIANTS"];
+v18 -> v29 [label="proc_vcf_tbi"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:SAMTOOLS_DICT"];
+v19 -> v20 [label="fasta_ref"];
+
+v20 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:SAMTOOLS_DICT"];
+v29 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:GATK4_VALIDATEVARIANTS"];
+v20 -> v29 [label="ref_dict"];
+
+v20 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:SAMTOOLS_DICT"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v26 [label="ch_versions"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:SAMTOOLS_FAIDX"];
+v19 -> v23 [label="fasta_ref"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v23 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:SAMTOOLS_FAIDX"];
+v22 -> v23;
+
+v23 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:SAMTOOLS_FAIDX"];
+v25 [shape=point];
+v23 -> v25;
+
+v23 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:SAMTOOLS_FAIDX"];
+v29 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:GATK4_VALIDATEVARIANTS"];
+v23 -> v29 [label="ref_fai"];
+
+v23 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:SAMTOOLS_FAIDX"];
+v24 [shape=point];
+v23 -> v24;
+
+v23 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:SAMTOOLS_FAIDX"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v43 [label="ch_versions"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v30 [label="ch_versions"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v39 [label="ch_multiqc_reports"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:GATK4_VALIDATEVARIANTS"];
+v19 -> v29 [label="fasta_ref"];
+
+v29 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:GATK4_VALIDATEVARIANTS"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v37 [label="ch_versions"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:BCFTOOLS_STATS"];
+v18 -> v36 [label="proc_vcf_tbi"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:BCFTOOLS_STATS"];
+v31 -> v36;
+
+v32 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:BCFTOOLS_STATS"];
+v32 -> v36;
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:BCFTOOLS_STATS"];
+v33 -> v36;
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:BCFTOOLS_STATS"];
+v34 -> v36;
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:BCFTOOLS_STATS"];
+v35 -> v36;
+
+v36 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:BCFTOOLS_STATS"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v36 -> v38;
+
+v36 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:BCFTOOLS_STATS"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v43 [label="versions"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v45 [label="multiqc_reports"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v40 [label="proc_vcf_tbi"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 -> v41;
+
+v36 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:BCFTOOLS_STATS"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:VCFCHECKS"];
+v41 -> v42 [label="vcf_stats"];
+
+v42 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFTESTS:VCFCHECKS"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v44 [label="warnings"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v56 [label="ch_versions"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v44 -> v94 [label="ch_warnings"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v67 [label="ch_multiqc_reports"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v51 [label="ch_versions"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v48 [shape=point];
+v47 -> v48 [label="ch_multiqc_reports"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v49 [label="fasta"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFPROC:BCFTOOLS_NORM"];
+v49 -> v50 [label="fasta_meta"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v50 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFPROC:BCFTOOLS_NORM"];
+v18 -> v50 [label="proc_vcf_tbi"];
+
+v50 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFPROC:BCFTOOLS_NORM"];
+v52 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFPROC:INDEX_NORM"];
+v50 -> v52;
+
+v50 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFPROC:BCFTOOLS_NORM"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v54 [label="ch_versions"];
+
+v52 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFPROC:INDEX_NORM"];
+v53 [shape=point];
+v52 -> v53;
+
+v52 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFPROC:INDEX_NORM"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 -> v55;
+
+v52 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFPROC:INDEX_NORM"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v56 [label="versions"];
+
+v50 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VCFPROC:BCFTOOLS_NORM"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v50 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 -> v57 [label="vcf_norm_tbi"];
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v66 [label="ch_versions"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:ENSEMBLVEP_VEP"];
+v57 -> v63 [label="proc_vcf"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v63 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:ENSEMBLVEP_VEP"];
+v58 -> v63 [label="genome"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1];
+v63 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:ENSEMBLVEP_VEP"];
+v59 -> v63 [label="species"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1];
+v63 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:ENSEMBLVEP_VEP"];
+v60 -> v63 [label="cache_version"];
+
+v61 [shape=point,label="",fixedsize=true,width=0.1];
+v63 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:ENSEMBLVEP_VEP"];
+v61 -> v63 [label="cache"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:ENSEMBLVEP_VEP"];
+v19 -> v63 [label="fasta_ref"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1];
+v63 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:ENSEMBLVEP_VEP"];
+v62 -> v63 [label="extra_files"];
+
+v63 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:ENSEMBLVEP_VEP"];
+v70 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VEMBRANE_TABLE:VEMBRANE_CREATE_FIELDS"];
+v63 -> v70 [label="vcf"];
+
+v63 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:ENSEMBLVEP_VEP"];
+v65 [shape=point];
+v63 -> v65;
+
+v63 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:ENSEMBLVEP_VEP"];
+v64 [shape=point];
+v63 -> v64;
+
+v63 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:ENSEMBLVEP_VEP"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v67;
+
+v63 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:ENSEMBLVEP_VEP"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v74 [label="ch_versions"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v67 -> v109 [label="ch_multiqc_reports"];
+
+v68 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v71 [label="ch_versions"];
+
+v69 [shape=point,label="",fixedsize=true,width=0.1];
+v70 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VEMBRANE_TABLE:VEMBRANE_CREATE_FIELDS"];
+v69 -> v70 [label="annotation_fields"];
+
+v70 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VEMBRANE_TABLE:VEMBRANE_CREATE_FIELDS"];
+v72 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VEMBRANE_TABLE:VEMBRANE_VEMBRANETABLE"];
+v70 -> v72 [label="fields"];
+
+v70 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VEMBRANE_TABLE:VEMBRANE_CREATE_FIELDS"];
+v72 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VEMBRANE_TABLE:VEMBRANE_VEMBRANETABLE"];
+v70 -> v72 [label="header"];
+
+v70 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VEMBRANE_TABLE:VEMBRANE_CREATE_FIELDS"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v73 [label="ch_versions"];
+
+v63 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:ENSEMBLVEP_VEP"];
+v72 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VEMBRANE_TABLE:VEMBRANE_VEMBRANETABLE"];
+v63 -> v72 [label="vcf"];
+
+v72 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VEMBRANE_TABLE:VEMBRANE_VEMBRANETABLE"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v72 -> v75 [label="ch_tsv"];
+
+v72 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:VEMBRANE_TABLE:VEMBRANE_VEMBRANETABLE"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v74 [label="versions"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v83 [label="ch_versions"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v75 -> v76 [label="tsv_config"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v78 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:HTML_REPORT:PREPROCESS_DATAVZRD"];
+v76 -> v78 [label="tsv_config_colinfo"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v79 [label="ch_versions"];
+
+v78 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:HTML_REPORT:PREPROCESS_DATAVZRD"];
+v80 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:HTML_REPORT:DATAVZRD"];
+v78 -> v80;
+
+v78 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:HTML_REPORT:PREPROCESS_DATAVZRD"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v82 [label="ch_versions"];
+
+v80 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:HTML_REPORT:DATAVZRD"];
+v81 [shape=point];
+v80 -> v81 [label="report"];
+
+v80 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:HTML_REPORT:DATAVZRD"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v83 [label="versions"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v83 -> v86 [label="ch_versions"];
+
+v84 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v85 [shape=point];
+v84 -> v85 [label="ch_version_yaml"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v88 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v87 -> v88;
+
+v88 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v90 [shape=point];
+v88 -> v90;
+
+v88 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v88 -> v91;
+
+v88 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v89 [shape=point];
+v88 -> v89;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v107 [label="ch_version_yaml"];
+
+v92 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v93 [shape=point];
+v92 -> v93 [label="ch_warnings_yaml"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v97 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:DUMP_WARNINGS"];
+v95 -> v97;
+
+v96 [shape=point,label="",fixedsize=true,width=0.1];
+v97 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:DUMP_WARNINGS"];
+v96 -> v97 [label="template_yml"];
+
+v97 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:DUMP_WARNINGS"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v97 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v108 [label="ch_warnings_yaml"];
+
+v100 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v103 [label="ch_multiqc_files"];
+
+v101 [shape=point,label="",fixedsize=true,width=0.1];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v101 -> v102 [label="ch_workflow_summary"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v106 [label="ch_multiqc_files"];
+
+v104 [shape=point,label="",fixedsize=true,width=0.1];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v104 -> v105 [label="ch_methods_description"];
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v107 [label="ch_multiqc_files"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v108 [label="ch_multiqc_files"];
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v111 [label="ch_multiqc_files"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v111;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v111 -> v112 [label="ch_multiqc_files"];
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v116 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:MULTIQC"];
+v112 -> v116;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v116 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:MULTIQC"];
+v113 -> v116;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v116 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:MULTIQC"];
+v114 -> v116;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v116 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:MULTIQC"];
+v115 -> v116;
+
+v116 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:MULTIQC"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v116 -> v120;
+
+v116 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:MULTIQC"];
+v119 [shape=point];
+v116 -> v119;
+
+v116 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:MULTIQC"];
+v118 [shape=point];
+v116 -> v118;
+
+v116 [label="CIOABCD_VARIANTINTERPRETATION:VARIANTINTERPRETATION:MULTIQC"];
+v117 [shape=point];
+v116 -> v117;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v121 [shape=point];
+v120 -> v121;
+
+}

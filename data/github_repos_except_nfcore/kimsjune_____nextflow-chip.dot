@@ -1,0 +1,170 @@
+digraph "kimsjune_____nextflowchip" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v4 [label="BT2_ALIGN"];
+v0 -> v4 [label="sample_ch"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v1 -> v21 [label="repClass_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v3 [label="index_ch"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 [label="BT2_ALIGN"];
+v3 -> v4;
+
+v4 [label="BT2_ALIGN"];
+v6 [label="SAMTOOLS_VIEW"];
+v4 -> v6;
+
+v4 [label="BT2_ALIGN"];
+v5 [shape=point];
+v4 -> v5;
+
+v6 [label="SAMTOOLS_VIEW"];
+v7 [label="SAMTOOLS_SORT"];
+v6 -> v7;
+
+v7 [label="SAMTOOLS_SORT"];
+v8 [label="SAMTOOLS_INDEX"];
+v7 -> v8;
+
+v8 [label="SAMTOOLS_INDEX"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 -> v9;
+
+v7 [label="SAMTOOLS_SORT"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 [label="BAMCOV"];
+v9 -> v10 [label="SAMTOOLS_SORTED_BAM_BAI"];
+
+v10 [label="BAMCOV"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v10 -> v23;
+
+v7 [label="SAMTOOLS_SORT"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v7 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v15 [label="MACS2"];
+v14 -> v15 [label="MACS_input_ch"];
+
+v15 [label="MACS2"];
+v18 [label="BEDTOOLS_RM_BLK"];
+v15 -> v18;
+
+v15 [label="MACS2"];
+v17 [shape=point];
+v15 -> v17;
+
+v15 [label="MACS2"];
+v16 [shape=point];
+v15 -> v16;
+
+v18 [label="BEDTOOLS_RM_BLK"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 -> v21;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v20 [shape=point];
+v19 -> v20;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v22 [label="BEDTOOLS_INTERSECT"];
+v21 -> v22 [label="broadPeak_repClass_comb"];
+
+v22 [label="BEDTOOLS_INTERSECT"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v22 -> v36;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 -> v27 [label="COMPMATRIX_ALL_PEAKS_grouped"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v28 [label="COMPMATRIX_ALL_PEAKS"];
+v27 -> v28 [label="COMPMATRIX_ALL_PEAKS_input_ch"];
+
+v28 [label="COMPMATRIX_ALL_PEAKS"];
+v29 [label="HEATMAP_ALL_PEAKS"];
+v28 -> v29;
+
+v29 [label="HEATMAP_ALL_PEAKS"];
+v30 [shape=point];
+v29 -> v30;
+
+v10 [label="BAMCOV"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v10 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v35 -> v36 [label="BW_ChIP"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v37 [label="COMPMATRIX_PEAKSatRMSK"];
+v36 -> v37 [label="COMPMATRIX_PEAKSatRMSK_input_ch"];
+
+v37 [label="COMPMATRIX_PEAKSatRMSK"];
+v38 [label="PROFILE_PEAKSatRMSK"];
+v37 -> v38;
+
+v38 [label="PROFILE_PEAKSatRMSK"];
+v39 [shape=point];
+v38 -> v39;
+
+}

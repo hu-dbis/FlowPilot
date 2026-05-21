@@ -1,0 +1,262 @@
+digraph "bcbunl_____run_dbcan_nf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [label="NFCORE_DBCAN:DBCAN:FASTQC"];
+v6 -> v9 [label="ch_samplesheet"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v14 [label="ch_versions"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v12 [label="ch_multiqc_files"];
+
+v9 [label="NFCORE_DBCAN:DBCAN:FASTQC"];
+v10 [shape=point];
+v9 -> v10;
+
+v9 [label="NFCORE_DBCAN:DBCAN:FASTQC"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v11;
+
+v9 [label="NFCORE_DBCAN:DBCAN:FASTQC"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v9 -> v13;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v49 [label="ch_multiqc_files"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v14 -> v15 [label="versions"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v19;
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v50 [label="ch_collated_versions"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v24 [label="NFCORE_DBCAN:DBCAN:KRAKEN2_KRAKEN2"];
+v21 -> v24 [label="ch_db_for_kraken2"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [label="NFCORE_DBCAN:DBCAN:KRAKEN2_KRAKEN2"];
+v6 -> v24 [label="ch_samplesheet"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="NFCORE_DBCAN:DBCAN:KRAKEN2_KRAKEN2"];
+v22 -> v24 [label="save_output_fastqs"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="NFCORE_DBCAN:DBCAN:KRAKEN2_KRAKEN2"];
+v23 -> v24 [label="save_reads_assignment"];
+
+v24 [label="NFCORE_DBCAN:DBCAN:KRAKEN2_KRAKEN2"];
+v27 [shape=point];
+v24 -> v27;
+
+v24 [label="NFCORE_DBCAN:DBCAN:KRAKEN2_KRAKEN2"];
+v26 [shape=point];
+v24 -> v26;
+
+v24 [label="NFCORE_DBCAN:DBCAN:KRAKEN2_KRAKEN2"];
+v29 [label="NFCORE_DBCAN:DBCAN:KRAKENTOOLS_EXTRACTKRAKENREADS"];
+v24 -> v29 [label="ch_classified_reads_assignment"];
+
+v24 [label="NFCORE_DBCAN:DBCAN:KRAKEN2_KRAKEN2"];
+v29 [label="NFCORE_DBCAN:DBCAN:KRAKENTOOLS_EXTRACTKRAKENREADS"];
+v24 -> v29 [label="ch_report"];
+
+v24 [label="NFCORE_DBCAN:DBCAN:KRAKEN2_KRAKEN2"];
+v25 [shape=point];
+v24 -> v25;
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="NFCORE_DBCAN:DBCAN:KRAKENTOOLS_EXTRACTKRAKENREADS"];
+v28 -> v29 [label="taxid"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [label="NFCORE_DBCAN:DBCAN:KRAKENTOOLS_EXTRACTKRAKENREADS"];
+v6 -> v29 [label="ch_samplesheet"];
+
+v29 [label="NFCORE_DBCAN:DBCAN:KRAKENTOOLS_EXTRACTKRAKENREADS"];
+v31 [label="NFCORE_DBCAN:DBCAN:MEGAHIT"];
+v29 -> v31 [label="ch_extracted_kraken2_reads"];
+
+v29 [label="NFCORE_DBCAN:DBCAN:KRAKENTOOLS_EXTRACTKRAKENREADS"];
+v30 [shape=point];
+v29 -> v30;
+
+v31 [label="NFCORE_DBCAN:DBCAN:MEGAHIT"];
+v38 [label="NFCORE_DBCAN:DBCAN:PRODIGAL"];
+v31 -> v38 [label="ch_contigs"];
+
+v31 [label="NFCORE_DBCAN:DBCAN:MEGAHIT"];
+v36 [shape=point];
+v31 -> v36;
+
+v31 [label="NFCORE_DBCAN:DBCAN:MEGAHIT"];
+v35 [shape=point];
+v31 -> v35;
+
+v31 [label="NFCORE_DBCAN:DBCAN:MEGAHIT"];
+v34 [shape=point];
+v31 -> v34;
+
+v31 [label="NFCORE_DBCAN:DBCAN:MEGAHIT"];
+v33 [shape=point];
+v31 -> v33;
+
+v31 [label="NFCORE_DBCAN:DBCAN:MEGAHIT"];
+v32 [shape=point];
+v31 -> v32;
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v38 [label="NFCORE_DBCAN:DBCAN:PRODIGAL"];
+v37 -> v38 [label="output_format"];
+
+v38 [label="NFCORE_DBCAN:DBCAN:PRODIGAL"];
+v43 [shape=point];
+v38 -> v43;
+
+v38 [label="NFCORE_DBCAN:DBCAN:PRODIGAL"];
+v42 [shape=point];
+v38 -> v42;
+
+v38 [label="NFCORE_DBCAN:DBCAN:PRODIGAL"];
+v41 [shape=point];
+v38 -> v41;
+
+v38 [label="NFCORE_DBCAN:DBCAN:PRODIGAL"];
+v40 [shape=point];
+v38 -> v40;
+
+v38 [label="NFCORE_DBCAN:DBCAN:PRODIGAL"];
+v39 [shape=point];
+v38 -> v39;
+
+v44 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v44 -> v55 [label="ch_multiqc_config"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v45 -> v56 [label="ch_multiqc_custom_config"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v46 -> v57 [label="ch_multiqc_logo"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v47 -> v48 [label="ch_workflow_summary"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v50 [label="ch_multiqc_files"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v53 [label="ch_multiqc_files"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v51 -> v52 [label="ch_methods_description"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v53 -> v54 [label="ch_multiqc_files"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v58 [label="NFCORE_DBCAN:DBCAN:MULTIQC"];
+v54 -> v58;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v58 [label="NFCORE_DBCAN:DBCAN:MULTIQC"];
+v55 -> v58;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v58 [label="NFCORE_DBCAN:DBCAN:MULTIQC"];
+v56 -> v58;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v58 [label="NFCORE_DBCAN:DBCAN:MULTIQC"];
+v57 -> v58;
+
+v58 [label="NFCORE_DBCAN:DBCAN:MULTIQC"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v58 -> v62;
+
+v58 [label="NFCORE_DBCAN:DBCAN:MULTIQC"];
+v61 [shape=point];
+v58 -> v61;
+
+v58 [label="NFCORE_DBCAN:DBCAN:MULTIQC"];
+v60 [shape=point];
+v58 -> v60;
+
+v58 [label="NFCORE_DBCAN:DBCAN:MULTIQC"];
+v59 [shape=point];
+v58 -> v59;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v63 [shape=point];
+v62 -> v63 [label="multiqc_report"];
+
+}

@@ -1,0 +1,50 @@
+digraph "Nines_____workflow_comparison_analysis" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [label="FASTQC"];
+v0 -> v1 [label="read_pairs_ch"];
+
+v1 [label="FASTQC"];
+v2 [shape=point];
+v1 -> v2;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v3 [label="FASTP"];
+v0 -> v3 [label="read_pairs_ch"];
+
+v3 [label="FASTP"];
+v7 [label="HISAT2_ALIGN"];
+v3 -> v7;
+
+v3 [label="FASTP"];
+v4 [shape=point];
+v3 -> v4;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="HISAT2_INDEX_REFERENCE"];
+v5 -> v6 [label="reference"];
+
+v6 [label="HISAT2_INDEX_REFERENCE"];
+v7 [label="HISAT2_ALIGN"];
+v6 -> v7;
+
+v7 [label="HISAT2_ALIGN"];
+v8 [shape=point];
+v7 -> v8;
+
+v7 [label="HISAT2_ALIGN"];
+v9 [label="SAMTOOLS"];
+v7 -> v9;
+
+v9 [label="SAMTOOLS"];
+v11 [label="CUFFLINKS"];
+v9 -> v11;
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="CUFFLINKS"];
+v10 -> v11 [label="annotation"];
+
+v11 [label="CUFFLINKS"];
+v12 [shape=point];
+v11 -> v12;
+
+}

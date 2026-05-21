@@ -1,0 +1,162 @@
+digraph "ulelab_____nfawstest" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [label="GUNZIP_GTF"];
+v1 -> v17 [label="ch_gtf"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [label="UNTAR_INDEX"];
+v3 -> v21 [label="ch_hisat2_index"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=point];
+v5 -> v6 [label="ch_salmon_index"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=point];
+v8 -> v9 [label="ch_transcript_fasta"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [label="FASTQC"];
+v12 -> v13 [label="ch_fastq"];
+
+v13 [label="FASTQC"];
+v16 [shape=point];
+v13 -> v16;
+
+v13 [label="FASTQC"];
+v15 [shape=point];
+v13 -> v15;
+
+v13 [label="FASTQC"];
+v14 [shape=point];
+v13 -> v14;
+
+v17 [label="GUNZIP_GTF"];
+v19 [label="HISAT2_EXTRACTSPLICESITES"];
+v17 -> v19 [label="ch_gtf"];
+
+v17 [label="GUNZIP_GTF"];
+v18 [shape=point];
+v17 -> v18;
+
+v19 [label="HISAT2_EXTRACTSPLICESITES"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v19 -> v24;
+
+v19 [label="HISAT2_EXTRACTSPLICESITES"];
+v20 [shape=point];
+v19 -> v20;
+
+v21 [label="UNTAR_INDEX"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v21 -> v23;
+
+v21 [label="UNTAR_INDEX"];
+v22 [shape=point];
+v21 -> v22;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v25 [label="HISAT2_ALIGN"];
+v23 -> v25 [label="ch_hisat2_index"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v25 [label="HISAT2_ALIGN"];
+v24 -> v25;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [label="HISAT2_ALIGN"];
+v12 -> v25 [label="ch_fastq"];
+
+v25 [label="HISAT2_ALIGN"];
+v29 [shape=point];
+v25 -> v29;
+
+v25 [label="HISAT2_ALIGN"];
+v28 [shape=point];
+v25 -> v28;
+
+v25 [label="HISAT2_ALIGN"];
+v27 [shape=point];
+v25 -> v27;
+
+v25 [label="HISAT2_ALIGN"];
+v26 [shape=point];
+v25 -> v26;
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="SALMON_INDEX"];
+v30 -> v32 [label="genome_fasta"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="SALMON_INDEX"];
+v31 -> v32 [label="transcript_fasta"];
+
+v32 [label="SALMON_INDEX"];
+v38 [label="SALMON_QUANT"];
+v32 -> v38;
+
+v32 [label="SALMON_INDEX"];
+v33 [shape=point];
+v32 -> v33;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [label="SALMON_QUANT"];
+v12 -> v38 [label="ch_fastq"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v38 [label="SALMON_QUANT"];
+v34 -> v38 [label="gtf"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v38 [label="SALMON_QUANT"];
+v35 -> v38 [label="transcript_fasta"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v38 [label="SALMON_QUANT"];
+v36 -> v38 [label="alignment_mode"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v38 [label="SALMON_QUANT"];
+v37 -> v38 [label="lib_type"];
+
+v38 [label="SALMON_QUANT"];
+v42 [shape=point];
+v38 -> v42;
+
+v38 [label="SALMON_QUANT"];
+v41 [shape=point];
+v38 -> v41;
+
+v38 [label="SALMON_QUANT"];
+v40 [shape=point];
+v38 -> v40;
+
+v38 [label="SALMON_QUANT"];
+v39 [shape=point];
+v38 -> v39;
+
+}

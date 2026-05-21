@@ -1,0 +1,150 @@
+digraph "RohitSatyam_____RNAgrinder" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v2 [label="FASTQC"];
+v0 -> v2 [label="input_fastqs"];
+
+v1 [label="INDEX"];
+v20 [label="STAR"];
+v1 -> v20 [label="index"];
+
+v2 [label="FASTQC"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 [label="PRETRIM"];
+v3 -> v6 [label="pretrim_input"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="PRETRIM"];
+v4 -> v6 [label="name"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="PRETRIM"];
+v5 -> v6 [label="filename"];
+
+v6 [label="PRETRIM"];
+v7 [shape=point];
+v6 -> v7;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v8 [label="FASTP"];
+v0 -> v8 [label="input_fastqs"];
+
+v8 [label="FASTP"];
+v12 [label="POSTTRIMFASTQC"];
+v8 -> v12;
+
+v8 [label="FASTP"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v28;
+
+v8 [label="FASTP"];
+v11 [shape=point];
+v8 -> v11;
+
+v8 [label="FASTP"];
+v10 [shape=point];
+v8 -> v10;
+
+v8 [label="FASTP"];
+v9 [shape=point];
+v8 -> v9;
+
+v12 [label="POSTTRIMFASTQC"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 [label="POSTTRIM"];
+v13 -> v16 [label="postrim_input"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="POSTTRIM"];
+v14 -> v16 [label="name"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="POSTTRIM"];
+v15 -> v16 [label="filename"];
+
+v16 [label="POSTTRIM"];
+v17 [shape=point];
+v16 -> v17;
+
+v8 [label="FASTP"];
+v18 [label="RIBODETECTOR"];
+v8 -> v18;
+
+v18 [label="RIBODETECTOR"];
+v20 [label="STAR"];
+v18 -> v20;
+
+v18 [label="RIBODETECTOR"];
+v19 [shape=point];
+v18 -> v19;
+
+v20 [label="STAR"];
+v23 [label="MARKDUP"];
+v20 -> v23;
+
+v20 [label="STAR"];
+v22 [shape=point];
+v20 -> v22;
+
+v20 [label="STAR"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v28;
+
+v20 [label="STAR"];
+v21 [shape=point];
+v20 -> v21;
+
+v23 [label="MARKDUP"];
+v25 [label="BAMSTATS"];
+v23 -> v25;
+
+v23 [label="MARKDUP"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v28;
+
+v23 [label="MARKDUP"];
+v24 [shape=point];
+v23 -> v24;
+
+v25 [label="BAMSTATS"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v28;
+
+v26 [label="RNASEQCINDEX"];
+v27 [label="RNASEQC"];
+v26 -> v27;
+
+v23 [label="MARKDUP"];
+v27 [label="RNASEQC"];
+v23 -> v27;
+
+v27 [label="RNASEQC"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 -> v29 [label="all_combine"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 [label="SUMMARISEALL"];
+v29 -> v32;
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="SUMMARISEALL"];
+v30 -> v32 [label="name"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="SUMMARISEALL"];
+v31 -> v32 [label="filename"];
+
+v32 [label="SUMMARISEALL"];
+v33 [shape=point];
+v32 -> v33;
+
+}

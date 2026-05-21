@@ -1,0 +1,314 @@
+digraph "cellgeni_____ImageST" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1 [label="images"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v1 -> v56 [label="n_image_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v9 [label="ch_versions"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v3 [label="MICRO_ALIGNER_REGISTRATION:GENERATE_FEAT_REG_YAML"];
+v0 -> v3 [label="images"];
+
+v3 [label="MICRO_ALIGNER_REGISTRATION:GENERATE_FEAT_REG_YAML"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v5;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v4 [label="MICRO_ALIGNER_REGISTRATION:GENERATE_OPTFLOW_REG_YAML"];
+v0 -> v4 [label="images"];
+
+v4 [label="MICRO_ALIGNER_REGISTRATION:GENERATE_OPTFLOW_REG_YAML"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v10;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v0 -> v5 [label="images"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 [label="MICRO_ALIGNER_REGISTRATION:MICROALIGNER_FEATREG"];
+v5 -> v7;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="MICRO_ALIGNER_REGISTRATION:MICROALIGNER_FEATREG"];
+v6 -> v7 [label="method"];
+
+v7 [label="MICRO_ALIGNER_REGISTRATION:MICROALIGNER_FEATREG"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v10;
+
+v7 [label="MICRO_ALIGNER_REGISTRATION:MICROALIGNER_FEATREG"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v14 [label="ch_versions"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 [label="MICRO_ALIGNER_REGISTRATION:MICROALIGNER_OPTFLOWREG"];
+v10 -> v12;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [label="MICRO_ALIGNER_REGISTRATION:MICROALIGNER_OPTFLOWREG"];
+v11 -> v12 [label="method"];
+
+v12 [label="MICRO_ALIGNER_REGISTRATION:MICROALIGNER_OPTFLOWREG"];
+v17 [label="TILED_CELLPOSE:SLICE"];
+v12 -> v17 [label="images"];
+
+v12 [label="MICRO_ALIGNER_REGISTRATION:MICROALIGNER_OPTFLOWREG"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 [shape=point];
+v14 -> v15 [label="versions"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v19 [label="ch_versions"];
+
+v17 [label="TILED_CELLPOSE:SLICE"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v17 -> v20;
+
+v17 [label="TILED_CELLPOSE:SLICE"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v29 [label="ch_versions"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v21 -> v22;
+
+v12 [label="MICRO_ALIGNER_REGISTRATION:MICROALIGNER_OPTFLOWREG"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 -> v22 [label="images"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v22 -> v24;
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v25 [label="TILED_CELLPOSE:CELLPOSE"];
+v24 -> v25 [label="images_slices"];
+
+v25 [label="TILED_CELLPOSE:CELLPOSE"];
+v27 [shape=point];
+v25 -> v27;
+
+v25 [label="TILED_CELLPOSE:CELLPOSE"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v25 -> v30;
+
+v25 [label="TILED_CELLPOSE:CELLPOSE"];
+v26 [shape=point];
+v25 -> v26;
+
+v25 [label="TILED_CELLPOSE:CELLPOSE"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v25 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v34 [label="ch_versions"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v31 [label="TILED_CELLPOSE:MERGE_OUTLINES"];
+v30 -> v31;
+
+v31 [label="TILED_CELLPOSE:MERGE_OUTLINES"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v31 -> v60 [label="wkt"];
+
+v31 [label="TILED_CELLPOSE:MERGE_OUTLINES"];
+v32 [shape=point];
+v31 -> v32;
+
+v31 [label="TILED_CELLPOSE:MERGE_OUTLINES"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v31 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 [shape=point];
+v34 -> v35 [label="versions"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v36 -> v37;
+
+v12 [label="MICRO_ALIGNER_REGISTRATION:MICROALIGNER_OPTFLOWREG"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 -> v37 [label="images"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v39 [label="TILED_SPOTIFLOW:Spotiflow_call_peaks"];
+v37 -> v39 [label="images"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v41 [label="ch_versions"];
+
+v39 [label="TILED_SPOTIFLOW:Spotiflow_call_peaks"];
+v42 [label="TILED_SPOTIFLOW:Spotiflow_merge_peaks"];
+v39 -> v42;
+
+v39 [label="TILED_SPOTIFLOW:Spotiflow_call_peaks"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v44 [label="ch_versions"];
+
+v42 [label="TILED_SPOTIFLOW:Spotiflow_merge_peaks"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v42 -> v45;
+
+v42 [label="TILED_SPOTIFLOW:Spotiflow_merge_peaks"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v48 [label="ch_versions"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v46 [label="TILED_SPOTIFLOW:Spotiflow_merge_channels"];
+v45 -> v46;
+
+v46 [label="TILED_SPOTIFLOW:Spotiflow_merge_channels"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v46 -> v50 [label="spots_csv"];
+
+v46 [label="TILED_SPOTIFLOW:Spotiflow_merge_channels"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=point];
+v48 -> v49 [label="versions"];
+
+v12 [label="MICRO_ALIGNER_REGISTRATION:MICROALIGNER_OPTFLOWREG"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v12 -> v50 [label="images"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 [label="EXTRACT_PEAK_PROFILE"];
+v50 -> v51;
+
+v51 [label="EXTRACT_PEAK_PROFILE"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 -> v55;
+
+v51 [label="EXTRACT_PEAK_PROFILE"];
+v52 [shape=point];
+v51 -> v52;
+
+v53 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v54 -> v55 [label="codebook"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v57 [label="POSTCODE"];
+v56 -> v57;
+
+v57 [label="POSTCODE"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v57 -> v60;
+
+v57 [label="POSTCODE"];
+v59 [shape=point];
+v57 -> v59;
+
+v57 [label="POSTCODE"];
+v58 [shape=point];
+v57 -> v58;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v60 -> v61;
+
+v12 [label="MICRO_ALIGNER_REGISTRATION:MICROALIGNER_OPTFLOWREG"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 -> v61 [label="images"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [label="TO_SPATIALDATA"];
+v62 -> v63;
+
+v63 [label="TO_SPATIALDATA"];
+v66 [shape=point];
+v63 -> v66;
+
+v63 [label="TO_SPATIALDATA"];
+v65 [shape=point];
+v63 -> v65;
+
+v63 [label="TO_SPATIALDATA"];
+v64 [shape=point];
+v63 -> v64;
+
+}

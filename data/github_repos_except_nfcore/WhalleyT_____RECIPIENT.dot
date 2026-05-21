@@ -1,0 +1,62 @@
+digraph "WhalleyT_____RECIPIENT" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v2 [label="fasta_files"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 [label="qc:kmer_distance"];
+v2 -> v3;
+
+v3 [label="qc:kmer_distance"];
+v4 [shape=point];
+v3 -> v4;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v5 [label="qc:kraken"];
+v1 -> v5 [label="fasta_files"];
+
+v5 [label="qc:kraken"];
+v6 [shape=point];
+v5 -> v6;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v7 [label="pangenome:prokka"];
+v1 -> v7 [label="fasta_files"];
+
+v7 [label="pangenome:prokka"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v10;
+
+v7 [label="pangenome:prokka"];
+v9 [shape=point];
+v7 -> v9;
+
+v7 [label="pangenome:prokka"];
+v8 [shape=point];
+v7 -> v8 [label="$out0"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 [label="pangenome:panaroo"];
+v10 -> v11;
+
+v11 [label="pangenome:panaroo"];
+v14 [label="localisation:psortb"];
+v11 -> v14 [label="aa_reference"];
+
+v11 [label="pangenome:panaroo"];
+v13 [shape=point];
+v11 -> v13;
+
+v11 [label="pangenome:panaroo"];
+v12 [shape=point];
+v11 -> v12;
+
+v14 [label="localisation:psortb"];
+v15 [shape=point];
+v14 -> v15 [label="$out0"];
+
+}

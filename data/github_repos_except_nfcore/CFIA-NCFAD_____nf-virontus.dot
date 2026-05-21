@@ -1,0 +1,594 @@
+digraph "CFIANCFAD_____nfvirontus" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v16 [label="ch_versions"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v2 [label="CHECK_SAMPLE_SHEET"];
+v1 -> v2;
+
+v2 [label="CHECK_SAMPLE_SHEET"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v6 -> v7 [label="ch_input_sorted"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [label="CAT_FASTQ"];
+v8 -> v9 [label="ch_reads"];
+
+v9 [label="CAT_FASTQ"];
+v11 [label="NANOPLOT"];
+v9 -> v11 [label="ch_reads_cat"];
+
+v9 [label="CAT_FASTQ"];
+v10 [shape=point];
+v9 -> v10;
+
+v11 [label="NANOPLOT"];
+v15 [shape=point];
+v11 -> v15;
+
+v11 [label="NANOPLOT"];
+v14 [shape=point];
+v11 -> v14;
+
+v11 [label="NANOPLOT"];
+v13 [shape=point];
+v11 -> v13;
+
+v11 [label="NANOPLOT"];
+v12 [shape=point];
+v11 -> v12;
+
+v11 [label="NANOPLOT"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v22 [label="ch_versions"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v19 [label="SNPEFF_BUILD"];
+v17 -> v19 [label="fasta"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1];
+v19 [label="SNPEFF_BUILD"];
+v18 -> v19 [label="gff"];
+
+v19 [label="SNPEFF_BUILD"];
+v73 [label="SNPEFF_ANN"];
+v19 -> v73;
+
+v19 [label="SNPEFF_BUILD"];
+v73 [label="SNPEFF_ANN"];
+v19 -> v73;
+
+v19 [label="SNPEFF_BUILD"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v30 [label="ch_versions"];
+
+v9 [label="CAT_FASTQ"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v9 -> v24 [label="ch_reads_cat"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v23 -> v24 [label="ch_fasta"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v25 [label="MINIMAP2"];
+v24 -> v25;
+
+v25 [label="MINIMAP2"];
+v32 [label="IVAR_TRIM"];
+v25 -> v32;
+
+v25 [label="MINIMAP2"];
+v27 [shape=point];
+v25 -> v27;
+
+v25 [label="MINIMAP2"];
+v26 [shape=point];
+v25 -> v26;
+
+v25 [label="MINIMAP2"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v25 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v36 [label="ch_versions"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="IVAR_TRIM"];
+v31 -> v32 [label="ch_bed"];
+
+v32 [label="IVAR_TRIM"];
+v39 [label="MOSDEPTH"];
+v32 -> v39 [label="ch_bam"];
+
+v32 [label="IVAR_TRIM"];
+v33 [shape=point];
+v32 -> v33;
+
+v32 [label="IVAR_TRIM"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 -> v99 [label="ch_depths"];
+
+v32 [label="IVAR_TRIM"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v32 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v47 [label="ch_versions"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="PRIMER_BED_TO_AMPLICON_BED"];
+v31 -> v37 [label="ch_bed"];
+
+v37 [label="PRIMER_BED_TO_AMPLICON_BED"];
+v39 [label="MOSDEPTH"];
+v37 -> v39 [label="amplicon_bed"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v39 [label="MOSDEPTH"];
+v38 -> v39 [label="window_size"];
+
+v39 [label="MOSDEPTH"];
+v45 [shape=point];
+v39 -> v45;
+
+v39 [label="MOSDEPTH"];
+v44 [shape=point];
+v39 -> v44;
+
+v39 [label="MOSDEPTH"];
+v43 [shape=point];
+v39 -> v43;
+
+v39 [label="MOSDEPTH"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 -> v93;
+
+v39 [label="MOSDEPTH"];
+v42 [shape=point];
+v39 -> v42;
+
+v39 [label="MOSDEPTH"];
+v41 [shape=point];
+v39 -> v41;
+
+v39 [label="MOSDEPTH"];
+v40 [shape=point];
+v39 -> v40;
+
+v39 [label="MOSDEPTH"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v39 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v54 [label="ch_versions"];
+
+v32 [label="IVAR_TRIM"];
+v49 [label="CLAIR3"];
+v32 -> v49 [label="ch_bam"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v49 [label="CLAIR3"];
+v23 -> v49 [label="ch_fasta"];
+
+v48 [shape=point,label="",fixedsize=true,width=0.1];
+v49 [label="CLAIR3"];
+v48 -> v49 [label="model_path"];
+
+v49 [label="CLAIR3"];
+v56 [label="BCFTOOLS_FILTER_MINOR"];
+v49 -> v56;
+
+v49 [label="CLAIR3"];
+v51 [shape=point];
+v49 -> v51 [label="clair3_dir"];
+
+v49 [label="CLAIR3"];
+v50 [shape=point];
+v49 -> v50 [label="clair3_log"];
+
+v49 [label="CLAIR3"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v49 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v59 [label="ch_versions"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="BCFTOOLS_FILTER_MINOR"];
+v55 -> v56 [label="allele_fraction"];
+
+v56 [label="BCFTOOLS_FILTER_MINOR"];
+v63 [label="VCF_FILTER_FRAMESHIFT_MINOR"];
+v56 -> v63;
+
+v56 [label="BCFTOOLS_FILTER_MINOR"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v69 [label="ch_versions"];
+
+v49 [label="CLAIR3"];
+v61 [label="BCFTOOLS_FILTER_MAJOR"];
+v49 -> v61;
+
+v60 [shape=point,label="",fixedsize=true,width=0.1];
+v61 [label="BCFTOOLS_FILTER_MAJOR"];
+v60 -> v61 [label="allele_fraction"];
+
+v61 [label="BCFTOOLS_FILTER_MAJOR"];
+v64 [label="VCF_FILTER_FRAMESHIFT_MAJOR"];
+v61 -> v64;
+
+v61 [label="BCFTOOLS_FILTER_MAJOR"];
+v62 [shape=point];
+v61 -> v62;
+
+v63 [label="VCF_FILTER_FRAMESHIFT_MINOR"];
+v65 [label="BCFTOOLS_STATS_PRE_FILTER"];
+v63 -> v65;
+
+v64 [label="VCF_FILTER_FRAMESHIFT_MAJOR"];
+v70 [label="BCFTOOLS_STATS_POST_FILTER"];
+v64 -> v70;
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v65 [label="BCFTOOLS_STATS_PRE_FILTER"];
+v23 -> v65 [label="ch_fasta"];
+
+v65 [label="BCFTOOLS_STATS_PRE_FILTER"];
+v66 [shape=point];
+v65 -> v66;
+
+v65 [label="BCFTOOLS_STATS_PRE_FILTER"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v65 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v78 [label="ch_versions"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v70 [label="BCFTOOLS_STATS_POST_FILTER"];
+v23 -> v70 [label="ch_fasta"];
+
+v70 [label="BCFTOOLS_STATS_POST_FILTER"];
+v72 [shape=point];
+v70 -> v72;
+
+v70 [label="BCFTOOLS_STATS_POST_FILTER"];
+v71 [shape=point];
+v70 -> v71;
+
+v63 [label="VCF_FILTER_FRAMESHIFT_MINOR"];
+v73 [label="SNPEFF_ANN"];
+v63 -> v73;
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v73 [label="SNPEFF_ANN"];
+v23 -> v73 [label="ch_fasta"];
+
+v73 [label="SNPEFF_ANN"];
+v79 [label="TABIX_SNPEFF"];
+v73 -> v79;
+
+v73 [label="SNPEFF_ANN"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v73 -> v89;
+
+v73 [label="SNPEFF_ANN"];
+v75 [shape=point];
+v73 -> v75;
+
+v73 [label="SNPEFF_ANN"];
+v74 [shape=point];
+v73 -> v74;
+
+v73 [label="SNPEFF_ANN"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v73 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v82 [label="ch_versions"];
+
+v79 [label="TABIX_SNPEFF"];
+v83 [label="SNPSIFT"];
+v79 -> v83;
+
+v79 [label="TABIX_SNPEFF"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v80 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v86 [label="ch_versions"];
+
+v83 [label="SNPSIFT"];
+v87 [label="SIMPLER_SNPSIFT"];
+v83 -> v87;
+
+v83 [label="SNPSIFT"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v98 [label="ch_versions"];
+
+v87 [label="SIMPLER_SNPSIFT"];
+v88 [shape=point];
+v87 -> v88;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v90 [shape=point];
+v89 -> v90 [label="ch_snpeff"];
+
+v64 [label="VCF_FILTER_FRAMESHIFT_MAJOR"];
+v91 [label="TABIX_CONSENSUS"];
+v64 -> v91;
+
+v91 [label="TABIX_CONSENSUS"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v91 -> v93;
+
+v91 [label="TABIX_CONSENSUS"];
+v92 [shape=point];
+v91 -> v92;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v95 [label="BCFTOOLS_CONSENSUS"];
+v93 -> v95;
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v95 [label="BCFTOOLS_CONSENSUS"];
+v23 -> v95 [label="ch_fasta"];
+
+v94 [shape=point,label="",fixedsize=true,width=0.1];
+v95 [label="BCFTOOLS_CONSENSUS"];
+v94 -> v95 [label="low_coverage"];
+
+v95 [label="BCFTOOLS_CONSENSUS"];
+v102 [label="PREPARE_FASTA_FOR_PANGOLIN"];
+v95 -> v102 [label="ch_fasta_for_pangolin"];
+
+v95 [label="BCFTOOLS_CONSENSUS"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v95 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v108 [label="ch_versions"];
+
+v64 [label="VCF_FILTER_FRAMESHIFT_MAJOR"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v64 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v100 [label="COVERAGE_PLOT"];
+v99 -> v100;
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v100 [label="COVERAGE_PLOT"];
+v23 -> v100 [label="ch_fasta"];
+
+v100 [label="COVERAGE_PLOT"];
+v101 [shape=point];
+v100 -> v101;
+
+v102 [label="PREPARE_FASTA_FOR_PANGOLIN"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v102 -> v103 [label="output"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v104 [label="PANGOLIN"];
+v103 -> v104;
+
+v104 [label="PANGOLIN"];
+v109 [label="PANGOLIN_SUMMARY_FOR_MULTIQC"];
+v104 -> v109 [label="ch_pangolin"];
+
+v104 [label="PANGOLIN"];
+v105 [shape=point];
+v104 -> v105;
+
+v104 [label="PANGOLIN"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v104 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v124 [label="ch_versions"];
+
+v109 [label="PANGOLIN_SUMMARY_FOR_MULTIQC"];
+v110 [shape=point];
+v109 -> v110;
+
+v111 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="NEXTCLADE_DATASETGET"];
+v111 -> v112 [label="dataset"];
+
+v112 [label="NEXTCLADE_DATASETGET"];
+v116 [label="NEXTCLADE_RUN"];
+v112 -> v116;
+
+v112 [label="NEXTCLADE_DATASETGET"];
+v113 [shape=point];
+v112 -> v113;
+
+v95 [label="BCFTOOLS_CONSENSUS"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v95 -> v114 [label="ch_fasta_for_pangolin"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v114 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v116 [label="NEXTCLADE_RUN"];
+v115 -> v116 [label="ch_fastas"];
+
+v116 [label="NEXTCLADE_RUN"];
+v121 [shape=point];
+v116 -> v121;
+
+v116 [label="NEXTCLADE_RUN"];
+v120 [shape=point];
+v116 -> v120;
+
+v116 [label="NEXTCLADE_RUN"];
+v119 [shape=point];
+v116 -> v119;
+
+v116 [label="NEXTCLADE_RUN"];
+v118 [shape=point];
+v116 -> v118;
+
+v116 [label="NEXTCLADE_RUN"];
+v117 [shape=point];
+v116 -> v117;
+
+v116 [label="NEXTCLADE_RUN"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v116 -> v122;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 [shape=point];
+v124 -> v125 [label="ch_versions"];
+
+}

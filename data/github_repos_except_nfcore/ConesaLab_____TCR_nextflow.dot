@@ -1,0 +1,294 @@
+digraph "ConesaLab_____TCR_nextflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v1 -> v6 [label="sampleInfoChannel"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v42 [label="ddbb"];
+v3 -> v42 [label="mcpasChannel"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v42 [label="ddbb"];
+v5 -> v42 [label="vdjdbChannel"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [label="mixcr_analyze"];
+v7 -> v8 [label="samples_channel"];
+
+v8 [label="mixcr_analyze"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 -> v13;
+
+v8 [label="mixcr_analyze"];
+v9 [shape=point];
+v8 -> v9;
+
+v8 [label="mixcr_analyze"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 [label="mixcr_qc"];
+v10 -> v11;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v11 [label="mixcr_qc"];
+v1 -> v11 [label="sampleInfoChannel"];
+
+v11 [label="mixcr_qc"];
+v12 [shape=point];
+v11 -> v12;
+
+v11 [label="mixcr_qc"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v16;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 [label="data_filtering"];
+v13 -> v14;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v14 [label="data_filtering"];
+v1 -> v14 [label="sampleInfoChannel"];
+
+v14 [label="data_filtering"];
+v15 [shape=point];
+v14 -> v15;
+
+v14 [label="data_filtering"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 -> v25;
+
+v14 [label="data_filtering"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 -> v17;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 [label="dataset_overview"];
+v16 -> v18;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 [label="dataset_overview"];
+v17 -> v18;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v18 [label="dataset_overview"];
+v1 -> v18 [label="sampleInfoChannel"];
+
+v18 [label="dataset_overview"];
+v20 [shape=point];
+v18 -> v20;
+
+v18 [label="dataset_overview"];
+v19 [shape=point];
+v18 -> v19;
+
+v18 [label="dataset_overview"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [label="correlations"];
+v21 -> v22;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v22 [label="correlations"];
+v1 -> v22 [label="sampleInfoChannel"];
+
+v22 [label="correlations"];
+v24 [shape=point];
+v22 -> v24;
+
+v22 [label="correlations"];
+v23 [shape=point];
+v22 -> v23;
+
+v22 [label="correlations"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v46;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [label="overlap"];
+v25 -> v26;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v26 [label="overlap"];
+v1 -> v26 [label="sampleInfoChannel"];
+
+v26 [label="overlap"];
+v28 [shape=point];
+v26 -> v28;
+
+v26 [label="overlap"];
+v27 [shape=point];
+v26 -> v27;
+
+v26 [label="overlap"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v47;
+
+v14 [label="data_filtering"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 [label="diversity"];
+v29 -> v30;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v30 [label="diversity"];
+v1 -> v30 [label="sampleInfoChannel"];
+
+v30 [label="diversity"];
+v32 [shape=point];
+v30 -> v32;
+
+v30 [label="diversity"];
+v31 [shape=point];
+v30 -> v31;
+
+v30 [label="diversity"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v48;
+
+v14 [label="data_filtering"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 [label="kmers"];
+v33 -> v34;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v34 [label="kmers"];
+v1 -> v34 [label="sampleInfoChannel"];
+
+v34 [label="kmers"];
+v36 [shape=point];
+v34 -> v36;
+
+v34 [label="kmers"];
+v35 [shape=point];
+v34 -> v35;
+
+v34 [label="kmers"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v49;
+
+v14 [label="data_filtering"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 [label="network"];
+v37 -> v38;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v38 [label="network"];
+v1 -> v38 [label="sampleInfoChannel"];
+
+v38 [label="network"];
+v40 [shape=point];
+v38 -> v40;
+
+v38 [label="network"];
+v39 [shape=point];
+v38 -> v39;
+
+v38 [label="network"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v50;
+
+v14 [label="data_filtering"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 [label="ddbb"];
+v41 -> v42;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v42 [label="ddbb"];
+v1 -> v42 [label="sampleInfoChannel"];
+
+v42 [label="ddbb"];
+v43 [shape=point];
+v42 -> v43;
+
+v42 [label="ddbb"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v51;
+
+v11 [label="mixcr_qc"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v44;
+
+v14 [label="data_filtering"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v45;
+
+v18 [label="dataset_overview"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 [label="report"];
+v52 -> v54;
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="report"];
+v53 -> v54 [label="report_rmd"];
+
+v54 [label="report"];
+v55 [shape=point];
+v54 -> v55;
+
+}

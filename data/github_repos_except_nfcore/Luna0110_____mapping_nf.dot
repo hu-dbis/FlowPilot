@@ -1,0 +1,34 @@
+digraph "Luna0110_____mapping_nf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v3 [label="bm2_mapping"];
+v0 -> v3 [label="ch_reads"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="bm2_index"];
+v1 -> v2 [label="ref"];
+
+v2 [label="bm2_index"];
+v3 [label="bm2_mapping"];
+v2 -> v3 [label="bwa"];
+
+v3 [label="bm2_mapping"];
+v4 [label="bam_sort"];
+v3 -> v4;
+
+v4 [label="bam_sort"];
+v5 [label="samtools_stats"];
+v4 -> v5;
+
+v5 [label="samtools_stats"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 [label="multiqc"];
+v6 -> v7;
+
+v7 [label="multiqc"];
+v8 [shape=point];
+v7 -> v8;
+
+}

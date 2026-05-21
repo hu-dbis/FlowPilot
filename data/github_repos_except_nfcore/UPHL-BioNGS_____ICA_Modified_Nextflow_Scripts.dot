@@ -1,0 +1,1126 @@
+digraph "UPHLBioNGS_____ICA_Modified_Nextflow_Scripts" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v15 [label="de_novo_alignment:bbduk"];
+v2 -> v15 [label="reads"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v69 [label="fastas"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v6 -> v122 [label="gffs"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v42 [label="genome_sizes"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 -> v86 [label="fastani_genomes"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v53 [label="blast_db"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v45 [label="kraken2_db"];
+
+v15 [label="de_novo_alignment:bbduk"];
+v18 [label="de_novo_alignment:fastp"];
+v15 -> v18;
+
+v15 [label="de_novo_alignment:bbduk"];
+v17 [shape=point];
+v15 -> v17;
+
+v15 [label="de_novo_alignment:bbduk"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 -> v136 [label="bbduk_multiqc"];
+
+v15 [label="de_novo_alignment:bbduk"];
+v16 [shape=point];
+v15 -> v16;
+
+v15 [label="de_novo_alignment:bbduk"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 -> v153 [label="phix_reads"];
+
+v18 [label="de_novo_alignment:fastp"];
+v21 [label="de_novo_alignment:spades"];
+v18 -> v21 [label="clean_reads"];
+
+v18 [label="de_novo_alignment:fastp"];
+v20 [shape=point];
+v18 -> v20;
+
+v18 [label="de_novo_alignment:fastp"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 -> v134 [label="fastp_multiqc"];
+
+v18 [label="de_novo_alignment:fastp"];
+v19 [shape=point];
+v18 -> v19;
+
+v18 [label="de_novo_alignment:fastp"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v154 [label="fastp_results"];
+
+v21 [label="de_novo_alignment:spades"];
+v23 [shape=point];
+v21 -> v23;
+
+v21 [label="de_novo_alignment:spades"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 -> v50 [label="contigs"];
+
+v21 [label="de_novo_alignment:spades"];
+v22 [shape=point];
+v21 -> v22;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v24 [label="fastq_information:fastqc"];
+v2 -> v24 [label="reads"];
+
+v24 [label="fastq_information:fastqc"];
+v26 [shape=point];
+v24 -> v26;
+
+v24 [label="fastq_information:fastqc"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 -> v142 [label="fastqc_multiqc"];
+
+v24 [label="fastq_information:fastqc"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 -> v155 [label="fastqc_1_results"];
+
+v24 [label="fastq_information:fastqc"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 -> v156 [label="fastqc_2_results"];
+
+v24 [label="fastq_information:fastqc"];
+v25 [shape=point];
+v24 -> v25;
+
+v18 [label="de_novo_alignment:fastp"];
+v27 [label="fastq_information:mash_sketch"];
+v18 -> v27 [label="clean_reads"];
+
+v27 [label="fastq_information:mash_sketch"];
+v29 [label="fastq_information:mash_dist"];
+v27 -> v29;
+
+v27 [label="fastq_information:mash_sketch"];
+v28 [shape=point];
+v27 -> v28;
+
+v27 [label="fastq_information:mash_sketch"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 -> v39 [label="mash_genome_size"];
+
+v27 [label="fastq_information:mash_sketch"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 -> v167 [label="mash_coverage"];
+
+v29 [label="fastq_information:mash_dist"];
+v31 [shape=point];
+v29 -> v31;
+
+v29 [label="fastq_information:mash_dist"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 -> v40 [label="mash_genus"];
+
+v29 [label="fastq_information:mash_dist"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 -> v41 [label="mash_species"];
+
+v29 [label="fastq_information:mash_dist"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v170 [label="mash_full"];
+
+v29 [label="fastq_information:mash_dist"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v172 [label="mash_pvalue"];
+
+v29 [label="fastq_information:mash_dist"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v174 [label="mash_distance"];
+
+v29 [label="fastq_information:mash_dist"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v75 [label="salmonella_flag"];
+
+v29 [label="fastq_information:mash_dist"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 -> v32 [label="ecoli_flag"];
+
+v29 [label="fastq_information:mash_dist"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v77 [label="klebsiella_flag"];
+
+v29 [label="fastq_information:mash_dist"];
+v30 [shape=point];
+v29 -> v30;
+
+v18 [label="de_novo_alignment:fastp"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v32 [label="clean_reads"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v33 [label="fastq_information:shigatyper"];
+v32 -> v33;
+
+v33 [label="fastq_information:shigatyper"];
+v36 [shape=point];
+v33 -> v36;
+
+v33 [label="fastq_information:shigatyper"];
+v35 [shape=point];
+v33 -> v35;
+
+v33 [label="fastq_information:shigatyper"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v33 -> v161 [label="shigatyper_predictions"];
+
+v33 [label="fastq_information:shigatyper"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v33 -> v162 [label="shigatyper_cada"];
+
+v33 [label="fastq_information:shigatyper"];
+v34 [shape=point];
+v33 -> v34;
+
+v18 [label="de_novo_alignment:fastp"];
+v37 [label="fastq_information:lyveset_shuffle"];
+v18 -> v37 [label="clean_reads"];
+
+v37 [label="fastq_information:lyveset_shuffle"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v37 -> v39;
+
+v37 [label="fastq_information:lyveset_shuffle"];
+v38 [shape=point];
+v37 -> v38;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v43 [label="fastq_information:lyveset_cg_pipeline"];
+v42 -> v43 [label="for_gc"];
+
+v43 [label="fastq_information:lyveset_cg_pipeline"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v43 -> v48;
+
+v43 [label="fastq_information:lyveset_cg_pipeline"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v43 -> v157 [label="cg_pipeline_read_length"];
+
+v43 [label="fastq_information:lyveset_cg_pipeline"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v43 -> v158 [label="cg_pipeline_quality"];
+
+v43 [label="fastq_information:lyveset_cg_pipeline"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v43 -> v159 [label="cg_pipeline_coverage"];
+
+v43 [label="fastq_information:lyveset_cg_pipeline"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v43 -> v160 [label="cg_pipeline_ref_gen_len"];
+
+v43 [label="fastq_information:lyveset_cg_pipeline"];
+v44 [shape=point];
+v43 -> v44;
+
+v18 [label="de_novo_alignment:fastp"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v45 [label="clean_reads"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v46 [label="fastq_information:kraken2"];
+v45 -> v46;
+
+v46 [label="fastq_information:kraken2"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 -> v144 [label="kraken2_multiqc"];
+
+v46 [label="fastq_information:kraken2"];
+v47 [shape=point];
+v46 -> v47;
+
+v46 [label="fastq_information:kraken2"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v46 -> v163 [label="kraken2_top_hit"];
+
+v46 [label="fastq_information:kraken2"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v46 -> v164 [label="kraken2_top_perc"];
+
+v46 [label="fastq_information:kraken2"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v46 -> v165 [label="kraken2_top_reads"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v49 [shape=point];
+v48 -> v49;
+
+v18 [label="de_novo_alignment:fastp"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v50 [label="clean_reads"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 [label="blobtools:bwa"];
+v50 -> v51;
+
+v51 [label="blobtools:bwa"];
+v56 [label="blobtools:sort"];
+v51 -> v56;
+
+v51 [label="blobtools:bwa"];
+v52 [shape=point];
+v51 -> v52;
+
+v21 [label="de_novo_alignment:spades"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v21 -> v53 [label="contigs"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v54 [label="blobtools:blastn"];
+v53 -> v54;
+
+v54 [label="blobtools:blastn"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v54 -> v58;
+
+v54 [label="blobtools:blastn"];
+v55 [shape=point];
+v54 -> v55;
+
+v56 [label="blobtools:sort"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v59;
+
+v56 [label="blobtools:sort"];
+v57 [shape=point];
+v56 -> v57;
+
+v21 [label="de_novo_alignment:spades"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 -> v58 [label="contigs"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 [label="blobtools:blobtools_create"];
+v59 -> v60;
+
+v60 [label="blobtools:blobtools_create"];
+v63 [label="blobtools:blobtools_view"];
+v60 -> v63;
+
+v60 [label="blobtools:blobtools_create"];
+v62 [shape=point];
+v60 -> v62;
+
+v60 [label="blobtools:blobtools_create"];
+v61 [shape=point];
+v60 -> v61;
+
+v63 [label="blobtools:blobtools_view"];
+v65 [shape=point];
+v63 -> v65;
+
+v63 [label="blobtools:blobtools_view"];
+v64 [shape=point];
+v63 -> v64;
+
+v60 [label="blobtools:blobtools_create"];
+v66 [label="blobtools:blobtools_blobtools"];
+v60 -> v66;
+
+v66 [label="blobtools:blobtools_blobtools"];
+v68 [shape=point];
+v66 -> v68;
+
+v66 [label="blobtools:blobtools_blobtools"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v66 -> v198 [label="blobtools_species"];
+
+v66 [label="blobtools:blobtools_blobtools"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v66 -> v199 [label="blobtools_perc"];
+
+v66 [label="blobtools:blobtools_blobtools"];
+v67 [shape=point];
+v66 -> v67;
+
+v21 [label="de_novo_alignment:spades"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v69 [label="contigs"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 [label="contig_information:mlst"];
+v69 -> v78 [label="contigs"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 [label="mash"];
+v4 -> v70 [label="fastas"];
+
+v70 [label="mash"];
+v72 [shape=point];
+v70 -> v72;
+
+v70 [label="mash"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v74;
+
+v70 [label="mash"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v73;
+
+v70 [label="mash"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v170;
+
+v70 [label="mash"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v172;
+
+v70 [label="mash"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v174;
+
+v70 [label="mash"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v75;
+
+v70 [label="mash"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v76;
+
+v70 [label="mash"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v77;
+
+v70 [label="mash"];
+v71 [shape=point];
+v70 -> v71;
+
+v29 [label="fastq_information:mash_dist"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v73 [label="mash_species"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v73 -> v104 [label="mash_species"];
+
+v29 [label="fastq_information:mash_dist"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v74 [label="mash_genus"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v74 -> v103 [label="mash_genus"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v75 -> v92 [label="salmonella_flag"];
+
+v29 [label="fastq_information:mash_dist"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v76 [label="ecoli_flag"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v76 -> v96 [label="ecoli_flag"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v77 -> v89 [label="klebsiella_flag"];
+
+v78 [label="contig_information:mlst"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v78 -> v107;
+
+v78 [label="contig_information:mlst"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v78 -> v197 [label="mlst_sttype"];
+
+v78 [label="contig_information:mlst"];
+v79 [shape=point];
+v78 -> v79;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 [label="contig_information:quast"];
+v69 -> v80 [label="contigs"];
+
+v80 [label="contig_information:quast"];
+v82 [shape=point];
+v80 -> v82;
+
+v80 [label="contig_information:quast"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v80 -> v140 [label="quast_multiqc"];
+
+v80 [label="contig_information:quast"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v80 -> v115;
+
+v80 [label="contig_information:quast"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v80 -> v185 [label="quast_gc"];
+
+v80 [label="contig_information:quast"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v80 -> v186 [label="quast_contigs"];
+
+v80 [label="contig_information:quast"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v80 -> v187 [label="quast_nfifty"];
+
+v80 [label="contig_information:quast"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v80 -> v188 [label="quast_length"];
+
+v80 [label="contig_information:quast"];
+v81 [shape=point];
+v80 -> v81;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 [label="contig_information:plasmidfinder"];
+v69 -> v83 [label="contigs"];
+
+v83 [label="contig_information:plasmidfinder"];
+v85 [shape=point];
+v83 -> v85;
+
+v83 [label="contig_information:plasmidfinder"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v83 -> v184 [label="plasmidfinder_hits"];
+
+v83 [label="contig_information:plasmidfinder"];
+v84 [shape=point];
+v83 -> v84;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v69 -> v86 [label="contigs"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v87 [label="contig_information:fastani"];
+v86 -> v87;
+
+v87 [label="contig_information:fastani"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v87 -> v113;
+
+v87 [label="contig_information:fastani"];
+v88 [shape=point];
+v87 -> v88;
+
+v87 [label="contig_information:fastani"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v87 -> v193 [label="fastani_ref"];
+
+v87 [label="contig_information:fastani"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v87 -> v194 [label="fastani_ani_score"];
+
+v87 [label="contig_information:fastani"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v87 -> v195 [label="fastani_fragment"];
+
+v87 [label="contig_information:fastani"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v87 -> v196 [label="fastani_total"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v89 [label="contigs"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v90 [label="contig_information:kleborate"];
+v89 -> v90;
+
+v90 [label="contig_information:kleborate"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v90 -> v189 [label="kleborate_score"];
+
+v90 [label="contig_information:kleborate"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v90 -> v190 [label="kleborate_mlst"];
+
+v90 [label="contig_information:kleborate"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v90 -> v109;
+
+v90 [label="contig_information:kleborate"];
+v91 [shape=point];
+v90 -> v91;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v92 [label="contigs"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 [label="contig_information:seqsero2"];
+v92 -> v93;
+
+v93 [label="contig_information:seqsero2"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v176 [label="seqsero2_profile"];
+
+v93 [label="contig_information:seqsero2"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v177 [label="seqsero2_serotype"];
+
+v93 [label="contig_information:seqsero2"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v178 [label="seqsero2_contamination"];
+
+v93 [label="contig_information:seqsero2"];
+v95 [shape=point];
+v93 -> v95;
+
+v93 [label="contig_information:seqsero2"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v93 -> v202 [label="seqsero2_collect"];
+
+v93 [label="contig_information:seqsero2"];
+v94 [shape=point];
+v93 -> v94;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v96 [label="contigs"];
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v97 [label="contig_information:serotypefinder"];
+v96 -> v97;
+
+v97 [label="contig_information:serotypefinder"];
+v99 [shape=point];
+v97 -> v99;
+
+v97 [label="contig_information:serotypefinder"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v97 -> v179 [label="serotypefinder_ogroup"];
+
+v97 [label="contig_information:serotypefinder"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v97 -> v180 [label="serotypefinder_hgroup"];
+
+v97 [label="contig_information:serotypefinder"];
+v98 [shape=point];
+v97 -> v98;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v69 -> v100 [label="contigs"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v100 [label="kraken2_db"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v101 [label="contig_information:kraken2"];
+v100 -> v101;
+
+v101 [label="contig_information:kraken2"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v101 -> v138 [label="kraken2_multiqc"];
+
+v101 [label="contig_information:kraken2"];
+v102 [shape=point];
+v101 -> v102;
+
+v101 [label="contig_information:kraken2"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v101 -> v181 [label="kraken2_top_hit"];
+
+v101 [label="contig_information:kraken2"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v101 -> v182 [label="kraken2_top_perc"];
+
+v101 [label="contig_information:kraken2"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v101 -> v183 [label="kraken2_top_reads"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v103 [label="contigs"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 [label="contig_information:amrfinderplus"];
+v104 -> v105 [label="for_amrfinder"];
+
+v105 [label="contig_information:amrfinderplus"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v105 -> v111;
+
+v105 [label="contig_information:amrfinderplus"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 -> v191 [label="amrfinder_amr_genes"];
+
+v105 [label="contig_information:amrfinderplus"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 -> v192 [label="amrfinder_vir_genes"];
+
+v105 [label="contig_information:amrfinderplus"];
+v106 [shape=point];
+v105 -> v106;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v108 [shape=point];
+v107 -> v108;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v110 [shape=point];
+v109 -> v110;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v112 [shape=point];
+v111 -> v112;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v114 [shape=point];
+v113 -> v114;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v116 [shape=point];
+v115 -> v116;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v74 -> v117 [label="mash_genus"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v117 [label="contigs"];
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v117 -> v118;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v73 -> v118 [label="mash_species"];
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v119 [label="phylogenetic_analysis:prokka"];
+v118 -> v119 [label="for_prokka"];
+
+v119 [label="phylogenetic_analysis:prokka"];
+v121 [shape=point];
+v119 -> v121;
+
+v119 [label="phylogenetic_analysis:prokka"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v119 -> v146 [label="prokka_multiqc"];
+
+v119 [label="phylogenetic_analysis:prokka"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v119 -> v122;
+
+v119 [label="phylogenetic_analysis:prokka"];
+v120 [shape=point];
+v119 -> v120;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v124 [label="phylogenetic_analysis:roary"];
+v123 -> v124;
+
+v124 [label="phylogenetic_analysis:roary"];
+v127 [shape=point];
+v124 -> v127;
+
+v124 [label="phylogenetic_analysis:roary"];
+v126 [shape=point];
+v124 -> v126;
+
+v124 [label="phylogenetic_analysis:roary"];
+v128 [label="phylogenetic_analysis:iqtree2"];
+v124 -> v128;
+
+v124 [label="phylogenetic_analysis:roary"];
+v125 [shape=point];
+v124 -> v125;
+
+v128 [label="phylogenetic_analysis:iqtree2"];
+v130 [shape=point];
+v128 -> v130;
+
+v128 [label="phylogenetic_analysis:iqtree2"];
+v129 [shape=point];
+v128 -> v129;
+
+v124 [label="phylogenetic_analysis:roary"];
+v131 [label="phylogenetic_analysis:snp_dists"];
+v124 -> v131 [label="contigs"];
+
+v131 [label="phylogenetic_analysis:snp_dists"];
+v133 [shape=point];
+v131 -> v133;
+
+v131 [label="phylogenetic_analysis:snp_dists"];
+v132 [shape=point];
+v131 -> v132;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v134 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v148 [label="multiqc"];
+v135 -> v148;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v136 -> v137;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v148 [label="multiqc"];
+v137 -> v148;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v148 [label="multiqc"];
+v139 -> v148;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v148 [label="multiqc"];
+v141 -> v148;
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v142 -> v143;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v148 [label="multiqc"];
+v143 -> v148;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v144 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v148 [label="multiqc"];
+v145 -> v148;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v148 [label="multiqc"];
+v147 -> v148;
+
+v148 [label="multiqc"];
+v151 [shape=point];
+v148 -> v151;
+
+v148 [label="multiqc"];
+v150 [shape=point];
+v148 -> v150;
+
+v148 [label="multiqc"];
+v149 [shape=point];
+v148 -> v149;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v152 [label="fastas"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v152 [label="reads"];
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v152 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v153 -> v154;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v154 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v155 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v156 -> v157;
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v157 -> v158;
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v158 -> v159;
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v159 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v160 -> v161;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v161 -> v162;
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v162 -> v163;
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v163 -> v164;
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v164 -> v165;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v165 -> v166;
+
+v27 [label="fastq_information:mash_sketch"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 -> v166 [label="mash_genome_size"];
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v166 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v167 -> v168;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v74 -> v168 [label="mash_genus"];
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v168 -> v169;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v73 -> v169 [label="mash_species"];
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v169 -> v171;
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v170 -> v171;
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v171 -> v173;
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v172 -> v173;
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v173 -> v175;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v174 -> v175;
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v175 -> v176;
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v176 -> v177;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v177 -> v178;
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v178 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v179 -> v180;
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v180 -> v181;
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v181 -> v182;
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v182 -> v183;
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v183 -> v184;
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v184 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v185 -> v186;
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v186 -> v187;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v187 -> v188;
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v188 -> v189;
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v189 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v190 -> v191;
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v191 -> v192;
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v192 -> v193;
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v193 -> v194;
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v194 -> v195;
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v195 -> v196;
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v196 -> v197;
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v197 -> v198;
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v198 -> v199;
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v200 [label="summary"];
+v199 -> v200 [label="results"];
+
+v200 [label="summary"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v200 -> v204;
+
+v200 [label="summary"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v200 -> v206;
+
+v200 [label="summary"];
+v201 [shape=point];
+v200 -> v201;
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v203 [shape=point];
+v202 -> v203;
+
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v205 [shape=point];
+v204 -> v205;
+
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v207 [shape=point];
+v206 -> v207;
+
+}

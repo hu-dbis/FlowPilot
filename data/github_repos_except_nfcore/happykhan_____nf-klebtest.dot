@@ -1,0 +1,306 @@
+digraph "happykhan_____nfklebtest" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v51 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v10 [label="ch_software_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="NFCORE_KLEBTEST:KLEBTEST:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v2 -> v3 [label="samplesheet"];
+
+v3 [label="NFCORE_KLEBTEST:KLEBTEST:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [label="NFCORE_KLEBTEST:KLEBTEST:FASTQC"];
+v5 -> v6 [label="reads"];
+
+v6 [label="NFCORE_KLEBTEST:KLEBTEST:FASTQC"];
+v7 [shape=point];
+v6 -> v7;
+
+v6 [label="NFCORE_KLEBTEST:KLEBTEST:FASTQC"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v59;
+
+v6 [label="NFCORE_KLEBTEST:KLEBTEST:FASTQC"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v6 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v15 [label="ch_software_versions"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [label="NFCORE_KLEBTEST:KLEBTEST:SHOVILL"];
+v5 -> v11 [label="reads"];
+
+v11 [label="NFCORE_KLEBTEST:KLEBTEST:SHOVILL"];
+v16 [label="NFCORE_KLEBTEST:KLEBTEST:MLST"];
+v11 -> v16;
+
+v11 [label="NFCORE_KLEBTEST:KLEBTEST:SHOVILL"];
+v12 [shape=point];
+v11 -> v12;
+
+v11 [label="NFCORE_KLEBTEST:KLEBTEST:SHOVILL"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v11 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v19 [label="ch_software_versions"];
+
+v16 [label="NFCORE_KLEBTEST:KLEBTEST:MLST"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v20;
+
+v16 [label="NFCORE_KLEBTEST:KLEBTEST:MLST"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v25 [label="ch_software_versions"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [label="NFCORE_KLEBTEST:KLEBTEST:MLSTCAT"];
+v21 -> v35 [label="ch_merge_mlst"];
+
+v11 [label="NFCORE_KLEBTEST:KLEBTEST:SHOVILL"];
+v22 [label="NFCORE_KLEBTEST:KLEBTEST:KLEBORATE"];
+v11 -> v22;
+
+v22 [label="NFCORE_KLEBTEST:KLEBTEST:KLEBORATE"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 -> v26;
+
+v22 [label="NFCORE_KLEBTEST:KLEBTEST:KLEBORATE"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v38 [label="ch_software_versions"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [label="NFCORE_KLEBTEST:KLEBTEST:KLEBORATECAT"];
+v27 -> v30 [label="ch_merge_kleborate"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="NFCORE_KLEBTEST:KLEBTEST:KLEBORATECAT"];
+v28 -> v30 [label="in_format"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="NFCORE_KLEBTEST:KLEBTEST:KLEBORATECAT"];
+v29 -> v30 [label="out_format"];
+
+v30 [label="NFCORE_KLEBTEST:KLEBTEST:KLEBORATECAT"];
+v32 [shape=point];
+v30 -> v32;
+
+v30 [label="NFCORE_KLEBTEST:KLEBTEST:KLEBORATECAT"];
+v31 [shape=point];
+v30 -> v31;
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v35 [label="NFCORE_KLEBTEST:KLEBTEST:MLSTCAT"];
+v33 -> v35 [label="in_format"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v35 [label="NFCORE_KLEBTEST:KLEBTEST:MLSTCAT"];
+v34 -> v35 [label="out_format"];
+
+v35 [label="NFCORE_KLEBTEST:KLEBTEST:MLSTCAT"];
+v36 [shape=point];
+v35 -> v36;
+
+v35 [label="NFCORE_KLEBTEST:KLEBTEST:MLSTCAT"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v35 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 -> v39 [label="ch_software_versions"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 -> v44 [label="ch_software_versions"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 [label="NFCORE_KLEBTEST:KLEBTEST:GET_SOFTWARE_VERSIONS"];
+v45 -> v46;
+
+v46 [label="NFCORE_KLEBTEST:KLEBTEST:GET_SOFTWARE_VERSIONS"];
+v47 [shape=point];
+v46 -> v47;
+
+v46 [label="NFCORE_KLEBTEST:KLEBTEST:GET_SOFTWARE_VERSIONS"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 -> v57;
+
+v48 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v50 [label="ch_multiqc_files"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v53 [label="ch_multiqc_files"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v56 [label="ch_multiqc_files"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v54 -> v55 [label="ch_workflow_summary"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v58 [label="ch_multiqc_files"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v61 [label="ch_multiqc_files"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v61 -> v62 [label="ch_multiqc_files"];
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 [label="NFCORE_KLEBTEST:KLEBTEST:MULTIQC"];
+v62 -> v63;
+
+v63 [label="NFCORE_KLEBTEST:KLEBTEST:MULTIQC"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v63 -> v66;
+
+v63 [label="NFCORE_KLEBTEST:KLEBTEST:MULTIQC"];
+v65 [shape=point];
+v63 -> v65;
+
+v63 [label="NFCORE_KLEBTEST:KLEBTEST:MULTIQC"];
+v64 [shape=point];
+v63 -> v64;
+
+v63 [label="NFCORE_KLEBTEST:KLEBTEST:MULTIQC"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v63 -> v68;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v67 [shape=point];
+v66 -> v67;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v69;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v69 [label="ch_software_versions"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=point];
+v69 -> v70 [label="ch_software_versions"];
+
+}

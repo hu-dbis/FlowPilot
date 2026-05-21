@@ -1,0 +1,54 @@
+digraph "varshini712_____nftestawspoc" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v4 [label="ch_sampleinput"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v4 [label="ch_trimmomatic_contaminant_fa"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 [label="AWS_POC:TRIMMOMATIC"];
+v4 -> v5 [label="ch_trim"];
+
+v5 [label="AWS_POC:TRIMMOMATIC"];
+v10 [label="AWS_POC:ALIGNMENT"];
+v5 -> v10;
+
+v5 [label="AWS_POC:TRIMMOMATIC"];
+v7 [shape=point];
+v5 -> v7;
+
+v5 [label="AWS_POC:TRIMMOMATIC"];
+v6 [shape=point];
+v5 -> v6;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v8 -> v9 [label="ch_ref_genome"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v10 [label="AWS_POC:ALIGNMENT"];
+v9 -> v10;
+
+v10 [label="AWS_POC:ALIGNMENT"];
+v11 [label="AWS_POC:SAMTOOLS_FLAGSTAT"];
+v10 -> v11;
+
+v11 [label="AWS_POC:SAMTOOLS_FLAGSTAT"];
+v13 [shape=point];
+v11 -> v13;
+
+v11 [label="AWS_POC:SAMTOOLS_FLAGSTAT"];
+v12 [shape=point];
+v11 -> v12;
+
+}

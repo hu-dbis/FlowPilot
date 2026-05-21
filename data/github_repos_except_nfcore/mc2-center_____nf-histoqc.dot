@@ -1,0 +1,58 @@
+digraph "mc2center_____nfhistoqc" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [label="NF_HISTOQC:RUN:HISTOQC"];
+v2 -> v6 [label="images"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v6 [label="NF_HISTOQC:RUN:HISTOQC"];
+v4 -> v6;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="NF_HISTOQC:RUN:HISTOQC"];
+v5 -> v6 [label="config_string"];
+
+v6 [label="NF_HISTOQC:RUN:HISTOQC"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v8 [label="results"];
+
+v6 [label="NF_HISTOQC:RUN:HISTOQC"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v12 [label="errors"];
+
+v6 [label="NF_HISTOQC:RUN:HISTOQC"];
+v7 [shape=point];
+v6 -> v7 [label="output"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 [label="NF_HISTOQC:COLLECT:RESULTS"];
+v8 -> v9;
+
+v9 [label="NF_HISTOQC:COLLECT:RESULTS"];
+v10 [label="NF_HISTOQC:COLLECT:TIDY"];
+v9 -> v10;
+
+v10 [label="NF_HISTOQC:COLLECT:TIDY"];
+v11 [shape=point];
+v10 -> v11;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 [label="NF_HISTOQC:COLLECT:LOGS"];
+v12 -> v13;
+
+v13 [label="NF_HISTOQC:COLLECT:LOGS"];
+v14 [shape=point];
+v13 -> v14;
+
+}

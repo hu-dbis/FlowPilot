@@ -1,0 +1,22 @@
+digraph "maheshpanchal_____Nextflow_Conditional_BuildDB" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="CHECKDB:BUILDDB"];
+v0 -> v1 [label="dbfile"];
+
+v1 [label="CHECKDB:BUILDDB"];
+v3 [label="CHECKDB:QUERYDB"];
+v1 -> v3;
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="CHECKDB:QUERYDB"];
+v2 -> v3 [label="query"];
+
+v3 [label="CHECKDB:QUERYDB"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v3 -> v4 [label="-"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v5 [shape=point];
+v4 -> v5;
+
+}

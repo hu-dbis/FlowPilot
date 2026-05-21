@@ -1,0 +1,202 @@
+digraph "deepmodeloptim" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3 [label="versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v9 [label="csv"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v9 [label="model"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v10 [label="json"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 -> v11 [label="tune_config"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12 [label="model_tuple"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:CHECK_MODEL:CHECK_TORCH_MODEL"];
+v12 -> v13 [label="model_tuple"];
+
+v13 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:CHECK_MODEL:CHECK_TORCH_MODEL"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v13 -> v14 [label="message_from_check"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v15 [shape=point];
+v14 -> v15;
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 -> v25 [label="data_csv"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v18 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_DATA:INTERPRET_JSON"];
+v17 -> v18 [label="json"];
+
+v13 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:CHECK_MODEL:CHECK_TORCH_MODEL"];
+v18 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_DATA:INTERPRET_JSON"];
+v13 -> v18 [label="message_from_check"];
+
+v18 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_DATA:INTERPRET_JSON"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v18 -> v19;
+
+v18 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_DATA:INTERPRET_JSON"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v18 -> v21;
+
+v18 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_DATA:INTERPRET_JSON"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v18 -> v23;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 -> v29 [label="experiment_json"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v22 -> v25 [label="json_tuple"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v24 -> v27 [label="transform_json"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_DATA:SPLIT_CSV:STIMULUS_SPLIT_CSV"];
+v25 -> v26 [label="json_csv_pairs"];
+
+v26 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_DATA:SPLIT_CSV:STIMULUS_SPLIT_CSV"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 -> v27 [label="split_data"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v28 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_DATA:TRANSFORM_CSV:STIMULUS_TRANSFORM_CSV"];
+v27 -> v28 [label="csv_json_pairs"];
+
+v28 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_DATA:TRANSFORM_CSV:STIMULUS_TRANSFORM_CSV"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v28 -> v29 [label="transformed_data"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v30 -> v33 [label="data"];
+
+v26 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_DATA:SPLIT_CSV:STIMULUS_SPLIT_CSV"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v26 -> v31 [label="split_data"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v32 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_DATA:SHUFFLE_CSV:STIMULUS_SHUFFLE_CSV"];
+v31 -> v32 [label="csv_json_pairs"];
+
+v32 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_DATA:SHUFFLE_CSV:STIMULUS_SHUFFLE_CSV"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v32 -> v33 [label="shuffle_data"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v33 -> v38 [label="data"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v35 -> v37 [label="input_model"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v36 -> v37 [label="tune_config"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v37 -> v38 [label="model_conf_pair"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v40 [label="model_conf_data"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_TUNE:TORCH_TUNE"];
+v40 -> v41 [label="model_conf_data"];
+
+v41 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_TUNE:TORCH_TUNE"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 -> v43 [label="input_tune_out"];
+
+v41 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_TUNE:TORCH_TUNE"];
+v42 [shape=point];
+v41 -> v42;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v44 -> v45 [label="ch2default"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v46 [shape=point];
+v45 -> v46;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v47 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_ANALYSIS:STIMULUS_ANALYSIS_DEFAULT"];
+v44 -> v47 [label="ch2default"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v47 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_ANALYSIS:STIMULUS_ANALYSIS_DEFAULT"];
+v35 -> v47 [label="input_model"];
+
+v47 [label="NFCORE_DEEPMODELOPTIM:DEEPMODELOPTIM:HANDLE_ANALYSIS:STIMULUS_ANALYSIS_DEFAULT"];
+v48 [shape=point];
+v47 -> v48;
+
+}

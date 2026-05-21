@@ -1,0 +1,126 @@
+digraph "JustinaZ_____variantcallinganalysis" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v17 [label="createDictionary"];
+v0 -> v17 [label="genome_ch"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v2 [shape=point];
+v1 -> v2 [label="dict_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v25 [label="GenomicsDBImport"];
+v3 -> v25 [label="bed_file_ch"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [label="GenomicsDBImport"];
+v5 -> v25 [label="gvcf_ch"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [label="createSampleMap"];
+v7 -> v26 [label="gvcf_files_ch"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v23 [label="createTBI"];
+v9 -> v23 [label="gvcf_files_ch_filtered"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v10 -> v11 [label="chr_ch"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v12 [shape=point];
+v11 -> v12;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v14 [shape=point];
+v13 -> v14 [label="genomics_db_ch"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="MergeVcfs"];
+v16 -> v37 [label="chr_vcfs_ch"];
+
+v17 [label="createDictionary"];
+v18 [shape=point];
+v17 -> v18;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v19 [label="BWA_INDEX"];
+v0 -> v19 [label="genome_ch"];
+
+v19 [label="BWA_INDEX"];
+v20 [shape=point];
+v19 -> v20;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v21 [label="createFAI"];
+v0 -> v21 [label="genome_ch"];
+
+v21 [label="createFAI"];
+v22 [shape=point];
+v21 -> v22;
+
+v23 [label="createTBI"];
+v24 [shape=point];
+v23 -> v24;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v25 [label="GenomicsDBImport"];
+v0 -> v25 [label="genome_ch"];
+
+v26 [label="createSampleMap"];
+v27 [shape=point];
+v26 -> v27;
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [label="appendSamplesToGenomicsDB"];
+v28 -> v31 [label="sample_map"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [label="appendSamplesToGenomicsDB"];
+v29 -> v31 [label="tmp_dir"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [label="appendSamplesToGenomicsDB"];
+v30 -> v31 [label="db_path"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v10 -> v32 [label="chr_ch"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [label="JointCallsPerChromosome"];
+v33 -> v34;
+
+v34 [label="JointCallsPerChromosome"];
+v36 [shape=point];
+v34 -> v36;
+
+v34 [label="JointCallsPerChromosome"];
+v35 [shape=point];
+v34 -> v35;
+
+v37 [label="MergeVcfs"];
+v38 [shape=point];
+v37 -> v38;
+
+}

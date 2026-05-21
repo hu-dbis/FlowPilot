@@ -1,0 +1,142 @@
+digraph "JamesChoi94_____LipidModule" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v7 [label="Raw_FastQC"];
+v0 -> v7 [label="raw_reads"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v2 [shape=point];
+v1 -> v2 [label="genomeFasta"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [label="Gtf2Bed"];
+v3 -> v4 [label="annotationGTF"];
+
+v4 [label="Gtf2Bed"];
+v21 [label="Read_Distribution"];
+v4 -> v21;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 [label="Align_Reads"];
+v6 -> v11 [label="index"];
+
+v7 [label="Raw_FastQC"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v7 -> v23;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v8 [label="Cutadapt"];
+v0 -> v8 [label="raw_reads"];
+
+v8 [label="Cutadapt"];
+v9 [label="Trimmed_FastQC"];
+v8 -> v9 [label="trimmed_reads"];
+
+v8 [label="Cutadapt"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v8 -> v23;
+
+v9 [label="Trimmed_FastQC"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v9 -> v23;
+
+v8 [label="Cutadapt"];
+v11 [label="Align_Reads"];
+v8 -> v11 [label="trimmed_reads"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="Align_Reads"];
+v10 -> v11 [label="alignerMethod"];
+
+v11 [label="Align_Reads"];
+v16 [label="Sort_BAMs_Coordinate"];
+v11 -> v16 [label="aligned_bams"];
+
+v11 [label="Align_Reads"];
+v15 [shape=point];
+v11 -> v15;
+
+v11 [label="Align_Reads"];
+v14 [shape=point];
+v11 -> v14;
+
+v11 [label="Align_Reads"];
+v13 [shape=point];
+v11 -> v13;
+
+v11 [label="Align_Reads"];
+v12 [shape=point];
+v11 -> v12;
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="Sort_BAMs_Coordinate"];
+v10 -> v16 [label="alignerMethod"];
+
+v16 [label="Sort_BAMs_Coordinate"];
+v17 [label="Index_BAMs"];
+v16 -> v17 [label="sorted_aligned_bams"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="Index_BAMs"];
+v10 -> v17 [label="alignerMethod"];
+
+v17 [label="Index_BAMs"];
+v18 [shape=point];
+v17 -> v18;
+
+v11 [label="Align_Reads"];
+v19 [label="Aligned_FastQC"];
+v11 -> v19 [label="aligned_bams"];
+
+v19 [label="Aligned_FastQC"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v19 -> v23;
+
+v11 [label="Align_Reads"];
+v20 [label="BAM_Stat"];
+v11 -> v20 [label="aligned_bams"];
+
+v20 [label="BAM_Stat"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v20 -> v23;
+
+v11 [label="Align_Reads"];
+v21 [label="Read_Distribution"];
+v11 -> v21 [label="aligned_bams"];
+
+v21 [label="Read_Distribution"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v21 -> v23;
+
+v11 [label="Align_Reads"];
+v22 [label="Infer_Experiment"];
+v11 -> v22 [label="aligned_bams"];
+
+v4 [label="Gtf2Bed"];
+v22 [label="Infer_Experiment"];
+v4 -> v22 [label="annotationBED"];
+
+v22 [label="Infer_Experiment"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 [label="MultiQC"];
+v24 -> v25 [label="combined_reports"];
+
+v25 [label="MultiQC"];
+v27 [shape=point];
+v25 -> v27;
+
+v25 [label="MultiQC"];
+v26 [shape=point];
+v25 -> v26;
+
+}

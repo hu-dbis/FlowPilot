@@ -1,0 +1,18 @@
+digraph "jiangweiyao_____nf2_schema_demo" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [label="fastqc_multiqc_pipeline:fastqc"];
+v0 -> v1 [label="fastq_file"];
+
+v1 [label="fastqc_multiqc_pipeline:fastqc"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 [label="fastqc_multiqc_pipeline:multiqc"];
+v2 -> v3;
+
+v3 [label="fastqc_multiqc_pipeline:multiqc"];
+v4 [shape=point];
+v3 -> v4;
+
+}

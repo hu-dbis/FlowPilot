@@ -1,0 +1,66 @@
+digraph "michalbukowski_____rnaseqpipeline2" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v2 [label="salmonIndex"];
+v0 -> v2 [label="strains"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="salmonIndex"];
+v1 -> v2 [label="kmerLen"];
+
+v2 [label="salmonIndex"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v5;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v6 [label="salmonQuant"];
+v3 -> v6 [label="libTypes"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 [label="salmonQuant"];
+v5 -> v6 [label="allParams"];
+
+v6 [label="salmonQuant"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v9;
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v12 [label="salmonQuantMerge"];
+v7 -> v12 [label="metrics"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [label="salmonQuantMerge"];
+v11 -> v12 [label="expParams"];
+
+v12 [label="salmonQuantMerge"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v12 -> v14;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v15 [label="calculateDGE"];
+v13 -> v15 [label="alpha"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v15 [label="calculateDGE"];
+v14 -> v15 [label="salmonQntM"];
+
+v15 [label="calculateDGE"];
+v16 [shape=point];
+v15 -> v16;
+
+}

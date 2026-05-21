@@ -1,0 +1,130 @@
+digraph "SharuPaul_____RNASeq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v0 -> v5 [label="reads_ch"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v7 [label="rnaseq:trim_galore"];
+v1 -> v7 [label="readpairs_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [label="rnaseq:salmon_index"];
+v2 -> v8 [label="cdna_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [label="rnaseq:hisat_index"];
+v3 -> v11 [label="genome_ch"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v17 [label="gff_ch"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v6 [label="rnaseq:fastqc"];
+v5 -> v6;
+
+v6 [label="rnaseq:fastqc"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v6 -> v21;
+
+v7 [label="rnaseq:trim_galore"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v9;
+
+v7 [label="rnaseq:trim_galore"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v7 -> v22;
+
+v8 [label="rnaseq:salmon_index"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 [label="rnaseq:salmon_quant"];
+v9 -> v10;
+
+v10 [label="rnaseq:salmon_quant"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v10 -> v21;
+
+v11 [label="rnaseq:hisat_index"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v12;
+
+v7 [label="rnaseq:trim_galore"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 [label="rnaseq:hisat"];
+v12 -> v13;
+
+v13 [label="rnaseq:hisat"];
+v15 [label="rnaseq:samtools"];
+v13 -> v15;
+
+v13 [label="rnaseq:hisat"];
+v14 [shape=point];
+v13 -> v14;
+
+v15 [label="rnaseq:samtools"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v17;
+
+v15 [label="rnaseq:samtools"];
+v16 [shape=point];
+v15 -> v16;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 [label="rnaseq:featureCounts_gene"];
+v17 -> v18;
+
+v18 [label="rnaseq:featureCounts_gene"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v18 -> v23;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 [label="rnaseq:featureCounts_mRNA"];
+v17 -> v19;
+
+v19 [label="rnaseq:featureCounts_mRNA"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v19 -> v24;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 [label="rnaseq:featureCounts_geneMult"];
+v17 -> v20;
+
+v20 [label="rnaseq:featureCounts_geneMult"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v20 -> v25;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 [label="rnaseq:multiqc"];
+v26 -> v27;
+
+v27 [label="rnaseq:multiqc"];
+v28 [shape=point];
+v27 -> v28;
+
+}

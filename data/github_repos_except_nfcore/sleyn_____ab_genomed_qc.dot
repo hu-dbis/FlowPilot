@@ -1,0 +1,66 @@
+digraph "sleyn_____ab_genomed_qc" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="EMIT_FAMILY"];
+v2 -> v3 [label="sc_gene_ch"];
+
+v3 [label="EMIT_FAMILY"];
+v4 [label="DOWNLOAD_FAMILY_MEMBER_TABLE"];
+v3 -> v4;
+
+v4 [label="DOWNLOAD_FAMILY_MEMBER_TABLE"];
+v5 [shape=point];
+v4 -> v5;
+
+v4 [label="DOWNLOAD_FAMILY_MEMBER_TABLE"];
+v6 [label="TBL_TO_FASTA"];
+v4 -> v6;
+
+v6 [label="TBL_TO_FASTA"];
+v7 [shape=point];
+v6 -> v7;
+
+v6 [label="TBL_TO_FASTA"];
+v8 [label="ALIGN_FASTA"];
+v6 -> v8;
+
+v8 [label="ALIGN_FASTA"];
+v9 [shape=point];
+v8 -> v9;
+
+v8 [label="ALIGN_FASTA"];
+v10 [label="CALCULATE_DISTANCE"];
+v8 -> v10;
+
+v10 [label="CALCULATE_DISTANCE"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 [label="COMBINE_DISTANCES"];
+v11 -> v12;
+
+v12 [label="COMBINE_DISTANCES"];
+v16 [shape=point];
+v12 -> v16;
+
+v12 [label="COMBINE_DISTANCES"];
+v15 [shape=point];
+v12 -> v15;
+
+v12 [label="COMBINE_DISTANCES"];
+v14 [shape=point];
+v12 -> v14;
+
+v12 [label="COMBINE_DISTANCES"];
+v13 [shape=point];
+v12 -> v13;
+
+}

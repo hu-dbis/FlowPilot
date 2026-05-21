@@ -1,0 +1,146 @@
+digraph "vasquini_____EDLBmicropipe" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v2 -> v3 [label="ch_samplesheet"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v4 [shape=point];
+v3 -> v4;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v7 -> v8 [label="ch_samplesheet_illumina"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v9 [shape=point];
+v8 -> v9;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [label="assembly:FASTQC"];
+v2 -> v10 [label="ch_samplesheet"];
+
+v10 [label="assembly:FASTQC"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 [label="assembly:MULTIQC"];
+v11 -> v12;
+
+v12 [label="assembly:MULTIQC"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v14 [shape=point];
+v13 -> v14;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [label="assembly:porechop"];
+v2 -> v15 [label="ch_samplesheet"];
+
+v15 [label="assembly:porechop"];
+v18 [label="assembly:japsa"];
+v15 -> v18;
+
+v15 [label="assembly:porechop"];
+v17 [shape=point];
+v15 -> v17;
+
+v15 [label="assembly:porechop"];
+v16 [shape=point];
+v15 -> v16;
+
+v18 [label="assembly:japsa"];
+v19 [label="assembly:flye"];
+v18 -> v19;
+
+v19 [label="assembly:flye"];
+v22 [label="assembly:racon_cpu"];
+v19 -> v22;
+
+v19 [label="assembly:flye"];
+v21 [shape=point];
+v19 -> v21;
+
+v19 [label="assembly:flye"];
+v20 [shape=point];
+v19 -> v20;
+
+v22 [label="assembly:racon_cpu"];
+v25 [label="assembly:medaka_cpu"];
+v22 -> v25;
+
+v22 [label="assembly:racon_cpu"];
+v24 [shape=point];
+v22 -> v24;
+
+v22 [label="assembly:racon_cpu"];
+v23 [shape=point];
+v22 -> v23;
+
+v25 [label="assembly:medaka_cpu"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v25 -> v28;
+
+v25 [label="assembly:medaka_cpu"];
+v27 [shape=point];
+v25 -> v27;
+
+v25 [label="assembly:medaka_cpu"];
+v26 [shape=point];
+v25 -> v26;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v28 [label="ch_samplesheet_illumina"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v29 [label="assembly:nextpolish"];
+v28 -> v29;
+
+v29 [label="assembly:nextpolish"];
+v32 [label="assembly:fixstart"];
+v29 -> v32;
+
+v29 [label="assembly:nextpolish"];
+v31 [shape=point];
+v29 -> v31;
+
+v29 [label="assembly:nextpolish"];
+v30 [shape=point];
+v29 -> v30;
+
+v32 [label="assembly:fixstart"];
+v34 [label="assembly:quast"];
+v32 -> v34;
+
+v32 [label="assembly:fixstart"];
+v33 [shape=point];
+v32 -> v33;
+
+v34 [label="assembly:quast"];
+v36 [shape=point];
+v34 -> v36;
+
+v34 [label="assembly:quast"];
+v35 [shape=point];
+v34 -> v35;
+
+}

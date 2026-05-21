@@ -1,0 +1,866 @@
+digraph "UPHLBioNGS_____walkercreek" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v198 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v199 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v200 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v59 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v22 [label="ch_all_reads"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v6 [shape=point];
+v5 -> v6 [label="ch_sra_reads"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=point];
+v7 -> v8 [label="ch_sra_list"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v10 [shape=point];
+v9 -> v10 [label="ch_for_summary"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [label="NFCORE_WALKERCREEK:WALKERCREEK:SRA_FASTQ_SRATOOLS:SRATOOLS_PREFETCH"];
+v12 -> v14 [label="sra_ids"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v16 [label="ch_versions"];
+
+v14 [label="NFCORE_WALKERCREEK:WALKERCREEK:SRA_FASTQ_SRATOOLS:SRATOOLS_PREFETCH"];
+v17 [label="NFCORE_WALKERCREEK:WALKERCREEK:SRA_FASTQ_SRATOOLS:SRATOOLS_FASTERQDUMP"];
+v14 -> v17;
+
+v14 [label="NFCORE_WALKERCREEK:WALKERCREEK:SRA_FASTQ_SRATOOLS:SRATOOLS_PREFETCH"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v20 [label="ch_versions"];
+
+v17 [label="NFCORE_WALKERCREEK:WALKERCREEK:SRA_FASTQ_SRATOOLS:SRATOOLS_FASTERQDUMP"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v22 [label="reads"];
+
+v17 [label="NFCORE_WALKERCREEK:WALKERCREEK:SRA_FASTQ_SRATOOLS:SRATOOLS_FASTERQDUMP"];
+v18 [shape=point];
+v17 -> v18;
+
+v17 [label="NFCORE_WALKERCREEK:WALKERCREEK:SRA_FASTQ_SRATOOLS:SRATOOLS_FASTERQDUMP"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v17 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 [shape=point];
+v20 -> v21 [label="versions"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:NCBI_SRA_HUMAN_SCRUBBER"];
+v22 -> v30 [label="reads"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v24 [shape=point];
+v23 -> v24 [label="db"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v35 [label="ch_versions"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v27 [shape=point];
+v26 -> v27 [label="ch_kraken2reportsheet"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v29 [shape=point];
+v28 -> v29 [label="ch_kraken2_reportsheet_tsv"];
+
+v30 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:NCBI_SRA_HUMAN_SCRUBBER"];
+v34 [shape=point];
+v30 -> v34;
+
+v30 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:NCBI_SRA_HUMAN_SCRUBBER"];
+v33 [shape=point];
+v30 -> v33;
+
+v30 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:NCBI_SRA_HUMAN_SCRUBBER"];
+v32 [shape=point];
+v30 -> v32;
+
+v30 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:NCBI_SRA_HUMAN_SCRUBBER"];
+v31 [shape=point];
+v30 -> v31;
+
+v30 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:NCBI_SRA_HUMAN_SCRUBBER"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v38 [label="ch_versions"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:SEQKIT_PAIR"];
+v22 -> v36 [label="reads"];
+
+v36 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:SEQKIT_PAIR"];
+v39 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:FAQCS"];
+v36 -> v39;
+
+v36 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:SEQKIT_PAIR"];
+v37 [shape=point];
+v36 -> v37;
+
+v36 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:SEQKIT_PAIR"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v44 [label="ch_versions"];
+
+v39 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:FAQCS"];
+v47 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:BBMAP_BBDUK"];
+v39 -> v47;
+
+v39 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:FAQCS"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v191 [label="stats"];
+
+v39 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:FAQCS"];
+v51 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:QC_REPORT"];
+v39 -> v51 [label="ch_qcreport_input"];
+
+v39 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:FAQCS"];
+v43 [shape=point];
+v39 -> v43 [label="qc_report"];
+
+v39 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:FAQCS"];
+v42 [shape=point];
+v39 -> v42;
+
+v39 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:FAQCS"];
+v41 [shape=point];
+v39 -> v41;
+
+v39 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:FAQCS"];
+v40 [shape=point];
+v39 -> v40;
+
+v39 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:FAQCS"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v50 [label="ch_versions"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:BBMAP_BBDUK"];
+v45 -> v47 [label="adapters"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:BBMAP_BBDUK"];
+v46 -> v47 [label="phix"];
+
+v47 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:BBMAP_BBDUK"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v57 [label="clean_reads"];
+
+v47 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:BBMAP_BBDUK"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 -> v194 [label="adapters_stats"];
+
+v47 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:BBMAP_BBDUK"];
+v49 [shape=point];
+v47 -> v49;
+
+v47 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:BBMAP_BBDUK"];
+v48 [shape=point];
+v47 -> v48;
+
+v47 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:BBMAP_BBDUK"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v52 [label="ch_versions"];
+
+v51 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:QC_REPORT"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 -> v60 [label="qc_lines"];
+
+v51 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:QC_REPORT"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v59 [label="versions"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v54 [shape=point];
+v53 -> v54 [label="ch_kraken2_reportsheet_tsv"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v56 [shape=point];
+v55 -> v56 [label="kraken2_reportsheet_tsv"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v57 [label="reads"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 [shape=point];
+v57 -> v58 [label="ch_all_reads"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v135 [label="ch_versions"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 [label="NFCORE_WALKERCREEK:WALKERCREEK:QC_REPORTSHEET"];
+v60 -> v63 [label="ch_qcreportsheet"];
+
+v61 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v62 [shape=point];
+v61 -> v62 [label="ch_kraken2_reportsheet_tsv"];
+
+v63 [label="NFCORE_WALKERCREEK:WALKERCREEK:QC_REPORTSHEET"];
+v172 [label="NFCORE_WALKERCREEK:WALKERCREEK:SUMMARY_REPORT"];
+v63 -> v172 [label="ch_qc_reportsheet_tsv"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v81 [label="ch_versions"];
+
+v65 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v66 [shape=point];
+v65 -> v66 [label="ch_assembly"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v68 [shape=point];
+v67 -> v68 [label="ch_HA"];
+
+v69 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v70 [shape=point];
+v69 -> v70 [label="ch_NA"];
+
+v47 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:BBMAP_BBDUK"];
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v47 -> v72 [label="clean_reads"];
+
+v71 [shape=point,label="",fixedsize=true,width=0.1];
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v71 -> v72 [label="irma_module"];
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v80 [shape=point];
+v72 -> v80;
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v72 -> v108;
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v72 -> v100;
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v82 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_CONSENSUS_QC"];
+v72 -> v82 [label="ch_assembly"];
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v79 [shape=point];
+v72 -> v79;
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v144 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_RUN"];
+v72 -> v144 [label="HA"];
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v78 [shape=point];
+v72 -> v78;
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v77 [shape=point];
+v72 -> v77 [label="ch_NA"];
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v76 [shape=point];
+v72 -> v76;
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v75 [shape=point];
+v72 -> v75;
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v74 [shape=point];
+v72 -> v74;
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v72 -> v124;
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v73 [shape=point];
+v72 -> v73;
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v111 [label="ch_versions"];
+
+v82 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_CONSENSUS_QC"];
+v89 [shape=point];
+v82 -> v89;
+
+v82 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_CONSENSUS_QC"];
+v88 [shape=point];
+v82 -> v88;
+
+v82 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_CONSENSUS_QC"];
+v87 [shape=point];
+v82 -> v87;
+
+v82 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_CONSENSUS_QC"];
+v86 [shape=point];
+v82 -> v86;
+
+v82 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_CONSENSUS_QC"];
+v85 [shape=point];
+v82 -> v85;
+
+v82 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_CONSENSUS_QC"];
+v84 [shape=point];
+v82 -> v84;
+
+v82 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_CONSENSUS_QC"];
+v83 [shape=point];
+v82 -> v83;
+
+v82 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_CONSENSUS_QC"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v82 -> v90 [label="irma_consensus_qc_files"];
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v93 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v96 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_CONSENSUS_QC_REPORTSHEET"];
+v95 -> v96 [label="ch_irma_consensus_qc_results"];
+
+v96 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_CONSENSUS_QC_REPORTSHEET"];
+v172 [label="NFCORE_WALKERCREEK:WALKERCREEK:SUMMARY_REPORT"];
+v96 -> v172 [label="ch_irma_consensus_qc_tsv"];
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v97 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:VADR"];
+v72 -> v97 [label="ch_assembly"];
+
+v97 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:VADR"];
+v99 [shape=point];
+v97 -> v99;
+
+v97 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:VADR"];
+v98 [shape=point];
+v97 -> v98;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v101 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_SEGMENT_COVERAGE"];
+v100 -> v101 [label="fasta_files_individual"];
+
+v101 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_SEGMENT_COVERAGE"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v101 -> v102 [label="irma_seg_cov_results_files"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v105 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v107 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:MERGE_COVERAGE_RESULTS"];
+v106 -> v107 [label="ch_combined_seg_cov_results"];
+
+v107 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:MERGE_COVERAGE_RESULTS"];
+v118 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:MERGE_BAM_COVERAGE_RESULTS"];
+v107 -> v118 [label="merged_coverage_results_tsv"];
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v109 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:SAMTOOLS_MAPPED_READS"];
+v108 -> v109 [label="bam_files_individual"];
+
+v109 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:SAMTOOLS_MAPPED_READS"];
+v110 [shape=point];
+v109 -> v110;
+
+v109 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:SAMTOOLS_MAPPED_READS"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v109 -> v112 [label="bam_results_files"];
+
+v109 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:SAMTOOLS_MAPPED_READS"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v111;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v123 [label="ch_versions"];
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v113 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v114 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v115 -> v116;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v117 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:MERGE_BAM_RESULTS"];
+v116 -> v117 [label="ch_combined_bam_results"];
+
+v117 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:MERGE_BAM_RESULTS"];
+v118 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:MERGE_BAM_COVERAGE_RESULTS"];
+v117 -> v118 [label="merged_bam_results_tsv"];
+
+v118 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:MERGE_BAM_COVERAGE_RESULTS"];
+v119 [shape=point];
+v118 -> v119;
+
+v72 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA"];
+v120 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:ABRICATE_FLU"];
+v72 -> v120 [label="ch_assembly"];
+
+v120 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:ABRICATE_FLU"];
+v122 [shape=point];
+v120 -> v122;
+
+v120 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:ABRICATE_FLU"];
+v121 [shape=point];
+v120 -> v121;
+
+v120 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:ABRICATE_FLU"];
+v133 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:NEXTCLADE_VARIABLES"];
+v120 -> v133 [label="ch_nextclade_variables_input"];
+
+v120 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:ABRICATE_FLU"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v120 -> v124;
+
+v120 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:ABRICATE_FLU"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v135 [label="versions"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v125 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_ABRICATE_REPORT"];
+v124 -> v125 [label="ch_irma_abricate_report_input"];
+
+v125 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_ABRICATE_REPORT"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v125 -> v126 [label="tsv_files"];
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v128 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v132 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_ABRICATE_REPORTSHEET"];
+v131 -> v132 [label="ch_combined_results"];
+
+v132 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:IRMA_ABRICATE_REPORTSHEET"];
+v172 [label="NFCORE_WALKERCREEK:WALKERCREEK:SUMMARY_REPORT"];
+v132 -> v172 [label="ch_typing_report_tsv"];
+
+v133 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:NEXTCLADE_VARIABLES"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v134 [label="ch_dataset_H1N1_ha"];
+
+v133 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:NEXTCLADE_VARIABLES"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v134 [label="ch_dataset_H3N2_ha"];
+
+v133 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:NEXTCLADE_VARIABLES"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v134 [label="ch_dataset_Victoria_ha"];
+
+v133 [label="NFCORE_WALKERCREEK:WALKERCREEK:ASSEMBLY_TYPING_CLADE_VARIABLES:NEXTCLADE_VARIABLES"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v134 [label="ch_dataset_Yamagata_ha"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_DATASETGET"];
+v134 -> v142 [label="dataset"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v165 [label="ch_versions"];
+
+v136 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v143 [label="ch_versions"];
+
+v137 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v138 [shape=point];
+v137 -> v138 [label="ch_nextclade_report"];
+
+v139 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v153 [label="ch_aligned_fasta"];
+
+v140 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v141 [shape=point];
+v140 -> v141 [label="ch_nextclade_run_input"];
+
+v142 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_DATASETGET"];
+v144 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_RUN"];
+v142 -> v144 [label="dataset_2"];
+
+v142 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_DATASETGET"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v143;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v165 [label="versions"];
+
+v144 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_RUN"];
+v152 [shape=point];
+v144 -> v152 [label="nextclade_report"];
+
+v144 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_RUN"];
+v151 [shape=point];
+v144 -> v151;
+
+v144 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_RUN"];
+v150 [shape=point];
+v144 -> v150;
+
+v144 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_RUN"];
+v155 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_PARSER"];
+v144 -> v155 [label="parser_input"];
+
+v144 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_RUN"];
+v149 [shape=point];
+v144 -> v149;
+
+v144 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_RUN"];
+v148 [shape=point];
+v144 -> v148;
+
+v144 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_RUN"];
+v147 [shape=point];
+v144 -> v147;
+
+v144 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_RUN"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v153 [label="fasta_aligned"];
+
+v144 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_RUN"];
+v146 [shape=point];
+v144 -> v146;
+
+v144 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_RUN"];
+v145 [shape=point];
+v144 -> v145;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 [shape=point];
+v153 -> v154;
+
+v155 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_PARSER"];
+v157 [shape=point];
+v155 -> v157;
+
+v155 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_PARSER"];
+v156 [shape=point];
+v155 -> v156;
+
+v155 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_PARSER"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v155 -> v158 [label="parser_tsv_files"];
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v158 -> v159;
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v159 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v160 -> v161;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v161 -> v162;
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v162 -> v163;
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v164 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_REPORT"];
+v163 -> v164 [label="ch_combined_parser_tsv_results"];
+
+v164 [label="NFCORE_WALKERCREEK:WALKERCREEK:NEXTCLADE_DATASET_AND_ANALYSIS:NEXTCLADE_REPORT"];
+v172 [label="NFCORE_WALKERCREEK:WALKERCREEK:SUMMARY_REPORT"];
+v164 -> v172 [label="ch_nextclade_report_tsv"];
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 -> v171 [label="ch_versions"];
+
+v166 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v167 [shape=point];
+v166 -> v167 [label="ch_nextclade_multiqc"];
+
+v47 [label="NFCORE_WALKERCREEK:WALKERCREEK:PREPROCESSING_READ_QC:BBMAP_BBDUK"];
+v168 [label="NFCORE_WALKERCREEK:WALKERCREEK:FASTQC"];
+v47 -> v168 [label="clean_reads"];
+
+v168 [label="NFCORE_WALKERCREEK:WALKERCREEK:FASTQC"];
+v169 [shape=point];
+v168 -> v169;
+
+v168 [label="NFCORE_WALKERCREEK:WALKERCREEK:FASTQC"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v168 -> v188;
+
+v168 [label="NFCORE_WALKERCREEK:WALKERCREEK:FASTQC"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v168 -> v170;
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 -> v171;
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v171 -> v174 [label="ch_versions"];
+
+v172 [label="NFCORE_WALKERCREEK:WALKERCREEK:SUMMARY_REPORT"];
+v173 [shape=point];
+v172 -> v173;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v174 -> v175;
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v176 [label="NFCORE_WALKERCREEK:WALKERCREEK:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v175 -> v176;
+
+v176 [label="NFCORE_WALKERCREEK:WALKERCREEK:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v178 [shape=point];
+v176 -> v178;
+
+v176 [label="NFCORE_WALKERCREEK:WALKERCREEK:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v176 -> v186;
+
+v176 [label="NFCORE_WALKERCREEK:WALKERCREEK:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v177 [shape=point];
+v176 -> v177;
+
+v179 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v182 [label="ch_multiqc_files"];
+
+v180 [shape=point,label="",fixedsize=true,width=0.1];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v180 -> v181 [label="ch_workflow_summary"];
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 -> v182;
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v185 [label="ch_multiqc_files"];
+
+v183 [shape=point,label="",fixedsize=true,width=0.1];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v183 -> v184 [label="ch_methods_description"];
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v187 [label="ch_multiqc_files"];
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 -> v187;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 -> v190 [label="ch_multiqc_files"];
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v188 -> v189;
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v193 [label="ch_multiqc_files"];
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v191 -> v192;
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v192 -> v193;
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v193 -> v196 [label="ch_multiqc_files"];
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v194 -> v195;
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 -> v196;
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v196 -> v197 [label="ch_multiqc_files"];
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v201 [label="NFCORE_WALKERCREEK:WALKERCREEK:MULTIQC"];
+v197 -> v201;
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v201 [label="NFCORE_WALKERCREEK:WALKERCREEK:MULTIQC"];
+v198 -> v201;
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v201 [label="NFCORE_WALKERCREEK:WALKERCREEK:MULTIQC"];
+v199 -> v201;
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v201 [label="NFCORE_WALKERCREEK:WALKERCREEK:MULTIQC"];
+v200 -> v201;
+
+v201 [label="NFCORE_WALKERCREEK:WALKERCREEK:MULTIQC"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v201 -> v205;
+
+v201 [label="NFCORE_WALKERCREEK:WALKERCREEK:MULTIQC"];
+v204 [shape=point];
+v201 -> v204;
+
+v201 [label="NFCORE_WALKERCREEK:WALKERCREEK:MULTIQC"];
+v203 [shape=point];
+v201 -> v203;
+
+v201 [label="NFCORE_WALKERCREEK:WALKERCREEK:MULTIQC"];
+v202 [shape=point];
+v201 -> v202;
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v206 [shape=point];
+v205 -> v206;
+
+v201 [label="NFCORE_WALKERCREEK:WALKERCREEK:MULTIQC"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v201 -> v207;
+
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v208 [shape=point];
+v207 -> v208 [label="ch_multiqc_report"];
+
+}

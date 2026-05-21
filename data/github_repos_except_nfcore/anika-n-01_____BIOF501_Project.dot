@@ -1,0 +1,50 @@
+digraph "anikan01_____BIOF501_Project" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [label="fastpQC"];
+v0 -> v1 [label="reads_ch"];
+
+v1 [label="fastpQC"];
+v2 [label="mergeReads"];
+v1 -> v2;
+
+v2 [label="mergeReads"];
+v3 [label="filterReads"];
+v2 -> v3;
+
+v3 [label="filterReads"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [label="concatenateReads"];
+v4 -> v5;
+
+v5 [label="concatenateReads"];
+v6 [label="dereplicateSequences"];
+v5 -> v6;
+
+v6 [label="dereplicateSequences"];
+v7 [label="denoiseASV"];
+v6 -> v7;
+
+v7 [label="denoiseASV"];
+v8 [label="chimeraCheck"];
+v7 -> v8;
+
+v8 [label="chimeraCheck"];
+v9 [label="removeSingletons"];
+v8 -> v9;
+
+v9 [label="removeSingletons"];
+v10 [label="createCountMatrix"];
+v9 -> v10;
+
+v5 [label="concatenateReads"];
+v10 [label="createCountMatrix"];
+v5 -> v10 [label="concat.fasta"];
+
+v10 [label="createCountMatrix"];
+v11 [shape=point];
+v10 -> v11;
+
+}

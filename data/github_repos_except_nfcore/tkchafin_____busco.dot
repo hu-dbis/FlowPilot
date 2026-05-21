@@ -1,0 +1,246 @@
+digraph "tkchafin_____busco" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v5 [label="ch_versions"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2 [label="ch_fasta"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="PIPELINE_INITIALISATION:GUNZIP"];
+v2 -> v3 [label="ch_genome"];
+
+v3 [label="PIPELINE_INITIALISATION:GUNZIP"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v7 [label="ch_unzipped"];
+
+v3 [label="PIPELINE_INITIALISATION:GUNZIP"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 [shape=point];
+v5 -> v6 [label="versions"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [label="NFCORE_BUSCO:BUSCO:SUMMARYGENOME"];
+v7 -> v12 [label="fasta"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v19 [label="NFCORE_BUSCO:BUSCO:NCBI_GET_ODB"];
+v8 -> v19 [label="lineage_tax_ids"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v10 [shape=point];
+v9 -> v10 [label="lineage_db"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v14 [label="ch_versions"];
+
+v12 [label="NFCORE_BUSCO:BUSCO:SUMMARYGENOME"];
+v19 [label="NFCORE_BUSCO:BUSCO:NCBI_GET_ODB"];
+v12 -> v19;
+
+v12 [label="NFCORE_BUSCO:BUSCO:SUMMARYGENOME"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v18 [label="ch_versions"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [label="NFCORE_BUSCO:BUSCO:SUMMARYSEQUENCE"];
+v7 -> v15 [label="fasta"];
+
+v15 [label="NFCORE_BUSCO:BUSCO:SUMMARYSEQUENCE"];
+v16 [shape=point];
+v15 -> v16;
+
+v15 [label="NFCORE_BUSCO:BUSCO:SUMMARYSEQUENCE"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v15 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v21 [label="ch_versions"];
+
+v19 [label="NFCORE_BUSCO:BUSCO:NCBI_GET_ODB"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v22;
+
+v19 [label="NFCORE_BUSCO:BUSCO:NCBI_GET_ODB"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v35 [label="ch_versions"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [label="NFCORE_BUSCO:BUSCO:BUSCO_DOWNLOAD"];
+v24 -> v25 [label="ch_lineage"];
+
+v25 [label="NFCORE_BUSCO:BUSCO:BUSCO_DOWNLOAD"];
+v28 [shape=point];
+v25 -> v28;
+
+v25 [label="NFCORE_BUSCO:BUSCO:BUSCO_DOWNLOAD"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v25 -> v29;
+
+v25 [label="NFCORE_BUSCO:BUSCO:BUSCO_DOWNLOAD"];
+v27 [shape=point];
+v25 -> v27;
+
+v25 [label="NFCORE_BUSCO:BUSCO:BUSCO_DOWNLOAD"];
+v26 [shape=point];
+v25 -> v26;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v31 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT"];
+v29 -> v31 [label="ch_odb"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [label="NFCORE_BUSCO:BUSCO:BBTOOLS"];
+v7 -> v30 [label="fasta"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT"];
+v7 -> v31 [label="fasta"];
+
+v31 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT"];
+v36 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT_HMMER"];
+v31 -> v36;
+
+v31 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT"];
+v33 [shape=point];
+v31 -> v33;
+
+v31 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT"];
+v32 [shape=point];
+v31 -> v32;
+
+v31 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v31 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v48 [label="ch_versions"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT_HMMER"];
+v7 -> v36 [label="fasta"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v36 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT_HMMER"];
+v29 -> v36 [label="ch_odb"];
+
+v36 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT_HMMER"];
+v46 [shape=point];
+v36 -> v46;
+
+v36 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT_HMMER"];
+v45 [shape=point];
+v36 -> v45;
+
+v36 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT_HMMER"];
+v44 [shape=point];
+v36 -> v44;
+
+v36 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT_HMMER"];
+v43 [shape=point];
+v36 -> v43;
+
+v36 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT_HMMER"];
+v42 [shape=point];
+v36 -> v42;
+
+v36 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT_HMMER"];
+v41 [shape=point];
+v36 -> v41;
+
+v36 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT_HMMER"];
+v40 [shape=point];
+v36 -> v40;
+
+v36 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT_HMMER"];
+v39 [shape=point];
+v36 -> v39;
+
+v36 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT_HMMER"];
+v38 [shape=point];
+v36 -> v38;
+
+v36 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT_HMMER"];
+v37 [shape=point];
+v36 -> v37;
+
+v31 [label="NFCORE_BUSCO:BUSCO:BUSCO_MINIPROT"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v31 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v48 -> v49 [label="versions"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v53;
+
+v52 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v55 [shape=point];
+v54 -> v55 [label="ch_collated_versions"];
+
+}

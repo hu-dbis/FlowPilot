@@ -1,0 +1,174 @@
+digraph "jbv2_____after_sarek" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v2 -> v3 [label="ch_samples"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v14 [label="ch_xx_samples"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v2 -> v4 [label="ch_samples"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v13 [label="ch_xy_samples"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v18 [label="ch_ref_fasta19"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v19 [label="ch_fai19"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v26 [label="ch_ref_fasta37"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v9 [shape=point];
+v8 -> v9 [label="ch_fai37"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v20 [label="ch_chain"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v30 [label="ch_accesibility_bed"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 -> v25 [label="ch_chromosomes"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [label="BCFTOOLS_FILTER"];
+v13 -> v15 [label="ch_input_filter"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [label="BCFTOOLS_FILTER_XX"];
+v14 -> v16 [label="ch_input_filter_xx"];
+
+v15 [label="BCFTOOLS_FILTER"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v17;
+
+v16 [label="BCFTOOLS_FILTER_XX"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 -> v18 [label="ch_filtered"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v22 [label="LIFTOVER"];
+v21 -> v22;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v22 [label="LIFTOVER"];
+v21 -> v22;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v22 [label="LIFTOVER"];
+v21 -> v22;
+
+v22 [label="LIFTOVER"];
+v23 [shape=point];
+v22 -> v23;
+
+v22 [label="LIFTOVER"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v22 -> v24;
+
+v22 [label="LIFTOVER"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v22 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v28 [label="BCFTOOLS_CONVERT"];
+v27 -> v28;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v28 [label="BCFTOOLS_CONVERT"];
+v27 -> v28;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v28 [label="BCFTOOLS_CONVERT"];
+v27 -> v28;
+
+v28 [label="BCFTOOLS_CONVERT"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v28 -> v29;
+
+v28 [label="BCFTOOLS_CONVERT"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v32 [label="BCFTOOLS_VIEW"];
+v31 -> v32;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v32 [label="BCFTOOLS_VIEW"];
+v31 -> v32;
+
+v32 [label="BCFTOOLS_VIEW"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v32 -> v33;
+
+v32 [label="BCFTOOLS_VIEW"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v34 [label="BCFTOOLS_STATS"];
+v33 -> v34 [label="ch_stats_input"];
+
+v34 [label="BCFTOOLS_STATS"];
+v35 [shape=point];
+v34 -> v35;
+
+}

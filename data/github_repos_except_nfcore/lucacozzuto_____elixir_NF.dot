@@ -1,0 +1,58 @@
+digraph "lucacozzuto_____elixir_NF" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 [label="fastqc"];
+v1 -> v2 [label="input_reads"];
+
+v2 [label="fastqc"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v6;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="BOWTIE:Index"];
+v3 -> v4 [label="ref"];
+
+v4 [label="BOWTIE:Index"];
+v5 [label="BOWTIE:Align"];
+v4 -> v5;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v5 [label="BOWTIE:Align"];
+v1 -> v5 [label="input_reads"];
+
+v5 [label="BOWTIE:Align"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v5 -> v10 [label="sam"];
+
+v5 [label="BOWTIE:Align"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v6 [label="logs"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 [label="multiqc"];
+v7 -> v8;
+
+v8 [label="multiqc"];
+v9 [shape=point];
+v8 -> v9;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v11 [shape=point];
+v10 -> v11;
+
+v5 [label="BOWTIE:Align"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v5 -> v12 [label="logs"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v13 [shape=point];
+v12 -> v13;
+
+}

@@ -1,0 +1,90 @@
+digraph "TRONBioinformatics_____tronflowalignment" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="FASTP_PAIRED"];
+v2 -> v3 [label="input_files"];
+
+v3 [label="FASTP_PAIRED"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v7 [label="trimmed_fastqs"];
+
+v3 [label="FASTP_PAIRED"];
+v6 [shape=point];
+v3 -> v6;
+
+v3 [label="FASTP_PAIRED"];
+v5 [shape=point];
+v3 -> v5;
+
+v3 [label="FASTP_PAIRED"];
+v4 [shape=point];
+v3 -> v4;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [label="BWA_ALN"];
+v7 -> v9;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [label="BWA_ALN"];
+v8 -> v9 [label="reference"];
+
+v9 [label="BWA_ALN"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 -> v15;
+
+v9 [label="BWA_ALN"];
+v10 [shape=point];
+v9 -> v10;
+
+v3 [label="FASTP_PAIRED"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v11 [label="trimmed_fastqs"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [label="BWA_ALN_2"];
+v11 -> v13;
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="BWA_ALN_2"];
+v12 -> v13 [label="reference"];
+
+v13 [label="BWA_ALN_2"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v13 -> v15;
+
+v13 [label="BWA_ALN_2"];
+v14 [shape=point];
+v13 -> v14;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 [label="BWA_SAMPE"];
+v15 -> v17;
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="BWA_SAMPE"];
+v16 -> v17 [label="reference"];
+
+v17 [label="BWA_SAMPE"];
+v19 [label="INDEX_BAM"];
+v17 -> v19 [label="output_bams"];
+
+v17 [label="BWA_SAMPE"];
+v18 [shape=point];
+v17 -> v18;
+
+v19 [label="INDEX_BAM"];
+v21 [shape=point];
+v19 -> v21;
+
+v19 [label="INDEX_BAM"];
+v20 [shape=point];
+v19 -> v20;
+
+}

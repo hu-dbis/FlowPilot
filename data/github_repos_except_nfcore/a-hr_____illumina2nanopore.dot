@@ -1,0 +1,390 @@
+digraph "ahr_____illumina2nanopore" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v69 [label="dup_featureCounts_global"];
+v0 -> v69 [label="gtf_file"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [label="input_logger"];
+v1 -> v11 [label="csv_dir"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v87 [label="multiqc"];
+v2 -> v87 [label="multiqc_config"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 [label="demultiplex_orientation"];
+v4 -> v15 [label="fw_adapters"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 [label="demultiplex_orientation"];
+v6 -> v15 [label="rv_adapters"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 [label="adapter_trim"];
+v8 -> v40 [label="internal_adapters"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [label="input_logger"];
+v9 -> v11;
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="input_logger"];
+v10 -> v11 [label="fastq_dir"];
+
+v11 [label="input_logger"];
+v12 [shape=point];
+v11 -> v12;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v14 [label="raw_fastqc"];
+v13 -> v14 [label="fastq_file"];
+
+v14 [label="raw_fastqc"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v14 -> v20;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v15 [label="demultiplex_orientation"];
+v13 -> v15 [label="fastq_file"];
+
+v15 [label="demultiplex_orientation"];
+v16 [label="oriented_fastqc"];
+v15 -> v16 [label="oriented_fastqs"];
+
+v15 [label="demultiplex_orientation"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v15 -> v22;
+
+v16 [label="oriented_fastqc"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v16 -> v20;
+
+v15 [label="demultiplex_orientation"];
+v18 [label="orientation_stats"];
+v15 -> v18 [label="oriented_fastqs"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v18 [label="orientation_stats"];
+v17 -> v18 [label="name"];
+
+v18 [label="orientation_stats"];
+v19 [shape=point];
+v18 -> v19;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v21 -> v22 [label="multiqc_logs"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v22 -> v39 [label="multiqc_logs"];
+
+v15 [label="demultiplex_orientation"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v15 -> v23 [label="oriented_fastqs"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v25 [label="reverse_complement"];
+v24 -> v25;
+
+v25 [label="reverse_complement"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [label="merge_forward_reverse"];
+v28 -> v29;
+
+v29 [label="merge_forward_reverse"];
+v31 [label="demultiplex_library"];
+v29 -> v31;
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [label="demultiplex_library"];
+v30 -> v31 [label="lib_csv"];
+
+v31 [label="demultiplex_library"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v32;
+
+v31 [label="demultiplex_library"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v38;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 [label="lib_stats"];
+v32 -> v34;
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v34 [label="lib_stats"];
+v33 -> v34 [label="name"];
+
+v34 [label="lib_stats"];
+v35 [shape=point];
+v34 -> v35;
+
+v31 [label="demultiplex_library"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v31 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v40 [label="adapter_trim"];
+v37 -> v40 [label="lib_dmplexed_fastqs"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v39 -> v46 [label="multiqc_logs"];
+
+v40 [label="adapter_trim"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v41;
+
+v40 [label="adapter_trim"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v45;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v43 [label="trim_stats"];
+v41 -> v43;
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="trim_stats"];
+v42 -> v43 [label="name"];
+
+v43 [label="trim_stats"];
+v44 [shape=point];
+v43 -> v44;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v46 -> v53 [label="multiqc_logs"];
+
+v40 [label="adapter_trim"];
+v48 [label="demultiplex_bc"];
+v40 -> v48 [label="fastq"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [label="demultiplex_bc"];
+v47 -> v48 [label="bc_csv"];
+
+v48 [label="demultiplex_bc"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v48 -> v49 [label="bc_demultiplex_fastqs"];
+
+v48 [label="demultiplex_bc"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v48 -> v53;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 [label="bc_stats"];
+v49 -> v51;
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="bc_stats"];
+v50 -> v51 [label="name"];
+
+v51 [label="bc_stats"];
+v52 [shape=point];
+v51 -> v52;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v53 -> v60 [label="multiqc_logs"];
+
+v48 [label="demultiplex_bc"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v48 -> v54 [label="bc_demultiplex_fastqs"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v56 [label="extract_UMI"];
+v55 -> v56;
+
+v56 [label="extract_UMI"];
+v58 [label="align_STAR"];
+v56 -> v58;
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v58 [label="align_STAR"];
+v57 -> v58 [label="index_dir"];
+
+v58 [label="align_STAR"];
+v61 [label="dedup_UMI"];
+v58 -> v61 [label="alignment_bams"];
+
+v58 [label="align_STAR"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v60 -> v66 [label="multiqc_logs"];
+
+v61 [label="dedup_UMI"];
+v62 [label="BAM_INDEX"];
+v61 -> v62 [label="dedup_bams"];
+
+v61 [label="dedup_UMI"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v61 -> v65;
+
+v62 [label="BAM_INDEX"];
+v64 [shape=point];
+v62 -> v64;
+
+v62 [label="BAM_INDEX"];
+v63 [shape=point];
+v62 -> v63;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v66 -> v72 [label="multiqc_logs"];
+
+v58 [label="align_STAR"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v58 -> v67 [label="alignment_bams"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 [label="dup_featureCounts_global"];
+v67 -> v69 [label="dup_bams"];
+
+v68 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="dup_featureCounts_global"];
+v68 -> v69 [label="prefix"];
+
+v69 [label="dup_featureCounts_global"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 -> v70;
+
+v69 [label="dup_featureCounts_global"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 -> v71;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v70 -> v81 [label="all_counts"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v73 -> v79 [label="multiqc_logs"];
+
+v61 [label="dedup_UMI"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v61 -> v74 [label="dedup_bams"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v76 [label="dedup_featureCounts_global"];
+v74 -> v76 [label="dedup_bams"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v76 [label="dedup_featureCounts_global"];
+v0 -> v76 [label="gtf_file"];
+
+v75 [shape=point,label="",fixedsize=true,width=0.1];
+v76 [label="dedup_featureCounts_global"];
+v75 -> v76 [label="prefix"];
+
+v76 [label="dedup_featureCounts_global"];
+v77 [shape=point];
+v76 -> v77;
+
+v76 [label="dedup_featureCounts_global"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v76 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v87 [label="multiqc"];
+v80 -> v87 [label="multiqc_logs"];
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v82 [label="group_results"];
+v81 -> v82;
+
+v82 [label="group_results"];
+v83 [shape=point];
+v82 -> v83;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v70 -> v84 [label="all_counts"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v85 [label="plot_results"];
+v84 -> v85;
+
+v85 [label="plot_results"];
+v86 [shape=point];
+v85 -> v86;
+
+v87 [label="multiqc"];
+v88 [shape=point];
+v87 -> v88;
+
+}

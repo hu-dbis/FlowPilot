@@ -1,0 +1,202 @@
+digraph "EBIMetagenomics_____microeuksgenebenchmarker" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v8 [label="reference_gff"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v9 [label="braker_gtf"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v10 [label="galba_gtf"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v11 [label="metaeuk_gff"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v12 [label="reference_proteins"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v13 [label="braker_proteins"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v14 [label="galba_proteins"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v15 [label="metaeuk_proteins"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v8 -> v16 [label="ref_channel"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 -> v16 [label="braker_channel"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v10 -> v17 [label="galba_channel"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v11 -> v18 [label="metaeuk_channel"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v12 -> v38 [label="ref_proteins"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v13 -> v38 [label="braker_proteins"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v14 -> v39 [label="galba_proteins"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 -> v40 [label="metaeuk_proteins"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 [label="BENCHMARKER:PROCESS_GFFS:REFORMAT_GFF"];
+v18 -> v19;
+
+v19 [label="BENCHMARKER:PROCESS_GFFS:REFORMAT_GFF"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 -> v21 [label="gffs"];
+
+v19 [label="BENCHMARKER:PROCESS_GFFS:REFORMAT_GFF"];
+v20 [shape=point];
+v19 -> v20;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v8 -> v21 [label="ref_channel"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v24 [label="BENCHMARKER:PROCESS_GFFS:GFFCOMPARE"];
+v23 -> v24 [label="gffcompare_input"];
+
+v24 [label="BENCHMARKER:PROCESS_GFFS:GFFCOMPARE"];
+v26 [label="BENCHMARKER:PROCESS_GFFS:CALCULATE_F1_SCORE"];
+v24 -> v26;
+
+v24 [label="BENCHMARKER:PROCESS_GFFS:GFFCOMPARE"];
+v25 [shape=point];
+v24 -> v25;
+
+v26 [label="BENCHMARKER:PROCESS_GFFS:CALCULATE_F1_SCORE"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v28;
+
+v26 [label="BENCHMARKER:PROCESS_GFFS:CALCULATE_F1_SCORE"];
+v27 [shape=point];
+v26 -> v27;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v30 [label="BENCHMARKER:PROCESS_GFFS:PLOT_F1_STATS"];
+v29 -> v30 [label="f1_channel"];
+
+v30 [label="BENCHMARKER:PROCESS_GFFS:PLOT_F1_STATS"];
+v32 [shape=point];
+v30 -> v32;
+
+v30 [label="BENCHMARKER:PROCESS_GFFS:PLOT_F1_STATS"];
+v31 [shape=point];
+v30 -> v31;
+
+v19 [label="BENCHMARKER:PROCESS_GFFS:REFORMAT_GFF"];
+v33 [label="BENCHMARKER:PROCESS_EXONS:COUNT_EXONS"];
+v19 -> v33 [label="gffs"];
+
+v33 [label="BENCHMARKER:PROCESS_EXONS:COUNT_EXONS"];
+v35 [label="BENCHMARKER:PROCESS_EXONS:PLOT_EXON_COUNTS"];
+v33 -> v35;
+
+v33 [label="BENCHMARKER:PROCESS_EXONS:COUNT_EXONS"];
+v34 [shape=point];
+v33 -> v34;
+
+v35 [label="BENCHMARKER:PROCESS_EXONS:PLOT_EXON_COUNTS"];
+v37 [shape=point];
+v35 -> v37;
+
+v35 [label="BENCHMARKER:PROCESS_EXONS:PLOT_EXON_COUNTS"];
+v36 [shape=point];
+v35 -> v36;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v44 [label="BENCHMARKER:PROCESS_COMPLETENESS:BUSCO"];
+v42 -> v44 [label="busco_input"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="BENCHMARKER:PROCESS_COMPLETENESS:BUSCO"];
+v43 -> v44 [label="busco_db"];
+
+v44 [label="BENCHMARKER:PROCESS_COMPLETENESS:BUSCO"];
+v46 [shape=point];
+v44 -> v46;
+
+v44 [label="BENCHMARKER:PROCESS_COMPLETENESS:BUSCO"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v44 -> v47;
+
+v44 [label="BENCHMARKER:PROCESS_COMPLETENESS:BUSCO"];
+v45 [shape=point];
+v44 -> v45;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v48 [label="BENCHMARKER:PROCESS_COMPLETENESS:PLOT_COMPLETENESS"];
+v47 -> v48 [label="all_stats"];
+
+v48 [label="BENCHMARKER:PROCESS_COMPLETENESS:PLOT_COMPLETENESS"];
+v50 [shape=point];
+v48 -> v50;
+
+v48 [label="BENCHMARKER:PROCESS_COMPLETENESS:PLOT_COMPLETENESS"];
+v49 [shape=point];
+v48 -> v49;
+
+}

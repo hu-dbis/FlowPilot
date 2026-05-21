@@ -1,0 +1,838 @@
+digraph "seqeralabs_____nfsentieon" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v164 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v7 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3 [label="ch_fai"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="NF_SENTIEON:SENTIEON:SAMTOOLS_FAIDX"];
+v4 -> v5;
+
+v5 [label="NF_SENTIEON:SENTIEON:SAMTOOLS_FAIDX"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v5 [label="NF_SENTIEON:SENTIEON:SAMTOOLS_FAIDX"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v7;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [label="NF_SENTIEON:SENTIEON:SENTIEON_BWAMEM"];
+v6 -> v23 [label="ch_fai"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v12 [label="ch_versions"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=point];
+v8 -> v9 [label="ch_bwa_index"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="NF_SENTIEON:SENTIEON:SENTIEON_BWAINDEX"];
+v10 -> v11 [label="fasta"];
+
+v11 [label="NF_SENTIEON:SENTIEON:SENTIEON_BWAINDEX"];
+v23 [label="NF_SENTIEON:SENTIEON:SENTIEON_BWAMEM"];
+v11 -> v23 [label="ch_bwa_index"];
+
+v11 [label="NF_SENTIEON:SENTIEON:SENTIEON_BWAINDEX"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v17 [label="ch_versions"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="NF_SENTIEON:SENTIEON:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v13 -> v14 [label="samplesheet"];
+
+v14 [label="NF_SENTIEON:SENTIEON:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v14 -> v15;
+
+v14 [label="NF_SENTIEON:SENTIEON:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v17 [label="versions"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [label="NF_SENTIEON:SENTIEON:FASTQC"];
+v16 -> v18 [label="reads"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v21 [label="ch_versions"];
+
+v18 [label="NF_SENTIEON:SENTIEON:FASTQC"];
+v19 [shape=point];
+v18 -> v19;
+
+v18 [label="NF_SENTIEON:SENTIEON:FASTQC"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 -> v172;
+
+v18 [label="NF_SENTIEON:SENTIEON:FASTQC"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v18 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v75 [label="ch_versions"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [label="NF_SENTIEON:SENTIEON:SENTIEON_BWAMEM"];
+v16 -> v23 [label="reads"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v23 [label="NF_SENTIEON:SENTIEON:SENTIEON_BWAMEM"];
+v22 -> v23 [label="fasta"];
+
+v23 [label="NF_SENTIEON:SENTIEON:SENTIEON_BWAMEM"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 -> v25;
+
+v23 [label="NF_SENTIEON:SENTIEON:SENTIEON_BWAMEM"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 -> v25;
+
+v23 [label="NF_SENTIEON:SENTIEON:SENTIEON_BWAMEM"];
+v24 [shape=point];
+v23 -> v24;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v28 -> v33 [label="ch_bam_bai"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v29 -> v33 [label="fasta"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v6 -> v33 [label="ch_fai"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v30 -> v33 [label="known_dbsnp"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v31 -> v33 [label="known_mills"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v32 -> v33 [label="known_indels"];
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v47 [shape=point];
+v33 -> v47;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v46 [shape=point];
+v33 -> v46;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v45 [shape=point];
+v33 -> v45;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v44 [shape=point];
+v33 -> v44;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v43 [shape=point];
+v33 -> v43;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v42 [shape=point];
+v33 -> v42;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v41 [shape=point];
+v33 -> v41;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v40 [shape=point];
+v33 -> v40;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v39 [shape=point];
+v33 -> v39;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v38 [shape=point];
+v33 -> v38;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v37 [shape=point];
+v33 -> v37;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v36 [shape=point];
+v33 -> v36;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v175;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v178;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v181;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v35 [shape=point];
+v33 -> v35;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v33 -> v49;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v33 -> v50;
+
+v33 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_METRICS"];
+v34 [shape=point];
+v33 -> v34;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 -> v48 [label="ch_bam_bai"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v51 -> v56 [label="ch_bam_bai_score"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v52 -> v56 [label="fasta"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v6 -> v56 [label="ch_fai"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v53 -> v56 [label="known_dbsnp"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v54 -> v56 [label="known_mills"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v55 -> v56 [label="known_indels"];
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v72 [shape=point];
+v56 -> v72;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v71 [shape=point];
+v56 -> v71;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v73;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v73;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v70 [shape=point];
+v56 -> v70;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v69 [shape=point];
+v56 -> v69;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v68 [shape=point];
+v56 -> v68;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v67 [shape=point];
+v56 -> v67;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v66 [shape=point];
+v56 -> v66;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v65 [shape=point];
+v56 -> v65;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v64 [shape=point];
+v56 -> v64;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v63 [shape=point];
+v56 -> v63;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v62 [shape=point];
+v56 -> v62;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v61 [shape=point];
+v56 -> v61;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v60 [shape=point];
+v56 -> v60;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v59 [shape=point];
+v56 -> v59;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v58 [shape=point];
+v56 -> v58;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v57 [shape=point];
+v56 -> v57;
+
+v56 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_DEDUP"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v56 -> v74;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 -> v76 [label="ch_dedup_bam_bai"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v100 [label="ch_versions"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v76 -> v81 [label="ch_dedup_bam_bai"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v77 -> v81 [label="fasta"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v6 -> v81 [label="ch_fai"];
+
+v78 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v78 -> v81 [label="known_dbsnp"];
+
+v79 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v79 -> v81 [label="known_mills"];
+
+v80 [shape=point,label="",fixedsize=true,width=0.1];
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v80 -> v81 [label="known_indels"];
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v98 [shape=point];
+v81 -> v98;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v97 [shape=point];
+v81 -> v97;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v96 [shape=point];
+v81 -> v96;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v95 [shape=point];
+v81 -> v95;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v94 [shape=point];
+v81 -> v94;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v93 [shape=point];
+v81 -> v93;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v81 -> v102;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v92 [shape=point];
+v81 -> v92;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v91 [shape=point];
+v81 -> v91;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v90 [shape=point];
+v81 -> v90;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v89 [shape=point];
+v81 -> v89;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v88 [shape=point];
+v81 -> v88;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v87 [shape=point];
+v81 -> v87;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v86 [shape=point];
+v81 -> v86;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v85 [shape=point];
+v81 -> v85;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v84 [shape=point];
+v81 -> v84;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v83 [shape=point];
+v81 -> v83;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v82 [shape=point];
+v81 -> v82;
+
+v81 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PRE"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v81 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v100 -> v156 [label="ch_versions"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 -> v101 [label="ch_dedup_bam_bai"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v103 -> v108 [label="ch_dedup_recal_bam_bai"];
+
+v104 [shape=point,label="",fixedsize=true,width=0.1];
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v104 -> v108 [label="fasta"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v6 -> v108 [label="ch_fai"];
+
+v105 [shape=point,label="",fixedsize=true,width=0.1];
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v105 -> v108 [label="known_dbsnp"];
+
+v106 [shape=point,label="",fixedsize=true,width=0.1];
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v106 -> v108 [label="known_mills"];
+
+v107 [shape=point,label="",fixedsize=true,width=0.1];
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v107 -> v108 [label="known_indels"];
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v126 [shape=point];
+v108 -> v126;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v125 [shape=point];
+v108 -> v125;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v124 [shape=point];
+v108 -> v124;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v123 [shape=point];
+v108 -> v123;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v122 [shape=point];
+v108 -> v122;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v121 [shape=point];
+v108 -> v121;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v120 [shape=point];
+v108 -> v120;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v108 -> v128;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v119 [shape=point];
+v108 -> v119;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v118 [shape=point];
+v108 -> v118;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v117 [shape=point];
+v108 -> v117;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v116 [shape=point];
+v108 -> v116;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v115 [shape=point];
+v108 -> v115;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v114 [shape=point];
+v108 -> v114;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v113 [shape=point];
+v108 -> v113;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v112 [shape=point];
+v108 -> v112;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v111 [shape=point];
+v108 -> v111;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v110 [shape=point];
+v108 -> v110;
+
+v108 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_HAPLOTYPER"];
+v109 [shape=point];
+v108 -> v109;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v103 -> v127 [label="ch_dedup_recal_bam_bai"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v128 -> v134 [label="ch_recal_pre_post"];
+
+v129 [shape=point,label="",fixedsize=true,width=0.1];
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v129 -> v134 [label="fasta"];
+
+v130 [shape=point,label="",fixedsize=true,width=0.1];
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v130 -> v134 [label="fai"];
+
+v131 [shape=point,label="",fixedsize=true,width=0.1];
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v131 -> v134 [label="known_dbsnp"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v132 -> v134 [label="known_mills"];
+
+v133 [shape=point,label="",fixedsize=true,width=0.1];
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v133 -> v134 [label="known_indels"];
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v152 [shape=point];
+v134 -> v152;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v151 [shape=point];
+v134 -> v151;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v150 [shape=point];
+v134 -> v150;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v149 [shape=point];
+v134 -> v149;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v148 [shape=point];
+v134 -> v148;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v147 [shape=point];
+v134 -> v147;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v146 [shape=point];
+v134 -> v146;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v145 [shape=point];
+v134 -> v145;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v153 [label="NF_SENTIEON:SENTIEON:SENTIEON_PLOT_QUALCAL"];
+v134 -> v153;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v144 [shape=point];
+v134 -> v144;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v143 [shape=point];
+v134 -> v143;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v142 [shape=point];
+v134 -> v142;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v141 [shape=point];
+v134 -> v141;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v140 [shape=point];
+v134 -> v140;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v139 [shape=point];
+v134 -> v139;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v138 [shape=point];
+v134 -> v138;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v137 [shape=point];
+v134 -> v137;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v136 [shape=point];
+v134 -> v136;
+
+v134 [label="NF_SENTIEON:SENTIEON:SENTIEON_DRIVER_QUALCAL_RECAL_PLOT"];
+v135 [shape=point];
+v134 -> v135;
+
+v153 [label="NF_SENTIEON:SENTIEON:SENTIEON_PLOT_QUALCAL"];
+v155 [shape=point];
+v153 -> v155;
+
+v153 [label="NF_SENTIEON:SENTIEON:SENTIEON_PLOT_QUALCAL"];
+v154 [shape=point];
+v153 -> v154;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v156 -> v157;
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v158 [label="NF_SENTIEON:SENTIEON:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v157 -> v158;
+
+v158 [label="NF_SENTIEON:SENTIEON:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v160 [shape=point];
+v158 -> v160;
+
+v158 [label="NF_SENTIEON:SENTIEON:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v158 -> v170;
+
+v158 [label="NF_SENTIEON:SENTIEON:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v159 [shape=point];
+v158 -> v159;
+
+v161 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v163 [label="ch_multiqc_files"];
+
+v162 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v163;
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v166 [label="ch_multiqc_files"];
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v164 -> v165;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 -> v166;
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v169 [label="ch_multiqc_files"];
+
+v167 [shape=point,label="",fixedsize=true,width=0.1];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v167 -> v168 [label="ch_workflow_summary"];
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v169;
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v171 [label="ch_multiqc_files"];
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 -> v171;
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 -> v174 [label="ch_multiqc_files"];
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v172 -> v173;
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v173 -> v174;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 -> v177 [label="ch_multiqc_files"];
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v175 -> v176;
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 -> v177;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v180 [label="ch_multiqc_files"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v178 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v180;
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 -> v183 [label="ch_multiqc_files"];
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v181 -> v182;
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v183;
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v183 -> v184 [label="ch_multiqc_files"];
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v185 [label="NF_SENTIEON:SENTIEON:MULTIQC"];
+v184 -> v185;
+
+v185 [label="NF_SENTIEON:SENTIEON:MULTIQC"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v185 -> v188;
+
+v185 [label="NF_SENTIEON:SENTIEON:MULTIQC"];
+v187 [shape=point];
+v185 -> v187;
+
+v185 [label="NF_SENTIEON:SENTIEON:MULTIQC"];
+v186 [shape=point];
+v185 -> v186;
+
+v185 [label="NF_SENTIEON:SENTIEON:MULTIQC"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v190;
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v189 [shape=point];
+v188 -> v189;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v190 [label="ch_versions"];
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 [shape=point];
+v190 -> v191 [label="ch_versions"];
+
+}

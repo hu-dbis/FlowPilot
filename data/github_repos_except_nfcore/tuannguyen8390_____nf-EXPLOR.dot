@@ -1,0 +1,210 @@
+digraph "tuannguyen8390_____nfEXPLOR" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [label="LR_QC:FILTLONG"];
+v2 -> v5 [label="LR_sample_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 [label="LR_QC:FILTLONG"];
+v4 -> v5 [label="SR_sample_ch"];
+
+v5 [label="LR_QC:FILTLONG"];
+v9 [shape=point];
+v5 -> v9;
+
+v5 [label="LR_QC:FILTLONG"];
+v8 [shape=point];
+v5 -> v8;
+
+v5 [label="LR_QC:FILTLONG"];
+v7 [shape=point];
+v5 -> v7;
+
+v5 [label="LR_QC:FILTLONG"];
+v6 [shape=point];
+v5 -> v6;
+
+v5 [label="LR_QC:FILTLONG"];
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v5 -> v28 [label="LR_sample"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v11 -> v28 [label="mm_index"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 [shape=point];
+v13 -> v14 [label="wmm_index"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v16 -> v28 [label="genome"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 [shape=point];
+v18 -> v19 [label="bed"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v21 -> v28 [label="genome_index"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [label="SNV_SV_LR:CLAIR3"];
+v23 -> v29 [label="clair3_model_path"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v29 [label="SNV_SV_LR:CLAIR3"];
+v25 -> v29 [label="chr"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v27 [shape=point];
+v26 -> v27 [label="chrY"];
+
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v29 [label="SNV_SV_LR:CLAIR3"];
+v28 -> v29 [label="map_bam"];
+
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v29 [label="SNV_SV_LR:CLAIR3"];
+v28 -> v29 [label="map_bai"];
+
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v29 [label="SNV_SV_LR:CLAIR3"];
+v28 -> v29 [label="map_info"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [label="SNV_SV_LR:CLAIR3"];
+v16 -> v29 [label="genome"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [label="SNV_SV_LR:CLAIR3"];
+v21 -> v29 [label="genome_index"];
+
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v30 [label="SNV_SV_LR:CLAIR3_Y"];
+v28 -> v30 [label="map_bam"];
+
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v30 [label="SNV_SV_LR:CLAIR3_Y"];
+v28 -> v30 [label="map_bai"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 [label="SNV_SV_LR:CLAIR3_Y"];
+v16 -> v30 [label="genome"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 [label="SNV_SV_LR:CLAIR3_Y"];
+v21 -> v30 [label="genome_index"];
+
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v30 [label="SNV_SV_LR:CLAIR3_Y"];
+v28 -> v30 [label="map_info"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 [label="SNV_SV_LR:CLAIR3_Y"];
+v23 -> v30 [label="clair3_model_path"];
+
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v31 [label="SNV_SV_LR:SNIFFLES2"];
+v28 -> v31 [label="map_bam"];
+
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v31 [label="SNV_SV_LR:SNIFFLES2"];
+v28 -> v31 [label="map_bai"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 [label="SNV_SV_LR:SNIFFLES2"];
+v16 -> v31 [label="genome"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 [label="SNV_SV_LR:SNIFFLES2"];
+v21 -> v31 [label="genome_index"];
+
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v31 [label="SNV_SV_LR:SNIFFLES2"];
+v28 -> v31 [label="map_info"];
+
+v31 [label="SNV_SV_LR:SNIFFLES2"];
+v32 [shape=point];
+v31 -> v32;
+
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v33 [label="SNV_SV_LR:MOSDEPTH"];
+v28 -> v33 [label="map_bam"];
+
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v33 [label="SNV_SV_LR:MOSDEPTH"];
+v28 -> v33 [label="map_bai"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 [label="SNV_SV_LR:MOSDEPTH"];
+v16 -> v33 [label="genome"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 [label="SNV_SV_LR:MOSDEPTH"];
+v21 -> v33 [label="genome_index"];
+
+v28 [label="SNV_SV_LR:MINIMAP2"];
+v33 [label="SNV_SV_LR:MOSDEPTH"];
+v28 -> v33 [label="map_info"];
+
+v33 [label="SNV_SV_LR:MOSDEPTH"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v35;
+
+v33 [label="SNV_SV_LR:MOSDEPTH"];
+v34 [shape=point];
+v33 -> v34;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v36 [label="SNV_SV_LR:MULTIQC"];
+v35 -> v36;
+
+v36 [label="SNV_SV_LR:MULTIQC"];
+v38 [shape=point];
+v36 -> v38;
+
+v36 [label="SNV_SV_LR:MULTIQC"];
+v37 [shape=point];
+v36 -> v37;
+
+}

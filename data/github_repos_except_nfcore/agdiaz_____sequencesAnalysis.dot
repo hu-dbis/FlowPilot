@@ -1,0 +1,98 @@
+digraph "agdiaz_____sequencesAnalysis" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v0 -> v1 [label="allSequences"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v6 [label="b2bToolsAnalysis:predictBiophysicalFeatures"];
+v1 -> v6 [label="sequencesGrouped"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v2 [label="multipleSequenceAlignmentAnalysis:createMultipleSequenceAlignment"];
+v0 -> v2 [label="allSequences"];
+
+v2 [label="multipleSequenceAlignmentAnalysis:createMultipleSequenceAlignment"];
+v3 [label="multipleSequenceAlignmentAnalysis:buildPhilogeneticTree"];
+v2 -> v3 [label="multipleSequenceAlignment"];
+
+v3 [label="multipleSequenceAlignmentAnalysis:buildPhilogeneticTree"];
+v4 [label="multipleSequenceAlignmentAnalysis:renderTree"];
+v3 -> v4 [label="tree"];
+
+v4 [label="multipleSequenceAlignmentAnalysis:renderTree"];
+v16 [label="compressPredictions"];
+v4 -> v16 [label="treePlot"];
+
+v2 [label="multipleSequenceAlignmentAnalysis:createMultipleSequenceAlignment"];
+v5 [label="multipleSequenceAlignmentAnalysis:buildLogo"];
+v2 -> v5 [label="multipleSequenceAlignment"];
+
+v5 [label="multipleSequenceAlignmentAnalysis:buildLogo"];
+v16 [label="compressPredictions"];
+v5 -> v16 [label="logo"];
+
+v6 [label="b2bToolsAnalysis:predictBiophysicalFeatures"];
+v7 [label="b2bToolsAnalysis:plotBiophysicalFeatures"];
+v6 -> v7 [label="predictions"];
+
+v7 [label="b2bToolsAnalysis:plotBiophysicalFeatures"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v13 [label="plots"];
+
+v6 [label="b2bToolsAnalysis:predictBiophysicalFeatures"];
+v8 [label="b2bToolsAnalysis:plotAgmata"];
+v6 -> v8 [label="predictions"];
+
+v8 [label="b2bToolsAnalysis:plotAgmata"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 -> v14 [label="agmata_plots"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v0 -> v9 [label="allSequences"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v11 [label="fetchStructure"];
+v10 -> v11;
+
+v11 [label="fetchStructure"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v15;
+
+v6 [label="b2bToolsAnalysis:predictBiophysicalFeatures"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v12 [label="predictions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 [label="compressPredictions"];
+v12 -> v16;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 [label="compressPredictions"];
+v13 -> v16;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 [label="compressPredictions"];
+v14 -> v16;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 [label="compressPredictions"];
+v15 -> v16;
+
+v2 [label="multipleSequenceAlignmentAnalysis:createMultipleSequenceAlignment"];
+v16 [label="compressPredictions"];
+v2 -> v16 [label="multipleSequenceAlignment"];
+
+v3 [label="multipleSequenceAlignmentAnalysis:buildPhilogeneticTree"];
+v16 [label="compressPredictions"];
+v3 -> v16 [label="tree"];
+
+v16 [label="compressPredictions"];
+v17 [shape=point];
+v16 -> v17;
+
+}

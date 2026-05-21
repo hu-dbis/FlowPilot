@@ -1,0 +1,970 @@
+digraph "hic" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toInteger"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toInteger"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v3 -> v8 [label="ch_map_res"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toInteger"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toInteger"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v7 -> v8 [label="ch_tads_res"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v8 -> v13 [label="ch_map_res"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toInteger"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toInteger"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v12 -> v13 [label="ch_ddecay_res"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v13 -> v18 [label="ch_map_res"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toInteger"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toInteger"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v17 -> v18 [label="ch_comp_res"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v18 -> v19 [label="ch_map_res"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 -> v115 [label="cool_bins"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v180 [label="ch_multiqc_config"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 -> v181 [label="ch_multiqc_custom_config"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v23 [shape=point];
+v22 -> v23 [label="ch_multiqc_logo"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [label="NFCORE_HIC:HIC:PREPARE_GENOME:BOWTIE2_BUILD"];
+v26 -> v38 [label="fasta"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v47 [label="ch_versions"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="NFCORE_HIC:HIC:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v28 -> v29 [label="samplesheet"];
+
+v29 [label="NFCORE_HIC:HIC:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v29 -> v31;
+
+v29 [label="NFCORE_HIC:HIC:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v30 [shape=point];
+v29 -> v30;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v48 [label="NFCORE_HIC:HIC:FASTQC"];
+v36 -> v48 [label="reads"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v39 [label="ch_versions"];
+
+v38 [label="NFCORE_HIC:HIC:PREPARE_GENOME:BOWTIE2_BUILD"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 -> v58 [label="index"];
+
+v38 [label="NFCORE_HIC:HIC:PREPARE_GENOME:BOWTIE2_BUILD"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v43 [label="ch_versions"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 [label="NFCORE_HIC:HIC:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v26 -> v40 [label="fasta"];
+
+v40 [label="NFCORE_HIC:HIC:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v105 [label="chrsize"];
+
+v40 [label="NFCORE_HIC:HIC:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v42 [shape=point];
+v40 -> v42;
+
+v40 [label="NFCORE_HIC:HIC:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v41 [shape=point];
+v40 -> v41;
+
+v40 [label="NFCORE_HIC:HIC:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v46 [label="ch_versions"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [label="NFCORE_HIC:HIC:PREPARE_GENOME:GET_RESTRICTION_FRAGMENTS"];
+v26 -> v45 [label="fasta"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="NFCORE_HIC:HIC:PREPARE_GENOME:GET_RESTRICTION_FRAGMENTS"];
+v44 -> v45 [label="restriction_site"];
+
+v45 [label="NFCORE_HIC:HIC:PREPARE_GENOME:GET_RESTRICTION_FRAGMENTS"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 -> v83 [label="fragments"];
+
+v45 [label="NFCORE_HIC:HIC:PREPARE_GENOME:GET_RESTRICTION_FRAGMENTS"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v47 [label="versions"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v50 [label="ch_versions"];
+
+v48 [label="NFCORE_HIC:HIC:FASTQC"];
+v49 [shape=point];
+v48 -> v49;
+
+v48 [label="NFCORE_HIC:HIC:FASTQC"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v187;
+
+v48 [label="NFCORE_HIC:HIC:FASTQC"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v113 [label="ch_versions"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v36 -> v51 [label="reads"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v52 [shape=point];
+v51 -> v52;
+
+v53 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v82 [label="ch_versions"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v63 [label="ch_versions"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 -> v55 [label="reads"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v55 -> v57 [label="ch_reads_r1"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 -> v56 [label="reads"];
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v56 -> v57 [label="ch_reads_r2"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v61 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN"];
+v57 -> v61 [label="ch_reads"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v61 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN"];
+v58 -> v61;
+
+v59 [shape=point,label="",fixedsize=true,width=0.1];
+v61 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN"];
+v59 -> v61 [label="save_unaligned"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1];
+v61 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN"];
+v60 -> v61 [label="sort_bam"];
+
+v61 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v61 -> v75;
+
+v61 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN"];
+v62 [shape=point];
+v61 -> v62;
+
+v61 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN"];
+v66 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:TRIM_READS"];
+v61 -> v66;
+
+v61 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v67 [label="ch_versions"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 -> v65 [label="ligation_site"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:TRIM_READS"];
+v65 -> v66;
+
+v66 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:TRIM_READS"];
+v71 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN_TRIMMED"];
+v66 -> v71;
+
+v66 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:TRIM_READS"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v74 [label="ch_versions"];
+
+v38 [label="NFCORE_HIC:HIC:PREPARE_GENOME:BOWTIE2_BUILD"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 -> v68 [label="index"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v71 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN_TRIMMED"];
+v68 -> v71;
+
+v69 [shape=point,label="",fixedsize=true,width=0.1];
+v71 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN_TRIMMED"];
+v69 -> v71 [label="save_unaligned"];
+
+v70 [shape=point,label="",fixedsize=true,width=0.1];
+v71 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN_TRIMMED"];
+v70 -> v71 [label="sort_bam"];
+
+v71 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN_TRIMMED"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v71 -> v75;
+
+v71 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN_TRIMMED"];
+v73 [shape=point];
+v71 -> v73;
+
+v71 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN_TRIMMED"];
+v72 [shape=point];
+v71 -> v72;
+
+v71 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:BOWTIE2_ALIGN_TRIMMED"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v77 [label="ch_versions"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v76 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:MERGE_BOWTIE2"];
+v75 -> v76 [label="ch_bowtie2_align"];
+
+v76 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:MERGE_BOWTIE2"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 -> v78;
+
+v76 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:MERGE_BOWTIE2"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 -> v92 [label="mapstats"];
+
+v76 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:MERGE_BOWTIE2"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v81 [label="ch_versions"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v80 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:COMBINE_MATES"];
+v79 -> v80 [label="ch_bams"];
+
+v80 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:COMBINE_MATES"];
+v84 [label="NFCORE_HIC:HIC:HICPRO:GET_VALID_INTERACTION"];
+v80 -> v84 [label="bam"];
+
+v80 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:COMBINE_MATES"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v80 -> v94 [label="pairstats"];
+
+v80 [label="NFCORE_HIC:HIC:HICPRO:HICPRO_MAPPING:COMBINE_MATES"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v82 [label="versions"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v89 [label="ch_versions"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v84 [label="NFCORE_HIC:HIC:HICPRO:GET_VALID_INTERACTION"];
+v83 -> v84;
+
+v84 [label="NFCORE_HIC:HIC:HICPRO:GET_VALID_INTERACTION"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v84 -> v90 [label="ch_valid_pairs"];
+
+v84 [label="NFCORE_HIC:HIC:HICPRO:GET_VALID_INTERACTION"];
+v88 [shape=point];
+v84 -> v88;
+
+v84 [label="NFCORE_HIC:HIC:HICPRO:GET_VALID_INTERACTION"];
+v87 [shape=point];
+v84 -> v87;
+
+v84 [label="NFCORE_HIC:HIC:HICPRO:GET_VALID_INTERACTION"];
+v86 [shape=point];
+v84 -> v86;
+
+v84 [label="NFCORE_HIC:HIC:HICPRO:GET_VALID_INTERACTION"];
+v85 [shape=point];
+v84 -> v85;
+
+v84 [label="NFCORE_HIC:HIC:HICPRO:GET_VALID_INTERACTION"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v84 -> v96 [label="ch_valid_stats"];
+
+v84 [label="NFCORE_HIC:HIC:HICPRO:GET_VALID_INTERACTION"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v101 [label="ch_versions"];
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v99 [label="NFCORE_HIC:HIC:HICPRO:MERGE_VALID_INTERACTION"];
+v91 -> v99 [label="ch_valid_pairs"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v93 -> v98;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v95 -> v98;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v97 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v102 [label="NFCORE_HIC:HIC:HICPRO:MERGE_STATS"];
+v98 -> v102 [label="ch_hicpro_stats"];
+
+v99 [label="NFCORE_HIC:HIC:HICPRO:MERGE_VALID_INTERACTION"];
+v106 [label="NFCORE_HIC:HIC:HICPRO:HICPRO2PAIRS"];
+v99 -> v106;
+
+v99 [label="NFCORE_HIC:HIC:HICPRO:MERGE_VALID_INTERACTION"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v99 -> v112;
+
+v99 [label="NFCORE_HIC:HIC:HICPRO:MERGE_VALID_INTERACTION"];
+v100 [shape=point];
+v99 -> v100;
+
+v99 [label="NFCORE_HIC:HIC:HICPRO:MERGE_VALID_INTERACTION"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v104 [label="ch_versions"];
+
+v102 [label="NFCORE_HIC:HIC:HICPRO:MERGE_STATS"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v102 -> v112;
+
+v102 [label="NFCORE_HIC:HIC:HICPRO:MERGE_STATS"];
+v103 [shape=point];
+v102 -> v103;
+
+v102 [label="NFCORE_HIC:HIC:HICPRO:MERGE_STATS"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v107 [label="ch_versions"];
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v106 [label="NFCORE_HIC:HIC:HICPRO:HICPRO2PAIRS"];
+v105 -> v106;
+
+v106 [label="NFCORE_HIC:HIC:HICPRO:HICPRO2PAIRS"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v106 -> v119 [label="pairs"];
+
+v106 [label="NFCORE_HIC:HIC:HICPRO:HICPRO2PAIRS"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v113 [label="versions"];
+
+v108 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v109 [shape=point];
+v108 -> v109 [label="raw_maps"];
+
+v110 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v111 [shape=point];
+v110 -> v111 [label="iced_maps"];
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v189 [label="mqc"];
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v141 [label="ch_versions"];
+
+v114 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v118 [label="ch_versions"];
+
+v40 [label="NFCORE_HIC:HIC:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v40 -> v115 [label="chrsize"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v116 [label="NFCORE_HIC:HIC:COOLER:COOLER_MAKEBINS"];
+v115 -> v116;
+
+v116 [label="NFCORE_HIC:HIC:COOLER:COOLER_MAKEBINS"];
+v117 [shape=point];
+v116 -> v117;
+
+v116 [label="NFCORE_HIC:HIC:COOLER:COOLER_MAKEBINS"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v123 [label="ch_versions"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 -> v119 [label="cool_bins"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v122 [label="NFCORE_HIC:HIC:COOLER:COOLER_CLOAD"];
+v119 -> v122;
+
+v40 [label="NFCORE_HIC:HIC:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v120 [label="chrsize"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v122 [label="NFCORE_HIC:HIC:COOLER:COOLER_CLOAD"];
+v121 -> v122;
+
+v122 [label="NFCORE_HIC:HIC:COOLER:COOLER_CLOAD"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v122 -> v124;
+
+v122 [label="NFCORE_HIC:HIC:COOLER:COOLER_CLOAD"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v127 [label="ch_versions"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v124 -> v125 [label="ch_cool"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [label="NFCORE_HIC:HIC:COOLER:COOLER_BALANCE"];
+v125 -> v126;
+
+v126 [label="NFCORE_HIC:HIC:COOLER:COOLER_BALANCE"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 -> v135 [label="cool"];
+
+v126 [label="NFCORE_HIC:HIC:COOLER:COOLER_BALANCE"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v134 [label="ch_versions"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="min"];
+v19 -> v128 [label="cool_bins"];
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="min"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v128 -> v129 [label="ch_res_zoomify"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v124 -> v129 [label="ch_cool"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v132 [label="NFCORE_HIC:HIC:COOLER:COOLER_ZOOMIFY"];
+v131 -> v132 [label="ch_cool_zoomify"];
+
+v132 [label="NFCORE_HIC:HIC:COOLER:COOLER_ZOOMIFY"];
+v133 [shape=point];
+v132 -> v133 [label="mcool"];
+
+v132 [label="NFCORE_HIC:HIC:COOLER:COOLER_ZOOMIFY"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v134;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v137 [label="ch_versions"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v136 [label="NFCORE_HIC:HIC:COOLER:COOLER_DUMP"];
+v135 -> v136;
+
+v136 [label="NFCORE_HIC:HIC:COOLER:COOLER_DUMP"];
+v138 [label="NFCORE_HIC:HIC:COOLER:SPLIT_COOLER_DUMP"];
+v136 -> v138;
+
+v136 [label="NFCORE_HIC:HIC:COOLER:COOLER_DUMP"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v137;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v140 [label="ch_versions"];
+
+v138 [label="NFCORE_HIC:HIC:COOLER:SPLIT_COOLER_DUMP"];
+v139 [shape=point];
+v138 -> v139;
+
+v138 [label="NFCORE_HIC:HIC:COOLER:SPLIT_COOLER_DUMP"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v141 [label="versions"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v147 [label="ch_versions"];
+
+v126 [label="NFCORE_HIC:HIC:COOLER:COOLER_BALANCE"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v126 -> v142 [label="cool"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toInteger"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 -> v142 [label="ch_ddecay_res"];
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v142 -> v143;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v143 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v145 [label="NFCORE_HIC:HIC:HIC_PLOT_DIST_VS_COUNTS"];
+v144 -> v145 [label="ch_distdecay"];
+
+v145 [label="NFCORE_HIC:HIC:HIC_PLOT_DIST_VS_COUNTS"];
+v146 [shape=point];
+v145 -> v146;
+
+v145 [label="NFCORE_HIC:HIC:HIC_PLOT_DIST_VS_COUNTS"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v159 [label="ch_versions"];
+
+v126 [label="NFCORE_HIC:HIC:COOLER:COOLER_BALANCE"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v126 -> v148 [label="cool"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toInteger"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 -> v148 [label="ch_comp_res"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v148 -> v149;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v149 -> v150;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v156 [label="NFCORE_HIC:HIC:COMPARTMENTS:COOLTOOLS_EIGSCIS"];
+v150 -> v156 [label="cool"];
+
+v151 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 -> v158 [label="ch_versions"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v152 [label="fasta"];
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v152 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v156 [label="NFCORE_HIC:HIC:COMPARTMENTS:COOLTOOLS_EIGSCIS"];
+v153 -> v156;
+
+v40 [label="NFCORE_HIC:HIC:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v154 [label="chrsize"];
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v154 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v156 [label="NFCORE_HIC:HIC:COMPARTMENTS:COOLTOOLS_EIGSCIS"];
+v155 -> v156;
+
+v156 [label="NFCORE_HIC:HIC:COMPARTMENTS:COOLTOOLS_EIGSCIS"];
+v157 [shape=point];
+v156 -> v157 [label="compartments"];
+
+v156 [label="NFCORE_HIC:HIC:COMPARTMENTS:COOLTOOLS_EIGSCIS"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 -> v158;
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 -> v159 [label="versions"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 -> v172 [label="ch_versions"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toInteger"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v160 [label="ch_tads_res"];
+
+v126 [label="NFCORE_HIC:HIC:COOLER:COOLER_BALANCE"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v126 -> v160 [label="cool"];
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v160 -> v161;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v161 -> v162;
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v165 [label="NFCORE_HIC:HIC:TADS:COOLTOOLS_INSULATION"];
+v162 -> v165 [label="cool"];
+
+v163 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v166 [label="ch_versions"];
+
+v164 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v167 [label="ch_tads"];
+
+v165 [label="NFCORE_HIC:HIC:TADS:COOLTOOLS_INSULATION"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 -> v167;
+
+v165 [label="NFCORE_HIC:HIC:TADS:COOLTOOLS_INSULATION"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 -> v166;
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v169 [label="ch_versions"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v170 [label="ch_tads"];
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v168 [label="NFCORE_HIC:HIC:TADS:HIC_FIND_TADS"];
+v162 -> v168 [label="cool"];
+
+v168 [label="NFCORE_HIC:HIC:TADS:HIC_FIND_TADS"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v170;
+
+v168 [label="NFCORE_HIC:HIC:TADS:HIC_FIND_TADS"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v169;
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v172 [label="versions"];
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 [shape=point];
+v170 -> v171 [label="tads"];
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v172 -> v173 [label="ch_versions"];
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v173 -> v174;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v175 [label="NFCORE_HIC:HIC:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v174 -> v175;
+
+v175 [label="NFCORE_HIC:HIC:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v178 [shape=point];
+v175 -> v178;
+
+v175 [label="NFCORE_HIC:HIC:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v177 [shape=point];
+v175 -> v177;
+
+v175 [label="NFCORE_HIC:HIC:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v176 [shape=point];
+v175 -> v176;
+
+v179 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v180 [label="ch_multiqc_files"];
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 -> v183 [label="ch_multiqc_files"];
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v181 -> v182;
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v183;
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 -> v186 [label="ch_multiqc_files"];
+
+v184 [shape=point,label="",fixedsize=true,width=0.1];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v184 -> v185 [label="ch_workflow_summary"];
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v186;
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 -> v188 [label="ch_multiqc_files"];
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 -> v188;
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 -> v189 [label="ch_multiqc_files"];
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 [shape=point];
+v189 -> v190 [label="ch_multiqc_files"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 -> v191 [label="ch_multiqc_custom_config"];
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v191 -> v192;
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v196 [label="NFCORE_HIC:HIC:MULTIQC"];
+v192 -> v196;
+
+v184 [shape=point,label="",fixedsize=true,width=0.1];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v184 -> v193 [label="ch_workflow_summary"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v196 [label="NFCORE_HIC:HIC:MULTIQC"];
+v193 -> v196;
+
+v48 [label="NFCORE_HIC:HIC:FASTQC"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v194;
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v196 [label="NFCORE_HIC:HIC:MULTIQC"];
+v194 -> v196;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v112 -> v195 [label="mqc"];
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v196 [label="NFCORE_HIC:HIC:MULTIQC"];
+v195 -> v196;
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v196 [label="NFCORE_HIC:HIC:MULTIQC"];
+v20 -> v196 [label="ch_multiqc_config"];
+
+v196 [label="NFCORE_HIC:HIC:MULTIQC"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v196 -> v200;
+
+v196 [label="NFCORE_HIC:HIC:MULTIQC"];
+v199 [shape=point];
+v196 -> v199;
+
+v196 [label="NFCORE_HIC:HIC:MULTIQC"];
+v198 [shape=point];
+v196 -> v198;
+
+v196 [label="NFCORE_HIC:HIC:MULTIQC"];
+v197 [shape=point];
+v196 -> v197;
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v201 [shape=point];
+v200 -> v201;
+
+}

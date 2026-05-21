@@ -1,0 +1,890 @@
+digraph "crisprseq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3 [label="reads_targeted"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=point];
+v4 -> v5 [label="reads_screening"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v7 [shape=point];
+v6 -> v7 [label="fastqc_screening"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=point];
+v8 -> v9 [label="reference"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v11 [shape=point];
+v10 -> v11 [label="protospacer"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v13 [shape=point];
+v12 -> v13 [label="template"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=point];
+v14 -> v15 [label="versions"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v17 -> v25 [label="input_reference"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v17 -> v19;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 -> v39 [label="input_protospacer"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v17 -> v32 [label="input_template"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v18 [shape=point];
+v17 -> v18 [label="reads_screening"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v20 -> v23 [label="input_reads"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v41 [label="ch_versions"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v69 [label="ch_multiqc_files"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v44 [label="fastq_single"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v42 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CAT_FASTQ"];
+v24 -> v42 [label="fastq_multiple"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v25 -> v26;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v29 [label="meta_reference"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 -> v30;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 -> v39 [label="ch_seq_reference"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v32 -> v33;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 -> v36 [label="meta_template"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v35 -> v37;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 -> v60 [label="template"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:ORIENT_REFERENCE"];
+v39 -> v40 [label="reference_protospacer"];
+
+v40 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:ORIENT_REFERENCE"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v55;
+
+v40 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:ORIENT_REFERENCE"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v46 [label="ch_versions"];
+
+v42 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CAT_FASTQ"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v42 -> v43;
+
+v42 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CAT_FASTQ"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v46;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v47 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:PEAR"];
+v45 -> v47;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v51;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v52 [label="ch_versions"];
+
+v47 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:PEAR"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 -> v50;
+
+v47 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:PEAR"];
+v49 [shape=point];
+v47 -> v49;
+
+v47 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:PEAR"];
+v48 [shape=point];
+v47 -> v48;
+
+v47 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:PEAR"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v52;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 -> v53 [label="ch_pear_fastq"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v71 [label="ch_versions"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v54 -> v61 [label="no_single_end"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v54 -> v56;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v59 [shape=point];
+v58 -> v59;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 -> v104 [label="ch_oriented_reference"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v62 -> v119 [label="ch_template"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v63 [label="reference_protospacer"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v63 -> v64;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v54 -> v64 [label="no_single_end"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v65 -> v133 [label="ch_protospacer"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:FASTQC"];
+v51 -> v66 [label="ch_pear_fastq"];
+
+v66 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:FASTQC"];
+v67 [shape=point];
+v66 -> v67;
+
+v66 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:FASTQC"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 -> v68;
+
+v66 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:FASTQC"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v66 -> v70;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v82 [label="ch_multiqc_files"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v79 [label="ch_versions"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v73 [shape=point];
+v72 -> v73 [label="ch_trimmed"];
+
+v66 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:FASTQC"];
+v74 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:FIND_ADAPTERS"];
+v66 -> v74;
+
+v74 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:FIND_ADAPTERS"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v74 -> v75;
+
+v74 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:FIND_ADAPTERS"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v74 -> v78;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 -> v75 [label="ch_pear_fastq"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v84;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v80 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CUTADAPT"];
+v77 -> v80;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v83 [label="ch_versions"];
+
+v80 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CUTADAPT"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v84;
+
+v80 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CUTADAPT"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v80 -> v81;
+
+v80 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CUTADAPT"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v83;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v142 [label="ch_multiqc_files"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v88 [label="ch_versions"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v85 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:SEQTK_SEQ_MASK"];
+v86 -> v87 [label="ch_trimmed"];
+
+v87 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:SEQTK_SEQ_MASK"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 -> v92 [label="ch_preprocess_reads"];
+
+v87 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:SEQTK_SEQ_MASK"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v100 [label="ch_versions"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v89;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v89 -> v90;
+
+v47 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:PEAR"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v91 -> v93;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v95;
+
+v80 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CUTADAPT"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v80 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v95 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v97 [shape=point];
+v96 -> v97 [label="ch_preprocessing_summary_data"];
+
+v98 [shape=point,label="",fixedsize=true,width=0.1];
+v99 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:PREPROCESSING_SUMMARY"];
+v98 -> v99;
+
+v99 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:PREPROCESSING_SUMMARY"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v99 -> v101;
+
+v99 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:PREPROCESSING_SUMMARY"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v103 [label="ch_versions"];
+
+v87 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:SEQTK_SEQ_MASK"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v87 -> v101 [label="ch_preprocess_reads"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v102 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CLUSTERING_SUMMARY"];
+v101 -> v102;
+
+v102 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CLUSTERING_SUMMARY"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v102 -> v112;
+
+v102 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CLUSTERING_SUMMARY"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v111 [label="ch_versions"];
+
+v87 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:SEQTK_SEQ_MASK"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v87 -> v104 [label="ch_preprocess_reads"];
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v108 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_ORIGINAL"];
+v104 -> v108;
+
+v105 [shape=point,label="",fixedsize=true,width=0.1];
+v108 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_ORIGINAL"];
+v105 -> v108 [label="bam_format"];
+
+v106 [shape=point,label="",fixedsize=true,width=0.1];
+v108 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_ORIGINAL"];
+v106 -> v108 [label="cigar_paf_format"];
+
+v107 [shape=point,label="",fixedsize=true,width=0.1];
+v108 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_ORIGINAL"];
+v107 -> v108 [label="cigar_bam"];
+
+v108 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_ORIGINAL"];
+v110 [shape=point];
+v108 -> v110;
+
+v108 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_ORIGINAL"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v108 -> v112 [label="ch_mapped_bam"];
+
+v108 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_ORIGINAL"];
+v109 [shape=point];
+v108 -> v109;
+
+v108 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_ORIGINAL"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v111;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v114 [label="ch_versions"];
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v113 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:ALIGNMENT_SUMMARY"];
+v112 -> v113;
+
+v113 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:ALIGNMENT_SUMMARY"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v113 -> v137;
+
+v113 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:ALIGNMENT_SUMMARY"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v118 [label="ch_versions"];
+
+v108 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_ORIGINAL"];
+v115 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:SAMTOOLS_INDEX"];
+v108 -> v115 [label="ch_mapped_bam"];
+
+v115 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:SAMTOOLS_INDEX"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v115 -> v131;
+
+v115 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:SAMTOOLS_INDEX"];
+v117 [shape=point];
+v115 -> v117;
+
+v115 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:SAMTOOLS_INDEX"];
+v116 [shape=point];
+v115 -> v116;
+
+v115 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:SAMTOOLS_INDEX"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v122 [label="ch_versions"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 -> v119 [label="ch_oriented_reference"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v120 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:TEMPLATE_REFERENCE"];
+v119 -> v120;
+
+v120 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:TEMPLATE_REFERENCE"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v120 -> v123;
+
+v120 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:TEMPLATE_REFERENCE"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v122;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v130 [label="ch_versions"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 -> v123 [label="ch_oriented_reference"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v127 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_TEMPLATE"];
+v123 -> v127;
+
+v124 [shape=point,label="",fixedsize=true,width=0.1];
+v127 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_TEMPLATE"];
+v124 -> v127 [label="bam_format"];
+
+v125 [shape=point,label="",fixedsize=true,width=0.1];
+v127 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_TEMPLATE"];
+v125 -> v127 [label="cigar_paf_format"];
+
+v126 [shape=point,label="",fixedsize=true,width=0.1];
+v127 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_TEMPLATE"];
+v126 -> v127 [label="cigar_bam"];
+
+v127 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_TEMPLATE"];
+v129 [shape=point];
+v127 -> v129;
+
+v127 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_TEMPLATE"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v127 -> v135 [label="ch_template_bam"];
+
+v127 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_TEMPLATE"];
+v128 [shape=point];
+v127 -> v128;
+
+v127 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_TEMPLATE"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v148 [label="ch_versions"];
+
+v108 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MINIMAP2_ALIGN_ORIGINAL"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v108 -> v131 [label="ch_mapped_bam"];
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v131 -> v132;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 -> v132 [label="ch_oriented_reference"];
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v132 -> v133;
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v133 -> v134;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v62 -> v134 [label="ch_template"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v134 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v135 -> v136;
+
+v120 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:TEMPLATE_REFERENCE"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v120 -> v136;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v136 -> v137;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v137 -> v138;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v139 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CIGAR_PARSER"];
+v138 -> v139 [label="ch_to_parse_cigar"];
+
+v139 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CIGAR_PARSER"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v139 -> v149;
+
+v139 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CIGAR_PARSER"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v139 -> v143;
+
+v139 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CIGAR_PARSER"];
+v140 [shape=point];
+v139 -> v140;
+
+v139 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CIGAR_PARSER"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v139 -> v145;
+
+v139 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CIGAR_PARSER"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v139 -> v141;
+
+v139 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CIGAR_PARSER"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v139 -> v147;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v142;
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v144 [label="ch_multiqc_files"];
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v146 [label="ch_multiqc_files"];
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 -> v170 [label="ch_multiqc_files"];
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v148;
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 -> v158 [label="ch_versions"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 -> v149 [label="ch_oriented_reference"];
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v149 -> v150;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v65 -> v150 [label="ch_protospacer"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v151 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CRISPRSEQ_PLOTTER"];
+v150 -> v151;
+
+v151 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CRISPRSEQ_PLOTTER"];
+v156 [shape=point];
+v151 -> v156;
+
+v151 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CRISPRSEQ_PLOTTER"];
+v155 [shape=point];
+v151 -> v155;
+
+v151 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CRISPRSEQ_PLOTTER"];
+v154 [shape=point];
+v151 -> v154;
+
+v151 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CRISPRSEQ_PLOTTER"];
+v153 [shape=point];
+v151 -> v153;
+
+v151 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CRISPRSEQ_PLOTTER"];
+v152 [shape=point];
+v151 -> v152;
+
+v151 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:CRISPRSEQ_PLOTTER"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v151 -> v157;
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 -> v158;
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v158 -> v159 [label="versions"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v159 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v160 -> v161;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v163;
+
+v162 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v163;
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v163 -> v164;
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v171 [label="ch_collated_versions"];
+
+v165 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v165 -> v176 [label="ch_multiqc_config"];
+
+v166 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v166 -> v177 [label="ch_multiqc_custom_config"];
+
+v167 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v167 -> v178 [label="ch_multiqc_logo"];
+
+v168 [shape=point,label="",fixedsize=true,width=0.1];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v168 -> v169 [label="ch_workflow_summary"];
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v170;
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 -> v171 [label="ch_multiqc_files"];
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 -> v174 [label="ch_multiqc_files"];
+
+v172 [shape=point,label="",fixedsize=true,width=0.1];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v172 -> v173 [label="ch_methods_description"];
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v173 -> v174;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v174 -> v175 [label="ch_multiqc_files"];
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v179 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MULTIQC"];
+v175 -> v179;
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v179 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MULTIQC"];
+v176 -> v179;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v179 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MULTIQC"];
+v177 -> v179;
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v179 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MULTIQC"];
+v178 -> v179;
+
+v179 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MULTIQC"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v179 -> v183;
+
+v179 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MULTIQC"];
+v182 [shape=point];
+v179 -> v182;
+
+v179 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MULTIQC"];
+v181 [shape=point];
+v179 -> v181;
+
+v179 [label="NFCORE_CRISPRSEQ:CRISPRSEQ_TARGETED:MULTIQC"];
+v180 [shape=point];
+v179 -> v180;
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v184 [shape=point];
+v183 -> v184 [label="multiqc_report"];
+
+}

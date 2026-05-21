@@ -1,0 +1,1746 @@
+digraph "genomeassembler" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v1 -> v10 [label="ch_input"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=point];
+v2 -> v3 [label="ch_multiqc_config"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=point];
+v4 -> v5 [label="ch_multiqc_custom_config"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v7 [shape=point];
+v6 -> v7 [label="ch_multiqc_logo"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v54 [label="ch_versions"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v34 [label="ch_versions"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v10 -> v11;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v10 -> v12;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v15;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v13 [label="csv_records"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v44;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v40;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v24;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v52;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v48;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v37;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v16 -> v18;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v17 [shape=point];
+v16 -> v17;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 -> v23;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 -> v35;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 -> v38;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 -> v45;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 -> v20;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 -> v41;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 -> v50;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v284 [label="assemblies"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v32;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v28 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:PREPARE_INPUT:SAMTOOLS_FASTQ"];
+v26 -> v28;
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:PREPARE_INPUT:SAMTOOLS_FASTQ"];
+v27 -> v28 [label="interleave"];
+
+v28 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:PREPARE_INPUT:SAMTOOLS_FASTQ"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v32;
+
+v28 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:PREPARE_INPUT:SAMTOOLS_FASTQ"];
+v31 [shape=point];
+v28 -> v31;
+
+v28 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:PREPARE_INPUT:SAMTOOLS_FASTQ"];
+v30 [shape=point];
+v28 -> v30;
+
+v28 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:PREPARE_INPUT:SAMTOOLS_FASTQ"];
+v29 [shape=point];
+v28 -> v29;
+
+v28 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:PREPARE_INPUT:SAMTOOLS_FASTQ"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v28 -> v33;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIFI_FASTK_DATABASE:FASTK_FASTK"];
+v32 -> v55 [label="ch_reads"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v54 [label="versions"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIC_FASTK_DATABASE:FASTK_FASTK"];
+v37 -> v73 [label="ch_reads"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ONT_DATA_PROPERTIES:NANOPLOT"];
+v40 -> v133 [label="ch_reads"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_ILLUMINA_FASTK_DATABASE:FASTK_FASTK"];
+v44 -> v91 [label="ch_reads"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=point];
+v48 -> v49 [label="rnaseq"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 [shape=point];
+v52 -> v53 [label="isoseq"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v54 -> v384 [label="ch_versions"];
+
+v55 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIFI_FASTK_DATABASE:FASTK_FASTK"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v55 -> v56;
+
+v55 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIFI_FASTK_DATABASE:FASTK_FASTK"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v55 -> v57;
+
+v55 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIFI_FASTK_DATABASE:FASTK_FASTK"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v55 -> v59;
+
+v55 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIFI_FASTK_DATABASE:FASTK_FASTK"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v55 -> v65;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v58;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 -> v60;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v62 -> v64;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v63 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIFI_FASTK_DATABASE:FASTK_MERGE"];
+v62 -> v63;
+
+v63 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIFI_FASTK_DATABASE:FASTK_MERGE"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v69;
+
+v63 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIFI_FASTK_DATABASE:FASTK_MERGE"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v70;
+
+v63 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIFI_FASTK_DATABASE:FASTK_MERGE"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v71;
+
+v63 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIFI_FASTK_DATABASE:FASTK_MERGE"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v63 -> v66;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v70;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v71;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v69;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v67;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 [shape=point];
+v67 -> v68 [label="versions"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v153 [label="histogram"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v70 -> v153 [label="ktab"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [shape=point];
+v71 -> v72 [label="prof"];
+
+v73 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIC_FASTK_DATABASE:FASTK_FASTK"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v73 -> v74;
+
+v73 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIC_FASTK_DATABASE:FASTK_FASTK"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v73 -> v75;
+
+v73 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIC_FASTK_DATABASE:FASTK_FASTK"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v73 -> v77;
+
+v73 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIC_FASTK_DATABASE:FASTK_FASTK"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v73 -> v83;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v74 -> v76;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v76 -> v78;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v77 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v80 -> v82;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v81 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIC_FASTK_DATABASE:FASTK_MERGE"];
+v80 -> v81;
+
+v81 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIC_FASTK_DATABASE:FASTK_MERGE"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v87;
+
+v81 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIC_FASTK_DATABASE:FASTK_MERGE"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v88;
+
+v81 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIC_FASTK_DATABASE:FASTK_MERGE"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v89;
+
+v81 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_HIC_FASTK_DATABASE:FASTK_MERGE"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v81 -> v84;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v88;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v89;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v87;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v85;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=point];
+v85 -> v86 [label="versions"];
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v87 -> v183 [label="histogram"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 -> v183 [label="ktab"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 [shape=point];
+v89 -> v90 [label="prof"];
+
+v91 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_ILLUMINA_FASTK_DATABASE:FASTK_FASTK"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v91 -> v92;
+
+v91 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_ILLUMINA_FASTK_DATABASE:FASTK_FASTK"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v91 -> v93;
+
+v91 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_ILLUMINA_FASTK_DATABASE:FASTK_FASTK"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v91 -> v95;
+
+v91 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_ILLUMINA_FASTK_DATABASE:FASTK_FASTK"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v91 -> v101;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 -> v94;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v94 -> v96;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v95 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v97 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v98 -> v100;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v99 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_ILLUMINA_FASTK_DATABASE:FASTK_MERGE"];
+v98 -> v99;
+
+v99 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_ILLUMINA_FASTK_DATABASE:FASTK_MERGE"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v105;
+
+v99 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_ILLUMINA_FASTK_DATABASE:FASTK_MERGE"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v106;
+
+v99 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_ILLUMINA_FASTK_DATABASE:FASTK_MERGE"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v107;
+
+v99 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:BUILD_ILLUMINA_FASTK_DATABASE:FASTK_MERGE"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v99 -> v102;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v107;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v105;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v106;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v103;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 [shape=point];
+v103 -> v104 [label="versions"];
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 -> v213 [label="histogram"];
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v106 -> v213 [label="ktab"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 [shape=point];
+v107 -> v108 [label="prof"];
+
+v109 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v116 [label="logs_ch"];
+
+v110 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v119 [label="versions_ch"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_DATA_PROPERTIES:NANOPLOT"];
+v32 -> v111 [label="ch_reads"];
+
+v111 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_DATA_PROPERTIES:NANOPLOT"];
+v114 [shape=point];
+v111 -> v114;
+
+v111 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_DATA_PROPERTIES:NANOPLOT"];
+v113 [shape=point];
+v111 -> v113;
+
+v111 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_DATA_PROPERTIES:NANOPLOT"];
+v112 [shape=point];
+v111 -> v112;
+
+v111 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_DATA_PROPERTIES:NANOPLOT"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v111 -> v115;
+
+v111 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_DATA_PROPERTIES:NANOPLOT"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v111 -> v118;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v116;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 [shape=point];
+v116 -> v117 [label="logs"];
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 [shape=point];
+v119 -> v120 [label="versions"];
+
+v121 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v126 [label="logs_ch"];
+
+v122 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v129 [label="versions_ch"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_DATA_PROPERTIES:FASTQC"];
+v37 -> v123 [label="ch_reads"];
+
+v123 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_DATA_PROPERTIES:FASTQC"];
+v124 [shape=point];
+v123 -> v124;
+
+v123 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_DATA_PROPERTIES:FASTQC"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v123 -> v125;
+
+v123 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_DATA_PROPERTIES:FASTQC"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v123 -> v128;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v126;
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 [shape=point];
+v126 -> v127 [label="logs"];
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 [shape=point];
+v129 -> v130 [label="versions"];
+
+v131 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v138 [label="logs_ch"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v141 [label="versions_ch"];
+
+v133 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ONT_DATA_PROPERTIES:NANOPLOT"];
+v136 [shape=point];
+v133 -> v136;
+
+v133 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ONT_DATA_PROPERTIES:NANOPLOT"];
+v135 [shape=point];
+v133 -> v135;
+
+v133 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ONT_DATA_PROPERTIES:NANOPLOT"];
+v134 [shape=point];
+v133 -> v134;
+
+v133 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ONT_DATA_PROPERTIES:NANOPLOT"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v133 -> v137;
+
+v133 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ONT_DATA_PROPERTIES:NANOPLOT"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v133 -> v140;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v138;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 [shape=point];
+v138 -> v139 [label="logs"];
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 [shape=point];
+v141 -> v142 [label="versions"];
+
+v143 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v148 [label="logs_ch"];
+
+v144 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v151 [label="versions_ch"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_DATA_PROPERTIES:FASTQC"];
+v44 -> v145 [label="ch_reads"];
+
+v145 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_DATA_PROPERTIES:FASTQC"];
+v146 [shape=point];
+v145 -> v146;
+
+v145 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_DATA_PROPERTIES:FASTQC"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v145 -> v147;
+
+v145 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_DATA_PROPERTIES:FASTQC"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v145 -> v150;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v148;
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 [shape=point];
+v148 -> v149 [label="logs"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 -> v151;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 [shape=point];
+v151 -> v152 [label="versions"];
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v153 -> v154 [label="fastk_hist_ktab"];
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v155 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:FASTK_HISTEX"];
+v154 -> v155;
+
+v155 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:FASTK_HISTEX"];
+v156 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v155 -> v156;
+
+v155 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:FASTK_HISTEX"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v155 -> v177;
+
+v156 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v162 [shape=point];
+v156 -> v162;
+
+v156 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v161 [shape=point];
+v156 -> v161;
+
+v156 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v160 [shape=point];
+v156 -> v160;
+
+v156 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v159 [shape=point];
+v156 -> v159;
+
+v156 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v158 [shape=point];
+v156 -> v158;
+
+v156 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v157 [shape=point];
+v156 -> v157;
+
+v156 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v156 -> v178;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v163 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v153 -> v163 [label="fastk_hist_ktab"];
+
+v163 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v169 [shape=point];
+v163 -> v169;
+
+v163 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v168 [shape=point];
+v163 -> v168;
+
+v163 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v167 [shape=point];
+v163 -> v167;
+
+v163 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v166 [shape=point];
+v163 -> v166;
+
+v163 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v165 [shape=point];
+v163 -> v165;
+
+v163 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v164 [shape=point];
+v163 -> v164;
+
+v163 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v163 -> v179;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v170 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v153 -> v170 [label="fastk_hist_ktab"];
+
+v170 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v176 [shape=point];
+v170 -> v176;
+
+v170 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v175 [shape=point];
+v170 -> v175;
+
+v170 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v174 [shape=point];
+v170 -> v174;
+
+v170 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v173 [shape=point];
+v170 -> v173;
+
+v170 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v172 [shape=point];
+v170 -> v172;
+
+v170 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v171 [shape=point];
+v170 -> v171;
+
+v170 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v170 -> v180;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v181;
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 -> v181;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v181;
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 -> v181;
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 [shape=point];
+v181 -> v182 [label="versions"];
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v183 -> v184 [label="fastk_hist_ktab"];
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v185 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:FASTK_HISTEX"];
+v184 -> v185;
+
+v185 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:FASTK_HISTEX"];
+v186 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v185 -> v186;
+
+v185 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:FASTK_HISTEX"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v185 -> v207;
+
+v186 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v192 [shape=point];
+v186 -> v192;
+
+v186 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v191 [shape=point];
+v186 -> v191;
+
+v186 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v190 [shape=point];
+v186 -> v190;
+
+v186 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v189 [shape=point];
+v186 -> v189;
+
+v186 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v188 [shape=point];
+v186 -> v188;
+
+v186 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v187 [shape=point];
+v186 -> v187;
+
+v186 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v186 -> v208;
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v193 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v183 -> v193 [label="fastk_hist_ktab"];
+
+v193 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v199 [shape=point];
+v193 -> v199;
+
+v193 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v198 [shape=point];
+v193 -> v198;
+
+v193 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v197 [shape=point];
+v193 -> v197;
+
+v193 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v196 [shape=point];
+v193 -> v196;
+
+v193 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v195 [shape=point];
+v193 -> v195;
+
+v193 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v194 [shape=point];
+v193 -> v194;
+
+v193 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v193 -> v209;
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v200 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v183 -> v200 [label="fastk_hist_ktab"];
+
+v200 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v206 [shape=point];
+v200 -> v206;
+
+v200 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v205 [shape=point];
+v200 -> v205;
+
+v200 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v204 [shape=point];
+v200 -> v204;
+
+v200 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v203 [shape=point];
+v200 -> v203;
+
+v200 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v202 [shape=point];
+v200 -> v202;
+
+v200 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v201 [shape=point];
+v200 -> v201;
+
+v200 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v200 -> v210;
+
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 -> v211;
+
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 -> v211;
+
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 -> v211;
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 -> v211;
+
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v212 [shape=point];
+v211 -> v212 [label="versions"];
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v213 -> v214 [label="fastk_hist_ktab"];
+
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v215 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:FASTK_HISTEX"];
+v214 -> v215;
+
+v215 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:FASTK_HISTEX"];
+v216 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v215 -> v216;
+
+v215 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:FASTK_HISTEX"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v215 -> v237;
+
+v216 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v222 [shape=point];
+v216 -> v222;
+
+v216 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v221 [shape=point];
+v216 -> v221;
+
+v216 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v220 [shape=point];
+v216 -> v220;
+
+v216 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v219 [shape=point];
+v216 -> v219;
+
+v216 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v218 [shape=point];
+v216 -> v218;
+
+v216 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v217 [shape=point];
+v216 -> v217;
+
+v216 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:GENESCOPEFK"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v216 -> v238;
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v223 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v213 -> v223 [label="fastk_hist_ktab"];
+
+v223 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v229 [shape=point];
+v223 -> v229;
+
+v223 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v228 [shape=point];
+v223 -> v228;
+
+v223 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v227 [shape=point];
+v223 -> v227;
+
+v223 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v226 [shape=point];
+v223 -> v226;
+
+v223 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v225 [shape=point];
+v223 -> v225;
+
+v223 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v224 [shape=point];
+v223 -> v224;
+
+v223 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_PLOIDYPLOT"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v223 -> v239;
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v230 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v213 -> v230 [label="fastk_hist_ktab"];
+
+v230 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v236 [shape=point];
+v230 -> v236;
+
+v230 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v235 [shape=point];
+v230 -> v235;
+
+v230 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v234 [shape=point];
+v230 -> v234;
+
+v230 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v233 [shape=point];
+v230 -> v233;
+
+v230 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v232 [shape=point];
+v230 -> v232;
+
+v230 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v231 [shape=point];
+v230 -> v231;
+
+v230 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_GENOME_PROPERTIES:MERQURYFK_KATGC"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v230 -> v240;
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v237 -> v241;
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v238 -> v241;
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v239 -> v241;
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v240 -> v241;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v242 [shape=point];
+v241 -> v242 [label="versions"];
+
+v243 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v243 -> v244;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v244 -> v249;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v245 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:MASH_SKETCH"];
+v244 -> v245;
+
+v245 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:MASH_SKETCH"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v245 -> v248;
+
+v245 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:MASH_SKETCH"];
+v247 [shape=point];
+v245 -> v247;
+
+v245 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:MASH_SKETCH"];
+v246 [shape=point];
+v245 -> v246;
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v248 -> v249;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v249 -> v250;
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v252 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v250 -> v252 [label="mash_screen_db"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v32 -> v251 [label="ch_reads"];
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v252 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v251 -> v252;
+
+v252 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v252 -> v253;
+
+v252 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v252 -> v257;
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v254 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_CONTAMINATION_SCREEN:MASH_FILTER"];
+v253 -> v254;
+
+v254 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_CONTAMINATION_SCREEN:MASH_FILTER"];
+v256 [shape=point];
+v254 -> v256;
+
+v254 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_CONTAMINATION_SCREEN:MASH_FILTER"];
+v255 [shape=point];
+v254 -> v255;
+
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v258 [shape=point];
+v257 -> v258 [label="versions"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v37 -> v259 [label="ch_reads"];
+
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v260 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v259 -> v260;
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v260 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v250 -> v260 [label="mash_screen_db"];
+
+v260 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v260 -> v261;
+
+v260 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v260 -> v265;
+
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v262 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_CONTAMINATION_SCREEN:MASH_FILTER"];
+v261 -> v262;
+
+v262 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_CONTAMINATION_SCREEN:MASH_FILTER"];
+v264 [shape=point];
+v262 -> v264;
+
+v262 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_CONTAMINATION_SCREEN:MASH_FILTER"];
+v263 [shape=point];
+v262 -> v263;
+
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v266 [shape=point];
+v265 -> v266 [label="versions"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v40 -> v267 [label="ch_reads"];
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v268 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ONT_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v267 -> v268;
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v268 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ONT_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v250 -> v268 [label="mash_screen_db"];
+
+v268 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ONT_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v268 -> v269;
+
+v268 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ONT_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v268 -> v273;
+
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v270 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ONT_CONTAMINATION_SCREEN:MASH_FILTER"];
+v269 -> v270;
+
+v270 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ONT_CONTAMINATION_SCREEN:MASH_FILTER"];
+v272 [shape=point];
+v270 -> v272;
+
+v270 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ONT_CONTAMINATION_SCREEN:MASH_FILTER"];
+v271 [shape=point];
+v270 -> v271;
+
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v274 [shape=point];
+v273 -> v274 [label="versions"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v44 -> v275 [label="ch_reads"];
+
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v276 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v275 -> v276;
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v276 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v250 -> v276 [label="mash_screen_db"];
+
+v276 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v276 -> v277;
+
+v276 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_CONTAMINATION_SCREEN:MASH_SCREEN"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v276 -> v281;
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v278 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_CONTAMINATION_SCREEN:MASH_FILTER"];
+v277 -> v278;
+
+v278 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_CONTAMINATION_SCREEN:MASH_FILTER"];
+v280 [shape=point];
+v278 -> v280;
+
+v278 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_CONTAMINATION_SCREEN:MASH_FILTER"];
+v279 [shape=point];
+v278 -> v279;
+
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v282 [shape=point];
+v281 -> v282 [label="versions"];
+
+v283 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v283 -> v284;
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v284 -> v285 [label="assembly_ch"];
+
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v285 -> v286;
+
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v290 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ASSEMBLY_COMPARISON:QUAST"];
+v286 -> v290;
+
+v287 [shape=point,label="",fixedsize=true,width=0.1];
+v290 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ASSEMBLY_COMPARISON:QUAST"];
+v287 -> v290 [label="reference_ch"];
+
+v288 [shape=point,label="",fixedsize=true,width=0.1];
+v290 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ASSEMBLY_COMPARISON:QUAST"];
+v288 -> v290 [label="gff"];
+
+v287 [shape=point,label="",fixedsize=true,width=0.1];
+v290 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ASSEMBLY_COMPARISON:QUAST"];
+v287 -> v290 [label="reference_ch"];
+
+v289 [shape=point,label="",fixedsize=true,width=0.1];
+v290 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ASSEMBLY_COMPARISON:QUAST"];
+v289 -> v290 [label="use_gff"];
+
+v290 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ASSEMBLY_COMPARISON:QUAST"];
+v293 [shape=point];
+v290 -> v293;
+
+v290 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ASSEMBLY_COMPARISON:QUAST"];
+v292 [shape=point];
+v290 -> v292;
+
+v290 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ASSEMBLY_COMPARISON:QUAST"];
+v291 [shape=point];
+v290 -> v291 [label="versions"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v294 [label="histogram"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v70 -> v294 [label="ktab"];
+
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v294 -> v295 [label="fastk_db"];
+
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v295 -> v297;
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v284 -> v296 [label="assembly_ch"];
+
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v296 -> v297;
+
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v297 -> v298;
+
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v298 -> v299;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v317 [shape=point];
+v299 -> v317;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v316 [shape=point];
+v299 -> v316;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v315 [shape=point];
+v299 -> v315;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v314 [shape=point];
+v299 -> v314;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v313 [shape=point];
+v299 -> v313;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v312 [shape=point];
+v299 -> v312;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v311 [shape=point];
+v299 -> v311;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v310 [shape=point];
+v299 -> v310;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v309 [shape=point];
+v299 -> v309;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v308 [shape=point];
+v299 -> v308;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v307 [shape=point];
+v299 -> v307;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v306 [shape=point];
+v299 -> v306;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v305 [shape=point];
+v299 -> v305;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v304 [shape=point];
+v299 -> v304;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v303 [shape=point];
+v299 -> v303;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v302 [shape=point];
+v299 -> v302;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v301 [shape=point];
+v299 -> v301;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v300 [shape=point];
+v299 -> v300;
+
+v299 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIFI_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v299 -> v318;
+
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v319 [shape=point];
+v318 -> v319 [label="versions"];
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v87 -> v320 [label="histogram"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 -> v320 [label="ktab"];
+
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v320 -> v321 [label="fastk_db"];
+
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v321 -> v323;
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v284 -> v322 [label="assembly_ch"];
+
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v322 -> v323;
+
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v323 -> v324;
+
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v324 -> v325;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v343 [shape=point];
+v325 -> v343;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v342 [shape=point];
+v325 -> v342;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v341 [shape=point];
+v325 -> v341;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v340 [shape=point];
+v325 -> v340;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v339 [shape=point];
+v325 -> v339;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v338 [shape=point];
+v325 -> v338;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v337 [shape=point];
+v325 -> v337;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v336 [shape=point];
+v325 -> v336;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v335 [shape=point];
+v325 -> v335;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v334 [shape=point];
+v325 -> v334;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v333 [shape=point];
+v325 -> v333;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v332 [shape=point];
+v325 -> v332;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v331 [shape=point];
+v325 -> v331;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v330 [shape=point];
+v325 -> v330;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v329 [shape=point];
+v325 -> v329;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v328 [shape=point];
+v325 -> v328;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v327 [shape=point];
+v325 -> v327;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v326 [shape=point];
+v325 -> v326;
+
+v325 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:HIC_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v325 -> v344;
+
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v345 [shape=point];
+v344 -> v345 [label="versions"];
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v106 -> v346 [label="ktab"];
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 -> v346 [label="histogram"];
+
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v346 -> v347 [label="fastk_db"];
+
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v347 -> v349;
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v284 -> v348 [label="assembly_ch"];
+
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v348 -> v349;
+
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v349 -> v350;
+
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v350 -> v351;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v369 [shape=point];
+v351 -> v369;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v368 [shape=point];
+v351 -> v368;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v367 [shape=point];
+v351 -> v367;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v366 [shape=point];
+v351 -> v366;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v365 [shape=point];
+v351 -> v365;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v364 [shape=point];
+v351 -> v364;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v363 [shape=point];
+v351 -> v363;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v362 [shape=point];
+v351 -> v362;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v361 [shape=point];
+v351 -> v361;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v360 [shape=point];
+v351 -> v360;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v359 [shape=point];
+v351 -> v359;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v358 [shape=point];
+v351 -> v358;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v357 [shape=point];
+v351 -> v357;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v356 [shape=point];
+v351 -> v356;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v355 [shape=point];
+v351 -> v355;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v354 [shape=point];
+v351 -> v354;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v353 [shape=point];
+v351 -> v353;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v352 [shape=point];
+v351 -> v352;
+
+v351 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:ILLUMINA_FASTK_KMER_COMPLETENESS:MERQURYFK_MERQURYFK"];
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v351 -> v370;
+
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v371 [shape=point];
+v370 -> v371 [label="versions"];
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v284 -> v372 [label="assembly_ch"];
+
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v372 -> v373;
+
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v374 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v373 -> v374;
+
+v374 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v377 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:EVALUATE_GENE_SPACE:BUSCO"];
+v374 -> v377;
+
+v374 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v377 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:EVALUATE_GENE_SPACE:BUSCO"];
+v374 -> v377;
+
+v375 [shape=point,label="",fixedsize=true,width=0.1];
+v377 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:EVALUATE_GENE_SPACE:BUSCO"];
+v375 -> v377 [label="busco_lineages_path"];
+
+v376 [shape=point,label="",fixedsize=true,width=0.1];
+v377 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:EVALUATE_GENE_SPACE:BUSCO"];
+v376 -> v377 [label="config_file"];
+
+v377 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:EVALUATE_GENE_SPACE:BUSCO"];
+v381 [shape=point];
+v377 -> v381;
+
+v377 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:EVALUATE_GENE_SPACE:BUSCO"];
+v380 [shape=point];
+v377 -> v380;
+
+v377 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:EVALUATE_GENE_SPACE:BUSCO"];
+v379 [shape=point];
+v377 -> v379;
+
+v377 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:EVALUATE_GENE_SPACE:BUSCO"];
+v378 [shape=point];
+v377 -> v378;
+
+v377 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:EVALUATE_GENE_SPACE:BUSCO"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v377 -> v382;
+
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v383 [shape=point];
+v382 -> v383 [label="versions"];
+
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v384 -> v385;
+
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v386 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v385 -> v386;
+
+v386 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v389 [shape=point];
+v386 -> v389;
+
+v386 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v388 [shape=point];
+v386 -> v388;
+
+v386 [label="NFCORE_GENOMEASSEMBLER:GENOMEASSEMBLER:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v387 [shape=point];
+v386 -> v387;
+
+}

@@ -1,0 +1,34 @@
+digraph "INMEGEN_____Pipelines_INMEGEN" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="annovar"];
+v2 -> v3 [label="vcfs_ch"];
+
+v3 [label="annovar"];
+v7 [label="splitVCFs"];
+v3 -> v7;
+
+v3 [label="annovar"];
+v5 [shape=point];
+v3 -> v5;
+
+v3 [label="annovar"];
+v4 [shape=point];
+v3 -> v4;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="splitVCFs"];
+v6 -> v7 [label="type"];
+
+v7 [label="splitVCFs"];
+v8 [shape=point];
+v7 -> v8;
+
+}

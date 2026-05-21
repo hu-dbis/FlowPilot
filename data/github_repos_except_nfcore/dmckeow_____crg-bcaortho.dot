@@ -1,0 +1,382 @@
+digraph "dmckeow_____crgbcaortho" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v49 [label="ch_versions"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v2 [shape=point];
+v1 -> v2 [label="ch_orthofinder_out"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v4 [shape=point];
+v3 -> v4 [label="ch_orthofinder_og_fa_dir"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v6 [shape=point];
+v5 -> v6 [label="ch_broccoli_og_fa_dir"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=point];
+v7 -> v8 [label="ch_input_fastas"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v10 [shape=point];
+v9 -> v10 [label="ch_dmnd_mcl_og_fa_list"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=point];
+v11 -> v12 [label="ch_mmseqs_og_fa_dir"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v14 [shape=point];
+v13 -> v14 [label="ch_broccoli_og_table"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v16 [shape=point];
+v15 -> v16 [label="ch_dmnd_mcl_og_table"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v18 [shape=point];
+v17 -> v18 [label="ch_mmseqs_og_table"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [label="INIT_ORTHO:SEARCH"];
+v21 -> v27 [label="ch_fasta_files"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="INIT_ORTHO:SEARCH"];
+v22 -> v27 [label="gene_family_info"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="INIT_ORTHO:SEARCH"];
+v23 -> v27 [label="gene_family_name"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="INIT_ORTHO:SEARCH"];
+v24 -> v27 [label="hmm_dir"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="INIT_ORTHO:SEARCH"];
+v25 -> v27 [label="input_source"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="INIT_ORTHO:SEARCH"];
+v26 -> v27 [label="output_dir"];
+
+v27 [label="INIT_ORTHO:SEARCH"];
+v29 [shape=point];
+v27 -> v29;
+
+v27 [label="INIT_ORTHO:SEARCH"];
+v30 [label="INIT_ORTHO:EXTRACT_DEFLINES"];
+v27 -> v30 [label="input_fastas"];
+
+v27 [label="INIT_ORTHO:SEARCH"];
+v28 [shape=point];
+v27 -> v28;
+
+v30 [label="INIT_ORTHO:EXTRACT_DEFLINES"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 [label="INIT_ORTHO:COMBINE_DEFLINES"];
+v31 -> v32;
+
+v32 [label="INIT_ORTHO:COMBINE_DEFLINES"];
+v89 [label="WHICH_ORTHO:GET_ORTHOGROUP_INFO"];
+v32 -> v89 [label="combined_deflines"];
+
+v27 [label="INIT_ORTHO:SEARCH"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v33 [label="input_fastas"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [label="INIT_ORTHO:ORTHOFINDER_INITIAL"];
+v35 -> v37 [label="ch_orthofinder_input"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="INIT_ORTHO:ORTHOFINDER_INITIAL"];
+v36 -> v37 [label="prior_run_ch"];
+
+v37 [label="INIT_ORTHO:ORTHOFINDER_INITIAL"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 -> v40;
+
+v37 [label="INIT_ORTHO:ORTHOFINDER_INITIAL"];
+v39 [shape=point];
+v37 -> v39;
+
+v37 [label="INIT_ORTHO:ORTHOFINDER_INITIAL"];
+v38 [shape=point];
+v37 -> v38;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 [label="INIT_ORTHO:ID_NO_OVERLAPS"];
+v40 -> v41;
+
+v41 [label="INIT_ORTHO:ID_NO_OVERLAPS"];
+v42 [label="INIT_ORTHO:FILTER_INPUTS_ORTHOFINDER"];
+v41 -> v42;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 [label="INIT_ORTHO:FILTER_INPUTS_ORTHOFINDER"];
+v35 -> v42 [label="ch_orthofinder_input"];
+
+v42 [label="INIT_ORTHO:FILTER_INPUTS_ORTHOFINDER"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v42 -> v45 [label="ch_filtered_input"];
+
+v42 [label="INIT_ORTHO:FILTER_INPUTS_ORTHOFINDER"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v44 [shape=point];
+v43 -> v44;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v46 [shape=point];
+v45 -> v46;
+
+v42 [label="INIT_ORTHO:FILTER_INPUTS_ORTHOFINDER"];
+v47 [label="INIT_ORTHO:ORTHOFINDER"];
+v42 -> v47 [label="ch_filtered_input"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="INIT_ORTHO:ORTHOFINDER"];
+v36 -> v47 [label="prior_run_ch"];
+
+v47 [label="INIT_ORTHO:ORTHOFINDER"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 -> v50 [label="orthofinder_orthogroups"];
+
+v47 [label="INIT_ORTHO:ORTHOFINDER"];
+v48 [shape=point];
+v47 -> v48;
+
+v47 [label="INIT_ORTHO:ORTHOFINDER"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v60 [label="ch_versions"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 [shape=point];
+v50 -> v51 [label="orthofinder_og_fa_dir"];
+
+v27 [label="INIT_ORTHO:SEARCH"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v52 [label="input_fastas"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [label="INIT_ORTHO:BROCCOLI"];
+v54 -> v56 [label="ch_broccoli_input"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="INIT_ORTHO:BROCCOLI"];
+v55 -> v56 [label="args"];
+
+v56 [label="INIT_ORTHO:BROCCOLI"];
+v59 [shape=point];
+v56 -> v59;
+
+v56 [label="INIT_ORTHO:BROCCOLI"];
+v89 [label="WHICH_ORTHO:GET_ORTHOGROUP_INFO"];
+v56 -> v89 [label="broccoli_orthogroups"];
+
+v56 [label="INIT_ORTHO:BROCCOLI"];
+v58 [shape=point];
+v56 -> v58;
+
+v56 [label="INIT_ORTHO:BROCCOLI"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 -> v61;
+
+v56 [label="INIT_ORTHO:BROCCOLI"];
+v57 [shape=point];
+v56 -> v57;
+
+v56 [label="INIT_ORTHO:BROCCOLI"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v85 [label="ch_versions"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [shape=point];
+v61 -> v62 [label="broccoli_og_fa_dir"];
+
+v27 [label="INIT_ORTHO:SEARCH"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v63 [label="input_fastas"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 [label="INIT_ORTHO:CLUSTER_DMND_MCL"];
+v65 -> v70 [label="ch_dmnd_mcl_input"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1];
+v70 [label="INIT_ORTHO:CLUSTER_DMND_MCL"];
+v66 -> v70 [label="diamond_params"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1];
+v70 [label="INIT_ORTHO:CLUSTER_DMND_MCL"];
+v67 -> v70 [label="mcl_params"];
+
+v68 [shape=point,label="",fixedsize=true,width=0.1];
+v70 [label="INIT_ORTHO:CLUSTER_DMND_MCL"];
+v68 -> v70 [label="mcl_inflation"];
+
+v69 [shape=point,label="",fixedsize=true,width=0.1];
+v70 [label="INIT_ORTHO:CLUSTER_DMND_MCL"];
+v69 -> v70 [label="source"];
+
+v70 [label="INIT_ORTHO:CLUSTER_DMND_MCL"];
+v74 [shape=point];
+v70 -> v74;
+
+v70 [label="INIT_ORTHO:CLUSTER_DMND_MCL"];
+v73 [shape=point];
+v70 -> v73;
+
+v70 [label="INIT_ORTHO:CLUSTER_DMND_MCL"];
+v72 [shape=point];
+v70 -> v72;
+
+v70 [label="INIT_ORTHO:CLUSTER_DMND_MCL"];
+v71 [shape=point];
+v70 -> v71 [label="dmnd_mcl_og_fa_dir"];
+
+v70 [label="INIT_ORTHO:CLUSTER_DMND_MCL"];
+v89 [label="WHICH_ORTHO:GET_ORTHOGROUP_INFO"];
+v70 -> v89 [label="dmnd_mcl_clusters"];
+
+v27 [label="INIT_ORTHO:SEARCH"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v75 [label="input_fastas"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 [label="INIT_ORTHO:CONCATENATE_FASTAS"];
+v77 -> v78 [label="ch_fasta_for_concat"];
+
+v78 [label="INIT_ORTHO:CONCATENATE_FASTAS"];
+v79 [label="INIT_ORTHO:MMSEQS_CREATEDB"];
+v78 -> v79 [label="all_input_fastas"];
+
+v79 [label="INIT_ORTHO:MMSEQS_CREATEDB"];
+v80 [label="INIT_ORTHO:MMSEQS_CLUSTER"];
+v79 -> v80;
+
+v79 [label="INIT_ORTHO:MMSEQS_CREATEDB"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v85;
+
+v80 [label="INIT_ORTHO:MMSEQS_CLUSTER"];
+v82 [label="INIT_ORTHO:PARSE_MMSEQS_TO_FASTA"];
+v80 -> v82;
+
+v80 [label="INIT_ORTHO:MMSEQS_CLUSTER"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v86;
+
+v79 [label="INIT_ORTHO:MMSEQS_CREATEDB"];
+v82 [label="INIT_ORTHO:PARSE_MMSEQS_TO_FASTA"];
+v79 -> v82;
+
+v78 [label="INIT_ORTHO:CONCATENATE_FASTAS"];
+v82 [label="INIT_ORTHO:PARSE_MMSEQS_TO_FASTA"];
+v78 -> v82 [label="all_input_fastas"];
+
+v81 [shape=point,label="",fixedsize=true,width=0.1];
+v82 [label="INIT_ORTHO:PARSE_MMSEQS_TO_FASTA"];
+v81 -> v82 [label="source"];
+
+v82 [label="INIT_ORTHO:PARSE_MMSEQS_TO_FASTA"];
+v84 [shape=point];
+v82 -> v84;
+
+v82 [label="INIT_ORTHO:PARSE_MMSEQS_TO_FASTA"];
+v83 [shape=point];
+v82 -> v83 [label="mmseqs_og_fa_dir"];
+
+v82 [label="INIT_ORTHO:PARSE_MMSEQS_TO_FASTA"];
+v89 [label="WHICH_ORTHO:GET_ORTHOGROUP_INFO"];
+v82 -> v89 [label="mmseqs_clusters"];
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v86 [label="ch_versions"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 [shape=point];
+v86 -> v87 [label="versions"];
+
+v47 [label="INIT_ORTHO:ORTHOFINDER"];
+v89 [label="WHICH_ORTHO:GET_ORTHOGROUP_INFO"];
+v47 -> v89 [label="orthofinder_orthogroups"];
+
+v88 [shape=point,label="",fixedsize=true,width=0.1];
+v89 [label="WHICH_ORTHO:GET_ORTHOGROUP_INFO"];
+v88 -> v89 [label="search_status"];
+
+v89 [label="WHICH_ORTHO:GET_ORTHOGROUP_INFO"];
+v90 [shape=point];
+v89 -> v90;
+
+v89 [label="WHICH_ORTHO:GET_ORTHOGROUP_INFO"];
+v91 [label="WHICH_ORTHO:CALCULATE_JACCARD"];
+v89 -> v91 [label="orthogroups_file"];
+
+v91 [label="WHICH_ORTHO:CALCULATE_JACCARD"];
+v93 [shape=point];
+v91 -> v93;
+
+v91 [label="WHICH_ORTHO:CALCULATE_JACCARD"];
+v92 [shape=point];
+v91 -> v92;
+
+}

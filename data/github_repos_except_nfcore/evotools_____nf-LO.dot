@@ -1,0 +1,214 @@
+digraph "evotools_____nfLO" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="PREPROC:src2bit"];
+v0 -> v1 [label="ch_source"];
+
+v1 [label="PREPROC:src2bit"];
+v20 [label="ALIGNER:axtChain"];
+v1 -> v20 [label="twoBitS"];
+
+v1 [label="PREPROC:src2bit"];
+v23 [label="ALIGNER:chainNet"];
+v1 -> v23 [label="twoBitSN"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="PREPROC:tgt2bit"];
+v2 -> v3 [label="ch_tgt"];
+
+v3 [label="PREPROC:tgt2bit"];
+v20 [label="ALIGNER:axtChain"];
+v3 -> v20 [label="twoBitT"];
+
+v3 [label="PREPROC:tgt2bit"];
+v23 [label="ALIGNER:chainNet"];
+v3 -> v23 [label="twoBitTN"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="PREPROC:splitsrc"];
+v0 -> v4 [label="ch_source"];
+
+v4 [label="PREPROC:splitsrc"];
+v6 [label="PREPROC:groupsrc"];
+v4 -> v6;
+
+v4 [label="PREPROC:splitsrc"];
+v5 [shape=point];
+v4 -> v5;
+
+v4 [label="PREPROC:splitsrc"];
+v19 [label="ALIGNER:lastz"];
+v4 -> v19 [label="src_lift"];
+
+v6 [label="PREPROC:groupsrc"];
+v7 [shape=point];
+v6 -> v7 [label="ch_fragm_src_out"];
+
+v6 [label="PREPROC:groupsrc"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v6 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v15 [label="ch_fragm_src_fa"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [label="PREPROC:splittgt"];
+v2 -> v9 [label="ch_tgt"];
+
+v9 [label="PREPROC:splittgt"];
+v11 [label="PREPROC:grouptgt"];
+v9 -> v11;
+
+v9 [label="PREPROC:splittgt"];
+v10 [shape=point];
+v9 -> v10;
+
+v9 [label="PREPROC:splittgt"];
+v19 [label="ALIGNER:lastz"];
+v9 -> v19 [label="tgt_lift"];
+
+v11 [label="PREPROC:grouptgt"];
+v12 [shape=point];
+v11 -> v12 [label="ch_fragm_tgt_out"];
+
+v11 [label="PREPROC:grouptgt"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v11 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v16 [label="ch_fragm_tgt_fa"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v16 [label="ch_fragm_src_fa"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v18 [label="pairspath_ch"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [label="ALIGNER:lastz"];
+v18 -> v19 [label="pairspath_ch"];
+
+v19 [label="ALIGNER:lastz"];
+v20 [label="ALIGNER:axtChain"];
+v19 -> v20;
+
+v20 [label="ALIGNER:axtChain"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [label="ALIGNER:chainMerge"];
+v21 -> v22;
+
+v22 [label="ALIGNER:chainMerge"];
+v23 [label="ALIGNER:chainNet"];
+v22 -> v23;
+
+v1 [label="PREPROC:src2bit"];
+v23 [label="ALIGNER:chainNet"];
+v1 -> v23 [label="twoBitS"];
+
+v3 [label="PREPROC:tgt2bit"];
+v23 [label="ALIGNER:chainNet"];
+v3 -> v23 [label="twoBitT"];
+
+v23 [label="ALIGNER:chainNet"];
+v24 [label="ALIGNER:netSynt"];
+v23 -> v24;
+
+v24 [label="ALIGNER:netSynt"];
+v25 [label="ALIGNER:chainsubset"];
+v24 -> v25;
+
+v22 [label="ALIGNER:chainMerge"];
+v25 [label="ALIGNER:chainsubset"];
+v22 -> v25 [label="rawchain"];
+
+v25 [label="ALIGNER:chainsubset"];
+v26 [label="ALIGNER:chain2maf"];
+v25 -> v26 [label="chain"];
+
+v1 [label="PREPROC:src2bit"];
+v26 [label="ALIGNER:chain2maf"];
+v1 -> v26 [label="twoBitS"];
+
+v3 [label="PREPROC:tgt2bit"];
+v26 [label="ALIGNER:chain2maf"];
+v3 -> v26 [label="twoBitT"];
+
+v1 [label="PREPROC:src2bit"];
+v26 [label="ALIGNER:chain2maf"];
+v1 -> v26 [label="twoBitSN"];
+
+v3 [label="PREPROC:tgt2bit"];
+v26 [label="ALIGNER:chain2maf"];
+v3 -> v26 [label="twoBitTN"];
+
+v26 [label="ALIGNER:chain2maf"];
+v27 [label="ALIGNER:name_maf_seq"];
+v26 -> v27;
+
+v27 [label="ALIGNER:name_maf_seq"];
+v30 [label="ALIGNER:mafstats"];
+v27 -> v30;
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="ALIGNER:mafstats"];
+v28 -> v30 [label="sourceName"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="ALIGNER:mafstats"];
+v29 -> v30 [label="targetName"];
+
+v30 [label="ALIGNER:mafstats"];
+v33 [shape=point];
+v30 -> v33 [label="mafs"];
+
+v30 [label="ALIGNER:mafstats"];
+v32 [shape=point];
+v30 -> v32 [label="mafc"];
+
+v30 [label="ALIGNER:mafstats"];
+v31 [shape=point];
+v30 -> v31 [label="mafi"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v35 [label="LIFTOVER:lifter"];
+v34 -> v35 [label="ch_annot"];
+
+v25 [label="ALIGNER:chainsubset"];
+v35 [label="LIFTOVER:lifter"];
+v25 -> v35 [label="chain"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v35 [label="LIFTOVER:lifter"];
+v2 -> v35 [label="ch_tgt"];
+
+v35 [label="LIFTOVER:lifter"];
+v37 [label="LIFTOVER:features_stats"];
+v35 -> v37;
+
+v35 [label="LIFTOVER:lifter"];
+v36 [shape=point];
+v35 -> v36;
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v37 [label="LIFTOVER:features_stats"];
+v34 -> v37 [label="ch_annot"];
+
+v37 [label="LIFTOVER:features_stats"];
+v38 [shape=point];
+v37 -> v38;
+
+}

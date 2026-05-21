@@ -1,0 +1,394 @@
+digraph "Tina04021997_____EVCpipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v20 [label="RECALIBRATE_BaseRecal_BQSR"];
+v0 -> v20 [label="chunk"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [label="FASTQC"];
+v3 -> v4 [label="sample_sheet"];
+
+v4 [label="FASTQC"];
+v6 [shape=point];
+v4 -> v6;
+
+v4 [label="FASTQC"];
+v5 [shape=point];
+v4 -> v5;
+
+v4 [label="FASTQC"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v4 -> v7 [label="FASTQC_out"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v7 -> v77 [label="FASTQC_file"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [label="BWA_MEM"];
+v3 -> v8 [label="sample_sheet"];
+
+v8 [label="BWA_MEM"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v8 -> v9 [label="BWA_MEM_out"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v9 -> v77 [label="BWA_MEM_file"];
+
+v8 [label="BWA_MEM"];
+v10 [label="CHECK_BAM_BWA"];
+v8 -> v10 [label="BWA_MEM_out"];
+
+v10 [label="CHECK_BAM_BWA"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 [label="COMBINE_REPORTS_BWA"];
+v11 -> v12;
+
+v12 [label="COMBINE_REPORTS_BWA"];
+v13 [shape=point];
+v12 -> v13;
+
+v8 [label="BWA_MEM"];
+v14 [label="MKDUP"];
+v8 -> v14 [label="BWA_MEM_out"];
+
+v14 [label="MKDUP"];
+v20 [label="RECALIBRATE_BaseRecal_BQSR"];
+v14 -> v20;
+
+v14 [label="MKDUP"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v14 -> v15 [label="MKDUP_out"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v15 -> v77 [label="MKDUP_file"];
+
+v14 [label="MKDUP"];
+v16 [label="CHECK_BAM_MKDUP"];
+v14 -> v16 [label="MKDUP_out"];
+
+v16 [label="CHECK_BAM_MKDUP"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 [label="COMBINE_REPORTS_MKDUP"];
+v17 -> v18;
+
+v18 [label="COMBINE_REPORTS_MKDUP"];
+v19 [shape=point];
+v18 -> v19;
+
+v20 [label="RECALIBRATE_BaseRecal_BQSR"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v20 -> v22;
+
+v20 [label="RECALIBRATE_BaseRecal_BQSR"];
+v21 [shape=point];
+v20 -> v21;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v23 [label="BaseRecal_BQSR_out_pair"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [label="RECALIBRATE_MergeBam"];
+v23 -> v24 [label="BaseRecal_BQSR_out_MAP"];
+
+v24 [label="RECALIBRATE_MergeBam"];
+v25 [label="RECALIBRATE_SortBam"];
+v24 -> v25;
+
+v25 [label="RECALIBRATE_SortBam"];
+v54 [label="GETpileUP"];
+v25 -> v54;
+
+v25 [label="RECALIBRATE_SortBam"];
+v27 [label="CHECK_BAM_RECAL"];
+v25 -> v27;
+
+v25 [label="RECALIBRATE_SortBam"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v25 -> v26 [label="RECAL_out"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v26 -> v77 [label="RECAL_file"];
+
+v27 [label="CHECK_BAM_RECAL"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [label="COMBINE_REPORTS_RECAL"];
+v28 -> v29;
+
+v29 [label="COMBINE_REPORTS_RECAL"];
+v30 [shape=point];
+v29 -> v30;
+
+v25 [label="RECALIBRATE_SortBam"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v25 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v31 -> v33 [label="normal"];
+
+v25 [label="RECALIBRATE_SortBam"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v25 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v32 -> v33 [label="tumor"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [label="SAGE"];
+v34 -> v35 [label="RECALIBRATE_out_MAP"];
+
+v35 [label="SAGE"];
+v37 [shape=point];
+v35 -> v37;
+
+v35 [label="SAGE"];
+v36 [shape=point];
+v35 -> v36;
+
+v35 [label="SAGE"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v35 -> v49 [label="SAGE_out"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [label="STRELKA"];
+v34 -> v38 [label="RECALIBRATE_out_MAP"];
+
+v38 [label="STRELKA"];
+v42 [shape=point];
+v38 -> v42;
+
+v38 [label="STRELKA"];
+v41 [shape=point];
+v38 -> v41;
+
+v38 [label="STRELKA"];
+v40 [shape=point];
+v38 -> v40;
+
+v38 [label="STRELKA"];
+v39 [shape=point];
+v38 -> v39;
+
+v38 [label="STRELKA"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v38 -> v50 [label="STRELKA_out"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 [label="MuSE2"];
+v34 -> v43 [label="RECALIBRATE_out_MAP"];
+
+v43 [label="MuSE2"];
+v44 [shape=point];
+v43 -> v44;
+
+v43 [label="MuSE2"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v43 -> v51 [label="MuSE2_out"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [label="CONPAIR"];
+v34 -> v45 [label="RECALIBRATE_out_MAP"];
+
+v45 [label="CONPAIR"];
+v46 [shape=point];
+v45 -> v46;
+
+v45 [label="CONPAIR"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v45 -> v52 [label="CONPAIR_out"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 [label="MOSDEPTH"];
+v34 -> v47 [label="RECALIBRATE_out_MAP"];
+
+v47 [label="MOSDEPTH"];
+v48 [shape=point];
+v47 -> v48;
+
+v47 [label="MOSDEPTH"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v47 -> v53 [label="MOSDEPTH_out"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v49 -> v77 [label="SAGE_file"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v50 -> v77 [label="STRELKA_file"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v51 -> v77 [label="MuSE2_file"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v52 -> v77 [label="CONPAIR_file"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v53 -> v77 [label="MOSDEPTH_file"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v54 [label="GETpileUP"];
+v0 -> v54 [label="chunk"];
+
+v54 [label="GETpileUP"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v65;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 [label="MUTECT2_CALLING"];
+v34 -> v55 [label="RECALIBRATE_out_MAP"];
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v55 [label="MUTECT2_CALLING"];
+v0 -> v55 [label="chunk"];
+
+v55 [label="MUTECT2_CALLING"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v55 -> v58;
+
+v55 [label="MUTECT2_CALLING"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v55 -> v59;
+
+v55 [label="MUTECT2_CALLING"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v55 -> v60;
+
+v55 [label="MUTECT2_CALLING"];
+v57 [shape=point];
+v55 -> v57;
+
+v55 [label="MUTECT2_CALLING"];
+v56 [shape=point];
+v55 -> v56;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v61 [label="LearnReadOrientationModel"];
+v58 -> v61 [label="LearnReadOrientationModel_input_pair"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v62 [label="MergeMutectStats"];
+v59 -> v62 [label="MergeMutectStats_input_pair"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v63 [label="MergeVcfs"];
+v60 -> v63 [label="MergeVcfs_input_pair"];
+
+v61 [label="LearnReadOrientationModel"];
+v74 [label="FilterMutectCalls"];
+v61 -> v74;
+
+v62 [label="MergeMutectStats"];
+v74 [label="FilterMutectCalls"];
+v62 -> v74;
+
+v63 [label="MergeVcfs"];
+v74 [label="FilterMutectCalls"];
+v63 -> v74;
+
+v63 [label="MergeVcfs"];
+v64 [shape=point];
+v63 -> v64;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 -> v67 [label="GETpileUP_out_pair"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 [label="GETpileUP_Merge"];
+v67 -> v68 [label="GETpileUP_out_pair_MAP"];
+
+v68 [label="GETpileUP_Merge"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v69 -> v71 [label="GETpileUP_normal"];
+
+v68 [label="GETpileUP_Merge"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v68 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v70 -> v71 [label="GETpileUP_tumor"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 [label="CalculateContamination"];
+v72 -> v73 [label="GETpileUP_out_MAP"];
+
+v73 [label="CalculateContamination"];
+v74 [label="FilterMutectCalls"];
+v73 -> v74;
+
+v73 [label="CalculateContamination"];
+v74 [label="FilterMutectCalls"];
+v73 -> v74;
+
+v74 [label="FilterMutectCalls"];
+v75 [shape=point];
+v74 -> v75;
+
+v74 [label="FilterMutectCalls"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v74 -> v76 [label="Mutect2_out"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v76 -> v77 [label="Mutect2_file"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 [label="SUMMARY"];
+v78 -> v79 [label="saved_csv"];
+
+v79 [label="SUMMARY"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v79 -> v80 [label="-"];
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v81 [shape=point];
+v80 -> v81;
+
+}

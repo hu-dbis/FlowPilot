@@ -1,0 +1,174 @@
+digraph "beaplab_____transcriptome_metaT_quantification" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v6 [label="fastq_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [label="SIGNATURE_transcriptome"];
+v4 -> v5 [label="transcriptome_ch"];
+
+v5 [label="SIGNATURE_transcriptome"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v7;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 [label="GATHER"];
+v7 -> v8 [label="comparison_sigs_ch"];
+
+v8 [label="GATHER"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v14 [label="gather_res_ch"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [label="INDEX_W_SALMON"];
+v4 -> v10 [label="transcriptome_ch"];
+
+v10 [label="INDEX_W_SALMON"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v13;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v12 [label="fastq_ch"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 -> v16;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v19 [label="fastqs_to_quantify_ch"];
+
+v10 [label="INDEX_W_SALMON"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 [label="QUANT"];
+v19 -> v20 [label="mapping_sams_ch"];
+
+v20 [label="QUANT"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 -> v25;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [label="INDEX_W_BWA2"];
+v4 -> v21 [label="transcriptome_ch"];
+
+v21 [label="INDEX_W_BWA2"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v21 -> v22;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v22 [label="fastqs_to_quantify_ch"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v23 [label="ALIGNMENT_BWA2"];
+v22 -> v23 [label="aligning_sams_ch"];
+
+v23 [label="ALIGNMENT_BWA2"];
+v24 [label="PROFILE_BAM"];
+v23 -> v24;
+
+v24 [label="PROFILE_BAM"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v31;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [label="QUANTIFICATION_PARSER_S"];
+v27 -> v28 [label="quants_grouped_ch"];
+
+v28 [label="QUANTIFICATION_PARSER_S"];
+v30 [shape=point];
+v28 -> v30;
+
+v28 [label="QUANTIFICATION_PARSER_S"];
+v29 [shape=point];
+v28 -> v29;
+
+v28 [label="QUANTIFICATION_PARSER_S"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 -> v34 [label="gene_lengths_ch"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v35 [label="QUANTIFICATION_PARSER_B"];
+v34 -> v35 [label="profile_grouped_ch"];
+
+v35 [label="QUANTIFICATION_PARSER_B"];
+v38 [shape=point];
+v35 -> v38;
+
+v35 [label="QUANTIFICATION_PARSER_B"];
+v37 [shape=point];
+v35 -> v37;
+
+v35 [label="QUANTIFICATION_PARSER_B"];
+v36 [shape=point];
+v35 -> v36;
+
+}

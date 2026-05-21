@@ -1,0 +1,1362 @@
+digraph "nascent" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v285 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v286 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v287 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v28 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=point];
+v4 -> v5 [label="ch_nascent_logo"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v9 [label="ch_versions"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="NFCORE_NASCENT:NASCENT:PREPARE_GENOME:GTF2BED"];
+v7 -> v8 [label="gtf"];
+
+v8 [label="NFCORE_NASCENT:NASCENT:PREPARE_GENOME:GTF2BED"];
+v106 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:RSEQC_READDISTRIBUTION"];
+v8 -> v106 [label="bed"];
+
+v8 [label="NFCORE_NASCENT:NASCENT:PREPARE_GENOME:GTF2BED"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v16 [label="ch_versions"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11 [label="fasta"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [label="NFCORE_NASCENT:NASCENT:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v11 -> v12;
+
+v12 [label="NFCORE_NASCENT:NASCENT:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v15;
+
+v12 [label="NFCORE_NASCENT:NASCENT:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v14;
+
+v12 [label="NFCORE_NASCENT:NASCENT:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v13 [shape=point];
+v12 -> v13;
+
+v12 [label="NFCORE_NASCENT:NASCENT:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v16;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v139 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:DEEPTOOLS_BAMCOVERAGE_PLUS"];
+v14 -> v139 [label="fai"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v198 [label="chrom_sizes"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v25 [label="ch_versions"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v18 [shape=point];
+v17 -> v18 [label="ch_bwa_index"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v20 [shape=point];
+v19 -> v20 [label="dragmap"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=point];
+v21 -> v22 [label="bowtie2_index"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v23 [label="fasta"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [label="NFCORE_NASCENT:NASCENT:PREPARE_GENOME:BWA_INDEX"];
+v23 -> v24;
+
+v24 [label="NFCORE_NASCENT:NASCENT:PREPARE_GENOME:BWA_INDEX"];
+v71 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BWA_MEM"];
+v24 -> v71 [label="ch_index"];
+
+v24 [label="NFCORE_NASCENT:NASCENT:PREPARE_GENOME:BWA_INDEX"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v25 -> v26 [label="ch_versions"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v26 -> v27 [label="versions"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v38 [label="ch_versions"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v29 [label="fasta"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v29 -> v87 [label="ch_fasta"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [label="NFCORE_NASCENT:NASCENT:FASTQC"];
+v34 -> v35 [label="ch_fastq"];
+
+v35 [label="NFCORE_NASCENT:NASCENT:FASTQC"];
+v36 [shape=point];
+v35 -> v36;
+
+v35 [label="NFCORE_NASCENT:NASCENT:FASTQC"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v35 -> v239;
+
+v35 [label="NFCORE_NASCENT:NASCENT:FASTQC"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v35 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v51 [label="ch_versions"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v40 [shape=point];
+v39 -> v40 [label="ch_reads"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 [label="NFCORE_NASCENT:NASCENT:FASTP"];
+v34 -> v44 [label="ch_fastq"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="NFCORE_NASCENT:NASCENT:FASTP"];
+v41 -> v44 [label="adapter_fasta"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="NFCORE_NASCENT:NASCENT:FASTP"];
+v42 -> v44 [label="save_trimmed_fail"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="NFCORE_NASCENT:NASCENT:FASTP"];
+v43 -> v44 [label="save_merged"];
+
+v44 [label="NFCORE_NASCENT:NASCENT:FASTP"];
+v71 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BWA_MEM"];
+v44 -> v71 [label="ch_reads"];
+
+v44 [label="NFCORE_NASCENT:NASCENT:FASTP"];
+v49 [shape=point];
+v44 -> v49;
+
+v44 [label="NFCORE_NASCENT:NASCENT:FASTP"];
+v48 [shape=point];
+v44 -> v48;
+
+v44 [label="NFCORE_NASCENT:NASCENT:FASTP"];
+v47 [shape=point];
+v44 -> v47;
+
+v44 [label="NFCORE_NASCENT:NASCENT:FASTP"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v44 -> v50;
+
+v44 [label="NFCORE_NASCENT:NASCENT:FASTP"];
+v46 [shape=point];
+v44 -> v46;
+
+v44 [label="NFCORE_NASCENT:NASCENT:FASTP"];
+v45 [shape=point];
+v44 -> v45;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v96 [label="ch_versions"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v53 [shape=point];
+v52 -> v53 [label="ch_genome_bam"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v55 [shape=point];
+v54 -> v55 [label="ch_genome_bai"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v57 [shape=point];
+v56 -> v57 [label="ch_samtools_stats"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v59 [shape=point];
+v58 -> v59 [label="ch_samtools_flagstat"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v61 [shape=point];
+v60 -> v61 [label="ch_samtools_idxstats"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v63 [shape=point];
+v62 -> v63 [label="ch_star_multiqc"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v65 [shape=point];
+v64 -> v65 [label="ch_aligner_pca_multiqc"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v67 [shape=point];
+v66 -> v67 [label="ch_aligner_clustering_multiqc"];
+
+v68 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v68 -> v242 [label="ch_bowtie2_multiqc"];
+
+v69 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v73 [label="ch_versions"];
+
+v70 [shape=point,label="",fixedsize=true,width=0.1];
+v71 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BWA_MEM"];
+v70 -> v71 [label="sort_bam"];
+
+v71 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BWA_MEM"];
+v75 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v71 -> v75 [label="bam_orig"];
+
+v71 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BWA_MEM"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v94 [label="ch_versions"];
+
+v74 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v78 [label="ch_versions"];
+
+v75 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v79 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v75 -> v79 [label="bam"];
+
+v75 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v76 [shape=point];
+v75 -> v76;
+
+v75 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v75 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v82 [label="ch_versions"];
+
+v79 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v79 -> v83 [label="bai"];
+
+v79 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v79 -> v84 [label="csi"];
+
+v79 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v80 [shape=point];
+v79 -> v80;
+
+v79 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v79 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v93 [label="ch_versions"];
+
+v75 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v75 -> v83 [label="bam"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v85 -> v87 [label="ch_bam_bai"];
+
+v86 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v88 [label="ch_versions"];
+
+v87 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v87 -> v245 [label="ch_samtools_stats"];
+
+v87 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v90 [label="ch_versions"];
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v85 -> v89 [label="ch_bam_bai"];
+
+v89 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v89 -> v248 [label="ch_samtools_flagstat"];
+
+v89 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v92 [label="ch_versions"];
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v85 -> v91 [label="ch_bam_bai"];
+
+v91 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v91 -> v251 [label="ch_samtools_idxstats"];
+
+v91 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v93 [label="versions"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v94 [label="versions"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v94 -> v95 [label="versions"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v122 [label="ch_versions"];
+
+v97 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v101 [label="ch_versions"];
+
+v75 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v98 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:PRESEQ_CCURVE"];
+v75 -> v98 [label="bam"];
+
+v98 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:PRESEQ_CCURVE"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v98 -> v254 [label="preseq_ccurve"];
+
+v98 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:PRESEQ_CCURVE"];
+v99 [shape=point];
+v98 -> v99;
+
+v98 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:PRESEQ_CCURVE"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v98 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v105 [label="ch_versions"];
+
+v75 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v102 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:PRESEQ_LCEXTRAP"];
+v75 -> v102 [label="bam"];
+
+v102 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:PRESEQ_LCEXTRAP"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v102 -> v257 [label="preseq_lcextrap"];
+
+v102 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:PRESEQ_LCEXTRAP"];
+v103 [shape=point];
+v102 -> v103;
+
+v102 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:PRESEQ_LCEXTRAP"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v102 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v108 [label="ch_versions"];
+
+v75 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v106 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:RSEQC_READDISTRIBUTION"];
+v75 -> v106 [label="bam"];
+
+v106 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:RSEQC_READDISTRIBUTION"];
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v106 -> v260 [label="readdistribution_txt"];
+
+v106 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:RSEQC_READDISTRIBUTION"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v113 [label="ch_versions"];
+
+v75 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v109 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:RSEQC_READDUPLICATION"];
+v75 -> v109 [label="bam"];
+
+v109 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:RSEQC_READDUPLICATION"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v109 -> v263 [label="readduplication_seq_xls"];
+
+v109 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:RSEQC_READDUPLICATION"];
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v109 -> v266 [label="readduplication_pos_xls"];
+
+v109 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:RSEQC_READDUPLICATION"];
+v111 [shape=point];
+v109 -> v111 [label="readduplication_pdf"];
+
+v109 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:RSEQC_READDUPLICATION"];
+v110 [shape=point];
+v109 -> v110 [label="readduplication_rscript"];
+
+v109 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:RSEQC_READDUPLICATION"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v109 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v116 [label="ch_versions"];
+
+v75 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v114 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:RSEQC_INFEREXPERIMENT"];
+v75 -> v114 [label="bam"];
+
+v8 [label="NFCORE_NASCENT:NASCENT:PREPARE_GENOME:GTF2BED"];
+v114 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:RSEQC_INFEREXPERIMENT"];
+v8 -> v114 [label="bed"];
+
+v114 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:RSEQC_INFEREXPERIMENT"];
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v114 -> v269 [label="inferexperiment_txt"];
+
+v114 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:RSEQC_INFEREXPERIMENT"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v114 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v116;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v121 [label="ch_versions"];
+
+v75 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v117 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:BBMAP_PILEUP"];
+v75 -> v117 [label="bam"];
+
+v117 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:BBMAP_PILEUP"];
+v119 [shape=point];
+v117 -> v119 [label="pileup_stats"];
+
+v117 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:BBMAP_PILEUP"];
+v118 [shape=point];
+v117 -> v118 [label="pileup_hist"];
+
+v117 [label="NFCORE_NASCENT:NASCENT:QUALITY_CONTROL:BBMAP_PILEUP"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v117 -> v120;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v122 [label="versions"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v149 [label="ch_versions"];
+
+v123 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v131 [label="ch_versions"];
+
+v124 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v124 -> v125;
+
+v75 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v75 -> v125 [label="bam"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v128 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:BEDTOOLS_GENOMECOV_PLUS"];
+v125 -> v128 [label="ch_genomecov_bam"];
+
+v126 [shape=point,label="",fixedsize=true,width=0.1];
+v128 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:BEDTOOLS_GENOMECOV_PLUS"];
+v126 -> v128 [label="sizes"];
+
+v127 [shape=point,label="",fixedsize=true,width=0.1];
+v128 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:BEDTOOLS_GENOMECOV_PLUS"];
+v127 -> v128 [label="extension"];
+
+v128 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:BEDTOOLS_GENOMECOV_PLUS"];
+v129 [shape=point];
+v128 -> v129 [label="plus_bedGraph"];
+
+v128 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:BEDTOOLS_GENOMECOV_PLUS"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v128 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v137 [label="ch_versions"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v134 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:BEDTOOLS_GENOMECOV_MINUS"];
+v125 -> v134 [label="ch_genomecov_bam"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v134 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:BEDTOOLS_GENOMECOV_MINUS"];
+v132 -> v134 [label="sizes"];
+
+v133 [shape=point,label="",fixedsize=true,width=0.1];
+v134 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:BEDTOOLS_GENOMECOV_MINUS"];
+v133 -> v134 [label="extension"];
+
+v134 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:BEDTOOLS_GENOMECOV_MINUS"];
+v135 [shape=point];
+v134 -> v135 [label="minus_bedGraph"];
+
+v134 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:BEDTOOLS_GENOMECOV_MINUS"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v134 -> v136;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v137;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v142 [label="ch_versions"];
+
+v75 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v75 -> v138 [label="bam"];
+
+v79 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v79 -> v138 [label="bai"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v139 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:DEEPTOOLS_BAMCOVERAGE_PLUS"];
+v138 -> v139 [label="ch_bam_bai"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:DEEPTOOLS_BAMCOVERAGE_PLUS"];
+v10 -> v139 [label="fasta"];
+
+v139 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:DEEPTOOLS_BAMCOVERAGE_PLUS"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v139 -> v147;
+
+v139 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:DEEPTOOLS_BAMCOVERAGE_PLUS"];
+v140 [shape=point];
+v139 -> v140;
+
+v139 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:DEEPTOOLS_BAMCOVERAGE_PLUS"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v139 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v142;
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v146 [label="ch_versions"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v143 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:DEEPTOOLS_BAMCOVERAGE_MINUS"];
+v138 -> v143 [label="ch_bam_bai"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v143 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:DEEPTOOLS_BAMCOVERAGE_MINUS"];
+v10 -> v143 [label="fasta"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v143 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:DEEPTOOLS_BAMCOVERAGE_MINUS"];
+v14 -> v143 [label="fai"];
+
+v143 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:DEEPTOOLS_BAMCOVERAGE_MINUS"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v143 -> v147;
+
+v143 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:DEEPTOOLS_BAMCOVERAGE_MINUS"];
+v144 [shape=point];
+v143 -> v144;
+
+v143 [label="NFCORE_NASCENT:NASCENT:COVERAGE_GRAPHS:DEEPTOOLS_BAMCOVERAGE_MINUS"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v143 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 -> v149 [label="versions"];
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v148 [shape=point];
+v147 -> v148 [label="plus_minus"];
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v211 [label="ch_versions"];
+
+v75 [label="NFCORE_NASCENT:NASCENT:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v75 -> v150 [label="bam"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v150 -> v151;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v151 -> v152;
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v161 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_MAKETAGDIRECTORY"];
+v152 -> v161 [label="bam"];
+
+v153 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v177 [label="ch_versions"];
+
+v154 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 -> v175 [label="ch_identification_bed"];
+
+v155 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v155 -> v209 [label="grohmm_td_plot"];
+
+v156 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v157 [shape=point];
+v156 -> v157 [label="homer_peaks"];
+
+v158 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v159 [shape=point];
+v158 -> v159 [label="homer_tagdir"];
+
+v160 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v164 [label="ch_versions"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v161 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_MAKETAGDIRECTORY"];
+v10 -> v161 [label="fasta"];
+
+v161 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_MAKETAGDIRECTORY"];
+v165 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_MAKEUCSCFILE"];
+v161 -> v165 [label="homer_tagdir"];
+
+v161 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_MAKETAGDIRECTORY"];
+v162 [shape=point];
+v161 -> v162;
+
+v161 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_MAKETAGDIRECTORY"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v161 -> v163;
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v164;
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v168 [label="ch_versions"];
+
+v165 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_MAKEUCSCFILE"];
+v166 [shape=point];
+v165 -> v166 [label="bed_graph"];
+
+v165 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_MAKEUCSCFILE"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v165 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v168;
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v171 [label="ch_versions"];
+
+v161 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_MAKETAGDIRECTORY"];
+v169 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_FINDPEAKS"];
+v161 -> v169 [label="homer_tagdir"];
+
+v169 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_FINDPEAKS"];
+v172 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_POS2BED"];
+v169 -> v172 [label="ch_homer_multiqc"];
+
+v169 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_FINDPEAKS"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v169 -> v170;
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 -> v171;
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 -> v174 [label="ch_versions"];
+
+v172 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_POS2BED"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 -> v175 [label="bed"];
+
+v172 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_POS2BED"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v172 -> v173;
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v173 -> v174;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v174 -> v176 [label="versions"];
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 -> v193 [label="ch_identification_bed"];
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 -> v177;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v184 [label="ch_versions"];
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v179 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:PINTS_CALLER"];
+v152 -> v179 [label="bam"];
+
+v178 [shape=point,label="",fixedsize=true,width=0.1];
+v179 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:PINTS_CALLER"];
+v178 -> v179 [label="assay_type"];
+
+v179 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:PINTS_CALLER"];
+v182 [shape=point];
+v179 -> v182;
+
+v179 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:PINTS_CALLER"];
+v185 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:CAT_CAT"];
+v179 -> v185;
+
+v179 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:PINTS_CALLER"];
+v181 [shape=point];
+v179 -> v181;
+
+v179 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:PINTS_CALLER"];
+v180 [shape=point];
+v179 -> v180;
+
+v179 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:PINTS_CALLER"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v179 -> v183;
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 -> v184;
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 -> v187 [label="ch_versions"];
+
+v185 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:CAT_CAT"];
+v189 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_SORT"];
+v185 -> v189;
+
+v185 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:CAT_CAT"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v185 -> v186;
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 -> v187;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 -> v191 [label="ch_versions"];
+
+v188 [shape=point,label="",fixedsize=true,width=0.1];
+v189 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_SORT"];
+v188 -> v189 [label="genome_file"];
+
+v189 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_SORT"];
+v192 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_MERGE"];
+v189 -> v192;
+
+v189 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_SORT"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v189 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v191;
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 -> v195 [label="ch_versions"];
+
+v192 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_MERGE"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v192 -> v193;
+
+v192 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_MERGE"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v192 -> v194;
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v193 -> v197 [label="ch_identification_bed"];
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v195;
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 -> v201 [label="ch_versions"];
+
+v196 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v196 -> v197 [label="ch_filter_bed"];
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v199 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_INTERSECT_FILTER"];
+v197 -> v199;
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v199 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_INTERSECT_FILTER"];
+v198 -> v199;
+
+v199 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_INTERSECT_FILTER"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v199 -> v203 [label="ch_identification_bed"];
+
+v199 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_INTERSECT_FILTER"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v199 -> v200;
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 -> v201;
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 -> v207 [label="ch_versions"];
+
+v202 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v202 -> v203 [label="ch_intersect_bed"];
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v205 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_INTERSECT"];
+v203 -> v205;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v204 [label="chrom_sizes"];
+
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v205 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_INTERSECT"];
+v204 -> v205;
+
+v205 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_INTERSECT"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v205 -> v208 [label="ch_identification_bed"];
+
+v205 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:BEDTOOLS_INTERSECT"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v205 -> v206;
+
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 -> v207;
+
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 -> v211 [label="versions"];
+
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v212 [label="NFCORE_NASCENT:NASCENT:BED2SAF"];
+v208 -> v212 [label="transcript_beds"];
+
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v209 -> v272 [label="ch_grohmm_multiqc"];
+
+v161 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_MAKETAGDIRECTORY"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v210 [label="homer_tagdir"];
+
+v169 [label="NFCORE_NASCENT:NASCENT:TRANSCRIPT_INDENTIFICATION:HOMER_GROSEQ:HOMER_FINDPEAKS"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v210 [label="ch_homer_multiqc"];
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v210 -> v275 [label="ch_homer_multiqc"];
+
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v211 -> v219 [label="ch_versions"];
+
+v212 [label="NFCORE_NASCENT:NASCENT:BED2SAF"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v212 -> v214;
+
+v212 [label="NFCORE_NASCENT:NASCENT:BED2SAF"];
+v213 [shape=point];
+v212 -> v213;
+
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v214 -> v215;
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v152 -> v215 [label="bam"];
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v216 [label="NFCORE_NASCENT:NASCENT:SUBREAD_FEATURECOUNTS_PREDICTED"];
+v215 -> v216;
+
+v216 [label="NFCORE_NASCENT:NASCENT:SUBREAD_FEATURECOUNTS_PREDICTED"];
+v217 [shape=point];
+v216 -> v217;
+
+v216 [label="NFCORE_NASCENT:NASCENT:SUBREAD_FEATURECOUNTS_PREDICTED"];
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v216 -> v278;
+
+v216 [label="NFCORE_NASCENT:NASCENT:SUBREAD_FEATURECOUNTS_PREDICTED"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v216 -> v218;
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 -> v219;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 -> v224 [label="ch_versions"];
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v152 -> v220 [label="bam"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v220 [label="gtf"];
+
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v221 [label="NFCORE_NASCENT:NASCENT:SUBREAD_FEATURECOUNTS_GENE"];
+v220 -> v221;
+
+v221 [label="NFCORE_NASCENT:NASCENT:SUBREAD_FEATURECOUNTS_GENE"];
+v222 [shape=point];
+v221 -> v222;
+
+v221 [label="NFCORE_NASCENT:NASCENT:SUBREAD_FEATURECOUNTS_GENE"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v221 -> v281;
+
+v221 [label="NFCORE_NASCENT:NASCENT:SUBREAD_FEATURECOUNTS_GENE"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v221 -> v223;
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 -> v224;
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v224 -> v225 [label="ch_versions"];
+
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v225 -> v226;
+
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v227 [label="NFCORE_NASCENT:NASCENT:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v226 -> v227;
+
+v227 [label="NFCORE_NASCENT:NASCENT:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v229 [shape=point];
+v227 -> v229;
+
+v227 [label="NFCORE_NASCENT:NASCENT:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v227 -> v237;
+
+v227 [label="NFCORE_NASCENT:NASCENT:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v228 [shape=point];
+v227 -> v228;
+
+v230 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v230 -> v233;
+
+v231 [shape=point,label="",fixedsize=true,width=0.1];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v231 -> v232 [label="ch_workflow_summary"];
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 -> v233;
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v236;
+
+v234 [shape=point,label="",fixedsize=true,width=0.1];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v234 -> v235 [label="ch_methods_description"];
+
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v235 -> v236;
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 -> v238;
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v237 -> v238;
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v238 -> v241;
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v239 -> v240;
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v240 -> v241;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v241 -> v244;
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v242 -> v243;
+
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v243 -> v244;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v244 -> v247;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v245 -> v246;
+
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v246 -> v247;
+
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 -> v250;
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v248 -> v249;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v249 -> v250;
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v250 -> v253;
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v251 -> v252;
+
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v252 -> v253;
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v253 -> v256;
+
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v254 -> v255;
+
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v255 -> v256;
+
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v256 -> v259;
+
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v257 -> v258;
+
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v258 -> v259;
+
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 -> v262;
+
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v260 -> v261;
+
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v261 -> v262;
+
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v262 -> v265;
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v263 -> v264;
+
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v264 -> v265;
+
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v265 -> v268;
+
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v266 -> v267;
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v267 -> v268;
+
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v268 -> v271;
+
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v269 -> v270;
+
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v270 -> v271;
+
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v271 -> v274;
+
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v272 -> v273;
+
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v273 -> v274;
+
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v274 -> v277;
+
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v275 -> v276;
+
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v276 -> v277;
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v277 -> v280;
+
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v278 -> v279;
+
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v279 -> v280;
+
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 -> v283;
+
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v281 -> v282;
+
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v282 -> v283;
+
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v283 -> v284 [label="ch_multiqc_files"];
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v288 [label="NFCORE_NASCENT:NASCENT:MULTIQC"];
+v284 -> v288;
+
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v288 [label="NFCORE_NASCENT:NASCENT:MULTIQC"];
+v285 -> v288;
+
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v288 [label="NFCORE_NASCENT:NASCENT:MULTIQC"];
+v286 -> v288;
+
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v288 [label="NFCORE_NASCENT:NASCENT:MULTIQC"];
+v287 -> v288;
+
+v288 [label="NFCORE_NASCENT:NASCENT:MULTIQC"];
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v288 -> v292;
+
+v288 [label="NFCORE_NASCENT:NASCENT:MULTIQC"];
+v291 [shape=point];
+v288 -> v291;
+
+v288 [label="NFCORE_NASCENT:NASCENT:MULTIQC"];
+v290 [shape=point];
+v288 -> v290;
+
+v288 [label="NFCORE_NASCENT:NASCENT:MULTIQC"];
+v289 [shape=point];
+v288 -> v289;
+
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v293 [shape=point];
+v292 -> v293;
+
+}

@@ -1,0 +1,294 @@
+digraph "faithman_____variantnf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [label="MAPPING:FASTP_TRIM"];
+v5 -> v6 [label="sample"];
+
+v6 [label="MAPPING:FASTP_TRIM"];
+v8 [label="MAPPING:BWA_MEM"];
+v6 -> v8;
+
+v6 [label="MAPPING:FASTP_TRIM"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v28;
+
+v6 [label="MAPPING:FASTP_TRIM"];
+v7 [shape=point];
+v6 -> v7;
+
+v8 [label="MAPPING:BWA_MEM"];
+v13 [label="MAPPING:PICARD_MARKDUPLICATES"];
+v8 -> v13;
+
+v8 [label="MAPPING:BWA_MEM"];
+v9 [shape=point];
+v8 -> v9;
+
+v6 [label="MAPPING:FASTP_TRIM"];
+v10 [label="MAPPING:KMER_COUNTING"];
+v6 -> v10;
+
+v10 [label="MAPPING:KMER_COUNTING"];
+v11 [label="MAPPING:KMER_SUMMARY"];
+v10 -> v11;
+
+v11 [label="MAPPING:KMER_SUMMARY"];
+v12 [shape=point];
+v11 -> v12;
+
+v13 [label="MAPPING:PICARD_MARKDUPLICATES"];
+v14 [label="MAPPING:SAMBAMBA_INDEX"];
+v13 -> v14;
+
+v13 [label="MAPPING:PICARD_MARKDUPLICATES"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 -> v29;
+
+v14 [label="MAPPING:SAMBAMBA_INDEX"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [label="MAPPING:SAMBAMBA_MERGE"];
+v17 -> v18 [label="merge_bam"];
+
+v18 [label="MAPPING:SAMBAMBA_MERGE"];
+v19 [label="MAPPING:SAMTOOLS_STATS"];
+v18 -> v19 [label="bam_file"];
+
+v19 [label="MAPPING:SAMTOOLS_STATS"];
+v59 [label="MULTIQC"];
+v19 -> v59 [label="samtools_stats"];
+
+v18 [label="MAPPING:SAMBAMBA_MERGE"];
+v20 [label="MAPPING:SAMTOOLS_IDXSTATS"];
+v18 -> v20 [label="bam_file"];
+
+v20 [label="MAPPING:SAMTOOLS_IDXSTATS"];
+v59 [label="MULTIQC"];
+v20 -> v59 [label="samtools_idx"];
+
+v18 [label="MAPPING:SAMBAMBA_MERGE"];
+v21 [label="MAPPING:SAMTOOLS_FLAGSTAT"];
+v18 -> v21 [label="bam_file"];
+
+v21 [label="MAPPING:SAMTOOLS_FLAGSTAT"];
+v59 [label="MULTIQC"];
+v21 -> v59 [label="samtools_flag"];
+
+v18 [label="MAPPING:SAMBAMBA_MERGE"];
+v22 [label="MAPPING:MOSDEPTH"];
+v18 -> v22 [label="bam_file"];
+
+v22 [label="MAPPING:MOSDEPTH"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 -> v30;
+
+v22 [label="MAPPING:MOSDEPTH"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 -> v25;
+
+v22 [label="MAPPING:MOSDEPTH"];
+v24 [shape=point];
+v22 -> v24;
+
+v22 [label="MAPPING:MOSDEPTH"];
+v23 [shape=point];
+v22 -> v23;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [label="MAPPING:MOSDEPTH_PLOT"];
+v25 -> v26;
+
+v26 [label="MAPPING:MOSDEPTH_PLOT"];
+v27 [shape=point];
+v26 -> v27;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 [label="MULTIQC"];
+v28 -> v59 [label="fastp"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 [label="MULTIQC"];
+v29 -> v59 [label="picard_mkdup"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 [label="MULTIQC"];
+v30 -> v59 [label="mosdepth"];
+
+v18 [label="MAPPING:SAMBAMBA_MERGE"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v18 -> v31 [label="bam_file"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v32 [label="VARIANT_CALLING:GET_CONTIGS"];
+v31 -> v32;
+
+v32 [label="VARIANT_CALLING:GET_CONTIGS"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v33 -> v35 [label="contigs"];
+
+v18 [label="MAPPING:SAMBAMBA_MERGE"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v18 -> v34 [label="bam_file"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v36 [label="VARIANT_CALLING:HAPLOTYPECALLER_INDIVIDUAL"];
+v35 -> v36 [label="new_sample_sheet"];
+
+v36 [label="VARIANT_CALLING:HAPLOTYPECALLER_INDIVIDUAL"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v38 -> v39;
+
+v32 [label="VARIANT_CALLING:GET_CONTIGS"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v32 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v40 [label="VARIANT_CALLING:CONCAT_INDIVIDUAL_GVCFS"];
+v39 -> v40 [label="gvcf_list"];
+
+v40 [label="VARIANT_CALLING:CONCAT_INDIVIDUAL_GVCFS"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v40 -> v44;
+
+v18 [label="MAPPING:SAMBAMBA_MERGE"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v18 -> v41 [label="bam_file"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v43 -> v48 [label="sample_map"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v46 -> v47;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v33 -> v47 [label="contigs"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v49 [label="VARIANT_CALLING:IMPORT_GENOMICS_DB"];
+v48 -> v49 [label="dblist"];
+
+v49 [label="VARIANT_CALLING:IMPORT_GENOMICS_DB"];
+v50 [label="VARIANT_CALLING:GENOTYPE_COHORT_GVCF"];
+v49 -> v50;
+
+v50 [label="VARIANT_CALLING:GENOTYPE_COHORT_GVCF"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v52 [label="VARIANT_CALLING:CONCATENATE_VCF"];
+v51 -> v52;
+
+v52 [label="VARIANT_CALLING:CONCATENATE_VCF"];
+v53 [label="VARIANT_CALLING:SOFT_FILTER"];
+v52 -> v53;
+
+v53 [label="VARIANT_CALLING:SOFT_FILTER"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v53 -> v56;
+
+v53 [label="VARIANT_CALLING:SOFT_FILTER"];
+v55 [shape=point];
+v53 -> v55;
+
+v53 [label="VARIANT_CALLING:SOFT_FILTER"];
+v59 [label="MULTIQC"];
+v53 -> v59 [label="soft_filter"];
+
+v53 [label="VARIANT_CALLING:SOFT_FILTER"];
+v54 [shape=point];
+v53 -> v54;
+
+v32 [label="VARIANT_CALLING:GET_CONTIGS"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v32 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v57 [label="VARIANT_CALLING:HARD_FILTER"];
+v56 -> v57 [label="hard_filter_input"];
+
+v57 [label="VARIANT_CALLING:HARD_FILTER"];
+v58 [shape=point];
+v57 -> v58;
+
+v57 [label="VARIANT_CALLING:HARD_FILTER"];
+v59 [label="MULTIQC"];
+v57 -> v59 [label="hard_filter"];
+
+v59 [label="MULTIQC"];
+v61 [shape=point];
+v59 -> v61;
+
+v59 [label="MULTIQC"];
+v60 [shape=point];
+v59 -> v60;
+
+}

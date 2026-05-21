@@ -1,0 +1,62 @@
+digraph "samebdon_____rnaseq_aln_nf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [label="raw_qc_flow:fastqc"];
+v0 -> v1 [label="read_files"];
+
+v1 [label="raw_qc_flow:fastqc"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 [label="raw_qc_flow:multiqc"];
+v2 -> v4;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="raw_qc_flow:multiqc"];
+v3 -> v4 [label="prefix"];
+
+v4 [label="raw_qc_flow:multiqc"];
+v5 [shape=point];
+v4 -> v5;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v6 [label="rnaseq_aln_flow:trimReads"];
+v0 -> v6 [label="read_files"];
+
+v6 [label="rnaseq_aln_flow:trimReads"];
+v7 [label="rnaseq_aln_flow:fastqc"];
+v6 -> v7;
+
+v7 [label="rnaseq_aln_flow:fastqc"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 [label="rnaseq_aln_flow:multiqc"];
+v8 -> v10;
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="rnaseq_aln_flow:multiqc"];
+v9 -> v10 [label="prefix"];
+
+v10 [label="rnaseq_aln_flow:multiqc"];
+v11 [shape=point];
+v10 -> v11;
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="rnaseq_aln_flow:indexGenomeHisat2"];
+v12 -> v13 [label="genome_f"];
+
+v13 [label="rnaseq_aln_flow:indexGenomeHisat2"];
+v14 [label="rnaseq_aln_flow:mapToGenomeHisat2"];
+v13 -> v14;
+
+v6 [label="rnaseq_aln_flow:trimReads"];
+v14 [label="rnaseq_aln_flow:mapToGenomeHisat2"];
+v6 -> v14;
+
+v14 [label="rnaseq_aln_flow:mapToGenomeHisat2"];
+v15 [shape=point];
+v14 -> v15;
+
+}

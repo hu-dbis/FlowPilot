@@ -1,0 +1,42 @@
+digraph "kzhang04_____BIOF501Project" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="loadData"];
+v0 -> v1 [label="input_seurat_rds"];
+
+v1 [label="loadData"];
+v2 [label="differentialExpression"];
+v1 -> v2;
+
+v1 [label="loadData"];
+v2 [label="differentialExpression"];
+v1 -> v2;
+
+v2 [label="differentialExpression"];
+v3 [label="geneOntology"];
+v2 -> v3;
+
+v3 [label="geneOntology"];
+v4 [label="plotResults"];
+v3 -> v4;
+
+v1 [label="loadData"];
+v4 [label="plotResults"];
+v1 -> v4 [label="counts"];
+
+v2 [label="differentialExpression"];
+v4 [label="plotResults"];
+v2 -> v4 [label="de_results"];
+
+v4 [label="plotResults"];
+v7 [shape=point];
+v4 -> v7;
+
+v4 [label="plotResults"];
+v6 [shape=point];
+v4 -> v6;
+
+v4 [label="plotResults"];
+v5 [shape=point];
+v4 -> v5;
+
+}

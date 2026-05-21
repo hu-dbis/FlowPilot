@@ -1,0 +1,562 @@
+digraph "nibscbioinformatics_____nfcoreconva" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v92 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v11 [label="ch_software_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="CONVA:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v2 -> v3 [label="samplesheet"];
+
+v3 [label="CONVA:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6 [label="reads"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [label="CONVA:FASTQC_RAW"];
+v6 -> v7 [label="ch_fastq"];
+
+v7 [label="CONVA:FASTQC_RAW"];
+v8 [shape=point];
+v7 -> v8;
+
+v7 [label="CONVA:FASTQC_RAW"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v100;
+
+v7 [label="CONVA:FASTQC_RAW"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v7 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v16 [label="ch_software_versions"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [label="CONVA:CUTADAPT"];
+v6 -> v12 [label="ch_fastq"];
+
+v12 [label="CONVA:CUTADAPT"];
+v17 [label="CONVA:FASTQC_TRIMMED"];
+v12 -> v17 [label="ch_trimmed_reads"];
+
+v12 [label="CONVA:CUTADAPT"];
+v13 [shape=point];
+v12 -> v13;
+
+v12 [label="CONVA:CUTADAPT"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v12 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v21 [label="ch_software_versions"];
+
+v17 [label="CONVA:FASTQC_TRIMMED"];
+v18 [shape=point];
+v17 -> v18;
+
+v17 [label="CONVA:FASTQC_TRIMMED"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 -> v103;
+
+v17 [label="CONVA:FASTQC_TRIMMED"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v17 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v26 [label="ch_software_versions"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v23 [label="CONVA:BWAMEM2_INDEX"];
+v22 -> v23 [label="fasta"];
+
+v23 [label="CONVA:BWAMEM2_INDEX"];
+v27 [label="CONVA:BWAMEM2_MEM"];
+v23 -> v27 [label="ch_index"];
+
+v23 [label="CONVA:BWAMEM2_INDEX"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="last"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="last"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v46 [label="ch_software_versions"];
+
+v12 [label="CONVA:CUTADAPT"];
+v27 [label="CONVA:BWAMEM2_MEM"];
+v12 -> v27 [label="ch_trimmed_reads"];
+
+v27 [label="CONVA:BWAMEM2_MEM"];
+v29 [label="CONVA:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v27 -> v29 [label="ch_bam"];
+
+v27 [label="CONVA:BWAMEM2_MEM"];
+v28 [shape=point];
+v27 -> v28;
+
+v29 [label="CONVA:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v30 [label="CONVA:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v29 -> v30 [label="bam"];
+
+v29 [label="CONVA:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v29 -> v44 [label="version"];
+
+v30 [label="CONVA:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 -> v32 [label="bai"];
+
+v30 [label="CONVA:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 -> v33 [label="csi"];
+
+v30 [label="CONVA:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v31 [shape=point];
+v30 -> v31;
+
+v29 [label="CONVA:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 -> v32 [label="bam"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [label="CONVA:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v34 -> v35 [label="ch_bam_bai"];
+
+v35 [label="CONVA:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v37 [shape=point];
+v35 -> v37 [label="stats"];
+
+v35 [label="CONVA:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v36 [shape=point];
+v35 -> v36 [label="version"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [label="CONVA:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v34 -> v38 [label="ch_bam_bai"];
+
+v38 [label="CONVA:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v40 [shape=point];
+v38 -> v40 [label="flagstat"];
+
+v38 [label="CONVA:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v39 [shape=point];
+v38 -> v39;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 [label="CONVA:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v34 -> v41 [label="ch_bam_bai"];
+
+v41 [label="CONVA:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v43 [shape=point];
+v41 -> v43 [label="idxstats"];
+
+v41 [label="CONVA:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v42 [shape=point];
+v41 -> v42;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v62 [label="ch_software_versions"];
+
+v29 [label="CONVA:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v47 [label="CONVA:MARK_DUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v29 -> v47 [label="bam"];
+
+v47 [label="CONVA:MARK_DUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v48 [label="CONVA:MARK_DUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v47 -> v48 [label="bam"];
+
+v47 [label="CONVA:MARK_DUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 -> v106 [label="metrics"];
+
+v47 [label="CONVA:MARK_DUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v47 -> v60 [label="picard_version"];
+
+v48 [label="CONVA:MARK_DUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v48 -> v50 [label="bai"];
+
+v48 [label="CONVA:MARK_DUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v48 -> v51 [label="csi"];
+
+v48 [label="CONVA:MARK_DUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v49 [shape=point];
+v48 -> v49 [label="samtools_version"];
+
+v47 [label="CONVA:MARK_DUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 -> v50 [label="bam"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 [label="CONVA:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v52 -> v53 [label="ch_bam_bai"];
+
+v53 [label="CONVA:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v53 -> v109 [label="ch_samtools_stats"];
+
+v53 [label="CONVA:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v54 [shape=point];
+v53 -> v54 [label="version"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 [label="CONVA:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v52 -> v55 [label="ch_bam_bai"];
+
+v55 [label="CONVA:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 -> v112 [label="ch_samtools_flagstat"];
+
+v55 [label="CONVA:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v56 [shape=point];
+v55 -> v56;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 [label="CONVA:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v52 -> v57 [label="ch_bam_bai"];
+
+v57 [label="CONVA:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v59 [shape=point];
+v57 -> v59 [label="ch_samtools_idxstats"];
+
+v57 [label="CONVA:MARK_DUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v58 [shape=point];
+v57 -> v58;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v75 [label="ch_software_versions"];
+
+v47 [label="CONVA:MARK_DUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v47 -> v63 [label="bam"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v66 [shape=point];
+v65 -> v66;
+
+v67 [shape=point,label="",fixedsize=true,width=0.1];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v71 [label="CONVA:CNVKIT"];
+v68 -> v71 [label="ch_bams"];
+
+v69 [shape=point,label="",fixedsize=true,width=0.1];
+v71 [label="CONVA:CNVKIT"];
+v69 -> v71 [label="fasta"];
+
+v70 [shape=point,label="",fixedsize=true,width=0.1];
+v71 [label="CONVA:CNVKIT"];
+v70 -> v71 [label="annotationfile"];
+
+v71 [label="CONVA:CNVKIT"];
+v72 [shape=point];
+v71 -> v72;
+
+v71 [label="CONVA:CNVKIT"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v71 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v75 -> v82 [label="ch_software_versions"];
+
+v47 [label="CONVA:MARK_DUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 -> v76 [label="bam"];
+
+v48 [label="CONVA:MARK_DUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v48 -> v76 [label="bai"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v76 -> v77 [label="ch_merged_bam_bai"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v78 [shape=point];
+v77 -> v78 [label="ch_normalbam_bai"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v76 -> v79 [label="ch_merged_bam_bai"];
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v79 -> v80 [label="ch_tumourbam_bai"];
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v81 [shape=point];
+v80 -> v81;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v82 -> v83;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v85 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v87 [label="CONVA:GET_SOFTWARE_VERSIONS"];
+v86 -> v87 [label="ch_software_versions"];
+
+v87 [label="CONVA:GET_SOFTWARE_VERSIONS"];
+v88 [shape=point];
+v87 -> v88;
+
+v87 [label="CONVA:GET_SOFTWARE_VERSIONS"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v87 -> v98;
+
+v89 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v91 [label="ch_multiqc_files"];
+
+v90 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v94 [label="ch_multiqc_files"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v97 [label="ch_multiqc_files"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v95 -> v96 [label="ch_workflow_summary"];
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v99 [label="ch_multiqc_files"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v102 [label="ch_multiqc_files"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v105 [label="ch_multiqc_files"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v108 [label="ch_multiqc_files"];
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v111 [label="ch_multiqc_files"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v111;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v114 [label="ch_multiqc_files"];
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v114 -> v115 [label="ch_multiqc_files"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v116 [label="CONVA:MULTIQC"];
+v115 -> v116;
+
+v116 [label="CONVA:MULTIQC"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v116 -> v119;
+
+v116 [label="CONVA:MULTIQC"];
+v118 [shape=point];
+v116 -> v118;
+
+v116 [label="CONVA:MULTIQC"];
+v117 [shape=point];
+v116 -> v117;
+
+v116 [label="CONVA:MULTIQC"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v116 -> v121;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v120 [shape=point];
+v119 -> v120;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v121 -> v122;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v123;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v123 [label="ch_software_versions"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 [shape=point];
+v123 -> v124 [label="ch_software_versions"];
+
+}

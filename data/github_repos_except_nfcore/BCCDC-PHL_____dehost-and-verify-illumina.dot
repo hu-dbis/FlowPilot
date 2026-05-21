@@ -1,0 +1,206 @@
+digraph "BCCDCPHL_____dehostandverifyillumina" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v1 -> v11 [label="ch_fastq_input"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v11 [label="ch_kraken2_db"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v13 [label="ch_bracken_db"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v14 [label="ch_read_length"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v15 [label="ch_taxonomy_level"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v22 [label="ch_host_reference"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v18 [label="ch_host_name"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 -> v19 [label="ch_pathogen_name"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v9 -> v16 [label="ch_analysis_stage"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v33 [label="ch_analysis_stage"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 [label="estimate_abundance_pre_dehosting:kraken2"];
+v11 -> v12;
+
+v12 [label="estimate_abundance_pre_dehosting:kraken2"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 [label="estimate_abundance_pre_dehosting:bracken"];
+v16 -> v17;
+
+v17 [label="estimate_abundance_pre_dehosting:bracken"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 -> v20;
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v9 -> v20 [label="ch_analysis_stage"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v21 [label="estimate_abundance_pre_dehosting:parse_bracken_output"];
+v20 -> v21;
+
+v21 [label="estimate_abundance_pre_dehosting:parse_bracken_output"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 -> v39;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v1 -> v22 [label="ch_fastq_input"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v23 [label="dehost:bwa_mem"];
+v22 -> v23;
+
+v23 [label="dehost:bwa_mem"];
+v24 [label="dehost:samtools_flagstat"];
+v23 -> v24;
+
+v24 [label="dehost:samtools_flagstat"];
+v25 [shape=point];
+v24 -> v25;
+
+v23 [label="dehost:bwa_mem"];
+v26 [label="dehost:remove_mapped_reads"];
+v23 -> v26;
+
+v26 [label="dehost:remove_mapped_reads"];
+v27 [label="dehost:extract_fastq_from_bam"];
+v26 -> v27;
+
+v27 [label="dehost:extract_fastq_from_bam"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v27 -> v28 [label="ch_fastq"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v28 [label="ch_kraken2_db"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v29 [label="estimate_abundance_post_dehosting:kraken2"];
+v28 -> v29;
+
+v29 [label="estimate_abundance_post_dehosting:kraken2"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v29 -> v30;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v30 [label="ch_bracken_db"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v30 -> v31;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v31 [label="ch_read_length"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v31 -> v32;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v5 -> v32 [label="ch_taxonomy_level"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v34 [label="estimate_abundance_post_dehosting:bracken"];
+v33 -> v34;
+
+v34 [label="estimate_abundance_post_dehosting:bracken"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v34 -> v35;
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v35 [label="ch_host_name"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v35 -> v36;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v8 -> v36 [label="ch_pathogen_name"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v36 -> v37;
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v37 [label="ch_analysis_stage"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v38 [label="estimate_abundance_post_dehosting:parse_bracken_output"];
+v37 -> v38;
+
+v38 [label="estimate_abundance_post_dehosting:parse_bracken_output"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 [label="combine_pre_and_post_dehosting"];
+v39 -> v40;
+
+v40 [label="combine_pre_and_post_dehosting"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v42 [shape=point];
+v41 -> v42;
+
+}

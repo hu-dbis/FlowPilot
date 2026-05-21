@@ -1,0 +1,362 @@
+digraph "rluis_____POINTseq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v7 [label="READS_CONCAT"];
+v2 -> v7 [label="fastqFile"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="GET_ANOT"];
+v3 -> v5 [label="url_gtf"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="GET_ANOT"];
+v4 -> v5 [label="url_fasta"];
+
+v5 [label="GET_ANOT"];
+v6 [label="STAR_INDEX"];
+v5 -> v6;
+
+v5 [label="GET_ANOT"];
+v6 [label="STAR_INDEX"];
+v5 -> v6;
+
+v5 [label="GET_ANOT"];
+v6 [label="STAR_INDEX"];
+v5 -> v6;
+
+v6 [label="STAR_INDEX"];
+v12 [label="STAR_ALIGN"];
+v6 -> v12;
+
+v7 [label="READS_CONCAT"];
+v8 [label="FASTQC"];
+v7 -> v8;
+
+v8 [label="FASTQC"];
+v9 [shape=point];
+v8 -> v9;
+
+v7 [label="READS_CONCAT"];
+v10 [label="TRIM"];
+v7 -> v10;
+
+v10 [label="TRIM"];
+v11 [label="FLASH"];
+v10 -> v11 [label="ID"];
+
+v10 [label="TRIM"];
+v11 [label="FLASH"];
+v10 -> v11;
+
+v11 [label="FLASH"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v29;
+
+v10 [label="TRIM"];
+v12 [label="STAR_ALIGN"];
+v10 -> v12 [label="ID"];
+
+v10 [label="TRIM"];
+v12 [label="STAR_ALIGN"];
+v10 -> v12;
+
+v12 [label="STAR_ALIGN"];
+v14 [label="STRAND_SPLIT_BAM"];
+v12 -> v14 [label="ID"];
+
+v12 [label="STAR_ALIGN"];
+v14 [label="STRAND_SPLIT_BAM"];
+v12 -> v14;
+
+v12 [label="STAR_ALIGN"];
+v14 [label="STRAND_SPLIT_BAM"];
+v12 -> v14;
+
+v12 [label="STAR_ALIGN"];
+v13 [shape=point];
+v12 -> v13;
+
+v14 [label="STRAND_SPLIT_BAM"];
+v16 [shape=point];
+v14 -> v16;
+
+v14 [label="STRAND_SPLIT_BAM"];
+v15 [shape=point];
+v14 -> v15;
+
+v12 [label="STAR_ALIGN"];
+v17 [label="SAMTOOLS_STAT"];
+v12 -> v17 [label="ID"];
+
+v12 [label="STAR_ALIGN"];
+v17 [label="SAMTOOLS_STAT"];
+v12 -> v17 [label="BAM"];
+
+v12 [label="STAR_ALIGN"];
+v17 [label="SAMTOOLS_STAT"];
+v12 -> v17 [label="index_BAM"];
+
+v17 [label="SAMTOOLS_STAT"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v29;
+
+v17 [label="SAMTOOLS_STAT"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v29;
+
+v12 [label="STAR_ALIGN"];
+v18 [label="PRESEQ_LCEXTRAP"];
+v12 -> v18 [label="ID"];
+
+v12 [label="STAR_ALIGN"];
+v18 [label="PRESEQ_LCEXTRAP"];
+v12 -> v18 [label="BAM"];
+
+v12 [label="STAR_ALIGN"];
+v18 [label="PRESEQ_LCEXTRAP"];
+v12 -> v18 [label="index_BAM"];
+
+v18 [label="PRESEQ_LCEXTRAP"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v30;
+
+v12 [label="STAR_ALIGN"];
+v19 [label="FEATURE_COUNTS"];
+v12 -> v19 [label="ID"];
+
+v12 [label="STAR_ALIGN"];
+v19 [label="FEATURE_COUNTS"];
+v12 -> v19 [label="BAM"];
+
+v12 [label="STAR_ALIGN"];
+v19 [label="FEATURE_COUNTS"];
+v12 -> v19 [label="index_BAM"];
+
+v5 [label="GET_ANOT"];
+v19 [label="FEATURE_COUNTS"];
+v5 -> v19 [label="gtf"];
+
+v19 [label="FEATURE_COUNTS"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v31;
+
+v12 [label="STAR_ALIGN"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 [label="FEATURE_BIOTYPE"];
+v20 -> v21;
+
+v5 [label="GET_ANOT"];
+v21 [label="FEATURE_BIOTYPE"];
+v5 -> v21 [label="gtf"];
+
+v21 [label="FEATURE_BIOTYPE"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v32;
+
+v12 [label="STAR_ALIGN"];
+v22 [label="RSEQC_JUNCT_ANOT"];
+v12 -> v22 [label="ID"];
+
+v12 [label="STAR_ALIGN"];
+v22 [label="RSEQC_JUNCT_ANOT"];
+v12 -> v22 [label="BAM"];
+
+v12 [label="STAR_ALIGN"];
+v22 [label="RSEQC_JUNCT_ANOT"];
+v12 -> v22 [label="index_BAM"];
+
+v5 [label="GET_ANOT"];
+v22 [label="RSEQC_JUNCT_ANOT"];
+v5 -> v22 [label="ANOT"];
+
+v22 [label="RSEQC_JUNCT_ANOT"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v33;
+
+v12 [label="STAR_ALIGN"];
+v23 [label="RSEQC_JUNCT_SATUR"];
+v12 -> v23 [label="ID"];
+
+v12 [label="STAR_ALIGN"];
+v23 [label="RSEQC_JUNCT_SATUR"];
+v12 -> v23 [label="BAM"];
+
+v12 [label="STAR_ALIGN"];
+v23 [label="RSEQC_JUNCT_SATUR"];
+v12 -> v23 [label="index_BAM"];
+
+v5 [label="GET_ANOT"];
+v23 [label="RSEQC_JUNCT_SATUR"];
+v5 -> v23 [label="ANOT"];
+
+v23 [label="RSEQC_JUNCT_SATUR"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v34;
+
+v12 [label="STAR_ALIGN"];
+v24 [label="RSEQC_INFER_EXP"];
+v12 -> v24 [label="ID"];
+
+v12 [label="STAR_ALIGN"];
+v24 [label="RSEQC_INFER_EXP"];
+v12 -> v24 [label="BAM"];
+
+v12 [label="STAR_ALIGN"];
+v24 [label="RSEQC_INFER_EXP"];
+v12 -> v24 [label="index_BAM"];
+
+v5 [label="GET_ANOT"];
+v24 [label="RSEQC_INFER_EXP"];
+v5 -> v24 [label="ANOT"];
+
+v24 [label="RSEQC_INFER_EXP"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v35;
+
+v12 [label="STAR_ALIGN"];
+v25 [label="RSEQC_READ_DISTR"];
+v12 -> v25 [label="ID"];
+
+v12 [label="STAR_ALIGN"];
+v25 [label="RSEQC_READ_DISTR"];
+v12 -> v25 [label="BAM"];
+
+v12 [label="STAR_ALIGN"];
+v25 [label="RSEQC_READ_DISTR"];
+v12 -> v25 [label="index_BAM"];
+
+v5 [label="GET_ANOT"];
+v25 [label="RSEQC_READ_DISTR"];
+v5 -> v25 [label="ANOT"];
+
+v25 [label="RSEQC_READ_DISTR"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v36;
+
+v12 [label="STAR_ALIGN"];
+v26 [label="RSEQC_TIN"];
+v12 -> v26 [label="ID"];
+
+v12 [label="STAR_ALIGN"];
+v26 [label="RSEQC_TIN"];
+v12 -> v26 [label="BAM"];
+
+v12 [label="STAR_ALIGN"];
+v26 [label="RSEQC_TIN"];
+v12 -> v26 [label="index_BAM"];
+
+v5 [label="GET_ANOT"];
+v26 [label="RSEQC_TIN"];
+v5 -> v26 [label="ANOT"];
+
+v26 [label="RSEQC_TIN"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v37;
+
+v12 [label="STAR_ALIGN"];
+v27 [label="RSEQC_INNER_DIST"];
+v12 -> v27 [label="ID"];
+
+v12 [label="STAR_ALIGN"];
+v27 [label="RSEQC_INNER_DIST"];
+v12 -> v27 [label="BAM"];
+
+v12 [label="STAR_ALIGN"];
+v27 [label="RSEQC_INNER_DIST"];
+v12 -> v27 [label="index_BAM"];
+
+v5 [label="GET_ANOT"];
+v27 [label="RSEQC_INNER_DIST"];
+v5 -> v27 [label="ANOT"];
+
+v27 [label="RSEQC_INNER_DIST"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v38;
+
+v12 [label="STAR_ALIGN"];
+v28 [label="RSEQC_GENE_BODY_COV"];
+v12 -> v28 [label="ID"];
+
+v12 [label="STAR_ALIGN"];
+v28 [label="RSEQC_GENE_BODY_COV"];
+v12 -> v28 [label="BAM"];
+
+v12 [label="STAR_ALIGN"];
+v28 [label="RSEQC_GENE_BODY_COV"];
+v12 -> v28 [label="index_BAM"];
+
+v5 [label="GET_ANOT"];
+v28 [label="RSEQC_GENE_BODY_COV"];
+v5 -> v28 [label="ANOT"];
+
+v28 [label="RSEQC_GENE_BODY_COV"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v39;
+
+v28 [label="RSEQC_GENE_BODY_COV"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v39;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 [label="MULTIQC"];
+v40 -> v41;
+
+v41 [label="MULTIQC"];
+v42 [shape=point];
+v41 -> v42;
+
+}

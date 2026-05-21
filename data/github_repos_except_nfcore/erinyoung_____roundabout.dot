@@ -1,0 +1,214 @@
+digraph "erinyoung_____roundabout" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v6 [label="prep"];
+v1 -> v6 [label="fastas"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v43 [label="circos_confs"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v33 [label="divide_script"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v18 [label="karyotype_script"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v39 [label="highlight"];
+v5 -> v39 [label="highlights_script"];
+
+v6 [label="prep"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v8 [label="prepped_fastas"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 [label="pmauve"];
+v8 -> v9 [label="fasta_collection"];
+
+v9 [label="pmauve"];
+v10 [shape=point];
+v9 -> v10;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v11 [label="prepped_fastas"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [label="plasmidfinder"];
+v11 -> v12 [label="input"];
+
+v12 [label="plasmidfinder"];
+v13 [shape=point];
+v12 -> v13;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [label="amrfinder"];
+v11 -> v14 [label="input"];
+
+v14 [label="amrfinder"];
+v15 [shape=point];
+v14 -> v15;
+
+v14 [label="amrfinder"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v14 -> v40;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [label="prokka"];
+v11 -> v16 [label="input"];
+
+v16 [label="prokka"];
+v17 [shape=point];
+v16 -> v17;
+
+v16 [label="prokka"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v16 -> v18;
+
+v16 [label="prokka"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v21;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 [label="karyotype"];
+v18 -> v19;
+
+v19 [label="karyotype"];
+v20 [shape=point];
+v19 -> v20;
+
+v19 [label="karyotype"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 -> v40;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [label="mummer"];
+v21 -> v22;
+
+v22 [label="mummer"];
+v23 [shape=point];
+v22 -> v23;
+
+v16 [label="prokka"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 [label="mmseqs"];
+v24 -> v25;
+
+v25 [label="mmseqs"];
+v26 [shape=point];
+v25 -> v26;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v27 [label="input"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [label="blastn"];
+v27 -> v28;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 [label="blastn"];
+v8 -> v28 [label="fasta_collection"];
+
+v28 [label="blastn"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v28 -> v33;
+
+v28 [label="blastn"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 -> v37;
+
+v28 [label="blastn"];
+v29 [shape=point];
+v28 -> v29;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v30 [label="input"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 [label="dnadiff"];
+v30 -> v31;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 [label="dnadiff"];
+v8 -> v31 [label="fasta_collection"];
+
+v31 [label="dnadiff"];
+v32 [shape=point];
+v31 -> v32;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v34 [label="divide"];
+v33 -> v34;
+
+v34 [label="divide"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 -> v38;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [label="nuc"];
+v11 -> v35 [label="input"];
+
+v35 [label="nuc"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v35 -> v41;
+
+v35 [label="nuc"];
+v36 [shape=point];
+v35 -> v36;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [label="highlight"];
+v37 -> v39;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [label="highlight"];
+v38 -> v39;
+
+v39 [label="highlight"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v39 -> v42;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v44 [label="circos"];
+v43 -> v44 [label="circos_files"];
+
+v44 [label="circos"];
+v47 [shape=point];
+v44 -> v47;
+
+v44 [label="circos"];
+v46 [shape=point];
+v44 -> v46;
+
+v44 [label="circos"];
+v45 [shape=point];
+v44 -> v45;
+
+}

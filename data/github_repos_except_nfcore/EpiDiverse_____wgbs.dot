@@ -1,0 +1,294 @@
+digraph "EpiDiverse_____wgbs" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="ebm"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3 [label="ctidx"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=point];
+v4 -> v5 [label="gaidx"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v22 [label="reads"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v22 [label="merged"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="INDEX:erne_bs5_indexing"];
+v12 -> v16 [label="fasta"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="INDEX:erne_bs5_indexing"];
+v13 -> v16 [label="fai"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="INDEX:erne_bs5_indexing"];
+v14 -> v16 [label="lamfa"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="INDEX:erne_bs5_indexing"];
+v15 -> v16 [label="lai"];
+
+v16 [label="INDEX:erne_bs5_indexing"];
+v33 [label="WGBS:erne_bs5"];
+v16 -> v33 [label="ebm"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="INDEX:segemehl_indexing"];
+v17 -> v21 [label="fasta"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="INDEX:segemehl_indexing"];
+v18 -> v21 [label="fai"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="INDEX:segemehl_indexing"];
+v19 -> v21 [label="lamfa"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="INDEX:segemehl_indexing"];
+v20 -> v21 [label="lai"];
+
+v21 [label="INDEX:segemehl_indexing"];
+v37 [label="WGBS:segemehl"];
+v21 -> v37 [label="ctidx"];
+
+v21 [label="INDEX:segemehl_indexing"];
+v37 [label="WGBS:segemehl"];
+v21 -> v37 [label="gaidx"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 [label="WGBS:read_trimming"];
+v22 -> v23;
+
+v23 [label="WGBS:read_trimming"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v23 -> v26;
+
+v23 [label="WGBS:read_trimming"];
+v25 [shape=point];
+v23 -> v25;
+
+v23 [label="WGBS:read_trimming"];
+v24 [shape=point];
+v23 -> v24;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [label="WGBS:read_merging"];
+v27 -> v28;
+
+v28 [label="WGBS:read_merging"];
+v30 [label="WGBS:fastqc"];
+v28 -> v30;
+
+v28 [label="WGBS:read_merging"];
+v29 [shape=point];
+v28 -> v29;
+
+v30 [label="WGBS:fastqc"];
+v32 [shape=point];
+v30 -> v32;
+
+v30 [label="WGBS:fastqc"];
+v31 [shape=point];
+v30 -> v31;
+
+v23 [label="WGBS:read_trimming"];
+v33 [label="WGBS:erne_bs5"];
+v23 -> v33;
+
+v33 [label="WGBS:erne_bs5"];
+v41 [label="WGBS:erne_bs5_processing"];
+v33 -> v41;
+
+v33 [label="WGBS:erne_bs5"];
+v34 [shape=point];
+v33 -> v34;
+
+v23 [label="WGBS:read_trimming"];
+v37 [label="WGBS:segemehl"];
+v23 -> v37;
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="WGBS:segemehl"];
+v35 -> v37 [label="fasta"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="WGBS:segemehl"];
+v36 -> v37 [label="lamfa"];
+
+v37 [label="WGBS:segemehl"];
+v43 [label="WGBS:segemehl_processing"];
+v37 -> v43;
+
+v37 [label="WGBS:segemehl"];
+v38 [shape=point];
+v37 -> v38;
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="WGBS:erne_bs5_processing"];
+v39 -> v41 [label="fasta"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="WGBS:erne_bs5_processing"];
+v40 -> v41 [label="lamfa"];
+
+v41 [label="WGBS:erne_bs5_processing"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v41 -> v45 [label="erne_bs5_processing_publish"];
+
+v41 [label="WGBS:erne_bs5_processing"];
+v42 [shape=point];
+v41 -> v42;
+
+v43 [label="WGBS:segemehl_processing"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v43 -> v45 [label="segemehl_processing_publish"];
+
+v43 [label="WGBS:segemehl_processing"];
+v44 [shape=point];
+v43 -> v44;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v46 [label="WGBS:bam_merging"];
+v45 -> v46;
+
+v46 [label="WGBS:bam_merging"];
+v51 [label="WGBS:bam_subsetting"];
+v46 -> v51 [label="bam_merging_publish"];
+
+v46 [label="WGBS:bam_merging"];
+v47 [shape=point];
+v46 -> v47;
+
+v48 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="WGBS:bam_subsetting"];
+v48 -> v51 [label="fai"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="WGBS:bam_subsetting"];
+v49 -> v51 [label="lai"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="WGBS:bam_subsetting"];
+v50 -> v51 [label="chrom"];
+
+v51 [label="WGBS:bam_subsetting"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v53 [label="bam_subsetting_publish_lambda"];
+
+v51 [label="WGBS:bam_subsetting"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v53 [label="bam_subsetting_publish_subset"];
+
+v51 [label="WGBS:bam_subsetting"];
+v52 [shape=point];
+v51 -> v52;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [label="WGBS:bam_filtering"];
+v53 -> v54;
+
+v54 [label="WGBS:bam_filtering"];
+v60 [label="CALL:bam_processing"];
+v54 -> v60 [label="bam"];
+
+v54 [label="WGBS:bam_filtering"];
+v56 [shape=point];
+v54 -> v56;
+
+v54 [label="WGBS:bam_filtering"];
+v55 [shape=point];
+v54 -> v55;
+
+v51 [label="WGBS:bam_subsetting"];
+v57 [label="WGBS:bam_statistics"];
+v51 -> v57 [label="bam_subsetting_publish_subset"];
+
+v57 [label="WGBS:bam_statistics"];
+v59 [shape=point];
+v57 -> v59;
+
+v57 [label="WGBS:bam_statistics"];
+v58 [shape=point];
+v57 -> v58;
+
+v60 [label="CALL:bam_processing"];
+v61 [label="CALL:Picard_MarkDuplicates"];
+v60 -> v61;
+
+v61 [label="CALL:Picard_MarkDuplicates"];
+v67 [label="CALL:MethylDackel"];
+v61 -> v67;
+
+v61 [label="CALL:Picard_MarkDuplicates"];
+v63 [shape=point];
+v61 -> v63;
+
+v61 [label="CALL:Picard_MarkDuplicates"];
+v62 [shape=point];
+v61 -> v62;
+
+v64 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [label="CALL:MethylDackel"];
+v64 -> v67 [label="fasta"];
+
+v65 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [label="CALL:MethylDackel"];
+v65 -> v67 [label="lamfa"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [label="CALL:MethylDackel"];
+v66 -> v67 [label="context"];
+
+v67 [label="CALL:MethylDackel"];
+v71 [label="CALL:conversion_rate_estimation"];
+v67 -> v71;
+
+v67 [label="CALL:MethylDackel"];
+v69 [shape=point];
+v67 -> v69;
+
+v67 [label="CALL:MethylDackel"];
+v68 [shape=point];
+v67 -> v68;
+
+v70 [shape=point,label="",fixedsize=true,width=0.1];
+v71 [label="CALL:conversion_rate_estimation"];
+v70 -> v71 [label="chrom"];
+
+v71 [label="CALL:conversion_rate_estimation"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v72 -> v73;
+
+}

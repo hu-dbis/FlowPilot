@@ -1,0 +1,66 @@
+digraph "eresearchqut_____ontvisc" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="QC_PRE_DATA_PROCESSING"];
+v2 -> v3 [label="filtered_fq"];
+
+v3 [label="QC_PRE_DATA_PROCESSING"];
+v8 [shape=point];
+v3 -> v8;
+
+v3 [label="QC_PRE_DATA_PROCESSING"];
+v7 [shape=point];
+v3 -> v7;
+
+v3 [label="QC_PRE_DATA_PROCESSING"];
+v6 [shape=point];
+v3 -> v6;
+
+v3 [label="QC_PRE_DATA_PROCESSING"];
+v5 [shape=point];
+v3 -> v5;
+
+v3 [label="QC_PRE_DATA_PROCESSING"];
+v4 [shape=point];
+v3 -> v4;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [label="REFORMAT"];
+v2 -> v9 [label="filtered_fq"];
+
+v9 [label="REFORMAT"];
+v11 [label="CANU"];
+v9 -> v11 [label="final_fq"];
+
+v9 [label="REFORMAT"];
+v10 [shape=point];
+v9 -> v10;
+
+v11 [label="CANU"];
+v14 [shape=point];
+v11 -> v14;
+
+v11 [label="CANU"];
+v13 [shape=point];
+v11 -> v13;
+
+v11 [label="CANU"];
+v12 [shape=point];
+v11 -> v12;
+
+v11 [label="CANU"];
+v15 [label="BLASTN2REF"];
+v11 -> v15 [label="contigs"];
+
+v15 [label="BLASTN2REF"];
+v16 [shape=point];
+v15 -> v16;
+
+}

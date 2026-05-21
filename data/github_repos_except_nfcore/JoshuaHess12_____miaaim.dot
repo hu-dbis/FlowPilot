@@ -1,0 +1,166 @@
+digraph "JoshuaHess12_____miaaim" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2 [label="rawin"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [label="hdiprep"];
+v2 -> v12 [label="rawin"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v3 -> v23 [label="pars"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5 [label="prop_order"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v5 -> v15 [label="id_img"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7 [label="pre_moving"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v7 -> v10 [label="a"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v9 [label="pre_fixed"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v9 -> v10 [label="b"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v11 [shape=point];
+v10 -> v11 [label="pre_prep"];
+
+v12 [label="hdiprep"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v12 -> v14 [label="prepout"];
+
+v12 [label="hdiprep"];
+v13 [shape=point];
+v12 -> v13;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v2 -> v14 [label="rawin"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v16 -> v17 [label="elx_pre"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 [label="hdireg:elastix"];
+v24 -> v25 [label="elxin"];
+
+v25 [label="hdireg:elastix"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v25 -> v28;
+
+v25 [label="hdireg:elastix"];
+v26 [shape=point];
+v25 -> v26;
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v27 -> v35 [label="transpars"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v29 -> v32;
+
+v25 [label="hdireg:elastix"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v25 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v33 -> v34;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v2 -> v34 [label="rawin"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="hdireg:transformix"];
+v36 -> v37 [label="tfmxin"];
+
+v37 [label="hdireg:transformix"];
+v39 [shape=point];
+v37 -> v39;
+
+v37 [label="hdireg:transformix"];
+v38 [shape=point];
+v37 -> v38;
+
+}

@@ -1,0 +1,2254 @@
+digraph "chipseq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v32 [label="ch_versions"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v7 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3 [label="ch_fasta"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 -> v17 [label="ch_blacklist"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:GTF2BED"];
+v5 -> v6 [label="ch_gtf"];
+
+v6 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:GTF2BED"];
+v250 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_COMPUTEMATRIX"];
+v6 -> v250 [label="ch_gene_bed"];
+
+v6 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:GTF2BED"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v14 [label="ch_versions"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v9 [label="ch_fasta"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v9 -> v10;
+
+v10 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v12;
+
+v10 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v13;
+
+v10 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v11 [shape=point];
+v10 -> v11;
+
+v10 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v14;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v12 -> v18 [label="ch_chrom_sizes"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v123 [label="ch_fai"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v19 [label="ch_versions"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v16 [shape=point];
+v15 -> v16 [label="ch_genome_filtered_bed"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v18 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v17 -> v18;
+
+v18 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v18 -> v147 [label="ch_filtered_bed"];
+
+v18 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v24 [label="ch_versions"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=point];
+v20 -> v21 [label="ch_bwa_index"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v22 [label="ch_fasta"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:BWA_INDEX"];
+v22 -> v23;
+
+v23 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:BWA_INDEX"];
+v86 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BWA_MEM"];
+v23 -> v86 [label="ch_index"];
+
+v23 [label="NFCORE_CHIPSEQ:PREPARE_GENOME:BWA_INDEX"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v24 -> v31 [label="ch_versions"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v26 [shape=point];
+v25 -> v26 [label="ch_bowtie2_index"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v28 [shape=point];
+v27 -> v28 [label="ch_chromap_index"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v30 [shape=point];
+v29 -> v30 [label="ch_star_index"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v32 [label="versions"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v38 [label="versions"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v424 [label="ch_multiqc_files"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v35 [label="NFCORE_CHIPSEQ:CHIPSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v34 -> v35 [label="samplesheet"];
+
+v35 [label="NFCORE_CHIPSEQ:CHIPSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v35 -> v36;
+
+v35 [label="NFCORE_CHIPSEQ:CHIPSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v38 [label="versions"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:FASTQC"];
+v37 -> v44 [label="trim_reads"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v72 [label="ch_versions"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v47 [label="ch_versions"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v41 [shape=point];
+v40 -> v41 [label="fastqc_html"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v43 [shape=point];
+v42 -> v43 [label="fastqc_zip"];
+
+v44 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:FASTQC"];
+v45 [shape=point];
+v44 -> v45 [label="fastqc_html"];
+
+v44 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:FASTQC"];
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 -> v430 [label="fastqc_zip"];
+
+v44 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:FASTQC"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v44 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v64 [label="ch_versions"];
+
+v48 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v49 [shape=point];
+v48 -> v49 [label="umi_log"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v51 [shape=point];
+v50 -> v51 [label="trim_unpaired"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v53 [shape=point];
+v52 -> v53 [label="trim_html"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v55 [shape=point];
+v54 -> v55 [label="trim_zip"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v57 [shape=point];
+v56 -> v57 [label="trim_log"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v59 [shape=point];
+v58 -> v59 [label="trim_read_count"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v37 -> v60 [label="trim_reads"];
+
+v60 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 -> v65;
+
+v60 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 -> v65 [label="trim_log"];
+
+v60 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v62 [shape=point];
+v60 -> v62 [label="trim_unpaired"];
+
+v60 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v61 [shape=point];
+v60 -> v61 [label="trim_html"];
+
+v60 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v432 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 -> v432 [label="trim_zip"];
+
+v60 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v60 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v64 -> v71 [label="ch_versions"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v66 -> v67 [label="ch_num_trimmed_reads"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v86 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BWA_MEM"];
+v68 -> v86 [label="ch_reads"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 -> v69 [label="ch_num_trimmed_reads"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 [shape=point];
+v69 -> v70 [label="trim_read_count"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v72 [label="versions"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v115 [label="ch_versions"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v74 [shape=point];
+v73 -> v74 [label="ch_genome_bam"];
+
+v75 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v76 [shape=point];
+v75 -> v76 [label="ch_genome_bam_index"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v78 [shape=point];
+v77 -> v78 [label="ch_samtools_stats"];
+
+v79 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v80 [shape=point];
+v79 -> v80 [label="ch_samtools_flagstat"];
+
+v81 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v82 [shape=point];
+v81 -> v82 [label="ch_samtools_idxstats"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v83 [label="ch_fasta"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v86 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BWA_MEM"];
+v83 -> v86 [label="ch_fasta"];
+
+v84 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v91 [label="ch_versions"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BWA_MEM"];
+v85 -> v86 [label="sort_bam"];
+
+v86 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BWA_MEM"];
+v93 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v86 -> v93 [label="bam_orig"];
+
+v86 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BWA_MEM"];
+v89 [shape=point];
+v86 -> v89;
+
+v86 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BWA_MEM"];
+v88 [shape=point];
+v86 -> v88;
+
+v86 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BWA_MEM"];
+v87 [shape=point];
+v86 -> v87;
+
+v86 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BWA_MEM"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v86 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v114 [label="ch_versions"];
+
+v92 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v98 [label="ch_versions"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v83 -> v93 [label="ch_fasta"];
+
+v93 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v99 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v93 -> v99 [label="ch_genome_bam"];
+
+v93 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v96 [shape=point];
+v93 -> v96;
+
+v93 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v95 [shape=point];
+v93 -> v95;
+
+v93 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v94 [shape=point];
+v93 -> v94;
+
+v93 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v93 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v102 [label="ch_versions"];
+
+v99 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v99 -> v103 [label="ch_genome_bam_index"];
+
+v99 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v99 -> v104 [label="csi"];
+
+v99 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v100 [shape=point];
+v99 -> v100;
+
+v99 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v99 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v113 [label="ch_versions"];
+
+v93 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v103 [label="ch_genome_bam"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v107 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v105 -> v107 [label="ch_bam_bai"];
+
+v106 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v108 [label="ch_versions"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v107 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v83 -> v107 [label="ch_fasta"];
+
+v107 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v436 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v107 -> v436 [label="ch_samtools_stats"];
+
+v107 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v110 [label="ch_versions"];
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v109 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v105 -> v109 [label="ch_bam_bai"];
+
+v109 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v109 -> v438 [label="ch_samtools_flagstat"];
+
+v109 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v112 [label="ch_versions"];
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v111 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v105 -> v111 [label="ch_bam_bai"];
+
+v111 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v111 -> v440 [label="ch_samtools_idxstats"];
+
+v111 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v113 [label="versions"];
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v114 [label="versions"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v115 [label="versions"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v121 [label="ch_versions"];
+
+v93 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 -> v116 [label="ch_genome_bam"];
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v116 -> v117;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v117 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v119 [label="NFCORE_CHIPSEQ:CHIPSEQ:PICARD_MERGESAMFILES"];
+v118 -> v119 [label="ch_sort_bam"];
+
+v119 [label="NFCORE_CHIPSEQ:CHIPSEQ:PICARD_MERGESAMFILES"];
+v125 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v119 -> v125 [label="ch_reads"];
+
+v119 [label="NFCORE_CHIPSEQ:CHIPSEQ:PICARD_MERGESAMFILES"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v119 -> v120;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v145 [label="ch_versions"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v122 [label="ch_fasta"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v125 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v122 -> v125 [label="ch_fasta"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v125 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v123 -> v125 [label="ch_fai"];
+
+v124 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v128 [label="ch_versions"];
+
+v125 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v129 [label="bam"];
+
+v125 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v126 [shape=point];
+v125 -> v126;
+
+v125 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v129 [label="cram"];
+
+v125 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v448 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v125 -> v448 [label="metrics"];
+
+v125 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v125 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v132 [label="ch_versions"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v129 -> v130 [label="ch_markdup"];
+
+v130 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 -> v133 [label="bai"];
+
+v130 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 -> v135 [label="csi"];
+
+v130 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 -> v134 [label="crai"];
+
+v130 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v132;
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v144 [label="ch_versions"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v129 -> v133 [label="ch_markdup"];
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v133 -> v134;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v134 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v135 -> v136;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v138 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v136 -> v138 [label="ch_bam_bai"];
+
+v137 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v139 [label="ch_versions"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v138 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v122 -> v138 [label="ch_fasta"];
+
+v138 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v138 -> v442 [label="stats"];
+
+v138 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v141 [label="ch_versions"];
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v136 -> v140 [label="ch_bam_bai"];
+
+v140 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v140 -> v444 [label="flagstat"];
+
+v140 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v143 [label="ch_versions"];
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v142 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v136 -> v142 [label="ch_bam_bai"];
+
+v142 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v446 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v142 -> v446 [label="idxstats"];
+
+v142 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v143;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v144 [label="versions"];
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v145 [label="versions"];
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v210 [label="ch_versions"];
+
+v130 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 -> v146 [label="bai"];
+
+v125 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v125 -> v146 [label="bam"];
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v152 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAMTOOLS_FILTER"];
+v146 -> v152 [label="ch_bam_bai"];
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v152 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAMTOOLS_FILTER"];
+v147 -> v152 [label="ch_bed"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v148 [label="ch_fasta"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v164 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v148 -> v164 [label="ch_fasta"];
+
+v149 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v154 [label="ch_versions"];
+
+v150 [shape=point,label="",fixedsize=true,width=0.1];
+v152 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAMTOOLS_FILTER"];
+v150 -> v152 [label="bamtools_filter_se_config"];
+
+v151 [shape=point,label="",fixedsize=true,width=0.1];
+v152 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAMTOOLS_FILTER"];
+v151 -> v152 [label="bamtools_filter_pe_config"];
+
+v152 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAMTOOLS_FILTER"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v152 -> v155;
+
+v152 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAMTOOLS_FILTER"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v152 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v154;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 -> v161 [label="ch_versions"];
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v155 -> v162;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v172 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:SAMTOOLS_SORT"];
+v155 -> v172;
+
+v156 [shape=point,label="",fixedsize=true,width=0.1];
+v157 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:SAMTOOLS_INDEX"];
+v156 -> v157;
+
+v157 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:SAMTOOLS_INDEX"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v157 -> v162;
+
+v157 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:SAMTOOLS_INDEX"];
+v159 [shape=point];
+v157 -> v159;
+
+v157 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:SAMTOOLS_INDEX"];
+v158 [shape=point];
+v157 -> v158;
+
+v157 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:SAMTOOLS_INDEX"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v157 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v161;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v171 [label="ch_versions"];
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v164 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v162 -> v164 [label="ch_bam_bai"];
+
+v163 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v165 [label="ch_versions"];
+
+v164 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v207 [label="stats"];
+
+v164 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v165;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 -> v167 [label="ch_versions"];
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v166 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v162 -> v166 [label="ch_bam_bai"];
+
+v166 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v208 [label="flagstat"];
+
+v166 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v169 [label="ch_versions"];
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v168 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v162 -> v168 [label="ch_bam_bai"];
+
+v168 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v209 [label="idxstats"];
+
+v168 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v169;
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v169 -> v170 [label="versions"];
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 -> v171;
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 -> v177 [label="ch_versions"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v172 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:SAMTOOLS_SORT"];
+v148 -> v172 [label="ch_fasta"];
+
+v172 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:SAMTOOLS_SORT"];
+v178 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_REMOVE_ORPHANS"];
+v172 -> v178 [label="name_bam"];
+
+v172 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:SAMTOOLS_SORT"];
+v175 [shape=point];
+v172 -> v175;
+
+v172 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:SAMTOOLS_SORT"];
+v174 [shape=point];
+v172 -> v174;
+
+v172 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:SAMTOOLS_SORT"];
+v173 [shape=point];
+v172 -> v173;
+
+v172 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:SAMTOOLS_SORT"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v172 -> v176;
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 -> v177;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v180 [label="ch_versions"];
+
+v178 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_REMOVE_ORPHANS"];
+v182 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v178 -> v182 [label="ch_bam"];
+
+v178 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_REMOVE_ORPHANS"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v178 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v180;
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 -> v204 [label="ch_versions"];
+
+v181 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 -> v187 [label="ch_versions"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v182 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v148 -> v182 [label="ch_fasta"];
+
+v182 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v188 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v182 -> v188 [label="bam"];
+
+v182 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v185 [shape=point];
+v182 -> v185;
+
+v182 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v184 [shape=point];
+v182 -> v184;
+
+v182 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v183 [shape=point];
+v182 -> v183;
+
+v182 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v182 -> v186;
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 -> v187;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 -> v191 [label="ch_versions"];
+
+v188 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v188 -> v192 [label="bai"];
+
+v188 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v188 -> v193 [label="csi"];
+
+v188 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v189 [shape=point];
+v188 -> v189;
+
+v188 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v188 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v191;
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 -> v202 [label="ch_versions"];
+
+v182 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v182 -> v192 [label="bam"];
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v192 -> v193;
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v193 -> v194;
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v196 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v194 -> v196 [label="ch_bam_bai"];
+
+v195 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 -> v197 [label="ch_versions"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v196 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v148 -> v196 [label="ch_fasta"];
+
+v196 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v207 [label="stats"];
+
+v196 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v197;
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 -> v199 [label="ch_versions"];
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v198 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v194 -> v198 [label="ch_bam_bai"];
+
+v198 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 -> v208 [label="flagstat"];
+
+v198 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 -> v199;
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v199 -> v201 [label="ch_versions"];
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v200 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v194 -> v200 [label="ch_bam_bai"];
+
+v200 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 -> v209 [label="idxstats"];
+
+v200 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 -> v201;
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 -> v202 [label="versions"];
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v202 -> v203 [label="versions"];
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v203 -> v204;
+
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v204 -> v210 [label="versions"];
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v205;
+
+v182 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v205 [label="bam"];
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v205 -> v214 [label="bam"];
+
+v157 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:SAMTOOLS_INDEX"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 -> v206;
+
+v188 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_FILTER_BAMTOOLS:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 -> v206 [label="bai"];
+
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v206 -> v263 [label="bai"];
+
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v207 -> v450 [label="stats"];
+
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v208 -> v238 [label="flagstat"];
+
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v209 -> v454 [label="idxstats"];
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 -> v220 [label="ch_versions"];
+
+v211 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v211 -> v458 [label="ch_preseq_multiqc"];
+
+v212 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v213 [shape=point];
+v212 -> v213 [label="ch_picardcollectmultiplemetrics_multiqc"];
+
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v217 [label="NFCORE_CHIPSEQ:CHIPSEQ:PICARD_COLLECTMULTIPLEMETRICS"];
+v214 -> v217;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v215 [label="ch_fasta"];
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v217 [label="NFCORE_CHIPSEQ:CHIPSEQ:PICARD_COLLECTMULTIPLEMETRICS"];
+v215 -> v217;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v216 [label="ch_fai"];
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v217 [label="NFCORE_CHIPSEQ:CHIPSEQ:PICARD_COLLECTMULTIPLEMETRICS"];
+v216 -> v217;
+
+v217 [label="NFCORE_CHIPSEQ:CHIPSEQ:PICARD_COLLECTMULTIPLEMETRICS"];
+v456 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v217 -> v456 [label="ch_picardcollectmultiplemetrics_multiqc"];
+
+v217 [label="NFCORE_CHIPSEQ:CHIPSEQ:PICARD_COLLECTMULTIPLEMETRICS"];
+v218 [shape=point];
+v217 -> v218;
+
+v217 [label="NFCORE_CHIPSEQ:CHIPSEQ:PICARD_COLLECTMULTIPLEMETRICS"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v217 -> v219;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 -> v220;
+
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 -> v232 [label="ch_versions"];
+
+v221 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v222 [shape=point];
+v221 -> v222 [label="ch_phantompeakqualtools_spp_multiqc"];
+
+v223 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v224 [shape=point];
+v223 -> v224 [label="ch_multiqc_phantompeakqualtools_nsc_multiqc"];
+
+v225 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v226 [shape=point];
+v225 -> v226 [label="ch_multiqc_phantompeakqualtools_rsc_multiqc"];
+
+v227 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v228 [shape=point];
+v227 -> v228 [label="ch_multiqc_phantompeakqualtools_correlation_multiqc"];
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v229 [label="NFCORE_CHIPSEQ:CHIPSEQ:PHANTOMPEAKQUALTOOLS"];
+v205 -> v229 [label="bam"];
+
+v229 [label="NFCORE_CHIPSEQ:CHIPSEQ:PHANTOMPEAKQUALTOOLS"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v229 -> v233 [label="ch_phantompeakqualtools_spp_multiqc"];
+
+v229 [label="NFCORE_CHIPSEQ:CHIPSEQ:PHANTOMPEAKQUALTOOLS"];
+v230 [shape=point];
+v229 -> v230;
+
+v229 [label="NFCORE_CHIPSEQ:CHIPSEQ:PHANTOMPEAKQUALTOOLS"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v229 -> v233;
+
+v229 [label="NFCORE_CHIPSEQ:CHIPSEQ:PHANTOMPEAKQUALTOOLS"];
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v229 -> v231;
+
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v231 -> v232;
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 -> v247 [label="ch_versions"];
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v237 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PHANTOMPEAKQUALTOOLS"];
+v233 -> v237;
+
+v234 [shape=point,label="",fixedsize=true,width=0.1];
+v237 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PHANTOMPEAKQUALTOOLS"];
+v234 -> v237 [label="nsc_header"];
+
+v235 [shape=point,label="",fixedsize=true,width=0.1];
+v237 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PHANTOMPEAKQUALTOOLS"];
+v235 -> v237 [label="rsc_header"];
+
+v236 [shape=point,label="",fixedsize=true,width=0.1];
+v237 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PHANTOMPEAKQUALTOOLS"];
+v236 -> v237 [label="correlation_header"];
+
+v237 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PHANTOMPEAKQUALTOOLS"];
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v237 -> v466 [label="ch_multiqc_phantompeakqualtools_nsc_multiqc"];
+
+v237 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PHANTOMPEAKQUALTOOLS"];
+v468 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v237 -> v468 [label="ch_multiqc_phantompeakqualtools_rsc_multiqc"];
+
+v237 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC_CUSTOM_PHANTOMPEAKQUALTOOLS"];
+v470 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v237 -> v470 [label="ch_multiqc_phantompeakqualtools_correlation_multiqc"];
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v205 -> v238 [label="bam"];
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v240 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_BEDGRAPH_BIGWIG_BEDTOOLS_UCSC:BEDTOOLS_GENOMECOV"];
+v238 -> v240 [label="ch_bam_flagstat"];
+
+v239 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v239 -> v243 [label="ch_versions"];
+
+v240 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_BEDGRAPH_BIGWIG_BEDTOOLS_UCSC:BEDTOOLS_GENOMECOV"];
+v244 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_BEDGRAPH_BIGWIG_BEDTOOLS_UCSC:UCSC_BEDGRAPHTOBIGWIG"];
+v240 -> v244 [label="bedgraph"];
+
+v240 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_BEDGRAPH_BIGWIG_BEDTOOLS_UCSC:BEDTOOLS_GENOMECOV"];
+v241 [shape=point];
+v240 -> v241 [label="scale_factor"];
+
+v240 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_BEDGRAPH_BIGWIG_BEDTOOLS_UCSC:BEDTOOLS_GENOMECOV"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v240 -> v242;
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v242 -> v243;
+
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v243 -> v246 [label="ch_versions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v244 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_BEDGRAPH_BIGWIG_BEDTOOLS_UCSC:UCSC_BEDGRAPHTOBIGWIG"];
+v12 -> v244 [label="ch_chrom_sizes"];
+
+v244 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_BEDGRAPH_BIGWIG_BEDTOOLS_UCSC:UCSC_BEDGRAPHTOBIGWIG"];
+v250 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_COMPUTEMATRIX"];
+v244 -> v250 [label="bigwig"];
+
+v244 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_BEDGRAPH_BIGWIG_BEDTOOLS_UCSC:UCSC_BEDGRAPHTOBIGWIG"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v244 -> v245;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 -> v246;
+
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v246 -> v247 [label="versions"];
+
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 -> v253 [label="ch_versions"];
+
+v248 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v249 [shape=point];
+v248 -> v249 [label="ch_deeptoolsplotprofile_multiqc"];
+
+v250 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_COMPUTEMATRIX"];
+v254 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_PLOTPROFILE"];
+v250 -> v254;
+
+v250 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_COMPUTEMATRIX"];
+v251 [shape=point];
+v250 -> v251;
+
+v250 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_COMPUTEMATRIX"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v250 -> v252;
+
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v252 -> v253;
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v253 -> v257 [label="ch_versions"];
+
+v254 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_PLOTPROFILE"];
+v255 [shape=point];
+v254 -> v255;
+
+v254 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_PLOTPROFILE"];
+v460 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v254 -> v460 [label="ch_deeptoolsplotprofile_multiqc"];
+
+v254 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_PLOTPROFILE"];
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v254 -> v256;
+
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v256 -> v257;
+
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v257 -> v262 [label="ch_versions"];
+
+v250 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_COMPUTEMATRIX"];
+v258 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_PLOTHEATMAP"];
+v250 -> v258;
+
+v258 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_PLOTHEATMAP"];
+v260 [shape=point];
+v258 -> v260;
+
+v258 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_PLOTHEATMAP"];
+v259 [shape=point];
+v258 -> v259;
+
+v258 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_PLOTHEATMAP"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v258 -> v261;
+
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v261 -> v262;
+
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v262 -> v274 [label="ch_versions"];
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v205 -> v263 [label="bam"];
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v263 -> v264 [label="ch_genome_bam_bai"];
+
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v264 -> v266 [label="ch_control_bam_bai"];
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v263 -> v265 [label="ch_genome_bam_bai"];
+
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v265 -> v266;
+
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v266 -> v267;
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v270 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_PLOTFINGERPRINT"];
+v267 -> v270 [label="ch_ip_control_bam_bai"];
+
+v268 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v269 [shape=point];
+v268 -> v269 [label="ch_deeptoolsplotfingerprint_multiqc"];
+
+v270 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_PLOTFINGERPRINT"];
+v272 [shape=point];
+v270 -> v272;
+
+v270 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_PLOTFINGERPRINT"];
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v270 -> v462 [label="ch_deeptoolsplotfingerprint_multiqc"];
+
+v270 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_PLOTFINGERPRINT"];
+v271 [shape=point];
+v270 -> v271;
+
+v270 [label="NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_PLOTFINGERPRINT"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v270 -> v273;
+
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v273 -> v274;
+
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v274 -> v335 [label="ch_versions"];
+
+v275 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v276 [shape=point];
+v275 -> v276 [label="ch_macs_gsize"];
+
+v277 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v278 [shape=point];
+v277 -> v278 [label="ch_subreadfeaturecounts_multiqc"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v280 [label="NFCORE_CHIPSEQ:CHIPSEQ:KHMER_UNIQUEKMERS"];
+v8 -> v280 [label="ch_fasta"];
+
+v279 [shape=point,label="",fixedsize=true,width=0.1];
+v280 [label="NFCORE_CHIPSEQ:CHIPSEQ:KHMER_UNIQUEKMERS"];
+v279 -> v280 [label="kmer_size"];
+
+v280 [label="NFCORE_CHIPSEQ:CHIPSEQ:KHMER_UNIQUEKMERS"];
+v282 [shape=point];
+v280 -> v282;
+
+v280 [label="NFCORE_CHIPSEQ:CHIPSEQ:KHMER_UNIQUEKMERS"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v280 -> v283;
+
+v280 [label="NFCORE_CHIPSEQ:CHIPSEQ:KHMER_UNIQUEKMERS"];
+v281 [shape=point];
+v280 -> v281;
+
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v286 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:MACS3_CALLPEAK"];
+v283 -> v286 [label="macs_gsize"];
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v267 -> v284 [label="ch_ip_control_bam_bai"];
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v286 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:MACS3_CALLPEAK"];
+v284 -> v286 [label="ch_bam"];
+
+v285 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v285 -> v292 [label="ch_versions"];
+
+v286 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:MACS3_CALLPEAK"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v286 -> v293;
+
+v286 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:MACS3_CALLPEAK"];
+v290 [shape=point];
+v286 -> v290 [label="xls"];
+
+v286 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:MACS3_CALLPEAK"];
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v286 -> v291;
+
+v286 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:MACS3_CALLPEAK"];
+v289 [shape=point];
+v286 -> v289 [label="gapped_peaks"];
+
+v286 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:MACS3_CALLPEAK"];
+v288 [shape=point];
+v286 -> v288 [label="bed"];
+
+v286 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:MACS3_CALLPEAK"];
+v287 [shape=point];
+v286 -> v287 [label="bedgraph"];
+
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v291 -> v292;
+
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v292 -> v298 [label="ch_versions"];
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v293 -> v294 [label="ch_peaks"];
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v284 -> v294 [label="ch_bam"];
+
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v294 -> v295;
+
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v296 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:FRIP_SCORE"];
+v295 -> v296 [label="ch_bam_peaks"];
+
+v296 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:FRIP_SCORE"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v296 -> v299 [label="frip_txt"];
+
+v296 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:FRIP_SCORE"];
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v296 -> v297;
+
+v297 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v297 -> v298;
+
+v298 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v298 -> v305 [label="ch_versions"];
+
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v295 -> v299 [label="ch_bam_peaks"];
+
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v299 -> v300;
+
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v303 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:MULTIQC_CUSTOM_PEAKS"];
+v300 -> v303 [label="ch_bam_peak_frip"];
+
+v301 [shape=point,label="",fixedsize=true,width=0.1];
+v303 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:MULTIQC_CUSTOM_PEAKS"];
+v301 -> v303 [label="peak_count_header"];
+
+v302 [shape=point,label="",fixedsize=true,width=0.1];
+v303 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:MULTIQC_CUSTOM_PEAKS"];
+v302 -> v303 [label="frip_score_header"];
+
+v303 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:MULTIQC_CUSTOM_PEAKS"];
+v474 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v303 -> v474 [label="peak_count_multiqc"];
+
+v303 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:MULTIQC_CUSTOM_PEAKS"];
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v303 -> v472 [label="frip_multiqc"];
+
+v303 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:MULTIQC_CUSTOM_PEAKS"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v303 -> v304;
+
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v304 -> v305;
+
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v305 -> v321 [label="ch_versions"];
+
+v306 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v307 [shape=point];
+v306 -> v307 [label="ch_homer_annotatepeaks"];
+
+v308 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v309 [shape=point];
+v308 -> v309 [label="ch_plot_macs3_qc_txt"];
+
+v310 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v311 [shape=point];
+v310 -> v311 [label="ch_plot_macs3_qc_pdf"];
+
+v312 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v313 [shape=point];
+v312 -> v313 [label="ch_plot_homer_annotatepeaks_txt"];
+
+v314 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v315 [shape=point];
+v314 -> v315 [label="ch_plot_homer_annotatepeaks_pdf"];
+
+v316 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v317 [shape=point];
+v316 -> v317 [label="ch_plot_homer_annotatepeaks_tsv"];
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v318 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:HOMER_ANNOTATEPEAKS"];
+v293 -> v318 [label="ch_peaks"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v318 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:HOMER_ANNOTATEPEAKS"];
+v8 -> v318 [label="ch_fasta"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v318 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:HOMER_ANNOTATEPEAKS"];
+v5 -> v318 [label="ch_gtf"];
+
+v318 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:HOMER_ANNOTATEPEAKS"];
+v328 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v318 -> v328 [label="homer_annotatepeaks"];
+
+v318 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:HOMER_ANNOTATEPEAKS"];
+v319 [shape=point];
+v318 -> v319;
+
+v318 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:HOMER_ANNOTATEPEAKS"];
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v318 -> v320;
+
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v320 -> v321;
+
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v321 -> v327 [label="ch_versions"];
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v293 -> v322 [label="ch_peaks"];
+
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v324 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:PLOT_MACS3_QC"];
+v322 -> v324;
+
+v323 [shape=point,label="",fixedsize=true,width=0.1];
+v324 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:PLOT_MACS3_QC"];
+v323 -> v324 [label="is_narrow_peak"];
+
+v324 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:PLOT_MACS3_QC"];
+v326 [shape=point];
+v324 -> v326 [label="plot_macs3_qc_txt"];
+
+v324 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:PLOT_MACS3_QC"];
+v325 [shape=point];
+v324 -> v325 [label="plot_macs3_qc_pdf"];
+
+v324 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:PLOT_MACS3_QC"];
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v324 -> v327;
+
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v327 -> v334 [label="ch_versions"];
+
+v328 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v331 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:PLOT_HOMER_ANNOTATEPEAKS"];
+v328 -> v331;
+
+v329 [shape=point,label="",fixedsize=true,width=0.1];
+v331 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:PLOT_HOMER_ANNOTATEPEAKS"];
+v329 -> v331 [label="mqc_header"];
+
+v330 [shape=point,label="",fixedsize=true,width=0.1];
+v331 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:PLOT_HOMER_ANNOTATEPEAKS"];
+v330 -> v331 [label="suffix"];
+
+v331 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:PLOT_HOMER_ANNOTATEPEAKS"];
+v333 [shape=point];
+v331 -> v333 [label="plot_homer_annotatepeaks_txt"];
+
+v331 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:PLOT_HOMER_ANNOTATEPEAKS"];
+v332 [shape=point];
+v331 -> v332 [label="plot_homer_annotatepeaks_pdf"];
+
+v331 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:PLOT_HOMER_ANNOTATEPEAKS"];
+v476 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v331 -> v476 [label="plot_homer_annotatepeaks_tsv"];
+
+v331 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_PEAKS_CALL_QC_ANNOTATE_MACS3_HOMER:PLOT_HOMER_ANNOTATEPEAKS"];
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v331 -> v334;
+
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v334 -> v335 [label="versions"];
+
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v335 -> v397 [label="ch_versions"];
+
+v336 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v337 [shape=point];
+v336 -> v337 [label="ch_macs3_consensus_bed_lib"];
+
+v338 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v339 [shape=point];
+v338 -> v339 [label="ch_macs3_consensus_txt_lib"];
+
+v340 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v341 [shape=point];
+v340 -> v341 [label="ch_deseq2_pca_multiqc"];
+
+v342 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v343 [shape=point];
+v342 -> v343 [label="ch_deseq2_clustering_multiqc"];
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v284 -> v344 [label="ch_bam"];
+
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v344 -> v345;
+
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v345 -> v364 [label="ch_bams"];
+
+v346 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v346 -> v355 [label="ch_versions"];
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v293 -> v347 [label="ch_peaks"];
+
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v347 -> v348;
+
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v348 -> v349;
+
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v349 -> v350;
+
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v352 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:MACS3_CONSENSUS"];
+v350 -> v352 [label="ch_antibody_peaks"];
+
+v351 [shape=point,label="",fixedsize=true,width=0.1];
+v352 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:MACS3_CONSENSUS"];
+v351 -> v352 [label="is_narrow_peak"];
+
+v352 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:MACS3_CONSENSUS"];
+v356 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:HOMER_ANNOTATEPEAKS"];
+v352 -> v356 [label="ch_macs3_consensus_bed_lib"];
+
+v352 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:MACS3_CONSENSUS"];
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v352 -> v363 [label="consensus_saf"];
+
+v352 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:MACS3_CONSENSUS"];
+v354 [shape=point];
+v352 -> v354 [label="consensus_pdf"];
+
+v352 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:MACS3_CONSENSUS"];
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v352 -> v404 [label="ch_macs3_consensus_txt_lib"];
+
+v352 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:MACS3_CONSENSUS"];
+v359 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v352 -> v359 [label="consensus_boolean_txt"];
+
+v352 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:MACS3_CONSENSUS"];
+v353 [shape=point];
+v352 -> v353 [label="consensus_intersect_txt"];
+
+v352 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:MACS3_CONSENSUS"];
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v352 -> v355;
+
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v358 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v355 -> v358 [label="ch_versions"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v356 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:HOMER_ANNOTATEPEAKS"];
+v8 -> v356 [label="ch_fasta"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v356 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:HOMER_ANNOTATEPEAKS"];
+v5 -> v356 [label="ch_gtf"];
+
+v356 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:HOMER_ANNOTATEPEAKS"];
+v359 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v356 -> v359;
+
+v356 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:HOMER_ANNOTATEPEAKS"];
+v357 [shape=point];
+v356 -> v357;
+
+v356 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:HOMER_ANNOTATEPEAKS"];
+v358 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v356 -> v358;
+
+v358 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v358 -> v362 [label="ch_versions"];
+
+v359 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v360 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:ANNOTATE_BOOLEAN_PEAKS"];
+v359 -> v360;
+
+v360 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:ANNOTATE_BOOLEAN_PEAKS"];
+v361 [shape=point];
+v360 -> v361;
+
+v360 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:ANNOTATE_BOOLEAN_PEAKS"];
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v360 -> v362;
+
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v362 -> v367 [label="ch_versions"];
+
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v363 -> v364;
+
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v365 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v364 -> v365;
+
+v365 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v366 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:SUBREAD_FEATURECOUNTS"];
+v365 -> v366 [label="ch_bam_saf"];
+
+v366 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:SUBREAD_FEATURECOUNTS"];
+v388 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:DESEQ2_QC"];
+v366 -> v388 [label="featurecounts_txt"];
+
+v366 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:SUBREAD_FEATURECOUNTS"];
+v478 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v366 -> v478 [label="ch_subreadfeaturecounts_multiqc"];
+
+v366 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:SUBREAD_FEATURECOUNTS"];
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v366 -> v367;
+
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v367 -> v396 [label="ch_versions"];
+
+v368 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v369 [shape=point];
+v368 -> v369 [label="ch_deseq2_qc_pdf"];
+
+v370 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v371 [shape=point];
+v370 -> v371 [label="ch_deseq2_qc_rdata"];
+
+v372 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v373 [shape=point];
+v372 -> v373 [label="ch_deseq2_qc_rds"];
+
+v374 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v375 [shape=point];
+v374 -> v375 [label="ch_deseq2_qc_pca_txt"];
+
+v376 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v377 [shape=point];
+v376 -> v377 [label="ch_deseq2_qc_pca_multiqc"];
+
+v378 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v379 [shape=point];
+v378 -> v379 [label="ch_deseq2_qc_dists_txt"];
+
+v380 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v381 [shape=point];
+v380 -> v381 [label="ch_deseq2_qc_dists_multiqc"];
+
+v382 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v383 [shape=point];
+v382 -> v383 [label="ch_deseq2_qc_log"];
+
+v384 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v385 [shape=point];
+v384 -> v385 [label="ch_deseq2_qc_size_factors"];
+
+v386 [shape=point,label="",fixedsize=true,width=0.1];
+v388 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:DESEQ2_QC"];
+v386 -> v388 [label="ch_deseq2_pca_header_multiqc"];
+
+v387 [shape=point,label="",fixedsize=true,width=0.1];
+v388 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:DESEQ2_QC"];
+v387 -> v388 [label="ch_deseq2_clustering_header_multiqc"];
+
+v388 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:DESEQ2_QC"];
+v395 [shape=point];
+v388 -> v395 [label="deseq2_qc_pdf"];
+
+v388 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:DESEQ2_QC"];
+v394 [shape=point];
+v388 -> v394 [label="deseq2_qc_rdata"];
+
+v388 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:DESEQ2_QC"];
+v393 [shape=point];
+v388 -> v393 [label="deseq2_qc_rds"];
+
+v388 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:DESEQ2_QC"];
+v392 [shape=point];
+v388 -> v392 [label="deseq2_qc_pca_txt"];
+
+v388 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:DESEQ2_QC"];
+v480 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v388 -> v480 [label="ch_deseq2_pca_multiqc"];
+
+v388 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:DESEQ2_QC"];
+v391 [shape=point];
+v388 -> v391 [label="deseq2_qc_dists_txt"];
+
+v388 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:DESEQ2_QC"];
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v388 -> v482 [label="ch_deseq2_clustering_multiqc"];
+
+v388 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:DESEQ2_QC"];
+v390 [shape=point];
+v388 -> v390 [label="deseq2_qc_log"];
+
+v388 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:DESEQ2_QC"];
+v389 [shape=point];
+v388 -> v389 [label="deseq2_qc_size_factors"];
+
+v388 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:DESEQ2_QC"];
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v388 -> v396;
+
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v396 -> v397 [label="versions"];
+
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v397 -> v412 [label="ch_versions"];
+
+v244 [label="NFCORE_CHIPSEQ:CHIPSEQ:BAM_BEDGRAPH_BIGWIG_BEDTOOLS_UCSC:UCSC_BEDGRAPHTOBIGWIG"];
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v244 -> v398 [label="bigwig"];
+
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v398 -> v399;
+
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v408 [label="NFCORE_CHIPSEQ:CHIPSEQ:IGV"];
+v399 -> v408;
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v293 -> v400 [label="ch_peaks"];
+
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v401 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v400 -> v401;
+
+v401 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v408 [label="NFCORE_CHIPSEQ:CHIPSEQ:IGV"];
+v401 -> v408;
+
+v352 [label="NFCORE_CHIPSEQ:CHIPSEQ:BED_CONSENSUS_QUANTIFY_QC_BEDTOOLS_FEATURECOUNTS_DESEQ2:MACS3_CONSENSUS"];
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v352 -> v402 [label="ch_macs3_consensus_bed_lib"];
+
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v402 -> v403;
+
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v408 [label="NFCORE_CHIPSEQ:CHIPSEQ:IGV"];
+v403 -> v408;
+
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v404 -> v405;
+
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v408 [label="NFCORE_CHIPSEQ:CHIPSEQ:IGV"];
+v405 -> v408;
+
+v406 [shape=point,label="",fixedsize=true,width=0.1];
+v408 [label="NFCORE_CHIPSEQ:CHIPSEQ:IGV"];
+v406 -> v408 [label="aligner_dir"];
+
+v407 [shape=point,label="",fixedsize=true,width=0.1];
+v408 [label="NFCORE_CHIPSEQ:CHIPSEQ:IGV"];
+v407 -> v408 [label="peak_dir"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v408 [label="NFCORE_CHIPSEQ:CHIPSEQ:IGV"];
+v8 -> v408 [label="ch_fasta"];
+
+v408 [label="NFCORE_CHIPSEQ:CHIPSEQ:IGV"];
+v411 [shape=point];
+v408 -> v411;
+
+v408 [label="NFCORE_CHIPSEQ:CHIPSEQ:IGV"];
+v410 [shape=point];
+v408 -> v410;
+
+v408 [label="NFCORE_CHIPSEQ:CHIPSEQ:IGV"];
+v409 [shape=point];
+v408 -> v409 [label="fasta"];
+
+v408 [label="NFCORE_CHIPSEQ:CHIPSEQ:IGV"];
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v408 -> v412;
+
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v413 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v412 -> v413 [label="versions"];
+
+v413 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v414 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v413 -> v414;
+
+v414 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v414 -> v415;
+
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v415 -> v417;
+
+v416 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v416 -> v417;
+
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v417 -> v418;
+
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v418 -> v425 [label="ch_collated_versions"];
+
+v419 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v419 -> v427 [label="ch_multiqc_config"];
+
+v420 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v420 -> v428 [label="ch_multiqc_custom_config"];
+
+v421 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v421 -> v429 [label="ch_multiqc_logo"];
+
+v422 [shape=point,label="",fixedsize=true,width=0.1];
+v423 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v422 -> v423 [label="ch_workflow_summary"];
+
+v423 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v423 -> v424;
+
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v424 -> v425 [label="ch_multiqc_files"];
+
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v425 -> v426 [label="ch_multiqc_files"];
+
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v426 -> v484;
+
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v427 -> v484;
+
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v428 -> v484;
+
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v429 -> v484;
+
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v431 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v430 -> v431;
+
+v431 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v431 -> v484;
+
+v432 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v432 -> v433;
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v433 -> v484;
+
+v60 [label="NFCORE_CHIPSEQ:CHIPSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v434 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 -> v434 [label="trim_log"];
+
+v434 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v435 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v434 -> v435;
+
+v435 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v435 -> v484;
+
+v436 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v437 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v436 -> v437;
+
+v437 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v437 -> v484;
+
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v438 -> v439;
+
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v439 -> v484;
+
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v441 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v440 -> v441;
+
+v441 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v441 -> v484;
+
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v443 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v442 -> v443;
+
+v443 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v443 -> v484;
+
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v444 -> v445;
+
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v445 -> v484;
+
+v446 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v446 -> v447;
+
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v447 -> v484;
+
+v448 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v448 -> v449;
+
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v449 -> v484;
+
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v450 -> v451;
+
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v451 -> v484;
+
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v208 -> v452 [label="flagstat"];
+
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v453 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v452 -> v453;
+
+v453 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v453 -> v484;
+
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v454 -> v455;
+
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v455 -> v484;
+
+v456 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v456 -> v457;
+
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v457 -> v484;
+
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v458 -> v459;
+
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v459 -> v484;
+
+v460 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v460 -> v461;
+
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v461 -> v484;
+
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v463 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v462 -> v463;
+
+v463 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v463 -> v484;
+
+v229 [label="NFCORE_CHIPSEQ:CHIPSEQ:PHANTOMPEAKQUALTOOLS"];
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v229 -> v464 [label="ch_phantompeakqualtools_spp_multiqc"];
+
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v464 -> v465;
+
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v465 -> v484;
+
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v467 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v466 -> v467;
+
+v467 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v467 -> v484;
+
+v468 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v469 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v468 -> v469;
+
+v469 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v469 -> v484;
+
+v470 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v470 -> v471;
+
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v471 -> v484;
+
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v473 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v472 -> v473;
+
+v473 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v473 -> v484;
+
+v474 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v474 -> v475;
+
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v475 -> v484;
+
+v476 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v477 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v476 -> v477;
+
+v477 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v477 -> v484;
+
+v478 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v478 -> v479;
+
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v479 -> v484;
+
+v480 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v480 -> v481;
+
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v481 -> v484;
+
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v483 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v482 -> v483;
+
+v483 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v483 -> v484;
+
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v488 [shape=point];
+v484 -> v488 [label="multiqc_report"];
+
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v487 [shape=point];
+v484 -> v487;
+
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v486 [shape=point];
+v484 -> v486;
+
+v484 [label="NFCORE_CHIPSEQ:CHIPSEQ:MULTIQC"];
+v485 [shape=point];
+v484 -> v485;
+
+}

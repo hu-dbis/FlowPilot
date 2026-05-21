@@ -1,0 +1,410 @@
+digraph "ATpoint_____atac_chip_preprocess" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="VALIDATESSAMPLESHEET:ValidateSamplesheet"];
+v0 -> v1 [label="samplesheet"];
+
+v1 [label="VALIDATESSAMPLESHEET:ValidateSamplesheet"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v1 -> v2;
+
+v1 [label="VALIDATESSAMPLESHEET:ValidateSamplesheet"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v1 -> v58 [label="validatesamplesheet_versions"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7 [label="samplesheet"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [label="CatFastq"];
+v7 -> v8 [label="ch_needMerge"];
+
+v8 [label="CatFastq"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v8 -> v10 [label="ch_merged"];
+
+v8 [label="CatFastq"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v8 -> v58 [label="cat_versions"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v9 [label="samplesheet"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v9 -> v10 [label="ch_noMerge"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v11 [label="Fastqc"];
+v10 -> v11 [label="ch_fastq"];
+
+v11 [label="Fastqc"];
+v12 [shape=point];
+v11 -> v12;
+
+v11 [label="Fastqc"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v11 -> v54 [label="fastqc_for_multiqc"];
+
+v11 [label="Fastqc"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v11 -> v58 [label="fastqc_versions"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v13 [label="Trim"];
+v10 -> v13 [label="ch_fastq"];
+
+v13 [label="Trim"];
+v16 [label="Align"];
+v13 -> v16 [label="ch_for_align"];
+
+v13 [label="Trim"];
+v14 [shape=point];
+v13 -> v14;
+
+v13 [label="Trim"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v13 -> v54 [label="trim_for_multiqc"];
+
+v13 [label="Trim"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v13 -> v58 [label="trim_versions"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="Align"];
+v15 -> v16 [label="idx"];
+
+v16 [label="Align"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v18;
+
+v16 [label="Align"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v16 [label="Align"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v16 -> v58 [label="align_versions"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v17 -> v54 [label="align_for_multiqc"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v22 -> v24 [label="x1"];
+
+v16 [label="Align"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v23 -> v24 [label="x2"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="cross"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 [label="Chromsizes"];
+v25 -> v26 [label="ch_for_chromsizes"];
+
+v26 [label="Chromsizes"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 -> v51;
+
+v26 [label="Chromsizes"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v26 -> v58 [label="chromsizes_versions"];
+
+v16 [label="Align"];
+v29 [label="Filter"];
+v16 -> v29;
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="Filter"];
+v27 -> v29 [label="flag_remove"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="Filter"];
+v28 -> v29 [label="chr_regex"];
+
+v29 [label="Filter"];
+v31 [label="Cutsites"];
+v29 -> v31;
+
+v29 [label="Filter"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v30;
+
+v29 [label="Filter"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v29 -> v58 [label="filter_versions"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v30 -> v54 [label="filter_for_multiqc"];
+
+v31 [label="Cutsites"];
+v36 [label="Peaks"];
+v31 -> v36 [label="ch_for_bigwigs"];
+
+v31 [label="Cutsites"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v31 -> v58 [label="cutsites_versions"];
+
+v29 [label="Filter"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [label="Isizes"];
+v32 -> v33 [label="ch_for_isizes"];
+
+v33 [label="Isizes"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v33 -> v54 [label="isizes_for_multiqc"];
+
+v33 [label="Isizes"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v33 -> v58 [label="isizes_version"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 -> v35 [label="blacklist"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v36 [label="Peaks"];
+v35 -> v36;
+
+v36 [label="Peaks"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 -> v38;
+
+v36 [label="Peaks"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v36 -> v58 [label="peaks_versions"];
+
+v29 [label="Filter"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v37 -> v39 [label="tmp_bam"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v38 -> v39 [label="tmp_peaks"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 [label="Frips"];
+v41 -> v46 [label="ch_for_frip"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v38 -> v42 [label="tmp_peaks"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v37 -> v42 [label="tmp_bam"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [shape=point];
+v44 -> v45 [label="no_peaks"];
+
+v46 [label="Frips"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 -> v47;
+
+v46 [label="Frips"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v46 -> v58 [label="frips_versions"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 [label="FripsCollect"];
+v48 -> v49;
+
+v49 [label="FripsCollect"];
+v50 [shape=point];
+v49 -> v50;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v52 [label="Bigwigs"];
+v51 -> v52;
+
+v31 [label="Cutsites"];
+v52 [label="Bigwigs"];
+v31 -> v52 [label="ch_for_bigwigs"];
+
+v52 [label="Bigwigs"];
+v53 [shape=point];
+v52 -> v53;
+
+v52 [label="Bigwigs"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v52 -> v58 [label="bigwigs_versions"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v56 [label="Multiqc"];
+v55 -> v56;
+
+v56 [label="Multiqc"];
+v57 [shape=point];
+v56 -> v57;
+
+v56 [label="Multiqc"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v56 -> v58 [label="multiqc_versions"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 [label="CommandLines"];
+v61 -> v66 [label="x_commands"];
+
+v11 [label="Fastqc"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v11 -> v62 [label="fastqc_versions"];
+
+v46 [label="Frips"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v46 -> v62 [label="frips_versions"];
+
+v8 [label="CatFastq"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v8 -> v62 [label="cat_versions"];
+
+v13 [label="Trim"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v13 -> v62 [label="trim_versions"];
+
+v26 [label="Chromsizes"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v26 -> v62 [label="chromsizes_versions"];
+
+v56 [label="Multiqc"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v56 -> v62 [label="multiqc_versions"];
+
+v52 [label="Bigwigs"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v52 -> v62 [label="bigwigs_versions"];
+
+v1 [label="VALIDATESSAMPLESHEET:ValidateSamplesheet"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v1 -> v62 [label="validatesamplesheet_versions"];
+
+v16 [label="Align"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v16 -> v62 [label="align_versions"];
+
+v33 [label="Isizes"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v33 -> v62 [label="isizes_version"];
+
+v31 [label="Cutsites"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v31 -> v62 [label="cutsites_versions"];
+
+v29 [label="Filter"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v29 -> v62 [label="filter_versions"];
+
+v36 [label="Peaks"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v36 -> v62 [label="peaks_versions"];
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 [label="CommandLines"];
+v65 -> v66 [label="x_versions"];
+
+v66 [label="CommandLines"];
+v68 [shape=point];
+v66 -> v68;
+
+v66 [label="CommandLines"];
+v67 [shape=point];
+v66 -> v67;
+
+}

@@ -1,0 +1,742 @@
+digraph "sammyseq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1 [label="ch_fasta"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v83 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:SAMTOOLS_FAIDX"];
+v2 -> v83 [label="ch_fasta"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v3 -> v150 [label="ch_multiqc_config"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v4 -> v151 [label="ch_multiqc_custom_config"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v5 -> v152 [label="ch_multiqc_logo"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v18 [label="ch_versions"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v16 [label="ch_versions"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=point];
+v8 -> v9 [label="ch_fasta"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v11 [shape=point];
+v10 -> v11 [label="ch_genome_filtered_bed"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v13 [shape=point];
+v12 -> v13 [label="ch_bwa_index"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:PREPARE_GENOME:BWA_INDEX"];
+v14 -> v15;
+
+v15 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:PREPARE_GENOME:BWA_INDEX"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v51 [label="ch_index"];
+
+v15 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:PREPARE_GENOME:BWA_INDEX"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v16 -> v17 [label="ch_versions"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v18 [label="versions"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v35 [label="ch_versions"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v19 -> v20 [label="samplesheet"];
+
+v20 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v20 -> v21;
+
+v20 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v35 [label="versions"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v23 [label="reads"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 [shape=point];
+v25 -> v26 [label="reads_to_merge"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v27 [label="reads"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v38 [label="ch_notmerge_lane"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v31 [label="reads"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:CAT_FASTQ"];
+v34 -> v36 [label="ch_merge_lane"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v49 [label="ch_versions"];
+
+v36 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:CAT_FASTQ"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v38 [label="cat_lane_output"];
+
+v36 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:CAT_FASTQ"];
+v37 [shape=point];
+v36 -> v37;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:TRIMMOMATIC"];
+v38 -> v39 [label="merged_reads"];
+
+v39 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:TRIMMOMATIC"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v44 [label="ch_reads"];
+
+v39 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:TRIMMOMATIC"];
+v43 [shape=point];
+v39 -> v43;
+
+v39 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:TRIMMOMATIC"];
+v42 [shape=point];
+v39 -> v42;
+
+v39 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:TRIMMOMATIC"];
+v41 [shape=point];
+v39 -> v41;
+
+v39 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:TRIMMOMATIC"];
+v40 [shape=point];
+v39 -> v40;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v45 [label="ch_fastqc_trim"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v45 [label="merged_reads"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQC"];
+v45 -> v46 [label="ch_fastqc_in"];
+
+v46 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQC"];
+v47 [shape=point];
+v46 -> v47;
+
+v46 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQC"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 -> v134;
+
+v46 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQC"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v46 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v49 -> v120 [label="ch_versions"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v58 [label="ch_versions"];
+
+v39 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:TRIMMOMATIC"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v39 -> v51 [label="ch_reads"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v52 -> v53 [label="ch_prepped_input"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v56 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:BWA_ALN"];
+v53 -> v56;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v56 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:BWA_ALN"];
+v53 -> v56;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v54 [label="ch_prepped_input"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v54 -> v59 [label="ch_reads_newid"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v55 [label="ch_prepped_input"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v55 -> v61 [label="ch_index_newid"];
+
+v56 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:BWA_ALN"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v59;
+
+v56 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:BWA_ALN"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v67 [label="ch_versions"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 -> v61;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 -> v63;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v65 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:BWA_SAMPE"];
+v62 -> v65;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v65 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:BWA_SAMPE"];
+v62 -> v65;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v55 -> v63 [label="ch_index_newid"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v68 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:BWA_SAMSE"];
+v64 -> v68;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v68 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:BWA_SAMSE"];
+v64 -> v68;
+
+v65 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:BWA_SAMPE"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v71;
+
+v65 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:BWA_SAMPE"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v70 [label="ch_versions"];
+
+v68 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:BWA_SAMSE"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v71;
+
+v68 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:BWA_SAMSE"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v75 [label="ch_versions"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:SAMTOOLS_INDEX"];
+v71 -> v72 [label="ch_bam_for_index"];
+
+v72 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:SAMTOOLS_INDEX"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v72 -> v78;
+
+v72 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:SAMTOOLS_INDEX"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v72 -> v80;
+
+v72 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:SAMTOOLS_INDEX"];
+v73 [shape=point];
+v72 -> v73;
+
+v72 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:FASTQ_ALIGN_BWAALN:SAMTOOLS_INDEX"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v72 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=point];
+v75 -> v76 [label="versions"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v71 -> v77 [label="ch_bam_for_index"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v92 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v77 -> v92 [label="ch_bam"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v79 [shape=point];
+v78 -> v79 [label="bai"];
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v81 [shape=point];
+v80 -> v81 [label="csi"];
+
+v82 [shape=point,label="",fixedsize=true,width=0.1];
+v83 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:SAMTOOLS_FAIDX"];
+v82 -> v83;
+
+v83 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:SAMTOOLS_FAIDX"];
+v86 [shape=point];
+v83 -> v86;
+
+v83 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:SAMTOOLS_FAIDX"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v83 -> v87;
+
+v83 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:SAMTOOLS_FAIDX"];
+v85 [shape=point];
+v83 -> v85;
+
+v83 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:SAMTOOLS_FAIDX"];
+v84 [shape=point];
+v83 -> v84;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v88 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:CUT_SIZES_GENOME"];
+v87 -> v88 [label="ch_fai_for_cut"];
+
+v88 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:CUT_SIZES_GENOME"];
+v89 [shape=point];
+v88 -> v89;
+
+v83 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:SAMTOOLS_FAIDX"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v83 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v92 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v90 -> v92 [label="ch_fai"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v95 [label="ch_versions"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v92 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v2 -> v92 [label="ch_fasta"];
+
+v92 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v96 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v92 -> v96 [label="ch_mle_in"];
+
+v92 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v93 [shape=point];
+v92 -> v93;
+
+v92 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v92 -> v140 [label="metrics"];
+
+v92 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v92 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v99 [label="ch_versions"];
+
+v96 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 -> v100 [label="bai"];
+
+v96 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 -> v101 [label="csi"];
+
+v96 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v97 [shape=point];
+v96 -> v97;
+
+v96 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v96 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v110 [label="ch_versions"];
+
+v92 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 -> v100 [label="ch_mle_in"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v102 -> v104 [label="ch_bam_bai"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v105 [label="ch_versions"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v104 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v2 -> v104 [label="ch_fasta"];
+
+v104 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v104 -> v137 [label="stats"];
+
+v104 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v107 [label="ch_versions"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v106 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v102 -> v106 [label="ch_bam_bai"];
+
+v106 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v106 -> v143 [label="flagstat"];
+
+v106 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v109 [label="ch_versions"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v102 -> v108 [label="ch_bam_bai"];
+
+v108 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v108 -> v146 [label="idxstats"];
+
+v108 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v110 [label="versions"];
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=point];
+v110 -> v111 [label="versions"];
+
+v96 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 -> v112 [label="bai"];
+
+v92 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 -> v112 [label="ch_mle_in"];
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v116 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:DEEPTOOLS_BAMCOVERAGE"];
+v113 -> v116 [label="ch_bam_bai_combined"];
+
+v83 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:SAMTOOLS_FAIDX"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v116 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:DEEPTOOLS_BAMCOVERAGE"];
+v114 -> v116 [label="ch_fai_path"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v115 [label="ch_fasta"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v116 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:DEEPTOOLS_BAMCOVERAGE"];
+v115 -> v116 [label="ch_fasta_path"];
+
+v116 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:DEEPTOOLS_BAMCOVERAGE"];
+v119 [shape=point];
+v116 -> v119;
+
+v116 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:DEEPTOOLS_BAMCOVERAGE"];
+v118 [shape=point];
+v116 -> v118;
+
+v116 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:DEEPTOOLS_BAMCOVERAGE"];
+v117 [shape=point];
+v116 -> v117;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v122 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v121 -> v122;
+
+v122 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v124 [shape=point];
+v122 -> v124;
+
+v122 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v122 -> v132;
+
+v122 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v123 [shape=point];
+v122 -> v123;
+
+v125 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v128 [label="ch_multiqc_files"];
+
+v126 [shape=point,label="",fixedsize=true,width=0.1];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v126 -> v127 [label="ch_workflow_summary"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v131 [label="ch_multiqc_files"];
+
+v129 [shape=point,label="",fixedsize=true,width=0.1];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v129 -> v130 [label="ch_methods_description"];
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v133 [label="ch_multiqc_files"];
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v133;
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v136 [label="ch_multiqc_files"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v134 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v136;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v139 [label="ch_multiqc_files"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v137 -> v138;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v142 [label="ch_multiqc_files"];
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v142;
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v145 [label="ch_multiqc_files"];
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v143 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v148 [label="ch_multiqc_files"];
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v148;
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v148 -> v149 [label="ch_multiqc_files"];
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v153 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:MULTIQC"];
+v149 -> v153;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v153 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:MULTIQC"];
+v150 -> v153;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v153 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:MULTIQC"];
+v151 -> v153;
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v153 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:MULTIQC"];
+v152 -> v153;
+
+v153 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:MULTIQC"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v153 -> v157;
+
+v153 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:MULTIQC"];
+v156 [shape=point];
+v153 -> v156;
+
+v153 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:MULTIQC"];
+v155 [shape=point];
+v153 -> v155;
+
+v153 [label="NFCORE_SAMMYSEQ:SAMMYSEQ:MULTIQC"];
+v154 [shape=point];
+v153 -> v154;
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v158 [shape=point];
+v157 -> v158;
+
+}

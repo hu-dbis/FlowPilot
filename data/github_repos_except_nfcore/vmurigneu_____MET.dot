@@ -1,0 +1,338 @@
+digraph "vmurigneu_____MET" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v0 -> v1 [label="ch_centrifuge_db"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v2 [shape=point];
+v1 -> v2;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v3 -> v4 [label="ch_genomad_db"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v5 [shape=point];
+v4 -> v5;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v8 -> v9 [label="ch_samplesheet"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v10 [shape=point];
+v9 -> v10;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [label="porechop"];
+v8 -> v11 [label="ch_samplesheet"];
+
+v11 [label="porechop"];
+v15 [label="extract_adaptive_readID"];
+v11 -> v15;
+
+v11 [label="porechop"];
+v14 [shape=point];
+v11 -> v14;
+
+v11 [label="porechop"];
+v13 [shape=point];
+v11 -> v13;
+
+v11 [label="porechop"];
+v12 [shape=point];
+v11 -> v12;
+
+v15 [label="extract_adaptive_readID"];
+v18 [label="extract_adaptive_fastq"];
+v15 -> v18;
+
+v15 [label="extract_adaptive_readID"];
+v17 [shape=point];
+v15 -> v17;
+
+v15 [label="extract_adaptive_readID"];
+v16 [shape=point];
+v15 -> v16;
+
+v18 [label="extract_adaptive_fastq"];
+v27 [label="minimap"];
+v18 -> v27;
+
+v18 [label="extract_adaptive_fastq"];
+v20 [shape=point];
+v18 -> v20;
+
+v18 [label="extract_adaptive_fastq"];
+v19 [shape=point];
+v18 -> v19;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [label="extract_adaptive_sampling_reads"];
+v8 -> v21 [label="ch_samplesheet"];
+
+v21 [label="extract_adaptive_sampling_reads"];
+v25 [label="compute_adaptive_sampling_metrics"];
+v21 -> v25;
+
+v21 [label="extract_adaptive_sampling_reads"];
+v24 [shape=point];
+v21 -> v24;
+
+v21 [label="extract_adaptive_sampling_reads"];
+v23 [shape=point];
+v21 -> v23;
+
+v21 [label="extract_adaptive_sampling_reads"];
+v22 [shape=point];
+v21 -> v22;
+
+v25 [label="compute_adaptive_sampling_metrics"];
+v26 [shape=point];
+v25 -> v26;
+
+v27 [label="minimap"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v27 -> v32;
+
+v27 [label="minimap"];
+v30 [shape=point];
+v27 -> v30;
+
+v27 [label="minimap"];
+v29 [shape=point];
+v27 -> v29;
+
+v27 [label="minimap"];
+v28 [shape=point];
+v27 -> v28;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [label="centrifuge_download_db"];
+v0 -> v31 [label="ch_centrifuge_db"];
+
+v31 [label="centrifuge_download_db"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v33 [label="centrifuge"];
+v32 -> v33;
+
+v33 [label="centrifuge"];
+v37 [label="remove_centrifuge_contaminated"];
+v33 -> v37;
+
+v33 [label="centrifuge"];
+v36 [shape=point];
+v33 -> v36;
+
+v33 [label="centrifuge"];
+v35 [shape=point];
+v33 -> v35;
+
+v33 [label="centrifuge"];
+v34 [shape=point];
+v33 -> v34;
+
+v37 [label="remove_centrifuge_contaminated"];
+v38 [shape=point];
+v37 -> v38;
+
+v37 [label="remove_centrifuge_contaminated"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v37 -> v40;
+
+v37 [label="remove_centrifuge_contaminated"];
+v44 [label="flye"];
+v37 -> v44;
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v39 -> v40 [label="ch_krona_db"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v41 [label="krona"];
+v40 -> v41;
+
+v41 [label="krona"];
+v43 [shape=point];
+v41 -> v43;
+
+v41 [label="krona"];
+v42 [shape=point];
+v41 -> v42;
+
+v44 [label="flye"];
+v48 [label="racon"];
+v44 -> v48;
+
+v44 [label="flye"];
+v47 [shape=point];
+v44 -> v47;
+
+v44 [label="flye"];
+v46 [shape=point];
+v44 -> v46;
+
+v44 [label="flye"];
+v45 [shape=point];
+v44 -> v45;
+
+v48 [label="racon"];
+v51 [label="medaka"];
+v48 -> v51;
+
+v48 [label="racon"];
+v50 [shape=point];
+v48 -> v50;
+
+v48 [label="racon"];
+v49 [shape=point];
+v48 -> v49;
+
+v51 [label="medaka"];
+v54 [label="whokaryote"];
+v51 -> v54;
+
+v51 [label="medaka"];
+v53 [shape=point];
+v51 -> v53;
+
+v51 [label="medaka"];
+v52 [shape=point];
+v51 -> v52;
+
+v54 [label="whokaryote"];
+v57 [shape=point];
+v54 -> v57;
+
+v54 [label="whokaryote"];
+v56 [shape=point];
+v54 -> v56;
+
+v54 [label="whokaryote"];
+v55 [shape=point];
+v54 -> v55;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v58 [label="download_genomad_db"];
+v3 -> v58 [label="ch_genomad_db"];
+
+v58 [label="download_genomad_db"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v58 -> v59;
+
+v51 [label="medaka"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v51 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v60 [label="genomad"];
+v59 -> v60;
+
+v60 [label="genomad"];
+v71 [shape=point];
+v60 -> v71;
+
+v60 [label="genomad"];
+v70 [shape=point];
+v60 -> v70;
+
+v60 [label="genomad"];
+v69 [shape=point];
+v60 -> v69;
+
+v60 [label="genomad"];
+v68 [shape=point];
+v60 -> v68;
+
+v60 [label="genomad"];
+v67 [shape=point];
+v60 -> v67;
+
+v60 [label="genomad"];
+v66 [shape=point];
+v60 -> v66;
+
+v60 [label="genomad"];
+v65 [shape=point];
+v60 -> v65;
+
+v60 [label="genomad"];
+v64 [shape=point];
+v60 -> v64;
+
+v60 [label="genomad"];
+v63 [shape=point];
+v60 -> v63;
+
+v60 [label="genomad"];
+v62 [shape=point];
+v60 -> v62;
+
+v60 [label="genomad"];
+v61 [shape=point];
+v60 -> v61;
+
+v51 [label="medaka"];
+v72 [label="aviary_recover"];
+v51 -> v72;
+
+v72 [label="aviary_recover"];
+v81 [shape=point];
+v72 -> v81;
+
+v72 [label="aviary_recover"];
+v80 [shape=point];
+v72 -> v80;
+
+v72 [label="aviary_recover"];
+v79 [shape=point];
+v72 -> v79;
+
+v72 [label="aviary_recover"];
+v78 [shape=point];
+v72 -> v78;
+
+v72 [label="aviary_recover"];
+v77 [shape=point];
+v72 -> v77;
+
+v72 [label="aviary_recover"];
+v76 [shape=point];
+v72 -> v76;
+
+v72 [label="aviary_recover"];
+v75 [shape=point];
+v72 -> v75;
+
+v72 [label="aviary_recover"];
+v74 [shape=point];
+v72 -> v74;
+
+v72 [label="aviary_recover"];
+v73 [shape=point];
+v72 -> v73;
+
+v51 [label="medaka"];
+v82 [label="quast"];
+v51 -> v82;
+
+v82 [label="quast"];
+v84 [shape=point];
+v82 -> v84;
+
+v82 [label="quast"];
+v83 [shape=point];
+v82 -> v83;
+
+}

@@ -1,0 +1,1190 @@
+digraph "bcgsc_____Canadian_Biogenome_Project" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v58 [label="mqc_input"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v11 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="GOAT_TAXONSEARCH"];
+v2 -> v3;
+
+v3 [label="GOAT_TAXONSEARCH"];
+v7 [shape=point];
+v3 -> v7;
+
+v3 [label="GOAT_TAXONSEARCH"];
+v6 [shape=point];
+v3 -> v6;
+
+v3 [label="GOAT_TAXONSEARCH"];
+v22 [label="GENOMESCOPE2"];
+v3 -> v22 [label="ploidy"];
+
+v3 [label="GOAT_TAXONSEARCH"];
+v5 [shape=point];
+v3 -> v5 [label="haploid_number"];
+
+v3 [label="GOAT_TAXONSEARCH"];
+v4 [shape=point];
+v3 -> v4 [label="scientific_name"];
+
+v3 [label="GOAT_TAXONSEARCH"];
+v29 [label="COVERAGE_CALCULATION"];
+v3 -> v29 [label="genome_size"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v9 [label="BAMTOOLS_FILTER_PACBIO"];
+v8 -> v9;
+
+v9 [label="BAMTOOLS_FILTER_PACBIO"];
+v10 [label="PBINDEX"];
+v9 -> v10 [label="final_pacBio_bam"];
+
+v9 [label="BAMTOOLS_FILTER_PACBIO"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v11;
+
+v10 [label="PBINDEX"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v10 -> v13 [label="final_pacBio_bam_index"];
+
+v10 [label="PBINDEX"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v12;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v12 [label="ch_versions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v15 [label="ch_versions"];
+
+v9 [label="BAMTOOLS_FILTER_PACBIO"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 -> v13 [label="final_pacBio_bam"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v14 [label="BAM2FASTX"];
+v13 -> v14;
+
+v14 [label="BAM2FASTX"];
+v16 [label="CUTADAPT"];
+v14 -> v16 [label="bam2fastx_output"];
+
+v14 [label="BAM2FASTX"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v18 [label="ch_versions"];
+
+v16 [label="CUTADAPT"];
+v19 [label="MERYL_COUNT"];
+v16 -> v19;
+
+v16 [label="CUTADAPT"];
+v17 [shape=point];
+v16 -> v17;
+
+v16 [label="CUTADAPT"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v30 [label="ch_versions"];
+
+v19 [label="MERYL_COUNT"];
+v20 [label="MERYL_HISTOGRAM"];
+v19 -> v20;
+
+v19 [label="MERYL_COUNT"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v30;
+
+v20 [label="MERYL_HISTOGRAM"];
+v22 [label="GENOMESCOPE2"];
+v20 -> v22;
+
+v20 [label="MERYL_HISTOGRAM"];
+v21 [shape=point];
+v20 -> v21;
+
+v22 [label="GENOMESCOPE2"];
+v28 [shape=point];
+v22 -> v28;
+
+v22 [label="GENOMESCOPE2"];
+v27 [shape=point];
+v22 -> v27;
+
+v22 [label="GENOMESCOPE2"];
+v26 [shape=point];
+v22 -> v26;
+
+v22 [label="GENOMESCOPE2"];
+v25 [shape=point];
+v22 -> v25;
+
+v22 [label="GENOMESCOPE2"];
+v24 [shape=point];
+v22 -> v24;
+
+v22 [label="GENOMESCOPE2"];
+v23 [shape=point];
+v22 -> v23;
+
+v22 [label="GENOMESCOPE2"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v31;
+
+v16 [label="CUTADAPT"];
+v29 [label="COVERAGE_CALCULATION"];
+v16 -> v29;
+
+v29 [label="COVERAGE_CALCULATION"];
+v239 [label="MULTIQC"];
+v29 -> v239;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31 [label="ch_versions"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v50 [label="ch_versions"];
+
+v16 [label="CUTADAPT"];
+v37 [label="HIFIASM"];
+v16 -> v37;
+
+v32 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="HIFIASM"];
+v32 -> v37 [label="paternal_kmer_dump"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="HIFIASM"];
+v33 -> v37 [label="maternal_kmer_dump"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="HIFIASM"];
+v34 -> v37 [label="hic_read1"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="HIFIASM"];
+v35 -> v37 [label="hic_read2"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="HIFIASM"];
+v36 -> v37 [label="nanopore_UL"];
+
+v3 [label="GOAT_TAXONSEARCH"];
+v37 [label="HIFIASM"];
+v3 -> v37 [label="ploidy"];
+
+v3 [label="GOAT_TAXONSEARCH"];
+v37 [label="HIFIASM"];
+v3 -> v37 [label="genome_size"];
+
+v37 [label="HIFIASM"];
+v45 [shape=point];
+v37 -> v45;
+
+v37 [label="HIFIASM"];
+v44 [shape=point];
+v37 -> v44;
+
+v37 [label="HIFIASM"];
+v43 [shape=point];
+v37 -> v43;
+
+v37 [label="HIFIASM"];
+v42 [shape=point];
+v37 -> v42;
+
+v37 [label="HIFIASM"];
+v41 [shape=point];
+v37 -> v41;
+
+v37 [label="HIFIASM"];
+v40 [shape=point];
+v37 -> v40;
+
+v37 [label="HIFIASM"];
+v39 [shape=point];
+v37 -> v39;
+
+v37 [label="HIFIASM"];
+v38 [shape=point];
+v37 -> v38;
+
+v37 [label="HIFIASM"];
+v46 [label="GFA_TO_FA_hap1"];
+v37 -> v46;
+
+v37 [label="HIFIASM"];
+v47 [label="GFA_TO_FA_hap2"];
+v37 -> v47;
+
+v37 [label="HIFIASM"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v50;
+
+v46 [label="GFA_TO_FA_hap1"];
+v56 [label="QUAST_ASS"];
+v46 -> v56 [label="cleaned_hap1"];
+
+v46 [label="GFA_TO_FA_hap1"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v51;
+
+v47 [label="GFA_TO_FA_hap2"];
+v49 [shape=point];
+v47 -> v49 [label="assembly_alternate"];
+
+v47 [label="GFA_TO_FA_hap2"];
+v48 [shape=point];
+v47 -> v48;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v51 [label="ch_versions"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v76 [label="ch_versions"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="QUAST_ASS"];
+v52 -> v56 [label="fasta"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="QUAST_ASS"];
+v53 -> v56 [label="gff"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="QUAST_ASS"];
+v54 -> v56 [label="use_fasta"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1];
+v56 [label="QUAST_ASS"];
+v55 -> v56 [label="use_gff"];
+
+v3 [label="GOAT_TAXONSEARCH"];
+v56 [label="QUAST_ASS"];
+v3 -> v56 [label="genome_size"];
+
+v56 [label="QUAST_ASS"];
+v57 [shape=point];
+v56 -> v57 [label="quast_contig"];
+
+v56 [label="QUAST_ASS"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v58;
+
+v56 [label="QUAST_ASS"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v76;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v89 [label="mqc_input"];
+
+v46 [label="GFA_TO_FA_hap1"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v46 -> v59 [label="cleaned_hap1"];
+
+v19 [label="MERYL_COUNT"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v60 [label="MERQURY_ASS"];
+v59 -> v60;
+
+v60 [label="MERQURY_ASS"];
+v75 [shape=point];
+v60 -> v75;
+
+v60 [label="MERQURY_ASS"];
+v74 [shape=point];
+v60 -> v74;
+
+v60 [label="MERQURY_ASS"];
+v73 [shape=point];
+v60 -> v73;
+
+v60 [label="MERQURY_ASS"];
+v72 [shape=point];
+v60 -> v72;
+
+v60 [label="MERQURY_ASS"];
+v71 [shape=point];
+v60 -> v71;
+
+v60 [label="MERQURY_ASS"];
+v70 [shape=point];
+v60 -> v70;
+
+v60 [label="MERQURY_ASS"];
+v69 [shape=point];
+v60 -> v69;
+
+v60 [label="MERQURY_ASS"];
+v68 [shape=point];
+v60 -> v68;
+
+v60 [label="MERQURY_ASS"];
+v67 [shape=point];
+v60 -> v67;
+
+v60 [label="MERQURY_ASS"];
+v66 [shape=point];
+v60 -> v66;
+
+v60 [label="MERQURY_ASS"];
+v65 [shape=point];
+v60 -> v65;
+
+v60 [label="MERQURY_ASS"];
+v64 [shape=point];
+v60 -> v64;
+
+v60 [label="MERQURY_ASS"];
+v63 [shape=point];
+v60 -> v63;
+
+v60 [label="MERQURY_ASS"];
+v62 [shape=point];
+v60 -> v62;
+
+v60 [label="MERQURY_ASS"];
+v61 [shape=point];
+v60 -> v61;
+
+v60 [label="MERQURY_ASS"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v77;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v77 [label="ch_versions"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v113 [label="ch_versions"];
+
+v46 [label="GFA_TO_FA_hap1"];
+v78 [label="SAMTOOLS_FAIDX_FCS_hap1"];
+v46 -> v78 [label="cleaned_hap1"];
+
+v78 [label="SAMTOOLS_FAIDX_FCS_hap1"];
+v81 [shape=point];
+v78 -> v81 [label="cleaned_hap1_index"];
+
+v78 [label="SAMTOOLS_FAIDX_FCS_hap1"];
+v80 [shape=point];
+v78 -> v80;
+
+v78 [label="SAMTOOLS_FAIDX_FCS_hap1"];
+v79 [shape=point];
+v78 -> v79;
+
+v46 [label="GFA_TO_FA_hap1"];
+v86 [label="QUAST_CLEAN"];
+v46 -> v86 [label="cleaned_hap1"];
+
+v82 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [label="QUAST_CLEAN"];
+v82 -> v86 [label="fasta"];
+
+v83 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [label="QUAST_CLEAN"];
+v83 -> v86 [label="gff"];
+
+v84 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [label="QUAST_CLEAN"];
+v84 -> v86 [label="use_fasta"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [label="QUAST_CLEAN"];
+v85 -> v86 [label="use_gff"];
+
+v3 [label="GOAT_TAXONSEARCH"];
+v86 [label="QUAST_CLEAN"];
+v3 -> v86 [label="genome_size"];
+
+v86 [label="QUAST_CLEAN"];
+v88 [shape=point];
+v86 -> v88;
+
+v86 [label="QUAST_CLEAN"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v89;
+
+v86 [label="QUAST_CLEAN"];
+v87 [shape=point];
+v86 -> v87;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v128 [label="mqc_input"];
+
+v46 [label="GFA_TO_FA_hap1"];
+v90 [label="PURGEDUPS_SPLITFA_hap1"];
+v46 -> v90 [label="cleaned_hap1"];
+
+v90 [label="PURGEDUPS_SPLITFA_hap1"];
+v101 [label="MINIMAP2_ALIGN_TO_SELF"];
+v90 -> v101;
+
+v90 [label="PURGEDUPS_SPLITFA_hap1"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v113;
+
+v46 [label="GFA_TO_FA_hap1"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 -> v91 [label="cleaned_hap1"];
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v95 [label="MINIMAP2_ALIGN_TO_CONTIG"];
+v91 -> v95;
+
+v16 [label="CUTADAPT"];
+v95 [label="MINIMAP2_ALIGN_TO_CONTIG"];
+v16 -> v95;
+
+v92 [shape=point,label="",fixedsize=true,width=0.1];
+v95 [label="MINIMAP2_ALIGN_TO_CONTIG"];
+v92 -> v95 [label="bam_format"];
+
+v93 [shape=point,label="",fixedsize=true,width=0.1];
+v95 [label="MINIMAP2_ALIGN_TO_CONTIG"];
+v93 -> v95 [label="cigar_paf_format"];
+
+v94 [shape=point,label="",fixedsize=true,width=0.1];
+v95 [label="MINIMAP2_ALIGN_TO_CONTIG"];
+v94 -> v95 [label="cigar_bam"];
+
+v95 [label="MINIMAP2_ALIGN_TO_CONTIG"];
+v103 [label="PURGEDUPS_PBCSTAT_hap1"];
+v95 -> v103;
+
+v95 [label="MINIMAP2_ALIGN_TO_CONTIG"];
+v96 [shape=point];
+v95 -> v96;
+
+v95 [label="MINIMAP2_ALIGN_TO_CONTIG"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v114;
+
+v97 [shape=point,label="",fixedsize=true,width=0.1];
+v101 [label="MINIMAP2_ALIGN_TO_SELF"];
+v97 -> v101 [label="reference"];
+
+v98 [shape=point,label="",fixedsize=true,width=0.1];
+v101 [label="MINIMAP2_ALIGN_TO_SELF"];
+v98 -> v101 [label="bam_format"];
+
+v99 [shape=point,label="",fixedsize=true,width=0.1];
+v101 [label="MINIMAP2_ALIGN_TO_SELF"];
+v99 -> v101 [label="cigar_paf_format"];
+
+v100 [shape=point,label="",fixedsize=true,width=0.1];
+v101 [label="MINIMAP2_ALIGN_TO_SELF"];
+v100 -> v101 [label="cigar_bam"];
+
+v101 [label="MINIMAP2_ALIGN_TO_SELF"];
+v107 [label="PURGEDUPS_PURGEDUPS_hap1"];
+v101 -> v107;
+
+v101 [label="MINIMAP2_ALIGN_TO_SELF"];
+v102 [shape=point];
+v101 -> v102;
+
+v101 [label="MINIMAP2_ALIGN_TO_SELF"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v115;
+
+v103 [label="PURGEDUPS_PBCSTAT_hap1"];
+v104 [label="PURGEDUPS_CALCUTS_hap1"];
+v103 -> v104;
+
+v103 [label="PURGEDUPS_PBCSTAT_hap1"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v103 -> v106;
+
+v103 [label="PURGEDUPS_PBCSTAT_hap1"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v116;
+
+v104 [label="PURGEDUPS_CALCUTS_hap1"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v104 -> v106;
+
+v104 [label="PURGEDUPS_CALCUTS_hap1"];
+v105 [shape=point];
+v104 -> v105;
+
+v104 [label="PURGEDUPS_CALCUTS_hap1"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v117;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v107 [label="PURGEDUPS_PURGEDUPS_hap1"];
+v106 -> v107;
+
+v107 [label="PURGEDUPS_PURGEDUPS_hap1"];
+v109 [label="PURGEDUPS_GETSEQS_hap1"];
+v107 -> v109;
+
+v107 [label="PURGEDUPS_PURGEDUPS_hap1"];
+v108 [shape=point];
+v107 -> v108;
+
+v107 [label="PURGEDUPS_PURGEDUPS_hap1"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v118;
+
+v46 [label="GFA_TO_FA_hap1"];
+v109 [label="PURGEDUPS_GETSEQS_hap1"];
+v46 -> v109 [label="cleaned_hap1"];
+
+v109 [label="PURGEDUPS_GETSEQS_hap1"];
+v110 [shape=point];
+v109 -> v110;
+
+v109 [label="PURGEDUPS_GETSEQS_hap1"];
+v111 [label="SAMTOOLS_FAIDX_PURGE_hap1"];
+v109 -> v111 [label="purged_hap1"];
+
+v109 [label="PURGEDUPS_GETSEQS_hap1"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v119;
+
+v111 [label="SAMTOOLS_FAIDX_PURGE_hap1"];
+v157 [label="YAHS_hap1"];
+v111 -> v157 [label="purged_hap1_index"];
+
+v111 [label="SAMTOOLS_FAIDX_PURGE_hap1"];
+v112 [shape=point];
+v111 -> v112;
+
+v111 [label="SAMTOOLS_FAIDX_PURGE_hap1"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v120;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v114 [label="ch_versions"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v115 [label="ch_versions"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v116 [label="ch_versions"];
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v117 [label="ch_versions"];
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v118 [label="ch_versions"];
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v119 [label="ch_versions"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v120 [label="ch_versions"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v161 [label="ch_versions"];
+
+v109 [label="PURGEDUPS_GETSEQS_hap1"];
+v125 [label="QUAST_PURGED"];
+v109 -> v125 [label="purged_hap1"];
+
+v121 [shape=point,label="",fixedsize=true,width=0.1];
+v125 [label="QUAST_PURGED"];
+v121 -> v125 [label="fasta"];
+
+v122 [shape=point,label="",fixedsize=true,width=0.1];
+v125 [label="QUAST_PURGED"];
+v122 -> v125 [label="gff"];
+
+v123 [shape=point,label="",fixedsize=true,width=0.1];
+v125 [label="QUAST_PURGED"];
+v123 -> v125 [label="use_fasta"];
+
+v124 [shape=point,label="",fixedsize=true,width=0.1];
+v125 [label="QUAST_PURGED"];
+v124 -> v125 [label="use_gff"];
+
+v3 [label="GOAT_TAXONSEARCH"];
+v125 [label="QUAST_PURGED"];
+v3 -> v125 [label="genome_size"];
+
+v125 [label="QUAST_PURGED"];
+v127 [shape=point];
+v125 -> v127 [label="quast_contig_purged"];
+
+v125 [label="QUAST_PURGED"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v128;
+
+v125 [label="QUAST_PURGED"];
+v126 [shape=point];
+v125 -> v126;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v172 [label="mqc_input"];
+
+v109 [label="PURGEDUPS_GETSEQS_hap1"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v109 -> v129 [label="purged_hap1"];
+
+v19 [label="MERYL_COUNT"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 [label="MERQURY_PURGED"];
+v129 -> v130;
+
+v130 [label="MERQURY_PURGED"];
+v146 [shape=point];
+v130 -> v146;
+
+v130 [label="MERQURY_PURGED"];
+v145 [shape=point];
+v130 -> v145;
+
+v130 [label="MERQURY_PURGED"];
+v144 [shape=point];
+v130 -> v144;
+
+v130 [label="MERQURY_PURGED"];
+v143 [shape=point];
+v130 -> v143;
+
+v130 [label="MERQURY_PURGED"];
+v142 [shape=point];
+v130 -> v142;
+
+v130 [label="MERQURY_PURGED"];
+v141 [shape=point];
+v130 -> v141;
+
+v130 [label="MERQURY_PURGED"];
+v140 [shape=point];
+v130 -> v140;
+
+v130 [label="MERQURY_PURGED"];
+v139 [shape=point];
+v130 -> v139;
+
+v130 [label="MERQURY_PURGED"];
+v138 [shape=point];
+v130 -> v138;
+
+v130 [label="MERQURY_PURGED"];
+v137 [shape=point];
+v130 -> v137;
+
+v130 [label="MERQURY_PURGED"];
+v136 [shape=point];
+v130 -> v136;
+
+v130 [label="MERQURY_PURGED"];
+v135 [shape=point];
+v130 -> v135;
+
+v130 [label="MERQURY_PURGED"];
+v134 [shape=point];
+v130 -> v134;
+
+v130 [label="MERQURY_PURGED"];
+v133 [shape=point];
+v130 -> v133;
+
+v130 [label="MERQURY_PURGED"];
+v132 [shape=point];
+v130 -> v132;
+
+v130 [label="MERQURY_PURGED"];
+v131 [shape=point];
+v130 -> v131;
+
+v109 [label="PURGEDUPS_GETSEQS_hap1"];
+v147 [label="CHROMAP_INDEX_hap1"];
+v109 -> v147 [label="purged_hap1"];
+
+v147 [label="CHROMAP_INDEX_hap1"];
+v153 [label="CHROMAP_CHROMAP_hap1"];
+v147 -> v153;
+
+v147 [label="CHROMAP_INDEX_hap1"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v161;
+
+v148 [shape=point,label="",fixedsize=true,width=0.1];
+v153 [label="CHROMAP_CHROMAP_hap1"];
+v148 -> v153;
+
+v109 [label="PURGEDUPS_GETSEQS_hap1"];
+v153 [label="CHROMAP_CHROMAP_hap1"];
+v109 -> v153 [label="purged_hap1"];
+
+v149 [shape=point,label="",fixedsize=true,width=0.1];
+v153 [label="CHROMAP_CHROMAP_hap1"];
+v149 -> v153 [label="barcodes"];
+
+v150 [shape=point,label="",fixedsize=true,width=0.1];
+v153 [label="CHROMAP_CHROMAP_hap1"];
+v150 -> v153 [label="whitelist"];
+
+v151 [shape=point,label="",fixedsize=true,width=0.1];
+v153 [label="CHROMAP_CHROMAP_hap1"];
+v151 -> v153 [label="chr_order"];
+
+v152 [shape=point,label="",fixedsize=true,width=0.1];
+v153 [label="CHROMAP_CHROMAP_hap1"];
+v152 -> v153 [label="pairs_chr_order"];
+
+v153 [label="CHROMAP_CHROMAP_hap1"];
+v156 [shape=point];
+v153 -> v156;
+
+v153 [label="CHROMAP_CHROMAP_hap1"];
+v157 [label="YAHS_hap1"];
+v153 -> v157;
+
+v153 [label="CHROMAP_CHROMAP_hap1"];
+v155 [shape=point];
+v153 -> v155;
+
+v153 [label="CHROMAP_CHROMAP_hap1"];
+v154 [shape=point];
+v153 -> v154;
+
+v153 [label="CHROMAP_CHROMAP_hap1"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v162;
+
+v109 [label="PURGEDUPS_GETSEQS_hap1"];
+v157 [label="YAHS_hap1"];
+v109 -> v157 [label="purged_hap1"];
+
+v157 [label="YAHS_hap1"];
+v198 [label="YAHS_JUICER"];
+v157 -> v198 [label="scaffold_bin"];
+
+v157 [label="YAHS_hap1"];
+v198 [label="YAHS_JUICER"];
+v157 -> v198 [label="scaffold_agp"];
+
+v157 [label="YAHS_hap1"];
+v158 [label="SAMTOOLS_FAIDX_SCAFF_hap1"];
+v157 -> v158 [label="busco_assembly"];
+
+v157 [label="YAHS_hap1"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 -> v163;
+
+v158 [label="SAMTOOLS_FAIDX_SCAFF_hap1"];
+v160 [shape=point];
+v158 -> v160 [label="scaffold_index"];
+
+v158 [label="SAMTOOLS_FAIDX_SCAFF_hap1"];
+v159 [shape=point];
+v158 -> v159;
+
+v158 [label="SAMTOOLS_FAIDX_SCAFF_hap1"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 -> v164;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v162 [label="ch_versions"];
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v163 [label="ch_versions"];
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v164 [label="ch_versions"];
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v196 [label="ch_versions"];
+
+v157 [label="YAHS_hap1"];
+v169 [label="QUAST_SCAFF"];
+v157 -> v169 [label="busco_assembly"];
+
+v165 [shape=point,label="",fixedsize=true,width=0.1];
+v169 [label="QUAST_SCAFF"];
+v165 -> v169 [label="fasta"];
+
+v166 [shape=point,label="",fixedsize=true,width=0.1];
+v169 [label="QUAST_SCAFF"];
+v166 -> v169 [label="gff"];
+
+v167 [shape=point,label="",fixedsize=true,width=0.1];
+v169 [label="QUAST_SCAFF"];
+v167 -> v169 [label="use_fasta"];
+
+v168 [shape=point,label="",fixedsize=true,width=0.1];
+v169 [label="QUAST_SCAFF"];
+v168 -> v169 [label="use_gff"];
+
+v3 [label="GOAT_TAXONSEARCH"];
+v169 [label="QUAST_SCAFF"];
+v3 -> v169 [label="genome_size"];
+
+v169 [label="QUAST_SCAFF"];
+v171 [shape=point];
+v169 -> v171 [label="quast_scaffold"];
+
+v169 [label="QUAST_SCAFF"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v172;
+
+v169 [label="QUAST_SCAFF"];
+v170 [shape=point];
+v169 -> v170;
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 -> v234 [label="mqc_input"];
+
+v157 [label="YAHS_hap1"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v157 -> v173 [label="busco_assembly"];
+
+v19 [label="MERYL_COUNT"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v19 -> v173;
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v174 [label="MERQURY_SCAFF"];
+v173 -> v174;
+
+v174 [label="MERQURY_SCAFF"];
+v190 [shape=point];
+v174 -> v190;
+
+v174 [label="MERQURY_SCAFF"];
+v189 [shape=point];
+v174 -> v189;
+
+v174 [label="MERQURY_SCAFF"];
+v188 [shape=point];
+v174 -> v188;
+
+v174 [label="MERQURY_SCAFF"];
+v187 [shape=point];
+v174 -> v187;
+
+v174 [label="MERQURY_SCAFF"];
+v186 [shape=point];
+v174 -> v186;
+
+v174 [label="MERQURY_SCAFF"];
+v185 [shape=point];
+v174 -> v185;
+
+v174 [label="MERQURY_SCAFF"];
+v184 [shape=point];
+v174 -> v184;
+
+v174 [label="MERQURY_SCAFF"];
+v183 [shape=point];
+v174 -> v183;
+
+v174 [label="MERQURY_SCAFF"];
+v182 [shape=point];
+v174 -> v182;
+
+v174 [label="MERQURY_SCAFF"];
+v181 [shape=point];
+v174 -> v181;
+
+v174 [label="MERQURY_SCAFF"];
+v180 [shape=point];
+v174 -> v180;
+
+v174 [label="MERQURY_SCAFF"];
+v179 [shape=point];
+v174 -> v179;
+
+v174 [label="MERQURY_SCAFF"];
+v178 [shape=point];
+v174 -> v178;
+
+v174 [label="MERQURY_SCAFF"];
+v177 [shape=point];
+v174 -> v177;
+
+v174 [label="MERQURY_SCAFF"];
+v176 [shape=point];
+v174 -> v176;
+
+v174 [label="MERQURY_SCAFF"];
+v175 [shape=point];
+v174 -> v175;
+
+v9 [label="BAMTOOLS_FILTER_PACBIO"];
+v191 [label="PBMM2"];
+v9 -> v191 [label="final_pacBio_bam"];
+
+v157 [label="YAHS_hap1"];
+v191 [label="PBMM2"];
+v157 -> v191 [label="busco_assembly"];
+
+v191 [label="PBMM2"];
+v192 [label="SAMTOOLS_INDEX_PBMM2"];
+v191 -> v192;
+
+v191 [label="PBMM2"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 -> v196;
+
+v192 [label="SAMTOOLS_INDEX_PBMM2"];
+v195 [shape=point];
+v192 -> v195;
+
+v192 [label="SAMTOOLS_INDEX_PBMM2"];
+v194 [shape=point];
+v192 -> v194;
+
+v192 [label="SAMTOOLS_INDEX_PBMM2"];
+v193 [shape=point];
+v192 -> v193;
+
+v192 [label="SAMTOOLS_INDEX_PBMM2"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v192 -> v197;
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v197 [label="ch_versions"];
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 -> v204 [label="ch_versions"];
+
+v111 [label="SAMTOOLS_FAIDX_PURGE_hap1"];
+v198 [label="YAHS_JUICER"];
+v111 -> v198 [label="purged_hap1_index"];
+
+v198 [label="YAHS_JUICER"];
+v203 [shape=point];
+v198 -> v203 [label="chrom_size"];
+
+v198 [label="YAHS_JUICER"];
+v202 [shape=point];
+v198 -> v202;
+
+v198 [label="YAHS_JUICER"];
+v201 [shape=point];
+v198 -> v201;
+
+v198 [label="YAHS_JUICER"];
+v200 [shape=point];
+v198 -> v200;
+
+v198 [label="YAHS_JUICER"];
+v199 [shape=point];
+v198 -> v199;
+
+v198 [label="YAHS_JUICER"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 -> v204;
+
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v204 -> v218 [label="ch_versions"];
+
+v157 [label="YAHS_hap1"];
+v205 [label="GFASTATS"];
+v157 -> v205 [label="busco_assembly"];
+
+v205 [label="GFASTATS"];
+v206 [shape=point];
+v205 -> v206;
+
+v205 [label="GFASTATS"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v205 -> v218;
+
+v157 [label="YAHS_hap1"];
+v207 [label="TIDK"];
+v157 -> v207 [label="busco_assembly"];
+
+v207 [label="TIDK"];
+v210 [shape=point];
+v207 -> v210;
+
+v207 [label="TIDK"];
+v209 [shape=point];
+v207 -> v209;
+
+v207 [label="TIDK"];
+v208 [shape=point];
+v207 -> v208;
+
+v207 [label="TIDK"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 -> v219;
+
+v191 [label="PBMM2"];
+v214 [label="BEDTOOLS_GENOMECOV"];
+v191 -> v214;
+
+v211 [shape=point,label="",fixedsize=true,width=0.1];
+v214 [label="BEDTOOLS_GENOMECOV"];
+v211 -> v214 [label="scale"];
+
+v212 [shape=point,label="",fixedsize=true,width=0.1];
+v214 [label="BEDTOOLS_GENOMECOV"];
+v212 -> v214 [label="sizes"];
+
+v213 [shape=point,label="",fixedsize=true,width=0.1];
+v214 [label="BEDTOOLS_GENOMECOV"];
+v213 -> v214 [label="extension"];
+
+v214 [label="BEDTOOLS_GENOMECOV"];
+v217 [shape=point];
+v214 -> v217;
+
+v214 [label="BEDTOOLS_GENOMECOV"];
+v216 [shape=point];
+v214 -> v216;
+
+v214 [label="BEDTOOLS_GENOMECOV"];
+v215 [shape=point];
+v214 -> v215;
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 -> v219 [label="ch_versions"];
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 -> v225 [label="ch_versions"];
+
+v157 [label="YAHS_hap1"];
+v220 [label="GZIP"];
+v157 -> v220 [label="busco_assembly"];
+
+v220 [label="GZIP"];
+v222 [shape=point];
+v220 -> v222;
+
+v220 [label="GZIP"];
+v221 [shape=point];
+v220 -> v221;
+
+v157 [label="YAHS_hap1"];
+v223 [label="RAPIDCURATION_SPLIT"];
+v157 -> v223 [label="busco_assembly"];
+
+v223 [label="RAPIDCURATION_SPLIT"];
+v224 [shape=point];
+v223 -> v224;
+
+v223 [label="RAPIDCURATION_SPLIT"];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 -> v225;
+
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v225 -> v228 [label="ch_versions"];
+
+v226 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v227 [shape=point];
+v226 -> v227 [label="ch_version_yaml"];
+
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v228 -> v229;
+
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v230 [label="CUSTOM_DUMPSOFTWAREVERSIONS"];
+v229 -> v230;
+
+v230 [label="CUSTOM_DUMPSOFTWAREVERSIONS"];
+v232 [shape=point];
+v230 -> v232;
+
+v230 [label="CUSTOM_DUMPSOFTWAREVERSIONS"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v230 -> v233;
+
+v230 [label="CUSTOM_DUMPSOFTWAREVERSIONS"];
+v231 [shape=point];
+v230 -> v231;
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v234 [label="ch_version_yaml"];
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v234 -> v235 [label="mqc_input"];
+
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v239 [label="MULTIQC"];
+v235 -> v239;
+
+v236 [shape=point,label="",fixedsize=true,width=0.1];
+v239 [label="MULTIQC"];
+v236 -> v239 [label="multiqc_config"];
+
+v237 [shape=point,label="",fixedsize=true,width=0.1];
+v239 [label="MULTIQC"];
+v237 -> v239 [label="extra_multiqc_config"];
+
+v238 [shape=point,label="",fixedsize=true,width=0.1];
+v239 [label="MULTIQC"];
+v238 -> v239 [label="multiqc_logo"];
+
+v239 [label="MULTIQC"];
+v242 [shape=point];
+v239 -> v242;
+
+v239 [label="MULTIQC"];
+v241 [shape=point];
+v239 -> v241;
+
+v239 [label="MULTIQC"];
+v240 [shape=point];
+v239 -> v240;
+
+v239 [label="MULTIQC"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v239 -> v243;
+
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v225 -> v243 [label="ch_versions"];
+
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v244 [shape=point];
+v243 -> v244 [label="ch_versions"];
+
+}

@@ -1,0 +1,298 @@
+digraph "aminhaghparast_____Whole_Exome_Sequencing" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v9 [label="FASTP"];
+v1 -> v9 [label="read_pairs_ch"];
+
+v2 [label="REFERENCE_GENOME"];
+v13 [label="BWA"];
+v2 -> v13;
+
+v2 [label="REFERENCE_GENOME"];
+v20 [label="BASE_RECALIBRATOR"];
+v2 -> v20;
+
+v2 [label="REFERENCE_GENOME"];
+v20 [label="BASE_RECALIBRATOR"];
+v2 -> v20;
+
+v3 [label="dbSNP"];
+v20 [label="BASE_RECALIBRATOR"];
+v3 -> v20;
+
+v3 [label="dbSNP"];
+v20 [label="BASE_RECALIBRATOR"];
+v3 -> v20;
+
+v4 [label="golden_indel"];
+v25 [label="VARIANTRECALIBRATOR_INDELS"];
+v4 -> v25;
+
+v4 [label="golden_indel"];
+v25 [label="VARIANTRECALIBRATOR_INDELS"];
+v4 -> v25;
+
+v5 [label="hapmap"];
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v5 -> v23;
+
+v5 [label="hapmap"];
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v5 -> v23;
+
+v6 [label="omni"];
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v6 -> v23;
+
+v6 [label="omni"];
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v6 -> v23;
+
+v7 [label="phase1_SNPs"];
+v20 [label="BASE_RECALIBRATOR"];
+v7 -> v20;
+
+v7 [label="phase1_SNPs"];
+v20 [label="BASE_RECALIBRATOR"];
+v7 -> v20;
+
+v8 [label="BWA_INDEX"];
+v13 [label="BWA"];
+v8 -> v13;
+
+v9 [label="FASTP"];
+v10 [shape=point];
+v9 -> v10;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v11 [label="FASTQC"];
+v1 -> v11 [label="read_pairs_ch"];
+
+v11 [label="FASTQC"];
+v12 [shape=point];
+v11 -> v12;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v13 [label="BWA"];
+v1 -> v13 [label="read_pairs_ch"];
+
+v13 [label="BWA"];
+v14 [label="SAM_TO_BAM"];
+v13 -> v14;
+
+v14 [label="SAM_TO_BAM"];
+v15 [label="SORTING_BAM_FILE"];
+v14 -> v15;
+
+v15 [label="SORTING_BAM_FILE"];
+v16 [label="MARKDUPLICATE"];
+v15 -> v16;
+
+v16 [label="MARKDUPLICATE"];
+v17 [label="ADD_OR_REPLACE_READGROUPS"];
+v16 -> v17;
+
+v17 [label="ADD_OR_REPLACE_READGROUPS"];
+v18 [label="BUILDING_BAM_INDEX"];
+v17 -> v18;
+
+v18 [label="BUILDING_BAM_INDEX"];
+v19 [shape=point];
+v18 -> v19;
+
+v2 [label="REFERENCE_GENOME"];
+v20 [label="BASE_RECALIBRATOR"];
+v2 -> v20 [label="fasta"];
+
+v17 [label="ADD_OR_REPLACE_READGROUPS"];
+v20 [label="BASE_RECALIBRATOR"];
+v17 -> v20 [label="sorted_markduplicated_and_readgroups_bam_file"];
+
+v20 [label="BASE_RECALIBRATOR"];
+v21 [label="APPLY_BQSR"];
+v20 -> v21;
+
+v2 [label="REFERENCE_GENOME"];
+v21 [label="APPLY_BQSR"];
+v2 -> v21 [label="fasta"];
+
+v17 [label="ADD_OR_REPLACE_READGROUPS"];
+v21 [label="APPLY_BQSR"];
+v17 -> v21 [label="sorted_markduplicated_and_readgroups_bam_file"];
+
+v2 [label="REFERENCE_GENOME"];
+v21 [label="APPLY_BQSR"];
+v2 -> v21 [label="fasta_fai"];
+
+v2 [label="REFERENCE_GENOME"];
+v21 [label="APPLY_BQSR"];
+v2 -> v21 [label="fasta_dict"];
+
+v21 [label="APPLY_BQSR"];
+v22 [label="VARIANT_CALLING"];
+v21 -> v22;
+
+v2 [label="REFERENCE_GENOME"];
+v22 [label="VARIANT_CALLING"];
+v2 -> v22 [label="fasta"];
+
+v2 [label="REFERENCE_GENOME"];
+v22 [label="VARIANT_CALLING"];
+v2 -> v22 [label="fasta_fai"];
+
+v2 [label="REFERENCE_GENOME"];
+v22 [label="VARIANT_CALLING"];
+v2 -> v22 [label="fasta_dict"];
+
+v22 [label="VARIANT_CALLING"];
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v22 -> v23;
+
+v2 [label="REFERENCE_GENOME"];
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v2 -> v23 [label="fasta"];
+
+v7 [label="phase1_SNPs"];
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v7 -> v23 [label="phase1_snps"];
+
+v3 [label="dbSNP"];
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v3 -> v23 [label="dbsnp"];
+
+v2 [label="REFERENCE_GENOME"];
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v2 -> v23 [label="reference_fai"];
+
+v2 [label="REFERENCE_GENOME"];
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v2 -> v23 [label="reference_dict"];
+
+v7 [label="phase1_SNPs"];
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v7 -> v23 [label="phase1_snps_index"];
+
+v3 [label="dbSNP"];
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v3 -> v23 [label="dbsnp_index"];
+
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v24 [label="VQSR_APPLY_SNP"];
+v23 -> v24;
+
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v24 [label="VQSR_APPLY_SNP"];
+v23 -> v24;
+
+v23 [label="VARIANTRECALIBRATOR_SNPS"];
+v24 [label="VQSR_APPLY_SNP"];
+v23 -> v24;
+
+v22 [label="VARIANT_CALLING"];
+v24 [label="VQSR_APPLY_SNP"];
+v22 -> v24 [label="haplotypecaller_vcf"];
+
+v24 [label="VQSR_APPLY_SNP"];
+v25 [label="VARIANTRECALIBRATOR_INDELS"];
+v24 -> v25;
+
+v2 [label="REFERENCE_GENOME"];
+v25 [label="VARIANTRECALIBRATOR_INDELS"];
+v2 -> v25 [label="fasta"];
+
+v3 [label="dbSNP"];
+v25 [label="VARIANTRECALIBRATOR_INDELS"];
+v3 -> v25 [label="dbsnp"];
+
+v2 [label="REFERENCE_GENOME"];
+v25 [label="VARIANTRECALIBRATOR_INDELS"];
+v2 -> v25 [label="reference_fai"];
+
+v2 [label="REFERENCE_GENOME"];
+v25 [label="VARIANTRECALIBRATOR_INDELS"];
+v2 -> v25 [label="reference_dict"];
+
+v3 [label="dbSNP"];
+v25 [label="VARIANTRECALIBRATOR_INDELS"];
+v3 -> v25 [label="dbsnp_index"];
+
+v25 [label="VARIANTRECALIBRATOR_INDELS"];
+v26 [label="VQSR_APPLY_INDEL"];
+v25 -> v26;
+
+v25 [label="VARIANTRECALIBRATOR_INDELS"];
+v26 [label="VQSR_APPLY_INDEL"];
+v25 -> v26;
+
+v25 [label="VARIANTRECALIBRATOR_INDELS"];
+v26 [label="VQSR_APPLY_INDEL"];
+v25 -> v26;
+
+v24 [label="VQSR_APPLY_SNP"];
+v26 [label="VQSR_APPLY_INDEL"];
+v24 -> v26 [label="recalibrated_snps_raw_indels"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v26 [label="VQSR_APPLY_INDEL"];
+v1 -> v26 [label="read_pairs_ch"];
+
+v26 [label="VQSR_APPLY_INDEL"];
+v27 [shape=point];
+v26 -> v27;
+
+v22 [label="VARIANT_CALLING"];
+v28 [label="HARD_FILTERING_STEP_1"];
+v22 -> v28 [label="vcf_file"];
+
+v28 [label="HARD_FILTERING_STEP_1"];
+v30 [label="HARD_FILTERING_STEP_3"];
+v28 -> v30;
+
+v22 [label="VARIANT_CALLING"];
+v29 [label="HARD_FILTERING_STEP_2"];
+v22 -> v29 [label="vcf_file"];
+
+v29 [label="HARD_FILTERING_STEP_2"];
+v31 [label="HARD_FILTERING_STEP_4"];
+v29 -> v31;
+
+v30 [label="HARD_FILTERING_STEP_3"];
+v32 [label="HARD_FILTERING_STEP_5"];
+v30 -> v32;
+
+v31 [label="HARD_FILTERING_STEP_4"];
+v32 [label="HARD_FILTERING_STEP_5"];
+v31 -> v32;
+
+v22 [label="VARIANT_CALLING"];
+v32 [label="HARD_FILTERING_STEP_5"];
+v22 -> v32 [label="vcf_file"];
+
+v32 [label="HARD_FILTERING_STEP_5"];
+v33 [label="ANNOTATION"];
+v32 -> v33;
+
+v22 [label="VARIANT_CALLING"];
+v33 [label="ANNOTATION"];
+v22 -> v33 [label="vcf_file"];
+
+v33 [label="ANNOTATION"];
+v36 [label="VCF2TSV"];
+v33 -> v36;
+
+v33 [label="ANNOTATION"];
+v35 [shape=point];
+v33 -> v35;
+
+v33 [label="ANNOTATION"];
+v34 [shape=point];
+v33 -> v34;
+
+v36 [label="VCF2TSV"];
+v37 [shape=point];
+v36 -> v37;
+
+}

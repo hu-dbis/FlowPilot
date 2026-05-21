@@ -1,0 +1,66 @@
+digraph "ablab_____metaGT" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [label="MINIMAP2"];
+v1 -> v4 [label="ch_transcriptome"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [label="MINIMAP2"];
+v3 -> v4 [label="ch_genome"];
+
+v4 [label="MINIMAP2"];
+v8 [label="COVERED_CDS"];
+v4 -> v8 [label="ch_align"];
+
+v4 [label="MINIMAP2"];
+v5 [shape=point];
+v4 -> v5;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [label="PROKKA"];
+v3 -> v6 [label="ch_genome"];
+
+v6 [label="PROKKA"];
+v8 [label="COVERED_CDS"];
+v6 -> v8 [label="ch_genome_gff"];
+
+v6 [label="PROKKA"];
+v7 [shape=point];
+v6 -> v7;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [label="COVERED_CDS"];
+v3 -> v8 [label="ch_genome"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [label="COVERED_CDS"];
+v1 -> v8 [label="ch_transcriptome"];
+
+v8 [label="COVERED_CDS"];
+v9 [shape=point];
+v8 -> v9;
+
+v8 [label="COVERED_CDS"];
+v11 [label="MMSEQS_CLUSTER"];
+v8 -> v11;
+
+v8 [label="COVERED_CDS"];
+v10 [label="TRANSDECODER"];
+v8 -> v10;
+
+v10 [label="TRANSDECODER"];
+v11 [label="MMSEQS_CLUSTER"];
+v10 -> v11;
+
+v11 [label="MMSEQS_CLUSTER"];
+v12 [shape=point];
+v11 -> v12;
+
+}

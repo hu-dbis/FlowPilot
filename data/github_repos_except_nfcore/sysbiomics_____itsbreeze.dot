@@ -1,0 +1,278 @@
+digraph "sysbiomics_____itsbreeze" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v47 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v6 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="NFCORE_ITSBREEZE:ITSBREEZE:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v2 -> v3 [label="samplesheet"];
+
+v3 [label="NFCORE_ITSBREEZE:ITSBREEZE:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 -> v4;
+
+v3 [label="NFCORE_ITSBREEZE:ITSBREEZE:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v6 [label="versions"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTQC"];
+v5 -> v7 [label="reads"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v10 [label="ch_versions"];
+
+v7 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTQC"];
+v8 [shape=point];
+v7 -> v8;
+
+v7 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTQC"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v55;
+
+v7 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTQC"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v7 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v10 -> v39 [label="ch_versions"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTP"];
+v5 -> v13 [label="reads"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTP"];
+v11 -> v13 [label="save_trimmed_fail"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTP"];
+v12 -> v13 [label="save_merged"];
+
+v13 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTP"];
+v20 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_create_pairsline"];
+v13 -> v20 [label="reads"];
+
+v13 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTP"];
+v19 [shape=point];
+v13 -> v19;
+
+v13 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTP"];
+v18 [shape=point];
+v13 -> v18;
+
+v13 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTP"];
+v17 [shape=point];
+v13 -> v17;
+
+v13 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTP"];
+v16 [shape=point];
+v13 -> v16;
+
+v13 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTP"];
+v15 [shape=point];
+v13 -> v15;
+
+v13 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTP"];
+v14 [shape=point];
+v13 -> v14;
+
+v20 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_create_pairsline"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 -> v21 [label="line"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_create_pairslist"];
+v21 -> v22;
+
+v22 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_create_pairslist"];
+v26 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_seq_prep"];
+v22 -> v26;
+
+v13 [label="NFCORE_ITSBREEZE:ITSBREEZE:FASTP"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v13 -> v23 [label="reads"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_seq_prep"];
+v25 -> v26 [label="reads_chn"];
+
+v26 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_seq_prep"];
+v29 [shape=point];
+v26 -> v29;
+
+v26 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_seq_prep"];
+v31 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_funits"];
+v26 -> v31;
+
+v26 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_seq_prep"];
+v28 [shape=point];
+v26 -> v28;
+
+v26 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_seq_prep"];
+v27 [shape=point];
+v26 -> v27;
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_funits"];
+v30 -> v31 [label="ITS"];
+
+v31 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_funits"];
+v35 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_process"];
+v31 -> v35;
+
+v31 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_funits"];
+v34 [shape=point];
+v31 -> v34;
+
+v31 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_funits"];
+v33 [shape=point];
+v31 -> v33;
+
+v31 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_funits"];
+v32 [shape=point];
+v31 -> v32;
+
+v35 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_process"];
+v38 [shape=point];
+v35 -> v38 [label="otutable"];
+
+v35 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_process"];
+v37 [shape=point];
+v35 -> v37 [label="taxtable"];
+
+v35 [label="NFCORE_ITSBREEZE:ITSBREEZE:PIPITS:pipits_process"];
+v36 [shape=point];
+v35 -> v36 [label="versions"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v41 [label="NFCORE_ITSBREEZE:ITSBREEZE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v40 -> v41;
+
+v41 [label="NFCORE_ITSBREEZE:ITSBREEZE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v43 [shape=point];
+v41 -> v43;
+
+v41 [label="NFCORE_ITSBREEZE:ITSBREEZE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 -> v53;
+
+v41 [label="NFCORE_ITSBREEZE:ITSBREEZE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v42 [shape=point];
+v41 -> v42;
+
+v44 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v46 [label="ch_multiqc_files"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v49 [label="ch_multiqc_files"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v52 [label="ch_multiqc_files"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v50 -> v51 [label="ch_workflow_summary"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v54 [label="ch_multiqc_files"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v57 [label="ch_multiqc_files"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 -> v58 [label="ch_multiqc_files"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 [label="NFCORE_ITSBREEZE:ITSBREEZE:MULTIQC"];
+v58 -> v59;
+
+v59 [label="NFCORE_ITSBREEZE:ITSBREEZE:MULTIQC"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v59 -> v62;
+
+v59 [label="NFCORE_ITSBREEZE:ITSBREEZE:MULTIQC"];
+v61 [shape=point];
+v59 -> v61;
+
+v59 [label="NFCORE_ITSBREEZE:ITSBREEZE:MULTIQC"];
+v60 [shape=point];
+v59 -> v60;
+
+v59 [label="NFCORE_ITSBREEZE:ITSBREEZE:MULTIQC"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v64;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v63 [shape=point];
+v62 -> v63;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v64 [label="ch_versions"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 [shape=point];
+v64 -> v65 [label="ch_versions"];
+
+}

@@ -1,0 +1,74 @@
+digraph "metashot_____proksnp" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v3 [label="reads_stats"];
+v1 -> v3 [label="deint_reads_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="reads_stats"];
+v2 -> v3 [label="reads_stats_outdir"];
+
+v3 [label="reads_stats"];
+v4 [shape=point];
+v3 -> v4;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v7 [label="snippy"];
+v1 -> v7 [label="deint_reads_ch"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="snippy"];
+v5 -> v7 [label="ref"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="snippy"];
+v6 -> v7 [label="targets"];
+
+v7 [label="snippy"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 [label="snippy_core"];
+v9 -> v11;
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="snippy_core"];
+v10 -> v11 [label="ref"];
+
+v11 [label="snippy_core"];
+v13 [shape=point];
+v11 -> v13;
+
+v11 [label="snippy_core"];
+v12 [shape=point];
+v11 -> v12;
+
+v11 [label="snippy_core"];
+v14 [label="gubbins"];
+v11 -> v14;
+
+v14 [label="gubbins"];
+v15 [shape=point];
+v14 -> v15;
+
+v14 [label="gubbins"];
+v16 [label="snp_sites"];
+v14 -> v16;
+
+v16 [label="snp_sites"];
+v17 [label="raxml"];
+v16 -> v17 [label="core_aln_ch"];
+
+v17 [label="raxml"];
+v18 [shape=point];
+v17 -> v18;
+
+}

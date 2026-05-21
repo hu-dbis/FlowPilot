@@ -1,0 +1,86 @@
+digraph "vierstralab_____nffootprinting" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v4 [label="metadata_channel"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v3 -> v11 [label="thresholds"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [label="footprintsCalling:unstarch"];
+v4 -> v5;
+
+v5 [label="footprintsCalling:unstarch"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v5 -> v7;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v6 [label="metadata_channel"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v8 [label="footprintsCalling:learn_dm"];
+v7 -> v8 [label="bams_channel"];
+
+v8 [label="footprintsCalling:learn_dm"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v8 -> v9;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v7 -> v9 [label="bams_channel"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v10 [label="footprintsCalling:detect_dm"];
+v9 -> v10;
+
+v10 [label="footprintsCalling:detect_dm"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 [label="footprintsCalling:retrieve_dm"];
+v11 -> v12;
+
+v12 [label="footprintsCalling:retrieve_dm"];
+v13 [shape=point];
+v12 -> v13;
+
+v10 [label="footprintsCalling:detect_dm"];
+v14 [label="footprintsCalling:learn_bayes"];
+v10 -> v14;
+
+v14 [label="footprintsCalling:learn_bayes"];
+v15 [shape=point];
+v14 -> v15;
+
+v10 [label="footprintsCalling:detect_dm"];
+v16 [label="footprintsCalling:compress_and_tabix"];
+v10 -> v16;
+
+v16 [label="footprintsCalling:compress_and_tabix"];
+v17 [shape=point];
+v16 -> v17;
+
+v8 [label="footprintsCalling:learn_dm"];
+v18 [label="footprintsCalling:plot_dm"];
+v8 -> v18;
+
+v18 [label="footprintsCalling:plot_dm"];
+v19 [shape=point];
+v18 -> v19;
+
+}

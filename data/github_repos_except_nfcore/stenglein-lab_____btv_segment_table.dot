@@ -1,0 +1,250 @@
+digraph "stengleinlab_____btv_segment_table" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v5 [label="ch_versions"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:FASTQC_PRE"];
+v2 -> v3 [label="ch_reads"];
+
+v3 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:FASTQC_PRE"];
+v4 [shape=point];
+v3 -> v4;
+
+v3 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:FASTQC_PRE"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v39;
+
+v3 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:FASTQC_PRE"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v7 [label="ch_versions"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:CUTADAPT"];
+v2 -> v6 [label="ch_reads"];
+
+v6 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:CUTADAPT"];
+v8 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:FASTQC_POST"];
+v6 -> v8;
+
+v6 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:CUTADAPT"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v45;
+
+v6 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:CUTADAPT"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v13 [label="ch_versions"];
+
+v8 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:FASTQC_POST"];
+v10 [shape=point];
+v8 -> v10;
+
+v8 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:FASTQC_POST"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 -> v42;
+
+v8 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:FASTQC_POST"];
+v9 [shape=point];
+v8 -> v9;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:BOWTIE2_BUILD"];
+v11 -> v12 [label="fasta"];
+
+v12 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:BOWTIE2_BUILD"];
+v16 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:BOWTIE2_ALIGN"];
+v12 -> v16;
+
+v12 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:BOWTIE2_BUILD"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v19 [label="ch_versions"];
+
+v6 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:CUTADAPT"];
+v16 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:BOWTIE2_ALIGN"];
+v6 -> v16;
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:BOWTIE2_ALIGN"];
+v14 -> v16 [label="save_unaligned"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:BOWTIE2_ALIGN"];
+v15 -> v16 [label="sort_bam"];
+
+v16 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:BOWTIE2_ALIGN"];
+v20 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:EXTRACT_READ_MAPPING_COUNTS"];
+v16 -> v20;
+
+v16 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:BOWTIE2_ALIGN"];
+v18 [shape=point];
+v16 -> v18;
+
+v16 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:BOWTIE2_ALIGN"];
+v17 [shape=point];
+v16 -> v17;
+
+v16 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:BOWTIE2_ALIGN"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v19 -> v31 [label="ch_versions"];
+
+v20 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:EXTRACT_READ_MAPPING_COUNTS"];
+v23 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:PREPEND_TSV_WITH_ID"];
+v20 -> v23;
+
+v20 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:EXTRACT_READ_MAPPING_COUNTS"];
+v22 [shape=point];
+v20 -> v22;
+
+v20 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:EXTRACT_READ_MAPPING_COUNTS"];
+v21 [shape=point];
+v20 -> v21;
+
+v23 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:PREPEND_TSV_WITH_ID"];
+v25 [shape=point];
+v23 -> v25;
+
+v23 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:PREPEND_TSV_WITH_ID"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v23 -> v26;
+
+v23 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:PREPEND_TSV_WITH_ID"];
+v24 [shape=point];
+v23 -> v24;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v27 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:MAKE_SEGMENT_TABLE"];
+v26 -> v27;
+
+v27 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:MAKE_SEGMENT_TABLE"];
+v30 [shape=point];
+v27 -> v30;
+
+v27 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:MAKE_SEGMENT_TABLE"];
+v29 [shape=point];
+v27 -> v29;
+
+v27 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:MAKE_SEGMENT_TABLE"];
+v28 [shape=point];
+v27 -> v28;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v33 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v32 -> v33;
+
+v33 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v35 [shape=point];
+v33 -> v35;
+
+v33 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v37;
+
+v33 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v34 [shape=point];
+v33 -> v34;
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v38 [label="ch_multiqc_files"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v41 [label="ch_multiqc_files"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v44 [label="ch_multiqc_files"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v47 [label="ch_multiqc_files"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 -> v48 [label="ch_multiqc_files"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:MULTIQC"];
+v48 -> v49;
+
+v49 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:MULTIQC"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v49 -> v52;
+
+v49 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:MULTIQC"];
+v51 [shape=point];
+v49 -> v51;
+
+v49 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:MULTIQC"];
+v50 [shape=point];
+v49 -> v50;
+
+v49 [label="MAIN_WORKFLOW:BTV_SEGMENT_TABLE:MULTIQC"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v54;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v53 [shape=point];
+v52 -> v53 [label="multiqc_report"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v54 [label="ch_versions"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 [shape=point];
+v54 -> v55 [label="ch_versions"];
+
+}

@@ -1,0 +1,102 @@
+digraph "erinyoung_____needles" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4 [label="ch_samplesheet"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v12 [label="NEEDLES:ASSIGN"];
+v5 -> v12 [label="ch_query_list"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v6 [label="ch_samplesheet"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v11 [label="ch_fastas"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v13 [label="ch_versions"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [label="NEEDLES:DOWNLOAD"];
+v9 -> v10 [label="download_url"];
+
+v10 [label="NEEDLES:DOWNLOAD"];
+v12 [label="NEEDLES:ASSIGN"];
+v10 -> v12;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 [label="NEEDLES:ASSIGN"];
+v11 -> v12;
+
+v12 [label="NEEDLES:ASSIGN"];
+v14 [label="NEEDLES:VISUALIZE"];
+v12 -> v14;
+
+v12 [label="NEEDLES:ASSIGN"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v16 [label="ch_versions"];
+
+v10 [label="NEEDLES:DOWNLOAD"];
+v14 [label="NEEDLES:VISUALIZE"];
+v10 -> v14;
+
+v14 [label="NEEDLES:VISUALIZE"];
+v15 [shape=point];
+v14 -> v15;
+
+v14 [label="NEEDLES:VISUALIZE"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v16 -> v17 [label="versions"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v21;
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v23 [shape=point];
+v22 -> v23 [label="ch_collated_versions"];
+
+}

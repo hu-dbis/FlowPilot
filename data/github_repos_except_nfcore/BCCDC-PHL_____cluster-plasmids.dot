@@ -1,0 +1,118 @@
+digraph "BCCDCPHL_____clusterplasmids" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v2 [label="identify_resistance_genes"];
+v0 -> v2 [label="ch_db"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v1 -> v8 [label="ch_bakta_db"];
+
+v2 [label="identify_resistance_genes"];
+v3 [shape=point];
+v2 -> v3;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [label="identify_replicons"];
+v0 -> v4 [label="ch_db"];
+
+v4 [label="identify_replicons"];
+v5 [shape=point];
+v4 -> v5;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [label="extract_individual_plasmids"];
+v0 -> v6 [label="ch_db"];
+
+v6 [label="extract_individual_plasmids"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v6 -> v12;
+
+v6 [label="extract_individual_plasmids"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v9 [label="bakta"];
+v8 -> v9;
+
+v9 [label="bakta"];
+v10 [shape=point];
+v9 -> v10;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [label="sketch_plasmid_db"];
+v0 -> v11 [label="ch_db"];
+
+v11 [label="sketch_plasmid_db"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 [label="create_mash_distance_matrix"];
+v12 -> v13;
+
+v13 [label="create_mash_distance_matrix"];
+v14 [label="find_similar_plasmids"];
+v13 -> v14;
+
+v14 [label="find_similar_plasmids"];
+v15 [label="remove_duplicates"];
+v14 -> v15;
+
+v15 [label="remove_duplicates"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 -> v18;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v0 -> v18 [label="ch_db"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 [label="extract_plasmid_pair"];
+v18 -> v19;
+
+v19 [label="extract_plasmid_pair"];
+v20 [label="pairwise_align"];
+v19 -> v20;
+
+v20 [label="pairwise_align"];
+v25 [label="evaluate_pairwise_alignment"];
+v20 -> v25;
+
+v19 [label="extract_plasmid_pair"];
+v21 [label="dotpath"];
+v19 -> v21;
+
+v21 [label="dotpath"];
+v22 [shape=point];
+v21 -> v22;
+
+v19 [label="extract_plasmid_pair"];
+v23 [label="dotmatcher"];
+v19 -> v23;
+
+v23 [label="dotmatcher"];
+v24 [shape=point];
+v23 -> v24;
+
+v25 [label="evaluate_pairwise_alignment"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v27 [shape=point];
+v26 -> v27;
+
+}

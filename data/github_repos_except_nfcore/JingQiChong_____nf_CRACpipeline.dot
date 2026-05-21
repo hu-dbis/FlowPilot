@@ -1,0 +1,186 @@
+digraph "JingQiChong_____nf_CRACpipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="CRAC_PROCESS:flexbar"];
+v1 -> v3 [label="read"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [label="CRAC_PROCESS:flexbar"];
+v2 -> v3 [label="adapter_ch"];
+
+v3 [label="CRAC_PROCESS:flexbar"];
+v6 [label="CRAC_PROCESS:pyBarcodeFilter"];
+v3 -> v6;
+
+v3 [label="CRAC_PROCESS:flexbar"];
+v4 [shape=point];
+v3 -> v4;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [label="CRAC_PROCESS:pyBarcodeFilter"];
+v5 -> v6 [label="barcode_ch"];
+
+v6 [label="CRAC_PROCESS:pyBarcodeFilter"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v6 -> v8;
+
+v6 [label="CRAC_PROCESS:pyBarcodeFilter"];
+v7 [shape=point];
+v6 -> v7;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [label="CRAC_PROCESS:fastqc"];
+v9 -> v10 [label="trimmed_read"];
+
+v10 [label="CRAC_PROCESS:fastqc"];
+v11 [shape=point];
+v10 -> v11;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [label="CRAC_PROCESS:pyFastqDuplicateRemover"];
+v9 -> v12 [label="trimmed_read"];
+
+v12 [label="CRAC_PROCESS:pyFastqDuplicateRemover"];
+v14 [label="CRAC_PROCESS:novoalign"];
+v12 -> v14;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="CRAC_PROCESS:novoalign"];
+v13 -> v14 [label="index"];
+
+v14 [label="CRAC_PROCESS:novoalign"];
+v15 [label="CRAC_PROCESS:bamqc"];
+v14 -> v15;
+
+v15 [label="CRAC_PROCESS:bamqc"];
+v16 [shape=point];
+v15 -> v16;
+
+v14 [label="CRAC_PROCESS:novoalign"];
+v17 [label="CRAC_PROCESS:samtools_sort"];
+v14 -> v17;
+
+v17 [label="CRAC_PROCESS:samtools_sort"];
+v18 [label="CRAC_PROCESS:samtools_index"];
+v17 -> v18 [label="bam"];
+
+v18 [label="CRAC_PROCESS:samtools_index"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v23 [label="bam_index"];
+
+v17 [label="CRAC_PROCESS:samtools_sort"];
+v19 [label="CRAC_ANALYSIS:bedtools_genomecov"];
+v17 -> v19 [label="bam"];
+
+v19 [label="CRAC_ANALYSIS:bedtools_genomecov"];
+v20 [shape=point];
+v19 -> v20;
+
+v17 [label="CRAC_PROCESS:samtools_sort"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v21 [label="bam"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [label="CRAC_ANALYSIS:bedtools_multicov"];
+v22 -> v26 [label="allbam_ch"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [label="CRAC_ANALYSIS:bedtools_multicov"];
+v24 -> v26 [label="allbam_index_ch"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [label="CRAC_ANALYSIS:bedtools_multicov"];
+v25 -> v26 [label="transcriptgff"];
+
+v26 [label="CRAC_ANALYSIS:bedtools_multicov"];
+v27 [shape=point];
+v26 -> v27;
+
+v17 [label="CRAC_PROCESS:samtools_sort"];
+v29 [label="CRAC_ANALYSIS:pyReadCounters"];
+v17 -> v29 [label="bam"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="CRAC_ANALYSIS:pyReadCounters"];
+v28 -> v29 [label="gtf"];
+
+v29 [label="CRAC_ANALYSIS:pyReadCounters"];
+v44 [label="CRAC_ANALYSIS:pyCalculateFDRs"];
+v29 -> v44;
+
+v29 [label="CRAC_ANALYSIS:pyReadCounters"];
+v30 [shape=point];
+v29 -> v30;
+
+v17 [label="CRAC_PROCESS:samtools_sort"];
+v32 [label="CRAC_ANALYSIS:pyReadCountersBlocksNoMuts"];
+v17 -> v32 [label="bam"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="CRAC_ANALYSIS:pyReadCountersBlocksNoMuts"];
+v31 -> v32 [label="gtf"];
+
+v32 [label="CRAC_ANALYSIS:pyReadCountersBlocksNoMuts"];
+v35 [label="CRAC_ANALYSIS:pyGTF2bedGraph"];
+v32 -> v35;
+
+v32 [label="CRAC_ANALYSIS:pyReadCountersBlocksNoMuts"];
+v33 [shape=point];
+v32 -> v33;
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v35 [label="CRAC_ANALYSIS:pyGTF2bedGraph"];
+v34 -> v35 [label="chromosome"];
+
+v35 [label="CRAC_ANALYSIS:pyGTF2bedGraph"];
+v36 [shape=point];
+v35 -> v36;
+
+v17 [label="CRAC_PROCESS:samtools_sort"];
+v40 [label="CRAC_ANALYSIS:pyPileup"];
+v17 -> v40 [label="bam"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="CRAC_ANALYSIS:pyPileup"];
+v37 -> v40 [label="genometab"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="CRAC_ANALYSIS:pyPileup"];
+v38 -> v40 [label="gtf"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="CRAC_ANALYSIS:pyPileup"];
+v39 -> v40 [label="genelist"];
+
+v40 [label="CRAC_ANALYSIS:pyPileup"];
+v41 [shape=point];
+v40 -> v41;
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="CRAC_ANALYSIS:pyCalculateFDRs"];
+v42 -> v44 [label="chromosome"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="CRAC_ANALYSIS:pyCalculateFDRs"];
+v43 -> v44 [label="gtf"];
+
+v44 [label="CRAC_ANALYSIS:pyCalculateFDRs"];
+v45 [shape=point];
+v44 -> v45;
+
+}

@@ -1,0 +1,554 @@
+digraph "fastquorum" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 [label="NFCORE_FASTQUORUM:PREPARE_GENOME:BWAMEM1_INDEX"];
+v2 -> v14 [label="ch_fasta"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v4 [shape=point];
+v3 -> v4 [label="versions"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v29 [label="NFCORE_FASTQUORUM:FASTQUORUM:FASTQC"];
+v10 -> v29 [label="ch_samplesheet"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=point];
+v11 -> v12 [label="versions"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v21 [label="versions"];
+
+v14 [label="NFCORE_FASTQUORUM:PREPARE_GENOME:BWAMEM1_INDEX"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 -> v24;
+
+v14 [label="NFCORE_FASTQUORUM:PREPARE_GENOME:BWAMEM1_INDEX"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v21;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 [label="NFCORE_FASTQUORUM:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v2 -> v16 [label="ch_fasta"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="NFCORE_FASTQUORUM:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v15 -> v16;
+
+v16 [label="NFCORE_FASTQUORUM:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v18 [shape=point];
+v16 -> v18;
+
+v16 [label="NFCORE_FASTQUORUM:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v26;
+
+v16 [label="NFCORE_FASTQUORUM:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v17 [shape=point];
+v16 -> v17;
+
+v16 [label="NFCORE_FASTQUORUM:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v22;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 [label="NFCORE_FASTQUORUM:PREPARE_GENOME:SAMTOOLS_DICT"];
+v2 -> v19 [label="ch_fasta"];
+
+v19 [label="NFCORE_FASTQUORUM:PREPARE_GENOME:SAMTOOLS_DICT"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v25;
+
+v19 [label="NFCORE_FASTQUORUM:PREPARE_GENOME:SAMTOOLS_DICT"];
+v20 [shape=point];
+v19 -> v20;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v22 [label="versions"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 [shape=point];
+v22 -> v23 [label="versions"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_RAW_BAM"];
+v24 -> v39 [label="ch_bwa"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_RAW_BAM"];
+v25 -> v39 [label="ch_dict"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_RAW_BAM"];
+v26 -> v39 [label="ch_fasta_fai"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v32 [label="ch_versions"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v34 [label="ch_multiqc_files"];
+
+v29 [label="NFCORE_FASTQUORUM:FASTQUORUM:FASTQC"];
+v30 [shape=point];
+v29 -> v30;
+
+v29 [label="NFCORE_FASTQUORUM:FASTQUORUM:FASTQC"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 -> v33;
+
+v29 [label="NFCORE_FASTQUORUM:FASTQUORUM:FASTQC"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v29 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v37 [label="ch_versions"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v63 [label="ch_multiqc_files"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v35 [label="NFCORE_FASTQUORUM:FASTQUORUM:FASTQTOBAM"];
+v10 -> v35 [label="ch_samplesheet"];
+
+v35 [label="NFCORE_FASTQUORUM:FASTQUORUM:FASTQTOBAM"];
+v39 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_RAW_BAM"];
+v35 -> v39;
+
+v35 [label="NFCORE_FASTQUORUM:FASTQUORUM:FASTQTOBAM"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v42 [label="ch_versions"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_RAW_BAM"];
+v2 -> v39 [label="ch_fasta"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v39 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_RAW_BAM"];
+v38 -> v39 [label="sort_type"];
+
+v39 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_RAW_BAM"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v43;
+
+v39 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_RAW_BAM"];
+v40 [shape=point];
+v39 -> v40;
+
+v39 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_RAW_BAM"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v39 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v53 [label="ch_versions"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v57;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v48 [label="NFCORE_FASTQUORUM:FASTQUORUM:MERGE_BAM"];
+v45 -> v48;
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [label="NFCORE_FASTQUORUM:FASTQUORUM:MERGE_BAM"];
+v46 -> v48;
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [label="NFCORE_FASTQUORUM:FASTQUORUM:MERGE_BAM"];
+v47 -> v48;
+
+v48 [label="NFCORE_FASTQUORUM:FASTQUORUM:MERGE_BAM"];
+v54 [label="NFCORE_FASTQUORUM:FASTQUORUM:SORTBAM"];
+v48 -> v54;
+
+v48 [label="NFCORE_FASTQUORUM:FASTQUORUM:MERGE_BAM"];
+v51 [shape=point];
+v48 -> v51;
+
+v48 [label="NFCORE_FASTQUORUM:FASTQUORUM:MERGE_BAM"];
+v50 [shape=point];
+v48 -> v50;
+
+v48 [label="NFCORE_FASTQUORUM:FASTQUORUM:MERGE_BAM"];
+v49 [shape=point];
+v48 -> v49;
+
+v48 [label="NFCORE_FASTQUORUM:FASTQUORUM:MERGE_BAM"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v48 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v56 [label="ch_versions"];
+
+v54 [label="NFCORE_FASTQUORUM:FASTQUORUM:SORTBAM"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v57;
+
+v54 [label="NFCORE_FASTQUORUM:FASTQUORUM:SORTBAM"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v65 [label="ch_versions"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [label="NFCORE_FASTQUORUM:FASTQUORUM:GROUPREADSBYUMI"];
+v57 -> v60 [label="bam_all"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v60 [label="NFCORE_FASTQUORUM:FASTQUORUM:GROUPREADSBYUMI"];
+v58 -> v60 [label="strategy"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1];
+v60 [label="NFCORE_FASTQUORUM:FASTQUORUM:GROUPREADSBYUMI"];
+v59 -> v60 [label="edits"];
+
+v60 [label="NFCORE_FASTQUORUM:FASTQUORUM:GROUPREADSBYUMI"];
+v66 [label="NFCORE_FASTQUORUM:FASTQUORUM:COLLECTDUPLEXSEQMETRICS"];
+v60 -> v66;
+
+v60 [label="NFCORE_FASTQUORUM:FASTQUORUM:GROUPREADSBYUMI"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 -> v61;
+
+v60 [label="NFCORE_FASTQUORUM:FASTQUORUM:GROUPREADSBYUMI"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v60 -> v64;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v104 [label="ch_multiqc_files"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v70 [label="ch_versions"];
+
+v66 [label="NFCORE_FASTQUORUM:FASTQUORUM:COLLECTDUPLEXSEQMETRICS"];
+v68 [shape=point];
+v66 -> v68;
+
+v66 [label="NFCORE_FASTQUORUM:FASTQUORUM:COLLECTDUPLEXSEQMETRICS"];
+v67 [shape=point];
+v66 -> v67;
+
+v66 [label="NFCORE_FASTQUORUM:FASTQUORUM:COLLECTDUPLEXSEQMETRICS"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v66 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v75 [label="ch_versions"];
+
+v60 [label="NFCORE_FASTQUORUM:FASTQUORUM:GROUPREADSBYUMI"];
+v73 [label="NFCORE_FASTQUORUM:FASTQUORUM:CALLDDUPLEXCONSENSUSREADS"];
+v60 -> v73;
+
+v71 [shape=point,label="",fixedsize=true,width=0.1];
+v73 [label="NFCORE_FASTQUORUM:FASTQUORUM:CALLDDUPLEXCONSENSUSREADS"];
+v71 -> v73 [label="min_reads"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1];
+v73 [label="NFCORE_FASTQUORUM:FASTQUORUM:CALLDDUPLEXCONSENSUSREADS"];
+v72 -> v73 [label="min_baseq"];
+
+v73 [label="NFCORE_FASTQUORUM:FASTQUORUM:CALLDDUPLEXCONSENSUSREADS"];
+v77 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_CONSENSUS_BAM"];
+v73 -> v77 [label="ch_consensus_bam"];
+
+v73 [label="NFCORE_FASTQUORUM:FASTQUORUM:CALLDDUPLEXCONSENSUSREADS"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v80 [label="ch_versions"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_CONSENSUS_BAM"];
+v2 -> v77 [label="ch_fasta"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_CONSENSUS_BAM"];
+v26 -> v77 [label="ch_fasta_fai"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_CONSENSUS_BAM"];
+v25 -> v77 [label="ch_dict"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_CONSENSUS_BAM"];
+v24 -> v77 [label="ch_bwa"];
+
+v76 [shape=point,label="",fixedsize=true,width=0.1];
+v77 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_CONSENSUS_BAM"];
+v76 -> v77 [label="sort_type"];
+
+v77 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_CONSENSUS_BAM"];
+v84 [label="NFCORE_FASTQUORUM:FASTQUORUM:FILTERCONSENSUSREADS"];
+v77 -> v84;
+
+v77 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_CONSENSUS_BAM"];
+v78 [shape=point];
+v77 -> v78;
+
+v77 [label="NFCORE_FASTQUORUM:FASTQUORUM:ALIGN_CONSENSUS_BAM"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v77 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v88 [label="ch_versions"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v84 [label="NFCORE_FASTQUORUM:FASTQUORUM:FILTERCONSENSUSREADS"];
+v2 -> v84 [label="ch_fasta"];
+
+v81 [shape=point,label="",fixedsize=true,width=0.1];
+v84 [label="NFCORE_FASTQUORUM:FASTQUORUM:FILTERCONSENSUSREADS"];
+v81 -> v84 [label="min_reads"];
+
+v82 [shape=point,label="",fixedsize=true,width=0.1];
+v84 [label="NFCORE_FASTQUORUM:FASTQUORUM:FILTERCONSENSUSREADS"];
+v82 -> v84 [label="min_baseq"];
+
+v83 [shape=point,label="",fixedsize=true,width=0.1];
+v84 [label="NFCORE_FASTQUORUM:FASTQUORUM:FILTERCONSENSUSREADS"];
+v83 -> v84 [label="max_base_error_rate"];
+
+v84 [label="NFCORE_FASTQUORUM:FASTQUORUM:FILTERCONSENSUSREADS"];
+v86 [shape=point];
+v84 -> v86;
+
+v84 [label="NFCORE_FASTQUORUM:FASTQUORUM:FILTERCONSENSUSREADS"];
+v85 [shape=point];
+v84 -> v85;
+
+v84 [label="NFCORE_FASTQUORUM:FASTQUORUM:FILTERCONSENSUSREADS"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v84 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v88 -> v89 [label="versions"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v93;
+
+v92 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v93 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v105 [label="ch_collated_versions"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v95 -> v110 [label="ch_multiqc_config"];
+
+v96 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v96 -> v111 [label="ch_multiqc_custom_config"];
+
+v97 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v98 [shape=point];
+v97 -> v98 [label="ch_multiqc_logo"];
+
+v99 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v99 -> v112 [label="ch_multiqc_logo"];
+
+v100 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v100 -> v113 [label="ch_replace_names"];
+
+v101 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v101 -> v114 [label="ch_sample_names"];
+
+v102 [shape=point,label="",fixedsize=true,width=0.1];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v102 -> v103 [label="ch_workflow_summary"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v105 [label="ch_multiqc_files"];
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v108 [label="ch_multiqc_files"];
+
+v106 [shape=point,label="",fixedsize=true,width=0.1];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v106 -> v107 [label="ch_methods_description"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v108 -> v109 [label="ch_multiqc_files"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v115 [label="NFCORE_FASTQUORUM:FASTQUORUM:MULTIQC"];
+v109 -> v115;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v115 [label="NFCORE_FASTQUORUM:FASTQUORUM:MULTIQC"];
+v110 -> v115;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v115 [label="NFCORE_FASTQUORUM:FASTQUORUM:MULTIQC"];
+v111 -> v115;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v115 [label="NFCORE_FASTQUORUM:FASTQUORUM:MULTIQC"];
+v112 -> v115;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v115 [label="NFCORE_FASTQUORUM:FASTQUORUM:MULTIQC"];
+v113 -> v115;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v115 [label="NFCORE_FASTQUORUM:FASTQUORUM:MULTIQC"];
+v114 -> v115;
+
+v115 [label="NFCORE_FASTQUORUM:FASTQUORUM:MULTIQC"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v115 -> v119;
+
+v115 [label="NFCORE_FASTQUORUM:FASTQUORUM:MULTIQC"];
+v118 [shape=point];
+v115 -> v118;
+
+v115 [label="NFCORE_FASTQUORUM:FASTQUORUM:MULTIQC"];
+v117 [shape=point];
+v115 -> v117;
+
+v115 [label="NFCORE_FASTQUORUM:FASTQUORUM:MULTIQC"];
+v116 [shape=point];
+v115 -> v116;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v120 [shape=point];
+v119 -> v120 [label="multiqc_report"];
+
+}

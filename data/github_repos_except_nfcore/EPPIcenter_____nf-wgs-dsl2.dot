@@ -1,0 +1,230 @@
+digraph "EPPIcenter_____nfwgsdsl2" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v2 [label="QC:trim_reads"];
+v0 -> v2 [label="read_pairs_ch"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="QC:trim_reads"];
+v1 -> v2 [label="trim_adapter"];
+
+v2 [label="QC:trim_reads"];
+v3 [label="QC:fastqc"];
+v2 -> v3;
+
+v3 [label="QC:fastqc"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 [label="QC:multiqc"];
+v4 -> v5;
+
+v5 [label="QC:multiqc"];
+v6 [shape=point];
+v5 -> v6;
+
+v2 [label="QC:trim_reads"];
+v8 [label="QC:bwa_align"];
+v2 -> v8;
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="QC:bwa_align"];
+v7 -> v8 [label="genomes_dir"];
+
+v8 [label="QC:bwa_align"];
+v10 [label="QC:sam_convert"];
+v8 -> v10;
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="QC:sam_convert"];
+v9 -> v10 [label="genomes_dir"];
+
+v10 [label="QC:sam_convert"];
+v12 [label="QC:sam_clean"];
+v10 -> v12;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [label="QC:sam_clean"];
+v11 -> v12 [label="genomes_dir"];
+
+v12 [label="QC:sam_clean"];
+v14 [label="QC:sam_sort"];
+v12 -> v14;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="QC:sam_sort"];
+v13 -> v14 [label="genomes_dir"];
+
+v14 [label="QC:sam_sort"];
+v16 [label="QC:sam_duplicates"];
+v14 -> v16;
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="QC:sam_duplicates"];
+v15 -> v16 [label="genomes_dir"];
+
+v16 [label="QC:sam_duplicates"];
+v18 [label="QC:target_pf"];
+v16 -> v18;
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v18 [label="QC:target_pf"];
+v17 -> v18 [label="genomes_dir"];
+
+v18 [label="QC:target_pf"];
+v21 [label="QC:index_pf_bam"];
+v18 -> v21 [label="pf_bam_ch"];
+
+v16 [label="QC:sam_duplicates"];
+v20 [label="QC:target_human"];
+v16 -> v20;
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [label="QC:target_human"];
+v19 -> v20 [label="genomes_dir"];
+
+v20 [label="QC:target_human"];
+v42 [label="QC:hs_bam_stat_per_sample"];
+v20 -> v42;
+
+v21 [label="QC:index_pf_bam"];
+v22 [shape=point];
+v21 -> v22;
+
+v18 [label="QC:target_pf"];
+v24 [label="QC:pf_read_depth"];
+v18 -> v24 [label="pf_bam_ch"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="QC:pf_read_depth"];
+v23 -> v24 [label="genomes_dir"];
+
+v24 [label="QC:pf_read_depth"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [label="QC:pf_read_depth_summary"];
+v25 -> v26;
+
+v26 [label="QC:pf_read_depth_summary"];
+v48 [label="QC:run_report_and_calculate_ratio"];
+v26 -> v48;
+
+v18 [label="QC:target_pf"];
+v27 [label="QC:insert_sizes"];
+v18 -> v27 [label="pf_bam_ch"];
+
+v27 [label="QC:insert_sizes"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 -> v46 [label="insert1_ch"];
+
+v27 [label="QC:insert_sizes"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 -> v30 [label="insert2_ch"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 [label="QC:insert_summary"];
+v30 -> v31;
+
+v31 [label="QC:insert_summary"];
+v32 [shape=point];
+v31 -> v32;
+
+v16 [label="QC:sam_duplicates"];
+v33 [label="QC:total_bam_stat_per_sample"];
+v16 -> v33;
+
+v33 [label="QC:total_bam_stat_per_sample"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 -> v35 [label="total_final_bamstat_ch"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v36 [label="QC:total_stat_summary"];
+v35 -> v36;
+
+v36 [label="QC:total_stat_summary"];
+v37 [shape=point];
+v36 -> v37;
+
+v18 [label="QC:target_pf"];
+v38 [label="QC:pf_bam_stat_per_sample"];
+v18 -> v38 [label="pf_bam_ch"];
+
+v38 [label="QC:pf_bam_stat_per_sample"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 -> v40 [label="pf_final_bamstat_ch"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 [label="QC:pf_stat_summary"];
+v40 -> v41;
+
+v41 [label="QC:pf_stat_summary"];
+v48 [label="QC:run_report_and_calculate_ratio"];
+v41 -> v48;
+
+v42 [label="QC:hs_bam_stat_per_sample"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v43 -> v44 [label="hs_final_bamstat_ch"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 [label="QC:hs_stat_summary"];
+v44 -> v45;
+
+v45 [label="QC:hs_stat_summary"];
+v48 [label="QC:run_report_and_calculate_ratio"];
+v45 -> v48;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v48 [label="QC:run_report_and_calculate_ratio"];
+v46 -> v48;
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [label="QC:run_report_and_calculate_ratio"];
+v47 -> v48 [label="rscript"];
+
+v48 [label="QC:run_report_and_calculate_ratio"];
+v49 [shape=point];
+v48 -> v49;
+
+v50 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v50 -> v51 [label="chrom_ch"];
+
+v18 [label="QC:target_pf"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v51 [label="pf_bam_ch"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v53 [label="GVCF:g_variant_calling"];
+v51 -> v53 [label="input_ch"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1];
+v53 [label="GVCF:g_variant_calling"];
+v52 -> v53 [label="genomes_dir"];
+
+v53 [label="GVCF:g_variant_calling"];
+v54 [shape=point];
+v53 -> v54;
+
+}

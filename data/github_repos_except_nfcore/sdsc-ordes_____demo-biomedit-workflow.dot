@@ -1,0 +1,46 @@
+digraph "sdscordes_____demobiomeditworkflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [label="unzip_archive"];
+v0 -> v1 [label="ch_input_zip"];
+
+v1 [label="unzip_archive"];
+v2 [label="cat_patients_json"];
+v1 -> v2;
+
+v2 [label="cat_patients_json"];
+v5 [label="generate_triples"];
+v2 -> v5;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="convert_mappings"];
+v3 -> v4 [label="yml_mappings"];
+
+v4 [label="convert_mappings"];
+v5 [label="generate_triples"];
+v4 -> v5;
+
+v5 [label="generate_triples"];
+v8 [label="validate_shacl"];
+v5 -> v8;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="validate_shacl"];
+v6 -> v8 [label="ontology"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v8 [label="validate_shacl"];
+v7 -> v8 [label="shapes"];
+
+v8 [label="validate_shacl"];
+v9 [shape=point];
+v8 -> v9;
+
+v5 [label="generate_triples"];
+v10 [label="gzip_triples"];
+v5 -> v10 [label="triples"];
+
+v10 [label="gzip_triples"];
+v11 [shape=point];
+v10 -> v11;
+
+}

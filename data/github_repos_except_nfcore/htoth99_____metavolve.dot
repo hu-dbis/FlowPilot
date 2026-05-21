@@ -1,0 +1,138 @@
+digraph "htoth99_____metavolve" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v0 -> v1 [label="paired_reads_ch"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v7 [label="FASTQC"];
+v2 -> v7 [label="reads_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v10 [label="HOSTINDEX"];
+v4 -> v10 [label="host_ref_ch"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [shape=point];
+v5 -> v6 [label="krakendb_ch"];
+
+v7 [label="FASTQC"];
+v8 [shape=point];
+v7 -> v8;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v9 [label="TRIMGALORE"];
+v0 -> v9 [label="paired_reads_ch"];
+
+v9 [label="TRIMGALORE"];
+v11 [label="HOSTREMOVE"];
+v9 -> v11;
+
+v10 [label="HOSTINDEX"];
+v11 [label="HOSTREMOVE"];
+v10 -> v11;
+
+v11 [label="HOSTREMOVE"];
+v13 [label="KRAKEN2"];
+v11 -> v13;
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="KRAKEN2"];
+v12 -> v13 [label="database"];
+
+v13 [label="KRAKEN2"];
+v15 [shape=point];
+v13 -> v15;
+
+v13 [label="KRAKEN2"];
+v14 [shape=point];
+v13 -> v14;
+
+v11 [label="HOSTREMOVE"];
+v16 [label="ASSEMBLY"];
+v11 -> v16;
+
+v16 [label="ASSEMBLY"];
+v18 [shape=point];
+v16 -> v18;
+
+v16 [label="ASSEMBLY"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v16 -> v19;
+
+v16 [label="ASSEMBLY"];
+v17 [shape=point];
+v16 -> v17;
+
+v9 [label="TRIMGALORE"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v20 [label="ASSEMBLYINDEX"];
+v19 -> v20 [label="asm_and_reads_ch"];
+
+v20 [label="ASSEMBLYINDEX"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v20 -> v21;
+
+v16 [label="ASSEMBLY"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v16 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 -> v22 [label="asm_all_ch"];
+
+v9 [label="TRIMGALORE"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 [label="MAXBIN2"];
+v22 -> v24 [label="asm_all_reads_ch"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 [label="CONCOCT"];
+v21 -> v23 [label="asm_all_ch"];
+
+v23 [label="CONCOCT"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 -> v26;
+
+v24 [label="MAXBIN2"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 -> v26;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v25 [label="METABAT2"];
+v21 -> v25 [label="asm_all_ch"];
+
+v25 [label="METABAT2"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v25 -> v27;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 [label="DREP"];
+v27 -> v28 [label="bins_ch"];
+
+v28 [label="DREP"];
+v29 [label="CHECKM"];
+v28 -> v29;
+
+v29 [label="CHECKM"];
+v30 [shape=point];
+v29 -> v30;
+
+}

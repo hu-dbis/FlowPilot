@@ -1,0 +1,50 @@
+digraph "luslab_____cheshic2022skinatlas" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="CRICK_SKINATLAS:SKINATLAS:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v0 -> v1 [label="samplesheet"];
+
+v1 [label="CRICK_SKINATLAS:SKINATLAS:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v1 -> v3;
+
+v1 [label="CRICK_SKINATLAS:SKINATLAS:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v2 [shape=point];
+v1 -> v2 [label="versions"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [label="CRICK_SKINATLAS:SKINATLAS:R_SEURAT_CREATE_OBJECTS"];
+v4 -> v5 [label="data"];
+
+v5 [label="CRICK_SKINATLAS:SKINATLAS:R_SEURAT_CREATE_OBJECTS"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [label="CRICK_SKINATLAS:SKINATLAS:R_PREPROCESSING"];
+v8 -> v9 [label="ch_counts"];
+
+v9 [label="CRICK_SKINATLAS:SKINATLAS:R_PREPROCESSING"];
+v10 [label="CRICK_SKINATLAS:SKINATLAS:R_INTEGRATION"];
+v9 -> v10;
+
+v10 [label="CRICK_SKINATLAS:SKINATLAS:R_INTEGRATION"];
+v11 [label="CRICK_SKINATLAS:SKINATLAS:R_INTEGRATION_QC"];
+v10 -> v11;
+
+v11 [label="CRICK_SKINATLAS:SKINATLAS:R_INTEGRATION_QC"];
+v12 [shape=point];
+v11 -> v12;
+
+}

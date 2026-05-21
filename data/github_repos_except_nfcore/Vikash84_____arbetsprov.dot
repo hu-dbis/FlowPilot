@@ -1,0 +1,210 @@
+digraph "Vikash84_____arbetsprov" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [label="fastp"];
+v1 -> v7 [label="ion"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [label="spades_hybrid"];
+v3 -> v14 [label="nanopore"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="fastp"];
+v4 -> v7 [label="trim"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="fastp"];
+v5 -> v7 [label="filter"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="fastp"];
+v6 -> v7 [label="len"];
+
+v7 [label="fastp"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v7 -> v10;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v11 [label="fastqc"];
+v10 -> v11 [label="fastqc_input"];
+
+v11 [label="fastqc"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 [label="multiqc"];
+v12 -> v16 [label="fastqc_for_multiqc"];
+
+v7 [label="fastp"];
+v13 [label="spades"];
+v7 -> v13;
+
+v13 [label="spades"];
+v15 [label="quast"];
+v13 -> v15;
+
+v7 [label="fastp"];
+v14 [label="spades_hybrid"];
+v7 -> v14;
+
+v14 [label="spades_hybrid"];
+v15 [label="quast"];
+v14 -> v15;
+
+v15 [label="quast"];
+v16 [label="multiqc"];
+v15 -> v16;
+
+v16 [label="multiqc"];
+v17 [shape=point];
+v16 -> v17;
+
+v18 [label="mmseqs_db"];
+v19 [label="assign_taxonomy"];
+v18 -> v19;
+
+v13 [label="spades"];
+v19 [label="assign_taxonomy"];
+v13 -> v19;
+
+v19 [label="assign_taxonomy"];
+v20 [label="download_related"];
+v19 -> v20;
+
+v20 [label="download_related"];
+v21 [shape=point];
+v20 -> v21;
+
+v20 [label="download_related"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v20 -> v27;
+
+v20 [label="download_related"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 -> v22;
+
+v13 [label="spades"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v23 [label="mlst_check"];
+v22 -> v23 [label="input_for_mlst"];
+
+v23 [label="mlst_check"];
+v41 [label="make_report"];
+v23 -> v41;
+
+v13 [label="spades"];
+v24 [label="prodigal"];
+v13 -> v24;
+
+v24 [label="prodigal"];
+v26 [label="rename_proteins"];
+v24 -> v26;
+
+v24 [label="prodigal"];
+v25 [shape=point];
+v24 -> v25;
+
+v26 [label="rename_proteins"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 [label="cd_hit"];
+v27 -> v28 [label="cd_hit_input"];
+
+v28 [label="cd_hit"];
+v29 [label="select_clusters"];
+v28 -> v29;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 [label="select_clusters"];
+v27 -> v29 [label="cd_hit_input"];
+
+v29 [label="select_clusters"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v31 [label="mafft"];
+v30 -> v31 [label="mafft_input"];
+
+v31 [label="mafft"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 [label="concat_msa"];
+v32 -> v33;
+
+v33 [label="concat_msa"];
+v34 [label="fasttree"];
+v33 -> v34;
+
+v34 [label="fasttree"];
+v35 [shape=point];
+v34 -> v35;
+
+v14 [label="spades_hybrid"];
+v36 [label="abricate"];
+v14 -> v36;
+
+v36 [label="abricate"];
+v41 [label="make_report"];
+v36 -> v41;
+
+v37 [label="platon_db"];
+v38 [label="platon"];
+v37 -> v38;
+
+v14 [label="spades_hybrid"];
+v38 [label="platon"];
+v14 -> v38;
+
+v38 [label="platon"];
+v41 [label="make_report"];
+v38 -> v41;
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v41 [label="make_report"];
+v39 -> v41 [label="rmd"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v41 [label="make_report"];
+v40 -> v41 [label="css"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 [label="make_report"];
+v12 -> v41 [label="fastqc_for_multiqc"];
+
+v15 [label="quast"];
+v41 [label="make_report"];
+v15 -> v41 [label="quast_out"];
+
+v20 [label="download_related"];
+v41 [label="make_report"];
+v20 -> v41;
+
+v41 [label="make_report"];
+v42 [shape=point];
+v41 -> v42;
+
+}

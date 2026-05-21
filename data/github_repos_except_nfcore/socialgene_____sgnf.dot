@@ -1,0 +1,538 @@
+digraph "socialgene_____sgnf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v13 [label="ch_non_mibig_gbk_file"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v13 [label="ch_fasta"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=point];
+v4 -> v5 [label="ch_fna_files"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v54 [label="ch_versions"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v56 [label="ch_multiqc_files"];
+
+v8 [label="SOCIALGENE_SGNF:SOCIALGENE:PARAMETER_EXPORT_FOR_NEO4J"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 -> v10;
+
+v8 [label="SOCIALGENE_SGNF:SOCIALGENE:PARAMETER_EXPORT_FOR_NEO4J"];
+v9 [shape=point];
+v8 -> v9;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 [shape=point];
+v10 -> v11 [label="parameters_ch"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v22 [label="ch_versions"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v13 -> v14 [label="gbk_and_fasta_ch"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v17 -> v18 [label="filesWithSizes"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v21 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:PROCESS_GENBANK_FILES"];
+v20 -> v21 [label="batchedFiles"];
+
+v21 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:PROCESS_GENBANK_FILES"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 -> v23;
+
+v21 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:PROCESS_GENBANK_FILES"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 -> v25;
+
+v21 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:PROCESS_GENBANK_FILES"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v21 -> v27;
+
+v21 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:PROCESS_GENBANK_FILES"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v21 -> v29;
+
+v21 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:PROCESS_GENBANK_FILES"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v21 -> v31;
+
+v21 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:PROCESS_GENBANK_FILES"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v21 -> v33;
+
+v21 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:PROCESS_GENBANK_FILES"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v21 -> v35;
+
+v21 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:PROCESS_GENBANK_FILES"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 -> v55 [label="ch_fasta"];
+
+v21 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:PROCESS_GENBANK_FILES"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v54 [label="ch_versions"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v38 [label="ch_protein_ids"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v38 [label="ch_protein_to_go"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v37 [label="ch_locus_to_protein"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v37 [label="ch_assembly_to_locus"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v37 [label="ch_assembly_to_taxid"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v37 [label="ch_loci"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v37 [label="ch_assembly"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:DEDUPLICATE_GENOMIC_INFO"];
+v37 -> v39 [label="ch_genomic_to_dedup"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:DEDUPLICATE_PROTEIN_INFO"];
+v38 -> v41 [label="ch_protein_to_dedup"];
+
+v39 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:DEDUPLICATE_GENOMIC_INFO"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 -> v43;
+
+v39 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:DEDUPLICATE_GENOMIC_INFO"];
+v40 [shape=point];
+v39 -> v40;
+
+v41 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:DEDUPLICATE_PROTEIN_INFO"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 -> v45;
+
+v41 [label="SOCIALGENE_SGNF:SOCIALGENE:GENOME_HANDLING:DEDUPLICATE_PROTEIN_INFO"];
+v42 [shape=point];
+v41 -> v42;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 [shape=point];
+v43 -> v44 [label="ch_genome_info"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 [shape=point];
+v45 -> v46 [label="ch_protein_info"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v2 -> v47 [label="ch_non_mibig_gbk_file"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v50 [shape=point];
+v49 -> v50 [label="ch_gbk"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v2 -> v51 [label="ch_non_mibig_gbk_file"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v61 [label="SOCIALGENE_SGNF:SOCIALGENE:ANTISMASH"];
+v53 -> v61 [label="ch_non_mibig_gbk_file"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v68 [label="ch_versions"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 [label="SOCIALGENE_SGNF:SOCIALGENE:DEDUPLICATE_AND_INDEX_FASTA"];
+v55 -> v57 [label="fasta_to_dedup"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v2 -> v56 [label="ch_non_mibig_gbk_file"];
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v76 [label="ch_multiqc_files"];
+
+v57 [label="SOCIALGENE_SGNF:SOCIALGENE:DEDUPLICATE_AND_INDEX_FASTA"];
+v69 [label="SOCIALGENE_SGNF:SOCIALGENE:DIAMOND_MAKEDB"];
+v57 -> v69 [label="single_ch_fasta"];
+
+v57 [label="SOCIALGENE_SGNF:SOCIALGENE:DEDUPLICATE_AND_INDEX_FASTA"];
+v60 [shape=point];
+v57 -> v60;
+
+v57 [label="SOCIALGENE_SGNF:SOCIALGENE:DEDUPLICATE_AND_INDEX_FASTA"];
+v59 [shape=point];
+v57 -> v59;
+
+v57 [label="SOCIALGENE_SGNF:SOCIALGENE:DEDUPLICATE_AND_INDEX_FASTA"];
+v58 [shape=point];
+v57 -> v58;
+
+v61 [label="SOCIALGENE_SGNF:SOCIALGENE:ANTISMASH"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v61 -> v65;
+
+v61 [label="SOCIALGENE_SGNF:SOCIALGENE:ANTISMASH"];
+v64 [shape=point];
+v61 -> v64;
+
+v61 [label="SOCIALGENE_SGNF:SOCIALGENE:ANTISMASH"];
+v63 [shape=point];
+v61 -> v63;
+
+v61 [label="SOCIALGENE_SGNF:SOCIALGENE:ANTISMASH"];
+v62 [shape=point];
+v61 -> v62 [label="antismash_args"];
+
+v61 [label="SOCIALGENE_SGNF:SOCIALGENE:ANTISMASH"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v61 -> v67;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v66 [shape=point];
+v65 -> v66;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v74 [label="ch_versions"];
+
+v69 [label="SOCIALGENE_SGNF:SOCIALGENE:DIAMOND_MAKEDB"];
+v70 [label="SOCIALGENE_SGNF:SOCIALGENE:DIAMOND_BLASTP"];
+v69 -> v70;
+
+v69 [label="SOCIALGENE_SGNF:SOCIALGENE:DIAMOND_MAKEDB"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v74;
+
+v57 [label="SOCIALGENE_SGNF:SOCIALGENE:DEDUPLICATE_AND_INDEX_FASTA"];
+v70 [label="SOCIALGENE_SGNF:SOCIALGENE:DIAMOND_BLASTP"];
+v57 -> v70 [label="single_ch_fasta"];
+
+v70 [label="SOCIALGENE_SGNF:SOCIALGENE:DIAMOND_BLASTP"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v70 -> v72;
+
+v70 [label="SOCIALGENE_SGNF:SOCIALGENE:DIAMOND_BLASTP"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v75;
+
+v70 [label="SOCIALGENE_SGNF:SOCIALGENE:DIAMOND_BLASTP"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v76;
+
+v70 [label="SOCIALGENE_SGNF:SOCIALGENE:DIAMOND_BLASTP"];
+v71 [shape=point];
+v70 -> v71 [label="blastp_args"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v73 [shape=point];
+v72 -> v73 [label="blast_ch"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v75 [label="ch_versions"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v84 [label="ch_versions"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v110 [label="ch_multiqc_files"];
+
+v57 [label="SOCIALGENE_SGNF:SOCIALGENE:DEDUPLICATE_AND_INDEX_FASTA"];
+v77 [label="SOCIALGENE_SGNF:SOCIALGENE:MMSEQS2_CREATEDB"];
+v57 -> v77 [label="single_ch_fasta"];
+
+v77 [label="SOCIALGENE_SGNF:SOCIALGENE:MMSEQS2_CREATEDB"];
+v79 [label="SOCIALGENE_SGNF:SOCIALGENE:MMSEQS2_CLUSTER"];
+v77 -> v79;
+
+v77 [label="SOCIALGENE_SGNF:SOCIALGENE:MMSEQS2_CREATEDB"];
+v78 [shape=point];
+v77 -> v78;
+
+v57 [label="SOCIALGENE_SGNF:SOCIALGENE:DEDUPLICATE_AND_INDEX_FASTA"];
+v79 [label="SOCIALGENE_SGNF:SOCIALGENE:MMSEQS2_CLUSTER"];
+v57 -> v79 [label="single_ch_fasta"];
+
+v79 [label="SOCIALGENE_SGNF:SOCIALGENE:MMSEQS2_CLUSTER"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 -> v82;
+
+v79 [label="SOCIALGENE_SGNF:SOCIALGENE:MMSEQS2_CLUSTER"];
+v81 [shape=point];
+v79 -> v81;
+
+v79 [label="SOCIALGENE_SGNF:SOCIALGENE:MMSEQS2_CLUSTER"];
+v80 [shape=point];
+v79 -> v80 [label="mmseqs2_args"];
+
+v79 [label="SOCIALGENE_SGNF:SOCIALGENE:MMSEQS2_CLUSTER"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v84;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v83 [shape=point];
+v82 -> v83 [label="mmseqs2_ch"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v90 [label="ch_versions"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v87 [label="SOCIALGENE_SGNF:SOCIALGENE:NEO4J_HEADERS"];
+v85 -> v87 [label="sg_modules"];
+
+v86 [shape=point,label="",fixedsize=true,width=0.1];
+v87 [label="SOCIALGENE_SGNF:SOCIALGENE:NEO4J_HEADERS"];
+v86 -> v87 [label="hmmlist"];
+
+v87 [label="SOCIALGENE_SGNF:SOCIALGENE:NEO4J_HEADERS"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v87 -> v88;
+
+v87 [label="SOCIALGENE_SGNF:SOCIALGENE:NEO4J_HEADERS"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v90;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v89 [shape=point];
+v88 -> v89 [label="neo4j_header_ch"];
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v90 -> v98 [label="versions"];
+
+v91 [label="SOCIALGENE_SGNF:SOCIALGENE:DOWNLOAD_GOTERMS"];
+v93 [shape=point];
+v91 -> v93 [label="goterms_ch"];
+
+v91 [label="SOCIALGENE_SGNF:SOCIALGENE:DOWNLOAD_GOTERMS"];
+v92 [shape=point];
+v91 -> v92;
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v94 [label="SOCIALGENE_SGNF:SOCIALGENE:NEO4J_ADMIN_IMPORT_DRYRUN"];
+v85 -> v94 [label="sg_modules"];
+
+v94 [label="SOCIALGENE_SGNF:SOCIALGENE:NEO4J_ADMIN_IMPORT_DRYRUN"];
+v97 [shape=point];
+v94 -> v97;
+
+v94 [label="SOCIALGENE_SGNF:SOCIALGENE:NEO4J_ADMIN_IMPORT_DRYRUN"];
+v96 [shape=point];
+v94 -> v96;
+
+v94 [label="SOCIALGENE_SGNF:SOCIALGENE:NEO4J_ADMIN_IMPORT_DRYRUN"];
+v95 [shape=point];
+v94 -> v95;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v102;
+
+v101 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v104 [shape=point];
+v103 -> v104 [label="ch_collated_versions"];
+
+v105 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v105 -> v116 [label="ch_multiqc_config"];
+
+v106 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 -> v117 [label="ch_multiqc_custom_config"];
+
+v107 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v107 -> v118 [label="ch_multiqc_logo"];
+
+v108 [shape=point,label="",fixedsize=true,width=0.1];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v108 -> v109 [label="ch_workflow_summary"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v111 [label="ch_multiqc_files"];
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v111 [label="versions"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v114 [label="ch_multiqc_files"];
+
+v112 [shape=point,label="",fixedsize=true,width=0.1];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v112 -> v113 [label="ch_methods_description"];
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v114 -> v115 [label="ch_multiqc_files"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v119 [label="SOCIALGENE_SGNF:SOCIALGENE:MULTIQC"];
+v115 -> v119;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v119 [label="SOCIALGENE_SGNF:SOCIALGENE:MULTIQC"];
+v116 -> v119;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v119 [label="SOCIALGENE_SGNF:SOCIALGENE:MULTIQC"];
+v117 -> v119;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v119 [label="SOCIALGENE_SGNF:SOCIALGENE:MULTIQC"];
+v118 -> v119;
+
+v119 [label="SOCIALGENE_SGNF:SOCIALGENE:MULTIQC"];
+v123 [shape=point];
+v119 -> v123;
+
+v119 [label="SOCIALGENE_SGNF:SOCIALGENE:MULTIQC"];
+v122 [shape=point];
+v119 -> v122;
+
+v119 [label="SOCIALGENE_SGNF:SOCIALGENE:MULTIQC"];
+v121 [shape=point];
+v119 -> v121;
+
+v119 [label="SOCIALGENE_SGNF:SOCIALGENE:MULTIQC"];
+v120 [shape=point];
+v119 -> v120;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v114 -> v124 [label="ch_multiqc_files"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v125 [shape=point];
+v124 -> v125 [label="multiqc_report"];
+
+}

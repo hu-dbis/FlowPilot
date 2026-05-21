@@ -1,0 +1,70 @@
+digraph "metashot_____busco" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2 [label="genomes_ch"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v9 [label="genomes_only_ch"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [label="busco"];
+v1 -> v5 [label="genomes_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="busco"];
+v3 -> v5 [label="lineage"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="busco"];
+v4 -> v5 [label="busco_db"];
+
+v5 [label="busco"];
+v8 [shape=point];
+v5 -> v8;
+
+v5 [label="busco"];
+v7 [shape=point];
+v5 -> v7;
+
+v5 [label="busco"];
+v6 [shape=point];
+v5 -> v6;
+
+v5 [label="busco"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 -> v11;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 [label="statswrapper"];
+v9 -> v10;
+
+v10 [label="statswrapper"];
+v12 [label="genome_info"];
+v10 -> v12;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 [label="genome_info"];
+v11 -> v12;
+
+v12 [label="genome_info"];
+v14 [label="genome_filter"];
+v12 -> v14;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v13 [label="genomes_only_ch"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 [label="genome_filter"];
+v13 -> v14;
+
+v14 [label="genome_filter"];
+v15 [shape=point];
+v14 -> v15;
+
+}

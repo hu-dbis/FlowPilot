@@ -1,0 +1,514 @@
+digraph "biocorecrg_____ExOrthist" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 [label="MAIN:PREPARE:CHECK_INPUT"];
+v1 -> v27 [label="evodists_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 [label="MAIN:PREPARE:CHECK_INPUT"];
+v3 -> v27 [label="clusterfile_ch"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 [label="MAIN:PREPARE:CHECK_INPUT"];
+v5 -> v27 [label="fastas"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 [label="MAIN:PREPARE:CHECK_INPUT"];
+v7 -> v27 [label="gtfs"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v27 [label="MAIN:PREPARE:CHECK_INPUT"];
+v13 -> v27 [label="fastas_suffix"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v27 [label="MAIN:PREPARE:CHECK_INPUT"];
+v19 -> v27 [label="gtfs_suffix"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 -> v31 [label="genomes"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 -> v31 [label="annotations"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="MAIN:PREPARE:CHECK_INPUT"];
+v24 -> v27 [label="long_dist"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="MAIN:PREPARE:CHECK_INPUT"];
+v25 -> v27 [label="medium_dist"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="MAIN:PREPARE:CHECK_INPUT"];
+v26 -> v27 [label="short_dist"];
+
+v27 [label="MAIN:PREPARE:CHECK_INPUT"];
+v28 [shape=point];
+v27 -> v28;
+
+v29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v30 [shape=point];
+v29 -> v30 [label="extraexons_ch"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v32 [label="data_to_annotation"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=point];
+v32 -> v33;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 [label="MAIN:PREPARE:GENERATE_ANNOTATIONS"];
+v31 -> v34 [label="data_to_annotation"];
+
+v34 [label="MAIN:PREPARE:GENERATE_ANNOTATIONS"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 [label="MAIN:PREPARE:SPLIT_CLUSTERS_IN_CHUNKS"];
+v38 -> v43 [label="clusters_split_ch"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [label="MAIN:PREPARE:SPLIT_CLUSTERS_BY_SPECIES_PAIRS"];
+v3 -> v39 [label="clusterfile_ch"];
+
+v39 [label="MAIN:PREPARE:SPLIT_CLUSTERS_BY_SPECIES_PAIRS"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 -> v41 [label="cls_tab_files_ch"];
+
+v39 [label="MAIN:PREPARE:SPLIT_CLUSTERS_BY_SPECIES_PAIRS"];
+v40 [shape=point];
+v39 -> v40;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v43 [label="MAIN:PREPARE:SPLIT_CLUSTERS_IN_CHUNKS"];
+v41 -> v43;
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="MAIN:PREPARE:SPLIT_CLUSTERS_IN_CHUNKS"];
+v42 -> v43 [label="alignmentnum"];
+
+v43 [label="MAIN:PREPARE:SPLIT_CLUSTERS_IN_CHUNKS"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v43 -> v44 [label="cls_files_2_align"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v45 -> v57 [label="cls_files_2_align_t"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v1 -> v46 [label="evodists_ch"];
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v49 -> v54 [label="sp1_sp2_dist"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v1 -> v50 [label="evodists_ch"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v53 -> v54 [label="sp2_sp1_dist"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v54 -> v55 [label="species_pairs_dist"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v38 -> v55 [label="clusters_split_ch"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v58 [label="dist_ranges_ch"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v67 [label="MAIN:ALIGN:PARSE_IPA_PROT_ALN"];
+v59 -> v67 [label="alignment_input"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v67 [label="MAIN:ALIGN:PARSE_IPA_PROT_ALN"];
+v61 -> v67 [label="blosumfile_ch"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v67 [label="MAIN:ALIGN:PARSE_IPA_PROT_ALN"];
+v63 -> v67 [label="prevaln_ch"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [label="MAIN:ALIGN:PARSE_IPA_PROT_ALN"];
+v64 -> v67 [label="long_dist"];
+
+v65 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [label="MAIN:ALIGN:PARSE_IPA_PROT_ALN"];
+v65 -> v67 [label="medium_dist"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [label="MAIN:ALIGN:PARSE_IPA_PROT_ALN"];
+v66 -> v67 [label="short_dist"];
+
+v67 [label="MAIN:ALIGN:PARSE_IPA_PROT_ALN"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v67 -> v79 [label="aligned_subclusters_4_splitting"];
+
+v67 [label="MAIN:ALIGN:PARSE_IPA_PROT_ALN"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v67 -> v68 [label="EXs_to_split"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="buffer"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="buffer"];
+v72 [label="MAIN:ALIGN:SPLIT_EX_PAIRS_TO_REALIGN"];
+v70 -> v72 [label="EXs_to_split_batches"];
+
+v71 [shape=point,label="",fixedsize=true,width=0.1];
+v72 [label="MAIN:ALIGN:SPLIT_EX_PAIRS_TO_REALIGN"];
+v71 -> v72 [label="alignmentnum"];
+
+v72 [label="MAIN:ALIGN:SPLIT_EX_PAIRS_TO_REALIGN"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v72 -> v73 [label="EXs_to_realign_batches"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v74 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v75 -> v76;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v38 -> v76 [label="clusters_split_ch"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v78 [label="MAIN:ALIGN:REALIGN_EX_PAIRS"];
+v77 -> v78 [label="EXs_to_realign"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v78 [label="MAIN:ALIGN:REALIGN_EX_PAIRS"];
+v61 -> v78 [label="blosumfile_ch"];
+
+v78 [label="MAIN:ALIGN:REALIGN_EX_PAIRS"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v78 -> v80 [label="realigned_exons_4_merge"];
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v79 -> v81;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v80 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v82 [label="MAIN:ALIGN:MERGE_PROT_EX_INT_ALN_INFO"];
+v81 -> v82 [label="data_4_merge"];
+
+v82 [label="MAIN:ALIGN:MERGE_PROT_EX_INT_ALN_INFO"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v82 -> v85 [label="folder_jscores"];
+
+v82 [label="MAIN:ALIGN:MERGE_PROT_EX_INT_ALN_INFO"];
+v84 [shape=point];
+v82 -> v84 [label="aln_features"];
+
+v82 [label="MAIN:ALIGN:MERGE_PROT_EX_INT_ALN_INFO"];
+v83 [shape=point];
+v82 -> v83 [label="exint_aln"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v38 -> v85 [label="clusters_split_ch"];
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v85 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 [label="MAIN:SCORE:SCORE_EX_MATCHES"];
+v86 -> v87 [label="data_to_score"];
+
+v87 [label="MAIN:SCORE:SCORE_EX_MATCHES"];
+v88 [shape=point];
+v87 -> v88;
+
+v87 [label="MAIN:SCORE:SCORE_EX_MATCHES"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v87 -> v89 [label="all_scores_to_filt_ch"];
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v89 [label="dist_ranges_ch"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 [label="MAIN:SCORE:FILTER_AND_SELECT_BEST_EX_MATCHES_BY_TARGETGENE"];
+v89 -> v93;
+
+v90 [shape=point,label="",fixedsize=true,width=0.1];
+v93 [label="MAIN:SCORE:FILTER_AND_SELECT_BEST_EX_MATCHES_BY_TARGETGENE"];
+v90 -> v93 [label="long_dist"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1];
+v93 [label="MAIN:SCORE:FILTER_AND_SELECT_BEST_EX_MATCHES_BY_TARGETGENE"];
+v91 -> v93 [label="medium_dist"];
+
+v92 [shape=point,label="",fixedsize=true,width=0.1];
+v93 [label="MAIN:SCORE:FILTER_AND_SELECT_BEST_EX_MATCHES_BY_TARGETGENE"];
+v92 -> v93 [label="short_dist"];
+
+v93 [label="MAIN:SCORE:FILTER_AND_SELECT_BEST_EX_MATCHES_BY_TARGETGENE"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v93 -> v95 [label="filterscore_per_joining_ch"];
+
+v93 [label="MAIN:SCORE:FILTER_AND_SELECT_BEST_EX_MATCHES_BY_TARGETGENE"];
+v94 [shape=point];
+v93 -> v94;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v96 [label="MAIN:SCORE:JOIN_FILTERED_EX_MATCHES"];
+v95 -> v96;
+
+v96 [label="MAIN:SCORE:JOIN_FILTERED_EX_MATCHES"];
+v99 [label="MAIN:SCORE:COLLAPSE_OVERLAPPING_MATCHES"];
+v96 -> v99 [label="filtered_all_scores"];
+
+v97 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v97 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v99 [label="MAIN:SCORE:COLLAPSE_OVERLAPPING_MATCHES"];
+v98 -> v99;
+
+v99 [label="MAIN:SCORE:COLLAPSE_OVERLAPPING_MATCHES"];
+v106 [label="MAIN:CLUSTER:FORMAT_EX_CLUSTERS_INPUT"];
+v99 -> v106 [label="score_exon_hits_pairs"];
+
+v99 [label="MAIN:SCORE:COLLAPSE_OVERLAPPING_MATCHES"];
+v100 [shape=point];
+v99 -> v100;
+
+v101 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v106 [label="MAIN:CLUSTER:FORMAT_EX_CLUSTERS_INPUT"];
+v102 -> v106 [label="clusterfile_ch"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v114 [label="MAIN:CLUSTER:RECLUSTER_GENES_BY_SPECIES_PAIR"];
+v104 -> v114 [label="orthopairs_ch"];
+
+v105 [shape=point,label="",fixedsize=true,width=0.1];
+v106 [label="MAIN:CLUSTER:FORMAT_EX_CLUSTERS_INPUT"];
+v105 -> v106 [label="orthogroupnum"];
+
+v106 [label="MAIN:CLUSTER:FORMAT_EX_CLUSTERS_INPUT"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v108 [label="MAIN:CLUSTER:CLUSTER_EXS"];
+v107 -> v108 [label="cluster_parts"];
+
+v108 [label="MAIN:CLUSTER:CLUSTER_EXS"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v108 -> v109;
+
+v108 [label="MAIN:CLUSTER:CLUSTER_EXS"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v108 -> v110;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v111 [label="MAIN:CLUSTER:FORMAT_EX_CLUSTERS_OUTPUT"];
+v109 -> v111;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v111 [label="MAIN:CLUSTER:FORMAT_EX_CLUSTERS_OUTPUT"];
+v110 -> v111;
+
+v111 [label="MAIN:CLUSTER:FORMAT_EX_CLUSTERS_OUTPUT"];
+v115 [label="MAIN:CLUSTER:RECLUSTER_EXS_BY_SPECIES_PAIR"];
+v111 -> v115 [label="exon_cluster_for_reclustering"];
+
+v111 [label="MAIN:CLUSTER:FORMAT_EX_CLUSTERS_OUTPUT"];
+v113 [shape=point];
+v111 -> v113;
+
+v111 [label="MAIN:CLUSTER:FORMAT_EX_CLUSTERS_OUTPUT"];
+v112 [shape=point];
+v111 -> v112;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v114 [label="MAIN:CLUSTER:RECLUSTER_GENES_BY_SPECIES_PAIR"];
+v38 -> v114 [label="clusters_split_ch"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v114 [label="MAIN:CLUSTER:RECLUSTER_GENES_BY_SPECIES_PAIR"];
+v102 -> v114 [label="clusterfile_ch"];
+
+v114 [label="MAIN:CLUSTER:RECLUSTER_GENES_BY_SPECIES_PAIR"];
+v115 [label="MAIN:CLUSTER:RECLUSTER_EXS_BY_SPECIES_PAIR"];
+v114 -> v115 [label="recl_genes_for_rec_exons"];
+
+v99 [label="MAIN:SCORE:COLLAPSE_OVERLAPPING_MATCHES"];
+v115 [label="MAIN:CLUSTER:RECLUSTER_EXS_BY_SPECIES_PAIR"];
+v99 -> v115 [label="score_exon_hits_pairs"];
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v115 [label="MAIN:CLUSTER:RECLUSTER_EXS_BY_SPECIES_PAIR"];
+v104 -> v115 [label="orthopairs_ch"];
+
+v115 [label="MAIN:CLUSTER:RECLUSTER_EXS_BY_SPECIES_PAIR"];
+v116 [shape=point];
+v115 -> v116 [label="recl_exs"];
+
+}

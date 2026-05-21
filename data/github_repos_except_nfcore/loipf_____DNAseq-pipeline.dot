@@ -1,0 +1,174 @@
+digraph "loipf_____DNAseqpipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v10 [label="PREPROCESS_READS"];
+v4 -> v10 [label="channel_reads"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="CREATE_BWA_INDEX"];
+v5 -> v6 [label="reference_genome"];
+
+v6 [label="CREATE_BWA_INDEX"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v12;
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="PREPROCESS_READS"];
+v7 -> v10 [label="num_threads"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="PREPROCESS_READS"];
+v8 -> v10 [label="adapter_3_seq_file"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="PREPROCESS_READS"];
+v9 -> v10 [label="adapter_5_seq_file"];
+
+v10 [label="PREPROCESS_READS"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11;
+
+v10 [label="PREPROCESS_READS"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v10 -> v33;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [label="MAPPING_BWA"];
+v11 -> v15 [label="channel_reads_prepro"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 [label="MAPPING_BWA"];
+v12 -> v15;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="MAPPING_BWA"];
+v13 -> v15 [label="num_threads"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="MAPPING_BWA"];
+v14 -> v15 [label="reference_genome"];
+
+v15 [label="MAPPING_BWA"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 -> v26;
+
+v15 [label="MAPPING_BWA"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 -> v27;
+
+v15 [label="MAPPING_BWA"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v15 -> v37;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="take"];
+v19 [label="FASTQC_READS_RAW"];
+v4 -> v19 [label="channel_reads"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v19 [label="FASTQC_READS_RAW"];
+v16 -> v19 [label="num_threads"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v19 [label="FASTQC_READS_RAW"];
+v17 -> v19 [label="adapter_3_seq_file"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1];
+v19 [label="FASTQC_READS_RAW"];
+v18 -> v19 [label="adapter_5_seq_file"];
+
+v19 [label="FASTQC_READS_RAW"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v30;
+
+v19 [label="FASTQC_READS_RAW"];
+v20 [shape=point];
+v19 -> v20;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [label="FASTQC_READS_PREPRO"];
+v11 -> v24 [label="channel_reads_prepro"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="FASTQC_READS_PREPRO"];
+v21 -> v24 [label="num_threads"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="FASTQC_READS_PREPRO"];
+v22 -> v24 [label="adapter_3_seq_file"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="FASTQC_READS_PREPRO"];
+v23 -> v24 [label="adapter_5_seq_file"];
+
+v24 [label="FASTQC_READS_PREPRO"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v24 -> v33;
+
+v24 [label="FASTQC_READS_PREPRO"];
+v25 [shape=point];
+v24 -> v25;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [label="DEEPTOOLS_ANALYSIS"];
+v26 -> v29;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [label="DEEPTOOLS_ANALYSIS"];
+v27 -> v29;
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="DEEPTOOLS_ANALYSIS"];
+v28 -> v29 [label="num_threads"];
+
+v29 [label="DEEPTOOLS_ANALYSIS"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v29 -> v37;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 [label="MULTIQC_RAW"];
+v30 -> v31;
+
+v31 [label="MULTIQC_RAW"];
+v32 [shape=point];
+v31 -> v32;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v35 [label="MULTIQC_PREPRO"];
+v34 -> v35;
+
+v35 [label="MULTIQC_PREPRO"];
+v36 [shape=point];
+v35 -> v36;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [label="MULTIQC_MAPPED"];
+v38 -> v39;
+
+v39 [label="MULTIQC_MAPPED"];
+v40 [shape=point];
+v39 -> v40;
+
+}

@@ -1,0 +1,270 @@
+digraph "kmeiklejohn_____changeloc" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v2 [label="WF_DEF_SET:RUN_DEF_SET"];
+v0 -> v2 [label="fasta"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="WF_DEF_SET:RUN_DEF_SET"];
+v1 -> v2 [label="dir"];
+
+v2 [label="WF_DEF_SET:RUN_DEF_SET"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v5 [label="WF_SPLIT_FASTA:RUN_SPLIT_FASTA"];
+v3 -> v5 [label="concatenated_fa"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="WF_SPLIT_FASTA:RUN_SPLIT_FASTA"];
+v4 -> v5 [label="chunks"];
+
+v5 [label="WF_SPLIT_FASTA:RUN_SPLIT_FASTA"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v10 [label="WF_PREDICT:RUN_MITOFATES"];
+v6 -> v10 [label="split_files"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v12 [label="prediction"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="WF_PREDICT:RUN_MITOFATES"];
+v8 -> v10 [label="organism"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="WF_PREDICT:RUN_MITOFATES"];
+v9 -> v10 [label="dir"];
+
+v10 [label="WF_PREDICT:RUN_MITOFATES"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v17 [label="prediction"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v15 [label="WF_PREDICT:RUN_WOLFPSORT"];
+v6 -> v15 [label="split_files"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="WF_PREDICT:RUN_WOLFPSORT"];
+v13 -> v15 [label="organism"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="WF_PREDICT:RUN_WOLFPSORT"];
+v14 -> v15 [label="dir"];
+
+v15 [label="WF_PREDICT:RUN_WOLFPSORT"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v22 [label="prediction"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v20 [label="WF_PREDICT:RUN_TPPRED3"];
+v6 -> v20 [label="split_files"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [label="WF_PREDICT:RUN_TPPRED3"];
+v18 -> v20 [label="organism"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [label="WF_PREDICT:RUN_TPPRED3"];
+v19 -> v20 [label="dir"];
+
+v20 [label="WF_PREDICT:RUN_TPPRED3"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v27 [label="prediction"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v25 [label="WF_PREDICT:RUN_DEEPLOC2"];
+v6 -> v25 [label="split_files"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v25 [label="WF_PREDICT:RUN_DEEPLOC2"];
+v23 -> v25 [label="model"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v25 [label="WF_PREDICT:RUN_DEEPLOC2"];
+v24 -> v25 [label="dir"];
+
+v25 [label="WF_PREDICT:RUN_DEEPLOC2"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v32 [label="prediction"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v30 [label="WF_PREDICT:RUN_TARGETP2"];
+v6 -> v30 [label="split_files"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="WF_PREDICT:RUN_TARGETP2"];
+v28 -> v30 [label="organism"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="WF_PREDICT:RUN_TARGETP2"];
+v29 -> v30 [label="dir"];
+
+v30 [label="WF_PREDICT:RUN_TARGETP2"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v38 [label="prediction"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v36 [label="WF_PREDICT:RUN_SIGNALP6"];
+v6 -> v36 [label="split_files"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="WF_PREDICT:RUN_SIGNALP6"];
+v33 -> v36 [label="model"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="WF_PREDICT:RUN_SIGNALP6"];
+v34 -> v36 [label="organism"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="WF_PREDICT:RUN_SIGNALP6"];
+v35 -> v36 [label="dir"];
+
+v36 [label="WF_PREDICT:RUN_SIGNALP6"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [label="WF_LONG_TABLE:RUN_LONG_TABLE"];
+v38 -> v40 [label="prediction"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="WF_LONG_TABLE:RUN_LONG_TABLE"];
+v39 -> v40 [label="dir"];
+
+v40 [label="WF_LONG_TABLE:RUN_LONG_TABLE"];
+v42 [label="WF_WIDE_TABLES:RUN_WIDE_TABLE"];
+v40 -> v42 [label="prediction"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v42 [label="WF_WIDE_TABLES:RUN_WIDE_TABLE"];
+v41 -> v42 [label="dir"];
+
+v42 [label="WF_WIDE_TABLES:RUN_WIDE_TABLE"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v50 [label="all_wide"];
+
+v40 [label="WF_LONG_TABLE:RUN_LONG_TABLE"];
+v45 [label="WF_WIDE_TABLES:RUN_MITO_WIDE_TABLE"];
+v40 -> v45 [label="prediction"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="WF_WIDE_TABLES:RUN_MITO_WIDE_TABLE"];
+v44 -> v45 [label="dir"];
+
+v45 [label="WF_WIDE_TABLES:RUN_MITO_WIDE_TABLE"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v50 [label="mito_wide"];
+
+v40 [label="WF_LONG_TABLE:RUN_LONG_TABLE"];
+v48 [label="WF_WIDE_TABLES:RUN_SGNL_WIDE_TABLE"];
+v40 -> v48 [label="prediction"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1];
+v48 [label="WF_WIDE_TABLES:RUN_SGNL_WIDE_TABLE"];
+v47 -> v48 [label="dir"];
+
+v48 [label="WF_WIDE_TABLES:RUN_SGNL_WIDE_TABLE"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v50 [label="sgnl_wide"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 [label="WF_WIDE_TABLES:RUN_AMALGAMATE"];
+v50 -> v52 [label="wide"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="WF_WIDE_TABLES:RUN_AMALGAMATE"];
+v51 -> v52 [label="dir"];
+
+v52 [label="WF_WIDE_TABLES:RUN_AMALGAMATE"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 [label="WF_WIDE_TABLES:RUN_AGGREGATE"];
+v53 -> v55 [label="list_amalg"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v55 [label="WF_WIDE_TABLES:RUN_AGGREGATE"];
+v54 -> v55 [label="dir"];
+
+v55 [label="WF_WIDE_TABLES:RUN_AGGREGATE"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v56;
+
+v52 [label="WF_WIDE_TABLES:RUN_AMALGAMATE"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 [label="WF_WIDE_TABLES:RUN_AUTO_REPORT"];
+v56 -> v58 [label="report_in"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v58 [label="WF_WIDE_TABLES:RUN_AUTO_REPORT"];
+v57 -> v58 [label="dir"];
+
+v58 [label="WF_WIDE_TABLES:RUN_AUTO_REPORT"];
+v59 [shape=point];
+v58 -> v59;
+
+}

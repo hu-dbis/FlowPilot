@@ -1,0 +1,810 @@
+digraph "lorentzben_____visualizeampliseq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=point];
+v0 -> v1 [label="input_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v52 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:CLEANUPRAWTSV"];
+v2 -> v52 [label="raw_tsv_table_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v55 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:CLEANUPRAWQZA"];
+v3 -> v55 [label="raw_biom_table_ch"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v4 -> v68 [label="rooted_tree_ch"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v54 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REFORMATANDQZATAX"];
+v5 -> v54 [label="asv_tsv_ch"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v87 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT03HEATMAP"];
+v6 -> v87 [label="ch_overall_summary"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v80 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT01BARPLOT"];
+v7 -> v80 [label="ch_tree_nwk"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v66 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATEBIOMFORGRAPHLAN"];
+v8 -> v66 [label="filter_samples_ch"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v51 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:ORDERIOI"];
+v9 -> v51 [label="metadata_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v51 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:ORDERIOI"];
+v10 -> v51 [label="ioi_ch"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v51 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:ORDERIOI"];
+v11 -> v51 [label="ord_ioi_ch"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v13 [shape=point];
+v12 -> v13 [label="outdir_ch"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v14 -> v68 [label="rare_val_ch"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v16 [shape=point];
+v15 -> v16 [label="contam_script_ch"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v17 -> v64 [label="nc_val_ch"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v18 -> v65 [label="mock_val_ch"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v20 [shape=point];
+v19 -> v20 [label="refrence_seq_ch"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=point];
+v21 -> v22 [label="rep_seq_ch"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v24 [shape=point];
+v23 -> v24 [label="reference_table_ch"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v26 [shape=point];
+v25 -> v26 [label="srs_curve_ch"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v28 [shape=point];
+v27 -> v28 [label="srs_min_max_ch"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v67 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:RUNGRAPHLAN"];
+v29 -> v67 [label="graph_sh_ch"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v77 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:LEFSEFORMAT"];
+v30 -> v77 [label="qiime_to_lefse_ch"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v78 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:LEFSEANALYSIS"];
+v31 -> v78 [label="lefse_analysis_ch"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v78 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:LEFSEANALYSIS"];
+v32 -> v78 [label="plot_clado_file_ch"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v78 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:LEFSEANALYSIS"];
+v33 -> v78 [label="plot_res_file_ch"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v80 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT01BARPLOT"];
+v34 -> v80 [label="report_one_ch"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v84 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT02GRAPHLANPHYLOGENETICTREE"];
+v35 -> v84 [label="report_two_ch"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v84 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT02GRAPHLANPHYLOGENETICTREE"];
+v36 -> v84 [label="report_two_local_ch"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v87 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT03HEATMAP"];
+v37 -> v87 [label="report_three_ch"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v91 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT04ALPHATABLE"];
+v38 -> v91 [label="report_four_ch"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v95 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT05ALPHABOXPLOT"];
+v39 -> v95 [label="report_five_ch"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v99 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06ORDINATION"];
+v40 -> v99 [label="report_six_ch"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v104 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06BNMDSORDINATION"];
+v41 -> v104 [label="report_six_b_ch"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v110 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT07RAREFACTION"];
+v42 -> v110 [label="report_seven_ch"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v115 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT08RANKEDABUNDANCE"];
+v43 -> v115 [label="report_eight_ch"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v120 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT09UNIFRACHEATMAP"];
+v44 -> v120 [label="report_nine_ch"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v125 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT10BETABOXPLOT"];
+v45 -> v125 [label="report_ten_ch"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v130 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT11UPGMA"];
+v46 -> v130 [label="report_eleven_ch"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v135 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT12PERMANOVA"];
+v47 -> v135 [label="report_twelve_ch"];
+
+v48 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v139 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT13LEFSE"];
+v48 -> v139 [label="report_thirteen_ch"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v139 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT13LEFSE"];
+v49 -> v139 [label="report_thirteen_local_ch"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v142 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT14CITATIONS"];
+v50 -> v142 [label="report_fourteen_ch"];
+
+v51 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:ORDERIOI"];
+v87 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT03HEATMAP"];
+v51 -> v87 [label="ord_ioi_ch"];
+
+v52 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:CLEANUPRAWTSV"];
+v66 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATEBIOMFORGRAPHLAN"];
+v52 -> v66 [label="final_table_tsv"];
+
+v52 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:CLEANUPRAWTSV"];
+v53 [shape=point];
+v52 -> v53 [label="raw_mba_table"];
+
+v54 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REFORMATANDQZATAX"];
+v66 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATEBIOMFORGRAPHLAN"];
+v54 -> v66 [label="ch_tax_qza"];
+
+v55 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:CLEANUPRAWQZA"];
+v66 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATEBIOMFORGRAPHLAN"];
+v55 -> v66 [label="final_table_qza"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v57 [shape=point];
+v56 -> v57 [label="ch_filtered_qza_table"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v59 [shape=point];
+v58 -> v59 [label="ch_filtered_tsv_table"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v61 [shape=point];
+v60 -> v61 [label="ch_normalized_qza"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v63 [shape=point];
+v62 -> v63 [label="ch_normalized_tsv"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v66 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATEBIOMFORGRAPHLAN"];
+v64 -> v66;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v66 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATEBIOMFORGRAPHLAN"];
+v65 -> v66;
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v66 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATEBIOMFORGRAPHLAN"];
+v9 -> v66 [label="metadata_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v66 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATEBIOMFORGRAPHLAN"];
+v10 -> v66 [label="ioi_ch"];
+
+v66 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATEBIOMFORGRAPHLAN"];
+v67 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:RUNGRAPHLAN"];
+v66 -> v67 [label="ch_graphlan_biom"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v67 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:RUNGRAPHLAN"];
+v9 -> v67 [label="metadata_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v67 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:RUNGRAPHLAN"];
+v10 -> v67 [label="ioi_ch"];
+
+v54 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REFORMATANDQZATAX"];
+v67 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:RUNGRAPHLAN"];
+v54 -> v67 [label="ch_tax_qza"];
+
+v67 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:RUNGRAPHLAN"];
+v84 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT02GRAPHLANPHYLOGENETICTREE"];
+v67 -> v84 [label="ch_graphlan_dir"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v9 -> v68 [label="metadata_ch"];
+
+v55 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:CLEANUPRAWQZA"];
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v55 -> v68 [label="final_table_qza"];
+
+v52 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:CLEANUPRAWTSV"];
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v52 -> v68 [label="final_table_tsv"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v99 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06ORDINATION"];
+v68 -> v99 [label="ch_core_pcoa"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v75 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREQZATOTSV"];
+v68 -> v75 [label="ch_core_vector"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v76 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATEUNIFRAC"];
+v68 -> v76 [label="ch_core_distance"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v69 [shape=point];
+v68 -> v69;
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v70 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:QIIME2_EXPORT_ABSOLUTE_CORE"];
+v68 -> v70 [label="ch_norm_qza_table"];
+
+v70 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:QIIME2_EXPORT_ABSOLUTE_CORE"];
+v73 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:CLEANUPNORMTSV"];
+v70 -> v73 [label="ch_norm_messy_tsv_table"];
+
+v70 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:QIIME2_EXPORT_ABSOLUTE_CORE"];
+v72 [shape=point];
+v70 -> v72;
+
+v70 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:QIIME2_EXPORT_ABSOLUTE_CORE"];
+v71 [shape=point];
+v70 -> v71;
+
+v73 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:CLEANUPNORMTSV"];
+v74 [shape=point];
+v73 -> v74 [label="ch_norm_tsv_table"];
+
+v73 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:CLEANUPNORMTSV"];
+v80 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT01BARPLOT"];
+v73 -> v80 [label="ch_norm_MBA_tsv_table"];
+
+v75 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREQZATOTSV"];
+v91 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT04ALPHATABLE"];
+v75 -> v91 [label="ch_core_vector_tsv"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v76 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATEUNIFRAC"];
+v9 -> v76 [label="metadata_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v76 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATEUNIFRAC"];
+v10 -> v76 [label="ioi_ch"];
+
+v76 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATEUNIFRAC"];
+v125 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT10BETABOXPLOT"];
+v76 -> v125 [label="unifrac_pairwise_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v77 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:LEFSEFORMAT"];
+v10 -> v77 [label="ioi_ch"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v77 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:LEFSEFORMAT"];
+v68 -> v77 [label="ch_norm_qza_table"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v77 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:LEFSEFORMAT"];
+v4 -> v77 [label="rooted_tree_ch"];
+
+v54 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REFORMATANDQZATAX"];
+v77 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:LEFSEFORMAT"];
+v54 -> v77 [label="ch_tax_qza"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v77 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:LEFSEFORMAT"];
+v9 -> v77 [label="metadata_ch"];
+
+v77 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:LEFSEFORMAT"];
+v78 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:LEFSEANALYSIS"];
+v77 -> v78 [label="ch_lefse_combos"];
+
+v78 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:LEFSEANALYSIS"];
+v139 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT13LEFSE"];
+v78 -> v139 [label="ch_lefse_images"];
+
+v79 [shape=point,label="",fixedsize=true,width=0.1];
+v80 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT01BARPLOT"];
+v79 -> v80 [label="reportName"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v80 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT01BARPLOT"];
+v5 -> v80 [label="asv_tsv_ch"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v80 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT01BARPLOT"];
+v9 -> v80 [label="metadata_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v80 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT01BARPLOT"];
+v10 -> v80 [label="ioi_ch"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v80 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT01BARPLOT"];
+v68 -> v80 [label="ch_norm_qza_table"];
+
+v80 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT01BARPLOT"];
+v82 [shape=point];
+v80 -> v82;
+
+v80 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT01BARPLOT"];
+v81 [shape=point];
+v80 -> v81;
+
+v83 [shape=point,label="",fixedsize=true,width=0.1];
+v84 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT02GRAPHLANPHYLOGENETICTREE"];
+v83 -> v84 [label="reportName"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v84 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT02GRAPHLANPHYLOGENETICTREE"];
+v10 -> v84 [label="ioi_ch"];
+
+v84 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT02GRAPHLANPHYLOGENETICTREE"];
+v85 [shape=point];
+v84 -> v85;
+
+v86 [shape=point,label="",fixedsize=true,width=0.1];
+v87 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT03HEATMAP"];
+v86 -> v87 [label="reportName"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v87 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT03HEATMAP"];
+v68 -> v87 [label="ch_norm_qza_table"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v87 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT03HEATMAP"];
+v4 -> v87 [label="rooted_tree_ch"];
+
+v54 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REFORMATANDQZATAX"];
+v87 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT03HEATMAP"];
+v54 -> v87 [label="ch_tax_qza"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v87 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT03HEATMAP"];
+v9 -> v87 [label="metadata_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v87 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT03HEATMAP"];
+v10 -> v87 [label="ioi_ch"];
+
+v87 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT03HEATMAP"];
+v89 [shape=point];
+v87 -> v89;
+
+v87 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT03HEATMAP"];
+v88 [shape=point];
+v87 -> v88;
+
+v90 [shape=point,label="",fixedsize=true,width=0.1];
+v91 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT04ALPHATABLE"];
+v90 -> v91 [label="reportName"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v91 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT04ALPHATABLE"];
+v10 -> v91 [label="ioi_ch"];
+
+v91 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT04ALPHATABLE"];
+v93 [shape=point];
+v91 -> v93;
+
+v91 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT04ALPHATABLE"];
+v92 [shape=point];
+v91 -> v92;
+
+v94 [shape=point,label="",fixedsize=true,width=0.1];
+v95 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT05ALPHABOXPLOT"];
+v94 -> v95 [label="reportName"];
+
+v75 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREQZATOTSV"];
+v95 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT05ALPHABOXPLOT"];
+v75 -> v95 [label="ch_core_vector_tsv"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v95 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT05ALPHABOXPLOT"];
+v10 -> v95 [label="ioi_ch"];
+
+v51 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:ORDERIOI"];
+v95 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT05ALPHABOXPLOT"];
+v51 -> v95 [label="ord_ioi_ch"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v95 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT05ALPHABOXPLOT"];
+v9 -> v95 [label="metadata_ch"];
+
+v95 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT05ALPHABOXPLOT"];
+v97 [shape=point];
+v95 -> v97;
+
+v95 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT05ALPHABOXPLOT"];
+v96 [shape=point];
+v95 -> v96;
+
+v98 [shape=point,label="",fixedsize=true,width=0.1];
+v99 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06ORDINATION"];
+v98 -> v99 [label="reportName"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v99 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06ORDINATION"];
+v68 -> v99 [label="ch_norm_qza_table"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v99 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06ORDINATION"];
+v4 -> v99 [label="rooted_tree_ch"];
+
+v54 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REFORMATANDQZATAX"];
+v99 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06ORDINATION"];
+v54 -> v99 [label="ch_tax_qza"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v99 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06ORDINATION"];
+v9 -> v99 [label="metadata_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v99 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06ORDINATION"];
+v10 -> v99 [label="ioi_ch"];
+
+v51 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:ORDERIOI"];
+v99 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06ORDINATION"];
+v51 -> v99 [label="ord_ioi_ch"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v99 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06ORDINATION"];
+v68 -> v99 [label="ch_core_vector"];
+
+v99 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06ORDINATION"];
+v102 [shape=point];
+v99 -> v102;
+
+v99 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06ORDINATION"];
+v101 [shape=point];
+v99 -> v101;
+
+v99 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06ORDINATION"];
+v100 [shape=point];
+v99 -> v100;
+
+v103 [shape=point,label="",fixedsize=true,width=0.1];
+v104 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06BNMDSORDINATION"];
+v103 -> v104 [label="reportName"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v104 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06BNMDSORDINATION"];
+v68 -> v104 [label="ch_norm_qza_table"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v104 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06BNMDSORDINATION"];
+v4 -> v104 [label="rooted_tree_ch"];
+
+v54 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REFORMATANDQZATAX"];
+v104 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06BNMDSORDINATION"];
+v54 -> v104 [label="ch_tax_qza"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v104 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06BNMDSORDINATION"];
+v9 -> v104 [label="metadata_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v104 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06BNMDSORDINATION"];
+v10 -> v104 [label="ioi_ch"];
+
+v51 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:ORDERIOI"];
+v104 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06BNMDSORDINATION"];
+v51 -> v104 [label="ord_ioi_ch"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v104 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06BNMDSORDINATION"];
+v68 -> v104 [label="ch_core_pcoa"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v104 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06BNMDSORDINATION"];
+v68 -> v104 [label="ch_core_vector"];
+
+v104 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06BNMDSORDINATION"];
+v107 [shape=point];
+v104 -> v107;
+
+v104 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06BNMDSORDINATION"];
+v106 [shape=point];
+v104 -> v106;
+
+v104 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT06BNMDSORDINATION"];
+v105 [shape=point];
+v104 -> v105;
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v108 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATERAREFACTIONCURVE"];
+v9 -> v108 [label="metadata_ch"];
+
+v55 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:CLEANUPRAWQZA"];
+v108 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATERAREFACTIONCURVE"];
+v55 -> v108 [label="final_table_qza"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v108 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATERAREFACTIONCURVE"];
+v4 -> v108 [label="rooted_tree_ch"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v108 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATERAREFACTIONCURVE"];
+v14 -> v108 [label="rare_val_ch"];
+
+v52 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:CLEANUPRAWTSV"];
+v108 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATERAREFACTIONCURVE"];
+v52 -> v108 [label="final_table_tsv"];
+
+v108 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:GENERATERAREFACTIONCURVE"];
+v110 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT07RAREFACTION"];
+v108 -> v110 [label="ch_rare_vector"];
+
+v109 [shape=point,label="",fixedsize=true,width=0.1];
+v110 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT07RAREFACTION"];
+v109 -> v110 [label="reportName"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v110 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT07RAREFACTION"];
+v10 -> v110 [label="ioi_ch"];
+
+v51 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:ORDERIOI"];
+v110 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT07RAREFACTION"];
+v51 -> v110 [label="ord_ioi_ch"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v110 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT07RAREFACTION"];
+v9 -> v110 [label="metadata_ch"];
+
+v110 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT07RAREFACTION"];
+v113 [shape=point];
+v110 -> v113;
+
+v110 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT07RAREFACTION"];
+v112 [shape=point];
+v110 -> v112;
+
+v110 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT07RAREFACTION"];
+v111 [shape=point];
+v110 -> v111;
+
+v114 [shape=point,label="",fixedsize=true,width=0.1];
+v115 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT08RANKEDABUNDANCE"];
+v114 -> v115 [label="reportName"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v115 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT08RANKEDABUNDANCE"];
+v68 -> v115 [label="ch_norm_qza_table"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v115 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT08RANKEDABUNDANCE"];
+v4 -> v115 [label="rooted_tree_ch"];
+
+v54 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REFORMATANDQZATAX"];
+v115 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT08RANKEDABUNDANCE"];
+v54 -> v115 [label="ch_tax_qza"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v115 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT08RANKEDABUNDANCE"];
+v9 -> v115 [label="metadata_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v115 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT08RANKEDABUNDANCE"];
+v10 -> v115 [label="ioi_ch"];
+
+v51 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:ORDERIOI"];
+v115 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT08RANKEDABUNDANCE"];
+v51 -> v115 [label="ord_ioi_ch"];
+
+v115 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT08RANKEDABUNDANCE"];
+v118 [shape=point];
+v115 -> v118;
+
+v115 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT08RANKEDABUNDANCE"];
+v117 [shape=point];
+v115 -> v117;
+
+v115 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT08RANKEDABUNDANCE"];
+v116 [shape=point];
+v115 -> v116;
+
+v119 [shape=point,label="",fixedsize=true,width=0.1];
+v120 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT09UNIFRACHEATMAP"];
+v119 -> v120 [label="reportName"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v120 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT09UNIFRACHEATMAP"];
+v10 -> v120 [label="ioi_ch"];
+
+v51 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:ORDERIOI"];
+v120 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT09UNIFRACHEATMAP"];
+v51 -> v120 [label="ord_ioi_ch"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v120 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT09UNIFRACHEATMAP"];
+v9 -> v120 [label="metadata_ch"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v120 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT09UNIFRACHEATMAP"];
+v68 -> v120 [label="ch_core_distance"];
+
+v120 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT09UNIFRACHEATMAP"];
+v123 [shape=point];
+v120 -> v123;
+
+v120 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT09UNIFRACHEATMAP"];
+v122 [shape=point];
+v120 -> v122;
+
+v120 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT09UNIFRACHEATMAP"];
+v121 [shape=point];
+v120 -> v121;
+
+v124 [shape=point,label="",fixedsize=true,width=0.1];
+v125 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT10BETABOXPLOT"];
+v124 -> v125 [label="reportName"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v125 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT10BETABOXPLOT"];
+v10 -> v125 [label="ioi_ch"];
+
+v51 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:ORDERIOI"];
+v125 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT10BETABOXPLOT"];
+v51 -> v125 [label="ord_ioi_ch"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v125 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT10BETABOXPLOT"];
+v9 -> v125 [label="metadata_ch"];
+
+v125 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT10BETABOXPLOT"];
+v128 [shape=point];
+v125 -> v128;
+
+v125 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT10BETABOXPLOT"];
+v127 [shape=point];
+v125 -> v127;
+
+v125 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT10BETABOXPLOT"];
+v126 [shape=point];
+v125 -> v126;
+
+v129 [shape=point,label="",fixedsize=true,width=0.1];
+v130 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT11UPGMA"];
+v129 -> v130 [label="reportName"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v130 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT11UPGMA"];
+v68 -> v130 [label="ch_norm_qza_table"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v130 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT11UPGMA"];
+v4 -> v130 [label="rooted_tree_ch"];
+
+v54 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REFORMATANDQZATAX"];
+v130 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT11UPGMA"];
+v54 -> v130 [label="ch_tax_qza"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v130 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT11UPGMA"];
+v9 -> v130 [label="metadata_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v130 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT11UPGMA"];
+v10 -> v130 [label="ioi_ch"];
+
+v51 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:ORDERIOI"];
+v130 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT11UPGMA"];
+v51 -> v130 [label="ord_ioi_ch"];
+
+v130 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT11UPGMA"];
+v133 [shape=point];
+v130 -> v133;
+
+v130 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT11UPGMA"];
+v132 [shape=point];
+v130 -> v132;
+
+v130 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT11UPGMA"];
+v131 [shape=point];
+v130 -> v131;
+
+v134 [shape=point,label="",fixedsize=true,width=0.1];
+v135 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT12PERMANOVA"];
+v134 -> v135 [label="reportName"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v135 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT12PERMANOVA"];
+v68 -> v135 [label="ch_norm_qza_table"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v135 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT12PERMANOVA"];
+v4 -> v135 [label="rooted_tree_ch"];
+
+v54 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REFORMATANDQZATAX"];
+v135 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT12PERMANOVA"];
+v54 -> v135 [label="ch_tax_qza"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v135 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT12PERMANOVA"];
+v9 -> v135 [label="metadata_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v135 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT12PERMANOVA"];
+v10 -> v135 [label="ioi_ch"];
+
+v51 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:ORDERIOI"];
+v135 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT12PERMANOVA"];
+v51 -> v135 [label="ord_ioi_ch"];
+
+v68 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:COREMETRICPYTHON"];
+v135 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT12PERMANOVA"];
+v68 -> v135 [label="ch_core_distance"];
+
+v135 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT12PERMANOVA"];
+v137 [shape=point];
+v135 -> v137;
+
+v135 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT12PERMANOVA"];
+v136 [shape=point];
+v135 -> v136;
+
+v138 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT13LEFSE"];
+v138 -> v139 [label="reportName"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v139 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT13LEFSE"];
+v10 -> v139 [label="ioi_ch"];
+
+v51 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:ORDERIOI"];
+v139 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT13LEFSE"];
+v51 -> v139 [label="ord_ioi_ch"];
+
+v139 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT13LEFSE"];
+v140 [shape=point];
+v139 -> v140;
+
+v141 [shape=point,label="",fixedsize=true,width=0.1];
+v142 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT14CITATIONS"];
+v141 -> v142 [label="reportName"];
+
+v142 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT14CITATIONS"];
+v144 [shape=point];
+v142 -> v144;
+
+v142 [label="VISUALIZE_AMPLISEQ:VISUALIZEAMPLISEQ:REPORT14CITATIONS"];
+v143 [shape=point];
+v142 -> v143;
+
+}

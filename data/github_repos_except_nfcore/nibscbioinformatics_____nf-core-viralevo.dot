@@ -1,0 +1,662 @@
+digraph "nibscbioinformatics_____nfcoreviralevo" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v116 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v1 -> v11 [label="ch_software_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="NFCORE_VIRALEVO:VIRALEVO:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v2 -> v3 [label="samplesheet"];
+
+v3 [label="NFCORE_VIRALEVO:VIRALEVO:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6 [label="reads"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [label="NFCORE_VIRALEVO:VIRALEVO:FASTQC_RAW"];
+v6 -> v7 [label="ch_fastq"];
+
+v7 [label="NFCORE_VIRALEVO:VIRALEVO:FASTQC_RAW"];
+v8 [shape=point];
+v7 -> v8;
+
+v7 [label="NFCORE_VIRALEVO:VIRALEVO:FASTQC_RAW"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v124;
+
+v7 [label="NFCORE_VIRALEVO:VIRALEVO:FASTQC_RAW"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v7 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v17 [label="ch_software_versions"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [label="NFCORE_VIRALEVO:VIRALEVO:CUTADAPT"];
+v6 -> v13 [label="ch_fastq"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="NFCORE_VIRALEVO:VIRALEVO:CUTADAPT"];
+v12 -> v13 [label="ch_adapter_fasta"];
+
+v13 [label="NFCORE_VIRALEVO:VIRALEVO:CUTADAPT"];
+v18 [label="NFCORE_VIRALEVO:VIRALEVO:FASTQC_TRIMMED"];
+v13 -> v18 [label="ch_trimmed_reads"];
+
+v13 [label="NFCORE_VIRALEVO:VIRALEVO:CUTADAPT"];
+v14 [shape=point];
+v13 -> v14;
+
+v13 [label="NFCORE_VIRALEVO:VIRALEVO:CUTADAPT"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v13 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v23 [label="ch_software_versions"];
+
+v18 [label="NFCORE_VIRALEVO:VIRALEVO:FASTQC_TRIMMED"];
+v20 [shape=point];
+v18 -> v20;
+
+v18 [label="NFCORE_VIRALEVO:VIRALEVO:FASTQC_TRIMMED"];
+v19 [shape=point];
+v18 -> v19;
+
+v18 [label="NFCORE_VIRALEVO:VIRALEVO:FASTQC_TRIMMED"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v18 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v28 [label="ch_software_versions"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v25 [label="NFCORE_VIRALEVO:VIRALEVO:BWAMEM2_INDEX"];
+v24 -> v25 [label="ch_fasta"];
+
+v25 [label="NFCORE_VIRALEVO:VIRALEVO:BWAMEM2_INDEX"];
+v29 [label="NFCORE_VIRALEVO:VIRALEVO:BWAMEM2_MEM"];
+v25 -> v29 [label="ch_index"];
+
+v25 [label="NFCORE_VIRALEVO:VIRALEVO:BWAMEM2_INDEX"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v50 [label="ch_software_versions"];
+
+v13 [label="NFCORE_VIRALEVO:VIRALEVO:CUTADAPT"];
+v29 [label="NFCORE_VIRALEVO:VIRALEVO:BWAMEM2_MEM"];
+v13 -> v29 [label="ch_trimmed_reads"];
+
+v29 [label="NFCORE_VIRALEVO:VIRALEVO:BWAMEM2_MEM"];
+v31 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v29 -> v31 [label="ch_bam"];
+
+v29 [label="NFCORE_VIRALEVO:VIRALEVO:BWAMEM2_MEM"];
+v30 [shape=point];
+v29 -> v30;
+
+v31 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v32 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v31 -> v32 [label="bam"];
+
+v31 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v31 -> v48 [label="version"];
+
+v32 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 -> v35 [label="bai"];
+
+v32 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v34 [shape=point];
+v32 -> v34;
+
+v32 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v33 [shape=point];
+v32 -> v33;
+
+v31 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 -> v35 [label="bam"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v35 -> v36 [label="ch_bam_bai"];
+
+v36 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v42 [label="stats"];
+
+v36 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v37 [shape=point];
+v36 -> v37 [label="version"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v38 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v35 -> v38 [label="ch_bam_bai"];
+
+v38 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v42 [label="flagstat"];
+
+v38 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v39 [shape=point];
+v38 -> v39;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v35 -> v40 [label="ch_bam_bai"];
+
+v40 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v42 [label="idxstats"];
+
+v40 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v41 [shape=point];
+v40 -> v41;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 [shape=point];
+v43 -> v44 [label="all_results"];
+
+v40 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v45 [label="idxstats"];
+
+v31 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v45 [label="bam"];
+
+v32 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v45 [label="bai"];
+
+v36 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v45 [label="stats"];
+
+v38 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v45 [label="flagstat"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 [shape=point];
+v46 -> v47 [label="all_results2"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v54 [label="ch_software_versions"];
+
+v31 [label="NFCORE_VIRALEVO:VIRALEVO:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v51 [label="NFCORE_VIRALEVO:VIRALEVO:LOFREQ_INDELQUAL"];
+v31 -> v51 [label="bam"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="NFCORE_VIRALEVO:VIRALEVO:LOFREQ_INDELQUAL"];
+v24 -> v51 [label="ch_fasta"];
+
+v51 [label="NFCORE_VIRALEVO:VIRALEVO:LOFREQ_INDELQUAL"];
+v55 [label="NFCORE_VIRALEVO:VIRALEVO:SAMTOOLS_INDEX_INDELQUAL"];
+v51 -> v55 [label="ch_indelqual_bam"];
+
+v51 [label="NFCORE_VIRALEVO:VIRALEVO:LOFREQ_INDELQUAL"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v90 [label="ch_software_versions"];
+
+v55 [label="NFCORE_VIRALEVO:VIRALEVO:SAMTOOLS_INDEX_INDELQUAL"];
+v60 [label="NFCORE_VIRALEVO:VIRALEVO:LOFREQ_CALLPARALLEL"];
+v55 -> v60 [label="ch_indelqual_bam_bai"];
+
+v55 [label="NFCORE_VIRALEVO:VIRALEVO:SAMTOOLS_INDEX_INDELQUAL"];
+v57 [shape=point];
+v55 -> v57;
+
+v55 [label="NFCORE_VIRALEVO:VIRALEVO:SAMTOOLS_INDEX_INDELQUAL"];
+v56 [shape=point];
+v55 -> v56;
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v58 [label="NFCORE_VIRALEVO:VIRALEVO:SAMTOOLS_FAIDX"];
+v24 -> v58 [label="ch_fasta"];
+
+v58 [label="NFCORE_VIRALEVO:VIRALEVO:SAMTOOLS_FAIDX"];
+v60 [label="NFCORE_VIRALEVO:VIRALEVO:LOFREQ_CALLPARALLEL"];
+v58 -> v60 [label="ch_fasta_fai"];
+
+v58 [label="NFCORE_VIRALEVO:VIRALEVO:SAMTOOLS_FAIDX"];
+v59 [shape=point];
+v58 -> v59;
+
+v51 [label="NFCORE_VIRALEVO:VIRALEVO:LOFREQ_INDELQUAL"];
+v60 [label="NFCORE_VIRALEVO:VIRALEVO:LOFREQ_CALLPARALLEL"];
+v51 -> v60 [label="ch_indelqual_bam"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v60 [label="NFCORE_VIRALEVO:VIRALEVO:LOFREQ_CALLPARALLEL"];
+v24 -> v60 [label="ch_fasta"];
+
+v60 [label="NFCORE_VIRALEVO:VIRALEVO:LOFREQ_CALLPARALLEL"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v92 [label="ch_lofreq_variants"];
+
+v60 [label="NFCORE_VIRALEVO:VIRALEVO:LOFREQ_CALLPARALLEL"];
+v61 [shape=point];
+v60 -> v61;
+
+v55 [label="NFCORE_VIRALEVO:VIRALEVO:SAMTOOLS_INDEX_INDELQUAL"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v55 -> v62 [label="ch_indelqual_bam_bai"];
+
+v51 [label="NFCORE_VIRALEVO:VIRALEVO:LOFREQ_INDELQUAL"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 -> v62 [label="ch_indelqual_bam"];
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v64 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:IVAR_TRIM"];
+v62 -> v64 [label="bam"];
+
+v63 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:IVAR_TRIM"];
+v63 -> v64 [label="bed"];
+
+v64 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:IVAR_TRIM"];
+v67 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v64 -> v67 [label="bam_orig"];
+
+v64 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:IVAR_TRIM"];
+v66 [shape=point];
+v64 -> v66 [label="log_out"];
+
+v64 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:IVAR_TRIM"];
+v65 [shape=point];
+v64 -> v65 [label="ivar_version"];
+
+v67 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v69 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v67 -> v69 [label="ch_primer_trimmed_sorted_bam"];
+
+v67 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v68 [shape=point];
+v67 -> v68 [label="samtools_version"];
+
+v69 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v69 -> v72 [label="bai"];
+
+v69 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v71 [shape=point];
+v69 -> v71;
+
+v69 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v70 [shape=point];
+v69 -> v70;
+
+v67 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v67 -> v72 [label="ch_primer_trimmed_sorted_bam"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v73 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v72 -> v73 [label="ch_bam_bai"];
+
+v73 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v79 [label="stats"];
+
+v73 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v74 [shape=point];
+v73 -> v74 [label="version"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v75 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v72 -> v75 [label="ch_bam_bai"];
+
+v75 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v79 [label="flagstat"];
+
+v75 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v76 [shape=point];
+v75 -> v76;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v77 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v72 -> v77 [label="ch_bam_bai"];
+
+v77 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v79 [label="idxstats"];
+
+v77 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v78 [shape=point];
+v77 -> v78;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 [shape=point];
+v80 -> v81 [label="all_results"];
+
+v69 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:SAMTOOLS_INDEX"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v82 [label="bai"];
+
+v77 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v82 [label="idxstats"];
+
+v67 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v82 [label="ch_primer_trimmed_sorted_bam"];
+
+v75 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v82 [label="flagstat"];
+
+v73 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v82 [label="stats"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v82 -> v83;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v84 [shape=point];
+v83 -> v84 [label="all_results2"];
+
+v67 [label="NFCORE_VIRALEVO:VIRALEVO:PRIMER_TRIM_IVAR:BAM_SORT_SAMTOOLS:SAMTOOLS_SORT"];
+v86 [label="NFCORE_VIRALEVO:VIRALEVO:IVAR_VARIANTS"];
+v67 -> v86 [label="ch_primer_trimmed_sorted_bam"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [label="NFCORE_VIRALEVO:VIRALEVO:IVAR_VARIANTS"];
+v24 -> v86 [label="ch_fasta"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [label="NFCORE_VIRALEVO:VIRALEVO:IVAR_VARIANTS"];
+v85 -> v86 [label="ch_annotation"];
+
+v86 [label="NFCORE_VIRALEVO:VIRALEVO:IVAR_VARIANTS"];
+v91 [label="NFCORE_VIRALEVO:VIRALEVO:TSV2VCF"];
+v86 -> v91 [label="ch_ivar_variants"];
+
+v86 [label="NFCORE_VIRALEVO:VIRALEVO:IVAR_VARIANTS"];
+v87 [shape=point];
+v86 -> v87;
+
+v86 [label="NFCORE_VIRALEVO:VIRALEVO:IVAR_VARIANTS"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v86 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v88 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v100 [label="ch_software_versions"];
+
+v91 [label="NFCORE_VIRALEVO:VIRALEVO:TSV2VCF"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v92 [label="ch_ivar2vcf"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [label="NFCORE_VIRALEVO:VIRALEVO:SNPEFF_ANN"];
+v92 -> v94 [label="merged_ch"];
+
+v93 [shape=point,label="",fixedsize=true,width=0.1];
+v94 [label="NFCORE_VIRALEVO:VIRALEVO:SNPEFF_ANN"];
+v93 -> v94 [label="genome_version"];
+
+v94 [label="NFCORE_VIRALEVO:VIRALEVO:SNPEFF_ANN"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v94 -> v101 [label="ch_annotatedfortable"];
+
+v94 [label="NFCORE_VIRALEVO:VIRALEVO:SNPEFF_ANN"];
+v97 [shape=point];
+v94 -> v97;
+
+v94 [label="NFCORE_VIRALEVO:VIRALEVO:SNPEFF_ANN"];
+v96 [shape=point];
+v94 -> v96;
+
+v94 [label="NFCORE_VIRALEVO:VIRALEVO:SNPEFF_ANN"];
+v95 [shape=point];
+v94 -> v95;
+
+v94 [label="NFCORE_VIRALEVO:VIRALEVO:SNPEFF_ANN"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v94 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v100 -> v104 [label="ch_software_versions"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v103 [shape=point];
+v102 -> v103 [label="ch_annotatedvcf"];
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v105 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 -> v109 [label="ch_software_versions"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v111 [label="NFCORE_VIRALEVO:VIRALEVO:GET_SOFTWARE_VERSIONS"];
+v110 -> v111;
+
+v111 [label="NFCORE_VIRALEVO:VIRALEVO:GET_SOFTWARE_VERSIONS"];
+v112 [shape=point];
+v111 -> v112;
+
+v111 [label="NFCORE_VIRALEVO:VIRALEVO:GET_SOFTWARE_VERSIONS"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v111 -> v122;
+
+v113 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v115 [label="ch_multiqc_files"];
+
+v114 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v118 [label="ch_multiqc_files"];
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v116 -> v117;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v121 [label="ch_multiqc_files"];
+
+v119 [shape=point,label="",fixedsize=true,width=0.1];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v119 -> v120 [label="ch_workflow_summary"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v123 [label="ch_multiqc_files"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v126 [label="ch_multiqc_files"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v124 -> v125;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v126;
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 -> v127 [label="ch_multiqc_files"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v128 [label="NFCORE_VIRALEVO:VIRALEVO:MULTIQC"];
+v127 -> v128;
+
+v128 [label="NFCORE_VIRALEVO:VIRALEVO:MULTIQC"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v128 -> v131;
+
+v128 [label="NFCORE_VIRALEVO:VIRALEVO:MULTIQC"];
+v130 [shape=point];
+v128 -> v130;
+
+v128 [label="NFCORE_VIRALEVO:VIRALEVO:MULTIQC"];
+v129 [shape=point];
+v128 -> v129;
+
+v128 [label="NFCORE_VIRALEVO:VIRALEVO:MULTIQC"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v128 -> v133;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v132 [shape=point];
+v131 -> v132;
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v134;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v134 [label="ch_software_versions"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 [shape=point];
+v134 -> v135 [label="ch_software_versions"];
+
+}

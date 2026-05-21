@@ -1,0 +1,310 @@
+digraph "h3abionet_____chipimputation" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1 [label="target_datasets"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [label="preprocess:check_mismatch"];
+v1 -> v2;
+
+v2 [label="preprocess:check_mismatch"];
+v3 [shape=point];
+v2 -> v3;
+
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v4 [label="target_datasets"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [label="preprocess:qc_dupl"];
+v4 -> v5;
+
+v5 [label="preprocess:qc_dupl"];
+v6 [label="preprocess:split_multi_allelic"];
+v5 -> v6;
+
+v6 [label="preprocess:split_multi_allelic"];
+v7 [label="preprocess:fill_tags_vcf"];
+v6 -> v7;
+
+v7 [label="preprocess:fill_tags_vcf"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [label="preprocess:filter_min_ac"];
+v8 -> v9;
+
+v9 [label="preprocess:filter_min_ac"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v10 [label="data"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [label="subset:get_chromosome"];
+v10 -> v11;
+
+v11 [label="subset:get_chromosome"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v14 [label="data_chrms"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [label="subset:generate_chunks_vcf"];
+v14 -> v15;
+
+v15 [label="subset:generate_chunks_vcf"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v17 [label="subset:split_target_to_chunk"];
+v16 -> v17 [label="chunks_datas"];
+
+v17 [label="subset:split_target_to_chunk"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 -> v19;
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v21 [label="phasing:minimac4_phasing_eagle"];
+v20 -> v21 [label="data"];
+
+v21 [label="phasing:minimac4_phasing_eagle"];
+v22 [label="impute:impute_minimac4"];
+v21 -> v22 [label="data"];
+
+v22 [label="impute:impute_minimac4"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v23 -> v25;
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v26 -> v27 [label="data"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [label="report_by_ref:filter_info_by_target"];
+v28 -> v29 [label="imputeCombine_ref"];
+
+v29 [label="report_by_ref:filter_info_by_target"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 [label="report_by_ref:report_well_imputed_by_target"];
+v30 -> v31;
+
+v31 [label="report_by_ref:report_well_imputed_by_target"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [label="report_by_ref:plot_performance_target"];
+v32 -> v33;
+
+v33 [label="report_by_ref:plot_performance_target"];
+v34 [shape=point];
+v33 -> v34;
+
+v29 [label="report_by_ref:filter_info_by_target"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 [label="report_by_ref:report_accuracy_target"];
+v35 -> v36;
+
+v36 [label="report_by_ref:report_accuracy_target"];
+v37 [label="report_by_ref:plot_accuracy_target"];
+v36 -> v37;
+
+v37 [label="report_by_ref:plot_accuracy_target"];
+v38 [shape=point];
+v37 -> v38;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v26 -> v39 [label="data"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 [label="report_by_dataset:filter_info_by_target"];
+v40 -> v41 [label="imputeCombine_ref"];
+
+v41 [label="report_by_dataset:filter_info_by_target"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 [label="report_by_dataset:report_well_imputed_by_target"];
+v42 -> v43;
+
+v43 [label="report_by_dataset:report_well_imputed_by_target"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [label="report_by_dataset:plot_performance_target"];
+v44 -> v45;
+
+v45 [label="report_by_dataset:plot_performance_target"];
+v46 [shape=point];
+v45 -> v46;
+
+v41 [label="report_by_dataset:filter_info_by_target"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 [label="report_by_dataset:report_accuracy_target"];
+v47 -> v48;
+
+v48 [label="report_by_dataset:report_accuracy_target"];
+v49 [label="report_by_dataset:plot_accuracy_target"];
+v48 -> v49;
+
+v49 [label="report_by_dataset:plot_accuracy_target"];
+v50 [shape=point];
+v49 -> v50;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v51 [label="imputeCombine_ref"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 [label="report_by_dataset:plot_r2_SNPcount"];
+v51 -> v52 [label="input"];
+
+v52 [label="report_by_dataset:plot_r2_SNPcount"];
+v53 [shape=point];
+v52 -> v53;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [label="report_by_dataset:plot_hist_r2_SNPcount"];
+v51 -> v54 [label="input"];
+
+v54 [label="report_by_dataset:plot_hist_r2_SNPcount"];
+v55 [shape=point];
+v54 -> v55;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [label="report_by_dataset:plot_MAF_r2"];
+v51 -> v56 [label="input"];
+
+v56 [label="report_by_dataset:plot_MAF_r2"];
+v57 [shape=point];
+v56 -> v57;
+
+v58 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v59 -> v61 [label="inp"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v60 [label="data"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [label="generate_frequency"];
+v62 -> v63 [label="input"];
+
+v63 [label="generate_frequency"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v63 -> v65;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v64 [label="data"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v66 [label="plot_freq_comparison"];
+v65 -> v66 [label="freq_comp"];
+
+v66 [label="plot_freq_comparison"];
+v67 [shape=point];
+v66 -> v67;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v68 [label="data"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v68 -> v69;
+
+v63 [label="generate_frequency"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v63 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v71 [label="plot_r2_SNPpos"];
+v70 -> v71 [label="combineInfo_frq"];
+
+v71 [label="plot_r2_SNPpos"];
+v72 [shape=point];
+v71 -> v72;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v73 [label="data"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v74 [label="average_r2"];
+v73 -> v74 [label="rsquared_input"];
+
+v74 [label="average_r2"];
+v75 [shape=point];
+v74 -> v75;
+
+}

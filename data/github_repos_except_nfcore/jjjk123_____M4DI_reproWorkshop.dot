@@ -1,0 +1,42 @@
+digraph "jjjk123_____M4DI_reproWorkshop" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="indexing"];
+v0 -> v1 [label="reference"];
+
+v1 [label="indexing"];
+v4 [label="mapping"];
+v1 -> v4;
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v4 [label="mapping"];
+v2 -> v4 [label="fastq"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="mapping"];
+v3 -> v4 [label="reference"];
+
+v4 [label="mapping"];
+v5 [label="samToBam"];
+v4 -> v5;
+
+v5 [label="samToBam"];
+v7 [label="callSNP"];
+v5 -> v7;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="callSNP"];
+v6 -> v7 [label="reference"];
+
+v7 [label="callSNP"];
+v8 [shape=point];
+v7 -> v8;
+
+v5 [label="samToBam"];
+v9 [label="consensus"];
+v5 -> v9 [label="bamFile"];
+
+v9 [label="consensus"];
+v10 [shape=point];
+v9 -> v10;
+
+}

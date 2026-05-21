@@ -1,0 +1,34 @@
+digraph "juanesarango_____nfbayestme" {
+v0 [label="SPACERANGER_TO_ANNDATA"];
+v1 [label="FILTER_GENES"];
+v0 -> v1;
+
+v1 [label="FILTER_GENES"];
+v2 [label="BLEED_CORRECTION"];
+v1 -> v2;
+
+v2 [label="BLEED_CORRECTION"];
+v3 [label="PLOT_BLEEDING_CORRECTION"];
+v2 -> v3;
+
+v2 [label="BLEED_CORRECTION"];
+v3 [label="PLOT_BLEEDING_CORRECTION"];
+v2 -> v3;
+
+v1 [label="FILTER_GENES"];
+v3 [label="PLOT_BLEEDING_CORRECTION"];
+v1 -> v3 [label="ann_filtered_dataset"];
+
+v3 [label="PLOT_BLEEDING_CORRECTION"];
+v6 [shape=point];
+v3 -> v6;
+
+v3 [label="PLOT_BLEEDING_CORRECTION"];
+v5 [shape=point];
+v3 -> v5;
+
+v3 [label="PLOT_BLEEDING_CORRECTION"];
+v4 [shape=point];
+v3 -> v4;
+
+}

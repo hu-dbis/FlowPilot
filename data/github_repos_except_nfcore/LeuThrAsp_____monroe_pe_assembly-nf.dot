@@ -1,0 +1,70 @@
+digraph "LeuThrAsp_____monroe_pe_assemblynf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v5 [label="monroe_pe_assembly:preProcess"];
+v1 -> v5 [label="raw_reads"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v8 [label="bed"];
+
+v5 [label="monroe_pe_assembly:preProcess"];
+v6 [label="monroe_pe_assembly:trimmomatic"];
+v5 -> v6;
+
+v6 [label="monroe_pe_assembly:trimmomatic"];
+v7 [label="monroe_pe_assembly:cleanreads"];
+v6 -> v7;
+
+v7 [label="monroe_pe_assembly:cleanreads"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v9 [label="monroe_pe_assembly:ivar"];
+v8 -> v9;
+
+v9 [label="monroe_pe_assembly:ivar"];
+v12 [label="monroe_pe_assembly:pangolin_typing"];
+v9 -> v12;
+
+v9 [label="monroe_pe_assembly:ivar"];
+v11 [label="monroe_pe_assembly:samtools"];
+v9 -> v11;
+
+v9 [label="monroe_pe_assembly:ivar"];
+v10 [shape=point];
+v9 -> v10;
+
+v11 [label="monroe_pe_assembly:samtools"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v13 [label="ch_samtools_cov"];
+
+v12 [label="monroe_pe_assembly:pangolin_typing"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 -> v14 [label="ch_pangolin_lineage"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 [label="assembly_results"];
+v13 -> v15 [label="ch_cg_pipeline_results"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 [label="assembly_results"];
+v14 -> v15 [label="ch_pangolin_lineage"];
+
+v15 [label="assembly_results"];
+v16 [shape=point];
+v15 -> v16;
+
+}

@@ -1,0 +1,2078 @@
+digraph "fgualdr_____mmatac" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v0 -> v469 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v398 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3 [label="ch_multiqc_logo"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v42 [label="ch_versions"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v11 [label="ch_versions"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v7 [shape=point];
+v6 -> v7 [label="ch_fasta"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v8 -> v23 [label="ch_blacklist"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:GTF2BED"];
+v9 -> v10 [label="gtf"];
+
+v10 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:GTF2BED"];
+v12 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:TSS_EXTRACT"];
+v10 -> v12 [label="gene_bed"];
+
+v10 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:GTF2BED"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v13 [label="ch_versions"];
+
+v12 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:TSS_EXTRACT"];
+v368 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v12 -> v368 [label="tss_bed"];
+
+v12 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:TSS_EXTRACT"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v16 [label="ch_versions"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v14 -> v15 [label="fasta"];
+
+v15 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v27 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v15 -> v27 [label="ch_chrom_sizes"];
+
+v15 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v19 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:GET_AUTOSOMES"];
+v15 -> v19 [label="ch_fai"];
+
+v15 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v20 [label="ch_versions"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v18 [shape=point];
+v17 -> v18 [label="ch_genome_autosomes"];
+
+v19 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:GET_AUTOSOMES"];
+v368 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v19 -> v368 [label="autosomes"];
+
+v19 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:GET_AUTOSOMES"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v28 [label="ch_versions"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=point];
+v21 -> v22 [label="ch_genome_filtered_bed"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v27 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v23 -> v27;
+
+v24 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v24 -> v27 [label="mito_name"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v25 -> v27 [label="keep_mito"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v26 -> v27 [label="keep_blacklist"];
+
+v27 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v27 -> v170 [label="filtered_bed"];
+
+v27 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v34 [label="ch_versions"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v30 [shape=point];
+v29 -> v30 [label="ch_star_index"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v31 -> v33 [label="fasta"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v32 -> v33 [label="gtf"];
+
+v33 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v108 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:STAR_ALIGN"];
+v33 -> v108 [label="ch_index"];
+
+v33 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v40 [label="ch_versions"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:KHMER_UNIQUEKMERS"];
+v35 -> v37 [label="fasta"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:KHMER_UNIQUEKMERS"];
+v36 -> v37 [label="kmer_size"];
+
+v37 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:KHMER_UNIQUEKMERS"];
+v38 [shape=point];
+v37 -> v38;
+
+v37 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:KHMER_UNIQUEKMERS"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 -> v39;
+
+v37 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:KHMER_UNIQUEKMERS"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v40;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v226 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MACS2_CALLPEAK_MERGED"];
+v39 -> v226 [label="macs_gsize"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v40 -> v41 [label="ch_versions"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v42 [label="versions"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v47 [label="ch_versions"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v43 -> v44 [label="samplesheet"];
+
+v44 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v44 -> v45;
+
+v44 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v47 [label="versions"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v80 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v46 -> v80 [label="trim_reads"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v94 [label="ch_versions"];
+
+v48 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v49 [shape=point];
+v48 -> v49 [label="ch_filtered_reads"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v51 [shape=point];
+v50 -> v51 [label="ch_fastqc_raw_multiqc"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v53 [shape=point];
+v52 -> v53 [label="ch_fastqc_trim_multiqc"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v55 [shape=point];
+v54 -> v55 [label="ch_trim_log_multiqc"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v57 [shape=point];
+v56 -> v57 [label="ch_trim_read_count"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v86 [label="ch_versions"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v60 [shape=point];
+v59 -> v60 [label="fastqc_raw_html"];
+
+v61 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v61 -> v403 [label="ch_fastqc_raw_multiqc"];
+
+v62 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v63 [shape=point];
+v62 -> v63 [label="trim_json"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v65 [shape=point];
+v64 -> v65 [label="trim_html"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v67 [shape=point];
+v66 -> v67 [label="trim_log"];
+
+v68 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v69 [shape=point];
+v68 -> v69 [label="trim_reads_fail"];
+
+v70 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v71 [shape=point];
+v70 -> v71 [label="trim_reads_merged"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v73 [shape=point];
+v72 -> v73 [label="fastqc_trim_html"];
+
+v74 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v74 -> v405 [label="ch_fastqc_trim_multiqc"];
+
+v75 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v76 [shape=point];
+v75 -> v76 [label="trim_read_count"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1];
+v80 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v77 -> v80 [label="adapter_fasta"];
+
+v78 [shape=point,label="",fixedsize=true,width=0.1];
+v80 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v78 -> v80 [label="save_trimmed_fail"];
+
+v79 [shape=point,label="",fixedsize=true,width=0.1];
+v80 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v79 -> v80 [label="save_merged"];
+
+v80 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v80 -> v87;
+
+v80 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v80 -> v87 [label="ch_trim_log_multiqc"];
+
+v80 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v84 [shape=point];
+v80 -> v84 [label="trim_html"];
+
+v80 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v83 [shape=point];
+v80 -> v83 [label="trim_log"];
+
+v80 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v80 -> v85;
+
+v80 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v82 [shape=point];
+v80 -> v82 [label="trim_reads_fail"];
+
+v80 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v81 [shape=point];
+v80 -> v81 [label="trim_reads_merged"];
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v86 -> v93 [label="ch_versions"];
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v88 -> v89 [label="ch_num_trimmed_reads"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:STAR_ALIGN"];
+v90 -> v108 [label="ch_reads"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 -> v91 [label="ch_num_trimmed_reads"];
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v92 [shape=point];
+v91 -> v92 [label="ch_trim_read_count"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v94 [label="versions"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v141 [label="ch_versions"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v96 [shape=point];
+v95 -> v96 [label="ch_genome_bam"];
+
+v97 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v98 [shape=point];
+v97 -> v98 [label="ch_genome_bam_index"];
+
+v99 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v100 [shape=point];
+v99 -> v100 [label="ch_samtools_stats"];
+
+v101 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v102 [shape=point];
+v101 -> v102 [label="ch_samtools_flagstat"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v104 [shape=point];
+v103 -> v104 [label="ch_samtools_idxstats"];
+
+v105 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v106 [shape=point];
+v105 -> v106 [label="ch_star_multiqc"];
+
+v107 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v118 [label="ch_versions"];
+
+v108 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:STAR_ALIGN"];
+v120 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v108 -> v120 [label="orig_bam"];
+
+v108 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:STAR_ALIGN"];
+v116 [shape=point];
+v108 -> v116 [label="ch_star_multiqc"];
+
+v108 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:STAR_ALIGN"];
+v115 [shape=point];
+v108 -> v115 [label="log_out"];
+
+v108 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:STAR_ALIGN"];
+v114 [shape=point];
+v108 -> v114 [label="log_progress"];
+
+v108 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:STAR_ALIGN"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v108 -> v117;
+
+v108 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:STAR_ALIGN"];
+v113 [shape=point];
+v108 -> v113 [label="bam_sorted"];
+
+v108 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:STAR_ALIGN"];
+v112 [shape=point];
+v108 -> v112 [label="bam_transcript"];
+
+v108 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:STAR_ALIGN"];
+v111 [shape=point];
+v108 -> v111;
+
+v108 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:STAR_ALIGN"];
+v110 [shape=point];
+v108 -> v110 [label="fastq"];
+
+v108 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:STAR_ALIGN"];
+v109 [shape=point];
+v108 -> v109 [label="tab"];
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v140 [label="ch_versions"];
+
+v119 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v123 [label="ch_versions"];
+
+v120 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v124 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v120 -> v124 [label="ch_genome_bam"];
+
+v120 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v121 [shape=point];
+v120 -> v121;
+
+v120 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v120 -> v122;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v127 [label="ch_versions"];
+
+v124 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v124 -> v128 [label="ch_genome_bam_index"];
+
+v124 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v124 -> v129 [label="csi"];
+
+v124 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v125 [shape=point];
+v124 -> v125;
+
+v124 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v124 -> v126;
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v139 [label="ch_versions"];
+
+v120 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v120 -> v128 [label="ch_genome_bam"];
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v128 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v133 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v130 -> v133 [label="bam_bai"];
+
+v131 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v134 [label="ch_versions"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v133 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v132 -> v133 [label="ch_fasta"];
+
+v133 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v409 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v133 -> v409 [label="ch_samtools_stats"];
+
+v133 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v134;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v136 [label="ch_versions"];
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v135 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v130 -> v135 [label="bam_bai"];
+
+v135 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v135 -> v411 [label="ch_samtools_flagstat"];
+
+v135 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v136;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v138 [label="ch_versions"];
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v137 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v130 -> v137 [label="bam_bai"];
+
+v137 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v413 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v137 -> v413 [label="ch_samtools_idxstats"];
+
+v137 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v138;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v139 [label="versions"];
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v140 [label="versions"];
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v141 [label="versions"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v147 [label="ch_versions"];
+
+v120 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v120 -> v142 [label="ch_genome_bam"];
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v142 -> v143;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v143 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v145 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PICARD_MERGESAMFILES_LIBRARY"];
+v144 -> v145 [label="ch_sort_bam"];
+
+v145 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PICARD_MERGESAMFILES_LIBRARY"];
+v149 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v145 -> v149 [label="ch_bam"];
+
+v145 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PICARD_MERGESAMFILES_LIBRARY"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v145 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v168 [label="ch_versions"];
+
+v148 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 -> v152 [label="ch_versions"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v149 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v132 -> v149 [label="ch_fasta"];
+
+v15 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v149 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v15 -> v149 [label="ch_fai"];
+
+v149 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v153 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v149 -> v153 [label="bam"];
+
+v149 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v150 [shape=point];
+v149 -> v150;
+
+v149 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v421 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v149 -> v421 [label="metrics"];
+
+v149 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v149 -> v151;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 -> v152;
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v156 [label="ch_versions"];
+
+v153 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v153 -> v157 [label="bai"];
+
+v153 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v153 -> v158 [label="csi"];
+
+v153 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v154 [shape=point];
+v153 -> v154;
+
+v153 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v153 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 -> v167 [label="ch_versions"];
+
+v149 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v149 -> v157 [label="bam"];
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v157 -> v158;
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v158 -> v159;
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v161 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS_MARKDUP:SAMTOOLS_STATS"];
+v159 -> v161 [label="bam_bai"];
+
+v160 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v162 [label="ch_versions"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v161 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS_MARKDUP:SAMTOOLS_STATS"];
+v132 -> v161 [label="ch_fasta"];
+
+v161 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS_MARKDUP:SAMTOOLS_STATS"];
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v161 -> v415 [label="stats"];
+
+v161 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS_MARKDUP:SAMTOOLS_STATS"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v162;
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v164 [label="ch_versions"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v163 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS_MARKDUP:SAMTOOLS_FLAGSTAT"];
+v159 -> v163 [label="bam_bai"];
+
+v163 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS_MARKDUP:SAMTOOLS_FLAGSTAT"];
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v163 -> v417 [label="flagstat"];
+
+v163 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS_MARKDUP:SAMTOOLS_FLAGSTAT"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v164;
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v166 [label="ch_versions"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v165 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS_MARKDUP:SAMTOOLS_IDXSTATS"];
+v159 -> v165 [label="bam_bai"];
+
+v165 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS_MARKDUP:SAMTOOLS_IDXSTATS"];
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v165 -> v419 [label="idxstats"];
+
+v165 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS_MARKDUP:SAMTOOLS_IDXSTATS"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 -> v166;
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v167 [label="versions"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v168 [label="versions"];
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v209 [label="ch_versions"];
+
+v149 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v149 -> v169 [label="bam"];
+
+v153 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v153 -> v169 [label="bai"];
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v172 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_FILTER"];
+v169 -> v172 [label="ch_bam_bai"];
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v172 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_FILTER"];
+v170 -> v172 [label="ch_bed"];
+
+v171 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 -> v174 [label="ch_versions"];
+
+v172 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_FILTER"];
+v175 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_EM_PREP"];
+v172 -> v175;
+
+v172 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_FILTER"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v172 -> v173;
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v173 -> v174;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 -> v178 [label="ch_versions"];
+
+v15 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v175 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_EM_PREP"];
+v15 -> v175 [label="ch_chrom_sizes"];
+
+v175 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_EM_PREP"];
+v179 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_EM"];
+v175 -> v179;
+
+v175 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_EM_PREP"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v175 -> v183;
+
+v175 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_EM_PREP"];
+v176 [shape=point];
+v175 -> v176;
+
+v175 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_EM_PREP"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v175 -> v177;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v178;
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 -> v182 [label="ch_versions"];
+
+v179 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_EM"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v179 -> v183;
+
+v179 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_EM"];
+v180 [shape=point];
+v179 -> v180;
+
+v179 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_EM"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v179 -> v181;
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 -> v182;
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v186 [label="ch_versions"];
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v184 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_EM_OUT"];
+v183 -> v184 [label="ch_em_bam"];
+
+v15 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v184 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_EM_OUT"];
+v15 -> v184 [label="ch_chrom_sizes"];
+
+v184 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_EM_OUT"];
+v188 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v184 -> v188 [label="ch_bam"];
+
+v184 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_EM_OUT"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v184 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v186;
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 -> v208 [label="ch_versions"];
+
+v187 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 -> v191 [label="ch_versions"];
+
+v188 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v192 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v188 -> v192 [label="bam"];
+
+v188 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v189 [shape=point];
+v188 -> v189;
+
+v188 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v188 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v191;
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 -> v195 [label="ch_versions"];
+
+v192 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v192 -> v196 [label="bai"];
+
+v192 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v192 -> v197 [label="csi"];
+
+v192 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v193 [shape=point];
+v192 -> v193;
+
+v192 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v192 -> v194;
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v195;
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 -> v206 [label="ch_versions"];
+
+v188 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v188 -> v196 [label="bam"];
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v196 -> v197;
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v197 -> v198;
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v200 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v198 -> v200 [label="bam_bai"];
+
+v199 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v199 -> v201 [label="ch_versions"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v200 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v132 -> v200 [label="ch_fasta"];
+
+v200 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v423 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v200 -> v423 [label="stats"];
+
+v200 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 -> v201;
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 -> v203 [label="ch_versions"];
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v202 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v198 -> v202 [label="bam_bai"];
+
+v202 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v202 -> v425 [label="flagstat"];
+
+v202 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 -> v203;
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v203 -> v205 [label="ch_versions"];
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v204 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v198 -> v204 [label="bam_bai"];
+
+v204 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v204 -> v427 [label="idxstats"];
+
+v204 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v204 -> v205;
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v205 -> v206 [label="versions"];
+
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v206 -> v207 [label="versions"];
+
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 -> v208;
+
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 -> v209 [label="versions"];
+
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 -> v215 [label="ch_versions"];
+
+v210 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v211 [shape=point];
+v210 -> v211 [label="ch_picardcollectmultiplemetrics_multiqc"];
+
+v188 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v212 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_PICARD_COLLECTMULTIPLEMETRICS"];
+v188 -> v212 [label="bam"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v212 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_PICARD_COLLECTMULTIPLEMETRICS"];
+v132 -> v212 [label="ch_fasta"];
+
+v15 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v212 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_PICARD_COLLECTMULTIPLEMETRICS"];
+v15 -> v212 [label="ch_fai"];
+
+v212 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_PICARD_COLLECTMULTIPLEMETRICS"];
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v212 -> v429 [label="ch_picardcollectmultiplemetrics_multiqc"];
+
+v212 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_PICARD_COLLECTMULTIPLEMETRICS"];
+v213 [shape=point];
+v212 -> v213;
+
+v212 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_PICARD_COLLECTMULTIPLEMETRICS"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v212 -> v214;
+
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v214 -> v215;
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v215 -> v220 [label="ch_versions"];
+
+v192 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v192 -> v216 [label="bai"];
+
+v188 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v188 -> v216 [label="bam"];
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v217 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_DEEPTOOL_BIGWIG"];
+v216 -> v217 [label="ch_bam_bai"];
+
+v217 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_DEEPTOOL_BIGWIG"];
+v219 [shape=point];
+v217 -> v219;
+
+v217 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_DEEPTOOL_BIGWIG"];
+v218 [shape=point];
+v217 -> v218;
+
+v217 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_DEEPTOOL_BIGWIG"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v217 -> v220;
+
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 -> v233 [label="ch_versions"];
+
+v221 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v435 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v221 -> v435 [label="ch_deeptoolsplotfingerprint_multiqc"];
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v216 -> v222 [label="ch_bam_bai"];
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v235 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v222 -> v235 [label="ch_bams"];
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v216 -> v223 [label="ch_bam_bai"];
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v223 -> v224;
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v224 -> v225;
+
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v226 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MACS2_CALLPEAK_MERGED"];
+v225 -> v226 [label="ch_bam_exp"];
+
+v226 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MACS2_CALLPEAK_MERGED"];
+v231 [shape=point];
+v226 -> v231;
+
+v226 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MACS2_CALLPEAK_MERGED"];
+v230 [shape=point];
+v226 -> v230;
+
+v226 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MACS2_CALLPEAK_MERGED"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v226 -> v232;
+
+v226 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MACS2_CALLPEAK_MERGED"];
+v229 [shape=point];
+v226 -> v229;
+
+v226 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MACS2_CALLPEAK_MERGED"];
+v228 [shape=point];
+v226 -> v228;
+
+v226 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MACS2_CALLPEAK_MERGED"];
+v227 [shape=point];
+v226 -> v227;
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 -> v233;
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v284 [label="ch_versions"];
+
+v234 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v234 -> v241 [label="ch_versions"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v235 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v39 -> v235 [label="macs_gsize"];
+
+v235 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v235 -> v242;
+
+v235 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v239 [shape=point];
+v235 -> v239 [label="xls"];
+
+v235 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v235 -> v240;
+
+v235 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v238 [shape=point];
+v235 -> v238 [label="gapped_peaks"];
+
+v235 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v237 [shape=point];
+v235 -> v237 [label="bed"];
+
+v235 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v236 [shape=point];
+v235 -> v236 [label="bedgraph"];
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v240 -> v241;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v241 -> v247 [label="ch_versions"];
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v242 -> v243 [label="ch_peaks"];
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v222 -> v243 [label="ch_bams"];
+
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v243 -> v244;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v245 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:FRIP_SCORE"];
+v244 -> v245 [label="ch_bam_peaks"];
+
+v245 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:FRIP_SCORE"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v245 -> v248 [label="frip_txt"];
+
+v245 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:FRIP_SCORE"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v245 -> v246;
+
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v246 -> v247;
+
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 -> v254 [label="ch_versions"];
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v244 -> v248 [label="ch_bam_peaks"];
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v248 -> v249;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v252 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v249 -> v252 [label="ch_bam_peak_frip"];
+
+v250 [shape=point,label="",fixedsize=true,width=0.1];
+v252 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v250 -> v252 [label="peak_count_header"];
+
+v251 [shape=point,label="",fixedsize=true,width=0.1];
+v252 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v251 -> v252 [label="frip_score_header"];
+
+v252 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v252 -> v439 [label="peak_count_multiqc"];
+
+v252 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v437 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v252 -> v437 [label="frip_multiqc"];
+
+v252 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v252 -> v253;
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v253 -> v254;
+
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v254 -> v270 [label="ch_versions"];
+
+v255 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v256 [shape=point];
+v255 -> v256 [label="ch_homer_annotatepeaks"];
+
+v257 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v258 [shape=point];
+v257 -> v258 [label="ch_plot_macs2_qc_txt"];
+
+v259 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v260 [shape=point];
+v259 -> v260 [label="ch_plot_macs2_qc_pdf"];
+
+v261 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v262 [shape=point];
+v261 -> v262 [label="ch_plot_homer_annotatepeaks_txt"];
+
+v263 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v264 [shape=point];
+v263 -> v264 [label="ch_plot_homer_annotatepeaks_pdf"];
+
+v265 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v266 [shape=point];
+v265 -> v266 [label="ch_plot_homer_annotatepeaks_tsv"];
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v268 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v242 -> v268 [label="ch_peaks"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v268 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v132 -> v268 [label="ch_fasta"];
+
+v267 [shape=point,label="",fixedsize=true,width=0.1];
+v268 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v267 -> v268 [label="ch_gtf"];
+
+v268 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v268 -> v277 [label="homer_annotatepeaks"];
+
+v268 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v268 -> v269;
+
+v269 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v269 -> v270;
+
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v270 -> v276 [label="ch_versions"];
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v242 -> v271 [label="ch_peaks"];
+
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v273 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v271 -> v273;
+
+v272 [shape=point,label="",fixedsize=true,width=0.1];
+v273 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v272 -> v273 [label="is_narrow_peak"];
+
+v273 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v275 [shape=point];
+v273 -> v275 [label="plot_macs2_qc_txt"];
+
+v273 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v274 [shape=point];
+v273 -> v274 [label="plot_macs2_qc_pdf"];
+
+v273 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v273 -> v276;
+
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v276 -> v283 [label="ch_versions"];
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v280 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v277 -> v280;
+
+v278 [shape=point,label="",fixedsize=true,width=0.1];
+v280 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v278 -> v280 [label="mqc_header"];
+
+v279 [shape=point,label="",fixedsize=true,width=0.1];
+v280 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v279 -> v280 [label="suffix"];
+
+v280 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v282 [shape=point];
+v280 -> v282 [label="plot_homer_annotatepeaks_txt"];
+
+v280 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v281 [shape=point];
+v280 -> v281 [label="plot_homer_annotatepeaks_pdf"];
+
+v280 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v441 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v280 -> v441 [label="plot_homer_annotatepeaks_tsv"];
+
+v280 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v280 -> v283;
+
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v283 -> v284 [label="versions"];
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v284 -> v348 [label="ch_versions"];
+
+v285 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v286 [shape=point];
+v285 -> v286 [label="ch_macs2_consensus_library_bed"];
+
+v287 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v288 [shape=point];
+v287 -> v288 [label="ch_featurecounts_library_multiqc"];
+
+v289 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v290 [shape=point];
+v289 -> v290 [label="ch_deseq2_pca_library_multiqc"];
+
+v291 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v292 [shape=point];
+v291 -> v292 [label="ch_deseq2_clustering_library_multiqc"];
+
+v293 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v293 -> v302 [label="ch_versions"];
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v242 -> v294 [label="ch_peaks"];
+
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v294 -> v295;
+
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v295 -> v296;
+
+v296 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v298 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v296 -> v298 [label="ch_consensus_peaks"];
+
+v297 [shape=point,label="",fixedsize=true,width=0.1];
+v298 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v297 -> v298 [label="is_narrow_peak"];
+
+v298 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v305 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v298 -> v305 [label="ch_macs2_consensus_library_bed"];
+
+v298 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v298 -> v312 [label="consensus_saf"];
+
+v298 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v301 [shape=point];
+v298 -> v301 [label="consensus_pdf"];
+
+v298 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v300 [shape=point];
+v298 -> v300 [label="consensus_boolean_txt"];
+
+v298 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v299 [shape=point];
+v298 -> v299 [label="consensus_intersect_txt"];
+
+v298 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v298 -> v302;
+
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v307 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v302 -> v307 [label="ch_versions"];
+
+v303 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v304 [shape=point];
+v303 -> v304 [label="ch_homer_annotatepeaks"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v305 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v132 -> v305 [label="ch_fasta"];
+
+v267 [shape=point,label="",fixedsize=true,width=0.1];
+v305 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v267 -> v305 [label="ch_gtf"];
+
+v305 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v306 [shape=point];
+v305 -> v306 [label="homer_annotatepeaks"];
+
+v305 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v307 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v305 -> v307;
+
+v307 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v307 -> v317 [label="ch_versions"];
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v308 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v242 -> v308 [label="ch_peaks"];
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v308 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v222 -> v308 [label="ch_bams"];
+
+v308 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v309 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v308 -> v309;
+
+v309 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v309 -> v310;
+
+v310 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v310 -> v311;
+
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v311 -> v312;
+
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v312 -> v313;
+
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v313 -> v314;
+
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v314 -> v315;
+
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v316 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:SUBREAD_FEATURECOUNTS"];
+v315 -> v316 [label="ch_bam_saf"];
+
+v316 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:SUBREAD_FEATURECOUNTS"];
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v316 -> v338 [label="featurecounts_txt"];
+
+v316 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:SUBREAD_FEATURECOUNTS"];
+v443 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v316 -> v443 [label="ch_featurecounts_library_multiqc"];
+
+v316 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:SUBREAD_FEATURECOUNTS"];
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v316 -> v317;
+
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v317 -> v347 [label="ch_versions"];
+
+v318 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v319 [shape=point];
+v318 -> v319 [label="ch_deseq2_qc_pdf"];
+
+v320 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v321 [shape=point];
+v320 -> v321 [label="ch_deseq2_qc_rdata"];
+
+v322 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v323 [shape=point];
+v322 -> v323 [label="ch_deseq2_qc_rds"];
+
+v324 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v325 [shape=point];
+v324 -> v325 [label="ch_deseq2_qc_pca_txt"];
+
+v326 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v327 [shape=point];
+v326 -> v327 [label="ch_deseq2_qc_pca_multiqc"];
+
+v328 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v329 [shape=point];
+v328 -> v329 [label="ch_deseq2_qc_dists_txt"];
+
+v330 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v331 [shape=point];
+v330 -> v331 [label="ch_deseq2_qc_dists_multiqc"];
+
+v332 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v333 [shape=point];
+v332 -> v333 [label="ch_deseq2_qc_log"];
+
+v334 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v335 [shape=point];
+v334 -> v335 [label="ch_deseq2_qc_size_factors"];
+
+v336 [shape=point,label="",fixedsize=true,width=0.1];
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v336 -> v338 [label="deseq2_pca_header"];
+
+v337 [shape=point,label="",fixedsize=true,width=0.1];
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v337 -> v338 [label="deseq2_clustering_header"];
+
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v346 [shape=point];
+v338 -> v346 [label="deseq2_qc_noamlization"];
+
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v338 -> v349 [label="deseq2_qc_noamlization_txt"];
+
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v345 [shape=point];
+v338 -> v345 [label="deseq2_qc_pdf"];
+
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v344 [shape=point];
+v338 -> v344 [label="deseq2_qc_rdata"];
+
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v343 [shape=point];
+v338 -> v343 [label="deseq2_qc_rds"];
+
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v342 [shape=point];
+v338 -> v342 [label="deseq2_qc_pca_txt"];
+
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v338 -> v461 [label="ch_deseq2_pca_library_multiqc"];
+
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v341 [shape=point];
+v338 -> v341 [label="deseq2_qc_dists_txt"];
+
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v463 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v338 -> v463 [label="ch_deseq2_clustering_library_multiqc"];
+
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v340 [shape=point];
+v338 -> v340 [label="deseq2_qc_log"];
+
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v339 [shape=point];
+v338 -> v339 [label="deseq2_qc_size_factors"];
+
+v338 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:COUNT_NORM"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v338 -> v347;
+
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v347 -> v348 [label="versions"];
+
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v348 -> v361 [label="ch_versions"];
+
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v349 -> v350;
+
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v350 -> v351 [label="ch_size_factors"];
+
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v352 [shape=point];
+v351 -> v352;
+
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v353 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v350 -> v353 [label="ch_size_factors"];
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v353 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v216 -> v353 [label="ch_bam_bai"];
+
+v353 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v353 -> v354;
+
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v354 -> v355 [label="ch_bam_bai_scale"];
+
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v356 [shape=point];
+v355 -> v356;
+
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v357 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_DEEPTOOLS_BIGWIG_NORM"];
+v354 -> v357 [label="ch_bam_bai_scale"];
+
+v357 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_DEEPTOOLS_BIGWIG_NORM"];
+v359 [shape=point];
+v357 -> v359;
+
+v357 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_DEEPTOOLS_BIGWIG_NORM"];
+v358 [shape=point];
+v357 -> v358;
+
+v357 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_DEEPTOOLS_BIGWIG_NORM"];
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v357 -> v360;
+
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v360 -> v361;
+
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v361 -> v371 [label="ch_versions"];
+
+v362 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v362 -> v433 [label="ch_deeptoolsplotprofile_multiqc"];
+
+v192 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v192 -> v363 [label="bai"];
+
+v188 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v188 -> v363 [label="bam"];
+
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v363 -> v364;
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v242 -> v364 [label="ch_peaks"];
+
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v368 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v364 -> v368 [label="ch_bam_peaks"];
+
+v365 [shape=point,label="",fixedsize=true,width=0.1];
+v368 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v365 -> v368 [label="organism"];
+
+v366 [shape=point,label="",fixedsize=true,width=0.1];
+v368 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v366 -> v368 [label="mito_name"];
+
+v367 [shape=point,label="",fixedsize=true,width=0.1];
+v368 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v367 -> v368 [label="excl_regs_file"];
+
+v368 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v368 -> v372;
+
+v368 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v369 [shape=point];
+v368 -> v369;
+
+v368 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v368 -> v370;
+
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v370 -> v371;
+
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v371 -> v375 [label="ch_versions"];
+
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v373 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_ATAQV_MKARV"];
+v372 -> v373;
+
+v373 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_ATAQV_MKARV"];
+v374 [shape=point];
+v373 -> v374;
+
+v373 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MERGED_LIBRARY_ATAQV_MKARV"];
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v373 -> v375;
+
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v375 -> v393 [label="ch_versions"];
+
+v376 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v376 -> v445 [label="ch_markduplicates_replicate_stats"];
+
+v377 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v377 -> v447 [label="ch_markduplicates_replicate_flagstat"];
+
+v378 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v378 -> v449 [label="ch_markduplicates_replicate_idxstats"];
+
+v379 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v379 -> v451 [label="ch_markduplicates_replicate_metrics"];
+
+v380 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v381 [shape=point];
+v380 -> v381 [label="ch_ucsc_bedgraphtobigwig_replicate_bigwig"];
+
+v382 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v383 [shape=point];
+v382 -> v383 [label="ch_macs2_replicate_peaks"];
+
+v384 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v453 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v384 -> v453 [label="ch_macs2_frip_replicate_multiqc"];
+
+v385 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v385 -> v455 [label="ch_macs2_peak_count_replicate_multiqc"];
+
+v386 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v386 -> v457 [label="ch_macs2_plot_homer_annotatepeaks_replicate_multiqc"];
+
+v387 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v388 [shape=point];
+v387 -> v388 [label="ch_macs2_consensus_replicate_bed"];
+
+v389 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v389 -> v459 [label="ch_featurecounts_replicate_multiqc"];
+
+v390 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v390 -> v465 [label="ch_deseq2_pca_replicate_multiqc"];
+
+v391 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v467 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v391 -> v467 [label="ch_deseq2_clustering_replicate_multiqc"];
+
+v392 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v431 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v392 -> v431 [label="ch_preseq_multiqc"];
+
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v393 -> v394;
+
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v395 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v394 -> v395;
+
+v395 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v397 [shape=point];
+v395 -> v397;
+
+v395 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v395 -> v400;
+
+v395 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v396 [shape=point];
+v395 -> v396;
+
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v398 -> v399;
+
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v399 -> v469;
+
+v400 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v400 -> v469;
+
+v401 [shape=point,label="",fixedsize=true,width=0.1];
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v401 -> v402 [label="ch_workflow_summary"];
+
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v402 -> v469;
+
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v403 -> v404;
+
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v404 -> v469;
+
+v405 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v406 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v405 -> v406;
+
+v406 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v406 -> v469;
+
+v80 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:FASTQ_FASTQC_UMITOOLS_FASTP:FASTP"];
+v407 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v80 -> v407 [label="ch_trim_log_multiqc"];
+
+v407 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v408 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v407 -> v408;
+
+v408 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v408 -> v469;
+
+v409 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v409 -> v410;
+
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v410 -> v469;
+
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v411 -> v412;
+
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v412 -> v469;
+
+v413 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v414 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v413 -> v414;
+
+v414 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v414 -> v469;
+
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v415 -> v416;
+
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v416 -> v469;
+
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v417 -> v418;
+
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v418 -> v469;
+
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v419 -> v420;
+
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v420 -> v469;
+
+v421 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v422 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v421 -> v422;
+
+v422 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v422 -> v469;
+
+v423 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v423 -> v424;
+
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v424 -> v469;
+
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v425 -> v426;
+
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v426 -> v469;
+
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v427 -> v428;
+
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v428 -> v469;
+
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v429 -> v430;
+
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v430 -> v469;
+
+v431 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v432 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v431 -> v432;
+
+v432 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v432 -> v469;
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v434 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v433 -> v434;
+
+v434 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v434 -> v469;
+
+v435 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v436 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v435 -> v436;
+
+v436 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v436 -> v469;
+
+v437 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v437 -> v438;
+
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v438 -> v469;
+
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v439 -> v440;
+
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v440 -> v469;
+
+v441 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v441 -> v442;
+
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v442 -> v469;
+
+v443 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v443 -> v444;
+
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v444 -> v469;
+
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v446 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v445 -> v446;
+
+v446 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v446 -> v469;
+
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v448 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v447 -> v448;
+
+v448 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v448 -> v469;
+
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v449 -> v450;
+
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v450 -> v469;
+
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v451 -> v452;
+
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v452 -> v469;
+
+v453 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v453 -> v454;
+
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v454 -> v469;
+
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v456 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v455 -> v456;
+
+v456 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v456 -> v469;
+
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v457 -> v458;
+
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v458 -> v469;
+
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v460 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v459 -> v460;
+
+v460 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v460 -> v469;
+
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v461 -> v462;
+
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v462 -> v469;
+
+v463 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v463 -> v464;
+
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v464 -> v469;
+
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v465 -> v466;
+
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v466 -> v469;
+
+v467 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v468 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v467 -> v468;
+
+v468 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v468 -> v469;
+
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v473 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v469 -> v473;
+
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v472 [shape=point];
+v469 -> v472;
+
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v471 [shape=point];
+v469 -> v471;
+
+v469 [label="MULTIM_NF_ATACSEQ:MMATACSEQ:MULTIQC"];
+v470 [shape=point];
+v469 -> v470;
+
+v473 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v474 [shape=point];
+v473 -> v474;
+
+}

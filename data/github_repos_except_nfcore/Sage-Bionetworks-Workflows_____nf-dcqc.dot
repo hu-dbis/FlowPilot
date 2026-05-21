@@ -1,0 +1,94 @@
+digraph "SageBionetworksWorkflows_____nfdcqc" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="ch_versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="SAGE_DCQC:DCQC:PREPARE_TESTS:CREATE_TARGETS"];
+v2 -> v3 [label="input_csv"];
+
+v3 [label="SAGE_DCQC:DCQC:PREPARE_TESTS:CREATE_TARGETS"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [label="SAGE_DCQC:DCQC:PREPARE_TESTS:CREATE_TESTS"];
+v5 -> v6 [label="ch_targets"];
+
+v6 [label="SAGE_DCQC:DCQC:PREPARE_TESTS:CREATE_TESTS"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v8 -> v9 [label="ch_tests"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v10 [label="ch_tests"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v12 [label="SAGE_DCQC:DCQC:EXTERNAL_TESTS:CREATE_PROCESS"];
+v9 -> v12 [label="ch_tests"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [label="SAGE_DCQC:DCQC:INTERNAL_TESTS:COMPUTE_TEST"];
+v10 -> v11 [label="ch_tests_extra"];
+
+v11 [label="SAGE_DCQC:DCQC:INTERNAL_TESTS:COMPUTE_TEST"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v16;
+
+v12 [label="SAGE_DCQC:DCQC:EXTERNAL_TESTS:CREATE_PROCESS"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [label="SAGE_DCQC:DCQC:EXTERNAL_TESTS:RUN_PROCESS"];
+v13 -> v14 [label="ch_processes"];
+
+v14 [label="SAGE_DCQC:DCQC:EXTERNAL_TESTS:RUN_PROCESS"];
+v15 [label="SAGE_DCQC:DCQC:EXTERNAL_TESTS:COMPUTE_TEST"];
+v14 -> v15;
+
+v15 [label="SAGE_DCQC:DCQC:EXTERNAL_TESTS:COMPUTE_TEST"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v16 -> v17 [label="ch_tests_computed"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v18 [label="SAGE_DCQC:DCQC:PREPARE_REPORTS:CREATE_SUITE"];
+v17 -> v18 [label="ch_tests_by_target"];
+
+v18 [label="SAGE_DCQC:DCQC:PREPARE_REPORTS:CREATE_SUITE"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 [label="SAGE_DCQC:DCQC:PREPARE_REPORTS:COMBINE_SUITES"];
+v19 -> v20 [label="ch_suites_collected"];
+
+v20 [label="SAGE_DCQC:DCQC:PREPARE_REPORTS:COMBINE_SUITES"];
+v22 [label="SAGE_DCQC:DCQC:PREPARE_REPORTS:UPDATE_INPUT"];
+v20 -> v22;
+
+v21 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [label="SAGE_DCQC:DCQC:PREPARE_REPORTS:UPDATE_INPUT"];
+v21 -> v22 [label="input_csv"];
+
+v22 [label="SAGE_DCQC:DCQC:PREPARE_REPORTS:UPDATE_INPUT"];
+v23 [shape=point];
+v22 -> v23;
+
+}

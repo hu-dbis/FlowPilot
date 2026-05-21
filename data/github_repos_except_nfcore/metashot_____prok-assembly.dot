@@ -1,0 +1,66 @@
+digraph "metashot_____prokassembly" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 [label="raw_reads_stats"];
+v1 -> v2 [label="deint_ch"];
+
+v2 [label="raw_reads_stats"];
+v3 [shape=point];
+v2 -> v3;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 [label="trim_adapters"];
+v1 -> v4 [label="deint_ch"];
+
+v4 [label="trim_adapters"];
+v6 [label="remove_contaminants"];
+v4 -> v6;
+
+v4 [label="trim_adapters"];
+v5 [shape=point];
+v4 -> v5;
+
+v6 [label="remove_contaminants"];
+v8 [label="quality_filter"];
+v6 -> v8;
+
+v6 [label="remove_contaminants"];
+v7 [shape=point];
+v6 -> v7;
+
+v8 [label="quality_filter"];
+v9 [label="clean_reads_stats"];
+v8 -> v9 [label="clean_ch"];
+
+v9 [label="clean_reads_stats"];
+v10 [shape=point];
+v9 -> v10;
+
+v8 [label="quality_filter"];
+v11 [label="spades"];
+v8 -> v11 [label="clean_ch"];
+
+v11 [label="spades"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v13 [label="scaffolds_ch"];
+
+v11 [label="spades"];
+v12 [shape=point];
+v11 -> v12;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 [label="statswrapper"];
+v14 -> v15;
+
+v15 [label="statswrapper"];
+v16 [shape=point];
+v15 -> v16;
+
+}

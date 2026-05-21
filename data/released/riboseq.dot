@@ -1,0 +1,1726 @@
+digraph "riboseq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=point];
+v6 -> v7 [label="samplesheet"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v52 [label="ch_versions"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v13 [label="ch_versions"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:GUNZIP_FASTA"];
+v10 -> v11;
+
+v11 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:GUNZIP_FASTA"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12;
+
+v11 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:GUNZIP_FASTA"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v13;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:GTF_FILTER"];
+v12 -> v15 [label="ch_fasta"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v16 [label="ch_versions"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:GTF_FILTER"];
+v14 -> v15 [label="ch_gtf"];
+
+v15 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:GTF_FILTER"];
+v17 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:MAKE_TRANSCRIPTS_FASTA"];
+v15 -> v17 [label="gtf"];
+
+v15 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:GTF_FILTER"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v19 [label="ch_versions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:MAKE_TRANSCRIPTS_FASTA"];
+v12 -> v17 [label="ch_fasta"];
+
+v17 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:MAKE_TRANSCRIPTS_FASTA"];
+v18 [shape=point];
+v17 -> v18;
+
+v17 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:MAKE_TRANSCRIPTS_FASTA"];
+v127 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:SALMON_INDEX"];
+v17 -> v127 [label="transcript_fasta"];
+
+v17 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:MAKE_TRANSCRIPTS_FASTA"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v26 [label="ch_versions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v20 [label="ch_fasta"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v20 -> v21;
+
+v21 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v24;
+
+v21 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v23;
+
+v21 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v22 [shape=point];
+v21 -> v22;
+
+v21 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v26;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v53 [label="ch_fai"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=point];
+v24 -> v25 [label="ch_chrom_sizes"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v41 [label="ch_versions"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v28 [shape=point];
+v27 -> v28 [label="ch_bbsplit_index"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v30 [shape=point];
+v29 -> v30 [label="ch_sortmerna_index"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:SORTMERNA_INDEX"];
+v34 -> v37 [label="ch_sortmerna_fastas"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v37 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:SORTMERNA_INDEX"];
+v35 -> v37;
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v37 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:SORTMERNA_INDEX"];
+v36 -> v37;
+
+v37 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:SORTMERNA_INDEX"];
+v39 [shape=point];
+v37 -> v39;
+
+v37 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:SORTMERNA_INDEX"];
+v38 [shape=point];
+v37 -> v38;
+
+v37 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:SORTMERNA_INDEX"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v37 -> v40;
+
+v37 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:SORTMERNA_INDEX"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v41;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v117 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:SORTMERNA"];
+v40 -> v117 [label="ch_sortmerna_index"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v48 [label="ch_versions"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v43 [shape=point];
+v42 -> v43 [label="ch_star_index"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v44 [label="ch_fasta"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v44 -> v46;
+
+v15 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:GTF_FILTER"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v45 [label="gtf"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v45 -> v46;
+
+v46 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 -> v47;
+
+v46 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v48;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 -> v146 [label="ch_star_index"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v48 -> v51 [label="ch_versions"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v50 [shape=point];
+v49 -> v50 [label="ch_index"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v52 [label="versions"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v145 [label="ch_versions"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [shape=point];
+v53 -> v54;
+
+v55 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v144 [label="ch_multiqc_files"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v59 -> v66 [label="ch_reads"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v71 [label="ch_versions"];
+
+v61 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v62 [shape=point];
+v61 -> v62 [label="ch_filtered_reads"];
+
+v63 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v64 [shape=point];
+v63 -> v64 [label="ch_trim_read_count"];
+
+v65 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v107 [label="ch_multiqc_files"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v68;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v67 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:CAT_FASTQ"];
+v66 -> v67;
+
+v67 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:CAT_FASTQ"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v68;
+
+v67 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:CAT_FASTQ"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v67 -> v69;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:FASTQC"];
+v68 -> v77 [label="trim_reads"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v104 [label="ch_versions"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v80 [label="ch_versions"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v74 [shape=point];
+v73 -> v74 [label="fastqc_html"];
+
+v75 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v76 [shape=point];
+v75 -> v76 [label="fastqc_zip"];
+
+v77 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:FASTQC"];
+v78 [shape=point];
+v77 -> v78 [label="fastqc_html"];
+
+v77 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:FASTQC"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v105 [label="fastqc_zip"];
+
+v77 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:FASTQC"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v77 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v97 [label="ch_versions"];
+
+v81 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v82 [shape=point];
+v81 -> v82 [label="umi_log"];
+
+v83 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v84 [shape=point];
+v83 -> v84 [label="trim_unpaired"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v86 [shape=point];
+v85 -> v86 [label="trim_html"];
+
+v87 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v88 [shape=point];
+v87 -> v88 [label="trim_zip"];
+
+v89 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v90 [shape=point];
+v89 -> v90 [label="trim_log"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v92 [shape=point];
+v91 -> v92 [label="trim_read_count"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v68 -> v93 [label="trim_reads"];
+
+v93 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v98;
+
+v93 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v93 -> v98 [label="trim_log"];
+
+v93 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v95 [shape=point];
+v93 -> v95 [label="trim_unpaired"];
+
+v93 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v94 [shape=point];
+v93 -> v94 [label="trim_html"];
+
+v93 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v105 [label="trim_zip"];
+
+v93 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v93 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v97 -> v103 [label="ch_versions"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v99 -> v100 [label="ch_num_trimmed_reads"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v117 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:SORTMERNA"];
+v101 -> v117 [label="ch_filtered_reads"];
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v99 -> v102 [label="ch_num_trimmed_reads"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 -> v108 [label="trim_read_count"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v104 [label="versions"];
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v121 [label="ch_versions"];
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v106;
+
+v93 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v106 [label="trim_log"];
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v112 [label="ch_multiqc_files"];
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v110 -> v111 [label="ch_fail_trimming_multiqc"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v119 [label="ch_multiqc_files"];
+
+v113 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v113 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v114 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v115 -> v116;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v117 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:SORTMERNA"];
+v116 -> v117 [label="ch_sortmerna_fastas"];
+
+v117 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:SORTMERNA"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v117 -> v122 [label="ch_filtered_reads"];
+
+v117 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:SORTMERNA"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v119;
+
+v117 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:SORTMERNA"];
+v118 [shape=point];
+v117 -> v118;
+
+v117 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:SORTMERNA"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v117 -> v120;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v119 -> v142 [label="ch_multiqc_files"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v138 [label="ch_versions"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v122 -> v123 [label="ch_reads"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v141;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 -> v123 [label="ch_fasta"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v124 -> v125;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v127 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:SALMON_INDEX"];
+v125 -> v127 [label="ch_genome_fasta"];
+
+v126 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v128 [label="ch_versions"];
+
+v127 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:SALMON_INDEX"];
+v134 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:SALMON_QUANT"];
+v127 -> v134 [label="index"];
+
+v127 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:SALMON_INDEX"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v131 [label="ch_versions"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v129 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:FQ_SUBSAMPLE"];
+v122 -> v129 [label="ch_reads"];
+
+v129 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:FQ_SUBSAMPLE"];
+v134 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:SALMON_QUANT"];
+v129 -> v134 [label="reads"];
+
+v129 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:FQ_SUBSAMPLE"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v137 [label="ch_versions"];
+
+v15 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:GTF_FILTER"];
+v134 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:SALMON_QUANT"];
+v15 -> v134 [label="gtf"];
+
+v17 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:MAKE_TRANSCRIPTS_FASTA"];
+v134 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:SALMON_QUANT"];
+v17 -> v134 [label="transcript_fasta"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v134 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:SALMON_QUANT"];
+v132 -> v134 [label="alignment_mode"];
+
+v133 [shape=point,label="",fixedsize=true,width=0.1];
+v134 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:SALMON_QUANT"];
+v133 -> v134 [label="lib_type"];
+
+v134 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:SALMON_QUANT"];
+v135 [shape=point];
+v134 -> v135 [label="results"];
+
+v134 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:SALMON_QUANT"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v134 -> v139 [label="json_info"];
+
+v134 [label="NFCORE_RIBOSEQ:RIBOSEQ:PREPROCESS_RNASEQ:FASTQ_SUBSAMPLE_FQ_SALMON:SALMON_QUANT"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v134 -> v136;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v137;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v138 [label="versions"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v145 [label="versions"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v122 -> v139 [label="ch_reads"];
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v141 -> v154 [label="ch_reads"];
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v142 -> v143;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v144 [label="multiqc_files"];
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v220 [label="ch_multiqc_files"];
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v218 [label="ch_versions"];
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v146 -> v154 [label="ch_index"];
+
+v15 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:GTF_FILTER"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v147 [label="gtf"];
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v147 -> v154 [label="ch_gtf"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v148 [label="ch_fasta"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v170 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_SORT"];
+v148 -> v170 [label="ch_fasta"];
+
+v17 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:MAKE_TRANSCRIPTS_FASTA"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v149 [label="transcript_fasta"];
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v193 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:SAMTOOLS_SORT"];
+v149 -> v193 [label="ch_fasta"];
+
+v150 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 -> v168 [label="ch_versions"];
+
+v151 [shape=point,label="",fixedsize=true,width=0.1];
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v151 -> v154 [label="star_ignore_sjdbgtf"];
+
+v152 [shape=point,label="",fixedsize=true,width=0.1];
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v152 -> v154 [label="seq_platform"];
+
+v153 [shape=point,label="",fixedsize=true,width=0.1];
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v153 -> v154 [label="seq_center"];
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v154 -> v225 [label="log_final"];
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v166 [shape=point];
+v154 -> v166 [label="log_out"];
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v165 [shape=point];
+v154 -> v165 [label="log_progress"];
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v154 -> v167;
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v170 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_SORT"];
+v154 -> v170 [label="orig_bam"];
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v164 [shape=point];
+v154 -> v164 [label="bam_sorted"];
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v193 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:SAMTOOLS_SORT"];
+v154 -> v193 [label="reads"];
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v163 [shape=point];
+v154 -> v163;
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v162 [shape=point];
+v154 -> v162 [label="fastq"];
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v161 [shape=point];
+v154 -> v161 [label="tab"];
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v160 [shape=point];
+v154 -> v160;
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v159 [shape=point];
+v154 -> v159;
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v158 [shape=point];
+v154 -> v158;
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v157 [shape=point];
+v154 -> v157;
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v156 [shape=point];
+v154 -> v156;
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v155 [shape=point];
+v154 -> v155;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v168;
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 -> v191 [label="ch_versions"];
+
+v169 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v175 [label="ch_versions"];
+
+v170 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_SORT"];
+v176 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_INDEX"];
+v170 -> v176 [label="ch_genome_bam"];
+
+v170 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_SORT"];
+v173 [shape=point];
+v170 -> v173;
+
+v170 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_SORT"];
+v172 [shape=point];
+v170 -> v172;
+
+v170 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_SORT"];
+v171 [shape=point];
+v170 -> v171;
+
+v170 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_SORT"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v170 -> v174;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 -> v175;
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 -> v179 [label="ch_versions"];
+
+v176 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_INDEX"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v176 -> v180 [label="ch_genome_bam_index"];
+
+v176 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_INDEX"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v176 -> v181 [label="csi"];
+
+v176 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_INDEX"];
+v177 [shape=point];
+v176 -> v177;
+
+v176 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_INDEX"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v176 -> v178;
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v190 [label="ch_versions"];
+
+v170 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_SORT"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v170 -> v180 [label="ch_genome_bam"];
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v180 -> v181;
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v181 -> v182;
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v184 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v182 -> v184 [label="ch_bam_bai"];
+
+v183 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 -> v185 [label="ch_versions"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v184 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v148 -> v184 [label="ch_fasta"];
+
+v184 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v184 -> v219 [label="stats"];
+
+v184 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v187 [label="ch_versions"];
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v186 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v182 -> v186 [label="ch_bam_bai"];
+
+v186 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v186 -> v221 [label="flagstat"];
+
+v186 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 -> v187;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 -> v189 [label="ch_versions"];
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v188 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v182 -> v188 [label="ch_bam_bai"];
+
+v188 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v188 -> v223 [label="idxstats"];
+
+v188 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 -> v189;
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 -> v190 [label="versions"];
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v191 [label="versions"];
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 -> v217 [label="ch_versions"];
+
+v192 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v192 -> v198 [label="ch_versions"];
+
+v193 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:SAMTOOLS_SORT"];
+v199 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:SAMTOOLS_INDEX"];
+v193 -> v199 [label="bam_transcript"];
+
+v193 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:SAMTOOLS_SORT"];
+v196 [shape=point];
+v193 -> v196;
+
+v193 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:SAMTOOLS_SORT"];
+v195 [shape=point];
+v193 -> v195;
+
+v193 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:SAMTOOLS_SORT"];
+v194 [shape=point];
+v193 -> v194;
+
+v193 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:SAMTOOLS_SORT"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v193 -> v197;
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 -> v198;
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 -> v202 [label="ch_versions"];
+
+v199 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:SAMTOOLS_INDEX"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v199 -> v203 [label="bai_transcript"];
+
+v199 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:SAMTOOLS_INDEX"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v199 -> v204 [label="csi"];
+
+v199 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:SAMTOOLS_INDEX"];
+v200 [shape=point];
+v199 -> v200;
+
+v199 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:SAMTOOLS_INDEX"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v199 -> v201;
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 -> v202;
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 -> v216 [label="ch_versions"];
+
+v193 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:SAMTOOLS_SORT"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v193 -> v203 [label="bam_transcript"];
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v203 -> v204;
+
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v204 -> v205;
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v207 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v205 -> v207 [label="ch_bam_bai"];
+
+v206 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 -> v209 [label="ch_versions"];
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v207 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v149 -> v207 [label="ch_fasta"];
+
+v207 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v208 [shape=point];
+v207 -> v208 [label="stats_transcript"];
+
+v207 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 -> v209;
+
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 -> v212 [label="ch_versions"];
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v210 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v205 -> v210 [label="ch_bam_bai"];
+
+v210 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v211 [shape=point];
+v210 -> v211 [label="flagstat_transcript"];
+
+v210 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 -> v212;
+
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v212 -> v215 [label="ch_versions"];
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v213 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v205 -> v213 [label="ch_bam_bai"];
+
+v213 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v214 [shape=point];
+v213 -> v214 [label="idxstats_transcript"];
+
+v213 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_TRANSCRIPTOME:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v213 -> v215;
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v215 -> v216 [label="versions"];
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 -> v217 [label="versions"];
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v217 -> v218 [label="versions"];
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 -> v236 [label="ch_versions"];
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 -> v220;
+
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 -> v222;
+
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v221 -> v222;
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v222 -> v224;
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 -> v224;
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v224 -> v226;
+
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v225 -> v226;
+
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v226 -> v346 [label="ch_multiqc_files"];
+
+v170 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_SORT"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v170 -> v227 [label="ch_genome_bam"];
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v229 [shape=point];
+v227 -> v229;
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v227 -> v230;
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v228 [shape=point];
+v227 -> v228;
+
+v176 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS_GENOME:SAMTOOLS_INDEX"];
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v176 -> v230 [label="ch_genome_bam_index"];
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v233 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_QUALITY_RIBOSEQ"];
+v230 -> v233 [label="ch_bams_for_analysis"];
+
+v15 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:GTF_FILTER"];
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v231 [label="gtf"];
+
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v231 -> v232;
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v233 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_QUALITY_RIBOSEQ"];
+v232 -> v233;
+
+v233 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_QUALITY_RIBOSEQ"];
+v235 [shape=point];
+v233 -> v235;
+
+v233 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_QUALITY_RIBOSEQ"];
+v234 [shape=point];
+v233 -> v234;
+
+v233 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_QUALITY_RIBOSEQ"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v233 -> v237;
+
+v233 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_QUALITY_RIBOSEQ"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v236;
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 -> v249 [label="ch_versions"];
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v230 -> v237 [label="ch_bams_for_analysis"];
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v237 -> v238;
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v245 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_INDIVIDUAL"];
+v238 -> v245;
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v245 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_INDIVIDUAL"];
+v238 -> v245;
+
+v15 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:GTF_FILTER"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v239 [label="gtf"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 -> v239 [label="ch_fasta"];
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v239 -> v240;
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v240 -> v241;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v245 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_INDIVIDUAL"];
+v241 -> v245 [label="ch_fasta_gtf"];
+
+v242 [shape=point,label="",fixedsize=true,width=0.1];
+v245 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_INDIVIDUAL"];
+v242 -> v245;
+
+v243 [shape=point,label="",fixedsize=true,width=0.1];
+v245 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_INDIVIDUAL"];
+v243 -> v245;
+
+v244 [shape=point,label="",fixedsize=true,width=0.1];
+v245 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_INDIVIDUAL"];
+v244 -> v245;
+
+v245 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_INDIVIDUAL"];
+v248 [shape=point];
+v245 -> v248;
+
+v245 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_INDIVIDUAL"];
+v247 [shape=point];
+v245 -> v247;
+
+v245 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_INDIVIDUAL"];
+v246 [shape=point];
+v245 -> v246;
+
+v245 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_INDIVIDUAL"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 -> v249;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v249 -> v261 [label="ch_versions"];
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v238 -> v250;
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v250 -> v251;
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v257 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_ALL"];
+v251 -> v257;
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v238 -> v252;
+
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v252 -> v253;
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v257 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_ALL"];
+v253 -> v257;
+
+v254 [shape=point,label="",fixedsize=true,width=0.1];
+v257 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_ALL"];
+v254 -> v257;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v257 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_ALL"];
+v241 -> v257 [label="ch_fasta_gtf"];
+
+v255 [shape=point,label="",fixedsize=true,width=0.1];
+v257 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_ALL"];
+v255 -> v257;
+
+v256 [shape=point,label="",fixedsize=true,width=0.1];
+v257 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_ALL"];
+v256 -> v257;
+
+v257 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_ALL"];
+v260 [shape=point];
+v257 -> v260;
+
+v257 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_ALL"];
+v259 [shape=point];
+v257 -> v259;
+
+v257 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_ALL"];
+v258 [shape=point];
+v257 -> v258;
+
+v257 [label="NFCORE_RIBOSEQ:RIBOSEQ:RIBOTISH_PREDICT_ALL"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v257 -> v261;
+
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v261 -> v311 [label="ch_versions"];
+
+v262 [shape=point,label="",fixedsize=true,width=0.1];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v262 -> v263 [label="ch_samplesheet"];
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v289 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE"];
+v263 -> v289 [label="samplesheet"];
+
+v264 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v264 -> v271 [label="ch_versions"];
+
+v154 [label="NFCORE_RIBOSEQ:RIBOSEQ:FASTQ_ALIGN_STAR:STAR_ALIGN"];
+v268 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SALMON_QUANT"];
+v154 -> v268 [label="reads"];
+
+v265 [shape=point,label="",fixedsize=true,width=0.1];
+v268 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SALMON_QUANT"];
+v265 -> v268 [label="index"];
+
+v15 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:GTF_FILTER"];
+v268 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SALMON_QUANT"];
+v15 -> v268 [label="gtf"];
+
+v17 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:MAKE_TRANSCRIPTS_FASTA"];
+v268 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SALMON_QUANT"];
+v17 -> v268 [label="transcript_fasta"];
+
+v266 [shape=point,label="",fixedsize=true,width=0.1];
+v268 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SALMON_QUANT"];
+v266 -> v268 [label="alignment_mode"];
+
+v267 [shape=point,label="",fixedsize=true,width=0.1];
+v268 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SALMON_QUANT"];
+v267 -> v268 [label="lib_type"];
+
+v268 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SALMON_QUANT"];
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v268 -> v273 [label="multiqc"];
+
+v268 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SALMON_QUANT"];
+v269 [shape=point];
+v268 -> v269;
+
+v268 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SALMON_QUANT"];
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v268 -> v270;
+
+v270 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v270 -> v271;
+
+v271 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v271 -> v279 [label="ch_versions"];
+
+v15 [label="NFCORE_RIBOSEQ:PREPARE_GENOME:GTF_FILTER"];
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v272 [label="gtf"];
+
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v278 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:CUSTOM_TX2GENE"];
+v272 -> v278;
+
+v273 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v273 -> v274;
+
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v278 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:CUSTOM_TX2GENE"];
+v274 -> v278;
+
+v275 [shape=point,label="",fixedsize=true,width=0.1];
+v278 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:CUSTOM_TX2GENE"];
+v275 -> v278 [label="quant_type"];
+
+v276 [shape=point,label="",fixedsize=true,width=0.1];
+v278 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:CUSTOM_TX2GENE"];
+v276 -> v278 [label="id"];
+
+v277 [shape=point,label="",fixedsize=true,width=0.1];
+v278 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:CUSTOM_TX2GENE"];
+v277 -> v278 [label="extra"];
+
+v278 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:CUSTOM_TX2GENE"];
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v278 -> v283;
+
+v278 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:CUSTOM_TX2GENE"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v278 -> v279;
+
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v279 -> v286 [label="ch_versions"];
+
+v268 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SALMON_QUANT"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v268 -> v280 [label="multiqc"];
+
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v280 -> v281;
+
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v281 -> v283;
+
+v282 [shape=point,label="",fixedsize=true,width=0.1];
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v282 -> v283 [label="quant_type"];
+
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v283 -> v287 [label="tpm_gene"];
+
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v283 -> v287 [label="counts_gene"];
+
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v283 -> v293 [label="counts_gene_length_scaled"];
+
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v283 -> v299 [label="counts_gene_scaled"];
+
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v285 [shape=point];
+v283 -> v285 [label="lengths_gene"];
+
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v283 -> v305 [label="tpm_transcript"];
+
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v283 -> v305 [label="counts_transcript"];
+
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v284 [shape=point];
+v283 -> v284 [label="lengths_transcript"];
+
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v283 -> v286;
+
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v286 -> v292 [label="ch_versions"];
+
+v287 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v287 -> v288;
+
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v289 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE"];
+v288 -> v289;
+
+v278 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:CUSTOM_TX2GENE"];
+v289 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE"];
+v278 -> v289;
+
+v289 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE"];
+v291 [shape=point];
+v289 -> v291 [label="merged_gene_rds"];
+
+v289 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE"];
+v290 [shape=point];
+v289 -> v290;
+
+v289 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE"];
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v289 -> v292;
+
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v292 -> v311 [label="versions"];
+
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v283 -> v293 [label="tpm_gene"];
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v293 -> v294;
+
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v295 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE_LENGTH_SCALED"];
+v294 -> v295;
+
+v278 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:CUSTOM_TX2GENE"];
+v295 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE_LENGTH_SCALED"];
+v278 -> v295;
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v295 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE_LENGTH_SCALED"];
+v263 -> v295 [label="samplesheet"];
+
+v295 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE_LENGTH_SCALED"];
+v298 [shape=point];
+v295 -> v298 [label="merged_gene_rds_length_scaled"];
+
+v295 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE_LENGTH_SCALED"];
+v297 [shape=point];
+v295 -> v297;
+
+v295 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE_LENGTH_SCALED"];
+v296 [shape=point];
+v295 -> v296;
+
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v283 -> v299 [label="tpm_gene"];
+
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v299 -> v300;
+
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v301 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE_SCALED"];
+v300 -> v301;
+
+v278 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:CUSTOM_TX2GENE"];
+v301 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE_SCALED"];
+v278 -> v301;
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v301 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE_SCALED"];
+v263 -> v301 [label="samplesheet"];
+
+v301 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE_SCALED"];
+v304 [shape=point];
+v301 -> v304 [label="merged_gene_rds_scaled"];
+
+v301 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE_SCALED"];
+v303 [shape=point];
+v301 -> v303;
+
+v301 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_GENE_SCALED"];
+v302 [shape=point];
+v301 -> v302;
+
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v305 -> v306;
+
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v307 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_TRANSCRIPT"];
+v306 -> v307;
+
+v278 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:CUSTOM_TX2GENE"];
+v307 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_TRANSCRIPT"];
+v278 -> v307;
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v307 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_TRANSCRIPT"];
+v263 -> v307 [label="samplesheet"];
+
+v307 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_TRANSCRIPT"];
+v310 [shape=point];
+v307 -> v310 [label="merged_transcript_rds"];
+
+v307 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_TRANSCRIPT"];
+v309 [shape=point];
+v307 -> v309;
+
+v307 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:SE_TRANSCRIPT"];
+v308 [shape=point];
+v307 -> v308;
+
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v311 -> v333 [label="ch_versions"];
+
+v312 [shape=point,label="",fixedsize=true,width=0.1];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v312 -> v313 [label="ch_contrasts_file"];
+
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v313 -> v314;
+
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v314 -> v317 [label="ch_contrasts"];
+
+v283 [label="NFCORE_RIBOSEQ:RIBOSEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT"];
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v283 -> v315 [label="counts_gene_length_scaled"];
+
+v262 [shape=point,label="",fixedsize=true,width=0.1];
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v262 -> v315 [label="ch_samplesheet"];
+
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v315 -> v316;
+
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v316 -> v317 [label="ch_samplesheet_matrix"];
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v332 [shape=point];
+v317 -> v332;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v331 [shape=point];
+v317 -> v331;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v330 [shape=point];
+v317 -> v330;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v329 [shape=point];
+v317 -> v329;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v328 [shape=point];
+v317 -> v328;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v327 [shape=point];
+v317 -> v327;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v326 [shape=point];
+v317 -> v326;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v325 [shape=point];
+v317 -> v325;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v324 [shape=point];
+v317 -> v324;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v323 [shape=point];
+v317 -> v323;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v322 [shape=point];
+v317 -> v322;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v321 [shape=point];
+v317 -> v321;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v320 [shape=point];
+v317 -> v320;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v319 [shape=point];
+v317 -> v319;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v318 [shape=point];
+v317 -> v318;
+
+v317 [label="NFCORE_RIBOSEQ:RIBOSEQ:ANOTA2SEQ_ANOTA2SEQRUN"];
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v317 -> v333;
+
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v333 -> v334 [label="ch_versions"];
+
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v334 -> v335 [label="versions"];
+
+v335 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v335 -> v336;
+
+v336 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v336 -> v337;
+
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v339 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v337 -> v339;
+
+v338 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v339 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v338 -> v339;
+
+v339 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v339 -> v340;
+
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v340 -> v347 [label="ch_collated_versions"];
+
+v341 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v341 -> v352 [label="ch_multiqc_config"];
+
+v342 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v353 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v342 -> v353 [label="ch_multiqc_custom_config"];
+
+v343 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v343 -> v354 [label="ch_multiqc_logo"];
+
+v344 [shape=point,label="",fixedsize=true,width=0.1];
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v344 -> v345 [label="ch_workflow_summary"];
+
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v345 -> v346;
+
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v346 -> v347 [label="ch_multiqc_files"];
+
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v347 -> v350 [label="ch_multiqc_files"];
+
+v348 [shape=point,label="",fixedsize=true,width=0.1];
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v348 -> v349 [label="ch_methods_description"];
+
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v349 -> v350;
+
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v350 -> v351 [label="ch_multiqc_files"];
+
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v355 [label="NFCORE_RIBOSEQ:RIBOSEQ:MULTIQC"];
+v351 -> v355;
+
+v352 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v355 [label="NFCORE_RIBOSEQ:RIBOSEQ:MULTIQC"];
+v352 -> v355;
+
+v353 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v355 [label="NFCORE_RIBOSEQ:RIBOSEQ:MULTIQC"];
+v353 -> v355;
+
+v354 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v355 [label="NFCORE_RIBOSEQ:RIBOSEQ:MULTIQC"];
+v354 -> v355;
+
+v355 [label="NFCORE_RIBOSEQ:RIBOSEQ:MULTIQC"];
+v359 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v355 -> v359;
+
+v355 [label="NFCORE_RIBOSEQ:RIBOSEQ:MULTIQC"];
+v358 [shape=point];
+v355 -> v358;
+
+v355 [label="NFCORE_RIBOSEQ:RIBOSEQ:MULTIQC"];
+v357 [shape=point];
+v355 -> v357;
+
+v355 [label="NFCORE_RIBOSEQ:RIBOSEQ:MULTIQC"];
+v356 [shape=point];
+v355 -> v356;
+
+v359 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v360 [shape=point];
+v359 -> v360 [label="multiqc_report"];
+
+v334 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v334 -> v361 [label="versions"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v361 [label="ch_versions"];
+
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v362 [shape=point];
+v361 -> v362 [label="versions"];
+
+}

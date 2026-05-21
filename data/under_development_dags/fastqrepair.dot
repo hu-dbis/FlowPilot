@@ -1,0 +1,294 @@
+digraph "fastqrepair" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7 [label="ch_samplesheet"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 [shape=point];
+v8 -> v9;
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 [shape=point];
+v11 -> v12;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v68 [label="ch_versions"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=point];
+v14 -> v15 [label="ch_decoupled"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v6 -> v16 [label="ch_samplesheet"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v17 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:GZRT"];
+v16 -> v17 [label="ch_decoupled"];
+
+v17 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:GZRT"];
+v18 [shape=point];
+v17 -> v18 [label="ch_fastq"];
+
+v17 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:GZRT"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v17 -> v63;
+
+v19 [shape=point,label="",fixedsize=true,width=0.1];
+v20 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:SCATTER_WIPE_GATHER:SCATTER"];
+v19 -> v20;
+
+v20 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:SCATTER_WIPE_GATHER:SCATTER"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v20 -> v24;
+
+v20 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:SCATTER_WIPE_GATHER:SCATTER"];
+v21 [shape=point];
+v20 -> v21;
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v23 [shape=point];
+v22 -> v23 [label="ch_wiper"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v25 [shape=point];
+v24 -> v25 [label="ch_wiper"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:SCATTER_WIPE_GATHER:WIPER"];
+v26 -> v27;
+
+v27 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:SCATTER_WIPE_GATHER:WIPER"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v32;
+
+v27 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:SCATTER_WIPE_GATHER:WIPER"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v35;
+
+v27 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:SCATTER_WIPE_GATHER:WIPER"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v27 -> v41;
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v29 [shape=point];
+v28 -> v29 [label="ch_fastq_gather"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v31 [shape=point];
+v30 -> v31 [label="ch_report_gather"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:SCATTER_WIPE_GATHER:GATHER"];
+v34 -> v38 [label="ch_fastq_gather"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v38 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:SCATTER_WIPE_GATHER:GATHER"];
+v37 -> v38 [label="ch_report_gather"];
+
+v38 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:SCATTER_WIPE_GATHER:GATHER"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v38 -> v43 [label="fixed_fastq"];
+
+v38 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:SCATTER_WIPE_GATHER:GATHER"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v38 -> v56 [label="report"];
+
+v38 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:SCATTER_WIPE_GATHER:GATHER"];
+v39 [shape=point];
+v38 -> v39;
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v42 [label="ch_versions"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v42 -> v64 [label="versions"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v43 -> v55;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v45 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:TRIMMOMATIC"];
+v44 -> v45;
+
+v45 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:TRIMMOMATIC"];
+v50 [shape=point];
+v45 -> v50;
+
+v45 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:TRIMMOMATIC"];
+v49 [shape=point];
+v45 -> v49;
+
+v45 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:TRIMMOMATIC"];
+v48 [shape=point];
+v45 -> v48;
+
+v45 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:TRIMMOMATIC"];
+v47 [shape=point];
+v45 -> v47;
+
+v45 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:TRIMMOMATIC"];
+v46 [shape=point];
+v45 -> v46;
+
+v45 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:TRIMMOMATIC"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v45 -> v65;
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:BBMAPREPAIR"];
+v51 -> v52;
+
+v52 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:BBMAPREPAIR"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v52 -> v55;
+
+v52 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:BBMAPREPAIR"];
+v54 [shape=point];
+v52 -> v54;
+
+v52 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:BBMAPREPAIR"];
+v53 [shape=point];
+v52 -> v53;
+
+v52 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:BBMAPREPAIR"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v52 -> v66;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v57 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:RENAMER"];
+v55 -> v57;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v57 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:RENAMER"];
+v56 -> v57;
+
+v57 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:RENAMER"];
+v60 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:FASTQC"];
+v57 -> v60;
+
+v57 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:RENAMER"];
+v59 [shape=point];
+v57 -> v59;
+
+v57 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:RENAMER"];
+v58 [shape=point];
+v57 -> v58;
+
+v60 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:FASTQC"];
+v62 [shape=point];
+v60 -> v62;
+
+v60 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:FASTQC"];
+v61 [shape=point];
+v60 -> v61;
+
+v60 [label="NFCORE_FASTQREPAIR:FASTQREPAIR:FASTQC"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v60 -> v67;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v68;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v68;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v68;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v68;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v68 -> v69 [label="versions"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v73;
+
+v72 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v75 [shape=point];
+v74 -> v75 [label="ch_collated_versions"];
+
+}

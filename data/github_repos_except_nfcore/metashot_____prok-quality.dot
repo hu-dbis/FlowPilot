@@ -1,0 +1,130 @@
+digraph "metashot_____prokquality" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3 [label="genomes_ch"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v3 -> v4 [label="genomes_noid_ch"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v5 [label="checkm"];
+v4 -> v5 [label="checkm_genomes_batch_ch"];
+
+v5 [label="checkm"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v17 [label="genome_info"];
+v6 -> v17 [label="checkm_qa_ch"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v3 -> v7 [label="genomes_noid_ch"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v9 [label="gunc"];
+v7 -> v9 [label="gunc_genomes_batch_ch"];
+
+v8 [label="gunc_db_download"];
+v9 [label="gunc"];
+v8 -> v9 [label="gunc_db"];
+
+v9 [label="gunc"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v17 [label="genome_info"];
+v10 -> v17 [label="gunc_maxcss_ch"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [label="barrnap"];
+v2 -> v11 [label="genomes_ch"];
+
+v11 [label="barrnap"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v15;
+
+v11 [label="barrnap"];
+v12 [shape=point];
+v11 -> v12;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [label="trnascan_se"];
+v2 -> v13 [label="genomes_ch"];
+
+v13 [label="trnascan_se"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 -> v16;
+
+v13 [label="trnascan_se"];
+v14 [shape=point];
+v13 -> v14;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 [label="genome_info"];
+v15 -> v17;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 [label="genome_info"];
+v16 -> v17;
+
+v17 [label="genome_info"];
+v19 [label="genome_filter"];
+v17 -> v19;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v18 [label="genomes_noid_ch"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 [label="genome_filter"];
+v18 -> v19;
+
+v19 [label="genome_filter"];
+v20 [shape=point];
+v19 -> v20;
+
+v19 [label="genome_filter"];
+v22 [label="drep"];
+v19 -> v22;
+
+v19 [label="genome_filter"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [label="drep"];
+v21 -> v22;
+
+v22 [label="drep"];
+v24 [shape=point];
+v22 -> v24;
+
+v22 [label="drep"];
+v23 [shape=point];
+v22 -> v23;
+
+v22 [label="drep"];
+v25 [label="derep_info"];
+v22 -> v25;
+
+v22 [label="drep"];
+v25 [label="derep_info"];
+v22 -> v25;
+
+v25 [label="derep_info"];
+v26 [shape=point];
+v25 -> v26;
+
+}

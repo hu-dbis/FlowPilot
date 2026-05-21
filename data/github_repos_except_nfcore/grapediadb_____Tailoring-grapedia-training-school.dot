@@ -1,0 +1,30 @@
+digraph "grapediadb_____Tailoringgrapediatrainingschool" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [label="TRIMMOMATIC"];
+v0 -> v1 [label="read_pairs_ch"];
+
+v1 [label="TRIMMOMATIC"];
+v2 [label="TRINITY"];
+v1 -> v2;
+
+v1 [label="TRIMMOMATIC"];
+v2 [label="TRINITY"];
+v1 -> v2;
+
+v2 [label="TRINITY"];
+v3 [label="CPC2"];
+v2 -> v3;
+
+v3 [label="CPC2"];
+v4 [label="SELECT_SEQUENCES"];
+v3 -> v4;
+
+v4 [label="SELECT_SEQUENCES"];
+v5 [label="INTERPROSCAN"];
+v4 -> v5;
+
+v5 [label="INTERPROSCAN"];
+v6 [shape=point];
+v5 -> v6;
+
+}

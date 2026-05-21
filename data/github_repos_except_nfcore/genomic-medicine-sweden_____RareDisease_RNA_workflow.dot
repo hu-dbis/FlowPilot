@@ -1,0 +1,366 @@
+digraph "genomicmedicinesweden_____RareDisease_RNA_workflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v21 [label="ch_reads"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="untar_star_index"];
+v3 -> v4 [label="star_index"];
+
+v4 [label="untar_star_index"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v26 [label="STAR_Aln"];
+v5 -> v26 [label="ch_star_index"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="gunzip_gtf"];
+v6 -> v7 [label="gtf"];
+
+v7 [label="gunzip_gtf"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v15 [label="gtf2refflat"];
+v8 -> v15 [label="ch_gtf"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="index_fasta"];
+v9 -> v10 [label="fasta"];
+
+v10 [label="index_fasta"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 [label="gatk_split"];
+v11 -> v49 [label="ch_fai"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="build_fasta_dict"];
+v12 -> v13 [label="fasta"];
+
+v13 [label="build_fasta_dict"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 [label="build_rrna_intervallist"];
+v14 -> v19 [label="ch_dict"];
+
+v15 [label="gtf2refflat"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [label="picard_collectrnaseqmetrics"];
+v16 -> v29 [label="ch_refflat"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v17 [label="get_rrna_transcripts"];
+v8 -> v17 [label="ch_gtf"];
+
+v17 [label="get_rrna_transcripts"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 [label="build_rrna_intervallist"];
+v18 -> v19;
+
+v19 [label="build_rrna_intervallist"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v29 [label="picard_collectrnaseqmetrics"];
+v20 -> v29 [label="ch_rrna_intervals"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 -> v62 [label="ch_multiqc_input"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [label="cat_fastq"];
+v2 -> v22 [label="ch_reads"];
+
+v22 [label="cat_fastq"];
+v23 [label="fastp"];
+v22 -> v23;
+
+v23 [label="fastp"];
+v26 [label="STAR_Aln"];
+v23 -> v26;
+
+v23 [label="fastp"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 -> v62;
+
+v23 [label="fastp"];
+v25 [shape=point];
+v23 -> v25;
+
+v23 [label="fastp"];
+v24 [shape=point];
+v23 -> v24;
+
+v26 [label="STAR_Aln"];
+v27 [label="index_bam"];
+v26 -> v27;
+
+v26 [label="STAR_Aln"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 -> v34;
+
+v26 [label="STAR_Aln"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 -> v63;
+
+v27 [label="index_bam"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 -> v28;
+
+v26 [label="STAR_Aln"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 [label="picard_collectrnaseqmetrics"];
+v28 -> v29 [label="ch_indexed_bam"];
+
+v29 [label="picard_collectrnaseqmetrics"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 -> v64;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 [label="stringtie"];
+v28 -> v30 [label="ch_indexed_bam"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v30 [label="stringtie"];
+v8 -> v30 [label="ch_gtf"];
+
+v30 [label="stringtie"];
+v32 [label="gffcompare"];
+v30 -> v32;
+
+v30 [label="stringtie"];
+v31 [shape=point];
+v30 -> v31;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v32 [label="gffcompare"];
+v8 -> v32 [label="ch_gtf"];
+
+v32 [label="gffcompare"];
+v33 [shape=point];
+v32 -> v33;
+
+v32 [label="gffcompare"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 -> v65;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="generate_gene_counts4drop"];
+v34 -> v37 [label="ch_sample_collect"];
+
+v26 [label="STAR_Aln"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="generate_gene_counts4drop"];
+v35 -> v37 [label="ch_cnts_collect"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v37 [label="generate_gene_counts4drop"];
+v8 -> v37 [label="ch_gtf"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v37 [label="generate_gene_counts4drop"];
+v36 -> v37 [label="reference_count_file"];
+
+v37 [label="generate_gene_counts4drop"];
+v40 [label="generate_SA4drop"];
+v37 -> v40;
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="generate_SA4drop"];
+v38 -> v40 [label="gtf"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="generate_SA4drop"];
+v39 -> v40 [label="reference_count_file"];
+
+v40 [label="generate_SA4drop"];
+v43 [label="drop_aberrant_expression"];
+v40 -> v43;
+
+v37 [label="generate_gene_counts4drop"];
+v43 [label="drop_aberrant_expression"];
+v37 -> v43 [label="gene_counts"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="drop_aberrant_expression"];
+v41 -> v43 [label="reference_count_file"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v43 [label="drop_aberrant_expression"];
+v42 -> v43 [label="fasta"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v43 [label="drop_aberrant_expression"];
+v8 -> v43 [label="ch_gtf"];
+
+v43 [label="drop_aberrant_expression"];
+v45 [shape=point];
+v43 -> v45;
+
+v43 [label="drop_aberrant_expression"];
+v44 [shape=point];
+v43 -> v44;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 [label="filter_bam"];
+v28 -> v47 [label="ch_indexed_bam"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="filter_bam"];
+v46 -> v47 [label="regions"];
+
+v47 [label="filter_bam"];
+v49 [label="gatk_split"];
+v47 -> v49;
+
+v48 [shape=point,label="",fixedsize=true,width=0.1];
+v49 [label="gatk_split"];
+v48 -> v49 [label="fasta"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 [label="gatk_split"];
+v14 -> v49 [label="ch_dict"];
+
+v49 [label="gatk_split"];
+v51 [label="bcftools_variantcall"];
+v49 -> v51;
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="bcftools_variantcall"];
+v50 -> v51 [label="fasta"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 [label="bcftools_variantcall"];
+v11 -> v51 [label="ch_fai"];
+
+v51 [label="bcftools_variantcall"];
+v52 [label="bcftools_compress_and_index"];
+v51 -> v52;
+
+v52 [label="bcftools_compress_and_index"];
+v56 [label="bootstrapann"];
+v52 -> v56;
+
+v51 [label="bcftools_variantcall"];
+v53 [label="bcftools_prep_vcf"];
+v51 -> v53;
+
+v53 [label="bcftools_prep_vcf"];
+v55 [label="gatk_asereadcounter"];
+v53 -> v55;
+
+v47 [label="filter_bam"];
+v55 [label="gatk_asereadcounter"];
+v47 -> v55;
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v55 [label="gatk_asereadcounter"];
+v54 -> v55 [label="fasta"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 [label="gatk_asereadcounter"];
+v11 -> v55 [label="ch_fai"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 [label="gatk_asereadcounter"];
+v14 -> v55 [label="ch_dict"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v55 [label="gatk_asereadcounter"];
+v8 -> v55 [label="ch_gtf"];
+
+v55 [label="gatk_asereadcounter"];
+v56 [label="bootstrapann"];
+v55 -> v56;
+
+v56 [label="bootstrapann"];
+v59 [label="vep"];
+v56 -> v59;
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="vep"];
+v57 -> v59 [label="fasta"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 [label="vep"];
+v11 -> v59 [label="ch_fai"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="vep"];
+v58 -> v59 [label="cache"];
+
+v59 [label="vep"];
+v60 [label="recompress_and_index_vcf"];
+v59 -> v60;
+
+v59 [label="vep"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v59 -> v66;
+
+v60 [label="recompress_and_index_vcf"];
+v61 [shape=point];
+v60 -> v61;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v62 -> v63 [label="ch_multiqc_input"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v63 -> v64 [label="ch_multiqc_input"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v64 -> v65 [label="ch_multiqc_input"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v65 -> v66 [label="ch_multiqc_input"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 -> v67 [label="ch_multiqc_input"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v68 [label="multiqc"];
+v67 -> v68 [label="ch_multiqc_input"];
+
+v68 [label="multiqc"];
+v70 [shape=point];
+v68 -> v70;
+
+v68 [label="multiqc"];
+v69 [shape=point];
+v68 -> v69;
+
+}

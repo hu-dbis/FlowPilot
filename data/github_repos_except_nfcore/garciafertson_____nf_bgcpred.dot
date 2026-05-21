@@ -1,0 +1,254 @@
+digraph "garciafertson_____nf_bgcpred" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [label="NF_BGC_PRED:BGCPRED:filterbysize"];
+v0 -> v1 [label="fasta"];
+
+v1 [label="NF_BGC_PRED:BGCPRED:filterbysize"];
+v2 [label="NF_BGC_PRED:BGCPRED:formatcontigid"];
+v1 -> v2 [label="filtlongcontigs"];
+
+v2 [label="NF_BGC_PRED:BGCPRED:formatcontigid"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v2 -> v3 [label="longcontigs"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v4 [label="NF_BGC_PRED:BGCPRED:modify_contigid_splitfas"];
+v3 -> v4 [label="sizecontigs"];
+
+v4 [label="NF_BGC_PRED:BGCPRED:modify_contigid_splitfas"];
+v5 [label="NF_BGC_PRED:BGCPRED:runantismash"];
+v4 -> v5 [label="bysizecontigs"];
+
+v5 [label="NF_BGC_PRED:BGCPRED:runantismash"];
+v6 [shape=point];
+v5 -> v6;
+
+v5 [label="NF_BGC_PRED:BGCPRED:runantismash"];
+v7 [label="NF_BGC_PRED:BGCPRED:parse_asresults"];
+v5 -> v7 [label="gbk_as"];
+
+v7 [label="NF_BGC_PRED:BGCPRED:parse_asresults"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v7 -> v29 [label="bed_as"];
+
+v7 [label="NF_BGC_PRED:BGCPRED:parse_asresults"];
+v8 [shape=point];
+v7 -> v8 [label="fna_as"];
+
+v4 [label="NF_BGC_PRED:BGCPRED:modify_contigid_splitfas"];
+v9 [label="NF_BGC_PRED:BGCPRED:prodigal"];
+v4 -> v9 [label="bysizecontigs"];
+
+v9 [label="NF_BGC_PRED:BGCPRED:prodigal"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 -> v10 [label="genesfaa"];
+
+v4 [label="NF_BGC_PRED:BGCPRED:modify_contigid_splitfas"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v4 -> v10 [label="bysizecontigs"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v11 [label="NF_BGC_PRED:BGCPRED:sanntisgbk"];
+v10 -> v11 [label="intogbk"];
+
+v11 [label="NF_BGC_PRED:BGCPRED:sanntisgbk"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v11 -> v13 [label="gbk"];
+
+v9 [label="NF_BGC_PRED:BGCPRED:prodigal"];
+v12 [label="NF_BGC_PRED:BGCPRED:interproscan"];
+v9 -> v12 [label="genesfaa"];
+
+v12 [label="NF_BGC_PRED:BGCPRED:interproscan"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v12 -> v13 [label="gff3"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v14 [label="NF_BGC_PRED:BGCPRED:runsanntis"];
+v13 -> v14 [label="sanntisinput"];
+
+v14 [label="NF_BGC_PRED:BGCPRED:runsanntis"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v14 -> v15 [label="gff_sn"];
+
+v4 [label="NF_BGC_PRED:BGCPRED:modify_contigid_splitfas"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v4 -> v15 [label="bysizecontigs"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v16 [label="NF_BGC_PRED:BGCPRED:parse_snresults"];
+v15 -> v16 [label="sn_parse"];
+
+v16 [label="NF_BGC_PRED:BGCPRED:parse_snresults"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v16 -> v29 [label="bed_sn"];
+
+v16 [label="NF_BGC_PRED:BGCPRED:parse_snresults"];
+v17 [shape=point];
+v16 -> v17 [label="fna_sn"];
+
+v4 [label="NF_BGC_PRED:BGCPRED:modify_contigid_splitfas"];
+v18 [label="NF_BGC_PRED:BGCPRED:rungecco"];
+v4 -> v18 [label="bysizecontigs"];
+
+v18 [label="NF_BGC_PRED:BGCPRED:rungecco"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v19 [label="gbk_gc"];
+
+v18 [label="NF_BGC_PRED:BGCPRED:rungecco"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v19 [label="tsv_gc"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v20 [label="NF_BGC_PRED:BGCPRED:parse_gcresults"];
+v19 -> v20 [label="gc_parse"];
+
+v20 [label="NF_BGC_PRED:BGCPRED:parse_gcresults"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v20 -> v31 [label="bed_gc"];
+
+v20 [label="NF_BGC_PRED:BGCPRED:parse_gcresults"];
+v21 [shape=point];
+v20 -> v21 [label="fna_gc"];
+
+v4 [label="NF_BGC_PRED:BGCPRED:modify_contigid_splitfas"];
+v22 [label="NF_BGC_PRED:BGCPRED:deepbgc_prepare"];
+v4 -> v22 [label="bysizecontigs"];
+
+v22 [label="NF_BGC_PRED:BGCPRED:deepbgc_prepare"];
+v23 [shape=point];
+v22 -> v23;
+
+v22 [label="NF_BGC_PRED:BGCPRED:deepbgc_prepare"];
+v24 [label="NF_BGC_PRED:BGCPRED:filter_pfamgbk"];
+v22 -> v24 [label="contig_gbk"];
+
+v24 [label="NF_BGC_PRED:BGCPRED:filter_pfamgbk"];
+v25 [label="NF_BGC_PRED:BGCPRED:deepbgc_detect"];
+v24 -> v25 [label="gbk"];
+
+v25 [label="NF_BGC_PRED:BGCPRED:deepbgc_detect"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v25 -> v26 [label="gbk_dp"];
+
+v25 [label="NF_BGC_PRED:BGCPRED:deepbgc_detect"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v25 -> v26 [label="tsv_dp"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 [label="NF_BGC_PRED:BGCPRED:parse_dpresults"];
+v26 -> v27 [label="dp_parse"];
+
+v27 [label="NF_BGC_PRED:BGCPRED:parse_dpresults"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 -> v33 [label="bed_dp"];
+
+v27 [label="NF_BGC_PRED:BGCPRED:parse_dpresults"];
+v28 [shape=point];
+v27 -> v28 [label="fna_dp"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 [label="NF_BGC_PRED:BGCPRED:bedops_sn"];
+v29 -> v30 [label="bed_snin"];
+
+v30 [label="NF_BGC_PRED:BGCPRED:bedops_sn"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 -> v31 [label="bed_snout"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 [label="NF_BGC_PRED:BGCPRED:bedops_gc"];
+v31 -> v32 [label="bed_gcin"];
+
+v32 [label="NF_BGC_PRED:BGCPRED:bedops_gc"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 -> v33 [label="bed_gcout"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 [label="NF_BGC_PRED:BGCPRED:bedops_dp"];
+v33 -> v34 [label="bed_dpin"];
+
+v34 [label="NF_BGC_PRED:BGCPRED:bedops_dp"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v35 [label="bed_final"];
+
+v4 [label="NF_BGC_PRED:BGCPRED:modify_contigid_splitfas"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v4 -> v35 [label="bysizecontigs"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 [label="NF_BGC_PRED:BGCPRED:getbgc_fna"];
+v35 -> v36 [label="bed_fna"];
+
+v36 [label="NF_BGC_PRED:BGCPRED:getbgc_fna"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v36 -> v37 [label="bgc_fna"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v38 [shape=point];
+v37 -> v38;
+
+v36 [label="NF_BGC_PRED:BGCPRED:getbgc_fna"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v36 -> v39 [label="bgc_fna"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v40 [label="NF_BGC_PRED:BGCPRED:mashtriangle"];
+v39 -> v40 [label="allbgc_fna"];
+
+v40 [label="NF_BGC_PRED:BGCPRED:mashtriangle"];
+v41 [shape=point];
+v40 -> v41;
+
+v40 [label="NF_BGC_PRED:BGCPRED:mashtriangle"];
+v42 [label="NF_BGC_PRED:BGCPRED:mcl_clust"];
+v40 -> v42 [label="fna_distances"];
+
+v42 [label="NF_BGC_PRED:BGCPRED:mcl_clust"];
+v45 [label="NF_BGC_PRED:BGCPRED:fna_get_representatives"];
+v42 -> v45 [label="clusters"];
+
+v34 [label="NF_BGC_PRED:BGCPRED:bedops_dp"];
+v43 [label="NF_BGC_PRED:BGCPRED:getbgc_bed"];
+v34 -> v43 [label="bed_final"];
+
+v43 [label="NF_BGC_PRED:BGCPRED:getbgc_bed"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v45 [label="NF_BGC_PRED:BGCPRED:fna_get_representatives"];
+v44 -> v45 [label="allbgc_bed"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v45 [label="NF_BGC_PRED:BGCPRED:fna_get_representatives"];
+v39 -> v45 [label="allbgc_fna"];
+
+v45 [label="NF_BGC_PRED:BGCPRED:fna_get_representatives"];
+v48 [label="NF_BGC_PRED:BGCPRED:build_genomebed"];
+v45 -> v48 [label="bgc_catalogue_bed"];
+
+v45 [label="NF_BGC_PRED:BGCPRED:fna_get_representatives"];
+v46 [label="NF_BGC_PRED:BGCPRED:build_index"];
+v45 -> v46 [label="bgc_catalogue_fna"];
+
+v46 [label="NF_BGC_PRED:BGCPRED:build_index"];
+v47 [shape=point];
+v46 -> v47;
+
+v48 [label="NF_BGC_PRED:BGCPRED:build_genomebed"];
+v49 [shape=point];
+v48 -> v49;
+
+v45 [label="NF_BGC_PRED:BGCPRED:fna_get_representatives"];
+v50 [label="NF_BGC_PRED:BGCPRED:prodigal_bgc"];
+v45 -> v50 [label="bgc_catalogue_fna"];
+
+v50 [label="NF_BGC_PRED:BGCPRED:prodigal_bgc"];
+v51 [label="NF_BGC_PRED:BGCPRED:build_bedbgc"];
+v50 -> v51 [label="allbgc_genes"];
+
+v51 [label="NF_BGC_PRED:BGCPRED:build_bedbgc"];
+v52 [shape=point];
+v51 -> v52;
+
+}

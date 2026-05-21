@@ -1,0 +1,442 @@
+digraph "liameabbott_____bulkrnaseqpipeline" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v4 [label="clean_single_reads_fastp"];
+v3 -> v4;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v6 [label="clean_paired_reads_fastp"];
+v3 -> v6;
+
+v4 [label="clean_single_reads_fastp"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v8;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v13 [label="quantify_single_reads_salmon"];
+v5 -> v13;
+
+v6 [label="clean_paired_reads_fastp"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v8;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v15 [label="quantify_paired_reads_salmon"];
+v7 -> v15;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v8 -> v51 [label="fastp_jsons"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 [label="quantify_single_reads_salmon"];
+v10 -> v13 [label="salmon_index"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 [label="quantify_single_reads_salmon"];
+v12 -> v13 [label="reference_gtf"];
+
+v13 [label="quantify_single_reads_salmon"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v21;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v18;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v19;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v17;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 [label="quantify_paired_reads_salmon"];
+v10 -> v15 [label="salmon_index"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 [label="quantify_paired_reads_salmon"];
+v12 -> v15 [label="reference_gtf"];
+
+v15 [label="quantify_paired_reads_salmon"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v19;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v17;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v18;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v21;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 -> v47 [label="salmon_strands"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v55 [label="salmon_transcript_quants"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 [shape=point];
+v19 -> v20 [label="salmon_gene_quants"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v69 [label="salmon_directories"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 [label="align_single_reads_star"];
+v23 -> v24 [label="star_index"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v24 [label="align_single_reads_star"];
+v5 -> v24;
+
+v24 [label="align_single_reads_star"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v25 -> v33;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v30;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v29;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v28;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v26 [label="align_paired_reads_star"];
+v7 -> v26;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [label="align_paired_reads_star"];
+v23 -> v26 [label="star_index"];
+
+v26 [label="align_paired_reads_star"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v29;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v28;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 -> v36;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v30;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 -> v47 [label="star_genome_bams"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 -> v49 [label="star_reads_per_gene"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 -> v71 [label="star_logs"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 [label="quantify_single_reads_rsem"];
+v32 -> v34 [label="rsem_reference"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v14 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 [label="quantify_single_reads_rsem"];
+v33 -> v34;
+
+v34 [label="quantify_single_reads_rsem"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v40;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v42;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v39;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v16 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v37 [label="quantify_paired_reads_rsem"];
+v36 -> v37;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v37 [label="quantify_paired_reads_rsem"];
+v32 -> v37 [label="rsem_reference"];
+
+v37 [label="quantify_paired_reads_rsem"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v42;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v40;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v59 [label="rsem_transcript_quants"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 [shape=point];
+v40 -> v41 [label="rsem_gene_quants"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 -> v75 [label="rsem_logs"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v48 [label="compute_qc_metrics_picard"];
+v44 -> v48 [label="ref_flat"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v48 [label="compute_qc_metrics_picard"];
+v46 -> v48 [label="rRNA_interval_list"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v48 [label="compute_qc_metrics_picard"];
+v47 -> v48;
+
+v48 [label="compute_qc_metrics_picard"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v48 -> v53;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v17 -> v49 [label="salmon_strands"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v50 [label="count_genes_with_reads"];
+v49 -> v50;
+
+v50 [label="count_genes_with_reads"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v51 -> v52;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 -> v52 [label="star_genome_bams"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v54 [label="merge_qc_metrics"];
+v53 -> v54;
+
+v54 [label="merge_qc_metrics"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v63;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 [label="collect_salmon_quants"];
+v56 -> v57;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 [label="collect_salmon_quants"];
+v12 -> v57 [label="reference_gtf"];
+
+v57 [label="collect_salmon_quants"];
+v58 [shape=point];
+v57 -> v58;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v61 [label="collect_rsem_quants"];
+v60 -> v61;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v61 [label="collect_rsem_quants"];
+v12 -> v61 [label="reference_gtf"];
+
+v61 [label="collect_rsem_quants"];
+v62 [shape=point];
+v61 -> v62;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v65 [label="collect_qc_metrics"];
+v64 -> v65;
+
+v65 [label="collect_qc_metrics"];
+v66 [shape=point];
+v65 -> v66;
+
+v67 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v80 [label="generate_multiqc_report"];
+v67 -> v80 [label="multiqc_config"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v68 [label="fastp_jsons"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v70;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v72;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v74;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v73 [label="star_reads_per_gene"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v76;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v78;
+
+v48 [label="compute_qc_metrics_picard"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v80 [label="generate_multiqc_report"];
+v79 -> v80;
+
+v80 [label="generate_multiqc_report"];
+v81 [shape=point];
+v80 -> v81;
+
+}

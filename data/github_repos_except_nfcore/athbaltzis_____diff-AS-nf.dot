@@ -1,0 +1,66 @@
+digraph "athbaltzis_____diffASnf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 [shape=point];
+v3 -> v4 [label="bams_collected"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v7 -> v10 [label="input"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v8 -> v10 [label="condA"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 -> v11 [label="condB"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 [label="rmats:run_rmats"];
+v10 -> v15 [label="bamsA"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v7 -> v11 [label="input"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 [label="rmats:run_rmats"];
+v11 -> v15 [label="bamsB"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v15 [label="rmats:run_rmats"];
+v12 -> v15 [label="gtf_file"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 [label="rmats:run_rmats"];
+v14 -> v15 [label="bai_files"];
+
+v15 [label="rmats:run_rmats"];
+v16 [shape=point];
+v15 -> v16;
+
+}

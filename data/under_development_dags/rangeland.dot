@@ -1,0 +1,670 @@
+digraph "rangeland" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v143 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v144 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v145 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v23 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v12 [label="tar_versions"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="NFCORE_RANGELAND:RANGELAND:UNTAR_INPUT"];
+v5 -> v6;
+
+v6 [label="NFCORE_RANGELAND:RANGELAND:UNTAR_INPUT"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v6 [label="NFCORE_RANGELAND:RANGELAND:UNTAR_INPUT"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v12;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v8 [label="base_path"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v9 -> v10 [label="data"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v36 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:PREPROCESS_CONFIG"];
+v11 -> v36 [label="data"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v16 [label="tar_versions"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="NFCORE_RANGELAND:RANGELAND:UNTAR_DEM"];
+v13 -> v14;
+
+v14 [label="NFCORE_RANGELAND:RANGELAND:UNTAR_DEM"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v15;
+
+v14 [label="NFCORE_RANGELAND:RANGELAND:UNTAR_DEM"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v16;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:PREPROCESS_CONFIG"];
+v15 -> v36 [label="dem"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v20 [label="tar_versions"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1];
+v18 [label="NFCORE_RANGELAND:RANGELAND:UNTAR_WVDB"];
+v17 -> v18;
+
+v18 [label="NFCORE_RANGELAND:RANGELAND:UNTAR_WVDB"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v19;
+
+v18 [label="NFCORE_RANGELAND:RANGELAND:UNTAR_WVDB"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v20;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:PREPROCESS_CONFIG"];
+v19 -> v36 [label="wvdb"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v20 -> v21 [label="tar_versions"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v87 [label="ch_versions"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v28 [label="ch_versions"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:FORCE_GENERATE_TILE_ALLOW_LIST"];
+v25 -> v27 [label="aoi"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:FORCE_GENERATE_TILE_ALLOW_LIST"];
+v26 -> v27 [label="tmp/datacube-definition.prj"];
+
+v27 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:FORCE_GENERATE_TILE_ALLOW_LIST"];
+v36 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:PREPROCESS_CONFIG"];
+v27 -> v36;
+
+v27 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:FORCE_GENERATE_TILE_ALLOW_LIST"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v32 [label="ch_versions"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:FORCE_GENERATE_ANALYSIS_MASK"];
+v29 -> v31 [label="aoi"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:FORCE_GENERATE_ANALYSIS_MASK"];
+v30 -> v31 [label="mask/datacube-definition.prj"];
+
+v31 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:FORCE_GENERATE_ANALYSIS_MASK"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v31 -> v33;
+
+v31 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:FORCE_GENERATE_ANALYSIS_MASK"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v39 [label="ch_versions"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v86 [label="masks"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:PREPROCESS_CONFIG"];
+v35 -> v36 [label="cube"];
+
+v36 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:PREPROCESS_CONFIG"];
+v40 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:FORCE_PREPROCESS"];
+v36 -> v40;
+
+v36 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:PREPROCESS_CONFIG"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v44 [label="ch_versions"];
+
+v40 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:FORCE_PREPROCESS"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v40 -> v45;
+
+v40 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:FORCE_PREPROCESS"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v40 -> v48;
+
+v40 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:FORCE_PREPROCESS"];
+v41 [shape=point];
+v40 -> v41;
+
+v40 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:FORCE_PREPROCESS"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v40 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v72 [label="ch_versions"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v47 -> v51 [label="boa_tiles"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v50 -> v57 [label="qai_tiles"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:MERGE_BOA"];
+v56 -> v69 [label="boa_tiles_to_merge"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v75 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:MERGE_QAI"];
+v62 -> v75 [label="qai_tiles_to_merge"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v47 -> v63 [label="boa_tiles"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v64 -> v79 [label="boa_tiles_done"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v50 -> v65 [label="qai_tiles"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v66 -> v82 [label="qai_tiles_done"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:MERGE_BOA"];
+v67 -> v69 [label="data_type"];
+
+v68 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:MERGE_BOA"];
+v68 -> v69 [label="cube"];
+
+v69 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:MERGE_BOA"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v69 -> v79;
+
+v69 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:MERGE_BOA"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v78 [label="ch_versions"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1];
+v75 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:MERGE_QAI"];
+v73 -> v75 [label="data_type"];
+
+v74 [shape=point,label="",fixedsize=true,width=0.1];
+v75 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:MERGE_QAI"];
+v74 -> v75 [label="cube"];
+
+v75 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:MERGE_QAI"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v75 -> v82;
+
+v75 [label="NFCORE_RANGELAND:RANGELAND:PREPROCESSING:MERGE_QAI"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v87 [label="versions"];
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v80 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v81 -> v85 [label="boa_tiles"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v82 -> v83;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v84 -> v85 [label="qai_tiles"];
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v85 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v86 -> v88 [label="tiles_and_masks"];
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v116 [label="ch_versions"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v92 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:HIGHER_LEVEL_CONFIG"];
+v88 -> v92 [label="tiles_and_masks"];
+
+v89 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v95 [label="ch_versions"];
+
+v90 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:HIGHER_LEVEL_CONFIG"];
+v90 -> v92 [label="ard/datacube-definition.prj"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1];
+v92 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:HIGHER_LEVEL_CONFIG"];
+v91 -> v92 [label="endmember"];
+
+v92 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:HIGHER_LEVEL_CONFIG"];
+v96 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:FORCE_HIGHER_LEVEL"];
+v92 -> v96;
+
+v92 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:HIGHER_LEVEL_CONFIG"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v93 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v99 [label="ch_versions"];
+
+v96 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:FORCE_HIGHER_LEVEL"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v96 -> v100;
+
+v96 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:FORCE_HIGHER_LEVEL"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v97 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v107 [label="ch_versions"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v101 -> v102 [label="trend_files"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v104 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:FORCE_MOSAIC"];
+v102 -> v104 [label="trend_files_mosaic"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1];
+v104 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:FORCE_MOSAIC"];
+v103 -> v104 [label="trend/datacube-definition.prj"];
+
+v104 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:FORCE_MOSAIC"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 -> v117 [label="trend_files"];
+
+v104 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:FORCE_MOSAIC"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v105 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v115 [label="ch_versions"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v101 -> v108 [label="trend_files"];
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v111 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:FORCE_PYRAMID"];
+v110 -> v111;
+
+v111 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:FORCE_PYRAMID"];
+v112 [shape=point];
+v111 -> v112;
+
+v111 [label="NFCORE_RANGELAND:RANGELAND:HIGHER_LEVEL:FORCE_PYRAMID"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v111 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v113 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v116 [label="versions"];
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v127 [label="ch_versions"];
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v117 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="buffer"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="buffer"];
+v126 [label="NFCORE_RANGELAND:RANGELAND:CHECK_RESULTS"];
+v119 -> v126 [label="grouped_trend_data"];
+
+v120 [shape=point,label="",fixedsize=true,width=0.1];
+v126 [label="NFCORE_RANGELAND:RANGELAND:CHECK_RESULTS"];
+v120 -> v126 [label="woody_change_ref"];
+
+v121 [shape=point,label="",fixedsize=true,width=0.1];
+v126 [label="NFCORE_RANGELAND:RANGELAND:CHECK_RESULTS"];
+v121 -> v126 [label="woody_yoc_ref"];
+
+v122 [shape=point,label="",fixedsize=true,width=0.1];
+v126 [label="NFCORE_RANGELAND:RANGELAND:CHECK_RESULTS"];
+v122 -> v126 [label="herbaceous_change_ref"];
+
+v123 [shape=point,label="",fixedsize=true,width=0.1];
+v126 [label="NFCORE_RANGELAND:RANGELAND:CHECK_RESULTS"];
+v123 -> v126 [label="herbaceous_yoc_ref"];
+
+v124 [shape=point,label="",fixedsize=true,width=0.1];
+v126 [label="NFCORE_RANGELAND:RANGELAND:CHECK_RESULTS"];
+v124 -> v126 [label="peak_change_ref"];
+
+v125 [shape=point,label="",fixedsize=true,width=0.1];
+v126 [label="NFCORE_RANGELAND:RANGELAND:CHECK_RESULTS"];
+v125 -> v126 [label="peak_yoc_ref"];
+
+v126 [label="NFCORE_RANGELAND:RANGELAND:CHECK_RESULTS"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v127 -> v128 [label="ch_versions"];
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v128 -> v129;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v130 [label="NFCORE_RANGELAND:RANGELAND:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v129 -> v130;
+
+v130 [label="NFCORE_RANGELAND:RANGELAND:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v132 [shape=point];
+v130 -> v132;
+
+v130 [label="NFCORE_RANGELAND:RANGELAND:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v130 -> v140;
+
+v130 [label="NFCORE_RANGELAND:RANGELAND:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v131 [shape=point];
+v130 -> v131;
+
+v133 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v136 [label="ch_multiqc_files"];
+
+v134 [shape=point,label="",fixedsize=true,width=0.1];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v134 -> v135 [label="ch_workflow_summary"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v136;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v139 [label="ch_multiqc_files"];
+
+v137 [shape=point,label="",fixedsize=true,width=0.1];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v137 -> v138 [label="ch_methods_description"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v141 [label="ch_multiqc_files"];
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v141 -> v142 [label="ch_multiqc_files"];
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v146 [label="NFCORE_RANGELAND:RANGELAND:MULTIQC"];
+v142 -> v146;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v146 [label="NFCORE_RANGELAND:RANGELAND:MULTIQC"];
+v143 -> v146;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v146 [label="NFCORE_RANGELAND:RANGELAND:MULTIQC"];
+v144 -> v146;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v146 [label="NFCORE_RANGELAND:RANGELAND:MULTIQC"];
+v145 -> v146;
+
+v146 [label="NFCORE_RANGELAND:RANGELAND:MULTIQC"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v146 -> v150;
+
+v146 [label="NFCORE_RANGELAND:RANGELAND:MULTIQC"];
+v149 [shape=point];
+v146 -> v149;
+
+v146 [label="NFCORE_RANGELAND:RANGELAND:MULTIQC"];
+v148 [shape=point];
+v146 -> v148;
+
+v146 [label="NFCORE_RANGELAND:RANGELAND:MULTIQC"];
+v147 [shape=point];
+v146 -> v147;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v151 [shape=point];
+v150 -> v151;
+
+}

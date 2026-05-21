@@ -1,0 +1,170 @@
+digraph "eQTLCatalogue_____genimpute" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [label="main_flow:CrossMap"];
+v1 -> v18 [label="bfile"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v19 [label="ref_panel_ch"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 -> v24 [label="ref_genome_ch"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v29 [label="eagle_genetic_map_ch"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v30 [label="phasing_ref_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v32 [label="minimac_ref_ch"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 -> v17 [label="chain_file_ch"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 -> v22 [label="annotation_file_23_to_X_ch"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v28 [label="main_flow:split_by_chr"];
+v16 -> v28 [label="chromosome_ch"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 [label="main_flow:CrossMap"];
+v17 -> v18;
+
+v18 [label="main_flow:CrossMap"];
+v20 [label="main_flow:GenotypeHarmonizer"];
+v18 -> v20;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 [label="main_flow:GenotypeHarmonizer"];
+v19 -> v20;
+
+v20 [label="main_flow:GenotypeHarmonizer"];
+v21 [label="main_flow:plink_to_vcf"];
+v20 -> v21;
+
+v21 [label="main_flow:plink_to_vcf"];
+v23 [label="main_flow:annotate"];
+v21 -> v23;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 [label="main_flow:annotate"];
+v22 -> v23;
+
+v23 [label="main_flow:annotate"];
+v26 [label="main_flow:vcf_fixref"];
+v23 -> v26;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [label="main_flow:vcf_fixref"];
+v24 -> v26;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v25 [label="ref_panel_ch"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 [label="main_flow:vcf_fixref"];
+v25 -> v26;
+
+v26 [label="main_flow:vcf_fixref"];
+v27 [label="main_flow:filter_preimpute_vcf"];
+v26 -> v27;
+
+v27 [label="main_flow:filter_preimpute_vcf"];
+v28 [label="main_flow:split_by_chr"];
+v27 -> v28;
+
+v28 [label="main_flow:split_by_chr"];
+v31 [label="main_flow:eagle_prephasing"];
+v28 -> v31;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 [label="main_flow:eagle_prephasing"];
+v29 -> v31;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 [label="main_flow:eagle_prephasing"];
+v30 -> v31;
+
+v31 [label="main_flow:eagle_prephasing"];
+v33 [label="main_flow:minimac_imputation"];
+v31 -> v33;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 [label="main_flow:minimac_imputation"];
+v32 -> v33;
+
+v33 [label="main_flow:minimac_imputation"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v34 [label="$out0"];
+
+v33 [label="main_flow:minimac_imputation"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v35 [label="$out1"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v36 [label="merge_unfiltered_vcf"];
+v34 -> v36;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v36 [label="merge_unfiltered_vcf"];
+v35 -> v36;
+
+v36 [label="merge_unfiltered_vcf"];
+v37 [label="filter_vcf"];
+v36 -> v37;
+
+v36 [label="merge_unfiltered_vcf"];
+v37 [label="filter_vcf"];
+v36 -> v37;
+
+v37 [label="filter_vcf"];
+v39 [shape=point];
+v37 -> v39;
+
+v37 [label="filter_vcf"];
+v38 [shape=point];
+v37 -> v38;
+
+}

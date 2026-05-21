@@ -1,0 +1,3070 @@
+digraph "atacseq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v0 -> v670 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v599 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v599 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3 [label="ch_multiqc_logo"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v49 [label="ch_versions"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v11 [label="ch_versions"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v7 [shape=point];
+v6 -> v7 [label="ch_fasta"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v8 -> v27 [label="ch_blacklist"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:GTF2BED"];
+v9 -> v10 [label="ch_gtf"];
+
+v10 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:GTF2BED"];
+v12 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:TSS_EXTRACT"];
+v10 -> v12 [label="ch_gene_bed"];
+
+v10 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:GTF2BED"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v13 [label="ch_versions"];
+
+v12 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:TSS_EXTRACT"];
+v246 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_COMPUTEMATRIX_REFERENCE_POINT"];
+v12 -> v246 [label="ch_tss_bed"];
+
+v12 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:TSS_EXTRACT"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v20 [label="ch_versions"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v15 [label="ch_fasta"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v15 -> v16;
+
+v16 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v18;
+
+v16 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v19;
+
+v16 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v17 [shape=point];
+v16 -> v17;
+
+v16 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v20;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v18 -> v30 [label="ch_chrom_sizes"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:GET_AUTOSOMES"];
+v19 -> v23 [label="fai"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v24 [label="ch_versions"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=point];
+v21 -> v22 [label="ch_genome_autosomes"];
+
+v23 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:GET_AUTOSOMES"];
+v389 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v23 -> v389 [label="autosomes"];
+
+v23 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:GET_AUTOSOMES"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v31 [label="ch_versions"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v26 [shape=point];
+v25 -> v26 [label="ch_genome_filtered_bed"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v30 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v27 -> v30;
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v28 -> v30 [label="mito_name"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v29 -> v30 [label="keep_mito"];
+
+v30 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v30 -> v159 [label="filtered_bed"];
+
+v30 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:GENOME_BLACKLIST_REGIONS"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v36 [label="ch_versions"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v33 [shape=point];
+v32 -> v33 [label="ch_bwa_index"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v34 [label="ch_fasta"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:BWA_INDEX"];
+v34 -> v35;
+
+v35 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:BWA_INDEX"];
+v102 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BWA_MEM"];
+v35 -> v102 [label="ch_index"];
+
+v35 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:BWA_INDEX"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v47 [label="ch_versions"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v38 [shape=point];
+v37 -> v38 [label="bowtie2_index"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v40 [shape=point];
+v39 -> v40 [label="chromap_index"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v42 [shape=point];
+v41 -> v42 [label="star_index"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:KHMER_UNIQUEKMERS"];
+v14 -> v44 [label="ch_fasta"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:KHMER_UNIQUEKMERS"];
+v43 -> v44 [label="kmer_size"];
+
+v44 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:KHMER_UNIQUEKMERS"];
+v45 [shape=point];
+v44 -> v45;
+
+v44 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:KHMER_UNIQUEKMERS"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 -> v46;
+
+v44 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:KHMER_UNIQUEKMERS"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v47;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v270 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v46 -> v270 [label="macs_gsize"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v47 -> v48 [label="ch_versions"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v49 [label="versions"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v54 [label="ch_versions"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="NFCORE_ATACSEQ:ATACSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v50 -> v51 [label="samplesheet"];
+
+v51 [label="NFCORE_ATACSEQ:ATACSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v51 -> v52;
+
+v51 [label="NFCORE_ATACSEQ:ATACSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v54 [label="versions"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:FASTQC"];
+v53 -> v60 [label="trim_reads"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v88 [label="ch_versions"];
+
+v55 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v63 [label="ch_versions"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v57 [shape=point];
+v56 -> v57 [label="fastqc_html"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v59 [shape=point];
+v58 -> v59 [label="fastqc_zip"];
+
+v60 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:FASTQC"];
+v61 [shape=point];
+v60 -> v61 [label="fastqc_html"];
+
+v60 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:FASTQC"];
+v604 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 -> v604 [label="fastqc_zip"];
+
+v60 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:FASTQC"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v60 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v80 [label="ch_versions"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v65 [shape=point];
+v64 -> v65 [label="umi_log"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v67 [shape=point];
+v66 -> v67 [label="trim_unpaired"];
+
+v68 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v69 [shape=point];
+v68 -> v69 [label="trim_html"];
+
+v70 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v71 [shape=point];
+v70 -> v71 [label="trim_zip"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v73 [shape=point];
+v72 -> v73 [label="trim_log"];
+
+v74 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v75 [shape=point];
+v74 -> v75 [label="trim_read_count"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v53 -> v76 [label="trim_reads"];
+
+v76 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v76 -> v81;
+
+v76 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v76 -> v81 [label="trim_log"];
+
+v76 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v78 [shape=point];
+v76 -> v78 [label="trim_unpaired"];
+
+v76 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v77 [shape=point];
+v76 -> v77 [label="trim_html"];
+
+v76 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v606 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v76 -> v606 [label="trim_zip"];
+
+v76 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v76 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v80 -> v87 [label="ch_versions"];
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v82 -> v83 [label="ch_num_trimmed_reads"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BWA_MEM"];
+v84 -> v102 [label="ch_reads"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v82 -> v85 [label="ch_num_trimmed_reads"];
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v86 [shape=point];
+v85 -> v86 [label="trim_read_count"];
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v88 [label="versions"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v126 [label="ch_versions"];
+
+v89 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v90 [shape=point];
+v89 -> v90 [label="ch_genome_bam"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v92 [shape=point];
+v91 -> v92 [label="ch_genome_bam_index"];
+
+v93 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v94 [shape=point];
+v93 -> v94 [label="ch_samtools_stats"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v96 [shape=point];
+v95 -> v96 [label="ch_samtools_flagstat"];
+
+v97 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v98 [shape=point];
+v97 -> v98 [label="ch_samtools_idxstats"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v99 [label="ch_fasta"];
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v99 -> v118 [label="ch_fasta"];
+
+v100 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v104 [label="ch_versions"];
+
+v101 [shape=point,label="",fixedsize=true,width=0.1];
+v102 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BWA_MEM"];
+v101 -> v102 [label="sort_bam"];
+
+v102 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BWA_MEM"];
+v106 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v102 -> v106 [label="bam_orig"];
+
+v102 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BWA_MEM"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v125 [label="ch_versions"];
+
+v105 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v109 [label="ch_versions"];
+
+v106 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v110 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v106 -> v110 [label="ch_genome_bam"];
+
+v106 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v107 [shape=point];
+v106 -> v107;
+
+v106 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v106 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v113 [label="ch_versions"];
+
+v110 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v110 -> v114 [label="ch_genome_bam_index"];
+
+v110 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v110 -> v115 [label="csi"];
+
+v110 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v111 [shape=point];
+v110 -> v111;
+
+v110 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v110 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v124 [label="ch_versions"];
+
+v106 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v106 -> v114 [label="ch_genome_bam"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v114 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v115 -> v116;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v116 -> v118 [label="ch_bam_bai"];
+
+v117 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v119 [label="ch_versions"];
+
+v118 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v610 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v118 -> v610 [label="ch_samtools_stats"];
+
+v118 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v121 [label="ch_versions"];
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v120 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v116 -> v120 [label="ch_bam_bai"];
+
+v120 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v612 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v120 -> v612 [label="ch_samtools_flagstat"];
+
+v120 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v123 [label="ch_versions"];
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v122 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v116 -> v122 [label="ch_bam_bai"];
+
+v122 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v614 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v122 -> v614 [label="ch_samtools_idxstats"];
+
+v122 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v124 [label="versions"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v125 [label="versions"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v126 [label="versions"];
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v134 [label="ch_versions"];
+
+v127 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v128 [shape=point];
+v127 -> v128 [label="ch_star_multiqc"];
+
+v106 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v106 -> v129 [label="ch_genome_bam"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v132 [label="NFCORE_ATACSEQ:ATACSEQ:PICARD_MERGESAMFILES_LIBRARY"];
+v131 -> v132 [label="ch_sort_bam"];
+
+v132 [label="NFCORE_ATACSEQ:ATACSEQ:PICARD_MERGESAMFILES_LIBRARY"];
+v138 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v132 -> v138 [label="ch_bam"];
+
+v132 [label="NFCORE_ATACSEQ:ATACSEQ:PICARD_MERGESAMFILES_LIBRARY"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v132 -> v133;
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v134;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v157 [label="ch_versions"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v135 [label="ch_fasta"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v138 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v135 -> v138 [label="ch_fasta"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v136 [label="fai"];
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v138 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v136 -> v138 [label="ch_fai"];
+
+v137 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v141 [label="ch_versions"];
+
+v138 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v142 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v138 -> v142 [label="bam"];
+
+v138 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v139 [shape=point];
+v138 -> v139;
+
+v138 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v622 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v138 -> v622 [label="metrics"];
+
+v138 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v138 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v145 [label="ch_versions"];
+
+v142 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v142 -> v146 [label="bai"];
+
+v142 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v142 -> v147 [label="csi"];
+
+v142 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v143 [shape=point];
+v142 -> v143;
+
+v142 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v142 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v156 [label="ch_versions"];
+
+v138 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v138 -> v146 [label="bam"];
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v147 -> v148;
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v150 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v148 -> v150 [label="ch_bam_bai"];
+
+v149 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v151 [label="ch_versions"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v150 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v135 -> v150 [label="ch_fasta"];
+
+v150 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v616 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v150 -> v616 [label="stats"];
+
+v150 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 -> v151;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 -> v153 [label="ch_versions"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v148 -> v152 [label="ch_bam_bai"];
+
+v152 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v618 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v152 -> v618 [label="flagstat"];
+
+v152 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v155 [label="ch_versions"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v148 -> v154 [label="ch_bam_bai"];
+
+v154 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v620 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v154 -> v620 [label="idxstats"];
+
+v154 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v156 [label="versions"];
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 -> v157 [label="versions"];
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 -> v218 [label="ch_versions"];
+
+v142 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v142 -> v158 [label="bai"];
+
+v138 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v138 -> v158 [label="bam"];
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v164 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAMTOOLS_FILTER"];
+v158 -> v164 [label="ch_bam_bai"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v164 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAMTOOLS_FILTER"];
+v159 -> v164 [label="ch_bed"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v160 [label="ch_fasta"];
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v176 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v160 -> v176 [label="ch_fasta"];
+
+v161 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v166 [label="ch_versions"];
+
+v162 [shape=point,label="",fixedsize=true,width=0.1];
+v164 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAMTOOLS_FILTER"];
+v162 -> v164 [label="bamtools_filter_se_config"];
+
+v163 [shape=point,label="",fixedsize=true,width=0.1];
+v164 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAMTOOLS_FILTER"];
+v163 -> v164 [label="bamtools_filter_pe_config"];
+
+v164 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAMTOOLS_FILTER"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v164 -> v167;
+
+v164 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAMTOOLS_FILTER"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v164 -> v165;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 -> v166;
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v173 [label="ch_versions"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v167 -> v174;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v184 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:SAMTOOLS_SORT"];
+v167 -> v184;
+
+v168 [shape=point,label="",fixedsize=true,width=0.1];
+v169 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:SAMTOOLS_INDEX"];
+v168 -> v169;
+
+v169 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:SAMTOOLS_INDEX"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v169 -> v174;
+
+v169 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:SAMTOOLS_INDEX"];
+v171 [shape=point];
+v169 -> v171;
+
+v169 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:SAMTOOLS_INDEX"];
+v170 [shape=point];
+v169 -> v170;
+
+v169 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:SAMTOOLS_INDEX"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v169 -> v172;
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 -> v173;
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v173 -> v183 [label="ch_versions"];
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v176 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v174 -> v176 [label="ch_bam_bai"];
+
+v175 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 -> v177 [label="ch_versions"];
+
+v176 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 -> v215 [label="stats"];
+
+v176 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 -> v177;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v179 [label="ch_versions"];
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v178 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v174 -> v178 [label="ch_bam_bai"];
+
+v178 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 -> v216 [label="flagstat"];
+
+v178 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v181 [label="ch_versions"];
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v180 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v174 -> v180 [label="ch_bam_bai"];
+
+v180 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 -> v217 [label="idxstats"];
+
+v180 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 -> v181;
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v181 -> v182 [label="versions"];
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v183;
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 -> v187 [label="ch_versions"];
+
+v184 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:SAMTOOLS_SORT"];
+v188 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_REMOVE_ORPHANS"];
+v184 -> v188 [label="name_bam"];
+
+v184 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:SAMTOOLS_SORT"];
+v185 [shape=point];
+v184 -> v185;
+
+v184 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:SAMTOOLS_SORT"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v184 -> v186;
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 -> v187;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 -> v190 [label="ch_versions"];
+
+v188 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_REMOVE_ORPHANS"];
+v192 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v188 -> v192 [label="ch_bam"];
+
+v188 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_REMOVE_ORPHANS"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v188 -> v189;
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v212 [label="ch_versions"];
+
+v191 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 -> v195 [label="ch_versions"];
+
+v192 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v196 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v192 -> v196 [label="bam"];
+
+v192 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v193 [shape=point];
+v192 -> v193;
+
+v192 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v192 -> v194;
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v195;
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 -> v199 [label="ch_versions"];
+
+v196 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v196 -> v200 [label="bai"];
+
+v196 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v196 -> v201 [label="csi"];
+
+v196 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v197 [shape=point];
+v196 -> v197;
+
+v196 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v196 -> v198;
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 -> v199;
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v199 -> v210 [label="ch_versions"];
+
+v192 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v192 -> v200 [label="bam"];
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v200 -> v201;
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v201 -> v202;
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v204 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v202 -> v204 [label="ch_bam_bai"];
+
+v203 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v203 -> v205 [label="ch_versions"];
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v204 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v160 -> v204 [label="ch_fasta"];
+
+v204 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v204 -> v215 [label="stats"];
+
+v204 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v204 -> v205;
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v205 -> v207 [label="ch_versions"];
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v206 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v202 -> v206 [label="ch_bam_bai"];
+
+v206 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 -> v216 [label="flagstat"];
+
+v206 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 -> v207;
+
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 -> v209 [label="ch_versions"];
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v208 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v202 -> v208 [label="ch_bam_bai"];
+
+v208 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 -> v217 [label="idxstats"];
+
+v208 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 -> v209;
+
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 -> v210 [label="versions"];
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v210 -> v211 [label="versions"];
+
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v211 -> v212;
+
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v212 -> v218 [label="versions"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v213;
+
+v192 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v192 -> v213 [label="bam"];
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v213 -> v222 [label="bam"];
+
+v169 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:SAMTOOLS_INDEX"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v214;
+
+v196 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_FILTER_BAM:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v214 [label="bai"];
+
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v214 -> v260 [label="bai"];
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v624 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v215 -> v624 [label="stats"];
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v216 -> v229 [label="flagstat"];
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v628 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v217 -> v628 [label="idxstats"];
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 -> v228 [label="ch_versions"];
+
+v219 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v632 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v219 -> v632 [label="ch_preseq_multiqc"];
+
+v220 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v221 [shape=point];
+v220 -> v221 [label="ch_picardcollectmultiplemetrics_multiqc"];
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v225 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_PICARD_COLLECTMULTIPLEMETRICS"];
+v222 -> v225;
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v223 [label="ch_fasta"];
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v225 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_PICARD_COLLECTMULTIPLEMETRICS"];
+v223 -> v225;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v224 [label="fai"];
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v225 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_PICARD_COLLECTMULTIPLEMETRICS"];
+v224 -> v225;
+
+v225 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_PICARD_COLLECTMULTIPLEMETRICS"];
+v630 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v225 -> v630 [label="ch_picardcollectmultiplemetrics_multiqc"];
+
+v225 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_PICARD_COLLECTMULTIPLEMETRICS"];
+v226 [shape=point];
+v225 -> v226;
+
+v225 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_PICARD_COLLECTMULTIPLEMETRICS"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v225 -> v227;
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 -> v228;
+
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 -> v238 [label="ch_versions"];
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v213 -> v229 [label="bam"];
+
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v231 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BAM_TO_BIGWIG:BEDTOOLS_GENOMECOV"];
+v229 -> v231 [label="ch_bam_flagstat"];
+
+v230 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v230 -> v234 [label="ch_versions"];
+
+v231 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BAM_TO_BIGWIG:BEDTOOLS_GENOMECOV"];
+v235 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BAM_TO_BIGWIG:UCSC_BEDGRAPHTOBIGWIG"];
+v231 -> v235 [label="bedgraph"];
+
+v231 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BAM_TO_BIGWIG:BEDTOOLS_GENOMECOV"];
+v232 [shape=point];
+v231 -> v232 [label="scale_factor"];
+
+v231 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BAM_TO_BIGWIG:BEDTOOLS_GENOMECOV"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v231 -> v233;
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v234;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v234 -> v237 [label="ch_versions"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v235 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BAM_TO_BIGWIG:UCSC_BEDGRAPHTOBIGWIG"];
+v18 -> v235 [label="ch_chrom_sizes"];
+
+v235 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BAM_TO_BIGWIG:UCSC_BEDGRAPHTOBIGWIG"];
+v242 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_COMPUTEMATRIX_SCALE_REGIONS"];
+v235 -> v242 [label="ch_bigwig"];
+
+v235 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BAM_TO_BIGWIG:UCSC_BEDGRAPHTOBIGWIG"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v235 -> v236;
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 -> v237;
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v237 -> v238 [label="versions"];
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v238 -> v259 [label="ch_versions"];
+
+v239 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v240 [shape=point];
+v239 -> v240 [label="ch_deeptoolsplotprofile_multiqc"];
+
+v241 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v241 -> v245 [label="ch_versions"];
+
+v10 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:GTF2BED"];
+v242 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_COMPUTEMATRIX_SCALE_REGIONS"];
+v10 -> v242 [label="ch_gene_bed"];
+
+v242 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_COMPUTEMATRIX_SCALE_REGIONS"];
+v250 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_PLOTPROFILE"];
+v242 -> v250 [label="scale_regions_matrix"];
+
+v242 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_COMPUTEMATRIX_SCALE_REGIONS"];
+v243 [shape=point];
+v242 -> v243 [label="scale_regions_table"];
+
+v242 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_COMPUTEMATRIX_SCALE_REGIONS"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v242 -> v244;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v244 -> v245;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 -> v249 [label="ch_versions"];
+
+v235 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BAM_TO_BIGWIG:UCSC_BEDGRAPHTOBIGWIG"];
+v246 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_COMPUTEMATRIX_REFERENCE_POINT"];
+v235 -> v246 [label="ch_bigwig"];
+
+v246 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_COMPUTEMATRIX_REFERENCE_POINT"];
+v254 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_PLOTHEATMAP"];
+v246 -> v254 [label="reference_point_matrix"];
+
+v246 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_COMPUTEMATRIX_REFERENCE_POINT"];
+v247 [shape=point];
+v246 -> v247 [label="reference_point_table"];
+
+v246 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_COMPUTEMATRIX_REFERENCE_POINT"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v246 -> v248;
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v248 -> v249;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v249 -> v253 [label="ch_versions"];
+
+v250 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_PLOTPROFILE"];
+v251 [shape=point];
+v250 -> v251 [label="plotprofile_pdf"];
+
+v250 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_PLOTPROFILE"];
+v634 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v250 -> v634 [label="ch_deeptoolsplotprofile_multiqc"];
+
+v250 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_PLOTPROFILE"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v250 -> v252;
+
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v252 -> v253;
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v253 -> v258 [label="ch_versions"];
+
+v254 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_PLOTHEATMAP"];
+v256 [shape=point];
+v254 -> v256 [label="plotheatmap_pdf"];
+
+v254 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_PLOTHEATMAP"];
+v255 [shape=point];
+v254 -> v255 [label="plotheatmap_table"];
+
+v254 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BIGWIG_PLOT_DEEPTOOLS:DEEPTOOLS_PLOTHEATMAP"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v254 -> v257;
+
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v257 -> v258;
+
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v258 -> v259 [label="versions"];
+
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 -> v267 [label="ch_versions"];
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v213 -> v260 [label="bam"];
+
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v263 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_DEEPTOOLS_PLOTFINGERPRINT"];
+v260 -> v263 [label="ch_bam_bai"];
+
+v261 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v262 [shape=point];
+v261 -> v262 [label="ch_deeptoolsplotfingerprint_multiqc"];
+
+v263 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_DEEPTOOLS_PLOTFINGERPRINT"];
+v265 [shape=point];
+v263 -> v265;
+
+v263 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_DEEPTOOLS_PLOTFINGERPRINT"];
+v636 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v263 -> v636 [label="ch_deeptoolsplotfingerprint_multiqc"];
+
+v263 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_DEEPTOOLS_PLOTFINGERPRINT"];
+v264 [shape=point];
+v263 -> v264;
+
+v263 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_DEEPTOOLS_PLOTFINGERPRINT"];
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v263 -> v266;
+
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v266 -> v267;
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v267 -> v319 [label="ch_versions"];
+
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v260 -> v268 [label="ch_bam_bai"];
+
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v270 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v268 -> v270 [label="ch_bams"];
+
+v269 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v269 -> v276 [label="ch_versions"];
+
+v270 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v270 -> v277;
+
+v270 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v274 [shape=point];
+v270 -> v274 [label="xls"];
+
+v270 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v270 -> v275;
+
+v270 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v273 [shape=point];
+v270 -> v273 [label="gapped_peaks"];
+
+v270 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v272 [shape=point];
+v270 -> v272 [label="bed"];
+
+v270 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v271 [shape=point];
+v270 -> v271 [label="bedgraph"];
+
+v275 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v275 -> v276;
+
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v276 -> v282 [label="ch_versions"];
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v277 -> v278 [label="ch_peaks"];
+
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v268 -> v278 [label="ch_bams"];
+
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v278 -> v279;
+
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v280 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:FRIP_SCORE"];
+v279 -> v280 [label="ch_bam_peaks"];
+
+v280 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:FRIP_SCORE"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v280 -> v283 [label="frip_txt"];
+
+v280 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:FRIP_SCORE"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v280 -> v281;
+
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v281 -> v282;
+
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v282 -> v289 [label="ch_versions"];
+
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v279 -> v283 [label="ch_bam_peaks"];
+
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v283 -> v284;
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v287 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v284 -> v287 [label="ch_bam_peak_frip"];
+
+v285 [shape=point,label="",fixedsize=true,width=0.1];
+v287 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v285 -> v287 [label="peak_count_header"];
+
+v286 [shape=point,label="",fixedsize=true,width=0.1];
+v287 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v286 -> v287 [label="frip_score_header"];
+
+v287 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v640 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v287 -> v640 [label="peak_count_multiqc"];
+
+v287 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v638 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v287 -> v638 [label="frip_multiqc"];
+
+v287 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v287 -> v288;
+
+v288 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v288 -> v289;
+
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v289 -> v305 [label="ch_versions"];
+
+v290 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v291 [shape=point];
+v290 -> v291 [label="ch_homer_annotatepeaks"];
+
+v292 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v293 [shape=point];
+v292 -> v293 [label="ch_plot_macs2_qc_txt"];
+
+v294 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v295 [shape=point];
+v294 -> v295 [label="ch_plot_macs2_qc_pdf"];
+
+v296 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v297 [shape=point];
+v296 -> v297 [label="ch_plot_homer_annotatepeaks_txt"];
+
+v298 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v299 [shape=point];
+v298 -> v299 [label="ch_plot_homer_annotatepeaks_pdf"];
+
+v300 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v301 [shape=point];
+v300 -> v301 [label="ch_plot_homer_annotatepeaks_tsv"];
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v302 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v277 -> v302 [label="ch_peaks"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v302 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v14 -> v302 [label="ch_fasta"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v302 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v9 -> v302 [label="ch_gtf"];
+
+v302 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v302 -> v312 [label="homer_annotatepeaks"];
+
+v302 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v303 [shape=point];
+v302 -> v303;
+
+v302 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v302 -> v304;
+
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v304 -> v305;
+
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v305 -> v311 [label="ch_versions"];
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v277 -> v306 [label="ch_peaks"];
+
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v308 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v306 -> v308;
+
+v307 [shape=point,label="",fixedsize=true,width=0.1];
+v308 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v307 -> v308 [label="is_narrow_peak"];
+
+v308 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v310 [shape=point];
+v308 -> v310 [label="plot_macs2_qc_txt"];
+
+v308 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v309 [shape=point];
+v308 -> v309 [label="plot_macs2_qc_pdf"];
+
+v308 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v308 -> v311;
+
+v311 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v311 -> v318 [label="ch_versions"];
+
+v312 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v315 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v312 -> v315;
+
+v313 [shape=point,label="",fixedsize=true,width=0.1];
+v315 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v313 -> v315 [label="mqc_header"];
+
+v314 [shape=point,label="",fixedsize=true,width=0.1];
+v315 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v314 -> v315 [label="suffix"];
+
+v315 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v317 [shape=point];
+v315 -> v317 [label="plot_homer_annotatepeaks_txt"];
+
+v315 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v316 [shape=point];
+v315 -> v316 [label="plot_homer_annotatepeaks_pdf"];
+
+v315 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v642 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v315 -> v642 [label="plot_homer_annotatepeaks_tsv"];
+
+v315 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v315 -> v318;
+
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v318 -> v319 [label="versions"];
+
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v319 -> v383 [label="ch_versions"];
+
+v320 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v321 [shape=point];
+v320 -> v321 [label="ch_macs2_consensus_library_bed"];
+
+v322 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v323 [shape=point];
+v322 -> v323 [label="ch_featurecounts_library_multiqc"];
+
+v324 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v325 [shape=point];
+v324 -> v325 [label="ch_deseq2_pca_library_multiqc"];
+
+v326 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v327 [shape=point];
+v326 -> v327 [label="ch_deseq2_clustering_library_multiqc"];
+
+v328 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v328 -> v337 [label="ch_versions"];
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v277 -> v329 [label="ch_peaks"];
+
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v329 -> v330;
+
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v330 -> v331;
+
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v333 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v331 -> v333 [label="ch_consensus_peaks"];
+
+v332 [shape=point,label="",fixedsize=true,width=0.1];
+v333 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v332 -> v333 [label="is_narrow_peak"];
+
+v333 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v340 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v333 -> v340 [label="ch_macs2_consensus_library_bed"];
+
+v333 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v333 -> v348 [label="consensus_saf"];
+
+v333 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v336 [shape=point];
+v333 -> v336 [label="consensus_pdf"];
+
+v333 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v335 [shape=point];
+v333 -> v335 [label="consensus_boolean_txt"];
+
+v333 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v334 [shape=point];
+v333 -> v334 [label="consensus_intersect_txt"];
+
+v333 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v333 -> v337;
+
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v337 -> v343 [label="ch_versions"];
+
+v338 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v339 [shape=point];
+v338 -> v339 [label="ch_homer_annotatepeaks"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v340 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v14 -> v340 [label="ch_fasta"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v340 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v9 -> v340 [label="ch_gtf"];
+
+v340 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v342 [shape=point];
+v340 -> v342 [label="homer_annotatepeaks"];
+
+v340 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v341 [shape=point];
+v340 -> v341;
+
+v340 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v340 -> v343;
+
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v353 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v343 -> v353 [label="ch_versions"];
+
+v268 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v268 -> v344 [label="ch_bams"];
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v277 -> v344 [label="ch_peaks"];
+
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v344 -> v345;
+
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v345 -> v346;
+
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v346 -> v347;
+
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v347 -> v348;
+
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v348 -> v349;
+
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v349 -> v350;
+
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v350 -> v351;
+
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v352 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:SUBREAD_FEATURECOUNTS"];
+v351 -> v352 [label="ch_bam_saf"];
+
+v352 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:SUBREAD_FEATURECOUNTS"];
+v374 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:DESEQ2_QC"];
+v352 -> v374 [label="featurecounts_txt"];
+
+v352 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:SUBREAD_FEATURECOUNTS"];
+v644 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v352 -> v644 [label="ch_featurecounts_library_multiqc"];
+
+v352 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:SUBREAD_FEATURECOUNTS"];
+v353 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v352 -> v353;
+
+v353 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v353 -> v382 [label="ch_versions"];
+
+v354 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v355 [shape=point];
+v354 -> v355 [label="ch_deseq2_qc_pdf"];
+
+v356 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v357 [shape=point];
+v356 -> v357 [label="ch_deseq2_qc_rdata"];
+
+v358 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v359 [shape=point];
+v358 -> v359 [label="ch_deseq2_qc_rds"];
+
+v360 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v361 [shape=point];
+v360 -> v361 [label="ch_deseq2_qc_pca_txt"];
+
+v362 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v363 [shape=point];
+v362 -> v363 [label="ch_deseq2_qc_pca_multiqc"];
+
+v364 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v365 [shape=point];
+v364 -> v365 [label="ch_deseq2_qc_dists_txt"];
+
+v366 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v367 [shape=point];
+v366 -> v367 [label="ch_deseq2_qc_dists_multiqc"];
+
+v368 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v369 [shape=point];
+v368 -> v369 [label="ch_deseq2_qc_log"];
+
+v370 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v371 [shape=point];
+v370 -> v371 [label="ch_deseq2_qc_size_factors"];
+
+v372 [shape=point,label="",fixedsize=true,width=0.1];
+v374 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:DESEQ2_QC"];
+v372 -> v374 [label="deseq2_pca_header"];
+
+v373 [shape=point,label="",fixedsize=true,width=0.1];
+v374 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:DESEQ2_QC"];
+v373 -> v374 [label="deseq2_clustering_header"];
+
+v374 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:DESEQ2_QC"];
+v381 [shape=point];
+v374 -> v381 [label="deseq2_qc_pdf"];
+
+v374 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:DESEQ2_QC"];
+v380 [shape=point];
+v374 -> v380 [label="deseq2_qc_rdata"];
+
+v374 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:DESEQ2_QC"];
+v379 [shape=point];
+v374 -> v379 [label="deseq2_qc_rds"];
+
+v374 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:DESEQ2_QC"];
+v378 [shape=point];
+v374 -> v378 [label="deseq2_qc_pca_txt"];
+
+v374 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:DESEQ2_QC"];
+v662 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v374 -> v662 [label="ch_deseq2_pca_library_multiqc"];
+
+v374 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:DESEQ2_QC"];
+v377 [shape=point];
+v374 -> v377 [label="deseq2_qc_dists_txt"];
+
+v374 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:DESEQ2_QC"];
+v664 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v374 -> v664 [label="ch_deseq2_clustering_library_multiqc"];
+
+v374 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:DESEQ2_QC"];
+v376 [shape=point];
+v374 -> v376 [label="deseq2_qc_log"];
+
+v374 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:DESEQ2_QC"];
+v375 [shape=point];
+v374 -> v375 [label="deseq2_qc_size_factors"];
+
+v374 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:DESEQ2_QC"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v374 -> v382;
+
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v382 -> v383 [label="versions"];
+
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v383 -> v392 [label="ch_versions"];
+
+v142 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v142 -> v384 [label="bai"];
+
+v138 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v138 -> v384 [label="bam"];
+
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v384 -> v385;
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v277 -> v385 [label="ch_peaks"];
+
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v389 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v385 -> v389 [label="ch_bam_peaks"];
+
+v386 [shape=point,label="",fixedsize=true,width=0.1];
+v389 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v386 -> v389 [label="organism"];
+
+v387 [shape=point,label="",fixedsize=true,width=0.1];
+v389 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v387 -> v389 [label="mito_name"];
+
+v12 [label="NFCORE_ATACSEQ:ATACSEQ:PREPARE_GENOME:TSS_EXTRACT"];
+v389 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v12 -> v389 [label="ch_tss_bed"];
+
+v388 [shape=point,label="",fixedsize=true,width=0.1];
+v389 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v388 -> v389 [label="excl_regs_file"];
+
+v389 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v389 -> v393;
+
+v389 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v390 [shape=point];
+v389 -> v390;
+
+v389 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_ATAQV_ATAQV"];
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v389 -> v391;
+
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v391 -> v392;
+
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v392 -> v396 [label="ch_versions"];
+
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v394 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_ATAQV_MKARV"];
+v393 -> v394;
+
+v394 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_ATAQV_MKARV"];
+v395 [shape=point];
+v394 -> v395;
+
+v394 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_ATAQV_MKARV"];
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v394 -> v396;
+
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v396 -> v428 [label="ch_versions"];
+
+v397 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v398 [shape=point];
+v397 -> v398 [label="ch_markduplicates_replicate_stats"];
+
+v399 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v400 [shape=point];
+v399 -> v400 [label="ch_markduplicates_replicate_flagstat"];
+
+v401 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v402 [shape=point];
+v401 -> v402 [label="ch_markduplicates_replicate_idxstats"];
+
+v403 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v404 [shape=point];
+v403 -> v404 [label="ch_markduplicates_replicate_metrics"];
+
+v405 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v406 [shape=point];
+v405 -> v406 [label="ch_ucsc_bedgraphtobigwig_replicate_bigwig"];
+
+v407 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v408 [shape=point];
+v407 -> v408 [label="ch_macs2_replicate_peaks"];
+
+v409 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v410 [shape=point];
+v409 -> v410 [label="ch_macs2_frip_replicate_multiqc"];
+
+v411 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v412 [shape=point];
+v411 -> v412 [label="ch_macs2_peak_count_replicate_multiqc"];
+
+v413 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v414 [shape=point];
+v413 -> v414 [label="ch_macs2_plot_homer_annotatepeaks_replicate_multiqc"];
+
+v415 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v416 [shape=point];
+v415 -> v416 [label="ch_macs2_consensus_replicate_bed"];
+
+v417 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v418 [shape=point];
+v417 -> v418 [label="ch_featurecounts_replicate_multiqc"];
+
+v419 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v420 [shape=point];
+v419 -> v420 [label="ch_deseq2_pca_replicate_multiqc"];
+
+v421 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v422 [shape=point];
+v421 -> v422 [label="ch_deseq2_clustering_replicate_multiqc"];
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v423 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v213 -> v423 [label="bam"];
+
+v423 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v423 -> v424;
+
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v424 -> v425;
+
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v426 [label="NFCORE_ATACSEQ:ATACSEQ:PICARD_MERGESAMFILES_REPLICATE"];
+v425 -> v426 [label="ch_bams"];
+
+v426 [label="NFCORE_ATACSEQ:ATACSEQ:PICARD_MERGESAMFILES_REPLICATE"];
+v432 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v426 -> v432 [label="ch_bam"];
+
+v426 [label="NFCORE_ATACSEQ:ATACSEQ:PICARD_MERGESAMFILES_REPLICATE"];
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v426 -> v427;
+
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v427 -> v428;
+
+v428 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v428 -> v451 [label="ch_versions"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v429 [label="ch_fasta"];
+
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v432 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v429 -> v432 [label="ch_fasta"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v430 [label="fai"];
+
+v430 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v432 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v430 -> v432 [label="ch_fai"];
+
+v431 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v435 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v431 -> v435 [label="ch_versions"];
+
+v432 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v436 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v432 -> v436 [label="bam"];
+
+v432 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v433 [shape=point];
+v432 -> v433;
+
+v432 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v652 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v432 -> v652 [label="ch_markduplicates_replicate_metrics"];
+
+v432 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v434 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v432 -> v434;
+
+v434 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v435 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v434 -> v435;
+
+v435 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v435 -> v439 [label="ch_versions"];
+
+v436 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v436 -> v440 [label="bai"];
+
+v436 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v441 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v436 -> v441 [label="csi"];
+
+v436 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v437 [shape=point];
+v436 -> v437;
+
+v436 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX"];
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v436 -> v438;
+
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v438 -> v439;
+
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v439 -> v450 [label="ch_versions"];
+
+v432 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v432 -> v440 [label="bam"];
+
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v441 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v440 -> v441;
+
+v441 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v441 -> v442;
+
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v444 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v442 -> v444 [label="ch_bam_bai"];
+
+v443 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v443 -> v445 [label="ch_versions"];
+
+v429 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v444 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v429 -> v444 [label="ch_fasta"];
+
+v444 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v646 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v444 -> v646 [label="ch_markduplicates_replicate_stats"];
+
+v444 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v444 -> v445;
+
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v445 -> v447 [label="ch_versions"];
+
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v446 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v442 -> v446 [label="ch_bam_bai"];
+
+v446 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v446 -> v452 [label="ch_markduplicates_replicate_flagstat"];
+
+v446 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v446 -> v447;
+
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v447 -> v449 [label="ch_versions"];
+
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v448 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v442 -> v448 [label="ch_bam_bai"];
+
+v448 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v650 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v448 -> v650 [label="ch_markduplicates_replicate_idxstats"];
+
+v448 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v448 -> v449;
+
+v449 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v449 -> v450 [label="versions"];
+
+v450 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v450 -> v451 [label="versions"];
+
+v451 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v451 -> v461 [label="ch_versions"];
+
+v432 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v432 -> v452 [label="bam"];
+
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v454 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_BAM_TO_BIGWIG:BEDTOOLS_GENOMECOV"];
+v452 -> v454 [label="ch_bam_flagstat"];
+
+v453 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v453 -> v457 [label="ch_versions"];
+
+v454 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_BAM_TO_BIGWIG:BEDTOOLS_GENOMECOV"];
+v458 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_BAM_TO_BIGWIG:UCSC_BEDGRAPHTOBIGWIG"];
+v454 -> v458 [label="bedgraph"];
+
+v454 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_BAM_TO_BIGWIG:BEDTOOLS_GENOMECOV"];
+v455 [shape=point];
+v454 -> v455 [label="scale_factor"];
+
+v454 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_BAM_TO_BIGWIG:BEDTOOLS_GENOMECOV"];
+v456 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v454 -> v456;
+
+v456 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v456 -> v457;
+
+v457 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v460 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v457 -> v460 [label="ch_versions"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v458 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_BAM_TO_BIGWIG:UCSC_BEDGRAPHTOBIGWIG"];
+v18 -> v458 [label="ch_chrom_sizes"];
+
+v458 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_BAM_TO_BIGWIG:UCSC_BEDGRAPHTOBIGWIG"];
+v576 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v458 -> v576 [label="ch_ucsc_bedgraphtobigwig_replicate_bigwig"];
+
+v458 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_BAM_TO_BIGWIG:UCSC_BEDGRAPHTOBIGWIG"];
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v458 -> v459;
+
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v460 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v459 -> v460;
+
+v460 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v460 -> v461 [label="versions"];
+
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v513 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v461 -> v513 [label="ch_versions"];
+
+v432 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES"];
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v432 -> v462 [label="bam"];
+
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v464 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v462 -> v464 [label="ch_bam"];
+
+v463 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v470 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v463 -> v470 [label="ch_versions"];
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v464 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v46 -> v464 [label="macs_gsize"];
+
+v464 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v464 -> v471;
+
+v464 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v468 [shape=point];
+v464 -> v468 [label="xls"];
+
+v464 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v469 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v464 -> v469;
+
+v464 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v467 [shape=point];
+v464 -> v467 [label="gapped_peaks"];
+
+v464 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v466 [shape=point];
+v464 -> v466 [label="bed"];
+
+v464 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:MACS2_CALLPEAK"];
+v465 [shape=point];
+v464 -> v465 [label="bedgraph"];
+
+v469 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v470 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v469 -> v470;
+
+v470 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v476 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v470 -> v476 [label="ch_versions"];
+
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v471 -> v472 [label="ch_peaks"];
+
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v462 -> v472 [label="ch_bam"];
+
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v473 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v472 -> v473;
+
+v473 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v474 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:FRIP_SCORE"];
+v473 -> v474 [label="ch_bam_peaks"];
+
+v474 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:FRIP_SCORE"];
+v477 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v474 -> v477 [label="frip_txt"];
+
+v474 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:FRIP_SCORE"];
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v474 -> v475;
+
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v476 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v475 -> v476;
+
+v476 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v483 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v476 -> v483 [label="ch_versions"];
+
+v473 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v477 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v473 -> v477 [label="ch_bam_peaks"];
+
+v477 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v478 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v477 -> v478;
+
+v478 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v481 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v478 -> v481 [label="ch_bam_peak_frip"];
+
+v479 [shape=point,label="",fixedsize=true,width=0.1];
+v481 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v479 -> v481 [label="peak_count_header"];
+
+v480 [shape=point,label="",fixedsize=true,width=0.1];
+v481 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v480 -> v481 [label="frip_score_header"];
+
+v481 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v656 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v481 -> v656 [label="ch_macs2_peak_count_replicate_multiqc"];
+
+v481 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v654 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v481 -> v654 [label="ch_macs2_frip_replicate_multiqc"];
+
+v481 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:MULTIQC_CUSTOM_PEAKS"];
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v481 -> v482;
+
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v483 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v482 -> v483;
+
+v483 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v483 -> v499 [label="ch_versions"];
+
+v484 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v485 [shape=point];
+v484 -> v485 [label="ch_homer_annotatepeaks"];
+
+v486 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v487 [shape=point];
+v486 -> v487 [label="ch_plot_macs2_qc_txt"];
+
+v488 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v489 [shape=point];
+v488 -> v489 [label="ch_plot_macs2_qc_pdf"];
+
+v490 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v491 [shape=point];
+v490 -> v491 [label="ch_plot_homer_annotatepeaks_txt"];
+
+v492 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v493 [shape=point];
+v492 -> v493 [label="ch_plot_homer_annotatepeaks_pdf"];
+
+v494 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v495 [shape=point];
+v494 -> v495 [label="ch_plot_homer_annotatepeaks_tsv"];
+
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v496 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v471 -> v496 [label="ch_peaks"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v496 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v14 -> v496 [label="ch_fasta"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v496 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v9 -> v496 [label="ch_gtf"];
+
+v496 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v496 -> v506 [label="homer_annotatepeaks"];
+
+v496 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v497 [shape=point];
+v496 -> v497;
+
+v496 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:HOMER_ANNOTATEPEAKS"];
+v498 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v496 -> v498;
+
+v498 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v498 -> v499;
+
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v499 -> v505 [label="ch_versions"];
+
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v500 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v471 -> v500 [label="ch_peaks"];
+
+v500 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v502 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v500 -> v502;
+
+v501 [shape=point,label="",fixedsize=true,width=0.1];
+v502 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v501 -> v502 [label="is_narrow_peak"];
+
+v502 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v504 [shape=point];
+v502 -> v504 [label="plot_macs2_qc_txt"];
+
+v502 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v503 [shape=point];
+v502 -> v503 [label="plot_macs2_qc_pdf"];
+
+v502 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:PLOT_MACS2_QC"];
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v502 -> v505;
+
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v512 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v505 -> v512 [label="ch_versions"];
+
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v509 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v506 -> v509;
+
+v507 [shape=point,label="",fixedsize=true,width=0.1];
+v509 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v507 -> v509 [label="mqc_header"];
+
+v508 [shape=point,label="",fixedsize=true,width=0.1];
+v509 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v508 -> v509 [label="suffix"];
+
+v509 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v511 [shape=point];
+v509 -> v511 [label="plot_homer_annotatepeaks_txt"];
+
+v509 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v510 [shape=point];
+v509 -> v510 [label="plot_homer_annotatepeaks_pdf"];
+
+v509 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v658 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v509 -> v658 [label="ch_macs2_plot_homer_annotatepeaks_replicate_multiqc"];
+
+v509 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CALL_ANNOTATE_PEAKS:PLOT_HOMER_ANNOTATEPEAKS"];
+v512 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v509 -> v512;
+
+v512 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v513 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v512 -> v513 [label="versions"];
+
+v513 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v569 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v513 -> v569 [label="ch_versions"];
+
+v514 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v523 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v514 -> v523 [label="ch_versions"];
+
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v515 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v471 -> v515 [label="ch_peaks"];
+
+v515 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v516 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v515 -> v516;
+
+v516 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v517 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v516 -> v517;
+
+v517 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v519 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v517 -> v519 [label="ch_consensus_peaks"];
+
+v518 [shape=point,label="",fixedsize=true,width=0.1];
+v519 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v518 -> v519 [label="is_narrow_peak"];
+
+v519 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v526 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v519 -> v526 [label="ch_macs2_consensus_replicate_bed"];
+
+v519 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v534 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v519 -> v534 [label="consensus_saf"];
+
+v519 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v522 [shape=point];
+v519 -> v522 [label="consensus_pdf"];
+
+v519 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v521 [shape=point];
+v519 -> v521 [label="consensus_boolean_txt"];
+
+v519 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v520 [shape=point];
+v519 -> v520 [label="consensus_intersect_txt"];
+
+v519 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v523 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v519 -> v523;
+
+v523 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v529 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v523 -> v529 [label="ch_versions"];
+
+v524 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v525 [shape=point];
+v524 -> v525 [label="ch_homer_annotatepeaks"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v526 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v14 -> v526 [label="ch_fasta"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v526 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v9 -> v526 [label="ch_gtf"];
+
+v526 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v528 [shape=point];
+v526 -> v528 [label="homer_annotatepeaks"];
+
+v526 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v527 [shape=point];
+v526 -> v527;
+
+v526 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:HOMER_ANNOTATEPEAKS"];
+v529 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v526 -> v529;
+
+v529 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v539 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v529 -> v539 [label="ch_versions"];
+
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v530 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v471 -> v530 [label="ch_peaks"];
+
+v425 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v530 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v425 -> v530 [label="ch_bams"];
+
+v530 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v531 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v530 -> v531;
+
+v531 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v532 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v531 -> v532;
+
+v532 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v533 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v532 -> v533;
+
+v533 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v534 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v533 -> v534;
+
+v534 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v535 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v534 -> v535;
+
+v535 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v536 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v535 -> v536;
+
+v536 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v537 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v536 -> v537;
+
+v537 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v538 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:SUBREAD_FEATURECOUNTS"];
+v537 -> v538 [label="ch_bam_saf"];
+
+v538 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:SUBREAD_FEATURECOUNTS"];
+v560 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:DESEQ2_QC"];
+v538 -> v560 [label="featurecounts_txt"];
+
+v538 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:SUBREAD_FEATURECOUNTS"];
+v660 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v538 -> v660 [label="ch_featurecounts_replicate_multiqc"];
+
+v538 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:SUBREAD_FEATURECOUNTS"];
+v539 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v538 -> v539;
+
+v539 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v568 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v539 -> v568 [label="ch_versions"];
+
+v540 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v541 [shape=point];
+v540 -> v541 [label="ch_deseq2_qc_pdf"];
+
+v542 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v543 [shape=point];
+v542 -> v543 [label="ch_deseq2_qc_rdata"];
+
+v544 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v545 [shape=point];
+v544 -> v545 [label="ch_deseq2_qc_rds"];
+
+v546 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v547 [shape=point];
+v546 -> v547 [label="ch_deseq2_qc_pca_txt"];
+
+v548 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v549 [shape=point];
+v548 -> v549 [label="ch_deseq2_qc_pca_multiqc"];
+
+v550 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v551 [shape=point];
+v550 -> v551 [label="ch_deseq2_qc_dists_txt"];
+
+v552 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v553 [shape=point];
+v552 -> v553 [label="ch_deseq2_qc_dists_multiqc"];
+
+v554 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v555 [shape=point];
+v554 -> v555 [label="ch_deseq2_qc_log"];
+
+v556 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v557 [shape=point];
+v556 -> v557 [label="ch_deseq2_qc_size_factors"];
+
+v558 [shape=point,label="",fixedsize=true,width=0.1];
+v560 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:DESEQ2_QC"];
+v558 -> v560 [label="deseq2_pca_header"];
+
+v559 [shape=point,label="",fixedsize=true,width=0.1];
+v560 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:DESEQ2_QC"];
+v559 -> v560 [label="deseq2_clustering_header"];
+
+v560 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:DESEQ2_QC"];
+v567 [shape=point];
+v560 -> v567 [label="deseq2_qc_pdf"];
+
+v560 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:DESEQ2_QC"];
+v566 [shape=point];
+v560 -> v566 [label="deseq2_qc_rdata"];
+
+v560 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:DESEQ2_QC"];
+v565 [shape=point];
+v560 -> v565 [label="deseq2_qc_rds"];
+
+v560 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:DESEQ2_QC"];
+v564 [shape=point];
+v560 -> v564 [label="deseq2_qc_pca_txt"];
+
+v560 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:DESEQ2_QC"];
+v666 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v560 -> v666 [label="ch_deseq2_pca_replicate_multiqc"];
+
+v560 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:DESEQ2_QC"];
+v563 [shape=point];
+v560 -> v563 [label="deseq2_qc_dists_txt"];
+
+v560 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:DESEQ2_QC"];
+v668 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v560 -> v668 [label="ch_deseq2_clustering_replicate_multiqc"];
+
+v560 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:DESEQ2_QC"];
+v562 [shape=point];
+v560 -> v562 [label="deseq2_qc_log"];
+
+v560 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:DESEQ2_QC"];
+v561 [shape=point];
+v560 -> v561 [label="deseq2_qc_size_factors"];
+
+v560 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:DESEQ2_QC"];
+v568 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v560 -> v568;
+
+v568 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v569 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v568 -> v569 [label="versions"];
+
+v569 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v593 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v569 -> v593 [label="ch_versions"];
+
+v235 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_BAM_TO_BIGWIG:UCSC_BEDGRAPHTOBIGWIG"];
+v570 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v235 -> v570 [label="ch_bigwig"];
+
+v570 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v571 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v570 -> v571;
+
+v571 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v571 -> v588;
+
+v277 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v572 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v277 -> v572 [label="ch_peaks"];
+
+v572 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v573 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v572 -> v573;
+
+v573 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v573 -> v588;
+
+v333 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_LIBRARY_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v574 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v333 -> v574 [label="ch_macs2_consensus_library_bed"];
+
+v574 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v575 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v574 -> v575;
+
+v575 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v575 -> v588;
+
+v576 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v577 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v576 -> v577;
+
+v577 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v577 -> v588;
+
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v578 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v471 -> v578 [label="ch_peaks"];
+
+v578 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v579 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v578 -> v579;
+
+v579 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v579 -> v588;
+
+v519 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_CONSENSUS_PEAKS:MACS2_CONSENSUS"];
+v580 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v519 -> v580 [label="ch_macs2_consensus_replicate_bed"];
+
+v580 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v581 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v580 -> v581;
+
+v581 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v581 -> v588;
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v14 -> v588 [label="ch_fasta"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v19 -> v588 [label="fai"];
+
+v582 [shape=point,label="",fixedsize=true,width=0.1];
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v582 -> v588 [label="bigwig_library_publish_dir"];
+
+v583 [shape=point,label="",fixedsize=true,width=0.1];
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v583 -> v588 [label="peak_library_publish_dir"];
+
+v584 [shape=point,label="",fixedsize=true,width=0.1];
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v584 -> v588 [label="consensus_library_publish_dir"];
+
+v585 [shape=point,label="",fixedsize=true,width=0.1];
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v585 -> v588 [label="bigwig_replicate_publish_dir"];
+
+v586 [shape=point,label="",fixedsize=true,width=0.1];
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v586 -> v588 [label="peak_replicate_publish_dir"];
+
+v587 [shape=point,label="",fixedsize=true,width=0.1];
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v587 -> v588 [label="consensus_replicate_publish_dir"];
+
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v592 [shape=point];
+v588 -> v592;
+
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v591 [shape=point];
+v588 -> v591;
+
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v590 [shape=point];
+v588 -> v590 [label="fasta"];
+
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v589 [shape=point];
+v588 -> v589 [label="fai"];
+
+v588 [label="NFCORE_ATACSEQ:ATACSEQ:IGV"];
+v593 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v588 -> v593;
+
+v593 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v594 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v593 -> v594 [label="ch_versions"];
+
+v594 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v595 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v594 -> v595;
+
+v595 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v596 [label="NFCORE_ATACSEQ:ATACSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v595 -> v596;
+
+v596 [label="NFCORE_ATACSEQ:ATACSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v598 [shape=point];
+v596 -> v598;
+
+v596 [label="NFCORE_ATACSEQ:ATACSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v601 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v596 -> v601;
+
+v596 [label="NFCORE_ATACSEQ:ATACSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v597 [shape=point];
+v596 -> v597;
+
+v599 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v600 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v599 -> v600;
+
+v600 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v600 -> v670;
+
+v601 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v601 -> v670;
+
+v602 [shape=point,label="",fixedsize=true,width=0.1];
+v603 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v602 -> v603 [label="ch_workflow_summary"];
+
+v603 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v603 -> v670;
+
+v604 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v605 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v604 -> v605;
+
+v605 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v605 -> v670;
+
+v606 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v607 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v606 -> v607;
+
+v607 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v607 -> v670;
+
+v76 [label="NFCORE_ATACSEQ:ATACSEQ:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE"];
+v608 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v76 -> v608 [label="trim_log"];
+
+v608 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v609 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v608 -> v609;
+
+v609 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v609 -> v670;
+
+v610 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v611 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v610 -> v611;
+
+v611 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v611 -> v670;
+
+v612 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v613 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v612 -> v613;
+
+v613 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v613 -> v670;
+
+v614 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v615 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v614 -> v615;
+
+v615 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v615 -> v670;
+
+v616 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v617 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v616 -> v617;
+
+v617 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v617 -> v670;
+
+v618 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v619 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v618 -> v619;
+
+v619 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v619 -> v670;
+
+v620 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v621 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v620 -> v621;
+
+v621 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v621 -> v670;
+
+v622 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v623 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v622 -> v623;
+
+v623 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v623 -> v670;
+
+v624 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v625 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v624 -> v625;
+
+v625 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v625 -> v670;
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v626 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v216 -> v626 [label="flagstat"];
+
+v626 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v627 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v626 -> v627;
+
+v627 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v627 -> v670;
+
+v628 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v629 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v628 -> v629;
+
+v629 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v629 -> v670;
+
+v630 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v631 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v630 -> v631;
+
+v631 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v631 -> v670;
+
+v632 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v633 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v632 -> v633;
+
+v633 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v633 -> v670;
+
+v634 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v635 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v634 -> v635;
+
+v635 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v635 -> v670;
+
+v636 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v637 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v636 -> v637;
+
+v637 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v637 -> v670;
+
+v638 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v639 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v638 -> v639;
+
+v639 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v639 -> v670;
+
+v640 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v641 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v640 -> v641;
+
+v641 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v641 -> v670;
+
+v642 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v643 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v642 -> v643;
+
+v643 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v643 -> v670;
+
+v644 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v645 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v644 -> v645;
+
+v645 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v645 -> v670;
+
+v646 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v647 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v646 -> v647;
+
+v647 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v647 -> v670;
+
+v446 [label="NFCORE_ATACSEQ:ATACSEQ:MERGED_REPLICATE_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v648 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v446 -> v648 [label="ch_markduplicates_replicate_flagstat"];
+
+v648 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v649 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v648 -> v649;
+
+v649 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v649 -> v670;
+
+v650 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v651 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v650 -> v651;
+
+v651 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v651 -> v670;
+
+v652 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v653 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v652 -> v653;
+
+v653 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v653 -> v670;
+
+v654 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v655 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v654 -> v655;
+
+v655 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v655 -> v670;
+
+v656 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v657 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v656 -> v657;
+
+v657 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v657 -> v670;
+
+v658 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v659 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v658 -> v659;
+
+v659 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v659 -> v670;
+
+v660 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v661 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v660 -> v661;
+
+v661 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v661 -> v670;
+
+v662 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v663 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v662 -> v663;
+
+v663 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v663 -> v670;
+
+v664 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v665 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v664 -> v665;
+
+v665 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v665 -> v670;
+
+v666 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v667 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v666 -> v667;
+
+v667 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v667 -> v670;
+
+v668 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v669 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v668 -> v669;
+
+v669 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v669 -> v670;
+
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v674 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v670 -> v674;
+
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v673 [shape=point];
+v670 -> v673;
+
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v672 [shape=point];
+v670 -> v672;
+
+v670 [label="NFCORE_ATACSEQ:ATACSEQ:MULTIQC"];
+v671 [shape=point];
+v670 -> v671;
+
+v674 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v675 [shape=point];
+v674 -> v675;
+
+}

@@ -1,0 +1,70 @@
+digraph "Mxrcon_____Savio_alignments_nf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v1 [label="DOWNLOAD_GENOMES"];
+v0 -> v1 [label="id_list_ch"];
+
+v1 [label="DOWNLOAD_GENOMES"];
+v2 [label="PROKKA"];
+v1 -> v2;
+
+v2 [label="PROKKA"];
+v3 [shape=point];
+v2 -> v3;
+
+v2 [label="PROKKA"];
+v6 [label="GET_GENES"];
+v2 -> v6;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v6 [label="GET_GENES"];
+v4 -> v6 [label="genes_list_ch"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v7 [label="GET_RRNA"];
+v5 -> v7 [label="rrna_list_ch"];
+
+v6 [label="GET_GENES"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v6 -> v10;
+
+v2 [label="PROKKA"];
+v7 [label="GET_RRNA"];
+v2 -> v7;
+
+v7 [label="GET_RRNA"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v7 -> v9;
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v11;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v11;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 [label="ALIGN_MARKERS"];
+v11 -> v12 [label="markers_ch"];
+
+v12 [label="ALIGN_MARKERS"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 [label="CONCATENATE_ALIGNMENTS"];
+v13 -> v14;
+
+v14 [label="CONCATENATE_ALIGNMENTS"];
+v15 [label="RAXML"];
+v14 -> v15;
+
+v15 [label="RAXML"];
+v16 [shape=point];
+v15 -> v16;
+
+}

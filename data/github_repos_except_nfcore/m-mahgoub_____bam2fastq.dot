@@ -1,0 +1,34 @@
+digraph "mmahgoub_____bam2fastq" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [label="index:SAMTOOLS_INDEX"];
+v2 -> v3 [label="ch_bam"];
+
+v3 [label="index:SAMTOOLS_INDEX"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v3 -> v4 [label="ch_indexes"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v2 -> v4 [label="ch_bam"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v6 [label="SAMTOFASTQ"];
+v4 -> v6 [label="ch_indexed_bam"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="SAMTOFASTQ"];
+v5 -> v6 [label="fasta"];
+
+v6 [label="SAMTOFASTQ"];
+v7 [shape=point];
+v6 -> v7;
+
+}

@@ -1,0 +1,954 @@
+digraph "reportho" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v6 [label="ch_samplesheet_query"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v7 [label="ch_samplesheet_fasta"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v88 [label="ch_versions"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v91 [label="ch_multiqc_files"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v8;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v8 -> v107 [label="ch_fasta_query"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v10 [shape=point];
+v9 -> v10 [label="ch_oma_groups"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=point];
+v11 -> v12 [label="ch_oma_uniprot"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v14 [shape=point];
+v13 -> v14 [label="ch_oma_ensembl"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v16 [shape=point];
+v15 -> v16 [label="ch_oma_refseq"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v18 [shape=point];
+v17 -> v18 [label="ch_panther"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v20 [shape=point];
+v19 -> v20 [label="ch_eggnog"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v22 [shape=point];
+v21 -> v22 [label="ch_eggnog_idmap"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v28 [label="ch_versions"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v34 [label="ch_orthogroups"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v25 [label="ch_samplesheet_fasta"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v26 [label="ch_samplesheet_fasta"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:IDENTIFY_SEQ_ONLINE"];
+v26 -> v27 [label="ch_fasta"];
+
+v27 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:IDENTIFY_SEQ_ONLINE"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v31;
+
+v27 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:IDENTIFY_SEQ_ONLINE"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v32 [label="ch_versions"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v30 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:WRITE_SEQINFO"];
+v3 -> v30 [label="ch_samplesheet_query"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:WRITE_SEQINFO"];
+v29 -> v30 [label="offline_run"];
+
+v30 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:WRITE_SEQINFO"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31;
+
+v30 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:WRITE_SEQINFO"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v32;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FETCH_OMA_GROUP_ONLINE"];
+v31 -> v33 [label="ch_seqinfo"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v35 [label="ch_versions"];
+
+v33 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FETCH_OMA_GROUP_ONLINE"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v34;
+
+v33 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FETCH_OMA_GROUP_ONLINE"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v35;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v37 [label="ch_orthogroups"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v38 [label="ch_versions"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FETCH_PANTHER_GROUP_ONLINE"];
+v31 -> v36 [label="ch_seqinfo"];
+
+v36 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FETCH_PANTHER_GROUP_ONLINE"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v37;
+
+v36 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FETCH_PANTHER_GROUP_ONLINE"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v38;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v41 [label="ch_orthogroups"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v42 [label="ch_versions"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FETCH_INSPECTOR_GROUP_ONLINE"];
+v31 -> v40 [label="ch_seqinfo"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FETCH_INSPECTOR_GROUP_ONLINE"];
+v39 -> v40 [label="inspector_version"];
+
+v40 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FETCH_INSPECTOR_GROUP_ONLINE"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v41;
+
+v40 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FETCH_INSPECTOR_GROUP_ONLINE"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v42;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v41 -> v43 [label="orthogroups"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v45 [label="ch_versions"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v44 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MERGE_CSV"];
+v43 -> v44;
+
+v44 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MERGE_CSV"];
+v46 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MAKE_SCORE_TABLE"];
+v44 -> v46;
+
+v44 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MERGE_CSV"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v47 [label="ch_versions"];
+
+v46 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MAKE_SCORE_TABLE"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v46 -> v48 [label="ch_scoretable"];
+
+v46 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MAKE_SCORE_TABLE"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v54 [label="ch_versions"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v31 -> v48 [label="ch_seqinfo"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FILTER_HITS"];
+v49 -> v52 [label="ch_forfilter"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FILTER_HITS"];
+v50 -> v52 [label="use_centroid"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FILTER_HITS"];
+v51 -> v52 [label="min_score"];
+
+v52 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FILTER_HITS"];
+v53 [shape=point];
+v52 -> v53;
+
+v52 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FILTER_HITS"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 -> v107 [label="ch_filtered"];
+
+v52 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FILTER_HITS"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v62 [label="ch_versions"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v55 [label="ch_seqinfo"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [shape=point];
+v55 -> v56 [label="ch_supportsplot"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v57 [label="ch_seqinfo"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 [shape=point];
+v57 -> v58 [label="ch_vennplot"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v59 [label="ch_seqinfo"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [shape=point];
+v59 -> v60 [label="ch_jaccardplot"];
+
+v46 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MAKE_SCORE_TABLE"];
+v61 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:PLOT_ORTHOLOGS"];
+v46 -> v61 [label="ch_scoretable"];
+
+v61 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:PLOT_ORTHOLOGS"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v144 [label="supports_plot"];
+
+v61 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:PLOT_ORTHOLOGS"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v145 [label="venn_plot"];
+
+v61 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:PLOT_ORTHOLOGS"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v146 [label="jaccard_plot"];
+
+v61 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:PLOT_ORTHOLOGS"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v64 [label="ch_versions"];
+
+v44 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MERGE_CSV"];
+v63 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MAKE_HITS_TABLE"];
+v44 -> v63;
+
+v63 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MAKE_HITS_TABLE"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 -> v65 [label="hits"];
+
+v63 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MAKE_HITS_TABLE"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v70 [label="ch_versions"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MERGE_HITS"];
+v66 -> v69 [label="ch_hits"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MERGE_HITS"];
+v67 -> v69 [label="in_format"];
+
+v68 [shape=point,label="",fixedsize=true,width=0.1];
+v69 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MERGE_HITS"];
+v68 -> v69 [label="out_format"];
+
+v69 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MERGE_HITS"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 -> v92 [label="aggregated_hits"];
+
+v69 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MERGE_HITS"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v72 [label="ch_versions"];
+
+v46 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MAKE_SCORE_TABLE"];
+v71 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MAKE_STATS"];
+v46 -> v71 [label="ch_scoretable"];
+
+v71 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MAKE_STATS"];
+v73 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:STATS2CSV"];
+v71 -> v73 [label="ch_orthostats"];
+
+v71 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MAKE_STATS"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v74 [label="ch_versions"];
+
+v73 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:STATS2CSV"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v73 -> v75;
+
+v73 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:STATS2CSV"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v80 [label="ch_versions"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v79 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MERGE_STATS"];
+v76 -> v79 [label="ch_stats"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1];
+v79 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MERGE_STATS"];
+v77 -> v79 [label="in_format"];
+
+v78 [shape=point,label="",fixedsize=true,width=0.1];
+v79 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MERGE_STATS"];
+v78 -> v79 [label="out_format"];
+
+v79 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MERGE_STATS"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v79 -> v90 [label="aggregated_stats"];
+
+v79 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MERGE_STATS"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v80 -> v81 [label="ch_versions"];
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v88 [label="versions"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v82 [label="ch_seqinfo"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 [shape=point];
+v82 -> v83 [label="id"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v84 [label="ch_seqinfo"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v85 [shape=point];
+v84 -> v85 [label="taxid"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v86 [label="ch_seqinfo"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 [shape=point];
+v86 -> v87 [label="exact"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v109 [label="ch_versions"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v89 [label="ch_samplesheet_query"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v89 [label="ch_samplesheet_fasta"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v95 [label="ch_samplesheet"];
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v93 [label="ch_multiqc_files"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [shape=point];
+v93 -> v94 [label="ch_multiqc_files"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v96 [shape=point];
+v95 -> v96 [label="ch_seqhits"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v97 [label="ch_samplesheet"];
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 [shape=point];
+v97 -> v98 [label="ch_seqmisses"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v99 [label="ch_samplesheet"];
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v99 -> v169 [label="ch_strhits"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v100 [label="ch_samplesheet"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v100 -> v170 [label="ch_strmisses"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v101 [label="ch_samplesheet"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 [shape=point];
+v101 -> v102 [label="ch_alignment"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v103 [label="ch_samplesheet"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 [shape=point];
+v103 -> v104 [label="ch_iqtree"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v105 [label="ch_samplesheet"];
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v106 [shape=point];
+v105 -> v106 [label="ch_fastme"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v108 [label="NFCORE_REPORTHO:REPORTHO:FETCH_SEQUENCES_ONLINE"];
+v107 -> v108 [label="ch_sequences_input"];
+
+v108 [label="NFCORE_REPORTHO:REPORTHO:FETCH_SEQUENCES_ONLINE"];
+v118 [label="NFCORE_REPORTHO:REPORTHO:ALIGN:TCOFFEE_ALIGN"];
+v108 -> v118 [label="ch_fasta"];
+
+v108 [label="NFCORE_REPORTHO:REPORTHO:FETCH_SEQUENCES_ONLINE"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v108 -> v167 [label="ch_seqhits"];
+
+v108 [label="NFCORE_REPORTHO:REPORTHO:FETCH_SEQUENCES_ONLINE"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v108 -> v168 [label="ch_seqmisses"];
+
+v108 [label="NFCORE_REPORTHO:REPORTHO:FETCH_SEQUENCES_ONLINE"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v121 [label="ch_versions"];
+
+v110 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v111 [shape=point];
+v110 -> v111 [label="ch_pdb"];
+
+v112 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v120 [label="ch_versions"];
+
+v113 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v114 [shape=point];
+v113 -> v114 [label="ch_alignment"];
+
+v115 [shape=point,label="",fixedsize=true,width=0.1];
+v118 [label="NFCORE_REPORTHO:REPORTHO:ALIGN:TCOFFEE_ALIGN"];
+v115 -> v118;
+
+v116 [shape=point,label="",fixedsize=true,width=0.1];
+v118 [label="NFCORE_REPORTHO:REPORTHO:ALIGN:TCOFFEE_ALIGN"];
+v116 -> v118;
+
+v117 [shape=point,label="",fixedsize=true,width=0.1];
+v118 [label="NFCORE_REPORTHO:REPORTHO:ALIGN:TCOFFEE_ALIGN"];
+v117 -> v118 [label="compress"];
+
+v118 [label="NFCORE_REPORTHO:REPORTHO:ALIGN:TCOFFEE_ALIGN"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 -> v123 [label="ch_alignment"];
+
+v118 [label="NFCORE_REPORTHO:REPORTHO:ALIGN:TCOFFEE_ALIGN"];
+v119 [shape=point];
+v118 -> v119;
+
+v118 [label="NFCORE_REPORTHO:REPORTHO:ALIGN:TCOFFEE_ALIGN"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v120;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v121 [label="versions"];
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v143 [label="ch_versions"];
+
+v122 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v131 [label="ch_versions"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v124 [shape=point];
+v123 -> v124 [label="mltree"];
+
+v118 [label="NFCORE_REPORTHO:REPORTHO:ALIGN:TCOFFEE_ALIGN"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 -> v125 [label="ch_alignment"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [shape=point];
+v125 -> v126 [label="ch_metree"];
+
+v118 [label="NFCORE_REPORTHO:REPORTHO:ALIGN:TCOFFEE_ALIGN"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 -> v127 [label="ch_alignment"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v127 -> v141 [label="mlplot"];
+
+v118 [label="NFCORE_REPORTHO:REPORTHO:ALIGN:TCOFFEE_ALIGN"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 -> v128 [label="ch_alignment"];
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 [shape=point];
+v128 -> v129 [label="ch_meplot"];
+
+v118 [label="NFCORE_REPORTHO:REPORTHO:ALIGN:TCOFFEE_ALIGN"];
+v130 [label="NFCORE_REPORTHO:REPORTHO:MAKE_TREES:CONVERT_PHYLIP"];
+v118 -> v130 [label="ch_alignment"];
+
+v130 [label="NFCORE_REPORTHO:REPORTHO:MAKE_TREES:CONVERT_PHYLIP"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v130 -> v132;
+
+v130 [label="NFCORE_REPORTHO:REPORTHO:MAKE_TREES:CONVERT_PHYLIP"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v137 [label="ch_versions"];
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v133 [label="NFCORE_REPORTHO:REPORTHO:MAKE_TREES:FASTME"];
+v132 -> v133;
+
+v133 [label="NFCORE_REPORTHO:REPORTHO:MAKE_TREES:FASTME"];
+v139 [label="NFCORE_REPORTHO:REPORTHO:MAKE_TREES:PLOT_FASTME"];
+v133 -> v139 [label="metree"];
+
+v133 [label="NFCORE_REPORTHO:REPORTHO:MAKE_TREES:FASTME"];
+v136 [shape=point];
+v133 -> v136;
+
+v133 [label="NFCORE_REPORTHO:REPORTHO:MAKE_TREES:FASTME"];
+v135 [shape=point];
+v133 -> v135;
+
+v133 [label="NFCORE_REPORTHO:REPORTHO:MAKE_TREES:FASTME"];
+v134 [shape=point];
+v133 -> v134;
+
+v133 [label="NFCORE_REPORTHO:REPORTHO:MAKE_TREES:FASTME"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v137;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v140 [label="ch_versions"];
+
+v138 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="NFCORE_REPORTHO:REPORTHO:MAKE_TREES:PLOT_FASTME"];
+v138 -> v139 [label="method"];
+
+v139 [label="NFCORE_REPORTHO:REPORTHO:MAKE_TREES:PLOT_FASTME"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v139 -> v142 [label="meplot"];
+
+v139 [label="NFCORE_REPORTHO:REPORTHO:MAKE_TREES:PLOT_FASTME"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v143 [label="versions"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v141 -> v172 [label="ch_iqtree"];
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v142 -> v173 [label="ch_fastme"];
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v178 [label="ch_versions"];
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v144 -> v163 [label="ch_supportsplot"];
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v145 -> v164 [label="ch_vennplot"];
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v146 -> v165 [label="ch_jaccardplot"];
+
+v147 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v160 [label="ch_versions"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v148 [label="ch_seqinfo"];
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v149 [shape=point];
+v148 -> v149 [label="ch_fasta"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v150 [label="ch_seqinfo"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v157 [label="NFCORE_REPORTHO:REPORTHO:REPORT:DUMP_PARAMS"];
+v150 -> v157;
+
+v151 [shape=point,label="",fixedsize=true,width=0.1];
+v157 [label="NFCORE_REPORTHO:REPORTHO:REPORT:DUMP_PARAMS"];
+v151 -> v157 [label="use_structures"];
+
+v152 [shape=point,label="",fixedsize=true,width=0.1];
+v157 [label="NFCORE_REPORTHO:REPORTHO:REPORT:DUMP_PARAMS"];
+v152 -> v157 [label="use_centroid"];
+
+v153 [shape=point,label="",fixedsize=true,width=0.1];
+v157 [label="NFCORE_REPORTHO:REPORTHO:REPORT:DUMP_PARAMS"];
+v153 -> v157 [label="min_score"];
+
+v154 [shape=point,label="",fixedsize=true,width=0.1];
+v157 [label="NFCORE_REPORTHO:REPORTHO:REPORT:DUMP_PARAMS"];
+v154 -> v157 [label="skip_downstream"];
+
+v155 [shape=point,label="",fixedsize=true,width=0.1];
+v157 [label="NFCORE_REPORTHO:REPORTHO:REPORT:DUMP_PARAMS"];
+v155 -> v157 [label="skip_iqtree"];
+
+v156 [shape=point,label="",fixedsize=true,width=0.1];
+v157 [label="NFCORE_REPORTHO:REPORTHO:REPORT:DUMP_PARAMS"];
+v156 -> v157 [label="skip_fastme"];
+
+v157 [label="NFCORE_REPORTHO:REPORTHO:REPORT:DUMP_PARAMS"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v157 -> v174;
+
+v157 [label="NFCORE_REPORTHO:REPORTHO:REPORT:DUMP_PARAMS"];
+v158 [shape=point];
+v157 -> v158;
+
+v118 [label="NFCORE_REPORTHO:REPORTHO:ALIGN:TCOFFEE_ALIGN"];
+v159 [label="NFCORE_REPORTHO:REPORTHO:REPORT:CONVERT_FASTA"];
+v118 -> v159 [label="ch_alignment"];
+
+v159 [label="NFCORE_REPORTHO:REPORTHO:REPORT:CONVERT_FASTA"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v159 -> v171 [label="ch_fasta"];
+
+v159 [label="NFCORE_REPORTHO:REPORTHO:REPORT:CONVERT_FASTA"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v177 [label="ch_versions"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 -> v161 [label="ch_seqinfo"];
+
+v46 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MAKE_SCORE_TABLE"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v46 -> v161 [label="ch_scoretable"];
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v161 -> v162;
+
+v52 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:FILTER_HITS"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 -> v162 [label="ch_filtered"];
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v162 -> v163;
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v163 -> v164;
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v164 -> v165;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v165 -> v166;
+
+v71 [label="NFCORE_REPORTHO:REPORTHO:GET_ORTHOLOGS:MAKE_STATS"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v71 -> v166 [label="ch_orthostats"];
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v166 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v167 -> v168;
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v168 -> v169;
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v169 -> v170;
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v170 -> v171;
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v171 -> v172;
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v172 -> v173;
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v173 -> v174;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v175 [label="NFCORE_REPORTHO:REPORTHO:REPORT:MAKE_REPORT"];
+v174 -> v175 [label="ch_forreport"];
+
+v175 [label="NFCORE_REPORTHO:REPORTHO:REPORT:MAKE_REPORT"];
+v176 [shape=point];
+v175 -> v176;
+
+v175 [label="NFCORE_REPORTHO:REPORTHO:REPORT:MAKE_REPORT"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 -> v177;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v178 [label="versions"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v178 -> v179 [label="ch_versions"];
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v179 -> v180;
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v180 -> v181;
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 -> v183;
+
+v182 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v183;
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v183 -> v184;
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 -> v194 [label="versions"];
+
+v185 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v186 [shape=point];
+v185 -> v186 [label="ch_multiqc_report"];
+
+v187 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v187 -> v199 [label="ch_multiqc_config"];
+
+v188 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v188 -> v200 [label="ch_multiqc_custom_config"];
+
+v189 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v189 -> v201 [label="ch_multiqc_logo"];
+
+v190 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v193 [label="ch_multiqc_files"];
+
+v191 [shape=point,label="",fixedsize=true,width=0.1];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v191 -> v192 [label="ch_workflow_summary"];
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v192 -> v193;
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v193 -> v194 [label="ch_multiqc_files"];
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v197 [label="ch_multiqc_files"];
+
+v195 [shape=point,label="",fixedsize=true,width=0.1];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v195 -> v196 [label="ch_methods_description"];
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v197;
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v197 -> v198 [label="ch_multiqc_files"];
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v202 [label="NFCORE_REPORTHO:REPORTHO:MULTIQC"];
+v198 -> v202;
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v202 [label="NFCORE_REPORTHO:REPORTHO:MULTIQC"];
+v199 -> v202;
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v202 [label="NFCORE_REPORTHO:REPORTHO:MULTIQC"];
+v200 -> v202;
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v202 [label="NFCORE_REPORTHO:REPORTHO:MULTIQC"];
+v201 -> v202;
+
+v202 [label="NFCORE_REPORTHO:REPORTHO:MULTIQC"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v202 -> v206;
+
+v202 [label="NFCORE_REPORTHO:REPORTHO:MULTIQC"];
+v205 [shape=point];
+v202 -> v205;
+
+v202 [label="NFCORE_REPORTHO:REPORTHO:MULTIQC"];
+v204 [shape=point];
+v202 -> v204;
+
+v202 [label="NFCORE_REPORTHO:REPORTHO:MULTIQC"];
+v203 [shape=point];
+v202 -> v203;
+
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v207 [shape=point];
+v206 -> v207 [label="multiqc_report"];
+
+}

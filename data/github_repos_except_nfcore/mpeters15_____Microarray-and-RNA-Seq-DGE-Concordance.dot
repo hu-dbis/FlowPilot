@@ -1,0 +1,86 @@
+digraph "mpeters15_____MicroarrayandRNASeqDGEConcordance" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v1 [label="getFastqs"];
+v0 -> v1 [label="sample_ids_ch"];
+
+v1 [label="getFastqs"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v1 -> v2;
+
+v1 [label="getFastqs"];
+v4 [label="runSTAR"];
+v1 -> v4;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v3 [label="runFastqc"];
+v2 -> v3;
+
+v3 [label="runFastqc"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v5;
+
+v4 [label="runSTAR"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 -> v6;
+
+v4 [label="runSTAR"];
+v9 [label="runFeatureCounts"];
+v4 -> v9;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 [label="runMultiQC_Fastqc_STAR"];
+v5 -> v7;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 [label="runMultiQC_Fastqc_STAR"];
+v6 -> v7;
+
+v7 [label="runMultiQC_Fastqc_STAR"];
+v8 [shape=point];
+v7 -> v8;
+
+v9 [label="runFeatureCounts"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 [label="runMultiQC_FeatCounts"];
+v10 -> v11;
+
+v11 [label="runMultiQC_FeatCounts"];
+v12 [shape=point];
+v11 -> v12;
+
+v9 [label="runFeatureCounts"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 [label="combineFeatureCounts"];
+v13 -> v14;
+
+v14 [label="combineFeatureCounts"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 [label="makeBoxPlots"];
+v15 -> v16;
+
+v16 [label="makeBoxPlots"];
+v17 [shape=point];
+v16 -> v17;
+
+v14 [label="combineFeatureCounts"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 [label="DESeq"];
+v18 -> v19;
+
+v19 [label="DESeq"];
+v20 [shape=point];
+v19 -> v20;
+
+}

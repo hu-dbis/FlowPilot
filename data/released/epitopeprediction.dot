@@ -1,0 +1,578 @@
+digraph "epitopeprediction" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v97 [label="ch_multiqc_files"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v2 [shape=point];
+v1 -> v2 [label="versions"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v3 -> v6 [label="samplesheet"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v8 [label="ch_versions"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v32 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EXTERNAL_TOOLS_IMPORT"];
+v5 -> v32 [label="ch_nonfree_paths"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v7 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:GUNZIP_VCF"];
+v6 -> v7;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v10;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v10;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v9;
+
+v7 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:GUNZIP_VCF"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v9;
+
+v7 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:GUNZIP_VCF"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v21 [label="ch_versions"];
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v11 [label="ch_variants_uncompressed"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v22 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS_PROTEIN"];
+v12 -> v22;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v19 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS"];
+v12 -> v19;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v25;
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v16 -> v17 [label="ch_external_versions"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v18 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:GET_PREDICTION_VERSIONS"];
+v17 -> v18;
+
+v18 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:GET_PREDICTION_VERSIONS"];
+v19 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS"];
+v18 -> v19 [label="ch_prediction_tool_versions"];
+
+v19 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS"];
+v20 [shape=point];
+v19 -> v20;
+
+v19 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v29;
+
+v19 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v24 [label="ch_versions"];
+
+v18 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:GET_PREDICTION_VERSIONS"];
+v22 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS_PROTEIN"];
+v18 -> v22 [label="ch_prediction_tool_versions"];
+
+v22 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS_PROTEIN"];
+v23 [shape=point];
+v22 -> v23;
+
+v22 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS_PROTEIN"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v30;
+
+v22 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS_PROTEIN"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v28 [label="ch_versions"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS_PEP"];
+v25 -> v26;
+
+v18 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:GET_PREDICTION_VERSIONS"];
+v26 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS_PEP"];
+v18 -> v26 [label="ch_prediction_tool_versions"];
+
+v26 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS_PEP"];
+v27 [shape=point];
+v26 -> v27;
+
+v26 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS_PEP"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v29;
+
+v26 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_CHECK_REQUESTED_MODELS_PEP"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v33 [label="ch_versions"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v30 -> v31;
+
+v32 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EXTERNAL_TOOLS_IMPORT"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v44;
+
+v32 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EXTERNAL_TOOLS_IMPORT"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v35 [label="ch_versions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v34 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:SNPSIFT_SPLIT"];
+v12 -> v34;
+
+v34 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:SNPSIFT_SPLIT"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v34 -> v54;
+
+v34 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:SNPSIFT_SPLIT"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v37 [label="ch_versions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v36 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_GENERATE_PEPTIDES"];
+v12 -> v36;
+
+v36 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_GENERATE_PEPTIDES"];
+v38 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:SPLIT_PEPTIDES_PROTEIN"];
+v36 -> v38;
+
+v36 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_GENERATE_PEPTIDES"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v39 [label="ch_versions"];
+
+v38 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:SPLIT_PEPTIDES_PROTEIN"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v38 -> v42;
+
+v38 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:SPLIT_PEPTIDES_PROTEIN"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v41 [label="ch_versions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v40 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:SPLIT_PEPTIDES_PEPTIDES"];
+v12 -> v40;
+
+v40 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:SPLIT_PEPTIDES_PEPTIDES"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v40 -> v48;
+
+v40 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:SPLIT_PEPTIDES_PEPTIDES"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v41;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v47 [label="ch_versions"];
+
+v18 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:GET_PREDICTION_VERSIONS"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v42 [label="ch_prediction_tool_versions"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v46 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_PROTEIN"];
+v43 -> v46;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v46 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_PROTEIN"];
+v45 -> v46;
+
+v46 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_PROTEIN"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v76;
+
+v46 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_PROTEIN"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v60;
+
+v46 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_PROTEIN"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v70;
+
+v46 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_PROTEIN"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v53 [label="ch_versions"];
+
+v18 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:GET_PREDICTION_VERSIONS"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v48 [label="ch_prediction_tool_versions"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v52 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_PEP"];
+v49 -> v52;
+
+v32 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EXTERNAL_TOOLS_IMPORT"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v52 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_PEP"];
+v51 -> v52;
+
+v52 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_PEP"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v75;
+
+v52 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_PEP"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v60;
+
+v52 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_PEP"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v70;
+
+v52 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_PEP"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v59 [label="ch_versions"];
+
+v18 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:GET_PREDICTION_VERSIONS"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v54 [label="ch_prediction_tool_versions"];
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v58 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_VAR"];
+v55 -> v58;
+
+v32 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EXTERNAL_TOOLS_IMPORT"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v58 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_VAR"];
+v57 -> v58;
+
+v58 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_VAR"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v75;
+
+v58 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_VAR"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v60;
+
+v58 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_VAR"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v70;
+
+v58 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:EPYTOPE_PEPTIDE_PREDICTION_VAR"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v66 [label="ch_versions"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v67 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:CSVTK_CONCAT"];
+v63 -> v67;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v64 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:CAT_TSV"];
+v63 -> v64;
+
+v64 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:CAT_TSV"];
+v65 [shape=point];
+v64 -> v65;
+
+v64 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:CAT_TSV"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v69 [label="ch_versions"];
+
+v67 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:CSVTK_CONCAT"];
+v68 [shape=point];
+v67 -> v68;
+
+v67 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:CSVTK_CONCAT"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v74 [label="ch_versions"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v72 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:CAT_FASTA"];
+v71 -> v72;
+
+v72 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:CAT_FASTA"];
+v73 [shape=point];
+v72 -> v73;
+
+v72 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:CAT_FASTA"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v82 [label="ch_versions"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v77 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v83 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:MERGE_JSON_MULTI"];
+v79 -> v83;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v80 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:MERGE_JSON_SINGLE"];
+v79 -> v80;
+
+v80 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:MERGE_JSON_SINGLE"];
+v81 [shape=point];
+v80 -> v81;
+
+v80 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:MERGE_JSON_SINGLE"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v85 [label="ch_versions"];
+
+v83 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:MERGE_JSON_MULTI"];
+v84 [shape=point];
+v83 -> v84;
+
+v83 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:MERGE_JSON_MULTI"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v85 -> v86 [label="versions"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v87 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v90;
+
+v89 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v98 [label="ch_collated_versions"];
+
+v92 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v92 -> v103 [label="ch_multiqc_config"];
+
+v93 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v93 -> v104 [label="ch_multiqc_custom_config"];
+
+v94 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v94 -> v105 [label="ch_multiqc_logo"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v95 -> v96 [label="ch_workflow_summary"];
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v98 [label="ch_multiqc_files"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v101 [label="ch_multiqc_files"];
+
+v99 [shape=point,label="",fixedsize=true,width=0.1];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v99 -> v100 [label="ch_methods_description"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v101 -> v102 [label="ch_multiqc_files"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v106 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:MULTIQC"];
+v102 -> v106;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:MULTIQC"];
+v103 -> v106;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:MULTIQC"];
+v104 -> v106;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:MULTIQC"];
+v105 -> v106;
+
+v106 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:MULTIQC"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 -> v110;
+
+v106 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:MULTIQC"];
+v109 [shape=point];
+v106 -> v109;
+
+v106 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:MULTIQC"];
+v108 [shape=point];
+v106 -> v108;
+
+v106 [label="NFCORE_EPITOPEPREDICTION:EPITOPEPREDICTION:MULTIQC"];
+v107 [shape=point];
+v106 -> v107;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v111 [shape=point];
+v110 -> v111 [label="multiqc_report"];
+
+}

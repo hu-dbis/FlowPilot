@@ -1,0 +1,166 @@
+digraph "animesh_____nfcoredemo" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [label="NFCORE_DEMO:DEMO:ECHO_READS"];
+v6 -> v9 [label="ch_samplesheet"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v15 [label="ch_versions"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v13 [label="ch_multiqc_files"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [label="NFCORE_DEMO:DEMO:FASTQC"];
+v6 -> v10 [label="ch_samplesheet"];
+
+v10 [label="NFCORE_DEMO:DEMO:FASTQC"];
+v11 [shape=point];
+v10 -> v11;
+
+v10 [label="NFCORE_DEMO:DEMO:FASTQC"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 -> v12;
+
+v10 [label="NFCORE_DEMO:DEMO:FASTQC"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v10 -> v14;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v27 [label="ch_multiqc_files"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v15 -> v16 [label="versions"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v20;
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v28 [label="ch_collated_versions"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v22 -> v33 [label="ch_multiqc_config"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v23 -> v34 [label="ch_multiqc_custom_config"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v24 -> v35 [label="ch_multiqc_logo"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v25 -> v26 [label="ch_workflow_summary"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v28 [label="ch_multiqc_files"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v31 [label="ch_multiqc_files"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v29 -> v30 [label="ch_methods_description"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v31 -> v32 [label="ch_multiqc_files"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v36 [label="NFCORE_DEMO:DEMO:MULTIQC"];
+v32 -> v36;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v36 [label="NFCORE_DEMO:DEMO:MULTIQC"];
+v33 -> v36;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v36 [label="NFCORE_DEMO:DEMO:MULTIQC"];
+v34 -> v36;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v36 [label="NFCORE_DEMO:DEMO:MULTIQC"];
+v35 -> v36;
+
+v36 [label="NFCORE_DEMO:DEMO:MULTIQC"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v36 -> v40;
+
+v36 [label="NFCORE_DEMO:DEMO:MULTIQC"];
+v39 [shape=point];
+v36 -> v39;
+
+v36 [label="NFCORE_DEMO:DEMO:MULTIQC"];
+v38 [shape=point];
+v36 -> v38;
+
+v36 [label="NFCORE_DEMO:DEMO:MULTIQC"];
+v37 [shape=point];
+v36 -> v37;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v41 [shape=point];
+v40 -> v41 [label="multiqc_report"];
+
+}

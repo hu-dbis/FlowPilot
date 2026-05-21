@@ -1,0 +1,394 @@
+digraph "usafsam_____mad_river_wf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v26 [label="DATA_PREP"];
+v3 -> v26 [label="ivar_gff_gzip_file_checked"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v26 [label="DATA_PREP"];
+v7 -> v26 [label="primer_tsv"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v35 [label="adapter_fasta"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v29 [label="BBMERGE"];
+v15 -> v29 [label="paired_reads"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v16 -> v32 [label="single_reads"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v87 [label="PERFORMANCE_EXCEL"];
+v20 -> v87 [label="stats_json"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v22 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v87 [label="PERFORMANCE_EXCEL"];
+v24 -> v87 [label="run_info_xml"];
+
+v25 [label="GRAB_NEXTCLADE_DATA"];
+v33 [label="TAKE_VIRAL"];
+v25 -> v33;
+
+v25 [label="GRAB_NEXTCLADE_DATA"];
+v73 [label="NEXTCLADE"];
+v25 -> v73;
+
+v26 [label="DATA_PREP"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 -> v64;
+
+v26 [label="DATA_PREP"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 -> v38;
+
+v26 [label="DATA_PREP"];
+v28 [shape=point];
+v26 -> v28;
+
+v26 [label="DATA_PREP"];
+v27 [shape=point];
+v26 -> v27;
+
+v29 [label="BBMERGE"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v29 -> v32;
+
+v29 [label="BBMERGE"];
+v31 [shape=point];
+v29 -> v31;
+
+v29 [label="BBMERGE"];
+v30 [shape=point];
+v29 -> v30;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v33 [label="TAKE_VIRAL"];
+v32 -> v33 [label="ch_take_viral"];
+
+v33 [label="TAKE_VIRAL"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v33 -> v35;
+
+v33 [label="TAKE_VIRAL"];
+v34 [shape=point];
+v33 -> v34;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v36 [label="TRIM_ADAPTERS"];
+v35 -> v36 [label="ch_trim_adapters"];
+
+v36 [label="TRIM_ADAPTERS"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v36 -> v38;
+
+v36 [label="TRIM_ADAPTERS"];
+v37 [shape=point];
+v36 -> v37;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v39 [label="TRIM_PRIMERS"];
+v38 -> v39 [label="ch_trim_primers"];
+
+v39 [label="TRIM_PRIMERS"];
+v41 [label="BBMAP_ALIGN"];
+v39 -> v41;
+
+v39 [label="TRIM_PRIMERS"];
+v40 [shape=point];
+v39 -> v40;
+
+v25 [label="GRAB_NEXTCLADE_DATA"];
+v41 [label="BBMAP_ALIGN"];
+v25 -> v41 [label="ref_genome"];
+
+v41 [label="BBMAP_ALIGN"];
+v43 [label="REMOVE_JUNK_DELS"];
+v41 -> v43;
+
+v41 [label="BBMAP_ALIGN"];
+v42 [shape=point];
+v41 -> v42;
+
+v25 [label="GRAB_NEXTCLADE_DATA"];
+v43 [label="REMOVE_JUNK_DELS"];
+v25 -> v43 [label="ref_genome"];
+
+v43 [label="REMOVE_JUNK_DELS"];
+v45 [label="REMOVE_SINGLETONS"];
+v43 -> v45;
+
+v43 [label="REMOVE_JUNK_DELS"];
+v44 [shape=point];
+v43 -> v44;
+
+v25 [label="GRAB_NEXTCLADE_DATA"];
+v45 [label="REMOVE_SINGLETONS"];
+v25 -> v45 [label="ref_genome"];
+
+v45 [label="REMOVE_SINGLETONS"];
+v47 [label="SOFT_TRIM"];
+v45 -> v47;
+
+v45 [label="REMOVE_SINGLETONS"];
+v46 [shape=point];
+v45 -> v46;
+
+v47 [label="SOFT_TRIM"];
+v49 [label="PILEUP"];
+v47 -> v49;
+
+v47 [label="SOFT_TRIM"];
+v48 [shape=point];
+v47 -> v48;
+
+v49 [label="PILEUP"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v49 -> v53;
+
+v49 [label="PILEUP"];
+v52 [shape=point];
+v49 -> v52;
+
+v49 [label="PILEUP"];
+v51 [shape=point];
+v49 -> v51;
+
+v49 [label="PILEUP"];
+v50 [shape=point];
+v49 -> v50;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v54 [label="SUMMARIZE_COVERAGE"];
+v53 -> v54;
+
+v54 [label="SUMMARIZE_COVERAGE"];
+v68 [label="TRAFFIC_LIGHT_PLOT"];
+v54 -> v68;
+
+v54 [label="SUMMARIZE_COVERAGE"];
+v55 [shape=point];
+v54 -> v55;
+
+v47 [label="SOFT_TRIM"];
+v56 [label="SAMTOOLS_SORT_INDEX"];
+v47 -> v56;
+
+v56 [label="SAMTOOLS_SORT_INDEX"];
+v59 [label="IVAR_CONSENSUS"];
+v56 -> v59;
+
+v56 [label="SAMTOOLS_SORT_INDEX"];
+v58 [shape=point];
+v56 -> v58;
+
+v56 [label="SAMTOOLS_SORT_INDEX"];
+v57 [shape=point];
+v56 -> v57;
+
+v59 [label="IVAR_CONSENSUS"];
+v61 [shape=point];
+v59 -> v61;
+
+v59 [label="IVAR_CONSENSUS"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v59 -> v62;
+
+v59 [label="IVAR_CONSENSUS"];
+v60 [shape=point];
+v59 -> v60;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v71 [label="PANGOLIN"];
+v62 -> v71 [label="ch_combined_consensus_fasta"];
+
+v56 [label="SAMTOOLS_SORT_INDEX"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v56 -> v63;
+
+v25 [label="GRAB_NEXTCLADE_DATA"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v25 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v65 [label="IVAR_VARIANTS"];
+v64 -> v65 [label="ch_ivar_variants"];
+
+v65 [label="IVAR_VARIANTS"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v65 -> v67;
+
+v65 [label="IVAR_VARIANTS"];
+v66 [shape=point];
+v65 -> v66;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v68 [label="TRAFFIC_LIGHT_PLOT"];
+v67 -> v68;
+
+v68 [label="TRAFFIC_LIGHT_PLOT"];
+v70 [shape=point];
+v68 -> v70;
+
+v68 [label="TRAFFIC_LIGHT_PLOT"];
+v69 [shape=point];
+v68 -> v69;
+
+v71 [label="PANGOLIN"];
+v84 [label="LINEAGE_EXCEL"];
+v71 -> v84;
+
+v71 [label="PANGOLIN"];
+v72 [shape=point];
+v71 -> v72;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v73 [label="NEXTCLADE"];
+v62 -> v73 [label="ch_combined_consensus_fasta"];
+
+v73 [label="NEXTCLADE"];
+v81 [label="SPIKE_GENE_COVERAGE"];
+v73 -> v81;
+
+v73 [label="NEXTCLADE"];
+v77 [shape=point];
+v73 -> v77;
+
+v73 [label="NEXTCLADE"];
+v76 [shape=point];
+v73 -> v76;
+
+v73 [label="NEXTCLADE"];
+v75 [shape=point];
+v73 -> v75;
+
+v73 [label="NEXTCLADE"];
+v74 [shape=point];
+v73 -> v74;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v78 [label="VADR"];
+v62 -> v78 [label="ch_combined_consensus_fasta"];
+
+v78 [label="VADR"];
+v80 [shape=point];
+v78 -> v80;
+
+v78 [label="VADR"];
+v84 [label="LINEAGE_EXCEL"];
+v78 -> v84;
+
+v78 [label="VADR"];
+v79 [shape=point];
+v78 -> v79;
+
+v81 [label="SPIKE_GENE_COVERAGE"];
+v83 [shape=point];
+v81 -> v83;
+
+v81 [label="SPIKE_GENE_COVERAGE"];
+v82 [shape=point];
+v81 -> v82;
+
+v73 [label="NEXTCLADE"];
+v84 [label="LINEAGE_EXCEL"];
+v73 -> v84 [label="nextclade_csv"];
+
+v84 [label="LINEAGE_EXCEL"];
+v86 [shape=point];
+v84 -> v86;
+
+v84 [label="LINEAGE_EXCEL"];
+v85 [shape=point];
+v84 -> v85;
+
+v54 [label="SUMMARIZE_COVERAGE"];
+v87 [label="PERFORMANCE_EXCEL"];
+v54 -> v87 [label="coverage_summary"];
+
+v87 [label="PERFORMANCE_EXCEL"];
+v89 [shape=point];
+v87 -> v89;
+
+v87 [label="PERFORMANCE_EXCEL"];
+v88 [shape=point];
+v87 -> v88;
+
+}

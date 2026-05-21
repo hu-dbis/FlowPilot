@@ -1,0 +1,38 @@
+digraph "chriiispy_____dsa4262_project1" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="MINIMAP2_ALIGN"];
+v0 -> v2 [label="refFa"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1];
+v2 [label="MINIMAP2_ALIGN"];
+v1 -> v2 [label="reads"];
+
+v2 [label="MINIMAP2_ALIGN"];
+v3 [label="SAM_TO_BAM"];
+v2 -> v3;
+
+v3 [label="SAM_TO_BAM"];
+v6 [label="BAMBU"];
+v3 -> v6;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="BAMBU"];
+v4 -> v6 [label="refFa"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v6 [label="BAMBU"];
+v5 -> v6 [label="refGtf"];
+
+v6 [label="BAMBU"];
+v9 [shape=point];
+v6 -> v9;
+
+v6 [label="BAMBU"];
+v8 [shape=point];
+v6 -> v8;
+
+v6 [label="BAMBU"];
+v7 [shape=point];
+v6 -> v7;
+
+}

@@ -1,0 +1,182 @@
+digraph "EpiDiverse_____dmr" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v2 -> v3 [label="samples_channel"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v3 -> v4;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v5 [label="samples_channel"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v6 -> v7;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v8 [label="samples_channel"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v12 -> v13 [label="combinations"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v14 -> v15;
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v23 [label="CpG"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v21 -> v25 [label="CHG"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v22 -> v27 [label="CHH"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v23 [label="samples_channel"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v29 [label="CpG_channel"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v25 [label="samples_channel"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v29 [label="CHG_channel"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v2 -> v27 [label="samples_channel"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v29 [label="CHH_channel"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v31 [label="DMRS:preprocessing"];
+v30 -> v31 [label="input_channel"];
+
+v31 [label="DMRS:preprocessing"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v32 -> v33;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 -> v33 [label="combinations"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v34 [label="DMRS:bedtools_unionbedg"];
+v33 -> v34;
+
+v34 [label="DMRS:bedtools_unionbedg"];
+v36 [label="DMRS:metilene"];
+v34 -> v36;
+
+v34 [label="DMRS:bedtools_unionbedg"];
+v35 [shape=point];
+v34 -> v35;
+
+v36 [label="DMRS:metilene"];
+v39 [label="DMRS:distributions"];
+v36 -> v39;
+
+v36 [label="DMRS:metilene"];
+v38 [shape=point];
+v36 -> v38;
+
+v36 [label="DMRS:metilene"];
+v37 [shape=point];
+v36 -> v37;
+
+v39 [label="DMRS:distributions"];
+v40 [shape=point];
+v39 -> v40;
+
+v36 [label="DMRS:metilene"];
+v41 [label="DMRS:heatmaps"];
+v36 -> v41;
+
+v41 [label="DMRS:heatmaps"];
+v42 [shape=point];
+v41 -> v42;
+
+}

@@ -1,0 +1,310 @@
+digraph "guigolab_____geneidx" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v4 -> v5 [label="invalid_fasta"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v12;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v6 [shape=point];
+v5 -> v6;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v4 -> v7 [label="invalid_fasta"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="count"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v9 [shape=point];
+v8 -> v9;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v4 -> v10 [label="invalid_fasta"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+v10 -> v11;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [label="UNZIP_FASTA"];
+v12 -> v14 [label="assemblies"];
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [label="GENEIDX:geneid_param_creation:getLineage"];
+v13 -> v19 [label="meta"];
+
+v14 [label="UNZIP_FASTA"];
+v16 [label="ASSEMBLY_PREPROCESS:GAAS_FASTAFILTERBYSIZE"];
+v14 -> v16 [label="assemblies"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1];
+v16 [label="ASSEMBLY_PREPROCESS:GAAS_FASTAFILTERBYSIZE"];
+v15 -> v16 [label="min_size"];
+
+v16 [label="ASSEMBLY_PREPROCESS:GAAS_FASTAFILTERBYSIZE"];
+v17 [label="ASSEMBLY_PREPROCESS:GAAS_FASTACLEANER"];
+v16 -> v17;
+
+v17 [label="ASSEMBLY_PREPROCESS:GAAS_FASTACLEANER"];
+v18 [label="parseFastaHeader"];
+v17 -> v18;
+
+v18 [label="parseFastaHeader"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v28 [label="genomes"];
+
+v19 [label="GENEIDX:geneid_param_creation:getLineage"];
+v21 [label="GENEIDX:geneid_param_creation:getFileFromTaxon"];
+v19 -> v21;
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="GENEIDX:geneid_param_creation:getFileFromTaxon"];
+v20 -> v21 [label="matrix"];
+
+v21 [label="GENEIDX:geneid_param_creation:getFileFromTaxon"];
+v22 [label="GENEIDX:geneid_param_creation:splitParams"];
+v21 -> v22;
+
+v22 [label="GENEIDX:geneid_param_creation:splitParams"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v22 -> v24;
+
+v21 [label="GENEIDX:geneid_param_creation:getFileFromTaxon"];
+v23 [label="GENEIDX:geneid_param_creation:getParamValues"];
+v21 -> v23;
+
+v23 [label="GENEIDX:geneid_param_creation:getParamValues"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 -> v48 [label="geneid_parameters"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [label="GENEIDX:uniref_query:getUniRefQuery"];
+v13 -> v25 [label="meta"];
+
+v25 [label="GENEIDX:uniref_query:getUniRefQuery"];
+v26 [label="GENEIDX:uniref_query:downloadProteins"];
+v25 -> v26;
+
+v26 [label="GENEIDX:uniref_query:downloadProteins"];
+v27 [label="GENEIDX:diamond_blastx:createDB"];
+v26 -> v27 [label="uniref_proteins"];
+
+v27 [label="GENEIDX:diamond_blastx:createDB"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 [label="GENEIDX:diamond_blastx:runDiamond"];
+v28 -> v29 [label="diamond_input"];
+
+v29 [label="GENEIDX:diamond_blastx:runDiamond"];
+v30 [label="GENEIDX:genomic_regions_estimation:cds_workflow:mergeMatches"];
+v29 -> v30 [label="hsp_files"];
+
+v30 [label="GENEIDX:genomic_regions_estimation:cds_workflow:mergeMatches"];
+v31 [label="GENEIDX:genomic_regions_estimation:cds_workflow:filterByScore"];
+v30 -> v31;
+
+v31 [label="GENEIDX:genomic_regions_estimation:cds_workflow:filterByScore"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 -> v32;
+
+v18 [label="parseFastaHeader"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v32 [label="genomes"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v33 [label="GENEIDX:genomic_regions_estimation:cds_workflow:getFASTA"];
+v32 -> v33 [label="filtered_hsp_gff3_genomes"];
+
+v33 [label="GENEIDX:genomic_regions_estimation:cds_workflow:getFASTA"];
+v34 [label="GENEIDX:genomic_regions_estimation:cds_workflow:findORF"];
+v33 -> v34;
+
+v34 [label="GENEIDX:genomic_regions_estimation:cds_workflow:findORF"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v35;
+
+v30 [label="GENEIDX:genomic_regions_estimation:cds_workflow:mergeMatches"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v30 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 [label="GENEIDX:genomic_regions_estimation:cds_workflow:updateCoords"];
+v35 -> v36 [label="hsp_gff3_hsp_rel"];
+
+v36 [label="GENEIDX:genomic_regions_estimation:cds_workflow:updateCoords"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 -> v37;
+
+v18 [label="parseFastaHeader"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v37 [label="genomes"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v38 [label="GENEIDX:genomic_regions_estimation:cds_workflow:getFASTA2"];
+v37 -> v38 [label="hsp_abs_genomes"];
+
+v38 [label="GENEIDX:genomic_regions_estimation:cds_workflow:getFASTA2"];
+v39 [label="GENEIDX:genomic_regions_estimation:cds_workflow:getCDSMatrices"];
+v38 -> v39;
+
+v39 [label="GENEIDX:genomic_regions_estimation:cds_workflow:getCDSMatrices"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v39 -> v46;
+
+v29 [label="GENEIDX:diamond_blastx:runDiamond"];
+v40 [label="GENEIDX:genomic_regions_estimation:intron_workflow:summarizeMatches"];
+v29 -> v40 [label="hsp_files"];
+
+v40 [label="GENEIDX:genomic_regions_estimation:intron_workflow:summarizeMatches"];
+v41 [label="GENEIDX:genomic_regions_estimation:intron_workflow:pyComputeIntrons"];
+v40 -> v41;
+
+v41 [label="GENEIDX:genomic_regions_estimation:intron_workflow:pyComputeIntrons"];
+v42 [label="GENEIDX:genomic_regions_estimation:intron_workflow:removeProtOverlappingIntrons"];
+v41 -> v42;
+
+v42 [label="GENEIDX:genomic_regions_estimation:intron_workflow:removeProtOverlappingIntrons"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 -> v43;
+
+v18 [label="parseFastaHeader"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v43 [label="genomes"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v44 [label="GENEIDX:genomic_regions_estimation:intron_workflow:getFASTA"];
+v43 -> v44 [label="non_overlapping_introns_genomes"];
+
+v44 [label="GENEIDX:genomic_regions_estimation:intron_workflow:getFASTA"];
+v45 [label="GENEIDX:genomic_regions_estimation:intron_workflow:getIntronMatrices"];
+v44 -> v45;
+
+v45 [label="GENEIDX:genomic_regions_estimation:intron_workflow:getIntronMatrices"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 [label="GENEIDX:genomic_regions_estimation:combineMatrices"];
+v46 -> v47;
+
+v47 [label="GENEIDX:genomic_regions_estimation:combineMatrices"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v47 -> v48 [label="combined_matrices"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v49 [label="GENEIDX:parameter_file_creation:createParamFile"];
+v48 -> v49 [label="param_file_input"];
+
+v49 [label="GENEIDX:parameter_file_creation:createParamFile"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v49 -> v50;
+
+v29 [label="GENEIDX:diamond_blastx:runDiamond"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 -> v50 [label="hsp_files"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v50 -> v52 [label="geneid_inputs"];
+
+v18 [label="parseFastaHeader"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v18 -> v51 [label="genomes"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v53 [label="GENEIDX:geneid_execution:runGeneid"];
+v52 -> v53 [label="args"];
+
+v53 [label="GENEIDX:geneid_execution:runGeneid"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [label="GENEIDX:geneid_result_parsing:splitGff3"];
+v55 -> v56 [label="predictions"];
+
+v56 [label="GENEIDX:geneid_result_parsing:splitGff3"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v60 [label="gff3_head"];
+
+v56 [label="GENEIDX:geneid_result_parsing:splitGff3"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v57 [label="gff3_content"];
+
+v29 [label="GENEIDX:diamond_blastx:runDiamond"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 -> v57 [label="hsp_files"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v58 [label="GENEIDX:geneid_result_parsing:intersectHints"];
+v57 -> v58;
+
+v58 [label="GENEIDX:geneid_result_parsing:intersectHints"];
+v59 [label="GENEIDX:geneid_result_parsing:processLabels"];
+v58 -> v59;
+
+v59 [label="GENEIDX:geneid_result_parsing:processLabels"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v61 [label="GENEIDX:geneid_result_parsing:mergeGff3"];
+v60 -> v61;
+
+v61 [label="GENEIDX:geneid_result_parsing:mergeGff3"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v61 -> v62;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v13 -> v62 [label="meta"];
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v63 [label="GENEIDX:geneid_result_parsing:indexGff3"];
+v62 -> v63;
+
+v63 [label="GENEIDX:geneid_result_parsing:indexGff3"];
+v64 [shape=point];
+v63 -> v64;
+
+}

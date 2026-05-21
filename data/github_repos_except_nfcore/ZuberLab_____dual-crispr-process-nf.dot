@@ -1,0 +1,210 @@
+digraph "ZuberLab_____dualcrisprprocessnf" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 [label="BAM_TO_FASTQ"];
+v1 -> v7 [label="ch_input_bam"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v8 [label="ch_input_fastq"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [label="PROCESS_BARCODES"];
+v5 -> v10 [label="ch_barcodes"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v20 [label="PROCESS_LIBRARY"];
+v6 -> v20 [label="ch_library"];
+
+v7 [label="BAM_TO_FASTQ"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 [label="TRIM_RANDOM_BARCODE"];
+v8 -> v9 [label="ch_all_fastq"];
+
+v9 [label="TRIM_RANDOM_BARCODE"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v9 -> v14;
+
+v10 [label="PROCESS_BARCODES"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 [label="DEMULTIPLEX"];
+v14 -> v15 [label="ch_trimmed_random_barcodes"];
+
+v15 [label="DEMULTIPLEX"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v17 -> v18 [label="ch_demuxed_flattened"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 [label="TRIM_BARCODE_AND_SPACER"];
+v18 -> v19 [label="ch_demuxed_flattened_filtered"];
+
+v19 [label="TRIM_BARCODE_AND_SPACER"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 -> v22;
+
+v20 [label="PROCESS_LIBRARY"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 -> v26;
+
+v20 [label="PROCESS_LIBRARY"];
+v21 [label="BOWTIE_INDEX"];
+v20 -> v21;
+
+v21 [label="BOWTIE_INDEX"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v23 [label="ALIGN"];
+v22 -> v23 [label="ch_trimmed_spacer_combined"];
+
+v23 [label="ALIGN"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v24;
+
+v23 [label="ALIGN"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v35;
+
+v23 [label="ALIGN"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v37;
+
+v23 [label="ALIGN"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v39;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v27 [label="COUNT"];
+v26 -> v27 [label="ch_grouped_aligned"];
+
+v27 [label="COUNT"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 -> v28;
+
+v27 [label="COUNT"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 -> v41;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 [label="COMBINE_COUNTS"];
+v28 -> v29;
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v29 [label="COMBINE_COUNTS"];
+v6 -> v29 [label="ch_library"];
+
+v29 [label="COMBINE_COUNTS"];
+v30 [shape=point];
+v29 -> v30;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 -> v31 [label="ch_demuxed_flattened"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v32;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v32 [label="ch_all_fastq"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [label="FASTQC"];
+v32 -> v33 [label="ch_fastq_files"];
+
+v33 [label="FASTQC"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v36;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v38;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v40;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v42;
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 [label="MULTIQC"];
+v43 -> v44 [label="ch_multiqqc_files"];
+
+v44 [label="MULTIQC"];
+v45 [shape=point];
+v44 -> v45;
+
+}

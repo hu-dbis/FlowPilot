@@ -1,0 +1,74 @@
+digraph "IPKBIT_____divimpute" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="indexVCF"];
+v0 -> v1 [label="vcfFile"];
+
+v1 [label="indexVCF"];
+v2 [label="listVariants"];
+v1 -> v2;
+
+v1 [label="indexVCF"];
+v2 [label="listVariants"];
+v1 -> v2;
+
+v2 [label="listVariants"];
+v5 [label="writeWindows"];
+v2 -> v5;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="writeWindows"];
+v3 -> v5 [label="windowSize"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="writeWindows"];
+v4 -> v5 [label="overlap"];
+
+v5 [label="writeWindows"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [label="splitVCFByWindow"];
+v7 -> v8 [label="ch_windows"];
+
+v1 [label="indexVCF"];
+v8 [label="splitVCFByWindow"];
+v1 -> v8 [label="vcfFile"];
+
+v1 [label="indexVCF"];
+v8 [label="splitVCFByWindow"];
+v1 -> v8 [label="vcfFileIndex"];
+
+v8 [label="splitVCFByWindow"];
+v9 [label="imputeWindows"];
+v8 -> v9;
+
+v9 [label="imputeWindows"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 [label="mergeImputedWindows"];
+v10 -> v13 [label="ch_imputedWindows"];
+
+v9 [label="imputeWindows"];
+v11 [label="indexImputedWindow"];
+v9 -> v11 [label="vcfFile"];
+
+v11 [label="indexImputedWindow"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 [label="mergeImputedWindows"];
+v12 -> v13 [label="ch_windowIndices"];
+
+v13 [label="mergeImputedWindows"];
+v14 [shape=point];
+v13 -> v14;
+
+}

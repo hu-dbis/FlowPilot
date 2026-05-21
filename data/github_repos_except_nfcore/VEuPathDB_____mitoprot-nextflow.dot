@@ -1,0 +1,26 @@
+digraph "VEuPathDB_____mitoprotnextflow" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitFasta"];
+v2 [label="mitoprot:runMitoprot"];
+v1 -> v2 [label="seqs"];
+
+v2 [label="mitoprot:runMitoprot"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v2 -> v3;
+
+v2 [label="mitoprot:runMitoprot"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v2 -> v5;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v4 [shape=point];
+v3 -> v4;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v6 [shape=point];
+v5 -> v6;
+
+}

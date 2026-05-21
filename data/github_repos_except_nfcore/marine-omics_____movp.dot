@@ -1,0 +1,438 @@
+digraph "marineomics_____movp" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 [label="bwa_index"];
+v1 -> v2 [label="genome_fasta"];
+
+v2 [label="bwa_index"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v3;
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 [label="gatk_map:bwa_mem_gatk"];
+v3 -> v24 [label="genome_index"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 [label="faidx"];
+v1 -> v4 [label="genome_fasta"];
+
+v4 [label="faidx"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 [label="call_variants:fasta_generate_regions"];
+v5 -> v47 [label="genome_fai"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 [label="gatk4_createsequencedict"];
+v1 -> v6 [label="genome_fasta"];
+
+v6 [label="gatk4_createsequencedict"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 [label="gatk_map:bwa_mem_gatk"];
+v7 -> v24 [label="genome_dict"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 [label="qc:fastqc"];
+v10 -> v11 [label="fastqin"];
+
+v11 [label="qc:fastqc"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 [label="qc:multiqc_fastqc"];
+v12 -> v13;
+
+v13 [label="qc:multiqc_fastqc"];
+v14 [shape=point];
+v13 -> v14;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [label="preprocess:fastp"];
+v10 -> v15 [label="fastqin"];
+
+v15 [label="preprocess:fastp"];
+v21 [label="gatk_map:fastq2ubam"];
+v15 -> v21 [label="preads"];
+
+v15 [label="preprocess:fastp"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 -> v18;
+
+v15 [label="preprocess:fastp"];
+v17 [shape=point];
+v15 -> v17;
+
+v15 [label="preprocess:fastp"];
+v16 [shape=point];
+v15 -> v16;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 [label="preprocess:multiqc_fastp"];
+v18 -> v19;
+
+v19 [label="preprocess:multiqc_fastp"];
+v20 [shape=point];
+v19 -> v20;
+
+v21 [label="gatk_map:fastq2ubam"];
+v22 [label="gatk_map:markadapters"];
+v21 -> v22;
+
+v22 [label="gatk_map:markadapters"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v22 -> v23;
+
+v21 [label="gatk_map:fastq2ubam"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 -> v23;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v24 [label="gatk_map:bwa_mem_gatk"];
+v23 -> v24 [label="ch_merge_bams"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 [label="gatk_map:bwa_mem_gatk"];
+v1 -> v24 [label="genome_fasta"];
+
+v24 [label="gatk_map:bwa_mem_gatk"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v29 [label="gatk_map:name_by_sample"];
+v27 -> v29;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v28 [label="gatk_map:samtools_merge"];
+v27 -> v28;
+
+v28 [label="gatk_map:samtools_merge"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v30;
+
+v29 [label="gatk_map:name_by_sample"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [label="gatk_map:gatk_mark_duplicates"];
+v30 -> v31 [label="ch_persample_bams"];
+
+v31 [label="gatk_map:gatk_mark_duplicates"];
+v32 [label="sidx"];
+v31 -> v32;
+
+v32 [label="sidx"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 -> v33;
+
+v31 [label="gatk_map:gatk_mark_duplicates"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 [label="bam_qc:flagstat"];
+v33 -> v34 [label="indexed_bams"];
+
+v34 [label="bam_qc:flagstat"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 [label="bam_qc:multiqc_bams"];
+v35 -> v40 [label="fs"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v36 [label="bam_qc:stat"];
+v33 -> v36 [label="indexed_bams"];
+
+v36 [label="bam_qc:stat"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 [label="bam_qc:multiqc_bams"];
+v37 -> v40 [label="s"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v38 [label="bam_qc:idxstat"];
+v33 -> v38 [label="indexed_bams"];
+
+v38 [label="bam_qc:idxstat"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v38 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 [label="bam_qc:multiqc_bams"];
+v39 -> v40 [label="idxf"];
+
+v40 [label="bam_qc:multiqc_bams"];
+v41 [shape=point];
+v40 -> v41;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v42 [label="indexed_bams"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 [label="call_variants:freebayes"];
+v43 -> v51 [label="ch_bamcollection"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v44 [label="indexed_bams"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 [label="call_variants:freebayes"];
+v45 -> v51 [label="ch_baicollection"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 [label="call_variants:fasta_generate_regions"];
+v1 -> v47 [label="genome_fasta"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="call_variants:fasta_generate_regions"];
+v46 -> v47 [label="chunksize"];
+
+v47 [label="call_variants:fasta_generate_regions"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 [label="call_variants:freebayes"];
+v49 -> v51 [label="ch_regions"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 [label="call_variants:freebayes"];
+v1 -> v51 [label="genome_fasta"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 [label="call_variants:freebayes"];
+v5 -> v51 [label="genome_fai"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="call_variants:freebayes"];
+v50 -> v51 [label="populations"];
+
+v51 [label="call_variants:freebayes"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v53 [label="call_variants:freebayes_collect"];
+v52 -> v53 [label="ch_chunk_vcfs"];
+
+v47 [label="call_variants:fasta_generate_regions"];
+v53 [label="call_variants:freebayes_collect"];
+v47 -> v53 [label="regions_file"];
+
+v53 [label="call_variants:freebayes_collect"];
+v55 [shape=point];
+v53 -> v55;
+
+v53 [label="call_variants:freebayes_collect"];
+v54 [shape=point];
+v53 -> v54;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v56 [label="call_variants:fasta_generate_chrs"];
+v1 -> v56 [label="genome_fasta"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v56 [label="call_variants:fasta_generate_chrs"];
+v5 -> v56 [label="genome_fai"];
+
+v56 [label="call_variants:fasta_generate_chrs"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitText"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 [label="call_variants:mpileup_call"];
+v58 -> v59 [label="ch_chrs"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 [label="call_variants:mpileup_call"];
+v43 -> v59 [label="ch_bamcollection"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 [label="call_variants:mpileup_call"];
+v45 -> v59 [label="ch_baicollection"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 [label="call_variants:mpileup_call"];
+v1 -> v59 [label="genome_fasta"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 [label="call_variants:mpileup_call"];
+v5 -> v59 [label="genome_fai"];
+
+v59 [label="call_variants:mpileup_call"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 -> v60;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v61 [label="call_variants:mpileup_collect"];
+v60 -> v61 [label="ch_chr_vcfs"];
+
+v56 [label="call_variants:fasta_generate_chrs"];
+v61 [label="call_variants:mpileup_collect"];
+v56 -> v61 [label="regions_file"];
+
+v61 [label="call_variants:mpileup_collect"];
+v63 [shape=point];
+v61 -> v63;
+
+v61 [label="call_variants:mpileup_collect"];
+v62 [shape=point];
+v61 -> v62;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 [label="call_variants:gatk4_createintervallist"];
+v5 -> v64 [label="genome_fai"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 [label="call_variants:gatk4_createintervallist"];
+v7 -> v64 [label="genome_dict"];
+
+v64 [label="call_variants:gatk4_createintervallist"];
+v66 [label="call_variants:gatk_scatterintervals"];
+v64 -> v66;
+
+v65 [shape=point,label="",fixedsize=true,width=0.1];
+v66 [label="call_variants:gatk_scatterintervals"];
+v65 -> v66 [label="chunksize"];
+
+v66 [label="call_variants:gatk_scatterintervals"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v66 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v67 -> v68 [label="ch_gatk_scatter_intervals"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v33 -> v68 [label="indexed_bams"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v69 [label="call_variants:gatk_haplotype_caller"];
+v68 -> v69 [label="ch_hc_inputs"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 [label="call_variants:gatk_haplotype_caller"];
+v1 -> v69 [label="genome_fasta"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 [label="call_variants:gatk_haplotype_caller"];
+v5 -> v69 [label="genome_fai"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v69 [label="call_variants:gatk_haplotype_caller"];
+v7 -> v69 [label="genome_dict"];
+
+v69 [label="call_variants:gatk_haplotype_caller"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v71 -> v73 [label="samples_gvcfs_file"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 -> v72 [label="ch_gatk_scatter_intervals"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v74 [label="call_variants:gatk_genomicsdb_import"];
+v73 -> v74 [label="ch_sample_maps_per_region"];
+
+v74 [label="call_variants:gatk_genomicsdb_import"];
+v75 [label="call_variants:gatk_genotypegvcfs"];
+v74 -> v75;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v75 [label="call_variants:gatk_genotypegvcfs"];
+v1 -> v75 [label="genome_fasta"];
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v75 [label="call_variants:gatk_genotypegvcfs"];
+v5 -> v75 [label="genome_fai"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v75 [label="call_variants:gatk_genotypegvcfs"];
+v7 -> v75 [label="genome_dict"];
+
+v75 [label="call_variants:gatk_genotypegvcfs"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v78 [label="call_variants:gatk_mergevcfs"];
+v77 -> v78 [label="vcf_list"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v78 [label="call_variants:gatk_mergevcfs"];
+v7 -> v78 [label="genome_dict"];
+
+v78 [label="call_variants:gatk_mergevcfs"];
+v80 [shape=point];
+v78 -> v80;
+
+v78 [label="call_variants:gatk_mergevcfs"];
+v79 [shape=point];
+v78 -> v79;
+
+}

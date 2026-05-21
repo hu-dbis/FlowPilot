@@ -1,0 +1,466 @@
+digraph "CDCgov_____MIRANF" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v1 [shape=point];
+v0 -> v1 [label="versions"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 -> v6 [label="samplesheet_ch"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=point];
+v3 -> v4 [label="run_ID_ch"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v12 [label="ch_versions"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7 [label="set_up_ch"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [label="MIRA_NF:MIRA:flu_o:CONCATFASTQS"];
+v7 -> v8 [label="fastq_ch"];
+
+v8 [label="MIRA_NF:MIRA:flu_o:CONCATFASTQS"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 [label="MIRA_NF:MIRA:flu_o:NEXTFLOWSAMPLESHEETO"];
+v9 -> v11 [label="collected_concatenated_fastqs_ch"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v11 [label="MIRA_NF:MIRA:flu_o:NEXTFLOWSAMPLESHEETO"];
+v2 -> v11 [label="samplesheet_ch"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="MIRA_NF:MIRA:flu_o:NEXTFLOWSAMPLESHEETO"];
+v10 -> v11 [label="experiment_type_ch"];
+
+v11 [label="MIRA_NF:MIRA:flu_o:NEXTFLOWSAMPLESHEETO"];
+v13 [label="MIRA_NF:MIRA:flu_o:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v11 -> v13 [label="nf_samplesheet_ch"];
+
+v11 [label="MIRA_NF:MIRA:flu_o:NEXTFLOWSAMPLESHEETO"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v17 [label="ch_versions"];
+
+v13 [label="MIRA_NF:MIRA:flu_o:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v13 -> v14;
+
+v13 [label="MIRA_NF:MIRA:flu_o:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v17 [label="versions"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=point];
+v15 -> v16 [label="reads"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v17 -> v63 [label="ch_versions"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v18 -> v25 [label="run_ID_ch"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v19 -> v34 [label="barcode_ch"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=point];
+v20 -> v21 [label="dais_module"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v22 -> v30 [label="ch_versions"];
+
+v11 [label="MIRA_NF:MIRA:flu_o:NEXTFLOWSAMPLESHEETO"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v11 -> v23 [label="nf_samplesheet_ch"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v24 [label="input_ch"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v24 -> v25 [label="subsample_output_ch"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v29 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:FINDCHEMISTRYO"];
+v25 -> v29 [label="find_chemistry_ch"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:FINDCHEMISTRYO"];
+v26 -> v29 [label="read_counts"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:FINDCHEMISTRYO"];
+v27 -> v29 [label="irma_config"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:FINDCHEMISTRYO"];
+v28 -> v29 [label="custom_irma_config"];
+
+v29 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:FINDCHEMISTRYO"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v29 -> v32;
+
+v29 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:FINDCHEMISTRYO"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v31;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v31 -> v42 [label="ch_versions"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v32 -> v60 [label="irma_chemistry_ch"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v33 [label="subsample_output_ch"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v33 -> v36 [label="new_ch4"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 -> v35 [label="set_up_barcode_ch"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v35 -> v36 [label="bc_ch"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:TRIMLEFT"];
+v38 -> v39 [label="trim_ch_l"];
+
+v39 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:TRIMLEFT"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v44;
+
+v39 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:TRIMLEFT"];
+v41 [shape=point];
+v39 -> v41;
+
+v39 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:TRIMLEFT"];
+v40 [shape=point];
+v39 -> v40;
+
+v39 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:TRIMLEFT"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v43;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v43 -> v51 [label="ch_versions"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v44 -> v45 [label="new_ch5"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v35 -> v45 [label="bc_ch"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:TRIMRIGHT"];
+v47 -> v48 [label="trim_ch_r"];
+
+v48 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:TRIMRIGHT"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v53;
+
+v48 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:TRIMRIGHT"];
+v50 [shape=point];
+v48 -> v50;
+
+v48 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:TRIMRIGHT"];
+v49 [shape=point];
+v48 -> v49;
+
+v48 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:TRIMRIGHT"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v52;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v52 -> v57 [label="ch_versions"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:CUTADAPT30"];
+v53 -> v54 [label="new_ch6"];
+
+v54 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:CUTADAPT30"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v59;
+
+v54 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:CUTADAPT30"];
+v56 [shape=point];
+v54 -> v56;
+
+v54 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:CUTADAPT30"];
+v55 [shape=point];
+v54 -> v55;
+
+v54 [label="MIRA_NF:MIRA:flu_o:PREPONTREADS:CUTADAPT30"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v58;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v64 [label="versions"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v59 -> v60 [label="new_ch7"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 [label="MIRA_NF:MIRA:flu_o:IRMA"];
+v62 -> v65 [label="irma_ch"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v64;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v64 -> v66 [label="ch_versions"];
+
+v65 [label="MIRA_NF:MIRA:flu_o:IRMA"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 -> v68;
+
+v65 [label="MIRA_NF:MIRA:flu_o:IRMA"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v67;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v67 -> v80 [label="ch_versions"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v69 [label="MIRA_NF:MIRA:flu_o:CHECKIRMA:CONFIRMIRMAOUTPUT"];
+v68 -> v69 [label="check_irma_ch"];
+
+v69 [label="MIRA_NF:MIRA:flu_o:CHECKIRMA:CONFIRMIRMAOUTPUT"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v71 -> v76 [label="passedSamples"];
+
+v69 [label="MIRA_NF:MIRA:flu_o:CHECKIRMA:CONFIRMIRMAOUTPUT"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v69 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v74 [label="MIRA_NF:MIRA:flu_o:CHECKIRMA:PASSFAILED"];
+v73 -> v74 [label="failedSamples"];
+
+v74 [label="MIRA_NF:MIRA:flu_o:CHECKIRMA:PASSFAILED"];
+v75 [shape=point];
+v74 -> v75;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 [label="MIRA_NF:MIRA:flu_o:CHECKIRMA:CREATEDAISINPUT"];
+v76 -> v77;
+
+v77 [label="MIRA_NF:MIRA:flu_o:CHECKIRMA:CREATEDAISINPUT"];
+v79 [label="MIRA_NF:MIRA:flu_o:DAISRIBOSOME"];
+v77 -> v79;
+
+v78 [shape=point,label="",fixedsize=true,width=0.1];
+v79 [label="MIRA_NF:MIRA:flu_o:DAISRIBOSOME"];
+v78 -> v79 [label="dais_module"];
+
+v79 [label="MIRA_NF:MIRA:flu_o:DAISRIBOSOME"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 -> v82;
+
+v79 [label="MIRA_NF:MIRA:flu_o:DAISRIBOSOME"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v81;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v99 [label="ch_versions"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v98 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:PREPAREIRMAJSON"];
+v82 -> v98 [label="dais_outputs_ch"];
+
+v83 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v84 [shape=point];
+v83 -> v84 [label="platform"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v86 [shape=point];
+v85 -> v86 [label="virus"];
+
+v87 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v100 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:STATICHTML"];
+v87 -> v100 [label="run_ID_ch"];
+
+v88 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v98 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:PREPAREIRMAJSON"];
+v88 -> v98 [label="irma_dir_ch"];
+
+v89 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v90 [shape=point];
+v89 -> v90 [label="input_ch"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v92 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:CHECKMIRAVERSION"];
+v91 -> v92 [label="support_file_path"];
+
+v92 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:CHECKMIRAVERSION"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v92 -> v93 [label="-"];
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v93 -> v107 [label="mira_version_ch"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v98 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:PREPAREIRMAJSON"];
+v91 -> v98 [label="support_file_path"];
+
+v11 [label="MIRA_NF:MIRA:flu_o:NEXTFLOWSAMPLESHEETO"];
+v98 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:PREPAREIRMAJSON"];
+v11 -> v98 [label="nf_samplesheet_ch"];
+
+v94 [shape=point,label="",fixedsize=true,width=0.1];
+v98 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:PREPAREIRMAJSON"];
+v94 -> v98 [label="platform"];
+
+v95 [shape=point,label="",fixedsize=true,width=0.1];
+v98 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:PREPAREIRMAJSON"];
+v95 -> v98 [label="virus"];
+
+v96 [shape=point,label="",fixedsize=true,width=0.1];
+v98 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:PREPAREIRMAJSON"];
+v96 -> v98 [label="irma_config_type"];
+
+v97 [shape=point,label="",fixedsize=true,width=0.1];
+v98 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:PREPAREIRMAJSON"];
+v97 -> v98 [label="qc_path_ch"];
+
+v98 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:PREPAREIRMAJSON"];
+v100 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:STATICHTML"];
+v98 -> v100;
+
+v98 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:PREPAREIRMAJSON"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v102 [label="ch_versions"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v100 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:STATICHTML"];
+v91 -> v100 [label="support_file_path"];
+
+v100 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:STATICHTML"];
+v101 [shape=point];
+v100 -> v101;
+
+v100 [label="MIRA_NF:MIRA:flu_o:PREPAREREPORTS:STATICHTML"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="distinct"];
+v102 -> v103 [label="ch_versions"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="distinct"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v104 -> v105 [label="collated_versions"];
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v106 [shape=point];
+v105 -> v106;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v108 [shape=point];
+v107 -> v108;
+
+}

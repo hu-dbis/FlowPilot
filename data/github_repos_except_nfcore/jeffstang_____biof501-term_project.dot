@@ -1,0 +1,114 @@
+digraph "jeffstang_____biof501term_project" {
+v0 [shape=point,label="",fixedsize=true,width=0.1];
+v1 [label="DOWNLOAD_REFERENCES:DOWNLOAD_FASTA"];
+v0 -> v1 [label="fasta_url"];
+
+v1 [label="DOWNLOAD_REFERENCES:DOWNLOAD_FASTA"];
+v14 [label="SALMON_INDEX"];
+v1 -> v14 [label="fasta"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v3 [label="DOWNLOAD_REFERENCES:DOWNLOAD_GTF"];
+v2 -> v3 [label="gtf_url"];
+
+v3 [label="DOWNLOAD_REFERENCES:DOWNLOAD_GTF"];
+v15 [label="SALMON_QUANT"];
+v3 -> v15 [label="annotation"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromFilePairs"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v7 [label="FASTQC_RAW"];
+v5 -> v7 [label="read_pairs_ch"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="FASTQC_RAW"];
+v6 -> v7 [label="read_type"];
+
+v7 [label="FASTQC_RAW"];
+v8 [shape=point];
+v7 -> v8;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v9 [label="TRIM_READS"];
+v5 -> v9 [label="read_pairs_ch"];
+
+v9 [label="TRIM_READS"];
+v12 [label="FASTQC_TRIMMED"];
+v9 -> v12;
+
+v9 [label="TRIM_READS"];
+v10 [shape=point];
+v9 -> v10;
+
+v11 [shape=point,label="",fixedsize=true,width=0.1];
+v12 [label="FASTQC_TRIMMED"];
+v11 -> v12 [label="read_type"];
+
+v12 [label="FASTQC_TRIMMED"];
+v13 [shape=point];
+v12 -> v13;
+
+v14 [label="SALMON_INDEX"];
+v15 [label="SALMON_QUANT"];
+v14 -> v15;
+
+v9 [label="TRIM_READS"];
+v15 [label="SALMON_QUANT"];
+v9 -> v15;
+
+v15 [label="SALMON_QUANT"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 -> v17 [label="sample_id"];
+
+v3 [label="DOWNLOAD_REFERENCES:DOWNLOAD_GTF"];
+v16 [label="CREATE_TX2GENE"];
+v3 -> v16 [label="annotation"];
+
+v16 [label="CREATE_TX2GENE"];
+v19 [label="TXIMPORT_PROCESS"];
+v16 -> v19 [label="tx2gene_input"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 [label="TXIMPORT_PROCESS"];
+v17 -> v19 [label="quant_dirs"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1];
+v19 [label="TXIMPORT_PROCESS"];
+v18 -> v19 [label="output_prefix"];
+
+v19 [label="TXIMPORT_PROCESS"];
+v22 [label="LIMMA_VOOM_DEA"];
+v19 -> v22 [label="txi_input"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [label="LIMMA_VOOM_DEA"];
+v20 -> v22 [label="metadata"];
+
+v21 [shape=point,label="",fixedsize=true,width=0.1];
+v22 [label="LIMMA_VOOM_DEA"];
+v21 -> v22 [label="out_prefix"];
+
+v22 [label="LIMMA_VOOM_DEA"];
+v23 [label="ENHANCED_VOLCANO_PLOT"];
+v22 -> v23 [label="top_table"];
+
+v23 [label="ENHANCED_VOLCANO_PLOT"];
+v24 [shape=point];
+v23 -> v24;
+
+v22 [label="LIMMA_VOOM_DEA"];
+v26 [label="PATHWAY_ENRICHMENT"];
+v22 -> v26 [label="top_table"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [label="PATHWAY_ENRICHMENT"];
+v25 -> v26 [label="database_of_interest"];
+
+v26 [label="PATHWAY_ENRICHMENT"];
+v27 [shape=point];
+v26 -> v27;
+
+}
