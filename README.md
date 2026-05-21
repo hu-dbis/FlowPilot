@@ -179,15 +179,20 @@ Notes:
 
 ```bibtex
 @article{esmailoghli2026flowpilot,
-  author  = {Esmailoghli, Mahdi and Weidlich, Matthias},
-  title   = {{FlowPilot}: A Suggestion System for Designing Scientific Workflows},
-  journal = {Proc. ACM Manag. Data},
-  volume  = {4},
-  number  = {1},
-  series  = {SIGMOD},
-  articleno = {39},
-  year    = {2026},
-  doi     = {10.1145/3786653}
+   author = {Esmailoghli, Mahdi and Weidlich, Matthias},
+   title = {FlowPilot: A Suggestion System for Designing Scientific Workflows},
+   year = {2026},
+   issue_date = {February 2026},
+   publisher = {Association for Computing Machinery},
+   volume = {4},
+   number = {1},
+   url = {https://doi.org/10.1145/3786653},
+   doi = {10.1145/3786653},
+   series  = {SIGMOD},
+   journal = {Proc. ACM Manag. Data},
+   month = apr,
+   articleno = {39},
+   numpages = {27},
 }
 ```
 
